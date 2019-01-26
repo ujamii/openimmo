@@ -194,10 +194,14 @@ class ApiGenerator
      */
     protected function generateGetter(PhpProperty $property, PhpClass $class): void
     {
+        $returnsArray = substr($property->getType(), -2) == '[]';
         $getter     = PhpMethod::create('get' . ucfirst($property->getName()));
         $getterCode = 'return $this->' . $property->getName() . ';';
         $getter->setBody($getterCode);
-        $getter->setType($property->getType());
+        $getter->setType($returnsArray ? 'array' : $property->getType());
+        if ($returnsArray) {
+            $getter->setDescription('Returns array of ' . $property->getType());
+        }
         $class->setMethod($getter);
     }
 

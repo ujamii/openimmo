@@ -27,30 +27,38 @@ class Anhaenge {
 	protected $userDefinedSimplefield;
 
 	/**
-	 * @return Anhang[]
+	 * Returns array of Anhang[]
+	 *
+	 * @return array
 	 */
-	public function getAnhang(): Anhang[] {
+	public function getAnhang(): array {
 		return $this->anhang;
 	}
 
 	/**
-	 * @return UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
+	public function getUserDefinedAnyfield(): array {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
-	 * @return UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedExtend(): UserDefinedExtend[] {
+	public function getUserDefinedExtend(): array {
 		return $this->userDefinedExtend;
 	}
 
 	/**
-	 * @return UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
+	public function getUserDefinedSimplefield(): array {
 		return $this->userDefinedSimplefield;
 	}
 

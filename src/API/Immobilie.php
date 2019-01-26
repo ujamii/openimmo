@@ -179,23 +179,29 @@ class Immobilie {
 	}
 
 	/**
-	 * @return UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
+	public function getUserDefinedAnyfield(): array {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
-	 * @return UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedExtend(): UserDefinedExtend[] {
+	public function getUserDefinedExtend(): array {
 		return $this->userDefinedExtend;
 	}
 
 	/**
-	 * @return UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
+	public function getUserDefinedSimplefield(): array {
 		return $this->userDefinedSimplefield;
 	}
 
@@ -221,9 +227,11 @@ class Immobilie {
 	}
 
 	/**
-	 * @return WeitereAdresse[]
+	 * Returns array of WeitereAdresse[]
+	 *
+	 * @return array
 	 */
-	public function getWeitereAdresse(): WeitereAdresse[] {
+	public function getWeitereAdresse(): array {
 		return $this->weitereAdresse;
 	}
 

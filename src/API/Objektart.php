@@ -77,100 +77,128 @@ class Objektart {
 	protected $zinshausRenditeobjekt;
 
 	/**
-	 * @return BueroPraxen[]
+	 * Returns array of BueroPraxen[]
+	 *
+	 * @return array
 	 */
-	public function getBueroPraxen(): BueroPraxen[] {
+	public function getBueroPraxen(): array {
 		return $this->bueroPraxen;
 	}
 
 	/**
-	 * @return Einzelhandel[]
+	 * Returns array of Einzelhandel[]
+	 *
+	 * @return array
 	 */
-	public function getEinzelhandel(): Einzelhandel[] {
+	public function getEinzelhandel(): array {
 		return $this->einzelhandel;
 	}
 
 	/**
-	 * @return FreizeitimmobilieGewerblich[]
+	 * Returns array of FreizeitimmobilieGewerblich[]
+	 *
+	 * @return array
 	 */
-	public function getFreizeitimmobilieGewerblich(): FreizeitimmobilieGewerblich[] {
+	public function getFreizeitimmobilieGewerblich(): array {
 		return $this->freizeitimmobilieGewerblich;
 	}
 
 	/**
-	 * @return Gastgewerbe[]
+	 * Returns array of Gastgewerbe[]
+	 *
+	 * @return array
 	 */
-	public function getGastgewerbe(): Gastgewerbe[] {
+	public function getGastgewerbe(): array {
 		return $this->gastgewerbe;
 	}
 
 	/**
-	 * @return Grundstueck[]
+	 * Returns array of Grundstueck[]
+	 *
+	 * @return array
 	 */
-	public function getGrundstueck(): Grundstueck[] {
+	public function getGrundstueck(): array {
 		return $this->grundstueck;
 	}
 
 	/**
-	 * @return HallenLagerProd[]
+	 * Returns array of HallenLagerProd[]
+	 *
+	 * @return array
 	 */
-	public function getHallenLagerProd(): HallenLagerProd[] {
+	public function getHallenLagerProd(): array {
 		return $this->hallenLagerProd;
 	}
 
 	/**
-	 * @return Haus[]
+	 * Returns array of Haus[]
+	 *
+	 * @return array
 	 */
-	public function getHaus(): Haus[] {
+	public function getHaus(): array {
 		return $this->haus;
 	}
 
 	/**
-	 * @return LandUndForstwirtschaft[]
+	 * Returns array of LandUndForstwirtschaft[]
+	 *
+	 * @return array
 	 */
-	public function getLandUndForstwirtschaft(): LandUndForstwirtschaft[] {
+	public function getLandUndForstwirtschaft(): array {
 		return $this->landUndForstwirtschaft;
 	}
 
 	/**
-	 * @return string[]
+	 * Returns array of string[]
+	 *
+	 * @return array
 	 */
-	public function getObjektartZusatz(): string[] {
+	public function getObjektartZusatz(): array {
 		return $this->objektartZusatz;
 	}
 
 	/**
-	 * @return Parken[]
+	 * Returns array of Parken[]
+	 *
+	 * @return array
 	 */
-	public function getParken(): Parken[] {
+	public function getParken(): array {
 		return $this->parken;
 	}
 
 	/**
-	 * @return Sonstige[]
+	 * Returns array of Sonstige[]
+	 *
+	 * @return array
 	 */
-	public function getSonstige(): Sonstige[] {
+	public function getSonstige(): array {
 		return $this->sonstige;
 	}
 
 	/**
-	 * @return Wohnung[]
+	 * Returns array of Wohnung[]
+	 *
+	 * @return array
 	 */
-	public function getWohnung(): Wohnung[] {
+	public function getWohnung(): array {
 		return $this->wohnung;
 	}
 
 	/**
-	 * @return Zimmer[]
+	 * Returns array of Zimmer[]
+	 *
+	 * @return array
 	 */
-	public function getZimmer(): Zimmer[] {
+	public function getZimmer(): array {
 		return $this->zimmer;
 	}
 
 	/**
-	 * @return ZinshausRenditeobjekt[]
+	 * Returns array of ZinshausRenditeobjekt[]
+	 *
+	 * @return array
 	 */
-	public function getZinshausRenditeobjekt(): ZinshausRenditeobjekt[] {
+	public function getZinshausRenditeobjekt(): array {
 		return $this->zinshausRenditeobjekt;
 	}
 

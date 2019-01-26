@@ -570,9 +570,11 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return Serviceleistungen[]
+	 * Returns array of Serviceleistungen[]
+	 *
+	 * @return array
 	 */
-	public function getServiceleistungen(): Serviceleistungen[] {
+	public function getServiceleistungen(): array {
 		return $this->serviceleistungen;
 	}
 
@@ -591,9 +593,11 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return Stellplatzart[]
+	 * Returns array of Stellplatzart[]
+	 *
+	 * @return array
 	 */
-	public function getStellplatzart(): Stellplatzart[] {
+	public function getStellplatzart(): array {
 		return $this->stellplatzart;
 	}
 
@@ -640,23 +644,29 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
+	public function getUserDefinedAnyfield(): array {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
-	 * @return UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedExtend(): UserDefinedExtend[] {
+	public function getUserDefinedExtend(): array {
 		return $this->userDefinedExtend;
 	}
 
 	/**
-	 * @return UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
+	public function getUserDefinedSimplefield(): array {
 		return $this->userDefinedSimplefield;
 	}
 

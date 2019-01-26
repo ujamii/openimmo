@@ -214,9 +214,11 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * @return EmailSonstige[]
+	 * Returns array of EmailSonstige[]
+	 *
+	 * @return array
 	 */
-	public function getEmailSonstige(): EmailSonstige[] {
+	public function getEmailSonstige(): array {
 		return $this->emailSonstige;
 	}
 
@@ -340,9 +342,11 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * @return TelSonstige[]
+	 * Returns array of TelSonstige[]
+	 *
+	 * @return array
 	 */
-	public function getTelSonstige(): TelSonstige[] {
+	public function getTelSonstige(): array {
 		return $this->telSonstige;
 	}
 
@@ -368,23 +372,29 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * @return UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
+	public function getUserDefinedAnyfield(): array {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
-	 * @return UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedExtend(): UserDefinedExtend[] {
+	public function getUserDefinedExtend(): array {
 		return $this->userDefinedExtend;
 	}
 
 	/**
-	 * @return UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
+	public function getUserDefinedSimplefield(): array {
 		return $this->userDefinedSimplefield;
 	}
 

@@ -49,37 +49,47 @@ class Infrastruktur {
 	}
 
 	/**
-	 * @return Distanzen[]
+	 * Returns array of Distanzen[]
+	 *
+	 * @return array
 	 */
-	public function getDistanzen(): Distanzen[] {
+	public function getDistanzen(): array {
 		return $this->distanzen;
 	}
 
 	/**
-	 * @return DistanzenSport[]
+	 * Returns array of DistanzenSport[]
+	 *
+	 * @return array
 	 */
-	public function getDistanzenSport(): DistanzenSport[] {
+	public function getDistanzenSport(): array {
 		return $this->distanzenSport;
 	}
 
 	/**
-	 * @return UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
+	public function getUserDefinedAnyfield(): array {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
-	 * @return UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedExtend(): UserDefinedExtend[] {
+	public function getUserDefinedExtend(): array {
 		return $this->userDefinedExtend;
 	}
 
 	/**
-	 * @return UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
+	public function getUserDefinedSimplefield(): array {
 		return $this->userDefinedSimplefield;
 	}
 

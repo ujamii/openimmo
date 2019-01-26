@@ -27,9 +27,11 @@ class Openimmo {
 	protected $userDefinedSimplefield;
 
 	/**
-	 * @return Anbieter[]
+	 * Returns array of Anbieter[]
+	 *
+	 * @return array
 	 */
-	public function getAnbieter(): Anbieter[] {
+	public function getAnbieter(): array {
 		return $this->anbieter;
 	}
 
@@ -41,16 +43,20 @@ class Openimmo {
 	}
 
 	/**
-	 * @return UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
+	public function getUserDefinedAnyfield(): array {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
-	 * @return UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield[]
+	 *
+	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
+	public function getUserDefinedSimplefield(): array {
 		return $this->userDefinedSimplefield;
 	}
 

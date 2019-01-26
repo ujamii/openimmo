@@ -12,9 +12,11 @@ class UserDefinedExtend {
 	protected $feld;
 
 	/**
-	 * @return []
+	 * Returns array of []
+	 *
+	 * @return array
 	 */
-	public function getFeld(): [] {
+	public function getFeld(): array {
 		return $this->feld;
 	}
 
