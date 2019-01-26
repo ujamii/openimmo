@@ -82,9 +82,7 @@ class ApiGenerator
             }
         }
 
-        $generator = new CodeFileGenerator($this->getGeneratorConfig());
-        $code      = $generator->generate($class);
-        file_put_contents(self::TARGET_FOLDER . $className . '.php', $code);
+        $this->createPhpFile($class);
     }
 
     /**
@@ -145,24 +143,8 @@ class ApiGenerator
      */
     protected function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true)
     {
-        $setter = PhpMethod::create('set' . ucfirst($property->getName()));
-        $setter->addParameter(PhpParameter::create($property->getName())
-                                          ->setType(substr($property->getType(), -2) == '[]' ? 'array' : $property->getType())
-                                          ->setDescription('Setter for ' . $property->getName())
-        );
-        $setterCode = '$this->' . $property->getName() . ' = $' . $property->getName() . ';';
-        if ($fluentApi) {
-            $setterCode .= PHP_EOL . 'return $this;';
-            $setter->getDocblock()->appendTag(TagFactory::create('return', $class->getName()));
-        }
-        $setter->setBody($setterCode);
-        $class->setMethod($setter);
-
-        $getter = PhpMethod::create('get' . ucfirst($property->getName()));
-        $getterCode = 'return $this->' . $property->getName() . ';';
-        $getter->setBody($getterCode);
-        $getter->setType($property->getType());
-        $class->setMethod($getter);
+        $this->generateSetter($property, $class, $fluentApi);
+        $this->generateGetter($property, $class);
     }
 
     /**
@@ -204,6 +186,52 @@ class ApiGenerator
     public function setGeneratorConfig(array $generatorConfig): void
     {
         $this->generatorConfig = $generatorConfig;
+    }
+
+    /**
+     * @param PhpProperty $property
+     * @param PhpClass $class
+     */
+    protected function generateGetter(PhpProperty $property, PhpClass $class): void
+    {
+        $getter     = PhpMethod::create('get' . ucfirst($property->getName()));
+        $getterCode = 'return $this->' . $property->getName() . ';';
+        $getter->setBody($getterCode);
+        $getter->setType($property->getType());
+        $class->setMethod($getter);
+    }
+
+    /**
+     * @param PhpProperty $property
+     * @param PhpClass $class
+     * @param $fluentApi
+     */
+    protected function generateSetter(PhpProperty $property, PhpClass $class, $fluentApi): void
+    {
+        $setter = PhpMethod::create('set' . ucfirst($property->getName()));
+        $setter->addParameter(PhpParameter::create($property->getName())
+                                          ->setType(substr($property->getType(), -2) == '[]' ? 'array' : $property->getType())
+                                          ->setDescription('Setter for ' . $property->getName())
+        );
+        $setterCode = '$this->' . $property->getName() . ' = $' . $property->getName() . ';';
+        if ($fluentApi) {
+            $setterCode .= PHP_EOL . 'return $this;';
+            $setter->getDocblock()->appendTag(TagFactory::create('return', $class->getName()));
+        }
+        $setter->setBody($setterCode);
+        $class->setMethod($setter);
+    }
+
+    /**
+     * @param PhpClass $class
+     *
+     * @return bool|int
+     */
+    protected function createPhpFile(PhpClass $class)
+    {
+        $generator = new CodeFileGenerator($this->getGeneratorConfig());
+        $code      = $generator->generate($class);
+        return file_put_contents(self::TARGET_FOLDER . $class->getName() . '.php', $code);
     }
 
 }
