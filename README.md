@@ -1,5 +1,8 @@
 # OpenImmo PHP library
 
+OpenImmo and the OpenImmo logo are registered trademarks of the [OpenImmo e.V.](http://www.openimmo.de)
+Neither is this package an official distribution nor am I associated with this organisation!
+
 This library wraps the OpenImmo XML format with some PHP 7 classes.
 
 ## TODOs
@@ -21,7 +24,7 @@ composer req ujamii/openimmo
 ### Update API classes with a new OpenImmo version 
 
 1. Install composer package.
-2. Download OpenImmo files from their website (extract into the example folder). Their license agreement denies redistribution of the xsd file.
+2. Download OpenImmo files from [their website](http://www.openimmo.de/go.php/p/24/download.htm) (extract into the example folder). Their license agreement denies redistribution of the xsd file.
 3. `php -f generate-api.php` will fill the `src/API` directory with new classes.
 4. `composer dumpautoload` to update the autoloading.
 5. Done.
