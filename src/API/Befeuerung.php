@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Befeuerung
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("befeuerung") 
  */
 class Befeuerung {
 

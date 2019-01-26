@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class ObjektText
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("objekt_text") 
  */
 class ObjektText {
 

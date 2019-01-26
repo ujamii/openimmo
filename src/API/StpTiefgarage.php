@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class StpTiefgarage
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("stp_tiefgarage") 
  */
 class StpTiefgarage {
 

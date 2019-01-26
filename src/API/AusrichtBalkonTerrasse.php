@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class AusrichtBalkonTerrasse
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("ausricht_balkon_terrasse") 
  */
 class AusrichtBalkonTerrasse {
 

@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class LageGebiet
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("lage_gebiet") 
  */
 class LageGebiet {
 

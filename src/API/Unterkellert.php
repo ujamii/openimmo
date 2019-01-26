@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Unterkellert
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("unterkellert") 
  */
 class Unterkellert {
 

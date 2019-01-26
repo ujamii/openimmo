@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class ProvisionTeilen
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("provision_teilen") 
  */
 class ProvisionTeilen {
 

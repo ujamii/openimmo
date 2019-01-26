@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Anhaenge
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("anhaenge") 
  */
 class Anhaenge {
 

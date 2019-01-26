@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Bieterverfahren
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("bieterverfahren") 
  */
 class Bieterverfahren {
 

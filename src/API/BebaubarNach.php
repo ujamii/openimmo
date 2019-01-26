@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class BebaubarNach
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("bebaubar_nach") 
  */
 class BebaubarNach {
 

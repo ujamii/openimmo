@@ -68,7 +68,11 @@ class ApiGenerator
         $class = new PhpClass();
         $class
             ->setQualifiedName('Ujamii\\OpenImmo\\API\\' . $className)
-            ->getDocblock()->appendTag(TagFactory::create('package', 'Ujamii\OpenImmo\API'))
+            ->setUseStatements(['JMS\Serializer\Annotation\XmlRoot'])
+            ->setDescription('Class ' . $className)
+            ->getDocblock()
+                ->appendTag(TagFactory::create('package', 'Ujamii\OpenImmo\API'))
+                ->appendTag(TagFactory::create('XmlRoot("' . $element->getName() . '")'))
         ;
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
             // TODO: extension of class

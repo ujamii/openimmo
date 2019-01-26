@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Verkaufstatus
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("verkaufstatus") 
  */
 class Verkaufstatus {
 

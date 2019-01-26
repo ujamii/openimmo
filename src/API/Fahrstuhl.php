@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Fahrstuhl
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("fahrstuhl") 
  */
 class Fahrstuhl {
 

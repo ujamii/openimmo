@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Vermarktungsart
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("vermarktungsart") 
  */
 class Vermarktungsart {
 

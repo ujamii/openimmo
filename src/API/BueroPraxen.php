@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class BueroPraxen
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("buero_praxen") 
  */
 class BueroPraxen {
 

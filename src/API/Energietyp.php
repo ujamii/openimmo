@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Energietyp
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("energietyp") 
  */
 class Energietyp {
 

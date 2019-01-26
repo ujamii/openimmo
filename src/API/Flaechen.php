@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Flaechen
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("flaechen") 
  */
 class Flaechen {
 

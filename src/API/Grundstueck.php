@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Grundstueck
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("grundstueck") 
  */
 class Grundstueck {
 

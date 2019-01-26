@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class ImpressumStrukt
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("impressum_strukt") 
  */
 class ImpressumStrukt {
 

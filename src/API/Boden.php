@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Boden
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("boden") 
  */
 class Boden {
 

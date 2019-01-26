@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class MaxMietdauer
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("max_mietdauer") 
  */
 class MaxMietdauer {
 

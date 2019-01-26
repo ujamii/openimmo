@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Energiepass
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("energiepass") 
  */
 class Energiepass {
 

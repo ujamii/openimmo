@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Anhang
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("anhang") 
  */
 class Anhang {
 

@@ -1,8 +1,13 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlRoot;
+
 /**
+ * Class Freitexte
+ *
  * @package Ujamii\OpenImmo\API
+ * @XmlRoot("freitexte") 
  */
 class Freitexte {
 
