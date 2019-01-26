@@ -85,6 +85,15 @@ class Distanzen {
 	protected $value;
 
 	/**
+	 * @param string $distanzZu Shortcut setter for distanzZu
+	 * @param float $value the actual value
+	 */
+	public function __construct(string $distanzZu = null, float $value = null) {
+		$this->distanzZu = $distanzZu;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getDistanzZu(): string {

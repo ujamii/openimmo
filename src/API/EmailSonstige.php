@@ -53,6 +53,17 @@ class EmailSonstige {
 	protected $value;
 
 	/**
+	 * @param string $emailart Shortcut setter for emailart
+	 * @param string $bemerkung Shortcut setter for bemerkung
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $emailart = null, string $bemerkung = null, string $value = null) {
+		$this->emailart = $emailart;
+		$this->bemerkung = $bemerkung;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getBemerkung(): string {

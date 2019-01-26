@@ -28,6 +28,15 @@ class Summemietenetto {
 	protected $value;
 
 	/**
+	 * @param float $summemieteust Shortcut setter for summemieteust
+	 * @param float $value the actual value
+	 */
+	public function __construct(float $summemieteust = null, float $value = null) {
+		$this->summemieteust = $summemieteust;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return float
 	 */
 	public function getSummemieteust(): float {

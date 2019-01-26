@@ -28,6 +28,15 @@ class Betriebskostennetto {
 	protected $value;
 
 	/**
+	 * @param float $betriebskostenust Shortcut setter for betriebskostenust
+	 * @param float $value the actual value
+	 */
+	public function __construct(float $betriebskostenust = null, float $value = null) {
+		$this->betriebskostenust = $betriebskostenust;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return float
 	 */
 	public function getBetriebskostenust(): float {

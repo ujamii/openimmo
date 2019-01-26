@@ -79,7 +79,7 @@ class ApiGenerator
             ->appendTag(TagFactory::create('XmlRoot("' . $element->getName() . '")'));
 
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
-            $this->addSimpleValue($element->getType()->getExtension(), $class);
+            $this->addSimpleValue($element->getType()->getExtension(), $class, $element->getType()->getAttributes());
         } else {
             foreach ($element->getType()->getElements() as $property) {
                 $this->parseProperty($property, $class);
@@ -100,18 +100,45 @@ class ApiGenerator
      * @param Extension $extension
      * @param PhpClass $class
      */
-    protected function addSimpleValue(Extension $extension, PhpClass $class)
+    protected function addSimpleValue(Extension $extension, PhpClass $class, array $attributes)
     {
-        $propertyName = 'value';
+        $propertyName  = 'value';
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
 
-        $propertyType = $this->extractPhpType($extension->getBase());
-        $classProperty->setType($this->getValidType($propertyType, $classProperty, $class));
+        $propertyType = $this->getValidType($this->extractPhpType($extension->getBase()), $classProperty, $class);
+        $classProperty->setType($propertyType);
         $classProperty->getDocblock()->appendTag(TagFactory::create('Inline'));
 
         $class->addUseStatement('JMS\Serializer\Annotation\Inline');
         $class->setProperty($classProperty);
         $this->generateGetterAndSetter($classProperty, $class);
+
+        // as this type of object contains just a key and a value, we add a __construct for more convenience
+        $constructor = PhpMethod::create('__construct');
+
+        $constrctorCode = [];
+        /* @var $attributeFromXsd Attribute */
+        foreach ($attributes as $attributeFromXsd) {
+            $attributeName = $this->camelize(strtolower($attributeFromXsd->getName()), true);
+            $type          = $this->getValidType($this->extractPhpType($attributeFromXsd->getType()));
+            $constructor->addParameter(PhpParameter::create($attributeName)
+                                                   ->setType($type)
+                                                   ->setValue(null)
+                                                   ->setDescription('Shortcut setter for ' . $attributeName)
+            );
+            $constrctorCode[] = '$this->' . $attributeName . ' = $' . $attributeName . ';';
+        }
+
+        // now the value itself
+        $constructor->addParameter(PhpParameter::create($propertyName)
+                                               ->setType($propertyType)
+                                               ->setValue(null)
+                                               ->setDescription('the actual value')
+        );
+        $constrctorCode[] = '$this->' . $propertyName . ' = $' . $propertyName . ';';
+
+        $constructor->setBody(implode(PHP_EOL, $constrctorCode));
+        $class->setMethod($constructor);
     }
 
     /**
@@ -134,7 +161,7 @@ class ApiGenerator
         // take min/max into account, as this may be an array instead
         if ($property->getMax() == -1) {
             $propertyType .= '[]';
-            $classProperty->getDocblock()->appendTag(TagFactory::create('XmlList(inline = true, entry = "'.$property->getName().'")'));
+            $classProperty->getDocblock()->appendTag(TagFactory::create('XmlList(inline = true, entry = "' . $property->getName() . '")'));
             $class->addUseStatement('JMS\Serializer\Annotation\XmlList');
         }
 
@@ -273,7 +300,7 @@ class ApiGenerator
      *
      * @return string
      */
-    protected function getValidType(string $propertyType, PhpProperty $classProperty, PhpClass $class)
+    protected function getValidType(string $propertyType, ?PhpProperty $classProperty = null, ?PhpClass $class = null)
     {
         switch ($propertyType) {
 
@@ -287,19 +314,25 @@ class ApiGenerator
 
             case 'dateTime':
                 $propertyType = '\DateTime';
-                $classProperty->getDocblock()->appendTag(TagFactory::create('Type("DateTime<\'Y-m-d\TH:i:s\'>")'));
-                $class->addUseStatement('JMS\Serializer\Annotation\Type');
+                if ( ! is_null($classProperty)) {
+                    $classProperty->getDocblock()->appendTag(TagFactory::create('Type("DateTime<\'Y-m-d\TH:i:s\'>")'));
+                    $class->addUseStatement('JMS\Serializer\Annotation\Type');
+                }
                 break;
 
             case 'date':
                 $propertyType = '\DateTime';
-                $classProperty->getDocblock()->appendTag(TagFactory::create('Type("DateTime<\'Y-m-d\'>")'));
-                $class->addUseStatement('JMS\Serializer\Annotation\Type');
+                if ( ! is_null($classProperty)) {
+                    $classProperty->getDocblock()->appendTag(TagFactory::create('Type("DateTime<\'Y-m-d\'>")'));
+                    $class->addUseStatement('JMS\Serializer\Annotation\Type');
+                }
                 break;
 
             case 'base64Binary':
                 $propertyType = 'string';
-                $classProperty->setDescription('Base64 encoded binary');
+                if ( ! is_null($classProperty)) {
+                    $classProperty->setDescription('Base64 encoded binary');
+                }
                 break;
 
             case 'kontakt':

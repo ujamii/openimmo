@@ -43,6 +43,15 @@ class Check {
 	protected $value;
 
 	/**
+	 * @param string $ctype Shortcut setter for ctype
+	 * @param \DateTime $value the actual value
+	 */
+	public function __construct(string $ctype = null, \DateTime $value = null) {
+		$this->ctype = $ctype;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getCtype(): string {

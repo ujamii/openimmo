@@ -28,6 +28,15 @@ class Sonstigekostennetto {
 	protected $value;
 
 	/**
+	 * @param float $sonstigekostenust Shortcut setter for sonstigekostenust
+	 * @param float $value the actual value
+	 */
+	public function __construct(float $sonstigekostenust = null, float $value = null) {
+		$this->sonstigekostenust = $sonstigekostenust;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return float
 	 */
 	public function getSonstigekostenust(): float {

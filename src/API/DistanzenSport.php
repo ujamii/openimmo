@@ -57,6 +57,15 @@ class DistanzenSport {
 	protected $value;
 
 	/**
+	 * @param string $distanzZuSport Shortcut setter for distanzZuSport
+	 * @param float $value the actual value
+	 */
+	public function __construct(string $distanzZuSport = null, float $value = null) {
+		$this->distanzZuSport = $distanzZuSport;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getDistanzZuSport(): string {

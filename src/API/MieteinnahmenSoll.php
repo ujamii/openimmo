@@ -45,6 +45,15 @@ class MieteinnahmenSoll {
 	protected $value;
 
 	/**
+	 * @param string $periode Shortcut setter for periode
+	 * @param float $value the actual value
+	 */
+	public function __construct(string $periode = null, float $value = null) {
+		$this->periode = $periode;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getPeriode(): string {

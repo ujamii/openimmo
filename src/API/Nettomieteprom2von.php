@@ -28,6 +28,15 @@ class Nettomieteprom2von {
 	protected $value;
 
 	/**
+	 * @param float $nettomieteprom2bis Shortcut setter for nettomieteprom2bis
+	 * @param float $value the actual value
+	 */
+	public function __construct(float $nettomieteprom2bis = null, float $value = null) {
+		$this->nettomieteprom2bis = $nettomieteprom2bis;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return float
 	 */
 	public function getNettomieteprom2bis(): float {

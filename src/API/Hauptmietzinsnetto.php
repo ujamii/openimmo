@@ -28,6 +28,15 @@ class Hauptmietzinsnetto {
 	protected $value;
 
 	/**
+	 * @param float $hauptmietzinsust Shortcut setter for hauptmietzinsust
+	 * @param float $value the actual value
+	 */
+	public function __construct(float $hauptmietzinsust = null, float $value = null) {
+		$this->hauptmietzinsust = $hauptmietzinsust;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return float
 	 */
 	public function getHauptmietzinsust(): float {

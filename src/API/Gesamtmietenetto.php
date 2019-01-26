@@ -28,6 +28,15 @@ class Gesamtmietenetto {
 	protected $value;
 
 	/**
+	 * @param float $gesamtmieteust Shortcut setter for gesamtmieteust
+	 * @param float $value the actual value
+	 */
+	public function __construct(float $gesamtmieteust = null, float $value = null) {
+		$this->gesamtmieteust = $gesamtmieteust;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return float
 	 */
 	public function getGesamtmieteust(): float {

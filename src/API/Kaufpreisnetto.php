@@ -28,6 +28,15 @@ class Kaufpreisnetto {
 	protected $value;
 
 	/**
+	 * @param float $kaufpreisust Shortcut setter for kaufpreisust
+	 * @param float $value the actual value
+	 */
+	public function __construct(float $kaufpreisust = null, float $value = null) {
+		$this->kaufpreisust = $kaufpreisust;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return float
 	 */
 	public function getKaufpreisust(): float {
