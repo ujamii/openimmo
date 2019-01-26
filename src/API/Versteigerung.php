@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Versteigerung {
 
@@ -38,42 +39,42 @@ class Versteigerung {
 	/**
 	 * @return string
 	 */
-	public function getAktenzeichen() {
+	public function getAktenzeichen(): string {
 		return $this->aktenzeichen;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getAmtsgericht() {
+	public function getAmtsgericht(): string {
 		return $this->amtsgericht;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getVerkehrswert() {
+	public function getVerkehrswert(): decimal {
 		return $this->verkehrswert;
 	}
 
 	/**
 	 * @return dateTime
 	 */
-	public function getZusatztermin() {
+	public function getZusatztermin(): dateTime {
 		return $this->zusatztermin;
 	}
 
 	/**
 	 * @return dateTime
 	 */
-	public function getZvtermin() {
+	public function getZvtermin(): dateTime {
 		return $this->zvtermin;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getZwangsversteigerung() {
+	public function getZwangsversteigerung(): bool {
 		return $this->zwangsversteigerung;
 	}
 
@@ -81,7 +82,7 @@ class Versteigerung {
 	 * @param string $aktenzeichen Setter for aktenzeichen
 	 * @return Versteigerung
 	 */
-	public function setAktenzeichen($aktenzeichen) {
+	public function setAktenzeichen(string $aktenzeichen) {
 		$this->aktenzeichen = $aktenzeichen;
 		return $this;
 	}
@@ -90,7 +91,7 @@ class Versteigerung {
 	 * @param string $amtsgericht Setter for amtsgericht
 	 * @return Versteigerung
 	 */
-	public function setAmtsgericht($amtsgericht) {
+	public function setAmtsgericht(string $amtsgericht) {
 		$this->amtsgericht = $amtsgericht;
 		return $this;
 	}
@@ -126,7 +127,7 @@ class Versteigerung {
 	 * @param boolean $zwangsversteigerung Setter for zwangsversteigerung
 	 * @return Versteigerung
 	 */
-	public function setZwangsversteigerung($zwangsversteigerung) {
+	public function setZwangsversteigerung(bool $zwangsversteigerung) {
 		$this->zwangsversteigerung = $zwangsversteigerung;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Unterkellert {
 
@@ -13,7 +14,7 @@ class Unterkellert {
 	/**
 	 * @return string
 	 */
-	public function getKeller() {
+	public function getKeller(): string {
 		return $this->keller;
 	}
 
@@ -21,7 +22,7 @@ class Unterkellert {
 	 * @param string $keller Setter for keller
 	 * @return Unterkellert
 	 */
-	public function setKeller($keller) {
+	public function setKeller(string $keller) {
 		$this->keller = $keller;
 		return $this;
 	}

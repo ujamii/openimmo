@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class PreisZeiteinheit {
 
@@ -13,7 +14,7 @@ class PreisZeiteinheit {
 	/**
 	 * @return string
 	 */
-	public function getZeiteinheit() {
+	public function getZeiteinheit(): string {
 		return $this->zeiteinheit;
 	}
 
@@ -21,7 +22,7 @@ class PreisZeiteinheit {
 	 * @param string $zeiteinheit Setter for zeiteinheit
 	 * @return PreisZeiteinheit
 	 */
-	public function setZeiteinheit($zeiteinheit) {
+	public function setZeiteinheit(string $zeiteinheit) {
 		$this->zeiteinheit = $zeiteinheit;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Daten {
 
@@ -18,14 +19,14 @@ class Daten {
 	/**
 	 * @return base64Binary
 	 */
-	public function getAnhanginhalt() {
+	public function getAnhanginhalt(): base64Binary {
 		return $this->anhanginhalt;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPfad() {
+	public function getPfad(): string {
 		return $this->pfad;
 	}
 
@@ -42,7 +43,7 @@ class Daten {
 	 * @param string $pfad Setter for pfad
 	 * @return Daten
 	 */
-	public function setPfad($pfad) {
+	public function setPfad(string $pfad) {
 		$this->pfad = $pfad;
 		return $this;
 	}

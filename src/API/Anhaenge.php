@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Anhaenge {
 
@@ -28,28 +29,28 @@ class Anhaenge {
 	/**
 	 * @return Anhang[]
 	 */
-	public function getAnhang() {
+	public function getAnhang(): Anhang[] {
 		return $this->anhang;
 	}
 
 	/**
 	 * @return UserDefinedAnyfield[]
 	 */
-	public function getUserDefinedAnyfield() {
+	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * @return UserDefinedExtend[]
 	 */
-	public function getUserDefinedExtend() {
+	public function getUserDefinedExtend(): UserDefinedExtend[] {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * @return UserDefinedSimplefield[]
 	 */
-	public function getUserDefinedSimplefield() {
+	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
 		return $this->userDefinedSimplefield;
 	}
 

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class ProvisionTeilen {
 
@@ -13,7 +14,7 @@ class ProvisionTeilen {
 	/**
 	 * @return string
 	 */
-	public function getWert() {
+	public function getWert(): string {
 		return $this->wert;
 	}
 
@@ -21,7 +22,7 @@ class ProvisionTeilen {
 	 * @param string $wert Setter for wert
 	 * @return ProvisionTeilen
 	 */
-	public function setWert($wert) {
+	public function setWert(string $wert) {
 		$this->wert = $wert;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Uebertragung {
 
@@ -53,63 +54,63 @@ class Uebertragung {
 	/**
 	 * @return string
 	 */
-	public function getArt() {
+	public function getArt(): string {
 		return $this->art;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getModus() {
+	public function getModus(): string {
 		return $this->modus;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getRegiId() {
+	public function getRegiId(): string {
 		return $this->regiId;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getSendersoftware() {
+	public function getSendersoftware(): string {
 		return $this->sendersoftware;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getSenderversion() {
+	public function getSenderversion(): string {
 		return $this->senderversion;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getTechnEmail() {
+	public function getTechnEmail(): string {
 		return $this->technEmail;
 	}
 
 	/**
 	 * @return dateTime
 	 */
-	public function getTimestamp() {
+	public function getTimestamp(): dateTime {
 		return $this->timestamp;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getUmfang() {
+	public function getUmfang(): string {
 		return $this->umfang;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getVersion() {
+	public function getVersion(): string {
 		return $this->version;
 	}
 
@@ -117,7 +118,7 @@ class Uebertragung {
 	 * @param string $art Setter for art
 	 * @return Uebertragung
 	 */
-	public function setArt($art) {
+	public function setArt(string $art) {
 		$this->art = $art;
 		return $this;
 	}
@@ -126,7 +127,7 @@ class Uebertragung {
 	 * @param string $modus Setter for modus
 	 * @return Uebertragung
 	 */
-	public function setModus($modus) {
+	public function setModus(string $modus) {
 		$this->modus = $modus;
 		return $this;
 	}
@@ -135,7 +136,7 @@ class Uebertragung {
 	 * @param string $regiId Setter for regiId
 	 * @return Uebertragung
 	 */
-	public function setRegiId($regiId) {
+	public function setRegiId(string $regiId) {
 		$this->regiId = $regiId;
 		return $this;
 	}
@@ -144,7 +145,7 @@ class Uebertragung {
 	 * @param string $sendersoftware Setter for sendersoftware
 	 * @return Uebertragung
 	 */
-	public function setSendersoftware($sendersoftware) {
+	public function setSendersoftware(string $sendersoftware) {
 		$this->sendersoftware = $sendersoftware;
 		return $this;
 	}
@@ -153,7 +154,7 @@ class Uebertragung {
 	 * @param string $senderversion Setter for senderversion
 	 * @return Uebertragung
 	 */
-	public function setSenderversion($senderversion) {
+	public function setSenderversion(string $senderversion) {
 		$this->senderversion = $senderversion;
 		return $this;
 	}
@@ -162,7 +163,7 @@ class Uebertragung {
 	 * @param string $technEmail Setter for technEmail
 	 * @return Uebertragung
 	 */
-	public function setTechnEmail($technEmail) {
+	public function setTechnEmail(string $technEmail) {
 		$this->technEmail = $technEmail;
 		return $this;
 	}
@@ -180,7 +181,7 @@ class Uebertragung {
 	 * @param string $umfang Setter for umfang
 	 * @return Uebertragung
 	 */
-	public function setUmfang($umfang) {
+	public function setUmfang(string $umfang) {
 		$this->umfang = $umfang;
 		return $this;
 	}
@@ -189,7 +190,7 @@ class Uebertragung {
 	 * @param string $version Setter for version
 	 * @return Uebertragung
 	 */
-	public function setVersion($version) {
+	public function setVersion(string $version) {
 		$this->version = $version;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Zimmer {
 
@@ -13,7 +14,7 @@ class Zimmer {
 	/**
 	 * @return string
 	 */
-	public function getZimmertyp() {
+	public function getZimmertyp(): string {
 		return $this->zimmertyp;
 	}
 
@@ -21,7 +22,7 @@ class Zimmer {
 	 * @param string $zimmertyp Setter for zimmertyp
 	 * @return Zimmer
 	 */
-	public function setZimmertyp($zimmertyp) {
+	public function setZimmertyp(string $zimmertyp) {
 		$this->zimmertyp = $zimmertyp;
 		return $this;
 	}

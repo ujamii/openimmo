@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Nutzungsart {
 
@@ -28,28 +29,28 @@ class Nutzungsart {
 	/**
 	 * @return boolean
 	 */
-	public function getAnlage() {
+	public function getAnlage(): bool {
 		return $this->anlage;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGewerbe() {
+	public function getGewerbe(): bool {
 		return $this->gewerbe;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWaz() {
+	public function getWaz(): bool {
 		return $this->waz;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWohnen() {
+	public function getWohnen(): bool {
 		return $this->wohnen;
 	}
 
@@ -57,7 +58,7 @@ class Nutzungsart {
 	 * @param boolean $anlage Setter for anlage
 	 * @return Nutzungsart
 	 */
-	public function setAnlage($anlage) {
+	public function setAnlage(bool $anlage) {
 		$this->anlage = $anlage;
 		return $this;
 	}
@@ -66,7 +67,7 @@ class Nutzungsart {
 	 * @param boolean $gewerbe Setter for gewerbe
 	 * @return Nutzungsart
 	 */
-	public function setGewerbe($gewerbe) {
+	public function setGewerbe(bool $gewerbe) {
 		$this->gewerbe = $gewerbe;
 		return $this;
 	}
@@ -75,7 +76,7 @@ class Nutzungsart {
 	 * @param boolean $waz Setter for waz
 	 * @return Nutzungsart
 	 */
-	public function setWaz($waz) {
+	public function setWaz(bool $waz) {
 		$this->waz = $waz;
 		return $this;
 	}
@@ -84,7 +85,7 @@ class Nutzungsart {
 	 * @param boolean $wohnen Setter for wohnen
 	 * @return Nutzungsart
 	 */
-	public function setWohnen($wohnen) {
+	public function setWohnen(bool $wohnen) {
 		$this->wohnen = $wohnen;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Preise {
 
@@ -361,231 +362,231 @@ class Preise {
 	/**
 	 * @return decimal
 	 */
-	public function getAbstand() {
+	public function getAbstand(): decimal {
 		return $this->abstand;
 	}
 
 	/**
 	 * @return AussenCourtage
 	 */
-	public function getAussenCourtage() {
+	public function getAussenCourtage(): AussenCourtage {
 		return $this->aussenCourtage;
 	}
 
 	/**
 	 * @return Betriebskostennetto
 	 */
-	public function getBetriebskostennetto() {
+	public function getBetriebskostennetto(): Betriebskostennetto {
 		return $this->betriebskostennetto;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getCourtageHinweis() {
+	public function getCourtageHinweis(): string {
 		return $this->courtageHinweis;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getErbpacht() {
+	public function getErbpacht(): decimal {
 		return $this->erbpacht;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getErschliessungskosten() {
+	public function getErschliessungskosten(): decimal {
 		return $this->erschliessungskosten;
 	}
 
 	/**
 	 * @return Evbnetto
 	 */
-	public function getEvbnetto() {
+	public function getEvbnetto(): Evbnetto {
 		return $this->evbnetto;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFreitextPreis() {
+	public function getFreitextPreis(): string {
 		return $this->freitextPreis;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getGesamtbelastungbrutto() {
+	public function getGesamtbelastungbrutto(): decimal {
 		return $this->gesamtbelastungbrutto;
 	}
 
 	/**
 	 * @return Gesamtbelastungnetto
 	 */
-	public function getGesamtbelastungnetto() {
+	public function getGesamtbelastungnetto(): Gesamtbelastungnetto {
 		return $this->gesamtbelastungnetto;
 	}
 
 	/**
 	 * @return Gesamtkostenprom2von
 	 */
-	public function getGesamtkostenprom2von() {
+	public function getGesamtkostenprom2von(): Gesamtkostenprom2von {
 		return $this->gesamtkostenprom2von;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getGesamtmietebrutto() {
+	public function getGesamtmietebrutto(): decimal {
 		return $this->gesamtmietebrutto;
 	}
 
 	/**
 	 * @return Gesamtmietenetto
 	 */
-	public function getGesamtmietenetto() {
+	public function getGesamtmietenetto(): Gesamtmietenetto {
 		return $this->gesamtmietenetto;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getGeschaeftsguthaben() {
+	public function getGeschaeftsguthaben(): decimal {
 		return $this->geschaeftsguthaben;
 	}
 
 	/**
 	 * @return Hauptmietzinsnetto
 	 */
-	public function getHauptmietzinsnetto() {
+	public function getHauptmietzinsnetto(): Hauptmietzinsnetto {
 		return $this->hauptmietzinsnetto;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getHausgeld() {
+	public function getHausgeld(): decimal {
 		return $this->hausgeld;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getHeizkosten() {
+	public function getHeizkosten(): decimal {
 		return $this->heizkosten;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHeizkostenEnthalten() {
+	public function getHeizkostenEnthalten(): bool {
 		return $this->heizkostenEnthalten;
 	}
 
 	/**
 	 * @return Heizkostennetto
 	 */
-	public function getHeizkostennetto() {
+	public function getHeizkostennetto(): Heizkostennetto {
 		return $this->heizkostennetto;
 	}
 
 	/**
 	 * @return InnenCourtage
 	 */
-	public function getInnenCourtage() {
+	public function getInnenCourtage(): InnenCourtage {
 		return $this->innenCourtage;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getKaltmiete() {
+	public function getKaltmiete(): decimal {
 		return $this->kaltmiete;
 	}
 
 	/**
 	 * @return Kaufpreis
 	 */
-	public function getKaufpreis() {
+	public function getKaufpreis(): Kaufpreis {
 		return $this->kaufpreis;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getKaufpreisbrutto() {
+	public function getKaufpreisbrutto(): decimal {
 		return $this->kaufpreisbrutto;
 	}
 
 	/**
 	 * @return Kaufpreisnetto
 	 */
-	public function getKaufpreisnetto() {
+	public function getKaufpreisnetto(): Kaufpreisnetto {
 		return $this->kaufpreisnetto;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getKaufpreisProQm() {
+	public function getKaufpreisProQm(): decimal {
 		return $this->kaufpreisProQm;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getKaution() {
+	public function getKaution(): decimal {
 		return $this->kaution;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getKautionText() {
+	public function getKautionText(): string {
 		return $this->kautionText;
 	}
 
 	/**
 	 * @return MieteinnahmenIst
 	 */
-	public function getMieteinnahmenIst() {
+	public function getMieteinnahmenIst(): MieteinnahmenIst {
 		return $this->mieteinnahmenIst;
 	}
 
 	/**
 	 * @return MieteinnahmenSoll
 	 */
-	public function getMieteinnahmenSoll() {
+	public function getMieteinnahmenSoll(): MieteinnahmenSoll {
 		return $this->mieteinnahmenSoll;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getMietpreisProQm() {
+	public function getMietpreisProQm(): decimal {
 		return $this->mietpreisProQm;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getMietzuschlaege() {
+	public function getMietzuschlaege(): decimal {
 		return $this->mietzuschlaege;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getMonatlichekostenbrutto() {
+	public function getMonatlichekostenbrutto(): decimal {
 		return $this->monatlichekostenbrutto;
 	}
 
 	/**
 	 * @return Monatlichekostennetto
 	 */
-	public function getMonatlichekostennetto() {
+	public function getMonatlichekostennetto(): Monatlichekostennetto {
 		return $this->monatlichekostennetto;
 	}
 
@@ -604,252 +605,252 @@ class Preise {
 	/**
 	 * @return decimal
 	 */
-	public function getNebenkosten() {
+	public function getNebenkosten(): decimal {
 		return $this->nebenkosten;
 	}
 
 	/**
 	 * @return Nebenkostenprom2von
 	 */
-	public function getNebenkostenprom2von() {
+	public function getNebenkostenprom2von(): Nebenkostenprom2von {
 		return $this->nebenkostenprom2von;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getNettokaltmiete() {
+	public function getNettokaltmiete(): decimal {
 		return $this->nettokaltmiete;
 	}
 
 	/**
 	 * @return Nettomieteprom2von
 	 */
-	public function getNettomieteprom2von() {
+	public function getNettomieteprom2von(): Nettomieteprom2von {
 		return $this->nettomieteprom2von;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getNettorendite() {
+	public function getNettorendite(): decimal {
 		return $this->nettorendite;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getNettorenditeIst() {
+	public function getNettorenditeIst(): decimal {
 		return $this->nettorenditeIst;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getNettorenditeSoll() {
+	public function getNettorenditeSoll(): decimal {
 		return $this->nettorenditeSoll;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getPacht() {
+	public function getPacht(): decimal {
 		return $this->pacht;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getPauschalmiete() {
+	public function getPauschalmiete(): decimal {
 		return $this->pauschalmiete;
 	}
 
 	/**
 	 * @return PreisZeiteinheit
 	 */
-	public function getPreisZeiteinheit() {
+	public function getPreisZeiteinheit(): PreisZeiteinheit {
 		return $this->preisZeiteinheit;
 	}
 
 	/**
 	 * @return date
 	 */
-	public function getPreisZeitraumBis() {
+	public function getPreisZeitraumBis(): date {
 		return $this->preisZeitraumBis;
 	}
 
 	/**
 	 * @return date
 	 */
-	public function getPreisZeitraumVon() {
+	public function getPreisZeitraumVon(): date {
 		return $this->preisZeitraumVon;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getProvisionbrutto() {
+	public function getProvisionbrutto(): decimal {
 		return $this->provisionbrutto;
 	}
 
 	/**
 	 * @return Provisionnetto
 	 */
-	public function getProvisionnetto() {
+	public function getProvisionnetto(): Provisionnetto {
 		return $this->provisionnetto;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getProvisionspflichtig() {
+	public function getProvisionspflichtig(): bool {
 		return $this->provisionspflichtig;
 	}
 
 	/**
 	 * @return ProvisionTeilen
 	 */
-	public function getProvisionTeilen() {
+	public function getProvisionTeilen(): ProvisionTeilen {
 		return $this->provisionTeilen;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getRichtpreis() {
+	public function getRichtpreis(): decimal {
 		return $this->richtpreis;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getRichtpreisprom2() {
+	public function getRichtpreisprom2(): decimal {
 		return $this->richtpreisprom2;
 	}
 
 	/**
 	 * @return Ruecklagenetto
 	 */
-	public function getRuecklagenetto() {
+	public function getRuecklagenetto(): Ruecklagenetto {
 		return $this->ruecklagenetto;
 	}
 
 	/**
 	 * @return Sonstigekostennetto
 	 */
-	public function getSonstigekostennetto() {
+	public function getSonstigekostennetto(): Sonstigekostennetto {
 		return $this->sonstigekostennetto;
 	}
 
 	/**
 	 * @return Sonstigemietenetto
 	 */
-	public function getSonstigemietenetto() {
+	public function getSonstigemietenetto(): Sonstigemietenetto {
 		return $this->sonstigemietenetto;
 	}
 
 	/**
 	 * @return StpCarport
 	 */
-	public function getStpCarport() {
+	public function getStpCarport(): StpCarport {
 		return $this->stpCarport;
 	}
 
 	/**
 	 * @return StpDuplex
 	 */
-	public function getStpDuplex() {
+	public function getStpDuplex(): StpDuplex {
 		return $this->stpDuplex;
 	}
 
 	/**
 	 * @return StpFreiplatz
 	 */
-	public function getStpFreiplatz() {
+	public function getStpFreiplatz(): StpFreiplatz {
 		return $this->stpFreiplatz;
 	}
 
 	/**
 	 * @return StpGarage
 	 */
-	public function getStpGarage() {
+	public function getStpGarage(): StpGarage {
 		return $this->stpGarage;
 	}
 
 	/**
 	 * @return StpParkhaus
 	 */
-	public function getStpParkhaus() {
+	public function getStpParkhaus(): StpParkhaus {
 		return $this->stpParkhaus;
 	}
 
 	/**
 	 * @return StpSonstige[]
 	 */
-	public function getStpSonstige() {
+	public function getStpSonstige(): StpSonstige[] {
 		return $this->stpSonstige;
 	}
 
 	/**
 	 * @return StpTiefgarage
 	 */
-	public function getStpTiefgarage() {
+	public function getStpTiefgarage(): StpTiefgarage {
 		return $this->stpTiefgarage;
 	}
 
 	/**
 	 * @return Summemietenetto
 	 */
-	public function getSummemietenetto() {
+	public function getSummemietenetto(): Summemietenetto {
 		return $this->summemietenetto;
 	}
 
 	/**
 	 * @return UserDefinedAnyfield[]
 	 */
-	public function getUserDefinedAnyfield() {
+	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * @return UserDefinedExtend[]
 	 */
-	public function getUserDefinedExtend() {
+	public function getUserDefinedExtend(): UserDefinedExtend[] {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * @return UserDefinedSimplefield[]
 	 */
-	public function getUserDefinedSimplefield() {
+	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return Waehrung
 	 */
-	public function getWaehrung() {
+	public function getWaehrung(): Waehrung {
 		return $this->waehrung;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getWarmmiete() {
+	public function getWarmmiete(): decimal {
 		return $this->warmmiete;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getXFache() {
+	public function getXFache(): string {
 		return $this->xFache;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getZzgMehrwertsteuer() {
+	public function getZzgMehrwertsteuer(): bool {
 		return $this->zzgMehrwertsteuer;
 	}
 
@@ -884,7 +885,7 @@ class Preise {
 	 * @param string $courtageHinweis Setter for courtageHinweis
 	 * @return Preise
 	 */
-	public function setCourtageHinweis($courtageHinweis) {
+	public function setCourtageHinweis(string $courtageHinweis) {
 		$this->courtageHinweis = $courtageHinweis;
 		return $this;
 	}
@@ -920,7 +921,7 @@ class Preise {
 	 * @param string $freitextPreis Setter for freitextPreis
 	 * @return Preise
 	 */
-	public function setFreitextPreis($freitextPreis) {
+	public function setFreitextPreis(string $freitextPreis) {
 		$this->freitextPreis = $freitextPreis;
 		return $this;
 	}
@@ -1010,7 +1011,7 @@ class Preise {
 	 * @param boolean $heizkostenEnthalten Setter for heizkostenEnthalten
 	 * @return Preise
 	 */
-	public function setHeizkostenEnthalten($heizkostenEnthalten) {
+	public function setHeizkostenEnthalten(bool $heizkostenEnthalten) {
 		$this->heizkostenEnthalten = $heizkostenEnthalten;
 		return $this;
 	}
@@ -1091,7 +1092,7 @@ class Preise {
 	 * @param string $kautionText Setter for kautionText
 	 * @return Preise
 	 */
-	public function setKautionText($kautionText) {
+	public function setKautionText(string $kautionText) {
 		$this->kautionText = $kautionText;
 		return $this;
 	}
@@ -1298,7 +1299,7 @@ class Preise {
 	 * @param boolean $provisionspflichtig Setter for provisionspflichtig
 	 * @return Preise
 	 */
-	public function setProvisionspflichtig($provisionspflichtig) {
+	public function setProvisionspflichtig(bool $provisionspflichtig) {
 		$this->provisionspflichtig = $provisionspflichtig;
 		return $this;
 	}
@@ -1478,7 +1479,7 @@ class Preise {
 	 * @param string $xFache Setter for xFache
 	 * @return Preise
 	 */
-	public function setXFache($xFache) {
+	public function setXFache(string $xFache) {
 		$this->xFache = $xFache;
 		return $this;
 	}
@@ -1487,7 +1488,7 @@ class Preise {
 	 * @param boolean $zzgMehrwertsteuer Setter for zzgMehrwertsteuer
 	 * @return Preise
 	 */
-	public function setZzgMehrwertsteuer($zzgMehrwertsteuer) {
+	public function setZzgMehrwertsteuer(bool $zzgMehrwertsteuer) {
 		$this->zzgMehrwertsteuer = $zzgMehrwertsteuer;
 		return $this;
 	}

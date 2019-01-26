@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Geokoordinaten {
 
@@ -18,14 +19,14 @@ class Geokoordinaten {
 	/**
 	 * @return float
 	 */
-	public function getBreitengrad() {
+	public function getBreitengrad(): float {
 		return $this->breitengrad;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getLaengengrad() {
+	public function getLaengengrad(): float {
 		return $this->laengengrad;
 	}
 
@@ -33,7 +34,7 @@ class Geokoordinaten {
 	 * @param float $breitengrad Setter for breitengrad
 	 * @return Geokoordinaten
 	 */
-	public function setBreitengrad($breitengrad) {
+	public function setBreitengrad(float $breitengrad) {
 		$this->breitengrad = $breitengrad;
 		return $this;
 	}
@@ -42,7 +43,7 @@ class Geokoordinaten {
 	 * @param float $laengengrad Setter for laengengrad
 	 * @return Geokoordinaten
 	 */
-	public function setLaengengrad($laengengrad) {
+	public function setLaengengrad(float $laengengrad) {
 		$this->laengengrad = $laengengrad;
 		return $this;
 	}

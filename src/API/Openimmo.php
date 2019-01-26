@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Openimmo {
 
@@ -28,28 +29,28 @@ class Openimmo {
 	/**
 	 * @return Anbieter[]
 	 */
-	public function getAnbieter() {
+	public function getAnbieter(): Anbieter[] {
 		return $this->anbieter;
 	}
 
 	/**
 	 * @return Uebertragung
 	 */
-	public function getUebertragung() {
+	public function getUebertragung(): Uebertragung {
 		return $this->uebertragung;
 	}
 
 	/**
 	 * @return UserDefinedAnyfield[]
 	 */
-	public function getUserDefinedAnyfield() {
+	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * @return UserDefinedSimplefield[]
 	 */
-	public function getUserDefinedSimplefield() {
+	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
 		return $this->userDefinedSimplefield;
 	}
 

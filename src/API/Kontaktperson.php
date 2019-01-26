@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Kontaktperson {
 
@@ -193,259 +194,259 @@ class Kontaktperson {
 	/**
 	 * @return boolean
 	 */
-	public function getAdressfreigabe() {
+	public function getAdressfreigabe(): bool {
 		return $this->adressfreigabe;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getAnrede() {
+	public function getAnrede(): string {
 		return $this->anrede;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getAnredeBrief() {
+	public function getAnredeBrief(): string {
 		return $this->anredeBrief;
 	}
 
 	/**
 	 * @return kontakt
 	 */
-	public function getEmailDirekt() {
+	public function getEmailDirekt(): kontakt {
 		return $this->emailDirekt;
 	}
 
 	/**
 	 * @return kontakt
 	 */
-	public function getEmailFeedback() {
+	public function getEmailFeedback(): kontakt {
 		return $this->emailFeedback;
 	}
 
 	/**
 	 * @return kontakt
 	 */
-	public function getEmailPrivat() {
+	public function getEmailPrivat(): kontakt {
 		return $this->emailPrivat;
 	}
 
 	/**
 	 * @return EmailSonstige[]
 	 */
-	public function getEmailSonstige() {
+	public function getEmailSonstige(): EmailSonstige[] {
 		return $this->emailSonstige;
 	}
 
 	/**
 	 * @return kontakt
 	 */
-	public function getEmailZentrale() {
+	public function getEmailZentrale(): kontakt {
 		return $this->emailZentrale;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFirma() {
+	public function getFirma(): string {
 		return $this->firma;
 	}
 
 	/**
 	 * @return Foto
 	 */
-	public function getFoto() {
+	public function getFoto(): Foto {
 		return $this->foto;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFreitextfeld() {
+	public function getFreitextfeld(): string {
 		return $this->freitextfeld;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getHausnummer() {
+	public function getHausnummer(): string {
 		return $this->hausnummer;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getImmobilientreuhaenderid() {
+	public function getImmobilientreuhaenderid(): string {
 		return $this->immobilientreuhaenderid;
 	}
 
 	/**
 	 * @return Land
 	 */
-	public function getLand() {
+	public function getLand(): Land {
 		return $this->land;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getName() {
+	public function getName(): string {
 		return $this->name;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getOrt() {
+	public function getOrt(): string {
 		return $this->ort;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPersonennummer() {
+	public function getPersonennummer(): string {
 		return $this->personennummer;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPlz() {
+	public function getPlz(): string {
 		return $this->plz;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPosition() {
+	public function getPosition(): string {
 		return $this->position;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPostfach() {
+	public function getPostfach(): string {
 		return $this->postfach;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPostfOrt() {
+	public function getPostfOrt(): string {
 		return $this->postfOrt;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPostfPlz() {
+	public function getPostfPlz(): string {
 		return $this->postfPlz;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getReferenzId() {
+	public function getReferenzId(): string {
 		return $this->referenzId;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getStrasse() {
+	public function getStrasse(): string {
 		return $this->strasse;
 	}
 
 	/**
 	 * @return kontakt
 	 */
-	public function getTelDurchw() {
+	public function getTelDurchw(): kontakt {
 		return $this->telDurchw;
 	}
 
 	/**
 	 * @return kontakt
 	 */
-	public function getTelFax() {
+	public function getTelFax(): kontakt {
 		return $this->telFax;
 	}
 
 	/**
 	 * @return kontakt
 	 */
-	public function getTelHandy() {
+	public function getTelHandy(): kontakt {
 		return $this->telHandy;
 	}
 
 	/**
 	 * @return kontakt
 	 */
-	public function getTelPrivat() {
+	public function getTelPrivat(): kontakt {
 		return $this->telPrivat;
 	}
 
 	/**
 	 * @return TelSonstige[]
 	 */
-	public function getTelSonstige() {
+	public function getTelSonstige(): TelSonstige[] {
 		return $this->telSonstige;
 	}
 
 	/**
 	 * @return kontakt
 	 */
-	public function getTelZentrale() {
+	public function getTelZentrale(): kontakt {
 		return $this->telZentrale;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getTitel() {
+	public function getTitel(): string {
 		return $this->titel;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getUrl() {
+	public function getUrl(): string {
 		return $this->url;
 	}
 
 	/**
 	 * @return UserDefinedAnyfield[]
 	 */
-	public function getUserDefinedAnyfield() {
+	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * @return UserDefinedExtend[]
 	 */
-	public function getUserDefinedExtend() {
+	public function getUserDefinedExtend(): UserDefinedExtend[] {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * @return UserDefinedSimplefield[]
 	 */
-	public function getUserDefinedSimplefield() {
+	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getVorname() {
+	public function getVorname(): string {
 		return $this->vorname;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getZusatzfeld() {
+	public function getZusatzfeld(): string {
 		return $this->zusatzfeld;
 	}
 
@@ -453,7 +454,7 @@ class Kontaktperson {
 	 * @param boolean $adressfreigabe Setter for adressfreigabe
 	 * @return Kontaktperson
 	 */
-	public function setAdressfreigabe($adressfreigabe) {
+	public function setAdressfreigabe(bool $adressfreigabe) {
 		$this->adressfreigabe = $adressfreigabe;
 		return $this;
 	}
@@ -462,7 +463,7 @@ class Kontaktperson {
 	 * @param string $anrede Setter for anrede
 	 * @return Kontaktperson
 	 */
-	public function setAnrede($anrede) {
+	public function setAnrede(string $anrede) {
 		$this->anrede = $anrede;
 		return $this;
 	}
@@ -471,7 +472,7 @@ class Kontaktperson {
 	 * @param string $anredeBrief Setter for anredeBrief
 	 * @return Kontaktperson
 	 */
-	public function setAnredeBrief($anredeBrief) {
+	public function setAnredeBrief(string $anredeBrief) {
 		$this->anredeBrief = $anredeBrief;
 		return $this;
 	}
@@ -525,7 +526,7 @@ class Kontaktperson {
 	 * @param string $firma Setter for firma
 	 * @return Kontaktperson
 	 */
-	public function setFirma($firma) {
+	public function setFirma(string $firma) {
 		$this->firma = $firma;
 		return $this;
 	}
@@ -543,7 +544,7 @@ class Kontaktperson {
 	 * @param string $freitextfeld Setter for freitextfeld
 	 * @return Kontaktperson
 	 */
-	public function setFreitextfeld($freitextfeld) {
+	public function setFreitextfeld(string $freitextfeld) {
 		$this->freitextfeld = $freitextfeld;
 		return $this;
 	}
@@ -552,7 +553,7 @@ class Kontaktperson {
 	 * @param string $hausnummer Setter for hausnummer
 	 * @return Kontaktperson
 	 */
-	public function setHausnummer($hausnummer) {
+	public function setHausnummer(string $hausnummer) {
 		$this->hausnummer = $hausnummer;
 		return $this;
 	}
@@ -561,7 +562,7 @@ class Kontaktperson {
 	 * @param string $immobilientreuhaenderid Setter for immobilientreuhaenderid
 	 * @return Kontaktperson
 	 */
-	public function setImmobilientreuhaenderid($immobilientreuhaenderid) {
+	public function setImmobilientreuhaenderid(string $immobilientreuhaenderid) {
 		$this->immobilientreuhaenderid = $immobilientreuhaenderid;
 		return $this;
 	}
@@ -579,7 +580,7 @@ class Kontaktperson {
 	 * @param string $name Setter for name
 	 * @return Kontaktperson
 	 */
-	public function setName($name) {
+	public function setName(string $name) {
 		$this->name = $name;
 		return $this;
 	}
@@ -588,7 +589,7 @@ class Kontaktperson {
 	 * @param string $ort Setter for ort
 	 * @return Kontaktperson
 	 */
-	public function setOrt($ort) {
+	public function setOrt(string $ort) {
 		$this->ort = $ort;
 		return $this;
 	}
@@ -597,7 +598,7 @@ class Kontaktperson {
 	 * @param string $personennummer Setter for personennummer
 	 * @return Kontaktperson
 	 */
-	public function setPersonennummer($personennummer) {
+	public function setPersonennummer(string $personennummer) {
 		$this->personennummer = $personennummer;
 		return $this;
 	}
@@ -606,7 +607,7 @@ class Kontaktperson {
 	 * @param string $plz Setter for plz
 	 * @return Kontaktperson
 	 */
-	public function setPlz($plz) {
+	public function setPlz(string $plz) {
 		$this->plz = $plz;
 		return $this;
 	}
@@ -615,7 +616,7 @@ class Kontaktperson {
 	 * @param string $position Setter for position
 	 * @return Kontaktperson
 	 */
-	public function setPosition($position) {
+	public function setPosition(string $position) {
 		$this->position = $position;
 		return $this;
 	}
@@ -624,7 +625,7 @@ class Kontaktperson {
 	 * @param string $postfach Setter for postfach
 	 * @return Kontaktperson
 	 */
-	public function setPostfach($postfach) {
+	public function setPostfach(string $postfach) {
 		$this->postfach = $postfach;
 		return $this;
 	}
@@ -633,7 +634,7 @@ class Kontaktperson {
 	 * @param string $postfOrt Setter for postfOrt
 	 * @return Kontaktperson
 	 */
-	public function setPostfOrt($postfOrt) {
+	public function setPostfOrt(string $postfOrt) {
 		$this->postfOrt = $postfOrt;
 		return $this;
 	}
@@ -642,7 +643,7 @@ class Kontaktperson {
 	 * @param string $postfPlz Setter for postfPlz
 	 * @return Kontaktperson
 	 */
-	public function setPostfPlz($postfPlz) {
+	public function setPostfPlz(string $postfPlz) {
 		$this->postfPlz = $postfPlz;
 		return $this;
 	}
@@ -651,7 +652,7 @@ class Kontaktperson {
 	 * @param string $referenzId Setter for referenzId
 	 * @return Kontaktperson
 	 */
-	public function setReferenzId($referenzId) {
+	public function setReferenzId(string $referenzId) {
 		$this->referenzId = $referenzId;
 		return $this;
 	}
@@ -660,7 +661,7 @@ class Kontaktperson {
 	 * @param string $strasse Setter for strasse
 	 * @return Kontaktperson
 	 */
-	public function setStrasse($strasse) {
+	public function setStrasse(string $strasse) {
 		$this->strasse = $strasse;
 		return $this;
 	}
@@ -723,7 +724,7 @@ class Kontaktperson {
 	 * @param string $titel Setter for titel
 	 * @return Kontaktperson
 	 */
-	public function setTitel($titel) {
+	public function setTitel(string $titel) {
 		$this->titel = $titel;
 		return $this;
 	}
@@ -732,7 +733,7 @@ class Kontaktperson {
 	 * @param string $url Setter for url
 	 * @return Kontaktperson
 	 */
-	public function setUrl($url) {
+	public function setUrl(string $url) {
 		$this->url = $url;
 		return $this;
 	}
@@ -768,7 +769,7 @@ class Kontaktperson {
 	 * @param string $vorname Setter for vorname
 	 * @return Kontaktperson
 	 */
-	public function setVorname($vorname) {
+	public function setVorname(string $vorname) {
 		$this->vorname = $vorname;
 		return $this;
 	}
@@ -777,7 +778,7 @@ class Kontaktperson {
 	 * @param string $zusatzfeld Setter for zusatzfeld
 	 * @return Kontaktperson
 	 */
-	public function setZusatzfeld($zusatzfeld) {
+	public function setZusatzfeld(string $zusatzfeld) {
 		$this->zusatzfeld = $zusatzfeld;
 		return $this;
 	}

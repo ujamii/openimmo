@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class LandUndForstwirtschaft {
 
@@ -13,7 +14,7 @@ class LandUndForstwirtschaft {
 	/**
 	 * @return string
 	 */
-	public function getLandTyp() {
+	public function getLandTyp(): string {
 		return $this->landTyp;
 	}
 
@@ -21,7 +22,7 @@ class LandUndForstwirtschaft {
 	 * @param string $landTyp Setter for landTyp
 	 * @return LandUndForstwirtschaft
 	 */
-	public function setLandTyp($landTyp) {
+	public function setLandTyp(string $landTyp) {
 		$this->landTyp = $landTyp;
 		return $this;
 	}

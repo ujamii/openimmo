@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Kueche {
 
@@ -23,21 +24,21 @@ class Kueche {
 	/**
 	 * @return boolean
 	 */
-	public function getEbk() {
+	public function getEbk(): bool {
 		return $this->ebk;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getOffen() {
+	public function getOffen(): bool {
 		return $this->offen;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getPantry() {
+	public function getPantry(): bool {
 		return $this->pantry;
 	}
 
@@ -45,7 +46,7 @@ class Kueche {
 	 * @param boolean $ebk Setter for ebk
 	 * @return Kueche
 	 */
-	public function setEbk($ebk) {
+	public function setEbk(bool $ebk) {
 		$this->ebk = $ebk;
 		return $this;
 	}
@@ -54,7 +55,7 @@ class Kueche {
 	 * @param boolean $offen Setter for offen
 	 * @return Kueche
 	 */
-	public function setOffen($offen) {
+	public function setOffen(bool $offen) {
 		$this->offen = $offen;
 		return $this;
 	}
@@ -63,7 +64,7 @@ class Kueche {
 	 * @param boolean $pantry Setter for pantry
 	 * @return Kueche
 	 */
-	public function setPantry($pantry) {
+	public function setPantry(bool $pantry) {
 		$this->pantry = $pantry;
 		return $this;
 	}

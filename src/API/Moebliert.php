@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Moebliert {
 
@@ -13,7 +14,7 @@ class Moebliert {
 	/**
 	 * @return string
 	 */
-	public function getMoeb() {
+	public function getMoeb(): string {
 		return $this->moeb;
 	}
 
@@ -21,7 +22,7 @@ class Moebliert {
 	 * @param string $moeb Setter for moeb
 	 * @return Moebliert
 	 */
-	public function setMoeb($moeb) {
+	public function setMoeb(string $moeb) {
 		$this->moeb = $moeb;
 		return $this;
 	}

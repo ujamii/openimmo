@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class LageGebiet {
 
@@ -13,7 +14,7 @@ class LageGebiet {
 	/**
 	 * @return string
 	 */
-	public function getGebiete() {
+	public function getGebiete(): string {
 		return $this->gebiete;
 	}
 
@@ -21,7 +22,7 @@ class LageGebiet {
 	 * @param string $gebiete Setter for gebiete
 	 * @return LageGebiet
 	 */
-	public function setGebiete($gebiete) {
+	public function setGebiete(string $gebiete) {
 		$this->gebiete = $gebiete;
 		return $this;
 	}

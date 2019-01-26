@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class ZustandAngaben {
 
@@ -78,98 +79,98 @@ class ZustandAngaben {
 	/**
 	 * @return Alter
 	 */
-	public function getAlter() {
+	public function getAlter(): Alter {
 		return $this->alter;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getAltlasten() {
+	public function getAltlasten(): string {
 		return $this->altlasten;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getBaujahr() {
+	public function getBaujahr(): string {
 		return $this->baujahr;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getBauzone() {
+	public function getBauzone(): string {
 		return $this->bauzone;
 	}
 
 	/**
 	 * @return BebaubarNach
 	 */
-	public function getBebaubarNach() {
+	public function getBebaubarNach(): BebaubarNach {
 		return $this->bebaubarNach;
 	}
 
 	/**
 	 * @return Energiepass[]
 	 */
-	public function getEnergiepass() {
+	public function getEnergiepass(): Energiepass[] {
 		return $this->energiepass;
 	}
 
 	/**
 	 * @return Erschliessung
 	 */
-	public function getErschliessung() {
+	public function getErschliessung(): Erschliessung {
 		return $this->erschliessung;
 	}
 
 	/**
 	 * @return ErschliessungUmfang
 	 */
-	public function getErschliessungUmfang() {
+	public function getErschliessungUmfang(): ErschliessungUmfang {
 		return $this->erschliessungUmfang;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getLetztemodernisierung() {
+	public function getLetztemodernisierung(): string {
 		return $this->letztemodernisierung;
 	}
 
 	/**
 	 * @return UserDefinedAnyfield[]
 	 */
-	public function getUserDefinedAnyfield() {
+	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * @return UserDefinedExtend[]
 	 */
-	public function getUserDefinedExtend() {
+	public function getUserDefinedExtend(): UserDefinedExtend[] {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * @return UserDefinedSimplefield[]
 	 */
-	public function getUserDefinedSimplefield() {
+	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return Verkaufstatus
 	 */
-	public function getVerkaufstatus() {
+	public function getVerkaufstatus(): Verkaufstatus {
 		return $this->verkaufstatus;
 	}
 
 	/**
 	 * @return Zustand
 	 */
-	public function getZustand() {
+	public function getZustand(): Zustand {
 		return $this->zustand;
 	}
 
@@ -186,7 +187,7 @@ class ZustandAngaben {
 	 * @param string $altlasten Setter for altlasten
 	 * @return ZustandAngaben
 	 */
-	public function setAltlasten($altlasten) {
+	public function setAltlasten(string $altlasten) {
 		$this->altlasten = $altlasten;
 		return $this;
 	}
@@ -195,7 +196,7 @@ class ZustandAngaben {
 	 * @param string $baujahr Setter for baujahr
 	 * @return ZustandAngaben
 	 */
-	public function setBaujahr($baujahr) {
+	public function setBaujahr(string $baujahr) {
 		$this->baujahr = $baujahr;
 		return $this;
 	}
@@ -204,7 +205,7 @@ class ZustandAngaben {
 	 * @param string $bauzone Setter for bauzone
 	 * @return ZustandAngaben
 	 */
-	public function setBauzone($bauzone) {
+	public function setBauzone(string $bauzone) {
 		$this->bauzone = $bauzone;
 		return $this;
 	}
@@ -249,7 +250,7 @@ class ZustandAngaben {
 	 * @param string $letztemodernisierung Setter for letztemodernisierung
 	 * @return ZustandAngaben
 	 */
-	public function setLetztemodernisierung($letztemodernisierung) {
+	public function setLetztemodernisierung(string $letztemodernisierung) {
 		$this->letztemodernisierung = $letztemodernisierung;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Serviceleistungen {
 
@@ -33,35 +34,35 @@ class Serviceleistungen {
 	/**
 	 * @return boolean
 	 */
-	public function getBetreutesWohnen() {
+	public function getBetreutesWohnen(): bool {
 		return $this->betreutesWohnen;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getCatering() {
+	public function getCatering(): bool {
 		return $this->catering;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getEinkauf() {
+	public function getEinkauf(): bool {
 		return $this->einkauf;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getReinigung() {
+	public function getReinigung(): bool {
 		return $this->reinigung;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWachdienst() {
+	public function getWachdienst(): bool {
 		return $this->wachdienst;
 	}
 
@@ -69,7 +70,7 @@ class Serviceleistungen {
 	 * @param boolean $betreutesWohnen Setter for betreutesWohnen
 	 * @return Serviceleistungen
 	 */
-	public function setBetreutesWohnen($betreutesWohnen) {
+	public function setBetreutesWohnen(bool $betreutesWohnen) {
 		$this->betreutesWohnen = $betreutesWohnen;
 		return $this;
 	}
@@ -78,7 +79,7 @@ class Serviceleistungen {
 	 * @param boolean $catering Setter for catering
 	 * @return Serviceleistungen
 	 */
-	public function setCatering($catering) {
+	public function setCatering(bool $catering) {
 		$this->catering = $catering;
 		return $this;
 	}
@@ -87,7 +88,7 @@ class Serviceleistungen {
 	 * @param boolean $einkauf Setter for einkauf
 	 * @return Serviceleistungen
 	 */
-	public function setEinkauf($einkauf) {
+	public function setEinkauf(bool $einkauf) {
 		$this->einkauf = $einkauf;
 		return $this;
 	}
@@ -96,7 +97,7 @@ class Serviceleistungen {
 	 * @param boolean $reinigung Setter for reinigung
 	 * @return Serviceleistungen
 	 */
-	public function setReinigung($reinigung) {
+	public function setReinigung(bool $reinigung) {
 		$this->reinigung = $reinigung;
 		return $this;
 	}
@@ -105,7 +106,7 @@ class Serviceleistungen {
 	 * @param boolean $wachdienst Setter for wachdienst
 	 * @return Serviceleistungen
 	 */
-	public function setWachdienst($wachdienst) {
+	public function setWachdienst(bool $wachdienst) {
 		$this->wachdienst = $wachdienst;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Einzelhandel {
 
@@ -13,7 +14,7 @@ class Einzelhandel {
 	/**
 	 * @return string
 	 */
-	public function getHandelTyp() {
+	public function getHandelTyp(): string {
 		return $this->handelTyp;
 	}
 
@@ -21,7 +22,7 @@ class Einzelhandel {
 	 * @param string $handelTyp Setter for handelTyp
 	 * @return Einzelhandel
 	 */
-	public function setHandelTyp($handelTyp) {
+	public function setHandelTyp(string $handelTyp) {
 		$this->handelTyp = $handelTyp;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Master {
 
@@ -13,7 +14,7 @@ class Master {
 	/**
 	 * @return boolean
 	 */
-	public function getVisible() {
+	public function getVisible(): bool {
 		return $this->visible;
 	}
 
@@ -21,7 +22,7 @@ class Master {
 	 * @param boolean $visible Setter for visible
 	 * @return Master
 	 */
-	public function setVisible($visible) {
+	public function setVisible(bool $visible) {
 		$this->visible = $visible;
 		return $this;
 	}

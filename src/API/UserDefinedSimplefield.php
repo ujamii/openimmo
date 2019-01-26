@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class UserDefinedSimplefield {
 
@@ -13,7 +14,7 @@ class UserDefinedSimplefield {
 	/**
 	 * @return string
 	 */
-	public function getFeldname() {
+	public function getFeldname(): string {
 		return $this->feldname;
 	}
 
@@ -21,7 +22,7 @@ class UserDefinedSimplefield {
 	 * @param string $feldname Setter for feldname
 	 * @return UserDefinedSimplefield
 	 */
-	public function setFeldname($feldname) {
+	public function setFeldname(string $feldname) {
 		$this->feldname = $feldname;
 		return $this;
 	}

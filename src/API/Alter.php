@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Alter {
 
@@ -13,7 +14,7 @@ class Alter {
 	/**
 	 * @return string
 	 */
-	public function getAlterAttr() {
+	public function getAlterAttr(): string {
 		return $this->alterAttr;
 	}
 
@@ -21,7 +22,7 @@ class Alter {
 	 * @param string $alterAttr Setter for alterAttr
 	 * @return Alter
 	 */
-	public function setAlterAttr($alterAttr) {
+	public function setAlterAttr(string $alterAttr) {
 		$this->alterAttr = $alterAttr;
 		return $this;
 	}

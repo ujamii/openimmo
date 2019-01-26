@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Bauweise {
 
@@ -23,21 +24,21 @@ class Bauweise {
 	/**
 	 * @return boolean
 	 */
-	public function getFertigteile() {
+	public function getFertigteile(): bool {
 		return $this->fertigteile;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHolz() {
+	public function getHolz(): bool {
 		return $this->holz;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getMassiv() {
+	public function getMassiv(): bool {
 		return $this->massiv;
 	}
 
@@ -45,7 +46,7 @@ class Bauweise {
 	 * @param boolean $fertigteile Setter for fertigteile
 	 * @return Bauweise
 	 */
-	public function setFertigteile($fertigteile) {
+	public function setFertigteile(bool $fertigteile) {
 		$this->fertigteile = $fertigteile;
 		return $this;
 	}
@@ -54,7 +55,7 @@ class Bauweise {
 	 * @param boolean $holz Setter for holz
 	 * @return Bauweise
 	 */
-	public function setHolz($holz) {
+	public function setHolz(bool $holz) {
 		$this->holz = $holz;
 		return $this;
 	}
@@ -63,7 +64,7 @@ class Bauweise {
 	 * @param boolean $massiv Setter for massiv
 	 * @return Bauweise
 	 */
-	public function setMassiv($massiv) {
+	public function setMassiv(bool $massiv) {
 		$this->massiv = $massiv;
 		return $this;
 	}

@@ -13,7 +13,7 @@ use gossi\codegen\model\PhpClass;
 use gossi\codegen\model\PhpMethod;
 use gossi\codegen\model\PhpParameter;
 use gossi\codegen\model\PhpProperty;
-use gossi\docblock\tags\ReturnTag;
+use gossi\docblock\tags\TagFactory;
 
 /**
  * Class ApiGenerator
@@ -22,7 +22,16 @@ use gossi\docblock\tags\ReturnTag;
 class ApiGenerator
 {
 
+    //TODO: make this configurable
     const TARGET_FOLDER = './src/API/';
+
+    /**
+     * @var array
+     */
+    protected $generatorConfig = [
+        'generateScalarTypeHints' => true,
+        'generateReturnTypeHints' => true
+    ];
 
     /**
      * ApiGenerator constructor.
@@ -58,7 +67,9 @@ class ApiGenerator
 
         $class = new PhpClass();
         $class
-            ->setQualifiedName('Ujamii\\OpenImmo\\API\\' . $className);
+            ->setQualifiedName('Ujamii\\OpenImmo\\API\\' . $className)
+            ->getDocblock()->appendTag(TagFactory::create('package', 'Ujamii\OpenImmo\API'))
+        ;
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
             // TODO: extension of class
         } else {
@@ -71,7 +82,7 @@ class ApiGenerator
             }
         }
 
-        $generator = new CodeFileGenerator();
+        $generator = new CodeFileGenerator($this->getGeneratorConfig());
         $code      = $generator->generate($class);
         file_put_contents(self::TARGET_FOLDER . $className . '.php', $code);
     }
@@ -142,7 +153,7 @@ class ApiGenerator
         $setterCode = '$this->' . $property->getName() . ' = $' . $property->getName() . ';';
         if ($fluentApi) {
             $setterCode .= PHP_EOL . 'return $this;';
-            $setter->getDocblock()->appendTag(ReturnTag::create($class->getName()));
+            $setter->getDocblock()->appendTag(TagFactory::create('return', $class->getName()));
         }
         $setter->setBody($setterCode);
         $class->setMethod($setter);
@@ -177,6 +188,22 @@ class ApiGenerator
     protected function wipeTargetFolder()
     {
         array_map('unlink', glob(self::TARGET_FOLDER . '/*.php'));
+    }
+
+    /**
+     * @return array
+     */
+    public function getGeneratorConfig(): array
+    {
+        return $this->generatorConfig;
+    }
+
+    /**
+     * @param array $generatorConfig
+     */
+    public function setGeneratorConfig(array $generatorConfig): void
+    {
+        $this->generatorConfig = $generatorConfig;
     }
 
 }

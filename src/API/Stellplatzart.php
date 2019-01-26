@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Stellplatzart {
 
@@ -38,42 +39,42 @@ class Stellplatzart {
 	/**
 	 * @return boolean
 	 */
-	public function getCarport() {
+	public function getCarport(): bool {
 		return $this->carport;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getDuplex() {
+	public function getDuplex(): bool {
 		return $this->duplex;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFreiplatz() {
+	public function getFreiplatz(): bool {
 		return $this->freiplatz;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGarage() {
+	public function getGarage(): bool {
 		return $this->garage;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getParkhaus() {
+	public function getParkhaus(): bool {
 		return $this->parkhaus;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getTiefgarage() {
+	public function getTiefgarage(): bool {
 		return $this->tiefgarage;
 	}
 
@@ -81,7 +82,7 @@ class Stellplatzart {
 	 * @param boolean $carport Setter for carport
 	 * @return Stellplatzart
 	 */
-	public function setCarport($carport) {
+	public function setCarport(bool $carport) {
 		$this->carport = $carport;
 		return $this;
 	}
@@ -90,7 +91,7 @@ class Stellplatzart {
 	 * @param boolean $duplex Setter for duplex
 	 * @return Stellplatzart
 	 */
-	public function setDuplex($duplex) {
+	public function setDuplex(bool $duplex) {
 		$this->duplex = $duplex;
 		return $this;
 	}
@@ -99,7 +100,7 @@ class Stellplatzart {
 	 * @param boolean $freiplatz Setter for freiplatz
 	 * @return Stellplatzart
 	 */
-	public function setFreiplatz($freiplatz) {
+	public function setFreiplatz(bool $freiplatz) {
 		$this->freiplatz = $freiplatz;
 		return $this;
 	}
@@ -108,7 +109,7 @@ class Stellplatzart {
 	 * @param boolean $garage Setter for garage
 	 * @return Stellplatzart
 	 */
-	public function setGarage($garage) {
+	public function setGarage(bool $garage) {
 		$this->garage = $garage;
 		return $this;
 	}
@@ -117,7 +118,7 @@ class Stellplatzart {
 	 * @param boolean $parkhaus Setter for parkhaus
 	 * @return Stellplatzart
 	 */
-	public function setParkhaus($parkhaus) {
+	public function setParkhaus(bool $parkhaus) {
 		$this->parkhaus = $parkhaus;
 		return $this;
 	}
@@ -126,7 +127,7 @@ class Stellplatzart {
 	 * @param boolean $tiefgarage Setter for tiefgarage
 	 * @return Stellplatzart
 	 */
-	public function setTiefgarage($tiefgarage) {
+	public function setTiefgarage(bool $tiefgarage) {
 		$this->tiefgarage = $tiefgarage;
 		return $this;
 	}

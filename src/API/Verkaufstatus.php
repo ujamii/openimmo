@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Verkaufstatus {
 
@@ -13,7 +14,7 @@ class Verkaufstatus {
 	/**
 	 * @return string
 	 */
-	public function getStand() {
+	public function getStand(): string {
 		return $this->stand;
 	}
 
@@ -21,7 +22,7 @@ class Verkaufstatus {
 	 * @param string $stand Setter for stand
 	 * @return Verkaufstatus
 	 */
-	public function setStand($stand) {
+	public function setStand(string $stand) {
 		$this->stand = $stand;
 		return $this;
 	}

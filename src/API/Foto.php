@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Foto {
 
@@ -23,21 +24,21 @@ class Foto {
 	/**
 	 * @return Daten
 	 */
-	public function getDaten() {
+	public function getDaten(): Daten {
 		return $this->daten;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFormat() {
+	public function getFormat(): string {
 		return $this->format;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getLocation() {
+	public function getLocation(): string {
 		return $this->location;
 	}
 
@@ -54,7 +55,7 @@ class Foto {
 	 * @param string $format Setter for format
 	 * @return Foto
 	 */
-	public function setFormat($format) {
+	public function setFormat(string $format) {
 		$this->format = $format;
 		return $this;
 	}
@@ -63,7 +64,7 @@ class Foto {
 	 * @param string $location Setter for location
 	 * @return Foto
 	 */
-	public function setLocation($location) {
+	public function setLocation(string $location) {
 		$this->location = $location;
 		return $this;
 	}

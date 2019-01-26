@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Ausblick {
 
@@ -13,7 +14,7 @@ class Ausblick {
 	/**
 	 * @return string
 	 */
-	public function getBlick() {
+	public function getBlick(): string {
 		return $this->blick;
 	}
 
@@ -21,7 +22,7 @@ class Ausblick {
 	 * @param string $blick Setter for blick
 	 * @return Ausblick
 	 */
-	public function setBlick($blick) {
+	public function setBlick(string $blick) {
 		$this->blick = $blick;
 		return $this;
 	}

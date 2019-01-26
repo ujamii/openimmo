@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Land {
 
@@ -13,7 +14,7 @@ class Land {
 	/**
 	 * @return string
 	 */
-	public function getIsoLand() {
+	public function getIsoLand(): string {
 		return $this->isoLand;
 	}
 
@@ -21,7 +22,7 @@ class Land {
 	 * @param string $isoLand Setter for isoLand
 	 * @return Land
 	 */
-	public function setIsoLand($isoLand) {
+	public function setIsoLand(string $isoLand) {
 		$this->isoLand = $isoLand;
 		return $this;
 	}

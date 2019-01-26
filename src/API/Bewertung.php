@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Bewertung {
 
@@ -13,7 +14,7 @@ class Bewertung {
 	/**
 	 * @return []
 	 */
-	public function getFeld() {
+	public function getFeld(): [] {
 		return $this->feld;
 	}
 

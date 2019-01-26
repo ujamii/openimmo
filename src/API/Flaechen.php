@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Flaechen {
 
@@ -253,343 +254,343 @@ class Flaechen {
 	/**
 	 * @return decimal
 	 */
-	public function getAnzahlBadezimmer() {
+	public function getAnzahlBadezimmer(): decimal {
 		return $this->anzahlBadezimmer;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getAnzahlBalkone() {
+	public function getAnzahlBalkone(): decimal {
 		return $this->anzahlBalkone;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getAnzahlBetten() {
+	public function getAnzahlBetten(): decimal {
 		return $this->anzahlBetten;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getAnzahlGewerbeeinheiten() {
+	public function getAnzahlGewerbeeinheiten(): decimal {
 		return $this->anzahlGewerbeeinheiten;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getAnzahlLogia() {
+	public function getAnzahlLogia(): decimal {
 		return $this->anzahlLogia;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getAnzahlSchlafzimmer() {
+	public function getAnzahlSchlafzimmer(): decimal {
 		return $this->anzahlSchlafzimmer;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getAnzahlSepWc() {
+	public function getAnzahlSepWc(): decimal {
 		return $this->anzahlSepWc;
 	}
 
 	/**
 	 * @return positiveInteger
 	 */
-	public function getAnzahlStellplaetze() {
+	public function getAnzahlStellplaetze(): positiveInteger {
 		return $this->anzahlStellplaetze;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getAnzahlTagungsraeume() {
+	public function getAnzahlTagungsraeume(): decimal {
 		return $this->anzahlTagungsraeume;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getAnzahlTerrassen() {
+	public function getAnzahlTerrassen(): decimal {
 		return $this->anzahlTerrassen;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getAnzahlWohneinheiten() {
+	public function getAnzahlWohneinheiten(): decimal {
 		return $this->anzahlWohneinheiten;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getAnzahlWohnSchlafzimmer() {
+	public function getAnzahlWohnSchlafzimmer(): decimal {
 		return $this->anzahlWohnSchlafzimmer;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getAnzahlZimmer() {
+	public function getAnzahlZimmer(): decimal {
 		return $this->anzahlZimmer;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getAusnuetzungsziffer() {
+	public function getAusnuetzungsziffer(): decimal {
 		return $this->ausnuetzungsziffer;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getBalkonTerrasseFlaeche() {
+	public function getBalkonTerrasseFlaeche(): decimal {
 		return $this->balkonTerrasseFlaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getBeheizbareFlaeche() {
+	public function getBeheizbareFlaeche(): decimal {
 		return $this->beheizbareFlaeche;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getBgf() {
+	public function getBgf(): string {
 		return $this->bgf;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getBmz() {
+	public function getBmz(): string {
 		return $this->bmz;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getBueroflaeche() {
+	public function getBueroflaeche(): decimal {
 		return $this->bueroflaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getBueroteilflaeche() {
+	public function getBueroteilflaeche(): decimal {
 		return $this->bueroteilflaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getDachbodenflaeche() {
+	public function getDachbodenflaeche(): decimal {
 		return $this->dachbodenflaeche;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getEinliegerwohnung() {
+	public function getEinliegerwohnung(): bool {
 		return $this->einliegerwohnung;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getFensterfront() {
+	public function getFensterfront(): decimal {
 		return $this->fensterfront;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getFensterfrontQm() {
+	public function getFensterfrontQm(): decimal {
 		return $this->fensterfrontQm;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getFlaechebis() {
+	public function getFlaechebis(): decimal {
 		return $this->flaechebis;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getFlaechevon() {
+	public function getFlaechevon(): decimal {
 		return $this->flaechevon;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getFreiflaeche() {
+	public function getFreiflaeche(): decimal {
 		return $this->freiflaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getGartenflaeche() {
+	public function getGartenflaeche(): decimal {
 		return $this->gartenflaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getGastroflaeche() {
+	public function getGastroflaeche(): decimal {
 		return $this->gastroflaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getGesamtflaeche() {
+	public function getGesamtflaeche(): decimal {
 		return $this->gesamtflaeche;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGfz() {
+	public function getGfz(): string {
 		return $this->gfz;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getGrundstuecksflaeche() {
+	public function getGrundstuecksflaeche(): decimal {
 		return $this->grundstuecksflaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getGrundstuecksfront() {
+	public function getGrundstuecksfront(): decimal {
 		return $this->grundstuecksfront;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGrz() {
+	public function getGrz(): string {
 		return $this->grz;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getKellerflaeche() {
+	public function getKellerflaeche(): decimal {
 		return $this->kellerflaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getKubatur() {
+	public function getKubatur(): decimal {
 		return $this->kubatur;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getLadenflaeche() {
+	public function getLadenflaeche(): decimal {
 		return $this->ladenflaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getLagerflaeche() {
+	public function getLagerflaeche(): decimal {
 		return $this->lagerflaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getNutzflaeche() {
+	public function getNutzflaeche(): decimal {
 		return $this->nutzflaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getPlaetzeGastraum() {
+	public function getPlaetzeGastraum(): decimal {
 		return $this->plaetzeGastraum;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getSonstflaeche() {
+	public function getSonstflaeche(): decimal {
 		return $this->sonstflaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getTeilbarAb() {
+	public function getTeilbarAb(): decimal {
 		return $this->teilbarAb;
 	}
 
 	/**
 	 * @return UserDefinedAnyfield[]
 	 */
-	public function getUserDefinedAnyfield() {
+	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * @return UserDefinedExtend[]
 	 */
-	public function getUserDefinedExtend() {
+	public function getUserDefinedExtend(): UserDefinedExtend[] {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * @return UserDefinedSimplefield[]
 	 */
-	public function getUserDefinedSimplefield() {
+	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getVerkaufsflaeche() {
+	public function getVerkaufsflaeche(): decimal {
 		return $this->verkaufsflaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getVermietbareFlaeche() {
+	public function getVermietbareFlaeche(): decimal {
 		return $this->vermietbareFlaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getVerwaltungsflaeche() {
+	public function getVerwaltungsflaeche(): decimal {
 		return $this->verwaltungsflaeche;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getWohnflaeche() {
+	public function getWohnflaeche(): decimal {
 		return $this->wohnflaeche;
 	}
 
@@ -741,7 +742,7 @@ class Flaechen {
 	 * @param string $bgf Setter for bgf
 	 * @return Flaechen
 	 */
-	public function setBgf($bgf) {
+	public function setBgf(string $bgf) {
 		$this->bgf = $bgf;
 		return $this;
 	}
@@ -750,7 +751,7 @@ class Flaechen {
 	 * @param string $bmz Setter for bmz
 	 * @return Flaechen
 	 */
-	public function setBmz($bmz) {
+	public function setBmz(string $bmz) {
 		$this->bmz = $bmz;
 		return $this;
 	}
@@ -786,7 +787,7 @@ class Flaechen {
 	 * @param boolean $einliegerwohnung Setter for einliegerwohnung
 	 * @return Flaechen
 	 */
-	public function setEinliegerwohnung($einliegerwohnung) {
+	public function setEinliegerwohnung(bool $einliegerwohnung) {
 		$this->einliegerwohnung = $einliegerwohnung;
 		return $this;
 	}
@@ -867,7 +868,7 @@ class Flaechen {
 	 * @param string $gfz Setter for gfz
 	 * @return Flaechen
 	 */
-	public function setGfz($gfz) {
+	public function setGfz(string $gfz) {
 		$this->gfz = $gfz;
 		return $this;
 	}
@@ -894,7 +895,7 @@ class Flaechen {
 	 * @param string $grz Setter for grz
 	 * @return Flaechen
 	 */
-	public function setGrz($grz) {
+	public function setGrz(string $grz) {
 		$this->grz = $grz;
 		return $this;
 	}

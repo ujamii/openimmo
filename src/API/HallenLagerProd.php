@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class HallenLagerProd {
 
@@ -13,7 +14,7 @@ class HallenLagerProd {
 	/**
 	 * @return string
 	 */
-	public function getHallenTyp() {
+	public function getHallenTyp(): string {
 		return $this->hallenTyp;
 	}
 
@@ -21,7 +22,7 @@ class HallenLagerProd {
 	 * @param string $hallenTyp Setter for hallenTyp
 	 * @return HallenLagerProd
 	 */
-	public function setHallenTyp($hallenTyp) {
+	public function setHallenTyp(string $hallenTyp) {
 		$this->hallenTyp = $hallenTyp;
 		return $this;
 	}

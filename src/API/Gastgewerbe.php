@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Gastgewerbe {
 
@@ -13,7 +14,7 @@ class Gastgewerbe {
 	/**
 	 * @return string
 	 */
-	public function getGastgewTyp() {
+	public function getGastgewTyp(): string {
 		return $this->gastgewTyp;
 	}
 
@@ -21,7 +22,7 @@ class Gastgewerbe {
 	 * @param string $gastgewTyp Setter for gastgewTyp
 	 * @return Gastgewerbe
 	 */
-	public function setGastgewTyp($gastgewTyp) {
+	public function setGastgewTyp(string $gastgewTyp) {
 		$this->gastgewTyp = $gastgewTyp;
 		return $this;
 	}

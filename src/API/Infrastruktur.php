@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Infrastruktur {
 
@@ -43,49 +44,49 @@ class Infrastruktur {
 	/**
 	 * @return Ausblick
 	 */
-	public function getAusblick() {
+	public function getAusblick(): Ausblick {
 		return $this->ausblick;
 	}
 
 	/**
 	 * @return Distanzen[]
 	 */
-	public function getDistanzen() {
+	public function getDistanzen(): Distanzen[] {
 		return $this->distanzen;
 	}
 
 	/**
 	 * @return DistanzenSport[]
 	 */
-	public function getDistanzenSport() {
+	public function getDistanzenSport(): DistanzenSport[] {
 		return $this->distanzenSport;
 	}
 
 	/**
 	 * @return UserDefinedAnyfield[]
 	 */
-	public function getUserDefinedAnyfield() {
+	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * @return UserDefinedExtend[]
 	 */
-	public function getUserDefinedExtend() {
+	public function getUserDefinedExtend(): UserDefinedExtend[] {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * @return UserDefinedSimplefield[]
 	 */
-	public function getUserDefinedSimplefield() {
+	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getZulieferung() {
+	public function getZulieferung(): bool {
 		return $this->zulieferung;
 	}
 
@@ -147,7 +148,7 @@ class Infrastruktur {
 	 * @param boolean $zulieferung Setter for zulieferung
 	 * @return Infrastruktur
 	 */
-	public function setZulieferung($zulieferung) {
+	public function setZulieferung(bool $zulieferung) {
 		$this->zulieferung = $zulieferung;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Parken {
 
@@ -13,7 +14,7 @@ class Parken {
 	/**
 	 * @return string
 	 */
-	public function getParkenTyp() {
+	public function getParkenTyp(): string {
 		return $this->parkenTyp;
 	}
 
@@ -21,7 +22,7 @@ class Parken {
 	 * @param string $parkenTyp Setter for parkenTyp
 	 * @return Parken
 	 */
-	public function setParkenTyp($parkenTyp) {
+	public function setParkenTyp(string $parkenTyp) {
 		$this->parkenTyp = $parkenTyp;
 		return $this;
 	}

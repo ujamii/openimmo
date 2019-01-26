@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Anhang {
 
@@ -38,42 +39,42 @@ class Anhang {
 	/**
 	 * @return string
 	 */
-	public function getAnhangtitel() {
+	public function getAnhangtitel(): string {
 		return $this->anhangtitel;
 	}
 
 	/**
 	 * @return Check
 	 */
-	public function getCheck() {
+	public function getCheck(): Check {
 		return $this->check;
 	}
 
 	/**
 	 * @return Daten
 	 */
-	public function getDaten() {
+	public function getDaten(): Daten {
 		return $this->daten;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFormat() {
+	public function getFormat(): string {
 		return $this->format;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGruppe() {
+	public function getGruppe(): string {
 		return $this->gruppe;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getLocation() {
+	public function getLocation(): string {
 		return $this->location;
 	}
 
@@ -81,7 +82,7 @@ class Anhang {
 	 * @param string $anhangtitel Setter for anhangtitel
 	 * @return Anhang
 	 */
-	public function setAnhangtitel($anhangtitel) {
+	public function setAnhangtitel(string $anhangtitel) {
 		$this->anhangtitel = $anhangtitel;
 		return $this;
 	}
@@ -108,7 +109,7 @@ class Anhang {
 	 * @param string $format Setter for format
 	 * @return Anhang
 	 */
-	public function setFormat($format) {
+	public function setFormat(string $format) {
 		$this->format = $format;
 		return $this;
 	}
@@ -117,7 +118,7 @@ class Anhang {
 	 * @param string $gruppe Setter for gruppe
 	 * @return Anhang
 	 */
-	public function setGruppe($gruppe) {
+	public function setGruppe(string $gruppe) {
 		$this->gruppe = $gruppe;
 		return $this;
 	}
@@ -126,7 +127,7 @@ class Anhang {
 	 * @param string $location Setter for location
 	 * @return Anhang
 	 */
-	public function setLocation($location) {
+	public function setLocation(string $location) {
 		$this->location = $location;
 		return $this;
 	}

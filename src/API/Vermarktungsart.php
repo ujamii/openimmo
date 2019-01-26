@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Vermarktungsart {
 
@@ -28,28 +29,28 @@ class Vermarktungsart {
 	/**
 	 * @return boolean
 	 */
-	public function getErbpacht() {
+	public function getErbpacht(): bool {
 		return $this->erbpacht;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKauf() {
+	public function getKauf(): bool {
 		return $this->kauf;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getLeasing() {
+	public function getLeasing(): bool {
 		return $this->leasing;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getMietePacht() {
+	public function getMietePacht(): bool {
 		return $this->mietePacht;
 	}
 
@@ -57,7 +58,7 @@ class Vermarktungsart {
 	 * @param boolean $erbpacht Setter for erbpacht
 	 * @return Vermarktungsart
 	 */
-	public function setErbpacht($erbpacht) {
+	public function setErbpacht(bool $erbpacht) {
 		$this->erbpacht = $erbpacht;
 		return $this;
 	}
@@ -66,7 +67,7 @@ class Vermarktungsart {
 	 * @param boolean $kauf Setter for kauf
 	 * @return Vermarktungsart
 	 */
-	public function setKauf($kauf) {
+	public function setKauf(bool $kauf) {
 		$this->kauf = $kauf;
 		return $this;
 	}
@@ -75,7 +76,7 @@ class Vermarktungsart {
 	 * @param boolean $leasing Setter for leasing
 	 * @return Vermarktungsart
 	 */
-	public function setLeasing($leasing) {
+	public function setLeasing(bool $leasing) {
 		$this->leasing = $leasing;
 		return $this;
 	}
@@ -84,7 +85,7 @@ class Vermarktungsart {
 	 * @param boolean $mietePacht Setter for mietePacht
 	 * @return Vermarktungsart
 	 */
-	public function setMietePacht($mietePacht) {
+	public function setMietePacht(bool $mietePacht) {
 		$this->mietePacht = $mietePacht;
 		return $this;
 	}

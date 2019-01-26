@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Erschliessung {
 
@@ -13,7 +14,7 @@ class Erschliessung {
 	/**
 	 * @return string
 	 */
-	public function getErschlAttr() {
+	public function getErschlAttr(): string {
 		return $this->erschlAttr;
 	}
 
@@ -21,7 +22,7 @@ class Erschliessung {
 	 * @param string $erschlAttr Setter for erschlAttr
 	 * @return Erschliessung
 	 */
-	public function setErschlAttr($erschlAttr) {
+	public function setErschlAttr(string $erschlAttr) {
 		$this->erschlAttr = $erschlAttr;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class ZinshausRenditeobjekt {
 
@@ -13,7 +14,7 @@ class ZinshausRenditeobjekt {
 	/**
 	 * @return string
 	 */
-	public function getZinsTyp() {
+	public function getZinsTyp(): string {
 		return $this->zinsTyp;
 	}
 
@@ -21,7 +22,7 @@ class ZinshausRenditeobjekt {
 	 * @param string $zinsTyp Setter for zinsTyp
 	 * @return ZinshausRenditeobjekt
 	 */
-	public function setZinsTyp($zinsTyp) {
+	public function setZinsTyp(string $zinsTyp) {
 		$this->zinsTyp = $zinsTyp;
 		return $this;
 	}

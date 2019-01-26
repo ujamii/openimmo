@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class ObjektText {
 
@@ -13,7 +14,7 @@ class ObjektText {
 	/**
 	 * @return string
 	 */
-	public function getLang() {
+	public function getLang(): string {
 		return $this->lang;
 	}
 
@@ -21,7 +22,7 @@ class ObjektText {
 	 * @param string $lang Setter for lang
 	 * @return ObjektText
 	 */
-	public function setLang($lang) {
+	public function setLang(string $lang) {
 		$this->lang = $lang;
 		return $this;
 	}

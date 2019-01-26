@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Objektkategorie {
 
@@ -38,42 +39,42 @@ class Objektkategorie {
 	/**
 	 * @return Nutzungsart
 	 */
-	public function getNutzungsart() {
+	public function getNutzungsart(): Nutzungsart {
 		return $this->nutzungsart;
 	}
 
 	/**
 	 * @return Objektart
 	 */
-	public function getObjektart() {
+	public function getObjektart(): Objektart {
 		return $this->objektart;
 	}
 
 	/**
 	 * @return UserDefinedAnyfield[]
 	 */
-	public function getUserDefinedAnyfield() {
+	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * @return UserDefinedExtend[]
 	 */
-	public function getUserDefinedExtend() {
+	public function getUserDefinedExtend(): UserDefinedExtend[] {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * @return UserDefinedSimplefield[]
 	 */
-	public function getUserDefinedSimplefield() {
+	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return Vermarktungsart
 	 */
-	public function getVermarktungsart() {
+	public function getVermarktungsart(): Vermarktungsart {
 		return $this->vermarktungsart;
 	}
 

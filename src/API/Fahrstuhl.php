@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Fahrstuhl {
 
@@ -18,14 +19,14 @@ class Fahrstuhl {
 	/**
 	 * @return boolean
 	 */
-	public function getLasten() {
+	public function getLasten(): bool {
 		return $this->lasten;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getPersonen() {
+	public function getPersonen(): bool {
 		return $this->personen;
 	}
 
@@ -33,7 +34,7 @@ class Fahrstuhl {
 	 * @param boolean $lasten Setter for lasten
 	 * @return Fahrstuhl
 	 */
-	public function setLasten($lasten) {
+	public function setLasten(bool $lasten) {
 		$this->lasten = $lasten;
 		return $this;
 	}
@@ -42,7 +43,7 @@ class Fahrstuhl {
 	 * @param boolean $personen Setter for personen
 	 * @return Fahrstuhl
 	 */
-	public function setPersonen($personen) {
+	public function setPersonen(bool $personen) {
 		$this->personen = $personen;
 		return $this;
 	}

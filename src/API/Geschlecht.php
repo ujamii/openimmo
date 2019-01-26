@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Geschlecht {
 
@@ -13,7 +14,7 @@ class Geschlecht {
 	/**
 	 * @return string
 	 */
-	public function getGeschlAttr() {
+	public function getGeschlAttr(): string {
 		return $this->geschlAttr;
 	}
 
@@ -21,7 +22,7 @@ class Geschlecht {
 	 * @param string $geschlAttr Setter for geschlAttr
 	 * @return Geschlecht
 	 */
-	public function setGeschlAttr($geschlAttr) {
+	public function setGeschlAttr(string $geschlAttr) {
 		$this->geschlAttr = $geschlAttr;
 		return $this;
 	}

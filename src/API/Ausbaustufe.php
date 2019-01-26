@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Ausbaustufe {
 
@@ -33,35 +34,35 @@ class Ausbaustufe {
 	/**
 	 * @return boolean
 	 */
-	public function getAusbauhaus() {
+	public function getAusbauhaus(): bool {
 		return $this->ausbauhaus;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getBausatzhaus() {
+	public function getBausatzhaus(): bool {
 		return $this->bausatzhaus;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSchluesselfertigmitbodenplatte() {
+	public function getSchluesselfertigmitbodenplatte(): bool {
 		return $this->schluesselfertigmitbodenplatte;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSchluesselfertigmitkeller() {
+	public function getSchluesselfertigmitkeller(): bool {
 		return $this->schluesselfertigmitkeller;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSchluesselfertigohnebodenplatte() {
+	public function getSchluesselfertigohnebodenplatte(): bool {
 		return $this->schluesselfertigohnebodenplatte;
 	}
 
@@ -69,7 +70,7 @@ class Ausbaustufe {
 	 * @param boolean $ausbauhaus Setter for ausbauhaus
 	 * @return Ausbaustufe
 	 */
-	public function setAusbauhaus($ausbauhaus) {
+	public function setAusbauhaus(bool $ausbauhaus) {
 		$this->ausbauhaus = $ausbauhaus;
 		return $this;
 	}
@@ -78,7 +79,7 @@ class Ausbaustufe {
 	 * @param boolean $bausatzhaus Setter for bausatzhaus
 	 * @return Ausbaustufe
 	 */
-	public function setBausatzhaus($bausatzhaus) {
+	public function setBausatzhaus(bool $bausatzhaus) {
 		$this->bausatzhaus = $bausatzhaus;
 		return $this;
 	}
@@ -87,7 +88,7 @@ class Ausbaustufe {
 	 * @param boolean $schluesselfertigmitbodenplatte Setter for schluesselfertigmitbodenplatte
 	 * @return Ausbaustufe
 	 */
-	public function setSchluesselfertigmitbodenplatte($schluesselfertigmitbodenplatte) {
+	public function setSchluesselfertigmitbodenplatte(bool $schluesselfertigmitbodenplatte) {
 		$this->schluesselfertigmitbodenplatte = $schluesselfertigmitbodenplatte;
 		return $this;
 	}
@@ -96,7 +97,7 @@ class Ausbaustufe {
 	 * @param boolean $schluesselfertigmitkeller Setter for schluesselfertigmitkeller
 	 * @return Ausbaustufe
 	 */
-	public function setSchluesselfertigmitkeller($schluesselfertigmitkeller) {
+	public function setSchluesselfertigmitkeller(bool $schluesselfertigmitkeller) {
 		$this->schluesselfertigmitkeller = $schluesselfertigmitkeller;
 		return $this;
 	}
@@ -105,7 +106,7 @@ class Ausbaustufe {
 	 * @param boolean $schluesselfertigohnebodenplatte Setter for schluesselfertigohnebodenplatte
 	 * @return Ausbaustufe
 	 */
-	public function setSchluesselfertigohnebodenplatte($schluesselfertigohnebodenplatte) {
+	public function setSchluesselfertigohnebodenplatte(bool $schluesselfertigohnebodenplatte) {
 		$this->schluesselfertigohnebodenplatte = $schluesselfertigohnebodenplatte;
 		return $this;
 	}

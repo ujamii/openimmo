@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class StpGarage {
 
@@ -23,21 +24,21 @@ class StpGarage {
 	/**
 	 * @return int
 	 */
-	public function getAnzahl() {
+	public function getAnzahl(): int {
 		return $this->anzahl;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getStellplatzkaufpreis() {
+	public function getStellplatzkaufpreis(): decimal {
 		return $this->stellplatzkaufpreis;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getStellplatzmiete() {
+	public function getStellplatzmiete(): decimal {
 		return $this->stellplatzmiete;
 	}
 
@@ -45,7 +46,7 @@ class StpGarage {
 	 * @param int $anzahl Setter for anzahl
 	 * @return StpGarage
 	 */
-	public function setAnzahl($anzahl) {
+	public function setAnzahl(int $anzahl) {
 		$this->anzahl = $anzahl;
 		return $this;
 	}

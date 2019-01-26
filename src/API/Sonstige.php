@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Sonstige {
 
@@ -13,7 +14,7 @@ class Sonstige {
 	/**
 	 * @return string
 	 */
-	public function getSonstigeTyp() {
+	public function getSonstigeTyp(): string {
 		return $this->sonstigeTyp;
 	}
 
@@ -21,7 +22,7 @@ class Sonstige {
 	 * @param string $sonstigeTyp Setter for sonstigeTyp
 	 * @return Sonstige
 	 */
-	public function setSonstigeTyp($sonstigeTyp) {
+	public function setSonstigeTyp(string $sonstigeTyp) {
 		$this->sonstigeTyp = $sonstigeTyp;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class MinMietdauer {
 
@@ -13,7 +14,7 @@ class MinMietdauer {
 	/**
 	 * @return string
 	 */
-	public function getMinDauer() {
+	public function getMinDauer(): string {
 		return $this->minDauer;
 	}
 
@@ -21,7 +22,7 @@ class MinMietdauer {
 	 * @param string $minDauer Setter for minDauer
 	 * @return MinMietdauer
 	 */
-	public function setMinDauer($minDauer) {
+	public function setMinDauer(string $minDauer) {
 		$this->minDauer = $minDauer;
 		return $this;
 	}

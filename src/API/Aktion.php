@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Aktion {
 
@@ -13,7 +14,7 @@ class Aktion {
 	/**
 	 * @return string
 	 */
-	public function getAktionart() {
+	public function getAktionart(): string {
 		return $this->aktionart;
 	}
 
@@ -21,7 +22,7 @@ class Aktion {
 	 * @param string $aktionart Setter for aktionart
 	 * @return Aktion
 	 */
-	public function setAktionart($aktionart) {
+	public function setAktionart(string $aktionart) {
 		$this->aktionart = $aktionart;
 		return $this;
 	}

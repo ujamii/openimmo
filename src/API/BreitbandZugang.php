@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class BreitbandZugang {
 
@@ -18,14 +19,14 @@ class BreitbandZugang {
 	/**
 	 * @return string
 	 */
-	public function getArt() {
+	public function getArt(): string {
 		return $this->art;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getSpeed() {
+	public function getSpeed(): decimal {
 		return $this->speed;
 	}
 
@@ -33,7 +34,7 @@ class BreitbandZugang {
 	 * @param string $art Setter for art
 	 * @return BreitbandZugang
 	 */
-	public function setArt($art) {
+	public function setArt(string $art) {
 		$this->art = $art;
 		return $this;
 	}

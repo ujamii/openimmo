@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Ausstattung {
 
@@ -292,28 +293,28 @@ class Ausstattung {
 	/**
 	 * @return boolean
 	 */
-	public function getAbstellraum() {
+	public function getAbstellraum(): bool {
 		return $this->abstellraum;
 	}
 
 	/**
 	 * @return AngeschlGastronomie
 	 */
-	public function getAngeschlGastronomie() {
+	public function getAngeschlGastronomie(): AngeschlGastronomie {
 		return $this->angeschlGastronomie;
 	}
 
 	/**
 	 * @return Ausbaustufe
 	 */
-	public function getAusbaustufe() {
+	public function getAusbaustufe(): Ausbaustufe {
 		return $this->ausbaustufe;
 	}
 
 	/**
 	 * @return AusrichtBalkonTerrasse
 	 */
-	public function getAusrichtBalkonTerrasse() {
+	public function getAusrichtBalkonTerrasse(): AusrichtBalkonTerrasse {
 		return $this->ausrichtBalkonTerrasse;
 	}
 
@@ -326,364 +327,364 @@ class Ausstattung {
 	/**
 	 * @return Bad
 	 */
-	public function getBad() {
+	public function getBad(): Bad {
 		return $this->bad;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getBarrierefrei() {
+	public function getBarrierefrei(): bool {
 		return $this->barrierefrei;
 	}
 
 	/**
 	 * @return Bauweise
 	 */
-	public function getBauweise() {
+	public function getBauweise(): Bauweise {
 		return $this->bauweise;
 	}
 
 	/**
 	 * @return Befeuerung
 	 */
-	public function getBefeuerung() {
+	public function getBefeuerung(): Befeuerung {
 		return $this->befeuerung;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getBibliothek() {
+	public function getBibliothek(): bool {
 		return $this->bibliothek;
 	}
 
 	/**
 	 * @return Boden
 	 */
-	public function getBoden() {
+	public function getBoden(): Boden {
 		return $this->boden;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getBrauereibindung() {
+	public function getBrauereibindung(): bool {
 		return $this->brauereibindung;
 	}
 
 	/**
 	 * @return BreitbandZugang
 	 */
-	public function getBreitbandZugang() {
+	public function getBreitbandZugang(): BreitbandZugang {
 		return $this->breitbandZugang;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getDachboden() {
+	public function getDachboden(): bool {
 		return $this->dachboden;
 	}
 
 	/**
 	 * @return Dachform
 	 */
-	public function getDachform() {
+	public function getDachform(): Dachform {
 		return $this->dachform;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getDvbt() {
+	public function getDvbt(): bool {
 		return $this->dvbt;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getDvVerkabelung() {
+	public function getDvVerkabelung(): bool {
 		return $this->dvVerkabelung;
 	}
 
 	/**
 	 * @return Energietyp
 	 */
-	public function getEnergietyp() {
+	public function getEnergietyp(): Energietyp {
 		return $this->energietyp;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFahrradraum() {
+	public function getFahrradraum(): bool {
 		return $this->fahrradraum;
 	}
 
 	/**
 	 * @return Fahrstuhl
 	 */
-	public function getFahrstuhl() {
+	public function getFahrstuhl(): Fahrstuhl {
 		return $this->fahrstuhl;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGaestewc() {
+	public function getGaestewc(): bool {
 		return $this->gaestewc;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGartennutzung() {
+	public function getGartennutzung(): bool {
 		return $this->gartennutzung;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGastterrasse() {
+	public function getGastterrasse(): bool {
 		return $this->gastterrasse;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getHallenhoehe() {
+	public function getHallenhoehe(): decimal {
 		return $this->hallenhoehe;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHebebuehne() {
+	public function getHebebuehne(): bool {
 		return $this->hebebuehne;
 	}
 
 	/**
 	 * @return Heizungsart
 	 */
-	public function getHeizungsart() {
+	public function getHeizungsart(): Heizungsart {
 		return $this->heizungsart;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKabelkanaele() {
+	public function getKabelkanaele(): bool {
 		return $this->kabelkanaele;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKabelSatTv() {
+	public function getKabelSatTv(): bool {
 		return $this->kabelSatTv;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKamin() {
+	public function getKamin(): bool {
 		return $this->kamin;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKantineCafeteria() {
+	public function getKantineCafeteria(): bool {
 		return $this->kantineCafeteria;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKlimatisiert() {
+	public function getKlimatisiert(): bool {
 		return $this->klimatisiert;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKran() {
+	public function getKran(): bool {
 		return $this->kran;
 	}
 
 	/**
 	 * @return Kueche
 	 */
-	public function getKueche() {
+	public function getKueche(): Kueche {
 		return $this->kueche;
 	}
 
 	/**
 	 * @return Moebliert
 	 */
-	public function getMoebliert() {
+	public function getMoebliert(): Moebliert {
 		return $this->moebliert;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getRaeumeVeraenderbar() {
+	public function getRaeumeVeraenderbar(): bool {
 		return $this->raeumeVeraenderbar;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getRampe() {
+	public function getRampe(): bool {
 		return $this->rampe;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getRolladen() {
+	public function getRolladen(): bool {
 		return $this->rolladen;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getRollstuhlgerecht() {
+	public function getRollstuhlgerecht(): bool {
 		return $this->rollstuhlgerecht;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSauna() {
+	public function getSauna(): bool {
 		return $this->sauna;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSeniorengerecht() {
+	public function getSeniorengerecht(): bool {
 		return $this->seniorengerecht;
 	}
 
 	/**
 	 * @return Serviceleistungen[]
 	 */
-	public function getServiceleistungen() {
+	public function getServiceleistungen(): Serviceleistungen[] {
 		return $this->serviceleistungen;
 	}
 
 	/**
 	 * @return Sicherheitstechnik
 	 */
-	public function getSicherheitstechnik() {
+	public function getSicherheitstechnik(): Sicherheitstechnik {
 		return $this->sicherheitstechnik;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSporteinrichtungen() {
+	public function getSporteinrichtungen(): bool {
 		return $this->sporteinrichtungen;
 	}
 
 	/**
 	 * @return Stellplatzart[]
 	 */
-	public function getStellplatzart() {
+	public function getStellplatzart(): Stellplatzart[] {
 		return $this->stellplatzart;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getStromanschlusswert() {
+	public function getStromanschlusswert(): string {
 		return $this->stromanschlusswert;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSwimmingpool() {
+	public function getSwimmingpool(): bool {
 		return $this->swimmingpool;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getTeekueche() {
+	public function getTeekueche(): bool {
 		return $this->teekueche;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getTelefonFerienimmobilie() {
+	public function getTelefonFerienimmobilie(): bool {
 		return $this->telefonFerienimmobilie;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getUmtsEmpfang() {
+	public function getUmtsEmpfang(): bool {
 		return $this->umtsEmpfang;
 	}
 
 	/**
 	 * @return Unterkellert
 	 */
-	public function getUnterkellert() {
+	public function getUnterkellert(): Unterkellert {
 		return $this->unterkellert;
 	}
 
 	/**
 	 * @return UserDefinedAnyfield[]
 	 */
-	public function getUserDefinedAnyfield() {
+	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * @return UserDefinedExtend[]
 	 */
-	public function getUserDefinedExtend() {
+	public function getUserDefinedExtend(): UserDefinedExtend[] {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * @return UserDefinedSimplefield[]
 	 */
-	public function getUserDefinedSimplefield() {
+	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWaschTrockenraum() {
+	public function getWaschTrockenraum(): bool {
 		return $this->waschTrockenraum;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWellnessbereich() {
+	public function getWellnessbereich(): bool {
 		return $this->wellnessbereich;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWgGeeignet() {
+	public function getWgGeeignet(): bool {
 		return $this->wgGeeignet;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWintergarten() {
+	public function getWintergarten(): bool {
 		return $this->wintergarten;
 	}
 
@@ -691,7 +692,7 @@ class Ausstattung {
 	 * @param boolean $abstellraum Setter for abstellraum
 	 * @return Ausstattung
 	 */
-	public function setAbstellraum($abstellraum) {
+	public function setAbstellraum(bool $abstellraum) {
 		$this->abstellraum = $abstellraum;
 		return $this;
 	}
@@ -745,7 +746,7 @@ class Ausstattung {
 	 * @param boolean $barrierefrei Setter for barrierefrei
 	 * @return Ausstattung
 	 */
-	public function setBarrierefrei($barrierefrei) {
+	public function setBarrierefrei(bool $barrierefrei) {
 		$this->barrierefrei = $barrierefrei;
 		return $this;
 	}
@@ -772,7 +773,7 @@ class Ausstattung {
 	 * @param boolean $bibliothek Setter for bibliothek
 	 * @return Ausstattung
 	 */
-	public function setBibliothek($bibliothek) {
+	public function setBibliothek(bool $bibliothek) {
 		$this->bibliothek = $bibliothek;
 		return $this;
 	}
@@ -790,7 +791,7 @@ class Ausstattung {
 	 * @param boolean $brauereibindung Setter for brauereibindung
 	 * @return Ausstattung
 	 */
-	public function setBrauereibindung($brauereibindung) {
+	public function setBrauereibindung(bool $brauereibindung) {
 		$this->brauereibindung = $brauereibindung;
 		return $this;
 	}
@@ -808,7 +809,7 @@ class Ausstattung {
 	 * @param boolean $dachboden Setter for dachboden
 	 * @return Ausstattung
 	 */
-	public function setDachboden($dachboden) {
+	public function setDachboden(bool $dachboden) {
 		$this->dachboden = $dachboden;
 		return $this;
 	}
@@ -826,7 +827,7 @@ class Ausstattung {
 	 * @param boolean $dvbt Setter for dvbt
 	 * @return Ausstattung
 	 */
-	public function setDvbt($dvbt) {
+	public function setDvbt(bool $dvbt) {
 		$this->dvbt = $dvbt;
 		return $this;
 	}
@@ -835,7 +836,7 @@ class Ausstattung {
 	 * @param boolean $dvVerkabelung Setter for dvVerkabelung
 	 * @return Ausstattung
 	 */
-	public function setDvVerkabelung($dvVerkabelung) {
+	public function setDvVerkabelung(bool $dvVerkabelung) {
 		$this->dvVerkabelung = $dvVerkabelung;
 		return $this;
 	}
@@ -853,7 +854,7 @@ class Ausstattung {
 	 * @param boolean $fahrradraum Setter for fahrradraum
 	 * @return Ausstattung
 	 */
-	public function setFahrradraum($fahrradraum) {
+	public function setFahrradraum(bool $fahrradraum) {
 		$this->fahrradraum = $fahrradraum;
 		return $this;
 	}
@@ -871,7 +872,7 @@ class Ausstattung {
 	 * @param boolean $gaestewc Setter for gaestewc
 	 * @return Ausstattung
 	 */
-	public function setGaestewc($gaestewc) {
+	public function setGaestewc(bool $gaestewc) {
 		$this->gaestewc = $gaestewc;
 		return $this;
 	}
@@ -880,7 +881,7 @@ class Ausstattung {
 	 * @param boolean $gartennutzung Setter for gartennutzung
 	 * @return Ausstattung
 	 */
-	public function setGartennutzung($gartennutzung) {
+	public function setGartennutzung(bool $gartennutzung) {
 		$this->gartennutzung = $gartennutzung;
 		return $this;
 	}
@@ -889,7 +890,7 @@ class Ausstattung {
 	 * @param boolean $gastterrasse Setter for gastterrasse
 	 * @return Ausstattung
 	 */
-	public function setGastterrasse($gastterrasse) {
+	public function setGastterrasse(bool $gastterrasse) {
 		$this->gastterrasse = $gastterrasse;
 		return $this;
 	}
@@ -907,7 +908,7 @@ class Ausstattung {
 	 * @param boolean $hebebuehne Setter for hebebuehne
 	 * @return Ausstattung
 	 */
-	public function setHebebuehne($hebebuehne) {
+	public function setHebebuehne(bool $hebebuehne) {
 		$this->hebebuehne = $hebebuehne;
 		return $this;
 	}
@@ -925,7 +926,7 @@ class Ausstattung {
 	 * @param boolean $kabelkanaele Setter for kabelkanaele
 	 * @return Ausstattung
 	 */
-	public function setKabelkanaele($kabelkanaele) {
+	public function setKabelkanaele(bool $kabelkanaele) {
 		$this->kabelkanaele = $kabelkanaele;
 		return $this;
 	}
@@ -934,7 +935,7 @@ class Ausstattung {
 	 * @param boolean $kabelSatTv Setter for kabelSatTv
 	 * @return Ausstattung
 	 */
-	public function setKabelSatTv($kabelSatTv) {
+	public function setKabelSatTv(bool $kabelSatTv) {
 		$this->kabelSatTv = $kabelSatTv;
 		return $this;
 	}
@@ -943,7 +944,7 @@ class Ausstattung {
 	 * @param boolean $kamin Setter for kamin
 	 * @return Ausstattung
 	 */
-	public function setKamin($kamin) {
+	public function setKamin(bool $kamin) {
 		$this->kamin = $kamin;
 		return $this;
 	}
@@ -952,7 +953,7 @@ class Ausstattung {
 	 * @param boolean $kantineCafeteria Setter for kantineCafeteria
 	 * @return Ausstattung
 	 */
-	public function setKantineCafeteria($kantineCafeteria) {
+	public function setKantineCafeteria(bool $kantineCafeteria) {
 		$this->kantineCafeteria = $kantineCafeteria;
 		return $this;
 	}
@@ -961,7 +962,7 @@ class Ausstattung {
 	 * @param boolean $klimatisiert Setter for klimatisiert
 	 * @return Ausstattung
 	 */
-	public function setKlimatisiert($klimatisiert) {
+	public function setKlimatisiert(bool $klimatisiert) {
 		$this->klimatisiert = $klimatisiert;
 		return $this;
 	}
@@ -970,7 +971,7 @@ class Ausstattung {
 	 * @param boolean $kran Setter for kran
 	 * @return Ausstattung
 	 */
-	public function setKran($kran) {
+	public function setKran(bool $kran) {
 		$this->kran = $kran;
 		return $this;
 	}
@@ -997,7 +998,7 @@ class Ausstattung {
 	 * @param boolean $raeumeVeraenderbar Setter for raeumeVeraenderbar
 	 * @return Ausstattung
 	 */
-	public function setRaeumeVeraenderbar($raeumeVeraenderbar) {
+	public function setRaeumeVeraenderbar(bool $raeumeVeraenderbar) {
 		$this->raeumeVeraenderbar = $raeumeVeraenderbar;
 		return $this;
 	}
@@ -1006,7 +1007,7 @@ class Ausstattung {
 	 * @param boolean $rampe Setter for rampe
 	 * @return Ausstattung
 	 */
-	public function setRampe($rampe) {
+	public function setRampe(bool $rampe) {
 		$this->rampe = $rampe;
 		return $this;
 	}
@@ -1015,7 +1016,7 @@ class Ausstattung {
 	 * @param boolean $rolladen Setter for rolladen
 	 * @return Ausstattung
 	 */
-	public function setRolladen($rolladen) {
+	public function setRolladen(bool $rolladen) {
 		$this->rolladen = $rolladen;
 		return $this;
 	}
@@ -1024,7 +1025,7 @@ class Ausstattung {
 	 * @param boolean $rollstuhlgerecht Setter for rollstuhlgerecht
 	 * @return Ausstattung
 	 */
-	public function setRollstuhlgerecht($rollstuhlgerecht) {
+	public function setRollstuhlgerecht(bool $rollstuhlgerecht) {
 		$this->rollstuhlgerecht = $rollstuhlgerecht;
 		return $this;
 	}
@@ -1033,7 +1034,7 @@ class Ausstattung {
 	 * @param boolean $sauna Setter for sauna
 	 * @return Ausstattung
 	 */
-	public function setSauna($sauna) {
+	public function setSauna(bool $sauna) {
 		$this->sauna = $sauna;
 		return $this;
 	}
@@ -1042,7 +1043,7 @@ class Ausstattung {
 	 * @param boolean $seniorengerecht Setter for seniorengerecht
 	 * @return Ausstattung
 	 */
-	public function setSeniorengerecht($seniorengerecht) {
+	public function setSeniorengerecht(bool $seniorengerecht) {
 		$this->seniorengerecht = $seniorengerecht;
 		return $this;
 	}
@@ -1069,7 +1070,7 @@ class Ausstattung {
 	 * @param boolean $sporteinrichtungen Setter for sporteinrichtungen
 	 * @return Ausstattung
 	 */
-	public function setSporteinrichtungen($sporteinrichtungen) {
+	public function setSporteinrichtungen(bool $sporteinrichtungen) {
 		$this->sporteinrichtungen = $sporteinrichtungen;
 		return $this;
 	}
@@ -1087,7 +1088,7 @@ class Ausstattung {
 	 * @param string $stromanschlusswert Setter for stromanschlusswert
 	 * @return Ausstattung
 	 */
-	public function setStromanschlusswert($stromanschlusswert) {
+	public function setStromanschlusswert(string $stromanschlusswert) {
 		$this->stromanschlusswert = $stromanschlusswert;
 		return $this;
 	}
@@ -1096,7 +1097,7 @@ class Ausstattung {
 	 * @param boolean $swimmingpool Setter for swimmingpool
 	 * @return Ausstattung
 	 */
-	public function setSwimmingpool($swimmingpool) {
+	public function setSwimmingpool(bool $swimmingpool) {
 		$this->swimmingpool = $swimmingpool;
 		return $this;
 	}
@@ -1105,7 +1106,7 @@ class Ausstattung {
 	 * @param boolean $teekueche Setter for teekueche
 	 * @return Ausstattung
 	 */
-	public function setTeekueche($teekueche) {
+	public function setTeekueche(bool $teekueche) {
 		$this->teekueche = $teekueche;
 		return $this;
 	}
@@ -1114,7 +1115,7 @@ class Ausstattung {
 	 * @param boolean $telefonFerienimmobilie Setter for telefonFerienimmobilie
 	 * @return Ausstattung
 	 */
-	public function setTelefonFerienimmobilie($telefonFerienimmobilie) {
+	public function setTelefonFerienimmobilie(bool $telefonFerienimmobilie) {
 		$this->telefonFerienimmobilie = $telefonFerienimmobilie;
 		return $this;
 	}
@@ -1123,7 +1124,7 @@ class Ausstattung {
 	 * @param boolean $umtsEmpfang Setter for umtsEmpfang
 	 * @return Ausstattung
 	 */
-	public function setUmtsEmpfang($umtsEmpfang) {
+	public function setUmtsEmpfang(bool $umtsEmpfang) {
 		$this->umtsEmpfang = $umtsEmpfang;
 		return $this;
 	}
@@ -1168,7 +1169,7 @@ class Ausstattung {
 	 * @param boolean $waschTrockenraum Setter for waschTrockenraum
 	 * @return Ausstattung
 	 */
-	public function setWaschTrockenraum($waschTrockenraum) {
+	public function setWaschTrockenraum(bool $waschTrockenraum) {
 		$this->waschTrockenraum = $waschTrockenraum;
 		return $this;
 	}
@@ -1177,7 +1178,7 @@ class Ausstattung {
 	 * @param boolean $wellnessbereich Setter for wellnessbereich
 	 * @return Ausstattung
 	 */
-	public function setWellnessbereich($wellnessbereich) {
+	public function setWellnessbereich(bool $wellnessbereich) {
 		$this->wellnessbereich = $wellnessbereich;
 		return $this;
 	}
@@ -1186,7 +1187,7 @@ class Ausstattung {
 	 * @param boolean $wgGeeignet Setter for wgGeeignet
 	 * @return Ausstattung
 	 */
-	public function setWgGeeignet($wgGeeignet) {
+	public function setWgGeeignet(bool $wgGeeignet) {
 		$this->wgGeeignet = $wgGeeignet;
 		return $this;
 	}
@@ -1195,7 +1196,7 @@ class Ausstattung {
 	 * @param boolean $wintergarten Setter for wintergarten
 	 * @return Ausstattung
 	 */
-	public function setWintergarten($wintergarten) {
+	public function setWintergarten(bool $wintergarten) {
 		$this->wintergarten = $wintergarten;
 		return $this;
 	}

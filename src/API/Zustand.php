@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Zustand {
 
@@ -13,7 +14,7 @@ class Zustand {
 	/**
 	 * @return string
 	 */
-	public function getZustandArt() {
+	public function getZustandArt(): string {
 		return $this->zustandArt;
 	}
 
@@ -21,7 +22,7 @@ class Zustand {
 	 * @param string $zustandArt Setter for zustandArt
 	 * @return Zustand
 	 */
-	public function setZustandArt($zustandArt) {
+	public function setZustandArt(string $zustandArt) {
 		$this->zustandArt = $zustandArt;
 		return $this;
 	}

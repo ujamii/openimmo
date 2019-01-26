@@ -10,8 +10,11 @@
         }
     ],
     "require": {
-        "goetas-webservices/xsd-reader": "^0.3.4",
-        "gossi/php-code-generator": "^0.5.0"
+        "jms/serializer": "^2.1"
+    },
+    "require-dev": {
+        "goetas-webservices/xsd-reader": "^0.3",
+        "gossi/php-code-generator": "^0.5"
     },
     "autoload": {
         "psr-4": {

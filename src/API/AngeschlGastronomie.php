@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class AngeschlGastronomie {
 
@@ -18,14 +19,14 @@ class AngeschlGastronomie {
 	/**
 	 * @return boolean
 	 */
-	public function getBar() {
+	public function getBar(): bool {
 		return $this->bar;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHotelrestaurant() {
+	public function getHotelrestaurant(): bool {
 		return $this->hotelrestaurant;
 	}
 
@@ -33,7 +34,7 @@ class AngeschlGastronomie {
 	 * @param boolean $bar Setter for bar
 	 * @return AngeschlGastronomie
 	 */
-	public function setBar($bar) {
+	public function setBar(bool $bar) {
 		$this->bar = $bar;
 		return $this;
 	}
@@ -42,7 +43,7 @@ class AngeschlGastronomie {
 	 * @param boolean $hotelrestaurant Setter for hotelrestaurant
 	 * @return AngeschlGastronomie
 	 */
-	public function setHotelrestaurant($hotelrestaurant) {
+	public function setHotelrestaurant(bool $hotelrestaurant) {
 		$this->hotelrestaurant = $hotelrestaurant;
 		return $this;
 	}

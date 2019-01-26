@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Heizungsart {
 
@@ -33,35 +34,35 @@ class Heizungsart {
 	/**
 	 * @return boolean
 	 */
-	public function getEtage() {
+	public function getEtage(): bool {
 		return $this->etage;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFern() {
+	public function getFern(): bool {
 		return $this->fern;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFussboden() {
+	public function getFussboden(): bool {
 		return $this->fussboden;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getOfen() {
+	public function getOfen(): bool {
 		return $this->ofen;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getZentral() {
+	public function getZentral(): bool {
 		return $this->zentral;
 	}
 
@@ -69,7 +70,7 @@ class Heizungsart {
 	 * @param boolean $etage Setter for etage
 	 * @return Heizungsart
 	 */
-	public function setEtage($etage) {
+	public function setEtage(bool $etage) {
 		$this->etage = $etage;
 		return $this;
 	}
@@ -78,7 +79,7 @@ class Heizungsart {
 	 * @param boolean $fern Setter for fern
 	 * @return Heizungsart
 	 */
-	public function setFern($fern) {
+	public function setFern(bool $fern) {
 		$this->fern = $fern;
 		return $this;
 	}
@@ -87,7 +88,7 @@ class Heizungsart {
 	 * @param boolean $fussboden Setter for fussboden
 	 * @return Heizungsart
 	 */
-	public function setFussboden($fussboden) {
+	public function setFussboden(bool $fussboden) {
 		$this->fussboden = $fussboden;
 		return $this;
 	}
@@ -96,7 +97,7 @@ class Heizungsart {
 	 * @param boolean $ofen Setter for ofen
 	 * @return Heizungsart
 	 */
-	public function setOfen($ofen) {
+	public function setOfen(bool $ofen) {
 		$this->ofen = $ofen;
 		return $this;
 	}
@@ -105,7 +106,7 @@ class Heizungsart {
 	 * @param boolean $zentral Setter for zentral
 	 * @return Heizungsart
 	 */
-	public function setZentral($zentral) {
+	public function setZentral(bool $zentral) {
 		$this->zentral = $zentral;
 		return $this;
 	}

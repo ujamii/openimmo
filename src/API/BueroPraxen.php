@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class BueroPraxen {
 
@@ -13,7 +14,7 @@ class BueroPraxen {
 	/**
 	 * @return string
 	 */
-	public function getBueroTyp() {
+	public function getBueroTyp(): string {
 		return $this->bueroTyp;
 	}
 
@@ -21,7 +22,7 @@ class BueroPraxen {
 	 * @param string $bueroTyp Setter for bueroTyp
 	 * @return BueroPraxen
 	 */
-	public function setBueroTyp($bueroTyp) {
+	public function setBueroTyp(string $bueroTyp) {
 		$this->bueroTyp = $bueroTyp;
 		return $this;
 	}

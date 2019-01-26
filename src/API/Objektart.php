@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Objektart {
 
@@ -78,98 +79,98 @@ class Objektart {
 	/**
 	 * @return BueroPraxen[]
 	 */
-	public function getBueroPraxen() {
+	public function getBueroPraxen(): BueroPraxen[] {
 		return $this->bueroPraxen;
 	}
 
 	/**
 	 * @return Einzelhandel[]
 	 */
-	public function getEinzelhandel() {
+	public function getEinzelhandel(): Einzelhandel[] {
 		return $this->einzelhandel;
 	}
 
 	/**
 	 * @return FreizeitimmobilieGewerblich[]
 	 */
-	public function getFreizeitimmobilieGewerblich() {
+	public function getFreizeitimmobilieGewerblich(): FreizeitimmobilieGewerblich[] {
 		return $this->freizeitimmobilieGewerblich;
 	}
 
 	/**
 	 * @return Gastgewerbe[]
 	 */
-	public function getGastgewerbe() {
+	public function getGastgewerbe(): Gastgewerbe[] {
 		return $this->gastgewerbe;
 	}
 
 	/**
 	 * @return Grundstueck[]
 	 */
-	public function getGrundstueck() {
+	public function getGrundstueck(): Grundstueck[] {
 		return $this->grundstueck;
 	}
 
 	/**
 	 * @return HallenLagerProd[]
 	 */
-	public function getHallenLagerProd() {
+	public function getHallenLagerProd(): HallenLagerProd[] {
 		return $this->hallenLagerProd;
 	}
 
 	/**
 	 * @return Haus[]
 	 */
-	public function getHaus() {
+	public function getHaus(): Haus[] {
 		return $this->haus;
 	}
 
 	/**
 	 * @return LandUndForstwirtschaft[]
 	 */
-	public function getLandUndForstwirtschaft() {
+	public function getLandUndForstwirtschaft(): LandUndForstwirtschaft[] {
 		return $this->landUndForstwirtschaft;
 	}
 
 	/**
 	 * @return string[]
 	 */
-	public function getObjektartZusatz() {
+	public function getObjektartZusatz(): string[] {
 		return $this->objektartZusatz;
 	}
 
 	/**
 	 * @return Parken[]
 	 */
-	public function getParken() {
+	public function getParken(): Parken[] {
 		return $this->parken;
 	}
 
 	/**
 	 * @return Sonstige[]
 	 */
-	public function getSonstige() {
+	public function getSonstige(): Sonstige[] {
 		return $this->sonstige;
 	}
 
 	/**
 	 * @return Wohnung[]
 	 */
-	public function getWohnung() {
+	public function getWohnung(): Wohnung[] {
 		return $this->wohnung;
 	}
 
 	/**
 	 * @return Zimmer[]
 	 */
-	public function getZimmer() {
+	public function getZimmer(): Zimmer[] {
 		return $this->zimmer;
 	}
 
 	/**
 	 * @return ZinshausRenditeobjekt[]
 	 */
-	public function getZinshausRenditeobjekt() {
+	public function getZinshausRenditeobjekt(): ZinshausRenditeobjekt[] {
 		return $this->zinshausRenditeobjekt;
 	}
 

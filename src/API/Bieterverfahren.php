@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Bieterverfahren {
 
@@ -58,70 +59,70 @@ class Bieterverfahren {
 	/**
 	 * @return date
 	 */
-	public function getBeginnAngebotsphase() {
+	public function getBeginnAngebotsphase(): date {
 		return $this->beginnAngebotsphase;
 	}
 
 	/**
 	 * @return dateTime
 	 */
-	public function getBeginnBietzeit() {
+	public function getBeginnBietzeit(): dateTime {
 		return $this->beginnBietzeit;
 	}
 
 	/**
 	 * @return date
 	 */
-	public function getBesichtigungstermin() {
+	public function getBesichtigungstermin(): date {
 		return $this->besichtigungstermin;
 	}
 
 	/**
 	 * @return date
 	 */
-	public function getBesichtigungstermin2() {
+	public function getBesichtigungstermin2(): date {
 		return $this->besichtigungstermin2;
 	}
 
 	/**
 	 * @return date
 	 */
-	public function getEndeBietzeit() {
+	public function getEndeBietzeit(): date {
 		return $this->endeBietzeit;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHoechstgebotZeigen() {
+	public function getHoechstgebotZeigen(): bool {
 		return $this->hoechstgebotZeigen;
 	}
 
 	/**
 	 * @return decimal
 	 */
-	public function getMindestpreis() {
+	public function getMindestpreis(): decimal {
 		return $this->mindestpreis;
 	}
 
 	/**
 	 * @return UserDefinedAnyfield[]
 	 */
-	public function getUserDefinedAnyfield() {
+	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * @return UserDefinedExtend[]
 	 */
-	public function getUserDefinedExtend() {
+	public function getUserDefinedExtend(): UserDefinedExtend[] {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * @return UserDefinedSimplefield[]
 	 */
-	public function getUserDefinedSimplefield() {
+	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
 		return $this->userDefinedSimplefield;
 	}
 
@@ -174,7 +175,7 @@ class Bieterverfahren {
 	 * @param boolean $hoechstgebotZeigen Setter for hoechstgebotZeigen
 	 * @return Bieterverfahren
 	 */
-	public function setHoechstgebotZeigen($hoechstgebotZeigen) {
+	public function setHoechstgebotZeigen(bool $hoechstgebotZeigen) {
 		$this->hoechstgebotZeigen = $hoechstgebotZeigen;
 		return $this;
 	}

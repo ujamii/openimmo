@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class BebaubarNach {
 
@@ -13,7 +14,7 @@ class BebaubarNach {
 	/**
 	 * @return string
 	 */
-	public function getBebaubarAttr() {
+	public function getBebaubarAttr(): string {
 		return $this->bebaubarAttr;
 	}
 
@@ -21,7 +22,7 @@ class BebaubarNach {
 	 * @param string $bebaubarAttr Setter for bebaubarAttr
 	 * @return BebaubarNach
 	 */
-	public function setBebaubarAttr($bebaubarAttr) {
+	public function setBebaubarAttr(string $bebaubarAttr) {
 		$this->bebaubarAttr = $bebaubarAttr;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Haus {
 
@@ -13,7 +14,7 @@ class Haus {
 	/**
 	 * @return string
 	 */
-	public function getHaustyp() {
+	public function getHaustyp(): string {
 		return $this->haustyp;
 	}
 
@@ -21,7 +22,7 @@ class Haus {
 	 * @param string $haustyp Setter for haustyp
 	 * @return Haus
 	 */
-	public function setHaustyp($haustyp) {
+	public function setHaustyp(string $haustyp) {
 		$this->haustyp = $haustyp;
 		return $this;
 	}

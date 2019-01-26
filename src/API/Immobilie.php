@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Immobilie {
 
@@ -103,133 +104,133 @@ class Immobilie {
 	/**
 	 * @return Anhaenge
 	 */
-	public function getAnhaenge() {
+	public function getAnhaenge(): Anhaenge {
 		return $this->anhaenge;
 	}
 
 	/**
 	 * @return Ausstattung
 	 */
-	public function getAusstattung() {
+	public function getAusstattung(): Ausstattung {
 		return $this->ausstattung;
 	}
 
 	/**
 	 * @return Bewertung
 	 */
-	public function getBewertung() {
+	public function getBewertung(): Bewertung {
 		return $this->bewertung;
 	}
 
 	/**
 	 * @return Bieterverfahren
 	 */
-	public function getBieterverfahren() {
+	public function getBieterverfahren(): Bieterverfahren {
 		return $this->bieterverfahren;
 	}
 
 	/**
 	 * @return Flaechen
 	 */
-	public function getFlaechen() {
+	public function getFlaechen(): Flaechen {
 		return $this->flaechen;
 	}
 
 	/**
 	 * @return Freitexte
 	 */
-	public function getFreitexte() {
+	public function getFreitexte(): Freitexte {
 		return $this->freitexte;
 	}
 
 	/**
 	 * @return Geo
 	 */
-	public function getGeo() {
+	public function getGeo(): Geo {
 		return $this->geo;
 	}
 
 	/**
 	 * @return Infrastruktur
 	 */
-	public function getInfrastruktur() {
+	public function getInfrastruktur(): Infrastruktur {
 		return $this->infrastruktur;
 	}
 
 	/**
 	 * @return Kontaktperson
 	 */
-	public function getKontaktperson() {
+	public function getKontaktperson(): Kontaktperson {
 		return $this->kontaktperson;
 	}
 
 	/**
 	 * @return Objektkategorie
 	 */
-	public function getObjektkategorie() {
+	public function getObjektkategorie(): Objektkategorie {
 		return $this->objektkategorie;
 	}
 
 	/**
 	 * @return Preise
 	 */
-	public function getPreise() {
+	public function getPreise(): Preise {
 		return $this->preise;
 	}
 
 	/**
 	 * @return UserDefinedAnyfield[]
 	 */
-	public function getUserDefinedAnyfield() {
+	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * @return UserDefinedExtend[]
 	 */
-	public function getUserDefinedExtend() {
+	public function getUserDefinedExtend(): UserDefinedExtend[] {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * @return UserDefinedSimplefield[]
 	 */
-	public function getUserDefinedSimplefield() {
+	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return Versteigerung
 	 */
-	public function getVersteigerung() {
+	public function getVersteigerung(): Versteigerung {
 		return $this->versteigerung;
 	}
 
 	/**
 	 * @return VerwaltungObjekt
 	 */
-	public function getVerwaltungObjekt() {
+	public function getVerwaltungObjekt(): VerwaltungObjekt {
 		return $this->verwaltungObjekt;
 	}
 
 	/**
 	 * @return VerwaltungTechn
 	 */
-	public function getVerwaltungTechn() {
+	public function getVerwaltungTechn(): VerwaltungTechn {
 		return $this->verwaltungTechn;
 	}
 
 	/**
 	 * @return WeitereAdresse[]
 	 */
-	public function getWeitereAdresse() {
+	public function getWeitereAdresse(): WeitereAdresse[] {
 		return $this->weitereAdresse;
 	}
 
 	/**
 	 * @return ZustandAngaben
 	 */
-	public function getZustandAngaben() {
+	public function getZustandAngaben(): ZustandAngaben {
 		return $this->zustandAngaben;
 	}
 

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class AussenCourtage {
 
@@ -13,7 +14,7 @@ class AussenCourtage {
 	/**
 	 * @return boolean
 	 */
-	public function getMitMwst() {
+	public function getMitMwst(): bool {
 		return $this->mitMwst;
 	}
 
@@ -21,7 +22,7 @@ class AussenCourtage {
 	 * @param boolean $mitMwst Setter for mitMwst
 	 * @return AussenCourtage
 	 */
-	public function setMitMwst($mitMwst) {
+	public function setMitMwst(bool $mitMwst) {
 		$this->mitMwst = $mitMwst;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Bad {
 
@@ -33,35 +34,35 @@ class Bad {
 	/**
 	 * @return boolean
 	 */
-	public function getBidet() {
+	public function getBidet(): bool {
 		return $this->bidet;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getDusche() {
+	public function getDusche(): bool {
 		return $this->dusche;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFenster() {
+	public function getFenster(): bool {
 		return $this->fenster;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getPissoir() {
+	public function getPissoir(): bool {
 		return $this->pissoir;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWanne() {
+	public function getWanne(): bool {
 		return $this->wanne;
 	}
 
@@ -69,7 +70,7 @@ class Bad {
 	 * @param boolean $bidet Setter for bidet
 	 * @return Bad
 	 */
-	public function setBidet($bidet) {
+	public function setBidet(bool $bidet) {
 		$this->bidet = $bidet;
 		return $this;
 	}
@@ -78,7 +79,7 @@ class Bad {
 	 * @param boolean $dusche Setter for dusche
 	 * @return Bad
 	 */
-	public function setDusche($dusche) {
+	public function setDusche(bool $dusche) {
 		$this->dusche = $dusche;
 		return $this;
 	}
@@ -87,7 +88,7 @@ class Bad {
 	 * @param boolean $fenster Setter for fenster
 	 * @return Bad
 	 */
-	public function setFenster($fenster) {
+	public function setFenster(bool $fenster) {
 		$this->fenster = $fenster;
 		return $this;
 	}
@@ -96,7 +97,7 @@ class Bad {
 	 * @param boolean $pissoir Setter for pissoir
 	 * @return Bad
 	 */
-	public function setPissoir($pissoir) {
+	public function setPissoir(bool $pissoir) {
 		$this->pissoir = $pissoir;
 		return $this;
 	}
@@ -105,7 +106,7 @@ class Bad {
 	 * @param boolean $wanne Setter for wanne
 	 * @return Bad
 	 */
-	public function setWanne($wanne) {
+	public function setWanne(bool $wanne) {
 		$this->wanne = $wanne;
 		return $this;
 	}

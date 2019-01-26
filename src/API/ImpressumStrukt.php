@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class ImpressumStrukt {
 
@@ -58,70 +59,70 @@ class ImpressumStrukt {
 	/**
 	 * @return string
 	 */
-	public function getBerufsaufsichtsbehoerde() {
+	public function getBerufsaufsichtsbehoerde(): string {
 		return $this->berufsaufsichtsbehoerde;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFirmenanschrift() {
+	public function getFirmenanschrift(): string {
 		return $this->firmenanschrift;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFirmenname() {
+	public function getFirmenname(): string {
 		return $this->firmenname;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getHandelsregister() {
+	public function getHandelsregister(): string {
 		return $this->handelsregister;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getHandelsregisterNr() {
+	public function getHandelsregisterNr(): string {
 		return $this->handelsregisterNr;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getSteuernummer() {
+	public function getSteuernummer(): string {
 		return $this->steuernummer;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getTelefon() {
+	public function getTelefon(): string {
 		return $this->telefon;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getUmsstId() {
+	public function getUmsstId(): string {
 		return $this->umsstId;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getVertretungsberechtigter() {
+	public function getVertretungsberechtigter(): string {
 		return $this->vertretungsberechtigter;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getWeiteres() {
+	public function getWeiteres(): string {
 		return $this->weiteres;
 	}
 
@@ -129,7 +130,7 @@ class ImpressumStrukt {
 	 * @param string $berufsaufsichtsbehoerde Setter for berufsaufsichtsbehoerde
 	 * @return ImpressumStrukt
 	 */
-	public function setBerufsaufsichtsbehoerde($berufsaufsichtsbehoerde) {
+	public function setBerufsaufsichtsbehoerde(string $berufsaufsichtsbehoerde) {
 		$this->berufsaufsichtsbehoerde = $berufsaufsichtsbehoerde;
 		return $this;
 	}
@@ -138,7 +139,7 @@ class ImpressumStrukt {
 	 * @param string $firmenanschrift Setter for firmenanschrift
 	 * @return ImpressumStrukt
 	 */
-	public function setFirmenanschrift($firmenanschrift) {
+	public function setFirmenanschrift(string $firmenanschrift) {
 		$this->firmenanschrift = $firmenanschrift;
 		return $this;
 	}
@@ -147,7 +148,7 @@ class ImpressumStrukt {
 	 * @param string $firmenname Setter for firmenname
 	 * @return ImpressumStrukt
 	 */
-	public function setFirmenname($firmenname) {
+	public function setFirmenname(string $firmenname) {
 		$this->firmenname = $firmenname;
 		return $this;
 	}
@@ -156,7 +157,7 @@ class ImpressumStrukt {
 	 * @param string $handelsregister Setter for handelsregister
 	 * @return ImpressumStrukt
 	 */
-	public function setHandelsregister($handelsregister) {
+	public function setHandelsregister(string $handelsregister) {
 		$this->handelsregister = $handelsregister;
 		return $this;
 	}
@@ -165,7 +166,7 @@ class ImpressumStrukt {
 	 * @param string $handelsregisterNr Setter for handelsregisterNr
 	 * @return ImpressumStrukt
 	 */
-	public function setHandelsregisterNr($handelsregisterNr) {
+	public function setHandelsregisterNr(string $handelsregisterNr) {
 		$this->handelsregisterNr = $handelsregisterNr;
 		return $this;
 	}
@@ -174,7 +175,7 @@ class ImpressumStrukt {
 	 * @param string $steuernummer Setter for steuernummer
 	 * @return ImpressumStrukt
 	 */
-	public function setSteuernummer($steuernummer) {
+	public function setSteuernummer(string $steuernummer) {
 		$this->steuernummer = $steuernummer;
 		return $this;
 	}
@@ -183,7 +184,7 @@ class ImpressumStrukt {
 	 * @param string $telefon Setter for telefon
 	 * @return ImpressumStrukt
 	 */
-	public function setTelefon($telefon) {
+	public function setTelefon(string $telefon) {
 		$this->telefon = $telefon;
 		return $this;
 	}
@@ -192,7 +193,7 @@ class ImpressumStrukt {
 	 * @param string $umsstId Setter for umsstId
 	 * @return ImpressumStrukt
 	 */
-	public function setUmsstId($umsstId) {
+	public function setUmsstId(string $umsstId) {
 		$this->umsstId = $umsstId;
 		return $this;
 	}
@@ -201,7 +202,7 @@ class ImpressumStrukt {
 	 * @param string $vertretungsberechtigter Setter for vertretungsberechtigter
 	 * @return ImpressumStrukt
 	 */
-	public function setVertretungsberechtigter($vertretungsberechtigter) {
+	public function setVertretungsberechtigter(string $vertretungsberechtigter) {
 		$this->vertretungsberechtigter = $vertretungsberechtigter;
 		return $this;
 	}
@@ -210,7 +211,7 @@ class ImpressumStrukt {
 	 * @param string $weiteres Setter for weiteres
 	 * @return ImpressumStrukt
 	 */
-	public function setWeiteres($weiteres) {
+	public function setWeiteres(string $weiteres) {
 		$this->weiteres = $weiteres;
 		return $this;
 	}

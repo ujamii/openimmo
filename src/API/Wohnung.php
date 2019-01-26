@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Wohnung {
 
@@ -13,7 +14,7 @@ class Wohnung {
 	/**
 	 * @return string
 	 */
-	public function getWohnungtyp() {
+	public function getWohnungtyp(): string {
 		return $this->wohnungtyp;
 	}
 
@@ -21,7 +22,7 @@ class Wohnung {
 	 * @param string $wohnungtyp Setter for wohnungtyp
 	 * @return Wohnung
 	 */
-	public function setWohnungtyp($wohnungtyp) {
+	public function setWohnungtyp(string $wohnungtyp) {
 		$this->wohnungtyp = $wohnungtyp;
 		return $this;
 	}

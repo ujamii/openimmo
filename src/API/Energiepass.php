@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Energiepass {
 
@@ -100,28 +101,28 @@ class Energiepass {
 	/**
 	 * @return date
 	 */
-	public function getAusstelldatum() {
+	public function getAusstelldatum(): date {
 		return $this->ausstelldatum;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getBaujahr() {
+	public function getBaujahr(): string {
 		return $this->baujahr;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getEndenergiebedarf() {
+	public function getEndenergiebedarf(): string {
 		return $this->endenergiebedarf;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getEnergieverbrauchkennwert() {
+	public function getEnergieverbrauchkennwert(): string {
 		return $this->energieverbrauchkennwert;
 	}
 
@@ -134,21 +135,21 @@ class Energiepass {
 	/**
 	 * @return string
 	 */
-	public function getEpasstext() {
+	public function getEpasstext(): string {
 		return $this->epasstext;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFgeeklasse() {
+	public function getFgeeklasse(): string {
 		return $this->fgeeklasse;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFgeewert() {
+	public function getFgeewert(): string {
 		return $this->fgeewert;
 	}
 
@@ -161,28 +162,28 @@ class Energiepass {
 	/**
 	 * @return string
 	 */
-	public function getGeg2018() {
+	public function getGeg2018(): string {
 		return $this->geg2018;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGueltigBis() {
+	public function getGueltigBis(): string {
 		return $this->gueltigBis;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getHwbklasse() {
+	public function getHwbklasse(): string {
 		return $this->hwbklasse;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getHwbwert() {
+	public function getHwbwert(): string {
 		return $this->hwbwert;
 	}
 
@@ -195,35 +196,35 @@ class Energiepass {
 	/**
 	 * @return boolean
 	 */
-	public function getMitwarmwasser() {
+	public function getMitwarmwasser(): bool {
 		return $this->mitwarmwasser;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPrimaerenergietraeger() {
+	public function getPrimaerenergietraeger(): string {
 		return $this->primaerenergietraeger;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getStromwert() {
+	public function getStromwert(): string {
 		return $this->stromwert;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getWaermewert() {
+	public function getWaermewert(): string {
 		return $this->waermewert;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getWertklasse() {
+	public function getWertklasse(): string {
 		return $this->wertklasse;
 	}
 
@@ -240,7 +241,7 @@ class Energiepass {
 	 * @param string $baujahr Setter for baujahr
 	 * @return Energiepass
 	 */
-	public function setBaujahr($baujahr) {
+	public function setBaujahr(string $baujahr) {
 		$this->baujahr = $baujahr;
 		return $this;
 	}
@@ -249,7 +250,7 @@ class Energiepass {
 	 * @param string $endenergiebedarf Setter for endenergiebedarf
 	 * @return Energiepass
 	 */
-	public function setEndenergiebedarf($endenergiebedarf) {
+	public function setEndenergiebedarf(string $endenergiebedarf) {
 		$this->endenergiebedarf = $endenergiebedarf;
 		return $this;
 	}
@@ -258,7 +259,7 @@ class Energiepass {
 	 * @param string $energieverbrauchkennwert Setter for energieverbrauchkennwert
 	 * @return Energiepass
 	 */
-	public function setEnergieverbrauchkennwert($energieverbrauchkennwert) {
+	public function setEnergieverbrauchkennwert(string $energieverbrauchkennwert) {
 		$this->energieverbrauchkennwert = $energieverbrauchkennwert;
 		return $this;
 	}
@@ -276,7 +277,7 @@ class Energiepass {
 	 * @param string $epasstext Setter for epasstext
 	 * @return Energiepass
 	 */
-	public function setEpasstext($epasstext) {
+	public function setEpasstext(string $epasstext) {
 		$this->epasstext = $epasstext;
 		return $this;
 	}
@@ -285,7 +286,7 @@ class Energiepass {
 	 * @param string $fgeeklasse Setter for fgeeklasse
 	 * @return Energiepass
 	 */
-	public function setFgeeklasse($fgeeklasse) {
+	public function setFgeeklasse(string $fgeeklasse) {
 		$this->fgeeklasse = $fgeeklasse;
 		return $this;
 	}
@@ -294,7 +295,7 @@ class Energiepass {
 	 * @param string $fgeewert Setter for fgeewert
 	 * @return Energiepass
 	 */
-	public function setFgeewert($fgeewert) {
+	public function setFgeewert(string $fgeewert) {
 		$this->fgeewert = $fgeewert;
 		return $this;
 	}
@@ -312,7 +313,7 @@ class Energiepass {
 	 * @param string $geg2018 Setter for geg2018
 	 * @return Energiepass
 	 */
-	public function setGeg2018($geg2018) {
+	public function setGeg2018(string $geg2018) {
 		$this->geg2018 = $geg2018;
 		return $this;
 	}
@@ -321,7 +322,7 @@ class Energiepass {
 	 * @param string $gueltigBis Setter for gueltigBis
 	 * @return Energiepass
 	 */
-	public function setGueltigBis($gueltigBis) {
+	public function setGueltigBis(string $gueltigBis) {
 		$this->gueltigBis = $gueltigBis;
 		return $this;
 	}
@@ -330,7 +331,7 @@ class Energiepass {
 	 * @param string $hwbklasse Setter for hwbklasse
 	 * @return Energiepass
 	 */
-	public function setHwbklasse($hwbklasse) {
+	public function setHwbklasse(string $hwbklasse) {
 		$this->hwbklasse = $hwbklasse;
 		return $this;
 	}
@@ -339,7 +340,7 @@ class Energiepass {
 	 * @param string $hwbwert Setter for hwbwert
 	 * @return Energiepass
 	 */
-	public function setHwbwert($hwbwert) {
+	public function setHwbwert(string $hwbwert) {
 		$this->hwbwert = $hwbwert;
 		return $this;
 	}
@@ -357,7 +358,7 @@ class Energiepass {
 	 * @param boolean $mitwarmwasser Setter for mitwarmwasser
 	 * @return Energiepass
 	 */
-	public function setMitwarmwasser($mitwarmwasser) {
+	public function setMitwarmwasser(bool $mitwarmwasser) {
 		$this->mitwarmwasser = $mitwarmwasser;
 		return $this;
 	}
@@ -366,7 +367,7 @@ class Energiepass {
 	 * @param string $primaerenergietraeger Setter for primaerenergietraeger
 	 * @return Energiepass
 	 */
-	public function setPrimaerenergietraeger($primaerenergietraeger) {
+	public function setPrimaerenergietraeger(string $primaerenergietraeger) {
 		$this->primaerenergietraeger = $primaerenergietraeger;
 		return $this;
 	}
@@ -375,7 +376,7 @@ class Energiepass {
 	 * @param string $stromwert Setter for stromwert
 	 * @return Energiepass
 	 */
-	public function setStromwert($stromwert) {
+	public function setStromwert(string $stromwert) {
 		$this->stromwert = $stromwert;
 		return $this;
 	}
@@ -384,7 +385,7 @@ class Energiepass {
 	 * @param string $waermewert Setter for waermewert
 	 * @return Energiepass
 	 */
-	public function setWaermewert($waermewert) {
+	public function setWaermewert(string $waermewert) {
 		$this->waermewert = $waermewert;
 		return $this;
 	}
@@ -393,7 +394,7 @@ class Energiepass {
 	 * @param string $wertklasse Setter for wertklasse
 	 * @return Energiepass
 	 */
-	public function setWertklasse($wertklasse) {
+	public function setWertklasse(string $wertklasse) {
 		$this->wertklasse = $wertklasse;
 		return $this;
 	}

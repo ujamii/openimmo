@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class Anbieter {
 
@@ -63,77 +64,77 @@ class Anbieter {
 	/**
 	 * @return string
 	 */
-	public function getAnbieternr() {
+	public function getAnbieternr(): string {
 		return $this->anbieternr;
 	}
 
 	/**
 	 * @return Anhang
 	 */
-	public function getAnhang() {
+	public function getAnhang(): Anhang {
 		return $this->anhang;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFirma() {
+	public function getFirma(): string {
 		return $this->firma;
 	}
 
 	/**
 	 * @return Immobilie[]
 	 */
-	public function getImmobilie() {
+	public function getImmobilie(): Immobilie[] {
 		return $this->immobilie;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getImpressum() {
+	public function getImpressum(): string {
 		return $this->impressum;
 	}
 
 	/**
 	 * @return ImpressumStrukt
 	 */
-	public function getImpressumStrukt() {
+	public function getImpressumStrukt(): ImpressumStrukt {
 		return $this->impressumStrukt;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getLizenzkennung() {
+	public function getLizenzkennung(): string {
 		return $this->lizenzkennung;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getOpenimmoAnid() {
+	public function getOpenimmoAnid(): string {
 		return $this->openimmoAnid;
 	}
 
 	/**
 	 * @return UserDefinedAnyfield[]
 	 */
-	public function getUserDefinedAnyfield() {
+	public function getUserDefinedAnyfield(): UserDefinedAnyfield[] {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * @return UserDefinedExtend[]
 	 */
-	public function getUserDefinedExtend() {
+	public function getUserDefinedExtend(): UserDefinedExtend[] {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * @return UserDefinedSimplefield[]
 	 */
-	public function getUserDefinedSimplefield() {
+	public function getUserDefinedSimplefield(): UserDefinedSimplefield[] {
 		return $this->userDefinedSimplefield;
 	}
 
@@ -141,7 +142,7 @@ class Anbieter {
 	 * @param string $anbieternr Setter for anbieternr
 	 * @return Anbieter
 	 */
-	public function setAnbieternr($anbieternr) {
+	public function setAnbieternr(string $anbieternr) {
 		$this->anbieternr = $anbieternr;
 		return $this;
 	}
@@ -159,7 +160,7 @@ class Anbieter {
 	 * @param string $firma Setter for firma
 	 * @return Anbieter
 	 */
-	public function setFirma($firma) {
+	public function setFirma(string $firma) {
 		$this->firma = $firma;
 		return $this;
 	}
@@ -177,7 +178,7 @@ class Anbieter {
 	 * @param string $impressum Setter for impressum
 	 * @return Anbieter
 	 */
-	public function setImpressum($impressum) {
+	public function setImpressum(string $impressum) {
 		$this->impressum = $impressum;
 		return $this;
 	}
@@ -195,7 +196,7 @@ class Anbieter {
 	 * @param string $lizenzkennung Setter for lizenzkennung
 	 * @return Anbieter
 	 */
-	public function setLizenzkennung($lizenzkennung) {
+	public function setLizenzkennung(string $lizenzkennung) {
 		$this->lizenzkennung = $lizenzkennung;
 		return $this;
 	}
@@ -204,7 +205,7 @@ class Anbieter {
 	 * @param string $openimmoAnid Setter for openimmoAnid
 	 * @return Anbieter
 	 */
-	public function setOpenimmoAnid($openimmoAnid) {
+	public function setOpenimmoAnid(string $openimmoAnid) {
 		$this->openimmoAnid = $openimmoAnid;
 		return $this;
 	}

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 /**
+ * @package Ujamii\OpenImmo\API
  */
 class MaxMietdauer {
 
@@ -13,7 +14,7 @@ class MaxMietdauer {
 	/**
 	 * @return string
 	 */
-	public function getMaxDauer() {
+	public function getMaxDauer(): string {
 		return $this->maxDauer;
 	}
 
@@ -21,7 +22,7 @@ class MaxMietdauer {
 	 * @param string $maxDauer Setter for maxDauer
 	 * @return MaxMietdauer
 	 */
-	public function setMaxDauer($maxDauer) {
+	public function setMaxDauer(string $maxDauer) {
 		$this->maxDauer = $maxDauer;
 		return $this;
 	}
