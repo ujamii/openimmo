@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,6 +13,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Bewertung {
 
 	/**
+	 * @XmlList(inline = true, entry = "feld") 
 	 * @var string[]
 	 */
 	protected $feld;

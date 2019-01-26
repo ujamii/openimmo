@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -95,16 +96,19 @@ class VerwaltungObjekt {
 	protected $objektadresseFreigeben;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_extend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;

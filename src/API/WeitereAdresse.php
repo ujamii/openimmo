@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\XmlAttribute;
+use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -36,22 +37,23 @@ class WeitereAdresse {
 	protected $anredeBrief;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $emailDirekt;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $emailPrivat;
 
 	/**
+	 * @XmlList(inline = true, entry = "email_sonstige") 
 	 * @var EmailSonstige[]
 	 */
 	protected $emailSonstige;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $emailZentrale;
 
@@ -116,32 +118,33 @@ class WeitereAdresse {
 	protected $strasse;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $telDurchw;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $telFax;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $telHandy;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $telPrivat;
 
 	/**
+	 * @XmlList(inline = true, entry = "tel_sonstige") 
 	 * @var TelSonstige[]
 	 */
 	protected $telSonstige;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $telZentrale;
 
@@ -156,16 +159,19 @@ class WeitereAdresse {
 	protected $url;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_extend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;
@@ -209,16 +215,16 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getEmailDirekt(): kontakt {
+	public function getEmailDirekt(): string {
 		return $this->emailDirekt;
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getEmailPrivat(): kontakt {
+	public function getEmailPrivat(): string {
 		return $this->emailPrivat;
 	}
 
@@ -232,9 +238,9 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getEmailZentrale(): kontakt {
+	public function getEmailZentrale(): string {
 		return $this->emailZentrale;
 	}
 
@@ -323,30 +329,30 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getTelDurchw(): kontakt {
+	public function getTelDurchw(): string {
 		return $this->telDurchw;
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getTelFax(): kontakt {
+	public function getTelFax(): string {
 		return $this->telFax;
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getTelHandy(): kontakt {
+	public function getTelHandy(): string {
 		return $this->telHandy;
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getTelPrivat(): kontakt {
+	public function getTelPrivat(): string {
 		return $this->telPrivat;
 	}
 
@@ -360,9 +366,9 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getTelZentrale(): kontakt {
+	public function getTelZentrale(): string {
 		return $this->telZentrale;
 	}
 
@@ -458,19 +464,19 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * @param kontakt $emailDirekt Setter for emailDirekt
+	 * @param string $emailDirekt Setter for emailDirekt
 	 * @return WeitereAdresse
 	 */
-	public function setEmailDirekt(kontakt $emailDirekt) {
+	public function setEmailDirekt(string $emailDirekt) {
 		$this->emailDirekt = $emailDirekt;
 		return $this;
 	}
 
 	/**
-	 * @param kontakt $emailPrivat Setter for emailPrivat
+	 * @param string $emailPrivat Setter for emailPrivat
 	 * @return WeitereAdresse
 	 */
-	public function setEmailPrivat(kontakt $emailPrivat) {
+	public function setEmailPrivat(string $emailPrivat) {
 		$this->emailPrivat = $emailPrivat;
 		return $this;
 	}
@@ -485,10 +491,10 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * @param kontakt $emailZentrale Setter for emailZentrale
+	 * @param string $emailZentrale Setter for emailZentrale
 	 * @return WeitereAdresse
 	 */
-	public function setEmailZentrale(kontakt $emailZentrale) {
+	public function setEmailZentrale(string $emailZentrale) {
 		$this->emailZentrale = $emailZentrale;
 		return $this;
 	}
@@ -602,37 +608,37 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * @param kontakt $telDurchw Setter for telDurchw
+	 * @param string $telDurchw Setter for telDurchw
 	 * @return WeitereAdresse
 	 */
-	public function setTelDurchw(kontakt $telDurchw) {
+	public function setTelDurchw(string $telDurchw) {
 		$this->telDurchw = $telDurchw;
 		return $this;
 	}
 
 	/**
-	 * @param kontakt $telFax Setter for telFax
+	 * @param string $telFax Setter for telFax
 	 * @return WeitereAdresse
 	 */
-	public function setTelFax(kontakt $telFax) {
+	public function setTelFax(string $telFax) {
 		$this->telFax = $telFax;
 		return $this;
 	}
 
 	/**
-	 * @param kontakt $telHandy Setter for telHandy
+	 * @param string $telHandy Setter for telHandy
 	 * @return WeitereAdresse
 	 */
-	public function setTelHandy(kontakt $telHandy) {
+	public function setTelHandy(string $telHandy) {
 		$this->telHandy = $telHandy;
 		return $this;
 	}
 
 	/**
-	 * @param kontakt $telPrivat Setter for telPrivat
+	 * @param string $telPrivat Setter for telPrivat
 	 * @return WeitereAdresse
 	 */
-	public function setTelPrivat(kontakt $telPrivat) {
+	public function setTelPrivat(string $telPrivat) {
 		$this->telPrivat = $telPrivat;
 		return $this;
 	}
@@ -647,10 +653,10 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * @param kontakt $telZentrale Setter for telZentrale
+	 * @param string $telZentrale Setter for telZentrale
 	 * @return WeitereAdresse
 	 */
-	public function setTelZentrale(kontakt $telZentrale) {
+	public function setTelZentrale(string $telZentrale) {
 		$this->telZentrale = $telZentrale;
 		return $this;
 	}

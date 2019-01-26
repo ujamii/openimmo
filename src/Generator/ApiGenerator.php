@@ -5,6 +5,7 @@ namespace Ujamii\OpenImmo\Generator;
 use GoetasWebservices\XML\XSDReader\Schema\Attribute\Attribute;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementItem;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementRef;
+use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Extension;
 use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexTypeSimpleContent;
@@ -74,25 +75,43 @@ class ApiGenerator
             ->setUseStatements(['JMS\Serializer\Annotation\XmlRoot'])
             ->setDescription('Class ' . $className)
             ->getDocblock()
-                ->appendTag(TagFactory::create('package', 'Ujamii\OpenImmo\API'))
-                ->appendTag(TagFactory::create('XmlRoot("' . $element->getName() . '")'))
-        ;
+            ->appendTag(TagFactory::create('package', 'Ujamii\OpenImmo\API'))
+            ->appendTag(TagFactory::create('XmlRoot("' . $element->getName() . '")'));
+
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
-            // TODO: extension of class (konktakt)
+            $this->addSimpleValue($element->getType()->getExtension(), $class);
         } else {
             foreach ($element->getType()->getElements() as $property) {
                 $this->parseProperty($property, $class);
             }
-            /* @var $attributeFromXsd Attribute */
-            foreach ($element->getType()->getAttributes() as $attributeFromXsd) {
-                $this->parseAttribute($attributeFromXsd, $class);
-            }
-            if (count($element->getType()->getAttributes()) > 0) {
-                $class->addUseStatement('JMS\Serializer\Annotation\XmlAttribute');
-            }
+        }
+        /* @var $attributeFromXsd Attribute */
+        foreach ($element->getType()->getAttributes() as $attributeFromXsd) {
+            $this->parseAttribute($attributeFromXsd, $class);
+        }
+        if (count($element->getType()->getAttributes()) > 0) {
+            $class->addUseStatement('JMS\Serializer\Annotation\XmlAttribute');
         }
 
         $this->createPhpFile($class);
+    }
+
+    /**
+     * @param Extension $extension
+     * @param PhpClass $class
+     */
+    protected function addSimpleValue(Extension $extension, PhpClass $class)
+    {
+        $propertyName = 'value';
+        $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
+
+        $propertyType = $this->extractPhpType($extension->getBase());
+        $classProperty->setType($this->getValidType($propertyType, $classProperty, $class));
+        $classProperty->getDocblock()->appendTag(TagFactory::create('Inline'));
+
+        $class->addUseStatement('JMS\Serializer\Annotation\Inline');
+        $class->setProperty($classProperty);
+        $this->generateGetterAndSetter($classProperty, $class);
     }
 
     /**
@@ -115,12 +134,14 @@ class ApiGenerator
         // take min/max into account, as this may be an array instead
         if ($property->getMax() == -1) {
             $propertyType .= '[]';
+            $classProperty->getDocblock()->appendTag(TagFactory::create('XmlList(inline = true, entry = "'.$property->getName().'")'));
+            $class->addUseStatement('JMS\Serializer\Annotation\XmlList');
         }
 
         $classProperty->setType($this->getValidType($propertyType, $classProperty, $class));
 
         if ($property->getType()->getRestriction()) {
-            if (empty($propertyType) && !empty($property->getType()->getRestriction()->getBase())) {
+            if (empty($propertyType) && ! empty($property->getType()->getRestriction()->getBase())) {
                 $propertyType = $this->getValidType($property->getType()->getRestriction()->getBase()->getName(), $classProperty, $class);
                 $classProperty->setType($propertyType);
             }
@@ -145,7 +166,7 @@ class ApiGenerator
     {
         $propertyName  = $this->camelize(strtolower($attribute->getName()), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
-        $type = $this->extractPhpType($attribute->getType());
+        $type          = $this->extractPhpType($attribute->getType());
 
         $classProperty->setType($this->getValidType($type, $classProperty, $class));
         $classProperty->getDocblock()->appendTag(TagFactory::create('XmlAttribute'));
@@ -275,6 +296,15 @@ class ApiGenerator
                 $classProperty->getDocblock()->appendTag(TagFactory::create('Type("DateTime<\'Y-m-d\'>")'));
                 $class->addUseStatement('JMS\Serializer\Annotation\Type');
                 break;
+
+            case 'base64Binary':
+                $propertyType = 'string';
+                $classProperty->setDescription('Base64 encoded binary');
+                break;
+
+            case 'kontakt':
+                $propertyType = 'string';
+                break;
         }
 
         return $propertyType;
@@ -339,8 +369,8 @@ class ApiGenerator
     protected function generateGetter(PhpProperty $property, PhpClass $class): void
     {
         $returnsArray = substr($property->getType(), -2) == '[]';
-        $getter     = PhpMethod::create('get' . ucfirst($property->getName()));
-        $getterCode = 'return $this->' . $property->getName() . ';';
+        $getter       = PhpMethod::create('get' . ucfirst($property->getName()));
+        $getterCode   = 'return $this->' . $property->getName() . ';';
         $getter->setBody($getterCode);
         $getter->setType($returnsArray ? 'array' : $property->getType());
         if ($returnsArray) {
@@ -379,6 +409,7 @@ class ApiGenerator
     {
         $generator = new CodeFileGenerator($this->getGeneratorConfig());
         $code      = $generator->generate($class);
+
         return file_put_contents(self::TARGET_FOLDER . $class->getName() . '.php', $code);
     }
 

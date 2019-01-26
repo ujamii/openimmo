@@ -1,6 +1,8 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -10,4 +12,50 @@ use JMS\Serializer\Annotation\XmlRoot;
  * @XmlRoot("gesamtmietenetto") 
  */
 class Gesamtmietenetto {
+
+	/**
+	 * optional
+	 *
+	 * @XmlAttribute 
+	 * @var float
+	 */
+	protected $gesamtmieteust;
+
+	/**
+	 * @Inline 
+	 * @var float
+	 */
+	protected $value;
+
+	/**
+	 * @return float
+	 */
+	public function getGesamtmieteust(): float {
+		return $this->gesamtmieteust;
+	}
+
+	/**
+	 * @return float
+	 */
+	public function getValue(): float {
+		return $this->value;
+	}
+
+	/**
+	 * @param float $gesamtmieteust Setter for gesamtmieteust
+	 * @return Gesamtmietenetto
+	 */
+	public function setGesamtmieteust(float $gesamtmieteust) {
+		$this->gesamtmieteust = $gesamtmieteust;
+		return $this;
+	}
+
+	/**
+	 * @param float $value Setter for value
+	 * @return Gesamtmietenetto
+	 */
+	public function setValue(float $value) {
+		$this->value = $value;
+		return $this;
+	}
 }

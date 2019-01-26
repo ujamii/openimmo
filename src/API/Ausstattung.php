@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -225,6 +226,7 @@ class Ausstattung {
 	protected $seniorengerecht;
 
 	/**
+	 * @XmlList(inline = true, entry = "serviceleistungen") 
 	 * @var Serviceleistungen[]
 	 */
 	protected $serviceleistungen;
@@ -240,6 +242,7 @@ class Ausstattung {
 	protected $sporteinrichtungen;
 
 	/**
+	 * @XmlList(inline = true, entry = "stellplatzart") 
 	 * @var Stellplatzart[]
 	 */
 	protected $stellplatzart;
@@ -275,16 +278,19 @@ class Ausstattung {
 	protected $unterkellert;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_extend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;

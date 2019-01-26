@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -17,26 +18,31 @@ class Infrastruktur {
 	protected $ausblick;
 
 	/**
+	 * @XmlList(inline = true, entry = "distanzen") 
 	 * @var Distanzen[]
 	 */
 	protected $distanzen;
 
 	/**
+	 * @XmlList(inline = true, entry = "distanzen_sport") 
 	 * @var DistanzenSport[]
 	 */
 	protected $distanzenSport;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_extend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;

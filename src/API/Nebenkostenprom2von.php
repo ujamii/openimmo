@@ -1,6 +1,8 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -10,4 +12,50 @@ use JMS\Serializer\Annotation\XmlRoot;
  * @XmlRoot("nebenkostenprom2von") 
  */
 class Nebenkostenprom2von {
+
+	/**
+	 * optional
+	 *
+	 * @XmlAttribute 
+	 * @var float
+	 */
+	protected $nebenkostenprom2bis;
+
+	/**
+	 * @Inline 
+	 * @var float
+	 */
+	protected $value;
+
+	/**
+	 * @return float
+	 */
+	public function getNebenkostenprom2bis(): float {
+		return $this->nebenkostenprom2bis;
+	}
+
+	/**
+	 * @return float
+	 */
+	public function getValue(): float {
+		return $this->value;
+	}
+
+	/**
+	 * @param float $nebenkostenprom2bis Setter for nebenkostenprom2bis
+	 * @return Nebenkostenprom2von
+	 */
+	public function setNebenkostenprom2bis(float $nebenkostenprom2bis) {
+		$this->nebenkostenprom2bis = $nebenkostenprom2bis;
+		return $this;
+	}
+
+	/**
+	 * @param float $value Setter for value
+	 * @return Nebenkostenprom2von
+	 */
+	public function setValue(float $value) {
+		$this->value = $value;
+		return $this;
+	}
 }

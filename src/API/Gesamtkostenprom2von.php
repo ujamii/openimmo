@@ -1,6 +1,8 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -10,4 +12,50 @@ use JMS\Serializer\Annotation\XmlRoot;
  * @XmlRoot("gesamtkostenprom2von") 
  */
 class Gesamtkostenprom2von {
+
+	/**
+	 * optional
+	 *
+	 * @XmlAttribute 
+	 * @var float
+	 */
+	protected $gesamtkostenprom2bis;
+
+	/**
+	 * @Inline 
+	 * @var float
+	 */
+	protected $value;
+
+	/**
+	 * @return float
+	 */
+	public function getGesamtkostenprom2bis(): float {
+		return $this->gesamtkostenprom2bis;
+	}
+
+	/**
+	 * @return float
+	 */
+	public function getValue(): float {
+		return $this->value;
+	}
+
+	/**
+	 * @param float $gesamtkostenprom2bis Setter for gesamtkostenprom2bis
+	 * @return Gesamtkostenprom2von
+	 */
+	public function setGesamtkostenprom2bis(float $gesamtkostenprom2bis) {
+		$this->gesamtkostenprom2bis = $gesamtkostenprom2bis;
+		return $this;
+	}
+
+	/**
+	 * @param float $value Setter for value
+	 * @return Gesamtkostenprom2von
+	 */
+	public function setValue(float $value) {
+		$this->value = $value;
+		return $this;
+	}
 }

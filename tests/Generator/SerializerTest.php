@@ -3,7 +3,11 @@ namespace Ujamii\OpenImmo\Tests\Generator;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\SerializerInterface;
+use Ujamii\OpenImmo\API\Ausblick;
+use Ujamii\OpenImmo\API\Distanzen;
+use Ujamii\OpenImmo\API\DistanzenSport;
 use Ujamii\OpenImmo\API\Immobilie;
+use Ujamii\OpenImmo\API\Infrastruktur;
 use Ujamii\OpenImmo\API\Kontaktperson;
 use Ujamii\OpenImmo\API\Nutzungsart;
 use Ujamii\OpenImmo\API\Uebertragung;
@@ -69,5 +73,36 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
             ->setWaz(false);
 
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($nutzungsart, 'xml'));
+    }
+
+    public function testWriteDistanzenZuSportXml()
+    {
+        $xmlString = '<distanzen_sport distanz_zu_sport="SEE" >15.0</distanzen_sport>';
+        $phpObj = (new DistanzenSport())->setValue(15)->setDistanzZuSport(DistanzenSport::DISTANZ_ZU_SPORT_SEE);
+
+        $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($phpObj, 'xml'));
+    }
+
+    public function testWriteInfrastrukturXml()
+    {
+        $xmlString = '<infrastruktur>
+            <ausblick blick="BERGE" />
+            <distanzen distanz_zu="HAUPTSCHULE" >22.0</distanzen>
+            <distanzen_sport distanz_zu_sport="SEE" >15.0</distanzen_sport>
+            <zulieferung>false</zulieferung>
+          </infrastruktur>';
+        $infrastrktur = new Infrastruktur();
+        $infrastrktur
+            ->setZulieferung(false)
+            ->setAusblick((new Ausblick())->setBlick(Ausblick::BLICK_BERGE))
+            ->setDistanzenSport([
+                (new DistanzenSport())->setValue(15)->setDistanzZuSport(DistanzenSport::DISTANZ_ZU_SPORT_SEE)
+            ])
+            ->setDistanzen([
+                (new Distanzen())->setValue(22)->setDistanzZu(Distanzen::DISTANZ_ZU_HAUPTSCHULE)
+            ])
+        ;
+
+        $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($infrastrktur, 'xml'));
     }
 }

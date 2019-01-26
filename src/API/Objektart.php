@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,71 +13,85 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Objektart {
 
 	/**
+	 * @XmlList(inline = true, entry = "buero_praxen") 
 	 * @var BueroPraxen[]
 	 */
 	protected $bueroPraxen;
 
 	/**
+	 * @XmlList(inline = true, entry = "einzelhandel") 
 	 * @var Einzelhandel[]
 	 */
 	protected $einzelhandel;
 
 	/**
+	 * @XmlList(inline = true, entry = "freizeitimmobilie_gewerblich") 
 	 * @var FreizeitimmobilieGewerblich[]
 	 */
 	protected $freizeitimmobilieGewerblich;
 
 	/**
+	 * @XmlList(inline = true, entry = "gastgewerbe") 
 	 * @var Gastgewerbe[]
 	 */
 	protected $gastgewerbe;
 
 	/**
+	 * @XmlList(inline = true, entry = "grundstueck") 
 	 * @var Grundstueck[]
 	 */
 	protected $grundstueck;
 
 	/**
+	 * @XmlList(inline = true, entry = "hallen_lager_prod") 
 	 * @var HallenLagerProd[]
 	 */
 	protected $hallenLagerProd;
 
 	/**
+	 * @XmlList(inline = true, entry = "haus") 
 	 * @var Haus[]
 	 */
 	protected $haus;
 
 	/**
+	 * @XmlList(inline = true, entry = "land_und_forstwirtschaft") 
 	 * @var LandUndForstwirtschaft[]
 	 */
 	protected $landUndForstwirtschaft;
 
 	/**
+	 * @XmlList(inline = true, entry = "objektart_zusatz") 
 	 * @var string[]
 	 */
 	protected $objektartZusatz;
 
 	/**
+	 * @XmlList(inline = true, entry = "parken") 
 	 * @var Parken[]
 	 */
 	protected $parken;
 
 	/**
+	 * @XmlList(inline = true, entry = "sonstige") 
 	 * @var Sonstige[]
 	 */
 	protected $sonstige;
 
 	/**
+	 * @XmlList(inline = true, entry = "wohnung") 
 	 * @var Wohnung[]
 	 */
 	protected $wohnung;
 
 	/**
+	 * @XmlList(inline = true, entry = "zimmer") 
 	 * @var Zimmer[]
 	 */
 	protected $zimmer;
 
 	/**
+	 * @XmlList(inline = true, entry = "zinshaus_renditeobjekt") 
 	 * @var ZinshausRenditeobjekt[]
 	 */
 	protected $zinshausRenditeobjekt;

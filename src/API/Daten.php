@@ -12,7 +12,9 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Daten {
 
 	/**
-	 * @var base64Binary
+	 * Base64 encoded binary
+	 *
+	 * @var string
 	 */
 	protected $anhanginhalt;
 
@@ -22,9 +24,9 @@ class Daten {
 	protected $pfad;
 
 	/**
-	 * @return base64Binary
+	 * @return string
 	 */
-	public function getAnhanginhalt(): base64Binary {
+	public function getAnhanginhalt(): string {
 		return $this->anhanginhalt;
 	}
 
@@ -36,10 +38,10 @@ class Daten {
 	}
 
 	/**
-	 * @param base64Binary $anhanginhalt Setter for anhanginhalt
+	 * @param string $anhanginhalt Setter for anhanginhalt
 	 * @return Daten
 	 */
-	public function setAnhanginhalt(base64Binary $anhanginhalt) {
+	public function setAnhanginhalt(string $anhanginhalt) {
 		$this->anhanginhalt = $anhanginhalt;
 		return $this;
 	}

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -27,27 +28,28 @@ class Kontaktperson {
 	protected $anredeBrief;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $emailDirekt;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $emailFeedback;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $emailPrivat;
 
 	/**
+	 * @XmlList(inline = true, entry = "email_sonstige") 
 	 * @var EmailSonstige[]
 	 */
 	protected $emailSonstige;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $emailZentrale;
 
@@ -132,32 +134,33 @@ class Kontaktperson {
 	protected $strasse;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $telDurchw;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $telFax;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $telHandy;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $telPrivat;
 
 	/**
+	 * @XmlList(inline = true, entry = "tel_sonstige") 
 	 * @var TelSonstige[]
 	 */
 	protected $telSonstige;
 
 	/**
-	 * @var kontakt
+	 * @var string
 	 */
 	protected $telZentrale;
 
@@ -172,16 +175,19 @@ class Kontaktperson {
 	protected $url;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_extend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
+	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;
@@ -218,23 +224,23 @@ class Kontaktperson {
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getEmailDirekt(): kontakt {
+	public function getEmailDirekt(): string {
 		return $this->emailDirekt;
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getEmailFeedback(): kontakt {
+	public function getEmailFeedback(): string {
 		return $this->emailFeedback;
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getEmailPrivat(): kontakt {
+	public function getEmailPrivat(): string {
 		return $this->emailPrivat;
 	}
 
@@ -248,9 +254,9 @@ class Kontaktperson {
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getEmailZentrale(): kontakt {
+	public function getEmailZentrale(): string {
 		return $this->emailZentrale;
 	}
 
@@ -367,30 +373,30 @@ class Kontaktperson {
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getTelDurchw(): kontakt {
+	public function getTelDurchw(): string {
 		return $this->telDurchw;
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getTelFax(): kontakt {
+	public function getTelFax(): string {
 		return $this->telFax;
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getTelHandy(): kontakt {
+	public function getTelHandy(): string {
 		return $this->telHandy;
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getTelPrivat(): kontakt {
+	public function getTelPrivat(): string {
 		return $this->telPrivat;
 	}
 
@@ -404,9 +410,9 @@ class Kontaktperson {
 	}
 
 	/**
-	 * @return kontakt
+	 * @return string
 	 */
-	public function getTelZentrale(): kontakt {
+	public function getTelZentrale(): string {
 		return $this->telZentrale;
 	}
 
@@ -493,28 +499,28 @@ class Kontaktperson {
 	}
 
 	/**
-	 * @param kontakt $emailDirekt Setter for emailDirekt
+	 * @param string $emailDirekt Setter for emailDirekt
 	 * @return Kontaktperson
 	 */
-	public function setEmailDirekt(kontakt $emailDirekt) {
+	public function setEmailDirekt(string $emailDirekt) {
 		$this->emailDirekt = $emailDirekt;
 		return $this;
 	}
 
 	/**
-	 * @param kontakt $emailFeedback Setter for emailFeedback
+	 * @param string $emailFeedback Setter for emailFeedback
 	 * @return Kontaktperson
 	 */
-	public function setEmailFeedback(kontakt $emailFeedback) {
+	public function setEmailFeedback(string $emailFeedback) {
 		$this->emailFeedback = $emailFeedback;
 		return $this;
 	}
 
 	/**
-	 * @param kontakt $emailPrivat Setter for emailPrivat
+	 * @param string $emailPrivat Setter for emailPrivat
 	 * @return Kontaktperson
 	 */
-	public function setEmailPrivat(kontakt $emailPrivat) {
+	public function setEmailPrivat(string $emailPrivat) {
 		$this->emailPrivat = $emailPrivat;
 		return $this;
 	}
@@ -529,10 +535,10 @@ class Kontaktperson {
 	}
 
 	/**
-	 * @param kontakt $emailZentrale Setter for emailZentrale
+	 * @param string $emailZentrale Setter for emailZentrale
 	 * @return Kontaktperson
 	 */
-	public function setEmailZentrale(kontakt $emailZentrale) {
+	public function setEmailZentrale(string $emailZentrale) {
 		$this->emailZentrale = $emailZentrale;
 		return $this;
 	}
@@ -682,37 +688,37 @@ class Kontaktperson {
 	}
 
 	/**
-	 * @param kontakt $telDurchw Setter for telDurchw
+	 * @param string $telDurchw Setter for telDurchw
 	 * @return Kontaktperson
 	 */
-	public function setTelDurchw(kontakt $telDurchw) {
+	public function setTelDurchw(string $telDurchw) {
 		$this->telDurchw = $telDurchw;
 		return $this;
 	}
 
 	/**
-	 * @param kontakt $telFax Setter for telFax
+	 * @param string $telFax Setter for telFax
 	 * @return Kontaktperson
 	 */
-	public function setTelFax(kontakt $telFax) {
+	public function setTelFax(string $telFax) {
 		$this->telFax = $telFax;
 		return $this;
 	}
 
 	/**
-	 * @param kontakt $telHandy Setter for telHandy
+	 * @param string $telHandy Setter for telHandy
 	 * @return Kontaktperson
 	 */
-	public function setTelHandy(kontakt $telHandy) {
+	public function setTelHandy(string $telHandy) {
 		$this->telHandy = $telHandy;
 		return $this;
 	}
 
 	/**
-	 * @param kontakt $telPrivat Setter for telPrivat
+	 * @param string $telPrivat Setter for telPrivat
 	 * @return Kontaktperson
 	 */
-	public function setTelPrivat(kontakt $telPrivat) {
+	public function setTelPrivat(string $telPrivat) {
 		$this->telPrivat = $telPrivat;
 		return $this;
 	}
@@ -727,10 +733,10 @@ class Kontaktperson {
 	}
 
 	/**
-	 * @param kontakt $telZentrale Setter for telZentrale
+	 * @param string $telZentrale Setter for telZentrale
 	 * @return Kontaktperson
 	 */
-	public function setTelZentrale(kontakt $telZentrale) {
+	public function setTelZentrale(string $telZentrale) {
 		$this->telZentrale = $telZentrale;
 		return $this;
 	}

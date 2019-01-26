@@ -1,6 +1,8 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -10,4 +12,50 @@ use JMS\Serializer\Annotation\XmlRoot;
  * @XmlRoot("sonstigekostennetto") 
  */
 class Sonstigekostennetto {
+
+	/**
+	 * optional
+	 *
+	 * @XmlAttribute 
+	 * @var float
+	 */
+	protected $sonstigekostenust;
+
+	/**
+	 * @Inline 
+	 * @var float
+	 */
+	protected $value;
+
+	/**
+	 * @return float
+	 */
+	public function getSonstigekostenust(): float {
+		return $this->sonstigekostenust;
+	}
+
+	/**
+	 * @return float
+	 */
+	public function getValue(): float {
+		return $this->value;
+	}
+
+	/**
+	 * @param float $sonstigekostenust Setter for sonstigekostenust
+	 * @return Sonstigekostennetto
+	 */
+	public function setSonstigekostenust(float $sonstigekostenust) {
+		$this->sonstigekostenust = $sonstigekostenust;
+		return $this;
+	}
+
+	/**
+	 * @param float $value Setter for value
+	 * @return Sonstigekostennetto
+	 */
+	public function setValue(float $value) {
+		$this->value = $value;
+		return $this;
+	}
 }
