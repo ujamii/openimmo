@@ -14,42 +14,86 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Uebertragung {
 
 	/**
+	 */
+	const ART_OFFLINE = 'OFFLINE';
+
+	/**
+	 */
+	const ART_ONLINE = 'ONLINE';
+
+	/**
+	 */
+	const MODUS_CHANGE = 'CHANGE';
+
+	/**
+	 */
+	const MODUS_DELETE = 'DELETE';
+
+	/**
+	 */
+	const MODUS_NEW = 'NEW';
+
+	/**
+	 */
+	const UMFANG_TEIL = 'TEIL';
+
+	/**
+	 */
+	const UMFANG_VOLL = 'VOLL';
+
+	/**
+	 * required
+	 *
 	 * @XmlAttribute 
+	 * @see ART_* constants
 	 * @var string
 	 */
 	protected $art;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see MODUS_* constants
 	 * @var string
 	 */
 	protected $modus;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $regiId;
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $sendersoftware;
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $senderversion;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $technEmail;
 
 	/**
+	 * optional
+	 *
 	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
 	 * @XmlAttribute 
 	 * @var \DateTime
@@ -57,12 +101,17 @@ class Uebertragung {
 	protected $timestamp;
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
+	 * @see UMFANG_* constants
 	 * @var string
 	 */
 	protected $umfang;
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
 	 * @var string
 	 */

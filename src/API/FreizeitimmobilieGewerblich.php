@@ -13,7 +13,22 @@ use JMS\Serializer\Annotation\XmlRoot;
 class FreizeitimmobilieGewerblich {
 
 	/**
+	 */
+	const FREIZEIT_TYP_FREIZEITANLAGE = 'FREIZEITANLAGE';
+
+	/**
+	 */
+	const FREIZEIT_TYP_SPORTANLAGEN = 'SPORTANLAGEN';
+
+	/**
+	 */
+	const FREIZEIT_TYP_VERGNUEGUNGSPARKS_UND_CENTER = 'VERGNUEGUNGSPARKS_UND_CENTER';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see FREIZEIT_TYP_* constants
 	 * @var string
 	 */
 	protected $freizeitTyp;

@@ -13,7 +13,26 @@ use JMS\Serializer\Annotation\XmlRoot;
 class MaxMietdauer {
 
 	/**
+	 */
+	const MAX_DAUER_JAHR = 'JAHR';
+
+	/**
+	 */
+	const MAX_DAUER_MONAT = 'MONAT';
+
+	/**
+	 */
+	const MAX_DAUER_TAG = 'TAG';
+
+	/**
+	 */
+	const MAX_DAUER_WOCHE = 'WOCHE';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see MAX_DAUER_* constants
 	 * @var string
 	 */
 	protected $maxDauer;

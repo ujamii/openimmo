@@ -13,30 +13,40 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Heizungsart {
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $etage;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $fern;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $fussboden;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $ofen;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */

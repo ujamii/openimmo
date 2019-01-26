@@ -13,6 +13,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 class AussenCourtage {
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */

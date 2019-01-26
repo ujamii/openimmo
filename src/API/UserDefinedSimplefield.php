@@ -13,6 +13,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 class UserDefinedSimplefield {
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
 	 * @var string
 	 */

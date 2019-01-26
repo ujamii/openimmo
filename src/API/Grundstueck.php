@@ -13,7 +13,46 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Grundstueck {
 
 	/**
+	 */
+	const GRUNDST_TYP_FREIZEIT = 'FREIZEIT';
+
+	/**
+	 */
+	const GRUNDST_TYP_GEMISCHT = 'GEMISCHT';
+
+	/**
+	 */
+	const GRUNDST_TYP_GEWERBE = 'GEWERBE';
+
+	/**
+	 */
+	const GRUNDST_TYP_GEWERBEPARK = 'GEWERBEPARK';
+
+	/**
+	 */
+	const GRUNDST_TYP_INDUSTRIE = 'INDUSTRIE';
+
+	/**
+	 */
+	const GRUNDST_TYP_LAND_FORSTWIRSCHAFT = 'LAND_FORSTWIRSCHAFT';
+
+	/**
+	 */
+	const GRUNDST_TYP_SEELIEGENSCHAFT = 'SEELIEGENSCHAFT';
+
+	/**
+	 */
+	const GRUNDST_TYP_SONDERNUTZUNG = 'SONDERNUTZUNG';
+
+	/**
+	 */
+	const GRUNDST_TYP_WOHNEN = 'WOHNEN';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see GRUNDST_TYP_* constants
 	 * @var string
 	 */
 	protected $grundstTyp;

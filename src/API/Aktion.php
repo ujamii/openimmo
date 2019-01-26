@@ -13,7 +13,22 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Aktion {
 
 	/**
+	 */
+	const AKTIONART_CHANGE = 'CHANGE';
+
+	/**
+	 */
+	const AKTIONART_DELETE = 'DELETE';
+
+	/**
+	 */
+	const AKTIONART_REFERENZ = 'REFERENZ';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see AKTIONART_* constants
 	 * @var string
 	 */
 	protected $aktionart;

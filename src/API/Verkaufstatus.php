@@ -13,7 +13,22 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Verkaufstatus {
 
 	/**
+	 */
+	const STAND_OFFEN = 'OFFEN';
+
+	/**
+	 */
+	const STAND_RESERVIERT = 'RESERVIERT';
+
+	/**
+	 */
+	const STAND_VERKAUFT = 'VERKAUFT';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see STAND_* constants
 	 * @var string
 	 */
 	protected $stand;

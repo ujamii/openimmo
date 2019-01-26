@@ -13,6 +13,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 class WeitereAdresse {
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
 	 * @var string
 	 */

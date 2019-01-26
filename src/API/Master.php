@@ -13,6 +13,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Master {
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */

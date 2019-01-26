@@ -13,48 +13,64 @@ use JMS\Serializer\Annotation\XmlRoot;
 class AusrichtBalkonTerrasse {
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $nord;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $nordost;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $nordwest;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $ost;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $sued;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $suedost;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $suedwest;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */

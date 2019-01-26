@@ -13,7 +13,66 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Wohnung {
 
 	/**
+	 */
+	const WOHNUNGTYP_APARTMENT = 'APARTMENT';
+
+	/**
+	 */
+	const WOHNUNGTYP_ATTIKAWOHNUNG = 'ATTIKAWOHNUNG';
+
+	/**
+	 */
+	const WOHNUNGTYP_DACHGESCHOSS = 'DACHGESCHOSS';
+
+	/**
+	 */
+	const WOHNUNGTYP_ERDGESCHOSS = 'ERDGESCHOSS';
+
+	/**
+	 */
+	const WOHNUNGTYP_ETAGE = 'ETAGE';
+
+	/**
+	 */
+	const WOHNUNGTYP_FERIENWOHNUNG = 'FERIENWOHNUNG';
+
+	/**
+	 */
+	const WOHNUNGTYP_GALERIE = 'GALERIE';
+
+	/**
+	 */
+	const WOHNUNGTYP_KEINE_ANGABE = 'KEINE_ANGABE';
+
+	/**
+	 */
+	const WOHNUNGTYP_LOFT_STUDIO_ATELIER = 'LOFT-STUDIO-ATELIER';
+
+	/**
+	 */
+	const WOHNUNGTYP_MAISONETTE = 'MAISONETTE';
+
+	/**
+	 */
+	const WOHNUNGTYP_PENTHOUSE = 'PENTHOUSE';
+
+	/**
+	 */
+	const WOHNUNGTYP_ROHDACHBODEN = 'ROHDACHBODEN';
+
+	/**
+	 */
+	const WOHNUNGTYP_SOUTERRAIN = 'SOUTERRAIN';
+
+	/**
+	 */
+	const WOHNUNGTYP_TERRASSEN = 'TERRASSEN';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see WOHNUNGTYP_* constants
 	 * @var string
 	 */
 	protected $wohnungtyp;

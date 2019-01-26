@@ -13,7 +13,22 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Geschlecht {
 
 	/**
+	 */
+	const GESCHL_ATTR_EGAL = 'EGAL';
+
+	/**
+	 */
+	const GESCHL_ATTR_NUR_FRAU = 'NUR_FRAU';
+
+	/**
+	 */
+	const GESCHL_ATTR_NUR_MANN = 'NUR_MANN';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see GESCHL_ATTR_* constants
 	 * @var string
 	 */
 	protected $geschlAttr;

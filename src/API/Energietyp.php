@@ -13,54 +13,72 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Energietyp {
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $kfw40;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $kfw55;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $kfw60;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $kfw70;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $minergiebauweise;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $minergieZertifiziert;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $neubaustandard;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $niedrigenergie;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */

@@ -13,18 +13,24 @@ use JMS\Serializer\Annotation\XmlRoot;
 class StpCarport {
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var int
 	 */
 	protected $anzahl;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var decimal
 	 */
 	protected $stellplatzkaufpreis;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var decimal
 	 */

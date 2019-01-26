@@ -13,6 +13,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 class ObjektText {
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
 	 * @var string
 	 */

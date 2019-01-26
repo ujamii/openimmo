@@ -13,18 +13,24 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Bauweise {
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $fertigteile;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $holz;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */

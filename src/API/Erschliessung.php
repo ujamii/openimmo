@@ -13,7 +13,26 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Erschliessung {
 
 	/**
+	 */
+	const ERSCHL_ATTR_ORTSUEBLICHERSCHLOSSEN = 'ORTSUEBLICHERSCHLOSSEN';
+
+	/**
+	 */
+	const ERSCHL_ATTR_TEILERSCHLOSSEN = 'TEILERSCHLOSSEN';
+
+	/**
+	 */
+	const ERSCHL_ATTR_UNERSCHLOSSEN = 'UNERSCHLOSSEN';
+
+	/**
+	 */
+	const ERSCHL_ATTR_VOLLERSCHLOSSEN = 'VOLLERSCHLOSSEN';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see ERSCHL_ATTR_* constants
 	 * @var string
 	 */
 	protected $erschlAttr;

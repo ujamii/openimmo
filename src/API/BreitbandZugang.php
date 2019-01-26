@@ -13,12 +13,16 @@ use JMS\Serializer\Annotation\XmlRoot;
 class BreitbandZugang {
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $art;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var decimal
 	 */

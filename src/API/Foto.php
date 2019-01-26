@@ -13,6 +13,14 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Foto {
 
 	/**
+	 */
+	const LOCATION_EXTERN = 'EXTERN';
+
+	/**
+	 */
+	const LOCATION_REMOTE = 'REMOTE';
+
+	/**
 	 * @var Daten
 	 */
 	protected $daten;
@@ -23,7 +31,10 @@ class Foto {
 	protected $format;
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
+	 * @see LOCATION_* constants
 	 * @var string
 	 */
 	protected $location;

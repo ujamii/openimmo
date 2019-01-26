@@ -13,7 +13,38 @@ use JMS\Serializer\Annotation\XmlRoot;
 class BebaubarNach {
 
 	/**
+	 */
+	const BEBAUBAR_ATTR_34_NACHBARSCHAFT = '34_NACHBARSCHAFT';
+
+	/**
+	 */
+	const BEBAUBAR_ATTR_35_AUSSENGEBIET = '35_AUSSENGEBIET';
+
+	/**
+	 */
+	const BEBAUBAR_ATTR_B_PLAN = 'B_PLAN';
+
+	/**
+	 */
+	const BEBAUBAR_ATTR_BAUERWARTUNGSLAND = 'BAUERWARTUNGSLAND';
+
+	/**
+	 */
+	const BEBAUBAR_ATTR_BAULAND_OHNE_B_PLAN = 'BAULAND_OHNE_B_PLAN';
+
+	/**
+	 */
+	const BEBAUBAR_ATTR_KEIN BAULAND = 'KEIN BAULAND';
+
+	/**
+	 */
+	const BEBAUBAR_ATTR_LAENDERSPEZIFISCH = 'LAENDERSPEZIFISCH';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see BEBAUBAR_ATTR_* constants
 	 * @var string
 	 */
 	protected $bebaubarAttr;

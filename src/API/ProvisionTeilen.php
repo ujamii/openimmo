@@ -13,7 +13,22 @@ use JMS\Serializer\Annotation\XmlRoot;
 class ProvisionTeilen {
 
 	/**
+	 */
+	const WERT_ABSOLUT = 'absolut';
+
+	/**
+	 */
+	const WERT_PROZENT = 'prozent';
+
+	/**
+	 */
+	const WERT_TEXT = 'text';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see WERT_* constants
 	 * @var string
 	 */
 	protected $wert;

@@ -143,6 +143,47 @@ class ApiGenerator
         $classProperty->setType($type);
         $classProperty->getDocblock()->appendTag(TagFactory::create('XmlAttribute'));
 
+        if ($attribute->getUse() != '') {
+            $classProperty->setDescription($attribute->getUse());
+        }
+
+        if (count($attribute->getType()->getRestriction()->getChecks()) > 0) {
+            foreach ($attribute->getType()->getRestriction()->getChecks() as $type => $options) {
+                switch ($type) {
+
+                    case 'enumeration':
+                        $constantPrefix = strtoupper($attribute->getName() . '_');
+                        foreach ($options as $possibleValue) {
+                            $constantName = strtoupper($constantPrefix . str_replace('-', '_', $possibleValue['value']));
+                            $class->setConstant($constantName, $possibleValue['value']);
+                        }
+                        $classProperty->getDocblock()->appendTag(TagFactory::create('see', $constantPrefix . '* constants'));
+                        break;
+
+                    case 'whiteSpace':
+                        // do nothing
+                        break;
+
+                    case 'minInclusive':
+                        //TODO
+                        break;
+
+                    case 'maxInclusive':
+                        //TODO
+                        break;
+
+                    case 'fractionDigits':
+                        //TODO
+                        break;
+
+                    default:
+                        throw new \InvalidArgumentException(vsprintf('Type "%s" is not handled in %s->parseAttribute', [$type, __CLASS__]));
+                        break;
+
+                }
+            }
+        }
+
         $class->setProperty($classProperty);
 
         $this->generateGetterAndSetter($classProperty, $class);

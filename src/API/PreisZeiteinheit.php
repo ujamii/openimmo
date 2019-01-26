@@ -13,7 +13,26 @@ use JMS\Serializer\Annotation\XmlRoot;
 class PreisZeiteinheit {
 
 	/**
+	 */
+	const ZEITEINHEIT_JAHR = 'JAHR';
+
+	/**
+	 */
+	const ZEITEINHEIT_MONAT = 'MONAT';
+
+	/**
+	 */
+	const ZEITEINHEIT_TAG = 'TAG';
+
+	/**
+	 */
+	const ZEITEINHEIT_WOCHE = 'WOCHE';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see ZEITEINHEIT_* constants
 	 * @var string
 	 */
 	protected $zeiteinheit;

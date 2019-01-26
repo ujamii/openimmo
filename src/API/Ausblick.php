@@ -13,7 +13,26 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Ausblick {
 
 	/**
+	 */
+	const BLICK_BERGE = 'BERGE';
+
+	/**
+	 */
+	const BLICK_FERNE = 'FERNE';
+
+	/**
+	 */
+	const BLICK_MEER = 'MEER';
+
+	/**
+	 */
+	const BLICK_SEE = 'SEE';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see BLICK_* constants
 	 * @var string
 	 */
 	protected $blick;

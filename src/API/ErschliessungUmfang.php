@@ -13,7 +13,26 @@ use JMS\Serializer\Annotation\XmlRoot;
 class ErschliessungUmfang {
 
 	/**
+	 */
+	const ERSCHL_ATTR_GAS = 'GAS';
+
+	/**
+	 */
+	const ERSCHL_ATTR_STROM = 'STROM';
+
+	/**
+	 */
+	const ERSCHL_ATTR_TK = 'TK';
+
+	/**
+	 */
+	const ERSCHL_ATTR_WASSER = 'WASSER';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see ERSCHL_ATTR_* constants
 	 * @var string
 	 */
 	protected $erschlAttr;

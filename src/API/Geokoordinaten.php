@@ -13,12 +13,16 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Geokoordinaten {
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
 	 * @var float
 	 */
 	protected $breitengrad;
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
 	 * @var float
 	 */

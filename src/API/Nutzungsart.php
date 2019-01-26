@@ -13,24 +13,32 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Nutzungsart {
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $anlage;
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $gewerbe;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $waz;
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */

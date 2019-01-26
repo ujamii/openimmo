@@ -13,7 +13,18 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Alter {
 
 	/**
+	 */
+	const ALTER_ATTR_ALTBAU = 'ALTBAU';
+
+	/**
+	 */
+	const ALTER_ATTR_NEUBAU = 'NEUBAU';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see ALTER_ATTR_* constants
 	 * @var string
 	 */
 	protected $alterAttr;

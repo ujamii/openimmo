@@ -13,7 +13,62 @@ use JMS\Serializer\Annotation\XmlRoot;
 class LageGebiet {
 
 	/**
+	 */
+	const GEBIETE_1A = '1A';
+
+	/**
+	 */
+	const GEBIETE_1B = '1B';
+
+	/**
+	 */
+	const GEBIETE_GEWERBE = 'GEWERBE';
+
+	/**
+	 */
+	const GEBIETE_INDUSTRIE = 'INDUSTRIE';
+
+	/**
+	 */
+	const GEBIETE_MISCH = 'MISCH';
+
+	/**
+	 */
+	const GEBIETE_NEBENZENTRUM = 'NEBENZENTRUM';
+
+	/**
+	 */
+	const GEBIETE_NEUBAU = 'NEUBAU';
+
+	/**
+	 */
+	const GEBIETE_ORTSLAGE = 'ORTSLAGE';
+
+	/**
+	 */
+	const GEBIETE_SIEDLUNG = 'SIEDLUNG';
+
+	/**
+	 */
+	const GEBIETE_STADTRAND = 'STADTRAND';
+
+	/**
+	 */
+	const GEBIETE_STADTTEIL = 'STADTTEIL';
+
+	/**
+	 */
+	const GEBIETE_STADTZENTRUM = 'STADTZENTRUM';
+
+	/**
+	 */
+	const GEBIETE_WOHN = 'WOHN';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see GEBIETE_* constants
 	 * @var string
 	 */
 	protected $gebiete;

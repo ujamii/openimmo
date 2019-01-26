@@ -13,7 +13,26 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Sonstige {
 
 	/**
+	 */
+	const SONSTIGE_TYP_KRANKENHAUS = 'KRANKENHAUS';
+
+	/**
+	 */
+	const SONSTIGE_TYP_PARKHAUS = 'PARKHAUS';
+
+	/**
+	 */
+	const SONSTIGE_TYP_SONSTIGE = 'SONSTIGE';
+
+	/**
+	 */
+	const SONSTIGE_TYP_TANKSTELLE = 'TANKSTELLE';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see SONSTIGE_TYP_* constants
 	 * @var string
 	 */
 	protected $sonstigeTyp;

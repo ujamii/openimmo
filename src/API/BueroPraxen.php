@@ -13,7 +13,50 @@ use JMS\Serializer\Annotation\XmlRoot;
 class BueroPraxen {
 
 	/**
+	 */
+	const BUERO_TYP_AUSSTELLUNGSFLAECHE = 'AUSSTELLUNGSFLAECHE';
+
+	/**
+	 */
+	const BUERO_TYP_BUEROFLAECHE = 'BUEROFLAECHE';
+
+	/**
+	 */
+	const BUERO_TYP_BUEROHAUS = 'BUEROHAUS';
+
+	/**
+	 */
+	const BUERO_TYP_BUEROZENTRUM = 'BUEROZENTRUM';
+
+	/**
+	 */
+	const BUERO_TYP_COWORKING = 'COWORKING';
+
+	/**
+	 */
+	const BUERO_TYP_LOFT_ATELIER = 'LOFT_ATELIER';
+
+	/**
+	 */
+	const BUERO_TYP_PRAXIS = 'PRAXIS';
+
+	/**
+	 */
+	const BUERO_TYP_PRAXISFLAECHE = 'PRAXISFLAECHE';
+
+	/**
+	 */
+	const BUERO_TYP_PRAXISHAUS = 'PRAXISHAUS';
+
+	/**
+	 */
+	const BUERO_TYP_SHARED_OFFICE = 'SHARED_OFFICE';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see BUERO_TYP_* constants
 	 * @var string
 	 */
 	protected $bueroTyp;

@@ -13,6 +13,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 class InnenCourtage {
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */

@@ -13,7 +13,14 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Zimmer {
 
 	/**
+	 */
+	const ZIMMERTYP_ZIMMER = 'ZIMMER';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see ZIMMERTYP_* constants
 	 * @var string
 	 */
 	protected $zimmertyp;

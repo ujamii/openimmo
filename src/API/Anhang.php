@@ -13,6 +13,78 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Anhang {
 
 	/**
+	 */
+	const GRUPPE_ANBIETERLOGO = 'ANBIETERLOGO';
+
+	/**
+	 */
+	const GRUPPE_ANBOBJURL = 'ANBOBJURL';
+
+	/**
+	 */
+	const GRUPPE_AUSSENANSICHTEN = 'AUSSENANSICHTEN';
+
+	/**
+	 */
+	const GRUPPE_BILD = 'BILD';
+
+	/**
+	 */
+	const GRUPPE_DOKUMENTE = 'DOKUMENTE';
+
+	/**
+	 */
+	const GRUPPE_EPASS_SKALA = 'EPASS-SKALA';
+
+	/**
+	 */
+	const GRUPPE_FILM = 'FILM';
+
+	/**
+	 */
+	const GRUPPE_FILMLINK = 'FILMLINK';
+
+	/**
+	 */
+	const GRUPPE_GRUNDRISS = 'GRUNDRISS';
+
+	/**
+	 */
+	const GRUPPE_INNENANSICHTEN = 'INNENANSICHTEN';
+
+	/**
+	 */
+	const GRUPPE_KARTEN_LAGEPLAN = 'KARTEN_LAGEPLAN';
+
+	/**
+	 */
+	const GRUPPE_LINKS = 'LINKS';
+
+	/**
+	 */
+	const GRUPPE_PANORAMA = 'PANORAMA';
+
+	/**
+	 */
+	const GRUPPE_QRCODE = 'QRCODE';
+
+	/**
+	 */
+	const GRUPPE_TITELBILD = 'TITELBILD';
+
+	/**
+	 */
+	const LOCATION_EXTERN = 'EXTERN';
+
+	/**
+	 */
+	const LOCATION_INTERN = 'INTERN';
+
+	/**
+	 */
+	const LOCATION_REMOTE = 'REMOTE';
+
+	/**
 	 * @var string
 	 */
 	protected $anhangtitel;
@@ -33,13 +105,19 @@ class Anhang {
 	protected $format;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see GRUPPE_* constants
 	 * @var string
 	 */
 	protected $gruppe;
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
+	 * @see LOCATION_* constants
 	 * @var string
 	 */
 	protected $location;

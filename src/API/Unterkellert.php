@@ -13,7 +13,22 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Unterkellert {
 
 	/**
+	 */
+	const KELLER_JA = 'JA';
+
+	/**
+	 */
+	const KELLER_NEIN = 'NEIN';
+
+	/**
+	 */
+	const KELLER_TEIL = 'TEIL';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see KELLER_* constants
 	 * @var string
 	 */
 	protected $keller;

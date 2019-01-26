@@ -13,12 +13,16 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Fahrstuhl {
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $lasten;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */

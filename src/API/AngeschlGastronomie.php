@@ -13,12 +13,16 @@ use JMS\Serializer\Annotation\XmlRoot;
 class AngeschlGastronomie {
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $bar;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */

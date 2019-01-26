@@ -13,24 +13,32 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Vermarktungsart {
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $erbpacht;
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $kauf;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $leasing;
 
 	/**
+	 * required
+	 *
 	 * @XmlAttribute 
 	 * @var boolean
 	 */

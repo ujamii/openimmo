@@ -13,7 +13,74 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Zustand {
 
 	/**
+	 */
+	const ZUSTAND_ART_ABRISSOBJEKT = 'ABRISSOBJEKT';
+
+	/**
+	 */
+	const ZUSTAND_ART_BAUFAELLIG = 'BAUFAELLIG';
+
+	/**
+	 */
+	const ZUSTAND_ART_ENTKERNT = 'ENTKERNT';
+
+	/**
+	 */
+	const ZUSTAND_ART_ERSTBEZUG = 'ERSTBEZUG';
+
+	/**
+	 */
+	const ZUSTAND_ART_GEPFLEGT = 'GEPFLEGT';
+
+	/**
+	 */
+	const ZUSTAND_ART_MODERNISIERT = 'MODERNISIERT';
+
+	/**
+	 */
+	const ZUSTAND_ART_NACH_VEREINBARUNG = 'NACH_VEREINBARUNG';
+
+	/**
+	 */
+	const ZUSTAND_ART_NEUWERTIG = 'NEUWERTIG';
+
+	/**
+	 */
+	const ZUSTAND_ART_PROJEKTIERT = 'PROJEKTIERT';
+
+	/**
+	 */
+	const ZUSTAND_ART_ROHBAU = 'ROHBAU';
+
+	/**
+	 */
+	const ZUSTAND_ART_SANIERUNGSBEDUERFTIG = 'SANIERUNGSBEDUERFTIG';
+
+	/**
+	 */
+	const ZUSTAND_ART_TEIL_SANIERT = 'TEIL_SANIERT';
+
+	/**
+	 */
+	const ZUSTAND_ART_TEIL_VOLLRENOVIERT = 'TEIL_VOLLRENOVIERT';
+
+	/**
+	 */
+	const ZUSTAND_ART_TEIL_VOLLRENOVIERUNGSBED = 'TEIL_VOLLRENOVIERUNGSBED';
+
+	/**
+	 */
+	const ZUSTAND_ART_TEIL_VOLLSANIERT = 'TEIL_VOLLSANIERT';
+
+	/**
+	 */
+	const ZUSTAND_ART_VOLL_SANIERT = 'VOLL_SANIERT';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see ZUSTAND_ART_* constants
 	 * @var string
 	 */
 	protected $zustandArt;

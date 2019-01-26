@@ -13,7 +13,18 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Moebliert {
 
 	/**
+	 */
+	const MOEB_TEIL = 'TEIL';
+
+	/**
+	 */
+	const MOEB_VOLL = 'VOLL';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see MOEB_* constants
 	 * @var string
 	 */
 	protected $moeb;

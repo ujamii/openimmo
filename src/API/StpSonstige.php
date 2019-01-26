@@ -13,13 +13,46 @@ use JMS\Serializer\Annotation\XmlRoot;
 class StpSonstige {
 
 	/**
+	 */
+	const PLATZART_CARPORT = 'CARPORT';
+
+	/**
+	 */
+	const PLATZART_DUPLEX = 'DUPLEX';
+
+	/**
+	 */
+	const PLATZART_FREIPLATZ = 'FREIPLATZ';
+
+	/**
+	 */
+	const PLATZART_GARAGE = 'GARAGE';
+
+	/**
+	 */
+	const PLATZART_PARKHAUS = 'PARKHAUS';
+
+	/**
+	 */
+	const PLATZART_SONSTIGES = 'SONSTIGES';
+
+	/**
+	 */
+	const PLATZART_TIEFGARAGE = 'TIEFGARAGE';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $bemerkung;
 
 	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see PLATZART_* constants
 	 * @var string
 	 */
 	protected $platzart;

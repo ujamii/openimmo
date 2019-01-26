@@ -13,7 +13,46 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Einzelhandel {
 
 	/**
+	 */
+	const HANDEL_TYP_AUSSTELLUNGSFLAECHE = 'AUSSTELLUNGSFLAECHE';
+
+	/**
+	 */
+	const HANDEL_TYP_EINKAUFSZENTRUM = 'EINKAUFSZENTRUM';
+
+	/**
+	 */
+	const HANDEL_TYP_EINZELHANDELSLADEN = 'EINZELHANDELSLADEN';
+
+	/**
+	 */
+	const HANDEL_TYP_FACTORY_OUTLET = 'FACTORY_OUTLET';
+
+	/**
+	 */
+	const HANDEL_TYP_KAUFHAUS = 'KAUFHAUS';
+
+	/**
+	 */
+	const HANDEL_TYP_KIOSK = 'KIOSK';
+
+	/**
+	 */
+	const HANDEL_TYP_LADENLOKAL = 'LADENLOKAL';
+
+	/**
+	 */
+	const HANDEL_TYP_VERBRAUCHERMARKT = 'VERBRAUCHERMARKT';
+
+	/**
+	 */
+	const HANDEL_TYP_VERKAUFSFLAECHE = 'VERKAUFSFLAECHE';
+
+	/**
+	 * optional
+	 *
 	 * @XmlAttribute 
+	 * @see HANDEL_TYP_* constants
 	 * @var string
 	 */
 	protected $handelTyp;
