@@ -29,6 +29,10 @@ composer req ujamii/openimmo
 4. `composer dumpautoload` to update the autoloading.
 5. Done.
 
+### Running tests
+
+1. `vendor/bin/phpunit -c .`
+
 ## License
 
 [GPLv3](LICENSE)
