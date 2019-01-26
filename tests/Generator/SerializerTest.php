@@ -44,9 +44,9 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
 
         $uebertragung = new Uebertragung();
         $uebertragung
-            ->setArt('ONLINE')
-            ->setUmfang('VOLL')
-            ->setModus('NEW')
+            ->setArt(Uebertragung::ART_ONLINE)
+            ->setUmfang(Uebertragung::UMFANG_VOLL)
+            ->setModus(Uebertragung::MODUS_NEW)
             ->setVersion('1.2.7')
             ->setSendersoftware('OIGEN')
             ->setSenderversion('0.9')
