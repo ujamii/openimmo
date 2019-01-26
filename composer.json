@@ -1,0 +1,21 @@
+{
+    "name": "ujamii/openimmo",
+    "description": "OpenImmo library",
+    "type": "library",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Michael Grundkötter",
+            "email": "mg@ujamii.com"
+        }
+    ],
+    "require": {
+        "goetas-webservices/xsd-reader": "^0.3.4",
+        "gossi/php-code-generator": "^0.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ujamii\\OpenImmo\\": "src"
+        }
+    }
+}
