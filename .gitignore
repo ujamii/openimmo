@@ -2,3 +2,4 @@
 /.idea
 /example/*
 /coverage
+/composer.lock
