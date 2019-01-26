@@ -7,10 +7,12 @@ This library wraps the OpenImmo XML format with some PHP 7 classes.
 
 ## TODOs
 
-- add/generate JMS Serializer config for reading and writing xml files.
+- solve all TODOs in code
 - add test cases, especially for the example file provided with the official download package.
 
 ## Installation
+
+**This is not yet ready for production, as this is a work in progress!**
 
 ```shell
 composer req ujamii/openimmo
