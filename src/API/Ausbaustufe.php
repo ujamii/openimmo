@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Ausbaustufe {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("AUSBAUHAUS") 
 	 * @var boolean
 	 */
 	protected $ausbauhaus;
@@ -24,6 +26,7 @@ class Ausbaustufe {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("BAUSATZHAUS") 
 	 * @var boolean
 	 */
 	protected $bausatzhaus;
@@ -32,6 +35,7 @@ class Ausbaustufe {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("SCHLUESSELFERTIGMITBODENPLATTE") 
 	 * @var boolean
 	 */
 	protected $schluesselfertigmitbodenplatte;
@@ -40,6 +44,7 @@ class Ausbaustufe {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("SCHLUESSELFERTIGMITKELLER") 
 	 * @var boolean
 	 */
 	protected $schluesselfertigmitkeller;
@@ -48,6 +53,7 @@ class Ausbaustufe {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("SCHLUESSELFERTIGOHNEBODENPLATTE") 
 	 * @var boolean
 	 */
 	protected $schluesselfertigohnebodenplatte;

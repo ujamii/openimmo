@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("ALTERNATIV") 
 	 * @var boolean
 	 */
 	protected $alternativ;
@@ -24,6 +26,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("BLOCK") 
 	 * @var boolean
 	 */
 	protected $block;
@@ -32,6 +35,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("ELEKTRO") 
 	 * @var boolean
 	 */
 	protected $elektro;
@@ -40,6 +44,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("ERDWAERME") 
 	 * @var boolean
 	 */
 	protected $erdwaerme;
@@ -48,6 +53,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("FERN") 
 	 * @var boolean
 	 */
 	protected $fern;
@@ -56,6 +62,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("FLUESSIGGAS") 
 	 * @var boolean
 	 */
 	protected $fluessiggas;
@@ -64,6 +71,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("GAS") 
 	 * @var boolean
 	 */
 	protected $gas;
@@ -72,6 +80,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("HOLZ") 
 	 * @var boolean
 	 */
 	protected $holz;
@@ -80,6 +89,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("KOHLE") 
 	 * @var boolean
 	 */
 	protected $kohle;
@@ -88,6 +98,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("LUFTWP") 
 	 * @var boolean
 	 */
 	protected $luftwp;
@@ -96,6 +107,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("OEL") 
 	 * @var boolean
 	 */
 	protected $oel;
@@ -104,6 +116,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("PELLET") 
 	 * @var boolean
 	 */
 	protected $pellet;
@@ -112,6 +125,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("SOLAR") 
 	 * @var boolean
 	 */
 	protected $solar;
@@ -120,6 +134,7 @@ class Befeuerung {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("WASSER-ELEKTRO") 
 	 * @var boolean
 	 */
 	protected $wasserElektro;

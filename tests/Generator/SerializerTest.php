@@ -5,6 +5,7 @@ use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\SerializerInterface;
 use Ujamii\OpenImmo\API\Immobilie;
 use Ujamii\OpenImmo\API\Kontaktperson;
+use Ujamii\OpenImmo\API\Nutzungsart;
 use Ujamii\OpenImmo\API\Uebertragung;
 
 /**
@@ -55,5 +56,18 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
             ->setRegiId('ABCD143');
 
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($uebertragung, 'xml'));
+    }
+
+    public function testWriteNutzungsartXml()
+    {
+        $xmlString = '<nutzungsart WOHNEN="true" GEWERBE="false" ANLAGE="false" WAZ="false" />';
+        $nutzungsart = new Nutzungsart();
+        $nutzungsart
+            ->setWohnen(true)
+            ->setGewerbe(false)
+            ->setAnlage(false)
+            ->setWaz(false);
+
+        $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($nutzungsart, 'xml'));
     }
 }

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Fahrstuhl {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("LASTEN") 
 	 * @var boolean
 	 */
 	protected $lasten;
@@ -24,6 +26,7 @@ class Fahrstuhl {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("PERSONEN") 
 	 * @var boolean
 	 */
 	protected $personen;

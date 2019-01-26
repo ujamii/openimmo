@@ -34,7 +34,7 @@ class BebaubarNach {
 
 	/**
 	 */
-	const BEBAUBAR_ATTR_KEIN BAULAND = 'KEIN BAULAND';
+	const BEBAUBAR_ATTR_KEIN_BAULAND = 'KEIN BAULAND';
 
 	/**
 	 */

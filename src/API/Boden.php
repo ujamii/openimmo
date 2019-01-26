@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("DIELEN") 
 	 * @var boolean
 	 */
 	protected $dielen;
@@ -24,6 +26,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("DOPPELBODEN") 
 	 * @var boolean
 	 */
 	protected $doppelboden;
@@ -32,6 +35,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("ESTRICH") 
 	 * @var boolean
 	 */
 	protected $estrich;
@@ -40,6 +44,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("FERTIGPARKETT") 
 	 * @var boolean
 	 */
 	protected $fertigparkett;
@@ -48,6 +53,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("FLIESEN") 
 	 * @var boolean
 	 */
 	protected $fliesen;
@@ -56,6 +62,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("GRANIT") 
 	 * @var boolean
 	 */
 	protected $granit;
@@ -64,6 +71,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("KUNSTSTOFF") 
 	 * @var boolean
 	 */
 	protected $kunststoff;
@@ -72,6 +80,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("LAMINAT") 
 	 * @var boolean
 	 */
 	protected $laminat;
@@ -80,6 +89,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("LINOLEUM") 
 	 * @var boolean
 	 */
 	protected $linoleum;
@@ -88,6 +98,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("MARMOR") 
 	 * @var boolean
 	 */
 	protected $marmor;
@@ -96,6 +107,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("PARKETT") 
 	 * @var boolean
 	 */
 	protected $parkett;
@@ -104,6 +116,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("STEIN") 
 	 * @var boolean
 	 */
 	protected $stein;
@@ -112,6 +125,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("TEPPICH") 
 	 * @var boolean
 	 */
 	protected $teppich;
@@ -120,6 +134,7 @@ class Boden {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("TERRAKOTTA") 
 	 * @var boolean
 	 */
 	protected $terrakotta;

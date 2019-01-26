@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Dachform {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("FLACHDACH") 
 	 * @var boolean
 	 */
 	protected $flachdach;
@@ -24,6 +26,7 @@ class Dachform {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("KRUEPPELWALMDACH") 
 	 * @var boolean
 	 */
 	protected $krueppelwalmdach;
@@ -32,6 +35,7 @@ class Dachform {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("MANSARDDACH") 
 	 * @var boolean
 	 */
 	protected $mansarddach;
@@ -40,6 +44,7 @@ class Dachform {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("PULTDACH") 
 	 * @var boolean
 	 */
 	protected $pultdach;
@@ -48,6 +53,7 @@ class Dachform {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("PYRAMIDENDACH") 
 	 * @var boolean
 	 */
 	protected $pyramidendach;
@@ -56,6 +62,7 @@ class Dachform {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("SATTELDACH") 
 	 * @var boolean
 	 */
 	protected $satteldach;
@@ -64,6 +71,7 @@ class Dachform {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("WALMDACH") 
 	 * @var boolean
 	 */
 	protected $walmdach;

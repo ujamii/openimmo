@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Kueche {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("EBK") 
 	 * @var boolean
 	 */
 	protected $ebk;
@@ -24,6 +26,7 @@ class Kueche {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("OFFEN") 
 	 * @var boolean
 	 */
 	protected $offen;
@@ -32,6 +35,7 @@ class Kueche {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("PANTRY") 
 	 * @var boolean
 	 */
 	protected $pantry;

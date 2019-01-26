@@ -150,6 +150,11 @@ class ApiGenerator
         $classProperty->setType($this->getValidType($type, $classProperty, $class));
         $classProperty->getDocblock()->appendTag(TagFactory::create('XmlAttribute'));
 
+        if (strtolower($attribute->getName()) != $attribute->getName()) {
+            $classProperty->getDocblock()->appendTag(TagFactory::create('SerializedName("' . $attribute->getName() . '")'));
+            $class->addUseStatement('JMS\Serializer\Annotation\SerializedName');
+        }
+
         if ($attribute->getUse() != '') {
             $classProperty->setDescription($attribute->getUse());
         }
@@ -181,7 +186,7 @@ class ApiGenerator
                     case 'enumeration':
                         $constantPrefix = strtoupper($nameInXsd . '_');
                         foreach ($options as $possibleValue) {
-                            $constantName = strtoupper($constantPrefix . str_replace('-', '_', $possibleValue['value']));
+                            $constantName = strtoupper($constantPrefix . str_replace([' ', '-'], '_', $possibleValue['value']));
                             $class->setConstant($constantName, $possibleValue['value']);
                         }
                         $classProperty->getDocblock()->appendTag(TagFactory::create('see', $constantPrefix . '* constants'));

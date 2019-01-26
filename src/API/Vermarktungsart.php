@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Vermarktungsart {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("ERBPACHT") 
 	 * @var boolean
 	 */
 	protected $erbpacht;
@@ -24,6 +26,7 @@ class Vermarktungsart {
 	 * required
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("KAUF") 
 	 * @var boolean
 	 */
 	protected $kauf;
@@ -32,6 +35,7 @@ class Vermarktungsart {
 	 * optional
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("LEASING") 
 	 * @var boolean
 	 */
 	protected $leasing;
@@ -40,6 +44,7 @@ class Vermarktungsart {
 	 * required
 	 *
 	 * @XmlAttribute 
+	 * @SerializedName("MIETE_PACHT") 
 	 * @var boolean
 	 */
 	protected $mietePacht;
