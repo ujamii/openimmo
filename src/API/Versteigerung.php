@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -22,17 +23,19 @@ class Versteigerung {
 	protected $amtsgericht;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $verkehrswert;
 
 	/**
-	 * @var dateTime
+	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
+	 * @var \DateTime
 	 */
 	protected $zusatztermin;
 
 	/**
-	 * @var dateTime
+	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
+	 * @var \DateTime
 	 */
 	protected $zvtermin;
 
@@ -56,23 +59,23 @@ class Versteigerung {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getVerkehrswert(): decimal {
+	public function getVerkehrswert(): float {
 		return $this->verkehrswert;
 	}
 
 	/**
-	 * @return dateTime
+	 * @return \DateTime
 	 */
-	public function getZusatztermin(): dateTime {
+	public function getZusatztermin(): \DateTime {
 		return $this->zusatztermin;
 	}
 
 	/**
-	 * @return dateTime
+	 * @return \DateTime
 	 */
-	public function getZvtermin(): dateTime {
+	public function getZvtermin(): \DateTime {
 		return $this->zvtermin;
 	}
 
@@ -102,28 +105,28 @@ class Versteigerung {
 	}
 
 	/**
-	 * @param decimal $verkehrswert Setter for verkehrswert
+	 * @param float $verkehrswert Setter for verkehrswert
 	 * @return Versteigerung
 	 */
-	public function setVerkehrswert(decimal $verkehrswert) {
+	public function setVerkehrswert(float $verkehrswert) {
 		$this->verkehrswert = $verkehrswert;
 		return $this;
 	}
 
 	/**
-	 * @param dateTime $zusatztermin Setter for zusatztermin
+	 * @param \DateTime $zusatztermin Setter for zusatztermin
 	 * @return Versteigerung
 	 */
-	public function setZusatztermin(dateTime $zusatztermin) {
+	public function setZusatztermin(\DateTime $zusatztermin) {
 		$this->zusatztermin = $zusatztermin;
 		return $this;
 	}
 
 	/**
-	 * @param dateTime $zvtermin Setter for zvtermin
+	 * @param \DateTime $zvtermin Setter for zvtermin
 	 * @return Versteigerung
 	 */
-	public function setZvtermin(dateTime $zvtermin) {
+	public function setZvtermin(\DateTime $zvtermin) {
 		$this->zvtermin = $zvtermin;
 		return $this;
 	}

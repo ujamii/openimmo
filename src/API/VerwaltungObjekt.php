@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,7 +13,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 class VerwaltungObjekt {
 
 	/**
-	 * @var date
+	 * @Type("DateTime<'Y-m-d'>") 
+	 * @var \DateTime
 	 */
 	protected $abdatum;
 
@@ -22,7 +24,8 @@ class VerwaltungObjekt {
 	protected $alsFerien;
 
 	/**
-	 * @var date
+	 * @Type("DateTime<'Y-m-d'>") 
+	 * @var \DateTime
 	 */
 	protected $bisdatum;
 
@@ -62,7 +65,7 @@ class VerwaltungObjekt {
 	protected $hochhaus;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $laufzeit;
 
@@ -72,7 +75,7 @@ class VerwaltungObjekt {
 	protected $maxMietdauer;
 
 	/**
-	 * @var positiveInteger
+	 * @var int
 	 */
 	protected $maxPersonen;
 
@@ -117,7 +120,8 @@ class VerwaltungObjekt {
 	protected $vermietet;
 
 	/**
-	 * @var date
+	 * @Type("DateTime<'Y-m-d'>") 
+	 * @var \DateTime
 	 */
 	protected $versteigerungstermin;
 
@@ -132,9 +136,9 @@ class VerwaltungObjekt {
 	protected $zugang;
 
 	/**
-	 * @return date
+	 * @return \DateTime
 	 */
-	public function getAbdatum(): date {
+	public function getAbdatum(): \DateTime {
 		return $this->abdatum;
 	}
 
@@ -146,9 +150,9 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @return date
+	 * @return \DateTime
 	 */
-	public function getBisdatum(): date {
+	public function getBisdatum(): \DateTime {
 		return $this->bisdatum;
 	}
 
@@ -202,9 +206,9 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getLaufzeit(): decimal {
+	public function getLaufzeit(): float {
 		return $this->laufzeit;
 	}
 
@@ -216,9 +220,9 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @return positiveInteger
+	 * @return int
 	 */
-	public function getMaxPersonen(): positiveInteger {
+	public function getMaxPersonen(): int {
 		return $this->maxPersonen;
 	}
 
@@ -244,7 +248,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * Returns array of UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield
 	 *
 	 * @return array
 	 */
@@ -253,7 +257,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * Returns array of UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend
 	 *
 	 * @return array
 	 */
@@ -262,7 +266,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * Returns array of UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield
 	 *
 	 * @return array
 	 */
@@ -285,9 +289,9 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @return date
+	 * @return \DateTime
 	 */
-	public function getVersteigerungstermin(): date {
+	public function getVersteigerungstermin(): \DateTime {
 		return $this->versteigerungstermin;
 	}
 
@@ -306,10 +310,10 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param date $abdatum Setter for abdatum
+	 * @param \DateTime $abdatum Setter for abdatum
 	 * @return VerwaltungObjekt
 	 */
-	public function setAbdatum(date $abdatum) {
+	public function setAbdatum(\DateTime $abdatum) {
 		$this->abdatum = $abdatum;
 		return $this;
 	}
@@ -324,10 +328,10 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param date $bisdatum Setter for bisdatum
+	 * @param \DateTime $bisdatum Setter for bisdatum
 	 * @return VerwaltungObjekt
 	 */
-	public function setBisdatum(date $bisdatum) {
+	public function setBisdatum(\DateTime $bisdatum) {
 		$this->bisdatum = $bisdatum;
 		return $this;
 	}
@@ -396,10 +400,10 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param decimal $laufzeit Setter for laufzeit
+	 * @param float $laufzeit Setter for laufzeit
 	 * @return VerwaltungObjekt
 	 */
-	public function setLaufzeit(decimal $laufzeit) {
+	public function setLaufzeit(float $laufzeit) {
 		$this->laufzeit = $laufzeit;
 		return $this;
 	}
@@ -414,10 +418,10 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param positiveInteger $maxPersonen Setter for maxPersonen
+	 * @param int $maxPersonen Setter for maxPersonen
 	 * @return VerwaltungObjekt
 	 */
-	public function setMaxPersonen(positiveInteger $maxPersonen) {
+	public function setMaxPersonen(int $maxPersonen) {
 		$this->maxPersonen = $maxPersonen;
 		return $this;
 	}
@@ -495,10 +499,10 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param date $versteigerungstermin Setter for versteigerungstermin
+	 * @param \DateTime $versteigerungstermin Setter for versteigerungstermin
 	 * @return VerwaltungObjekt
 	 */
-	public function setVersteigerungstermin(date $versteigerungstermin) {
+	public function setVersteigerungstermin(\DateTime $versteigerungstermin) {
 		$this->versteigerungstermin = $versteigerungstermin;
 		return $this;
 	}

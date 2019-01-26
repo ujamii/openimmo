@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,27 +13,32 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Bieterverfahren {
 
 	/**
-	 * @var date
+	 * @Type("DateTime<'Y-m-d'>") 
+	 * @var \DateTime
 	 */
 	protected $beginnAngebotsphase;
 
 	/**
-	 * @var dateTime
+	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
+	 * @var \DateTime
 	 */
 	protected $beginnBietzeit;
 
 	/**
-	 * @var date
+	 * @Type("DateTime<'Y-m-d'>") 
+	 * @var \DateTime
 	 */
 	protected $besichtigungstermin;
 
 	/**
-	 * @var date
+	 * @Type("DateTime<'Y-m-d'>") 
+	 * @var \DateTime
 	 */
 	protected $besichtigungstermin2;
 
 	/**
-	 * @var date
+	 * @Type("DateTime<'Y-m-d'>") 
+	 * @var \DateTime
 	 */
 	protected $endeBietzeit;
 
@@ -42,7 +48,7 @@ class Bieterverfahren {
 	protected $hoechstgebotZeigen;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $mindestpreis;
 
@@ -62,37 +68,37 @@ class Bieterverfahren {
 	protected $userDefinedSimplefield;
 
 	/**
-	 * @return date
+	 * @return \DateTime
 	 */
-	public function getBeginnAngebotsphase(): date {
+	public function getBeginnAngebotsphase(): \DateTime {
 		return $this->beginnAngebotsphase;
 	}
 
 	/**
-	 * @return dateTime
+	 * @return \DateTime
 	 */
-	public function getBeginnBietzeit(): dateTime {
+	public function getBeginnBietzeit(): \DateTime {
 		return $this->beginnBietzeit;
 	}
 
 	/**
-	 * @return date
+	 * @return \DateTime
 	 */
-	public function getBesichtigungstermin(): date {
+	public function getBesichtigungstermin(): \DateTime {
 		return $this->besichtigungstermin;
 	}
 
 	/**
-	 * @return date
+	 * @return \DateTime
 	 */
-	public function getBesichtigungstermin2(): date {
+	public function getBesichtigungstermin2(): \DateTime {
 		return $this->besichtigungstermin2;
 	}
 
 	/**
-	 * @return date
+	 * @return \DateTime
 	 */
-	public function getEndeBietzeit(): date {
+	public function getEndeBietzeit(): \DateTime {
 		return $this->endeBietzeit;
 	}
 
@@ -104,14 +110,14 @@ class Bieterverfahren {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getMindestpreis(): decimal {
+	public function getMindestpreis(): float {
 		return $this->mindestpreis;
 	}
 
 	/**
-	 * Returns array of UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield
 	 *
 	 * @return array
 	 */
@@ -120,7 +126,7 @@ class Bieterverfahren {
 	}
 
 	/**
-	 * Returns array of UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend
 	 *
 	 * @return array
 	 */
@@ -129,7 +135,7 @@ class Bieterverfahren {
 	}
 
 	/**
-	 * Returns array of UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield
 	 *
 	 * @return array
 	 */
@@ -138,46 +144,46 @@ class Bieterverfahren {
 	}
 
 	/**
-	 * @param date $beginnAngebotsphase Setter for beginnAngebotsphase
+	 * @param \DateTime $beginnAngebotsphase Setter for beginnAngebotsphase
 	 * @return Bieterverfahren
 	 */
-	public function setBeginnAngebotsphase(date $beginnAngebotsphase) {
+	public function setBeginnAngebotsphase(\DateTime $beginnAngebotsphase) {
 		$this->beginnAngebotsphase = $beginnAngebotsphase;
 		return $this;
 	}
 
 	/**
-	 * @param dateTime $beginnBietzeit Setter for beginnBietzeit
+	 * @param \DateTime $beginnBietzeit Setter for beginnBietzeit
 	 * @return Bieterverfahren
 	 */
-	public function setBeginnBietzeit(dateTime $beginnBietzeit) {
+	public function setBeginnBietzeit(\DateTime $beginnBietzeit) {
 		$this->beginnBietzeit = $beginnBietzeit;
 		return $this;
 	}
 
 	/**
-	 * @param date $besichtigungstermin Setter for besichtigungstermin
+	 * @param \DateTime $besichtigungstermin Setter for besichtigungstermin
 	 * @return Bieterverfahren
 	 */
-	public function setBesichtigungstermin(date $besichtigungstermin) {
+	public function setBesichtigungstermin(\DateTime $besichtigungstermin) {
 		$this->besichtigungstermin = $besichtigungstermin;
 		return $this;
 	}
 
 	/**
-	 * @param date $besichtigungstermin2 Setter for besichtigungstermin2
+	 * @param \DateTime $besichtigungstermin2 Setter for besichtigungstermin2
 	 * @return Bieterverfahren
 	 */
-	public function setBesichtigungstermin2(date $besichtigungstermin2) {
+	public function setBesichtigungstermin2(\DateTime $besichtigungstermin2) {
 		$this->besichtigungstermin2 = $besichtigungstermin2;
 		return $this;
 	}
 
 	/**
-	 * @param date $endeBietzeit Setter for endeBietzeit
+	 * @param \DateTime $endeBietzeit Setter for endeBietzeit
 	 * @return Bieterverfahren
 	 */
-	public function setEndeBietzeit(date $endeBietzeit) {
+	public function setEndeBietzeit(\DateTime $endeBietzeit) {
 		$this->endeBietzeit = $endeBietzeit;
 		return $this;
 	}
@@ -192,10 +198,10 @@ class Bieterverfahren {
 	}
 
 	/**
-	 * @param decimal $mindestpreis Setter for mindestpreis
+	 * @param float $mindestpreis Setter for mindestpreis
 	 * @return Bieterverfahren
 	 */
-	public function setMindestpreis(decimal $mindestpreis) {
+	public function setMindestpreis(float $mindestpreis) {
 		$this->mindestpreis = $mindestpreis;
 		return $this;
 	}

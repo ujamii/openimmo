@@ -12,82 +12,82 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Flaechen {
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $anzahlBadezimmer;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $anzahlBalkone;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $anzahlBetten;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $anzahlGewerbeeinheiten;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $anzahlLogia;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $anzahlSchlafzimmer;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $anzahlSepWc;
 
 	/**
-	 * @var positiveInteger
+	 * @var int
 	 */
 	protected $anzahlStellplaetze;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $anzahlTagungsraeume;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $anzahlTerrassen;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $anzahlWohneinheiten;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $anzahlWohnSchlafzimmer;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $anzahlZimmer;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $ausnuetzungsziffer;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $balkonTerrasseFlaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $beheizbareFlaeche;
 
@@ -102,17 +102,17 @@ class Flaechen {
 	protected $bmz;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $bueroflaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $bueroteilflaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $dachbodenflaeche;
 
@@ -122,42 +122,42 @@ class Flaechen {
 	protected $einliegerwohnung;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $fensterfront;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $fensterfrontQm;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $flaechebis;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $flaechevon;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $freiflaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $gartenflaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $gastroflaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $gesamtflaeche;
 
@@ -167,12 +167,12 @@ class Flaechen {
 	protected $gfz;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $grundstuecksflaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $grundstuecksfront;
 
@@ -182,42 +182,42 @@ class Flaechen {
 	protected $grz;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $kellerflaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $kubatur;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $ladenflaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $lagerflaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $nutzflaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $plaetzeGastraum;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $sonstflaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $teilbarAb;
 
@@ -237,134 +237,134 @@ class Flaechen {
 	protected $userDefinedSimplefield;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $verkaufsflaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $vermietbareFlaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $verwaltungsflaeche;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $wohnflaeche;
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAnzahlBadezimmer(): decimal {
+	public function getAnzahlBadezimmer(): float {
 		return $this->anzahlBadezimmer;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAnzahlBalkone(): decimal {
+	public function getAnzahlBalkone(): float {
 		return $this->anzahlBalkone;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAnzahlBetten(): decimal {
+	public function getAnzahlBetten(): float {
 		return $this->anzahlBetten;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAnzahlGewerbeeinheiten(): decimal {
+	public function getAnzahlGewerbeeinheiten(): float {
 		return $this->anzahlGewerbeeinheiten;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAnzahlLogia(): decimal {
+	public function getAnzahlLogia(): float {
 		return $this->anzahlLogia;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAnzahlSchlafzimmer(): decimal {
+	public function getAnzahlSchlafzimmer(): float {
 		return $this->anzahlSchlafzimmer;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAnzahlSepWc(): decimal {
+	public function getAnzahlSepWc(): float {
 		return $this->anzahlSepWc;
 	}
 
 	/**
-	 * @return positiveInteger
+	 * @return int
 	 */
-	public function getAnzahlStellplaetze(): positiveInteger {
+	public function getAnzahlStellplaetze(): int {
 		return $this->anzahlStellplaetze;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAnzahlTagungsraeume(): decimal {
+	public function getAnzahlTagungsraeume(): float {
 		return $this->anzahlTagungsraeume;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAnzahlTerrassen(): decimal {
+	public function getAnzahlTerrassen(): float {
 		return $this->anzahlTerrassen;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAnzahlWohneinheiten(): decimal {
+	public function getAnzahlWohneinheiten(): float {
 		return $this->anzahlWohneinheiten;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAnzahlWohnSchlafzimmer(): decimal {
+	public function getAnzahlWohnSchlafzimmer(): float {
 		return $this->anzahlWohnSchlafzimmer;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAnzahlZimmer(): decimal {
+	public function getAnzahlZimmer(): float {
 		return $this->anzahlZimmer;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAusnuetzungsziffer(): decimal {
+	public function getAusnuetzungsziffer(): float {
 		return $this->ausnuetzungsziffer;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getBalkonTerrasseFlaeche(): decimal {
+	public function getBalkonTerrasseFlaeche(): float {
 		return $this->balkonTerrasseFlaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getBeheizbareFlaeche(): decimal {
+	public function getBeheizbareFlaeche(): float {
 		return $this->beheizbareFlaeche;
 	}
 
@@ -383,23 +383,23 @@ class Flaechen {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getBueroflaeche(): decimal {
+	public function getBueroflaeche(): float {
 		return $this->bueroflaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getBueroteilflaeche(): decimal {
+	public function getBueroteilflaeche(): float {
 		return $this->bueroteilflaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getDachbodenflaeche(): decimal {
+	public function getDachbodenflaeche(): float {
 		return $this->dachbodenflaeche;
 	}
 
@@ -411,58 +411,58 @@ class Flaechen {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getFensterfront(): decimal {
+	public function getFensterfront(): float {
 		return $this->fensterfront;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getFensterfrontQm(): decimal {
+	public function getFensterfrontQm(): float {
 		return $this->fensterfrontQm;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getFlaechebis(): decimal {
+	public function getFlaechebis(): float {
 		return $this->flaechebis;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getFlaechevon(): decimal {
+	public function getFlaechevon(): float {
 		return $this->flaechevon;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getFreiflaeche(): decimal {
+	public function getFreiflaeche(): float {
 		return $this->freiflaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getGartenflaeche(): decimal {
+	public function getGartenflaeche(): float {
 		return $this->gartenflaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getGastroflaeche(): decimal {
+	public function getGastroflaeche(): float {
 		return $this->gastroflaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getGesamtflaeche(): decimal {
+	public function getGesamtflaeche(): float {
 		return $this->gesamtflaeche;
 	}
 
@@ -474,16 +474,16 @@ class Flaechen {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getGrundstuecksflaeche(): decimal {
+	public function getGrundstuecksflaeche(): float {
 		return $this->grundstuecksflaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getGrundstuecksfront(): decimal {
+	public function getGrundstuecksfront(): float {
 		return $this->grundstuecksfront;
 	}
 
@@ -495,63 +495,63 @@ class Flaechen {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getKellerflaeche(): decimal {
+	public function getKellerflaeche(): float {
 		return $this->kellerflaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getKubatur(): decimal {
+	public function getKubatur(): float {
 		return $this->kubatur;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getLadenflaeche(): decimal {
+	public function getLadenflaeche(): float {
 		return $this->ladenflaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getLagerflaeche(): decimal {
+	public function getLagerflaeche(): float {
 		return $this->lagerflaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getNutzflaeche(): decimal {
+	public function getNutzflaeche(): float {
 		return $this->nutzflaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getPlaetzeGastraum(): decimal {
+	public function getPlaetzeGastraum(): float {
 		return $this->plaetzeGastraum;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getSonstflaeche(): decimal {
+	public function getSonstflaeche(): float {
 		return $this->sonstflaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getTeilbarAb(): decimal {
+	public function getTeilbarAb(): float {
 		return $this->teilbarAb;
 	}
 
 	/**
-	 * Returns array of UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield
 	 *
 	 * @return array
 	 */
@@ -560,7 +560,7 @@ class Flaechen {
 	}
 
 	/**
-	 * Returns array of UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend
 	 *
 	 * @return array
 	 */
@@ -569,7 +569,7 @@ class Flaechen {
 	}
 
 	/**
-	 * Returns array of UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield
 	 *
 	 * @return array
 	 */
@@ -578,173 +578,173 @@ class Flaechen {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getVerkaufsflaeche(): decimal {
+	public function getVerkaufsflaeche(): float {
 		return $this->verkaufsflaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getVermietbareFlaeche(): decimal {
+	public function getVermietbareFlaeche(): float {
 		return $this->vermietbareFlaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getVerwaltungsflaeche(): decimal {
+	public function getVerwaltungsflaeche(): float {
 		return $this->verwaltungsflaeche;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getWohnflaeche(): decimal {
+	public function getWohnflaeche(): float {
 		return $this->wohnflaeche;
 	}
 
 	/**
-	 * @param decimal $anzahlBadezimmer Setter for anzahlBadezimmer
+	 * @param float $anzahlBadezimmer Setter for anzahlBadezimmer
 	 * @return Flaechen
 	 */
-	public function setAnzahlBadezimmer(decimal $anzahlBadezimmer) {
+	public function setAnzahlBadezimmer(float $anzahlBadezimmer) {
 		$this->anzahlBadezimmer = $anzahlBadezimmer;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $anzahlBalkone Setter for anzahlBalkone
+	 * @param float $anzahlBalkone Setter for anzahlBalkone
 	 * @return Flaechen
 	 */
-	public function setAnzahlBalkone(decimal $anzahlBalkone) {
+	public function setAnzahlBalkone(float $anzahlBalkone) {
 		$this->anzahlBalkone = $anzahlBalkone;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $anzahlBetten Setter for anzahlBetten
+	 * @param float $anzahlBetten Setter for anzahlBetten
 	 * @return Flaechen
 	 */
-	public function setAnzahlBetten(decimal $anzahlBetten) {
+	public function setAnzahlBetten(float $anzahlBetten) {
 		$this->anzahlBetten = $anzahlBetten;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $anzahlGewerbeeinheiten Setter for anzahlGewerbeeinheiten
+	 * @param float $anzahlGewerbeeinheiten Setter for anzahlGewerbeeinheiten
 	 * @return Flaechen
 	 */
-	public function setAnzahlGewerbeeinheiten(decimal $anzahlGewerbeeinheiten) {
+	public function setAnzahlGewerbeeinheiten(float $anzahlGewerbeeinheiten) {
 		$this->anzahlGewerbeeinheiten = $anzahlGewerbeeinheiten;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $anzahlLogia Setter for anzahlLogia
+	 * @param float $anzahlLogia Setter for anzahlLogia
 	 * @return Flaechen
 	 */
-	public function setAnzahlLogia(decimal $anzahlLogia) {
+	public function setAnzahlLogia(float $anzahlLogia) {
 		$this->anzahlLogia = $anzahlLogia;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $anzahlSchlafzimmer Setter for anzahlSchlafzimmer
+	 * @param float $anzahlSchlafzimmer Setter for anzahlSchlafzimmer
 	 * @return Flaechen
 	 */
-	public function setAnzahlSchlafzimmer(decimal $anzahlSchlafzimmer) {
+	public function setAnzahlSchlafzimmer(float $anzahlSchlafzimmer) {
 		$this->anzahlSchlafzimmer = $anzahlSchlafzimmer;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $anzahlSepWc Setter for anzahlSepWc
+	 * @param float $anzahlSepWc Setter for anzahlSepWc
 	 * @return Flaechen
 	 */
-	public function setAnzahlSepWc(decimal $anzahlSepWc) {
+	public function setAnzahlSepWc(float $anzahlSepWc) {
 		$this->anzahlSepWc = $anzahlSepWc;
 		return $this;
 	}
 
 	/**
-	 * @param positiveInteger $anzahlStellplaetze Setter for anzahlStellplaetze
+	 * @param int $anzahlStellplaetze Setter for anzahlStellplaetze
 	 * @return Flaechen
 	 */
-	public function setAnzahlStellplaetze(positiveInteger $anzahlStellplaetze) {
+	public function setAnzahlStellplaetze(int $anzahlStellplaetze) {
 		$this->anzahlStellplaetze = $anzahlStellplaetze;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $anzahlTagungsraeume Setter for anzahlTagungsraeume
+	 * @param float $anzahlTagungsraeume Setter for anzahlTagungsraeume
 	 * @return Flaechen
 	 */
-	public function setAnzahlTagungsraeume(decimal $anzahlTagungsraeume) {
+	public function setAnzahlTagungsraeume(float $anzahlTagungsraeume) {
 		$this->anzahlTagungsraeume = $anzahlTagungsraeume;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $anzahlTerrassen Setter for anzahlTerrassen
+	 * @param float $anzahlTerrassen Setter for anzahlTerrassen
 	 * @return Flaechen
 	 */
-	public function setAnzahlTerrassen(decimal $anzahlTerrassen) {
+	public function setAnzahlTerrassen(float $anzahlTerrassen) {
 		$this->anzahlTerrassen = $anzahlTerrassen;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $anzahlWohneinheiten Setter for anzahlWohneinheiten
+	 * @param float $anzahlWohneinheiten Setter for anzahlWohneinheiten
 	 * @return Flaechen
 	 */
-	public function setAnzahlWohneinheiten(decimal $anzahlWohneinheiten) {
+	public function setAnzahlWohneinheiten(float $anzahlWohneinheiten) {
 		$this->anzahlWohneinheiten = $anzahlWohneinheiten;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $anzahlWohnSchlafzimmer Setter for anzahlWohnSchlafzimmer
+	 * @param float $anzahlWohnSchlafzimmer Setter for anzahlWohnSchlafzimmer
 	 * @return Flaechen
 	 */
-	public function setAnzahlWohnSchlafzimmer(decimal $anzahlWohnSchlafzimmer) {
+	public function setAnzahlWohnSchlafzimmer(float $anzahlWohnSchlafzimmer) {
 		$this->anzahlWohnSchlafzimmer = $anzahlWohnSchlafzimmer;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $anzahlZimmer Setter for anzahlZimmer
+	 * @param float $anzahlZimmer Setter for anzahlZimmer
 	 * @return Flaechen
 	 */
-	public function setAnzahlZimmer(decimal $anzahlZimmer) {
+	public function setAnzahlZimmer(float $anzahlZimmer) {
 		$this->anzahlZimmer = $anzahlZimmer;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $ausnuetzungsziffer Setter for ausnuetzungsziffer
+	 * @param float $ausnuetzungsziffer Setter for ausnuetzungsziffer
 	 * @return Flaechen
 	 */
-	public function setAusnuetzungsziffer(decimal $ausnuetzungsziffer) {
+	public function setAusnuetzungsziffer(float $ausnuetzungsziffer) {
 		$this->ausnuetzungsziffer = $ausnuetzungsziffer;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $balkonTerrasseFlaeche Setter for balkonTerrasseFlaeche
+	 * @param float $balkonTerrasseFlaeche Setter for balkonTerrasseFlaeche
 	 * @return Flaechen
 	 */
-	public function setBalkonTerrasseFlaeche(decimal $balkonTerrasseFlaeche) {
+	public function setBalkonTerrasseFlaeche(float $balkonTerrasseFlaeche) {
 		$this->balkonTerrasseFlaeche = $balkonTerrasseFlaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $beheizbareFlaeche Setter for beheizbareFlaeche
+	 * @param float $beheizbareFlaeche Setter for beheizbareFlaeche
 	 * @return Flaechen
 	 */
-	public function setBeheizbareFlaeche(decimal $beheizbareFlaeche) {
+	public function setBeheizbareFlaeche(float $beheizbareFlaeche) {
 		$this->beheizbareFlaeche = $beheizbareFlaeche;
 		return $this;
 	}
@@ -768,28 +768,28 @@ class Flaechen {
 	}
 
 	/**
-	 * @param decimal $bueroflaeche Setter for bueroflaeche
+	 * @param float $bueroflaeche Setter for bueroflaeche
 	 * @return Flaechen
 	 */
-	public function setBueroflaeche(decimal $bueroflaeche) {
+	public function setBueroflaeche(float $bueroflaeche) {
 		$this->bueroflaeche = $bueroflaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $bueroteilflaeche Setter for bueroteilflaeche
+	 * @param float $bueroteilflaeche Setter for bueroteilflaeche
 	 * @return Flaechen
 	 */
-	public function setBueroteilflaeche(decimal $bueroteilflaeche) {
+	public function setBueroteilflaeche(float $bueroteilflaeche) {
 		$this->bueroteilflaeche = $bueroteilflaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $dachbodenflaeche Setter for dachbodenflaeche
+	 * @param float $dachbodenflaeche Setter for dachbodenflaeche
 	 * @return Flaechen
 	 */
-	public function setDachbodenflaeche(decimal $dachbodenflaeche) {
+	public function setDachbodenflaeche(float $dachbodenflaeche) {
 		$this->dachbodenflaeche = $dachbodenflaeche;
 		return $this;
 	}
@@ -804,73 +804,73 @@ class Flaechen {
 	}
 
 	/**
-	 * @param decimal $fensterfront Setter for fensterfront
+	 * @param float $fensterfront Setter for fensterfront
 	 * @return Flaechen
 	 */
-	public function setFensterfront(decimal $fensterfront) {
+	public function setFensterfront(float $fensterfront) {
 		$this->fensterfront = $fensterfront;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $fensterfrontQm Setter for fensterfrontQm
+	 * @param float $fensterfrontQm Setter for fensterfrontQm
 	 * @return Flaechen
 	 */
-	public function setFensterfrontQm(decimal $fensterfrontQm) {
+	public function setFensterfrontQm(float $fensterfrontQm) {
 		$this->fensterfrontQm = $fensterfrontQm;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $flaechebis Setter for flaechebis
+	 * @param float $flaechebis Setter for flaechebis
 	 * @return Flaechen
 	 */
-	public function setFlaechebis(decimal $flaechebis) {
+	public function setFlaechebis(float $flaechebis) {
 		$this->flaechebis = $flaechebis;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $flaechevon Setter for flaechevon
+	 * @param float $flaechevon Setter for flaechevon
 	 * @return Flaechen
 	 */
-	public function setFlaechevon(decimal $flaechevon) {
+	public function setFlaechevon(float $flaechevon) {
 		$this->flaechevon = $flaechevon;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $freiflaeche Setter for freiflaeche
+	 * @param float $freiflaeche Setter for freiflaeche
 	 * @return Flaechen
 	 */
-	public function setFreiflaeche(decimal $freiflaeche) {
+	public function setFreiflaeche(float $freiflaeche) {
 		$this->freiflaeche = $freiflaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $gartenflaeche Setter for gartenflaeche
+	 * @param float $gartenflaeche Setter for gartenflaeche
 	 * @return Flaechen
 	 */
-	public function setGartenflaeche(decimal $gartenflaeche) {
+	public function setGartenflaeche(float $gartenflaeche) {
 		$this->gartenflaeche = $gartenflaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $gastroflaeche Setter for gastroflaeche
+	 * @param float $gastroflaeche Setter for gastroflaeche
 	 * @return Flaechen
 	 */
-	public function setGastroflaeche(decimal $gastroflaeche) {
+	public function setGastroflaeche(float $gastroflaeche) {
 		$this->gastroflaeche = $gastroflaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $gesamtflaeche Setter for gesamtflaeche
+	 * @param float $gesamtflaeche Setter for gesamtflaeche
 	 * @return Flaechen
 	 */
-	public function setGesamtflaeche(decimal $gesamtflaeche) {
+	public function setGesamtflaeche(float $gesamtflaeche) {
 		$this->gesamtflaeche = $gesamtflaeche;
 		return $this;
 	}
@@ -885,19 +885,19 @@ class Flaechen {
 	}
 
 	/**
-	 * @param decimal $grundstuecksflaeche Setter for grundstuecksflaeche
+	 * @param float $grundstuecksflaeche Setter for grundstuecksflaeche
 	 * @return Flaechen
 	 */
-	public function setGrundstuecksflaeche(decimal $grundstuecksflaeche) {
+	public function setGrundstuecksflaeche(float $grundstuecksflaeche) {
 		$this->grundstuecksflaeche = $grundstuecksflaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $grundstuecksfront Setter for grundstuecksfront
+	 * @param float $grundstuecksfront Setter for grundstuecksfront
 	 * @return Flaechen
 	 */
-	public function setGrundstuecksfront(decimal $grundstuecksfront) {
+	public function setGrundstuecksfront(float $grundstuecksfront) {
 		$this->grundstuecksfront = $grundstuecksfront;
 		return $this;
 	}
@@ -912,73 +912,73 @@ class Flaechen {
 	}
 
 	/**
-	 * @param decimal $kellerflaeche Setter for kellerflaeche
+	 * @param float $kellerflaeche Setter for kellerflaeche
 	 * @return Flaechen
 	 */
-	public function setKellerflaeche(decimal $kellerflaeche) {
+	public function setKellerflaeche(float $kellerflaeche) {
 		$this->kellerflaeche = $kellerflaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $kubatur Setter for kubatur
+	 * @param float $kubatur Setter for kubatur
 	 * @return Flaechen
 	 */
-	public function setKubatur(decimal $kubatur) {
+	public function setKubatur(float $kubatur) {
 		$this->kubatur = $kubatur;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $ladenflaeche Setter for ladenflaeche
+	 * @param float $ladenflaeche Setter for ladenflaeche
 	 * @return Flaechen
 	 */
-	public function setLadenflaeche(decimal $ladenflaeche) {
+	public function setLadenflaeche(float $ladenflaeche) {
 		$this->ladenflaeche = $ladenflaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $lagerflaeche Setter for lagerflaeche
+	 * @param float $lagerflaeche Setter for lagerflaeche
 	 * @return Flaechen
 	 */
-	public function setLagerflaeche(decimal $lagerflaeche) {
+	public function setLagerflaeche(float $lagerflaeche) {
 		$this->lagerflaeche = $lagerflaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $nutzflaeche Setter for nutzflaeche
+	 * @param float $nutzflaeche Setter for nutzflaeche
 	 * @return Flaechen
 	 */
-	public function setNutzflaeche(decimal $nutzflaeche) {
+	public function setNutzflaeche(float $nutzflaeche) {
 		$this->nutzflaeche = $nutzflaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $plaetzeGastraum Setter for plaetzeGastraum
+	 * @param float $plaetzeGastraum Setter for plaetzeGastraum
 	 * @return Flaechen
 	 */
-	public function setPlaetzeGastraum(decimal $plaetzeGastraum) {
+	public function setPlaetzeGastraum(float $plaetzeGastraum) {
 		$this->plaetzeGastraum = $plaetzeGastraum;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $sonstflaeche Setter for sonstflaeche
+	 * @param float $sonstflaeche Setter for sonstflaeche
 	 * @return Flaechen
 	 */
-	public function setSonstflaeche(decimal $sonstflaeche) {
+	public function setSonstflaeche(float $sonstflaeche) {
 		$this->sonstflaeche = $sonstflaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $teilbarAb Setter for teilbarAb
+	 * @param float $teilbarAb Setter for teilbarAb
 	 * @return Flaechen
 	 */
-	public function setTeilbarAb(decimal $teilbarAb) {
+	public function setTeilbarAb(float $teilbarAb) {
 		$this->teilbarAb = $teilbarAb;
 		return $this;
 	}
@@ -1011,37 +1011,37 @@ class Flaechen {
 	}
 
 	/**
-	 * @param decimal $verkaufsflaeche Setter for verkaufsflaeche
+	 * @param float $verkaufsflaeche Setter for verkaufsflaeche
 	 * @return Flaechen
 	 */
-	public function setVerkaufsflaeche(decimal $verkaufsflaeche) {
+	public function setVerkaufsflaeche(float $verkaufsflaeche) {
 		$this->verkaufsflaeche = $verkaufsflaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $vermietbareFlaeche Setter for vermietbareFlaeche
+	 * @param float $vermietbareFlaeche Setter for vermietbareFlaeche
 	 * @return Flaechen
 	 */
-	public function setVermietbareFlaeche(decimal $vermietbareFlaeche) {
+	public function setVermietbareFlaeche(float $vermietbareFlaeche) {
 		$this->vermietbareFlaeche = $vermietbareFlaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $verwaltungsflaeche Setter for verwaltungsflaeche
+	 * @param float $verwaltungsflaeche Setter for verwaltungsflaeche
 	 * @return Flaechen
 	 */
-	public function setVerwaltungsflaeche(decimal $verwaltungsflaeche) {
+	public function setVerwaltungsflaeche(float $verwaltungsflaeche) {
 		$this->verwaltungsflaeche = $verwaltungsflaeche;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $wohnflaeche Setter for wohnflaeche
+	 * @param float $wohnflaeche Setter for wohnflaeche
 	 * @return Flaechen
 	 */
-	public function setWohnflaeche(decimal $wohnflaeche) {
+	public function setWohnflaeche(float $wohnflaeche) {
 		$this->wohnflaeche = $wohnflaeche;
 		return $this;
 	}

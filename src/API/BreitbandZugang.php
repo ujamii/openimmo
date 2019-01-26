@@ -24,7 +24,7 @@ class BreitbandZugang {
 	 * optional
 	 *
 	 * @XmlAttribute 
-	 * @var decimal
+	 * @var float
 	 */
 	protected $speed;
 
@@ -36,9 +36,9 @@ class BreitbandZugang {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getSpeed(): decimal {
+	public function getSpeed(): float {
 		return $this->speed;
 	}
 
@@ -52,10 +52,10 @@ class BreitbandZugang {
 	}
 
 	/**
-	 * @param decimal $speed Setter for speed
+	 * @param float $speed Setter for speed
 	 * @return BreitbandZugang
 	 */
-	public function setSpeed(decimal $speed) {
+	public function setSpeed(float $speed) {
 		$this->speed = $speed;
 		return $this;
 	}

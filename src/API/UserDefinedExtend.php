@@ -12,12 +12,12 @@ use JMS\Serializer\Annotation\XmlRoot;
 class UserDefinedExtend {
 
 	/**
-	 * @var []
+	 * @var string[]
 	 */
 	protected $feld;
 
 	/**
-	 * Returns array of []
+	 * Returns array of string
 	 *
 	 * @return array
 	 */

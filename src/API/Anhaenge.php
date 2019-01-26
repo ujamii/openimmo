@@ -32,7 +32,7 @@ class Anhaenge {
 	protected $userDefinedSimplefield;
 
 	/**
-	 * Returns array of Anhang[]
+	 * Returns array of Anhang
 	 *
 	 * @return array
 	 */
@@ -41,7 +41,7 @@ class Anhaenge {
 	}
 
 	/**
-	 * Returns array of UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield
 	 *
 	 * @return array
 	 */
@@ -50,7 +50,7 @@ class Anhaenge {
 	}
 
 	/**
-	 * Returns array of UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend
 	 *
 	 * @return array
 	 */
@@ -59,7 +59,7 @@ class Anhaenge {
 	}
 
 	/**
-	 * Returns array of UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield
 	 *
 	 * @return array
 	 */

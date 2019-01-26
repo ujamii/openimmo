@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -17,12 +18,14 @@ class VerwaltungTechn {
 	protected $aktion;
 
 	/**
-	 * @var date
+	 * @Type("DateTime<'Y-m-d'>") 
+	 * @var \DateTime
 	 */
 	protected $aktivBis;
 
 	/**
-	 * @var date
+	 * @Type("DateTime<'Y-m-d'>") 
+	 * @var \DateTime
 	 */
 	protected $aktivVon;
 
@@ -62,7 +65,8 @@ class VerwaltungTechn {
 	protected $sprache;
 
 	/**
-	 * @var date
+	 * @Type("DateTime<'Y-m-d'>") 
+	 * @var \DateTime
 	 */
 	protected $standVom;
 
@@ -104,16 +108,16 @@ class VerwaltungTechn {
 	}
 
 	/**
-	 * @return date
+	 * @return \DateTime
 	 */
-	public function getAktivBis(): date {
+	public function getAktivBis(): \DateTime {
 		return $this->aktivBis;
 	}
 
 	/**
-	 * @return date
+	 * @return \DateTime
 	 */
-	public function getAktivVon(): date {
+	public function getAktivVon(): \DateTime {
 		return $this->aktivVon;
 	}
 
@@ -167,14 +171,14 @@ class VerwaltungTechn {
 	}
 
 	/**
-	 * @return date
+	 * @return \DateTime
 	 */
-	public function getStandVom(): date {
+	public function getStandVom(): \DateTime {
 		return $this->standVom;
 	}
 
 	/**
-	 * Returns array of UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield
 	 *
 	 * @return array
 	 */
@@ -183,7 +187,7 @@ class VerwaltungTechn {
 	}
 
 	/**
-	 * Returns array of UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend
 	 *
 	 * @return array
 	 */
@@ -192,7 +196,7 @@ class VerwaltungTechn {
 	}
 
 	/**
-	 * Returns array of UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield
 	 *
 	 * @return array
 	 */
@@ -231,19 +235,19 @@ class VerwaltungTechn {
 	}
 
 	/**
-	 * @param date $aktivBis Setter for aktivBis
+	 * @param \DateTime $aktivBis Setter for aktivBis
 	 * @return VerwaltungTechn
 	 */
-	public function setAktivBis(date $aktivBis) {
+	public function setAktivBis(\DateTime $aktivBis) {
 		$this->aktivBis = $aktivBis;
 		return $this;
 	}
 
 	/**
-	 * @param date $aktivVon Setter for aktivVon
+	 * @param \DateTime $aktivVon Setter for aktivVon
 	 * @return VerwaltungTechn
 	 */
-	public function setAktivVon(date $aktivVon) {
+	public function setAktivVon(\DateTime $aktivVon) {
 		$this->aktivVon = $aktivVon;
 		return $this;
 	}
@@ -312,10 +316,10 @@ class VerwaltungTechn {
 	}
 
 	/**
-	 * @param date $standVom Setter for standVom
+	 * @param \DateTime $standVom Setter for standVom
 	 * @return VerwaltungTechn
 	 */
-	public function setStandVom(date $standVom) {
+	public function setStandVom(\DateTime $standVom) {
 		$this->standVom = $standVom;
 		return $this;
 	}

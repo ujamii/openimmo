@@ -32,7 +32,7 @@ class Openimmo {
 	protected $userDefinedSimplefield;
 
 	/**
-	 * Returns array of Anbieter[]
+	 * Returns array of Anbieter
 	 *
 	 * @return array
 	 */
@@ -48,7 +48,7 @@ class Openimmo {
 	}
 
 	/**
-	 * Returns array of UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield
 	 *
 	 * @return array
 	 */
@@ -57,7 +57,7 @@ class Openimmo {
 	}
 
 	/**
-	 * Returns array of UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield
 	 *
 	 * @return array
 	 */

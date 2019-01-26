@@ -24,7 +24,7 @@ class StpFreiplatz {
 	 * optional
 	 *
 	 * @XmlAttribute 
-	 * @var decimal
+	 * @var float
 	 */
 	protected $stellplatzkaufpreis;
 
@@ -32,7 +32,7 @@ class StpFreiplatz {
 	 * optional
 	 *
 	 * @XmlAttribute 
-	 * @var decimal
+	 * @var float
 	 */
 	protected $stellplatzmiete;
 
@@ -44,16 +44,16 @@ class StpFreiplatz {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getStellplatzkaufpreis(): decimal {
+	public function getStellplatzkaufpreis(): float {
 		return $this->stellplatzkaufpreis;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getStellplatzmiete(): decimal {
+	public function getStellplatzmiete(): float {
 		return $this->stellplatzmiete;
 	}
 
@@ -67,19 +67,19 @@ class StpFreiplatz {
 	}
 
 	/**
-	 * @param decimal $stellplatzkaufpreis Setter for stellplatzkaufpreis
+	 * @param float $stellplatzkaufpreis Setter for stellplatzkaufpreis
 	 * @return StpFreiplatz
 	 */
-	public function setStellplatzkaufpreis(decimal $stellplatzkaufpreis) {
+	public function setStellplatzkaufpreis(float $stellplatzkaufpreis) {
 		$this->stellplatzkaufpreis = $stellplatzkaufpreis;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $stellplatzmiete Setter for stellplatzmiete
+	 * @param float $stellplatzmiete Setter for stellplatzmiete
 	 * @return StpFreiplatz
 	 */
-	public function setStellplatzmiete(decimal $stellplatzmiete) {
+	public function setStellplatzmiete(float $stellplatzmiete) {
 		$this->stellplatzmiete = $stellplatzmiete;
 		return $this;
 	}

@@ -117,7 +117,7 @@ class ZustandAngaben {
 	}
 
 	/**
-	 * Returns array of Energiepass[]
+	 * Returns array of Energiepass
 	 *
 	 * @return array
 	 */
@@ -147,7 +147,7 @@ class ZustandAngaben {
 	}
 
 	/**
-	 * Returns array of UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield
 	 *
 	 * @return array
 	 */
@@ -156,7 +156,7 @@ class ZustandAngaben {
 	}
 
 	/**
-	 * Returns array of UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend
 	 *
 	 * @return array
 	 */
@@ -165,7 +165,7 @@ class ZustandAngaben {
 	}
 
 	/**
-	 * Returns array of UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield
 	 *
 	 * @return array
 	 */

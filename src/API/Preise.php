@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,7 +13,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Preise {
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $abstand;
 
@@ -32,12 +33,12 @@ class Preise {
 	protected $courtageHinweis;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $erbpacht;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $erschliessungskosten;
 
@@ -52,7 +53,7 @@ class Preise {
 	protected $freitextPreis;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $gesamtbelastungbrutto;
 
@@ -67,7 +68,7 @@ class Preise {
 	protected $gesamtkostenprom2von;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $gesamtmietebrutto;
 
@@ -77,7 +78,7 @@ class Preise {
 	protected $gesamtmietenetto;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $geschaeftsguthaben;
 
@@ -87,12 +88,12 @@ class Preise {
 	protected $hauptmietzinsnetto;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $hausgeld;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $heizkosten;
 
@@ -112,7 +113,7 @@ class Preise {
 	protected $innenCourtage;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $kaltmiete;
 
@@ -122,7 +123,7 @@ class Preise {
 	protected $kaufpreis;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $kaufpreisbrutto;
 
@@ -132,12 +133,12 @@ class Preise {
 	protected $kaufpreisnetto;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $kaufpreisProQm;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $kaution;
 
@@ -157,17 +158,17 @@ class Preise {
 	protected $mieteinnahmenSoll;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $mietpreisProQm;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $mietzuschlaege;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $monatlichekostenbrutto;
 
@@ -177,15 +178,17 @@ class Preise {
 	protected $monatlichekostennetto;
 
 	/**
+	 * @var float
 	 */
 	protected $mwstGesamt;
 
 	/**
+	 * @var float
 	 */
 	protected $mwstSatz;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $nebenkosten;
 
@@ -195,7 +198,7 @@ class Preise {
 	protected $nebenkostenprom2von;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $nettokaltmiete;
 
@@ -205,27 +208,27 @@ class Preise {
 	protected $nettomieteprom2von;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $nettorendite;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $nettorenditeIst;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $nettorenditeSoll;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $pacht;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $pauschalmiete;
 
@@ -235,17 +238,19 @@ class Preise {
 	protected $preisZeiteinheit;
 
 	/**
-	 * @var date
+	 * @Type("DateTime<'Y-m-d'>") 
+	 * @var \DateTime
 	 */
 	protected $preisZeitraumBis;
 
 	/**
-	 * @var date
+	 * @Type("DateTime<'Y-m-d'>") 
+	 * @var \DateTime
 	 */
 	protected $preisZeitraumVon;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $provisionbrutto;
 
@@ -265,12 +270,12 @@ class Preise {
 	protected $provisionTeilen;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $richtpreis;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $richtpreisprom2;
 
@@ -350,7 +355,7 @@ class Preise {
 	protected $waehrung;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $warmmiete;
 
@@ -365,9 +370,9 @@ class Preise {
 	protected $zzgMehrwertsteuer;
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getAbstand(): decimal {
+	public function getAbstand(): float {
 		return $this->abstand;
 	}
 
@@ -393,16 +398,16 @@ class Preise {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getErbpacht(): decimal {
+	public function getErbpacht(): float {
 		return $this->erbpacht;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getErschliessungskosten(): decimal {
+	public function getErschliessungskosten(): float {
 		return $this->erschliessungskosten;
 	}
 
@@ -421,9 +426,9 @@ class Preise {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getGesamtbelastungbrutto(): decimal {
+	public function getGesamtbelastungbrutto(): float {
 		return $this->gesamtbelastungbrutto;
 	}
 
@@ -442,9 +447,9 @@ class Preise {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getGesamtmietebrutto(): decimal {
+	public function getGesamtmietebrutto(): float {
 		return $this->gesamtmietebrutto;
 	}
 
@@ -456,9 +461,9 @@ class Preise {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getGeschaeftsguthaben(): decimal {
+	public function getGeschaeftsguthaben(): float {
 		return $this->geschaeftsguthaben;
 	}
 
@@ -470,16 +475,16 @@ class Preise {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getHausgeld(): decimal {
+	public function getHausgeld(): float {
 		return $this->hausgeld;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getHeizkosten(): decimal {
+	public function getHeizkosten(): float {
 		return $this->heizkosten;
 	}
 
@@ -505,9 +510,9 @@ class Preise {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getKaltmiete(): decimal {
+	public function getKaltmiete(): float {
 		return $this->kaltmiete;
 	}
 
@@ -519,9 +524,9 @@ class Preise {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getKaufpreisbrutto(): decimal {
+	public function getKaufpreisbrutto(): float {
 		return $this->kaufpreisbrutto;
 	}
 
@@ -533,16 +538,16 @@ class Preise {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getKaufpreisProQm(): decimal {
+	public function getKaufpreisProQm(): float {
 		return $this->kaufpreisProQm;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getKaution(): decimal {
+	public function getKaution(): float {
 		return $this->kaution;
 	}
 
@@ -568,23 +573,23 @@ class Preise {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getMietpreisProQm(): decimal {
+	public function getMietpreisProQm(): float {
 		return $this->mietpreisProQm;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getMietzuschlaege(): decimal {
+	public function getMietzuschlaege(): float {
 		return $this->mietzuschlaege;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getMonatlichekostenbrutto(): decimal {
+	public function getMonatlichekostenbrutto(): float {
 		return $this->monatlichekostenbrutto;
 	}
 
@@ -596,21 +601,23 @@ class Preise {
 	}
 
 	/**
+	 * @return float
 	 */
-	public function getMwstGesamt() {
+	public function getMwstGesamt(): float {
 		return $this->mwstGesamt;
 	}
 
 	/**
+	 * @return float
 	 */
-	public function getMwstSatz() {
+	public function getMwstSatz(): float {
 		return $this->mwstSatz;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getNebenkosten(): decimal {
+	public function getNebenkosten(): float {
 		return $this->nebenkosten;
 	}
 
@@ -622,9 +629,9 @@ class Preise {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getNettokaltmiete(): decimal {
+	public function getNettokaltmiete(): float {
 		return $this->nettokaltmiete;
 	}
 
@@ -636,37 +643,37 @@ class Preise {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getNettorendite(): decimal {
+	public function getNettorendite(): float {
 		return $this->nettorendite;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getNettorenditeIst(): decimal {
+	public function getNettorenditeIst(): float {
 		return $this->nettorenditeIst;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getNettorenditeSoll(): decimal {
+	public function getNettorenditeSoll(): float {
 		return $this->nettorenditeSoll;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getPacht(): decimal {
+	public function getPacht(): float {
 		return $this->pacht;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getPauschalmiete(): decimal {
+	public function getPauschalmiete(): float {
 		return $this->pauschalmiete;
 	}
 
@@ -678,23 +685,23 @@ class Preise {
 	}
 
 	/**
-	 * @return date
+	 * @return \DateTime
 	 */
-	public function getPreisZeitraumBis(): date {
+	public function getPreisZeitraumBis(): \DateTime {
 		return $this->preisZeitraumBis;
 	}
 
 	/**
-	 * @return date
+	 * @return \DateTime
 	 */
-	public function getPreisZeitraumVon(): date {
+	public function getPreisZeitraumVon(): \DateTime {
 		return $this->preisZeitraumVon;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getProvisionbrutto(): decimal {
+	public function getProvisionbrutto(): float {
 		return $this->provisionbrutto;
 	}
 
@@ -720,16 +727,16 @@ class Preise {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getRichtpreis(): decimal {
+	public function getRichtpreis(): float {
 		return $this->richtpreis;
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getRichtpreisprom2(): decimal {
+	public function getRichtpreisprom2(): float {
 		return $this->richtpreisprom2;
 	}
 
@@ -790,7 +797,7 @@ class Preise {
 	}
 
 	/**
-	 * Returns array of StpSonstige[]
+	 * Returns array of StpSonstige
 	 *
 	 * @return array
 	 */
@@ -813,7 +820,7 @@ class Preise {
 	}
 
 	/**
-	 * Returns array of UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield
 	 *
 	 * @return array
 	 */
@@ -822,7 +829,7 @@ class Preise {
 	}
 
 	/**
-	 * Returns array of UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend
 	 *
 	 * @return array
 	 */
@@ -831,7 +838,7 @@ class Preise {
 	}
 
 	/**
-	 * Returns array of UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield
 	 *
 	 * @return array
 	 */
@@ -847,9 +854,9 @@ class Preise {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getWarmmiete(): decimal {
+	public function getWarmmiete(): float {
 		return $this->warmmiete;
 	}
 
@@ -868,10 +875,10 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $abstand Setter for abstand
+	 * @param float $abstand Setter for abstand
 	 * @return Preise
 	 */
-	public function setAbstand(decimal $abstand) {
+	public function setAbstand(float $abstand) {
 		$this->abstand = $abstand;
 		return $this;
 	}
@@ -904,19 +911,19 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $erbpacht Setter for erbpacht
+	 * @param float $erbpacht Setter for erbpacht
 	 * @return Preise
 	 */
-	public function setErbpacht(decimal $erbpacht) {
+	public function setErbpacht(float $erbpacht) {
 		$this->erbpacht = $erbpacht;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $erschliessungskosten Setter for erschliessungskosten
+	 * @param float $erschliessungskosten Setter for erschliessungskosten
 	 * @return Preise
 	 */
-	public function setErschliessungskosten(decimal $erschliessungskosten) {
+	public function setErschliessungskosten(float $erschliessungskosten) {
 		$this->erschliessungskosten = $erschliessungskosten;
 		return $this;
 	}
@@ -940,10 +947,10 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $gesamtbelastungbrutto Setter for gesamtbelastungbrutto
+	 * @param float $gesamtbelastungbrutto Setter for gesamtbelastungbrutto
 	 * @return Preise
 	 */
-	public function setGesamtbelastungbrutto(decimal $gesamtbelastungbrutto) {
+	public function setGesamtbelastungbrutto(float $gesamtbelastungbrutto) {
 		$this->gesamtbelastungbrutto = $gesamtbelastungbrutto;
 		return $this;
 	}
@@ -967,10 +974,10 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $gesamtmietebrutto Setter for gesamtmietebrutto
+	 * @param float $gesamtmietebrutto Setter for gesamtmietebrutto
 	 * @return Preise
 	 */
-	public function setGesamtmietebrutto(decimal $gesamtmietebrutto) {
+	public function setGesamtmietebrutto(float $gesamtmietebrutto) {
 		$this->gesamtmietebrutto = $gesamtmietebrutto;
 		return $this;
 	}
@@ -985,10 +992,10 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $geschaeftsguthaben Setter for geschaeftsguthaben
+	 * @param float $geschaeftsguthaben Setter for geschaeftsguthaben
 	 * @return Preise
 	 */
-	public function setGeschaeftsguthaben(decimal $geschaeftsguthaben) {
+	public function setGeschaeftsguthaben(float $geschaeftsguthaben) {
 		$this->geschaeftsguthaben = $geschaeftsguthaben;
 		return $this;
 	}
@@ -1003,19 +1010,19 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $hausgeld Setter for hausgeld
+	 * @param float $hausgeld Setter for hausgeld
 	 * @return Preise
 	 */
-	public function setHausgeld(decimal $hausgeld) {
+	public function setHausgeld(float $hausgeld) {
 		$this->hausgeld = $hausgeld;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $heizkosten Setter for heizkosten
+	 * @param float $heizkosten Setter for heizkosten
 	 * @return Preise
 	 */
-	public function setHeizkosten(decimal $heizkosten) {
+	public function setHeizkosten(float $heizkosten) {
 		$this->heizkosten = $heizkosten;
 		return $this;
 	}
@@ -1048,10 +1055,10 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $kaltmiete Setter for kaltmiete
+	 * @param float $kaltmiete Setter for kaltmiete
 	 * @return Preise
 	 */
-	public function setKaltmiete(decimal $kaltmiete) {
+	public function setKaltmiete(float $kaltmiete) {
 		$this->kaltmiete = $kaltmiete;
 		return $this;
 	}
@@ -1066,10 +1073,10 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $kaufpreisbrutto Setter for kaufpreisbrutto
+	 * @param float $kaufpreisbrutto Setter for kaufpreisbrutto
 	 * @return Preise
 	 */
-	public function setKaufpreisbrutto(decimal $kaufpreisbrutto) {
+	public function setKaufpreisbrutto(float $kaufpreisbrutto) {
 		$this->kaufpreisbrutto = $kaufpreisbrutto;
 		return $this;
 	}
@@ -1084,19 +1091,19 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $kaufpreisProQm Setter for kaufpreisProQm
+	 * @param float $kaufpreisProQm Setter for kaufpreisProQm
 	 * @return Preise
 	 */
-	public function setKaufpreisProQm(decimal $kaufpreisProQm) {
+	public function setKaufpreisProQm(float $kaufpreisProQm) {
 		$this->kaufpreisProQm = $kaufpreisProQm;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $kaution Setter for kaution
+	 * @param float $kaution Setter for kaution
 	 * @return Preise
 	 */
-	public function setKaution(decimal $kaution) {
+	public function setKaution(float $kaution) {
 		$this->kaution = $kaution;
 		return $this;
 	}
@@ -1129,28 +1136,28 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $mietpreisProQm Setter for mietpreisProQm
+	 * @param float $mietpreisProQm Setter for mietpreisProQm
 	 * @return Preise
 	 */
-	public function setMietpreisProQm(decimal $mietpreisProQm) {
+	public function setMietpreisProQm(float $mietpreisProQm) {
 		$this->mietpreisProQm = $mietpreisProQm;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $mietzuschlaege Setter for mietzuschlaege
+	 * @param float $mietzuschlaege Setter for mietzuschlaege
 	 * @return Preise
 	 */
-	public function setMietzuschlaege(decimal $mietzuschlaege) {
+	public function setMietzuschlaege(float $mietzuschlaege) {
 		$this->mietzuschlaege = $mietzuschlaege;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $monatlichekostenbrutto Setter for monatlichekostenbrutto
+	 * @param float $monatlichekostenbrutto Setter for monatlichekostenbrutto
 	 * @return Preise
 	 */
-	public function setMonatlichekostenbrutto(decimal $monatlichekostenbrutto) {
+	public function setMonatlichekostenbrutto(float $monatlichekostenbrutto) {
 		$this->monatlichekostenbrutto = $monatlichekostenbrutto;
 		return $this;
 	}
@@ -1165,28 +1172,28 @@ class Preise {
 	}
 
 	/**
-	 * @param $mwstGesamt Setter for mwstGesamt
+	 * @param float $mwstGesamt Setter for mwstGesamt
 	 * @return Preise
 	 */
-	public function setMwstGesamt($mwstGesamt) {
+	public function setMwstGesamt(float $mwstGesamt) {
 		$this->mwstGesamt = $mwstGesamt;
 		return $this;
 	}
 
 	/**
-	 * @param $mwstSatz Setter for mwstSatz
+	 * @param float $mwstSatz Setter for mwstSatz
 	 * @return Preise
 	 */
-	public function setMwstSatz($mwstSatz) {
+	public function setMwstSatz(float $mwstSatz) {
 		$this->mwstSatz = $mwstSatz;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $nebenkosten Setter for nebenkosten
+	 * @param float $nebenkosten Setter for nebenkosten
 	 * @return Preise
 	 */
-	public function setNebenkosten(decimal $nebenkosten) {
+	public function setNebenkosten(float $nebenkosten) {
 		$this->nebenkosten = $nebenkosten;
 		return $this;
 	}
@@ -1201,10 +1208,10 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $nettokaltmiete Setter for nettokaltmiete
+	 * @param float $nettokaltmiete Setter for nettokaltmiete
 	 * @return Preise
 	 */
-	public function setNettokaltmiete(decimal $nettokaltmiete) {
+	public function setNettokaltmiete(float $nettokaltmiete) {
 		$this->nettokaltmiete = $nettokaltmiete;
 		return $this;
 	}
@@ -1219,46 +1226,46 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $nettorendite Setter for nettorendite
+	 * @param float $nettorendite Setter for nettorendite
 	 * @return Preise
 	 */
-	public function setNettorendite(decimal $nettorendite) {
+	public function setNettorendite(float $nettorendite) {
 		$this->nettorendite = $nettorendite;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $nettorenditeIst Setter for nettorenditeIst
+	 * @param float $nettorenditeIst Setter for nettorenditeIst
 	 * @return Preise
 	 */
-	public function setNettorenditeIst(decimal $nettorenditeIst) {
+	public function setNettorenditeIst(float $nettorenditeIst) {
 		$this->nettorenditeIst = $nettorenditeIst;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $nettorenditeSoll Setter for nettorenditeSoll
+	 * @param float $nettorenditeSoll Setter for nettorenditeSoll
 	 * @return Preise
 	 */
-	public function setNettorenditeSoll(decimal $nettorenditeSoll) {
+	public function setNettorenditeSoll(float $nettorenditeSoll) {
 		$this->nettorenditeSoll = $nettorenditeSoll;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $pacht Setter for pacht
+	 * @param float $pacht Setter for pacht
 	 * @return Preise
 	 */
-	public function setPacht(decimal $pacht) {
+	public function setPacht(float $pacht) {
 		$this->pacht = $pacht;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $pauschalmiete Setter for pauschalmiete
+	 * @param float $pauschalmiete Setter for pauschalmiete
 	 * @return Preise
 	 */
-	public function setPauschalmiete(decimal $pauschalmiete) {
+	public function setPauschalmiete(float $pauschalmiete) {
 		$this->pauschalmiete = $pauschalmiete;
 		return $this;
 	}
@@ -1273,28 +1280,28 @@ class Preise {
 	}
 
 	/**
-	 * @param date $preisZeitraumBis Setter for preisZeitraumBis
+	 * @param \DateTime $preisZeitraumBis Setter for preisZeitraumBis
 	 * @return Preise
 	 */
-	public function setPreisZeitraumBis(date $preisZeitraumBis) {
+	public function setPreisZeitraumBis(\DateTime $preisZeitraumBis) {
 		$this->preisZeitraumBis = $preisZeitraumBis;
 		return $this;
 	}
 
 	/**
-	 * @param date $preisZeitraumVon Setter for preisZeitraumVon
+	 * @param \DateTime $preisZeitraumVon Setter for preisZeitraumVon
 	 * @return Preise
 	 */
-	public function setPreisZeitraumVon(date $preisZeitraumVon) {
+	public function setPreisZeitraumVon(\DateTime $preisZeitraumVon) {
 		$this->preisZeitraumVon = $preisZeitraumVon;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $provisionbrutto Setter for provisionbrutto
+	 * @param float $provisionbrutto Setter for provisionbrutto
 	 * @return Preise
 	 */
-	public function setProvisionbrutto(decimal $provisionbrutto) {
+	public function setProvisionbrutto(float $provisionbrutto) {
 		$this->provisionbrutto = $provisionbrutto;
 		return $this;
 	}
@@ -1327,19 +1334,19 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $richtpreis Setter for richtpreis
+	 * @param float $richtpreis Setter for richtpreis
 	 * @return Preise
 	 */
-	public function setRichtpreis(decimal $richtpreis) {
+	public function setRichtpreis(float $richtpreis) {
 		$this->richtpreis = $richtpreis;
 		return $this;
 	}
 
 	/**
-	 * @param decimal $richtpreisprom2 Setter for richtpreisprom2
+	 * @param float $richtpreisprom2 Setter for richtpreisprom2
 	 * @return Preise
 	 */
-	public function setRichtpreisprom2(decimal $richtpreisprom2) {
+	public function setRichtpreisprom2(float $richtpreisprom2) {
 		$this->richtpreisprom2 = $richtpreisprom2;
 		return $this;
 	}
@@ -1480,10 +1487,10 @@ class Preise {
 	}
 
 	/**
-	 * @param decimal $warmmiete Setter for warmmiete
+	 * @param float $warmmiete Setter for warmmiete
 	 * @return Preise
 	 */
-	public function setWarmmiete(decimal $warmmiete) {
+	public function setWarmmiete(float $warmmiete) {
 		$this->warmmiete = $warmmiete;
 		return $this;
 	}

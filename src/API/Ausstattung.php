@@ -12,6 +12,18 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Ausstattung {
 
 	/**
+	 */
+	const AUSSTATT_KATEGORIE_GEHOBEN = 'GEHOBEN';
+
+	/**
+	 */
+	const AUSSTATT_KATEGORIE_LUXUS = 'LUXUS';
+
+	/**
+	 */
+	const AUSSTATT_KATEGORIE_STANDARD = 'STANDARD';
+
+	/**
 	 * @var boolean
 	 */
 	protected $abstellraum;
@@ -32,6 +44,8 @@ class Ausstattung {
 	protected $ausrichtBalkonTerrasse;
 
 	/**
+	 * @see AUSSTATT_KATEGORIE_* constants
+	 * @var string
 	 */
 	protected $ausstattKategorie;
 
@@ -126,7 +140,7 @@ class Ausstattung {
 	protected $gastterrasse;
 
 	/**
-	 * @var decimal
+	 * @var float
 	 */
 	protected $hallenhoehe;
 
@@ -324,8 +338,9 @@ class Ausstattung {
 	}
 
 	/**
+	 * @return string
 	 */
-	public function getAusstattKategorie() {
+	public function getAusstattKategorie(): string {
 		return $this->ausstattKategorie;
 	}
 
@@ -456,9 +471,9 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return decimal
+	 * @return float
 	 */
-	public function getHallenhoehe(): decimal {
+	public function getHallenhoehe(): float {
 		return $this->hallenhoehe;
 	}
 
@@ -575,7 +590,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * Returns array of Serviceleistungen[]
+	 * Returns array of Serviceleistungen
 	 *
 	 * @return array
 	 */
@@ -598,7 +613,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * Returns array of Stellplatzart[]
+	 * Returns array of Stellplatzart
 	 *
 	 * @return array
 	 */
@@ -649,7 +664,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * Returns array of UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield
 	 *
 	 * @return array
 	 */
@@ -658,7 +673,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * Returns array of UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend
 	 *
 	 * @return array
 	 */
@@ -667,7 +682,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * Returns array of UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield
 	 *
 	 * @return array
 	 */
@@ -740,10 +755,10 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param $ausstattKategorie Setter for ausstattKategorie
+	 * @param string $ausstattKategorie Setter for ausstattKategorie
 	 * @return Ausstattung
 	 */
-	public function setAusstattKategorie($ausstattKategorie) {
+	public function setAusstattKategorie(string $ausstattKategorie) {
 		$this->ausstattKategorie = $ausstattKategorie;
 		return $this;
 	}
@@ -911,10 +926,10 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param decimal $hallenhoehe Setter for hallenhoehe
+	 * @param float $hallenhoehe Setter for hallenhoehe
 	 * @return Ausstattung
 	 */
-	public function setHallenhoehe(decimal $hallenhoehe) {
+	public function setHallenhoehe(float $hallenhoehe) {
 		$this->hallenhoehe = $hallenhoehe;
 		return $this;
 	}

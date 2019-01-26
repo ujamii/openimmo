@@ -223,7 +223,7 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * Returns array of EmailSonstige[]
+	 * Returns array of EmailSonstige
 	 *
 	 * @return array
 	 */
@@ -351,7 +351,7 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * Returns array of TelSonstige[]
+	 * Returns array of TelSonstige
 	 *
 	 * @return array
 	 */
@@ -381,7 +381,7 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * Returns array of UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield
 	 *
 	 * @return array
 	 */
@@ -390,7 +390,7 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * Returns array of UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend
 	 *
 	 * @return array
 	 */
@@ -399,7 +399,7 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * Returns array of UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield
 	 *
 	 * @return array
 	 */

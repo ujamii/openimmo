@@ -82,7 +82,7 @@ class Objektart {
 	protected $zinshausRenditeobjekt;
 
 	/**
-	 * Returns array of BueroPraxen[]
+	 * Returns array of BueroPraxen
 	 *
 	 * @return array
 	 */
@@ -91,7 +91,7 @@ class Objektart {
 	}
 
 	/**
-	 * Returns array of Einzelhandel[]
+	 * Returns array of Einzelhandel
 	 *
 	 * @return array
 	 */
@@ -100,7 +100,7 @@ class Objektart {
 	}
 
 	/**
-	 * Returns array of FreizeitimmobilieGewerblich[]
+	 * Returns array of FreizeitimmobilieGewerblich
 	 *
 	 * @return array
 	 */
@@ -109,7 +109,7 @@ class Objektart {
 	}
 
 	/**
-	 * Returns array of Gastgewerbe[]
+	 * Returns array of Gastgewerbe
 	 *
 	 * @return array
 	 */
@@ -118,7 +118,7 @@ class Objektart {
 	}
 
 	/**
-	 * Returns array of Grundstueck[]
+	 * Returns array of Grundstueck
 	 *
 	 * @return array
 	 */
@@ -127,7 +127,7 @@ class Objektart {
 	}
 
 	/**
-	 * Returns array of HallenLagerProd[]
+	 * Returns array of HallenLagerProd
 	 *
 	 * @return array
 	 */
@@ -136,7 +136,7 @@ class Objektart {
 	}
 
 	/**
-	 * Returns array of Haus[]
+	 * Returns array of Haus
 	 *
 	 * @return array
 	 */
@@ -145,7 +145,7 @@ class Objektart {
 	}
 
 	/**
-	 * Returns array of LandUndForstwirtschaft[]
+	 * Returns array of LandUndForstwirtschaft
 	 *
 	 * @return array
 	 */
@@ -154,7 +154,7 @@ class Objektart {
 	}
 
 	/**
-	 * Returns array of string[]
+	 * Returns array of string
 	 *
 	 * @return array
 	 */
@@ -163,7 +163,7 @@ class Objektart {
 	}
 
 	/**
-	 * Returns array of Parken[]
+	 * Returns array of Parken
 	 *
 	 * @return array
 	 */
@@ -172,7 +172,7 @@ class Objektart {
 	}
 
 	/**
-	 * Returns array of Sonstige[]
+	 * Returns array of Sonstige
 	 *
 	 * @return array
 	 */
@@ -181,7 +181,7 @@ class Objektart {
 	}
 
 	/**
-	 * Returns array of Wohnung[]
+	 * Returns array of Wohnung
 	 *
 	 * @return array
 	 */
@@ -190,7 +190,7 @@ class Objektart {
 	}
 
 	/**
-	 * Returns array of Zimmer[]
+	 * Returns array of Zimmer
 	 *
 	 * @return array
 	 */
@@ -199,7 +199,7 @@ class Objektart {
 	}
 
 	/**
-	 * Returns array of ZinshausRenditeobjekt[]
+	 * Returns array of ZinshausRenditeobjekt
 	 *
 	 * @return array
 	 */

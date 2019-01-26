@@ -5,8 +5,11 @@ namespace Ujamii\OpenImmo\Generator;
 use GoetasWebservices\XML\XSDReader\Schema\Attribute\Attribute;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementItem;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementRef;
+use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction;
+use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexTypeSimpleContent;
 use GoetasWebservices\XML\XSDReader\Schema\Type\SimpleType;
+use GoetasWebservices\XML\XSDReader\Schema\Type\Type;
 use GoetasWebservices\XML\XSDReader\SchemaReader;
 use gossi\codegen\generator\CodeFileGenerator;
 use gossi\codegen\model\PhpClass;
@@ -102,18 +105,32 @@ class ApiGenerator
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
         if ($property instanceof ElementRef) {
             if ($property->getReferencedElement()->getType() instanceof SimpleType) {
-                $propertyType = $property->getReferencedElement()->getType()->getName();
+                $propertyType = $this->extractPhpType($property->getReferencedElement()->getType());
             } else {
                 $propertyType = $this->camelize($property->getReferencedElement()->getName());
             }
         } else {
-            $propertyType = $property->getType()->getName();
+            $propertyType = $this->extractPhpType($property->getType());;
         }
         // take min/max into account, as this may be an array instead
         if ($property->getMax() == -1) {
             $propertyType .= '[]';
         }
-        $classProperty->setType($propertyType);
+
+        $classProperty->setType($this->getValidType($propertyType, $classProperty, $class));
+
+        if ($property->getType()->getRestriction()) {
+            if (empty($propertyType) && !empty($property->getType()->getRestriction()->getBase())) {
+                $propertyType = $this->getValidType($property->getType()->getRestriction()->getBase()->getName(), $classProperty, $class);
+                $classProperty->setType($propertyType);
+            }
+            $this->parseRestriction(
+                $property->getType()->getRestriction(),
+                $property->getName(),
+                $class,
+                $classProperty
+            );
+        }
 
         $class->setProperty($classProperty);
 
@@ -128,31 +145,41 @@ class ApiGenerator
     {
         $propertyName  = $this->camelize(strtolower($attribute->getName()), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
-        if ($attribute->getType()->getName() != '') {
-            $type = $attribute->getType()->getName();
-        } else {
-            if ($attribute->getType()->getRestriction()->getBase() != '') {
-                $type = $attribute->getType()->getRestriction()->getBase()->getName();
-            }
-        }
-        if ($type == 'dateTime') {
-            $type = '\DateTime';
-            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("DateTime<\'Y-m-d\TH:i:s\'>")'));
-            $class->addUseStatement('JMS\Serializer\Annotation\Type');
-        }
-        $classProperty->setType($type);
+        $type = $this->extractPhpType($attribute->getType());
+
+        $classProperty->setType($this->getValidType($type, $classProperty, $class));
         $classProperty->getDocblock()->appendTag(TagFactory::create('XmlAttribute'));
 
         if ($attribute->getUse() != '') {
             $classProperty->setDescription($attribute->getUse());
         }
 
-        if (count($attribute->getType()->getRestriction()->getChecks()) > 0) {
-            foreach ($attribute->getType()->getRestriction()->getChecks() as $type => $options) {
+        $this->parseRestriction(
+            $attribute->getType()->getRestriction(),
+            $attribute->getName(),
+            $class,
+            $classProperty
+        );
+
+        $class->setProperty($classProperty);
+
+        $this->generateGetterAndSetter($classProperty, $class);
+    }
+
+    /**
+     * @param Restriction $restriction
+     * @param string $nameInXsd
+     * @param PhpClass $class
+     * @param PhpProperty $classProperty
+     */
+    protected function parseRestriction(Restriction $restriction, string $nameInXsd, PhpClass $class, PhpProperty $classProperty)
+    {
+        if (count($restriction->getChecks()) > 0) {
+            foreach ($restriction->getChecks() as $type => $options) {
                 switch ($type) {
 
                     case 'enumeration':
-                        $constantPrefix = strtoupper($attribute->getName() . '_');
+                        $constantPrefix = strtoupper($nameInXsd . '_');
                         foreach ($options as $possibleValue) {
                             $constantName = strtoupper($constantPrefix . str_replace('-', '_', $possibleValue['value']));
                             $class->setConstant($constantName, $possibleValue['value']);
@@ -162,6 +189,10 @@ class ApiGenerator
 
                     case 'whiteSpace':
                         // do nothing
+                        break;
+
+                    case 'minLength':
+                        //TODO
                         break;
 
                     case 'minInclusive':
@@ -183,10 +214,65 @@ class ApiGenerator
                 }
             }
         }
+    }
 
-        $class->setProperty($classProperty);
+    /**
+     * @param Type $typeFromXsd
+     *
+     * @return string|null
+     */
+    protected function extractPhpType(Type $typeFromXsd)
+    {
+        if ($typeFromXsd->getName() != '') {
+            $type = $typeFromXsd->getName();
+        } else {
+            if ($typeFromXsd instanceof ComplexType) {
+                //TODO: whatever structure UserDefinedExtend->feld really is...
+                $type = 'string';
+            } else {
+                if ($typeFromXsd->getRestriction()->getBase() != '') {
+                    $type = $typeFromXsd->getRestriction()->getBase()->getName();
+                }
+            }
 
-        $this->generateGetterAndSetter($classProperty, $class);
+        }
+
+        return $type;
+    }
+
+    /**
+     * @param string $propertyType
+     * @param PhpProperty $classProperty
+     * @param PhpClass $class
+     *
+     * @return string
+     */
+    protected function getValidType(string $propertyType, PhpProperty $classProperty, PhpClass $class)
+    {
+        switch ($propertyType) {
+
+            case 'decimal':
+                $propertyType = 'float';
+                break;
+
+            case 'positiveInteger':
+                $propertyType = 'int';
+                break;
+
+            case 'dateTime':
+                $propertyType = '\DateTime';
+                $classProperty->getDocblock()->appendTag(TagFactory::create('Type("DateTime<\'Y-m-d\TH:i:s\'>")'));
+                $class->addUseStatement('JMS\Serializer\Annotation\Type');
+                break;
+
+            case 'date':
+                $propertyType = '\DateTime';
+                $classProperty->getDocblock()->appendTag(TagFactory::create('Type("DateTime<\'Y-m-d\'>")'));
+                $class->addUseStatement('JMS\Serializer\Annotation\Type');
+                break;
+        }
+
+        return $propertyType;
     }
 
     /**
@@ -253,7 +339,7 @@ class ApiGenerator
         $getter->setBody($getterCode);
         $getter->setType($returnsArray ? 'array' : $property->getType());
         if ($returnsArray) {
-            $getter->setDescription('Returns array of ' . $property->getType());
+            $getter->setDescription('Returns array of ' . str_replace('[]', '', $property->getType()));
         }
         $class->setMethod($getter);
     }

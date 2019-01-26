@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,7 +13,44 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Energiepass {
 
 	/**
-	 * @var date
+	 */
+	const EPART_BEDARF = 'BEDARF';
+
+	/**
+	 */
+	const EPART_VERBRAUCH = 'VERBRAUCH';
+
+	/**
+	 */
+	const GEBAEUDEART_NICHTWOHN = 'nichtwohn';
+
+	/**
+	 */
+	const GEBAEUDEART_WOHN = 'wohn';
+
+	/**
+	 */
+	const JAHRGANG_2008 = '2008';
+
+	/**
+	 */
+	const JAHRGANG_2014 = '2014';
+
+	/**
+	 */
+	const JAHRGANG_BEI_BESICHTIGUNG = 'bei_besichtigung';
+
+	/**
+	 */
+	const JAHRGANG_NICHT_NOETIG = 'nicht_noetig';
+
+	/**
+	 */
+	const JAHRGANG_OHNE = 'ohne';
+
+	/**
+	 * @Type("DateTime<'Y-m-d'>") 
+	 * @var \DateTime
 	 */
 	protected $ausstelldatum;
 
@@ -32,6 +70,8 @@ class Energiepass {
 	protected $energieverbrauchkennwert;
 
 	/**
+	 * @see EPART_* constants
+	 * @var string
 	 */
 	protected $epart;
 
@@ -51,6 +91,8 @@ class Energiepass {
 	protected $fgeewert;
 
 	/**
+	 * @see GEBAEUDEART_* constants
+	 * @var string
 	 */
 	protected $gebaeudeart;
 
@@ -75,6 +117,8 @@ class Energiepass {
 	protected $hwbwert;
 
 	/**
+	 * @see JAHRGANG_* constants
+	 * @var string
 	 */
 	protected $jahrgang;
 
@@ -104,9 +148,9 @@ class Energiepass {
 	protected $wertklasse;
 
 	/**
-	 * @return date
+	 * @return \DateTime
 	 */
-	public function getAusstelldatum(): date {
+	public function getAusstelldatum(): \DateTime {
 		return $this->ausstelldatum;
 	}
 
@@ -132,8 +176,9 @@ class Energiepass {
 	}
 
 	/**
+	 * @return string
 	 */
-	public function getEpart() {
+	public function getEpart(): string {
 		return $this->epart;
 	}
 
@@ -159,8 +204,9 @@ class Energiepass {
 	}
 
 	/**
+	 * @return string
 	 */
-	public function getGebaeudeart() {
+	public function getGebaeudeart(): string {
 		return $this->gebaeudeart;
 	}
 
@@ -193,8 +239,9 @@ class Energiepass {
 	}
 
 	/**
+	 * @return string
 	 */
-	public function getJahrgang() {
+	public function getJahrgang(): string {
 		return $this->jahrgang;
 	}
 
@@ -234,10 +281,10 @@ class Energiepass {
 	}
 
 	/**
-	 * @param date $ausstelldatum Setter for ausstelldatum
+	 * @param \DateTime $ausstelldatum Setter for ausstelldatum
 	 * @return Energiepass
 	 */
-	public function setAusstelldatum(date $ausstelldatum) {
+	public function setAusstelldatum(\DateTime $ausstelldatum) {
 		$this->ausstelldatum = $ausstelldatum;
 		return $this;
 	}
@@ -270,10 +317,10 @@ class Energiepass {
 	}
 
 	/**
-	 * @param $epart Setter for epart
+	 * @param string $epart Setter for epart
 	 * @return Energiepass
 	 */
-	public function setEpart($epart) {
+	public function setEpart(string $epart) {
 		$this->epart = $epart;
 		return $this;
 	}
@@ -306,10 +353,10 @@ class Energiepass {
 	}
 
 	/**
-	 * @param $gebaeudeart Setter for gebaeudeart
+	 * @param string $gebaeudeart Setter for gebaeudeart
 	 * @return Energiepass
 	 */
-	public function setGebaeudeart($gebaeudeart) {
+	public function setGebaeudeart(string $gebaeudeart) {
 		$this->gebaeudeart = $gebaeudeart;
 		return $this;
 	}
@@ -351,10 +398,10 @@ class Energiepass {
 	}
 
 	/**
-	 * @param $jahrgang Setter for jahrgang
+	 * @param string $jahrgang Setter for jahrgang
 	 * @return Energiepass
 	 */
-	public function setJahrgang($jahrgang) {
+	public function setJahrgang(string $jahrgang) {
 		$this->jahrgang = $jahrgang;
 		return $this;
 	}

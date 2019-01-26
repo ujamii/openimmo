@@ -54,7 +54,7 @@ class Infrastruktur {
 	}
 
 	/**
-	 * Returns array of Distanzen[]
+	 * Returns array of Distanzen
 	 *
 	 * @return array
 	 */
@@ -63,7 +63,7 @@ class Infrastruktur {
 	}
 
 	/**
-	 * Returns array of DistanzenSport[]
+	 * Returns array of DistanzenSport
 	 *
 	 * @return array
 	 */
@@ -72,7 +72,7 @@ class Infrastruktur {
 	}
 
 	/**
-	 * Returns array of UserDefinedAnyfield[]
+	 * Returns array of UserDefinedAnyfield
 	 *
 	 * @return array
 	 */
@@ -81,7 +81,7 @@ class Infrastruktur {
 	}
 
 	/**
-	 * Returns array of UserDefinedExtend[]
+	 * Returns array of UserDefinedExtend
 	 *
 	 * @return array
 	 */
@@ -90,7 +90,7 @@ class Infrastruktur {
 	}
 
 	/**
-	 * Returns array of UserDefinedSimplefield[]
+	 * Returns array of UserDefinedSimplefield
 	 *
 	 * @return array
 	 */
