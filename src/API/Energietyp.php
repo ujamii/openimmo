@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,46 +13,55 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Energietyp {
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $kfw40;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $kfw55;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $kfw60;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $kfw70;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $minergiebauweise;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $minergieZertifiziert;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $neubaustandard;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $niedrigenergie;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $passivhaus;

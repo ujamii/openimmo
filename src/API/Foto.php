@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -22,6 +23,7 @@ class Foto {
 	protected $format;
 
 	/**
+	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $location;

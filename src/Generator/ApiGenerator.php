@@ -75,7 +75,7 @@ class ApiGenerator
                 ->appendTag(TagFactory::create('XmlRoot("' . $element->getName() . '")'))
         ;
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
-            // TODO: extension of class
+            // TODO: extension of class (konktakt)
         } else {
             foreach ($element->getType()->getElements() as $property) {
                 $this->parseProperty($property, $class);
@@ -83,6 +83,9 @@ class ApiGenerator
             /* @var $attributeFromXsd Attribute */
             foreach ($element->getType()->getAttributes() as $attributeFromXsd) {
                 $this->parseAttribute($attributeFromXsd, $class);
+            }
+            if (count($element->getType()->getAttributes()) > 0) {
+                $class->addUseStatement('JMS\Serializer\Annotation\XmlAttribute');
             }
         }
 
@@ -130,10 +133,15 @@ class ApiGenerator
         } else {
             if ($attribute->getType()->getRestriction()->getBase() != '') {
                 $type = $attribute->getType()->getRestriction()->getBase()->getName();
-                //TODO: special case "dateTime" (1999-05-31T13:20:00.000-05:00)
             }
         }
+        if ($type == 'dateTime') {
+            $type = '\DateTime';
+            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("DateTime<\'Y-m-d\TH:i:s\'>")'));
+            $class->addUseStatement('JMS\Serializer\Annotation\Type');
+        }
         $classProperty->setType($type);
+        $classProperty->getDocblock()->appendTag(TagFactory::create('XmlAttribute'));
 
         $class->setProperty($classProperty);
 

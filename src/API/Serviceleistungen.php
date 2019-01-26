@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,26 +13,31 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Serviceleistungen {
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $betreutesWohnen;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $catering;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $einkauf;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $reinigung;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $wachdienst;

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,6 +13,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Land {
 
 	/**
+	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $isoLand;

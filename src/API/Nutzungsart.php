@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,21 +13,25 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Nutzungsart {
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $anlage;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $gewerbe;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $waz;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $wohnen;

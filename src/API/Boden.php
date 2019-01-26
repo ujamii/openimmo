@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,71 +13,85 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Boden {
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $dielen;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $doppelboden;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $estrich;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $fertigparkett;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $fliesen;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $granit;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $kunststoff;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $laminat;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $linoleum;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $marmor;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $parkett;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $stein;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $teppich;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $terrakotta;

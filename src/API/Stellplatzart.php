@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,31 +13,37 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Stellplatzart {
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $carport;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $duplex;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $freiplatz;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $garage;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $parkhaus;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $tiefgarage;

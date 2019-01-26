@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,16 +13,19 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Kueche {
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $ebk;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $offen;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $pantry;

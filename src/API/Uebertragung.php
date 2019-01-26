@@ -1,6 +1,8 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,46 +14,56 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Uebertragung {
 
 	/**
+	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $art;
 
 	/**
+	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $modus;
 
 	/**
+	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $regiId;
 
 	/**
+	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $sendersoftware;
 
 	/**
+	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $senderversion;
 
 	/**
+	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $technEmail;
 
 	/**
-	 * @var dateTime
+	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
+	 * @XmlAttribute 
+	 * @var \DateTime
 	 */
 	protected $timestamp;
 
 	/**
+	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $umfang;
 
 	/**
+	 * @XmlAttribute 
 	 * @var string
 	 */
 	protected $version;
@@ -99,9 +111,9 @@ class Uebertragung {
 	}
 
 	/**
-	 * @return dateTime
+	 * @return \DateTime
 	 */
-	public function getTimestamp(): dateTime {
+	public function getTimestamp(): \DateTime {
 		return $this->timestamp;
 	}
 
@@ -174,10 +186,10 @@ class Uebertragung {
 	}
 
 	/**
-	 * @param dateTime $timestamp Setter for timestamp
+	 * @param \DateTime $timestamp Setter for timestamp
 	 * @return Uebertragung
 	 */
-	public function setTimestamp(dateTime $timestamp) {
+	public function setTimestamp(\DateTime $timestamp) {
 		$this->timestamp = $timestamp;
 		return $this;
 	}

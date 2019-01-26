@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,71 +13,85 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Befeuerung {
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $alternativ;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $block;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $elektro;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $erdwaerme;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $fern;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $fluessiggas;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $gas;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $holz;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $kohle;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $luftwp;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $oel;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $pellet;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $solar;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $wasserElektro;

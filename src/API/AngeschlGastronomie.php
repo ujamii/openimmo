@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,11 +13,13 @@ use JMS\Serializer\Annotation\XmlRoot;
 class AngeschlGastronomie {
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $bar;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $hotelrestaurant;

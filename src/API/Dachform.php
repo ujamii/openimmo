@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,36 +13,43 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Dachform {
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $flachdach;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $krueppelwalmdach;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $mansarddach;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $pultdach;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $pyramidendach;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $satteldach;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $walmdach;

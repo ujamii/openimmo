@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,16 +13,19 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Bauweise {
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $fertigteile;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $holz;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $massiv;

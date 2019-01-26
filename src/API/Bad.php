@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,26 +13,31 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Bad {
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $bidet;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $dusche;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $fenster;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $pissoir;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $wanne;

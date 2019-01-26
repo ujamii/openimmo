@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,21 +13,25 @@ use JMS\Serializer\Annotation\XmlRoot;
 class LageImBau {
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $hinten;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $links;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $rechts;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $vorne;

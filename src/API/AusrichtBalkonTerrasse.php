@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,41 +13,49 @@ use JMS\Serializer\Annotation\XmlRoot;
 class AusrichtBalkonTerrasse {
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $nord;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $nordost;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $nordwest;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $ost;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $sued;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $suedost;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $suedwest;
 
 	/**
+	 * @XmlAttribute 
 	 * @var boolean
 	 */
 	protected $west;
