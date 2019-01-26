@@ -15,7 +15,8 @@
     "require-dev": {
         "goetas-webservices/xsd-reader": "^0.3",
         "gossi/php-code-generator": "^0.5",
-        "phpunit/phpunit": "^7.5"
+        "phpunit/phpunit": "^7.5",
+        "mihaeu/test-generator": "^1.0"
     },
     "autoload": {
         "psr-4": {
