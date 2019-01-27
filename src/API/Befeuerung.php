@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("ALTERNATIV") 
 	 * @var boolean
@@ -25,6 +27,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("BLOCK") 
 	 * @var boolean
@@ -34,6 +37,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("ELEKTRO") 
 	 * @var boolean
@@ -43,6 +47,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("ERDWAERME") 
 	 * @var boolean
@@ -52,6 +57,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("FERN") 
 	 * @var boolean
@@ -61,6 +67,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("FLUESSIGGAS") 
 	 * @var boolean
@@ -70,6 +77,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("GAS") 
 	 * @var boolean
@@ -79,6 +87,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("HOLZ") 
 	 * @var boolean
@@ -88,6 +97,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("KOHLE") 
 	 * @var boolean
@@ -97,6 +107,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("LUFTWP") 
 	 * @var boolean
@@ -106,6 +117,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("OEL") 
 	 * @var boolean
@@ -115,6 +127,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("PELLET") 
 	 * @var boolean
@@ -124,6 +137,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("SOLAR") 
 	 * @var boolean
@@ -133,6 +147,7 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("WASSER-ELEKTRO") 
 	 * @var boolean

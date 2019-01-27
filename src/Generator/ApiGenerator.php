@@ -72,7 +72,7 @@ class ApiGenerator
         $class = new PhpClass();
         $class
             ->setQualifiedName('Ujamii\\OpenImmo\\API\\' . $className)
-            ->setUseStatements(['JMS\Serializer\Annotation\XmlRoot'])
+            ->setUseStatements(['JMS\Serializer\Annotation\XmlRoot', 'JMS\Serializer\Annotation\Type'])
             ->setDescription('Class ' . $className)
             ->getDocblock()
             ->appendTag(TagFactory::create('package', 'Ujamii\OpenImmo\API'))
@@ -108,6 +108,7 @@ class ApiGenerator
         $propertyType = $this->getValidType($this->extractPhpType($extension->getBase()), $classProperty, $class);
         $classProperty->setType($propertyType);
         $classProperty->getDocblock()->appendTag(TagFactory::create('Inline'));
+        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $this->getTypeForSerializer($propertyType) . '")'));
 
         $class->addUseStatement('JMS\Serializer\Annotation\Inline');
         $class->setProperty($classProperty);
@@ -165,7 +166,9 @@ class ApiGenerator
             $class->addUseStatement('JMS\Serializer\Annotation\XmlList');
         }
 
-        $classProperty->setType($this->getValidType($propertyType, $classProperty, $class));
+        $type = $this->getValidType($propertyType, $classProperty, $class);
+        $classProperty->setType($type);
+        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $this->getTypeForSerializer($type) . '")'));
 
         if ($property->getType()->getRestriction()) {
             if (empty($propertyType) && ! empty($property->getType()->getRestriction()->getBase())) {
@@ -194,6 +197,7 @@ class ApiGenerator
         $propertyName  = $this->camelize(strtolower($attribute->getName()), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
         $type          = $this->extractPhpType($attribute->getType());
+        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $this->getTypeForSerializer($type) . '")'));
 
         $classProperty->setType($this->getValidType($type, $classProperty, $class));
         $classProperty->getDocblock()->appendTag(TagFactory::create('XmlAttribute'));
@@ -341,6 +345,40 @@ class ApiGenerator
         }
 
         return $propertyType;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return string
+     */
+    protected function getTypeForSerializer(string $type)
+    {
+        $singular = str_replace('[]', '', $type);
+        switch ($singular) {
+
+            case 'string':
+            case 'float':
+            case 'int':
+            case 'array':
+            case 'boolean':
+            case '\DateTime':
+                $type = $singular;
+                break;
+
+            case 'decimal':
+                $type = 'float';
+                break;
+
+            default:
+                $ns = 'Ujamii\\OpenImmo\\API\\';
+                $type = $ns . $singular;
+                break;
+
+        }
+
+
+        return $type;
     }
 
     /**

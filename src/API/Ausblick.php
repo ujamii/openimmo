@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -31,6 +32,7 @@ class Ausblick {
 	/**
 	 * optional
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see BLICK_* constants
 	 * @var string

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -13,54 +14,64 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Freitexte {
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $ausstattBeschr;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $dreizeiler;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $lage;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $objektbeschreibung;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\ObjektText") 
 	 * @var ObjektText
 	 */
 	protected $objektText;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $objekttitel;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $sonstigeAngaben;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedAnyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_extend") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedExtend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedSimplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;

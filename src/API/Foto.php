@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -21,11 +22,13 @@ class Foto {
 	const LOCATION_REMOTE = 'REMOTE';
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Daten") 
 	 * @var Daten
 	 */
 	protected $daten;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $format;
@@ -33,6 +36,7 @@ class Foto {
 	/**
 	 * required
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see LOCATION_* constants
 	 * @var string

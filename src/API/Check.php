@@ -29,6 +29,7 @@ class Check {
 	/**
 	 * required
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see CTYPE_* constants
 	 * @var string
@@ -38,6 +39,7 @@ class Check {
 	/**
 	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
 	 * @Inline 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $value;

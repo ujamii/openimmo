@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\Inline;
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -32,6 +33,7 @@ class EmailSonstige {
 	/**
 	 * optional
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @var string
 	 */
@@ -40,6 +42,7 @@ class EmailSonstige {
 	/**
 	 * optional
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see EMAILART_* constants
 	 * @var string
@@ -48,6 +51,7 @@ class EmailSonstige {
 
 	/**
 	 * @Inline 
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $value;

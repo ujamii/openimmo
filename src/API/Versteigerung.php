@@ -13,33 +13,39 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Versteigerung {
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $aktenzeichen;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $amtsgericht;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $verkehrswert;
 
 	/**
 	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $zusatztermin;
 
 	/**
 	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $zvtermin;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $zwangsversteigerung;

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -43,6 +44,7 @@ class StpSonstige {
 	/**
 	 * optional
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @var string
 	 */
@@ -51,6 +53,7 @@ class StpSonstige {
 	/**
 	 * optional
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see PLATZART_* constants
 	 * @var string

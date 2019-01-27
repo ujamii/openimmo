@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -13,75 +14,89 @@ use JMS\Serializer\Annotation\XmlRoot;
 class ZustandAngaben {
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Alter") 
 	 * @var Alter
 	 */
 	protected $alter;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $altlasten;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $baujahr;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $bauzone;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\BebaubarNach") 
 	 * @var BebaubarNach
 	 */
 	protected $bebaubarNach;
 
 	/**
 	 * @XmlList(inline = true, entry = "energiepass") 
+	 * @Type("Ujamii\OpenImmo\API\Energiepass") 
 	 * @var Energiepass[]
 	 */
 	protected $energiepass;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Erschliessung") 
 	 * @var Erschliessung
 	 */
 	protected $erschliessung;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\ErschliessungUmfang") 
 	 * @var ErschliessungUmfang
 	 */
 	protected $erschliessungUmfang;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $letztemodernisierung;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedAnyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_extend") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedExtend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedSimplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Verkaufstatus") 
 	 * @var Verkaufstatus
 	 */
 	protected $verkaufstatus;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Zustand") 
 	 * @var Zustand
 	 */
 	protected $zustand;

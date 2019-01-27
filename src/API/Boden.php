@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("DIELEN") 
 	 * @var boolean
@@ -25,6 +27,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("DOPPELBODEN") 
 	 * @var boolean
@@ -34,6 +37,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("ESTRICH") 
 	 * @var boolean
@@ -43,6 +47,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("FERTIGPARKETT") 
 	 * @var boolean
@@ -52,6 +57,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("FLIESEN") 
 	 * @var boolean
@@ -61,6 +67,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("GRANIT") 
 	 * @var boolean
@@ -70,6 +77,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("KUNSTSTOFF") 
 	 * @var boolean
@@ -79,6 +87,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("LAMINAT") 
 	 * @var boolean
@@ -88,6 +97,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("LINOLEUM") 
 	 * @var boolean
@@ -97,6 +107,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("MARMOR") 
 	 * @var boolean
@@ -106,6 +117,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("PARKETT") 
 	 * @var boolean
@@ -115,6 +127,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("STEIN") 
 	 * @var boolean
@@ -124,6 +137,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("TEPPICH") 
 	 * @var boolean
@@ -133,6 +147,7 @@ class Boden {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("TERRAKOTTA") 
 	 * @var boolean

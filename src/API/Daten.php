@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -14,11 +15,13 @@ class Daten {
 	/**
 	 * Base64 encoded binary
 	 *
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $anhanginhalt;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $pfad;

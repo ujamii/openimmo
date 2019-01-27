@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Sicherheitstechnik {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("ALARMANLAGE") 
 	 * @var boolean
@@ -25,6 +27,7 @@ class Sicherheitstechnik {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("KAMERA") 
 	 * @var boolean
@@ -34,6 +37,7 @@ class Sicherheitstechnik {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("POLIZEIRUF") 
 	 * @var boolean

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Energietyp {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("KFW40") 
 	 * @var boolean
@@ -25,6 +27,7 @@ class Energietyp {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("KFW55") 
 	 * @var boolean
@@ -34,6 +37,7 @@ class Energietyp {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("KFW60") 
 	 * @var boolean
@@ -43,6 +47,7 @@ class Energietyp {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("KFW70") 
 	 * @var boolean
@@ -52,6 +57,7 @@ class Energietyp {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("MINERGIEBAUWEISE") 
 	 * @var boolean
@@ -61,6 +67,7 @@ class Energietyp {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("MINERGIE_ZERTIFIZIERT") 
 	 * @var boolean
@@ -70,6 +77,7 @@ class Energietyp {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("NEUBAUSTANDARD") 
 	 * @var boolean
@@ -79,6 +87,7 @@ class Energietyp {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("NIEDRIGENERGIE") 
 	 * @var boolean
@@ -88,6 +97,7 @@ class Energietyp {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("PASSIVHAUS") 
 	 * @var boolean

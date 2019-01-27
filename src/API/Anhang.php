@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -85,21 +86,25 @@ class Anhang {
 	const LOCATION_REMOTE = 'REMOTE';
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $anhangtitel;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Check") 
 	 * @var Check
 	 */
 	protected $check;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Daten") 
 	 * @var Daten
 	 */
 	protected $daten;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $format;
@@ -107,6 +112,7 @@ class Anhang {
 	/**
 	 * optional
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see GRUPPE_* constants
 	 * @var string
@@ -116,6 +122,7 @@ class Anhang {
 	/**
 	 * required
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see LOCATION_* constants
 	 * @var string

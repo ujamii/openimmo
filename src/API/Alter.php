@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -23,6 +24,7 @@ class Alter {
 	/**
 	 * optional
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see ALTER_ATTR_* constants
 	 * @var string

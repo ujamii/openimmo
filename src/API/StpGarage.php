@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -15,6 +16,7 @@ class StpGarage {
 	/**
 	 * optional
 	 *
+	 * @Type("int") 
 	 * @XmlAttribute 
 	 * @var int
 	 */
@@ -23,6 +25,7 @@ class StpGarage {
 	/**
 	 * optional
 	 *
+	 * @Type("float") 
 	 * @XmlAttribute 
 	 * @var float
 	 */
@@ -31,6 +34,7 @@ class StpGarage {
 	/**
 	 * optional
 	 *
+	 * @Type("float") 
 	 * @XmlAttribute 
 	 * @var float
 	 */

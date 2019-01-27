@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -13,191 +14,228 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Kontaktperson {
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $adressfreigabe;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $anrede;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $anredeBrief;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $emailDirekt;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $emailFeedback;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $emailPrivat;
 
 	/**
 	 * @XmlList(inline = true, entry = "email_sonstige") 
+	 * @Type("Ujamii\OpenImmo\API\EmailSonstige") 
 	 * @var EmailSonstige[]
 	 */
 	protected $emailSonstige;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $emailZentrale;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $firma;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Foto") 
 	 * @var Foto
 	 */
 	protected $foto;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $freitextfeld;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $hausnummer;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $immobilientreuhaenderid;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Land") 
 	 * @var Land
 	 */
 	protected $land;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $name;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $ort;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $personennummer;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $plz;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $position;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $postfach;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $postfOrt;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $postfPlz;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $referenzId;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $strasse;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $telDurchw;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $telFax;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $telHandy;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $telPrivat;
 
 	/**
 	 * @XmlList(inline = true, entry = "tel_sonstige") 
+	 * @Type("Ujamii\OpenImmo\API\TelSonstige") 
 	 * @var TelSonstige[]
 	 */
 	protected $telSonstige;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $telZentrale;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $titel;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $url;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedAnyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_extend") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedExtend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedSimplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $vorname;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $zusatzfeld;

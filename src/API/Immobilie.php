@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -13,100 +14,119 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Immobilie {
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Anhaenge") 
 	 * @var Anhaenge
 	 */
 	protected $anhaenge;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Ausstattung") 
 	 * @var Ausstattung
 	 */
 	protected $ausstattung;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Bewertung") 
 	 * @var Bewertung
 	 */
 	protected $bewertung;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Bieterverfahren") 
 	 * @var Bieterverfahren
 	 */
 	protected $bieterverfahren;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Flaechen") 
 	 * @var Flaechen
 	 */
 	protected $flaechen;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Freitexte") 
 	 * @var Freitexte
 	 */
 	protected $freitexte;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Geo") 
 	 * @var Geo
 	 */
 	protected $geo;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Infrastruktur") 
 	 * @var Infrastruktur
 	 */
 	protected $infrastruktur;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Kontaktperson") 
 	 * @var Kontaktperson
 	 */
 	protected $kontaktperson;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Objektkategorie") 
 	 * @var Objektkategorie
 	 */
 	protected $objektkategorie;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Preise") 
 	 * @var Preise
 	 */
 	protected $preise;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedAnyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_extend") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedExtend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedSimplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Versteigerung") 
 	 * @var Versteigerung
 	 */
 	protected $versteigerung;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\VerwaltungObjekt") 
 	 * @var VerwaltungObjekt
 	 */
 	protected $verwaltungObjekt;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\VerwaltungTechn") 
 	 * @var VerwaltungTechn
 	 */
 	protected $verwaltungTechn;
 
 	/**
 	 * @XmlList(inline = true, entry = "weitere_adresse") 
+	 * @Type("Ujamii\OpenImmo\API\WeitereAdresse") 
 	 * @var WeitereAdresse[]
 	 */
 	protected $weitereAdresse;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\ZustandAngaben") 
 	 * @var ZustandAngaben
 	 */
 	protected $zustandAngaben;

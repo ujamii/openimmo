@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\Inline;
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -44,6 +45,7 @@ class DistanzenSport {
 	/**
 	 * required
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see DISTANZ_ZU_SPORT_* constants
 	 * @var string
@@ -52,6 +54,7 @@ class DistanzenSport {
 
 	/**
 	 * @Inline 
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $value;

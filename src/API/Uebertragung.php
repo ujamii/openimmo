@@ -44,6 +44,7 @@ class Uebertragung {
 	/**
 	 * required
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see ART_* constants
 	 * @var string
@@ -53,6 +54,7 @@ class Uebertragung {
 	/**
 	 * optional
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see MODUS_* constants
 	 * @var string
@@ -62,6 +64,7 @@ class Uebertragung {
 	/**
 	 * optional
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @var string
 	 */
@@ -70,6 +73,7 @@ class Uebertragung {
 	/**
 	 * required
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @var string
 	 */
@@ -78,6 +82,7 @@ class Uebertragung {
 	/**
 	 * required
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @var string
 	 */
@@ -86,6 +91,7 @@ class Uebertragung {
 	/**
 	 * optional
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @var string
 	 */
@@ -94,6 +100,7 @@ class Uebertragung {
 	/**
 	 * optional
 	 *
+	 * @Type("Ujamii\OpenImmo\API\dateTime") 
 	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
 	 * @XmlAttribute 
 	 * @var \DateTime
@@ -103,6 +110,7 @@ class Uebertragung {
 	/**
 	 * required
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see UMFANG_* constants
 	 * @var string
@@ -112,6 +120,7 @@ class Uebertragung {
 	/**
 	 * required
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @var string
 	 */

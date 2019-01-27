@@ -15,126 +15,150 @@ class VerwaltungObjekt {
 
 	/**
 	 * @Type("DateTime<'Y-m-d'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $abdatum;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $alsFerien;
 
 	/**
 	 * @Type("DateTime<'Y-m-d'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $bisdatum;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $branchen;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $denkmalgeschuetzt;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Geschlecht") 
 	 * @var Geschlecht
 	 */
 	protected $geschlecht;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $gewerblicheNutzung;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $gruppennummer;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $haustiere;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $hochhaus;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $laufzeit;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\MaxMietdauer") 
 	 * @var MaxMietdauer
 	 */
 	protected $maxMietdauer;
 
 	/**
+	 * @Type("int") 
 	 * @var int
 	 */
 	protected $maxPersonen;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\MinMietdauer") 
 	 * @var MinMietdauer
 	 */
 	protected $minMietdauer;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $nichtraucher;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $objektadresseFreigeben;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedAnyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_extend") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedExtend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedSimplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $verfuegbarAb;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $vermietet;
 
 	/**
 	 * @Type("DateTime<'Y-m-d'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $versteigerungstermin;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $wbsSozialwohnung;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $zugang;

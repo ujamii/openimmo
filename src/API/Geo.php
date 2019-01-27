@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -13,124 +14,148 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Geo {
 
 	/**
+	 * @Type("int") 
 	 * @var int
 	 */
 	protected $anzahlEtagen;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $bundesland;
 
 	/**
+	 * @Type("int") 
 	 * @var int
 	 */
 	protected $etage;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $flur;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $flurstueck;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $gemarkung;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $gemeindecode;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Geokoordinaten") 
 	 * @var Geokoordinaten
 	 */
 	protected $geokoordinaten;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $hausnummer;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $kartenMakro;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $kartenMikro;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\LageGebiet") 
 	 * @var LageGebiet
 	 */
 	protected $lageGebiet;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\LageImBau") 
 	 * @var LageImBau
 	 */
 	protected $lageImBau;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Land") 
 	 * @var Land
 	 */
 	protected $land;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $luftbildern;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $ort;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $plz;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $regionalerZusatz;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $strasse;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedAnyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_extend") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedExtend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedSimplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $virtuelletour;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $wohnungsnr;

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -13,60 +14,71 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Anbieter {
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $anbieternr;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Anhang") 
 	 * @var Anhang
 	 */
 	protected $anhang;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $firma;
 
 	/**
 	 * @XmlList(inline = true, entry = "immobilie") 
+	 * @Type("Ujamii\OpenImmo\API\Immobilie") 
 	 * @var Immobilie[]
 	 */
 	protected $immobilie;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $impressum;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\ImpressumStrukt") 
 	 * @var ImpressumStrukt
 	 */
 	protected $impressumStrukt;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $lizenzkennung;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $openimmoAnid;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedAnyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_extend") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedExtend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedSimplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;

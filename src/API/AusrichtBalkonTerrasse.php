@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class AusrichtBalkonTerrasse {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("NORD") 
 	 * @var boolean
@@ -25,6 +27,7 @@ class AusrichtBalkonTerrasse {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("NORDOST") 
 	 * @var boolean
@@ -34,6 +37,7 @@ class AusrichtBalkonTerrasse {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("NORDWEST") 
 	 * @var boolean
@@ -43,6 +47,7 @@ class AusrichtBalkonTerrasse {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("OST") 
 	 * @var boolean
@@ -52,6 +57,7 @@ class AusrichtBalkonTerrasse {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("SUED") 
 	 * @var boolean
@@ -61,6 +67,7 @@ class AusrichtBalkonTerrasse {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("SUEDOST") 
 	 * @var boolean
@@ -70,6 +77,7 @@ class AusrichtBalkonTerrasse {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("SUEDWEST") 
 	 * @var boolean
@@ -79,6 +87,7 @@ class AusrichtBalkonTerrasse {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("WEST") 
 	 * @var boolean

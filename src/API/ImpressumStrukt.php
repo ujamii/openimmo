@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlRoot;
 
 /**
@@ -12,51 +13,61 @@ use JMS\Serializer\Annotation\XmlRoot;
 class ImpressumStrukt {
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $berufsaufsichtsbehoerde;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $firmenanschrift;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $firmenname;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $handelsregister;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $handelsregisterNr;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $steuernummer;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $telefon;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $umsstId;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $vertretungsberechtigter;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $weiteres;

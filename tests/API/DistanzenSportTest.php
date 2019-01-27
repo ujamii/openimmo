@@ -17,8 +17,8 @@ class DistanzenSportTest extends TestCase
 
     protected function setUp()
     {
-        $this->distanzZuSport = null;
-        $this->value = null;
+        $this->distanzZuSport = DistanzenSport::DISTANZ_ZU_SPORT_SEE;
+        $this->value = 123.45;
         $this->distanzenSport = new DistanzenSport(
             $this->distanzZuSport,
             $this->value
@@ -27,6 +27,7 @@ class DistanzenSportTest extends TestCase
 
     public function testMissing()
     {
-        $this->markTestIncomplete('Test not yet implemented');
+        $this->assertEquals($this->value, $this->distanzenSport->getValue());
+        $this->assertEquals($this->distanzZuSport, $this->distanzenSport->getDistanzZuSport());
     }
 }

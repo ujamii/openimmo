@@ -15,58 +15,68 @@ class Bieterverfahren {
 
 	/**
 	 * @Type("DateTime<'Y-m-d'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $beginnAngebotsphase;
 
 	/**
 	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $beginnBietzeit;
 
 	/**
 	 * @Type("DateTime<'Y-m-d'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $besichtigungstermin;
 
 	/**
 	 * @Type("DateTime<'Y-m-d'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $besichtigungstermin2;
 
 	/**
 	 * @Type("DateTime<'Y-m-d'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $endeBietzeit;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $hoechstgebotZeigen;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $mindestpreis;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedAnyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_extend") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedExtend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedSimplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;

@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\Inline;
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -72,6 +73,7 @@ class Distanzen {
 	/**
 	 * required
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see DISTANZ_ZU_* constants
 	 * @var string
@@ -80,6 +82,7 @@ class Distanzen {
 
 	/**
 	 * @Inline 
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $value;

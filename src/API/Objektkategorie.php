@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -13,34 +14,40 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Objektkategorie {
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Nutzungsart") 
 	 * @var Nutzungsart
 	 */
 	protected $nutzungsart;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Objektart") 
 	 * @var Objektart
 	 */
 	protected $objektart;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedAnyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_extend") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedExtend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedSimplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Vermarktungsart") 
 	 * @var Vermarktungsart
 	 */
 	protected $vermarktungsart;

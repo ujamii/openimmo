@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -14,84 +15,98 @@ class Objektart {
 
 	/**
 	 * @XmlList(inline = true, entry = "buero_praxen") 
+	 * @Type("Ujamii\OpenImmo\API\BueroPraxen") 
 	 * @var BueroPraxen[]
 	 */
 	protected $bueroPraxen;
 
 	/**
 	 * @XmlList(inline = true, entry = "einzelhandel") 
+	 * @Type("Ujamii\OpenImmo\API\Einzelhandel") 
 	 * @var Einzelhandel[]
 	 */
 	protected $einzelhandel;
 
 	/**
 	 * @XmlList(inline = true, entry = "freizeitimmobilie_gewerblich") 
+	 * @Type("Ujamii\OpenImmo\API\FreizeitimmobilieGewerblich") 
 	 * @var FreizeitimmobilieGewerblich[]
 	 */
 	protected $freizeitimmobilieGewerblich;
 
 	/**
 	 * @XmlList(inline = true, entry = "gastgewerbe") 
+	 * @Type("Ujamii\OpenImmo\API\Gastgewerbe") 
 	 * @var Gastgewerbe[]
 	 */
 	protected $gastgewerbe;
 
 	/**
 	 * @XmlList(inline = true, entry = "grundstueck") 
+	 * @Type("Ujamii\OpenImmo\API\Grundstueck") 
 	 * @var Grundstueck[]
 	 */
 	protected $grundstueck;
 
 	/**
 	 * @XmlList(inline = true, entry = "hallen_lager_prod") 
+	 * @Type("Ujamii\OpenImmo\API\HallenLagerProd") 
 	 * @var HallenLagerProd[]
 	 */
 	protected $hallenLagerProd;
 
 	/**
 	 * @XmlList(inline = true, entry = "haus") 
+	 * @Type("Ujamii\OpenImmo\API\Haus") 
 	 * @var Haus[]
 	 */
 	protected $haus;
 
 	/**
 	 * @XmlList(inline = true, entry = "land_und_forstwirtschaft") 
+	 * @Type("Ujamii\OpenImmo\API\LandUndForstwirtschaft") 
 	 * @var LandUndForstwirtschaft[]
 	 */
 	protected $landUndForstwirtschaft;
 
 	/**
 	 * @XmlList(inline = true, entry = "objektart_zusatz") 
+	 * @Type("string") 
 	 * @var string[]
 	 */
 	protected $objektartZusatz;
 
 	/**
 	 * @XmlList(inline = true, entry = "parken") 
+	 * @Type("Ujamii\OpenImmo\API\Parken") 
 	 * @var Parken[]
 	 */
 	protected $parken;
 
 	/**
 	 * @XmlList(inline = true, entry = "sonstige") 
+	 * @Type("Ujamii\OpenImmo\API\Sonstige") 
 	 * @var Sonstige[]
 	 */
 	protected $sonstige;
 
 	/**
 	 * @XmlList(inline = true, entry = "wohnung") 
+	 * @Type("Ujamii\OpenImmo\API\Wohnung") 
 	 * @var Wohnung[]
 	 */
 	protected $wohnung;
 
 	/**
 	 * @XmlList(inline = true, entry = "zimmer") 
+	 * @Type("Ujamii\OpenImmo\API\Zimmer") 
 	 * @var Zimmer[]
 	 */
 	protected $zimmer;
 
 	/**
 	 * @XmlList(inline = true, entry = "zinshaus_renditeobjekt") 
+	 * @Type("Ujamii\OpenImmo\API\ZinshausRenditeobjekt") 
 	 * @var ZinshausRenditeobjekt[]
 	 */
 	protected $zinshausRenditeobjekt;

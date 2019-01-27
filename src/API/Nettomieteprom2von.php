@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\Inline;
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Nettomieteprom2von {
 	/**
 	 * optional
 	 *
+	 * @Type("float") 
 	 * @XmlAttribute 
 	 * @var float
 	 */
@@ -23,6 +25,7 @@ class Nettomieteprom2von {
 
 	/**
 	 * @Inline 
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $value;

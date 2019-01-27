@@ -50,99 +50,118 @@ class Energiepass {
 
 	/**
 	 * @Type("DateTime<'Y-m-d'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $ausstelldatum;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $baujahr;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $endenergiebedarf;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $energieverbrauchkennwert;
 
 	/**
+	 * @Type("string") 
 	 * @see EPART_* constants
 	 * @var string
 	 */
 	protected $epart;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $epasstext;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $fgeeklasse;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $fgeewert;
 
 	/**
+	 * @Type("string") 
 	 * @see GEBAEUDEART_* constants
 	 * @var string
 	 */
 	protected $gebaeudeart;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $geg2018;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $gueltigBis;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $hwbklasse;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $hwbwert;
 
 	/**
+	 * @Type("string") 
 	 * @see JAHRGANG_* constants
 	 * @var string
 	 */
 	protected $jahrgang;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $mitwarmwasser;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $primaerenergietraeger;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $stromwert;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $waermewert;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $wertklasse;

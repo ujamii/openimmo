@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\Inline;
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -32,6 +33,7 @@ class MieteinnahmenSoll {
 	/**
 	 * optional
 	 *
+	 * @Type("string") 
 	 * @XmlAttribute 
 	 * @see PERIODE_* constants
 	 * @var string
@@ -40,6 +42,7 @@ class MieteinnahmenSoll {
 
 	/**
 	 * @Inline 
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $value;

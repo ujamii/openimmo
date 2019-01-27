@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -13,249 +14,298 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Flaechen {
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $anzahlBadezimmer;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $anzahlBalkone;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $anzahlBetten;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $anzahlGewerbeeinheiten;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $anzahlLogia;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $anzahlSchlafzimmer;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $anzahlSepWc;
 
 	/**
+	 * @Type("int") 
 	 * @var int
 	 */
 	protected $anzahlStellplaetze;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $anzahlTagungsraeume;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $anzahlTerrassen;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $anzahlWohneinheiten;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $anzahlWohnSchlafzimmer;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $anzahlZimmer;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $ausnuetzungsziffer;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $balkonTerrasseFlaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $beheizbareFlaeche;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $bgf;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $bmz;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $bueroflaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $bueroteilflaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $dachbodenflaeche;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $einliegerwohnung;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $fensterfront;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $fensterfrontQm;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $flaechebis;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $flaechevon;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $freiflaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $gartenflaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $gastroflaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $gesamtflaeche;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $gfz;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $grundstuecksflaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $grundstuecksfront;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $grz;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $kellerflaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $kubatur;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $ladenflaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $lagerflaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $nutzflaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $plaetzeGastraum;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $sonstflaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $teilbarAb;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedAnyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_extend") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedExtend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedSimplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $verkaufsflaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $vermietbareFlaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $verwaltungsflaeche;
 
 	/**
+	 * @Type("float") 
 	 * @var float
 	 */
 	protected $wohnflaeche;

@@ -14,92 +14,109 @@ use JMS\Serializer\Annotation\XmlRoot;
 class VerwaltungTechn {
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Aktion") 
 	 * @var Aktion
 	 */
 	protected $aktion;
 
 	/**
 	 * @Type("DateTime<'Y-m-d'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $aktivBis;
 
 	/**
 	 * @Type("DateTime<'Y-m-d'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $aktivVon;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $gruppenKennung;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $kennungUrsprung;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Master") 
 	 * @var Master
 	 */
 	protected $master;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $objektnrExtern;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $objektnrIntern;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $openimmoObid;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $sprache;
 
 	/**
 	 * @Type("DateTime<'Y-m-d'>") 
+	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $standVom;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedAnyfield") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_extend") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedExtend") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedSimplefield") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;
 
 	/**
+	 * @Type("boolean") 
 	 * @var boolean
 	 */
 	protected $weitergabeGenerell;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $weitergabeNegativ;
 
 	/**
+	 * @Type("string") 
 	 * @var string
 	 */
 	protected $weitergabePositiv;

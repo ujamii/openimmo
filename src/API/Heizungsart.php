@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Heizungsart {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("ETAGE") 
 	 * @var boolean
@@ -25,6 +27,7 @@ class Heizungsart {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("FERN") 
 	 * @var boolean
@@ -34,6 +37,7 @@ class Heizungsart {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("FUSSBODEN") 
 	 * @var boolean
@@ -43,6 +47,7 @@ class Heizungsart {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("OFEN") 
 	 * @var boolean
@@ -52,6 +57,7 @@ class Heizungsart {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("ZENTRAL") 
 	 * @var boolean

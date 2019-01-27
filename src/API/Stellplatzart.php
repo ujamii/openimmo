@@ -2,6 +2,7 @@
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -16,6 +17,7 @@ class Stellplatzart {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("CARPORT") 
 	 * @var boolean
@@ -25,6 +27,7 @@ class Stellplatzart {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("DUPLEX") 
 	 * @var boolean
@@ -34,6 +37,7 @@ class Stellplatzart {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("FREIPLATZ") 
 	 * @var boolean
@@ -43,6 +47,7 @@ class Stellplatzart {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("GARAGE") 
 	 * @var boolean
@@ -52,6 +57,7 @@ class Stellplatzart {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("PARKHAUS") 
 	 * @var boolean
@@ -61,6 +67,7 @@ class Stellplatzart {
 	/**
 	 * optional
 	 *
+	 * @Type("boolean") 
 	 * @XmlAttribute 
 	 * @SerializedName("TIEFGARAGE") 
 	 * @var boolean

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -8,29 +9,33 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Class Openimmo
  *
  * @package Ujamii\OpenImmo\API
- * @XmlRoot("openimmo") 
+ * @XmlRoot("openimmo")
  */
 class Openimmo {
 
 	/**
-	 * @XmlList(inline = true, entry = "anbieter") 
+	 * @XmlList(inline = true, entry = "anbieter")
+	 * @Type("Ujamii\OpenImmo\API\Anbieter")
 	 * @var Anbieter[]
 	 */
 	protected $anbieter;
 
 	/**
+	 * @Type("Ujamii\OpenImmo\API\Uebertragung")
 	 * @var Uebertragung
 	 */
 	protected $uebertragung;
 
 	/**
-	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
+	 * @XmlList(inline = true, entry = "user_defined_anyfield")
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedAnyfield")
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
-	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
+	 * @XmlList(inline = true, entry = "user_defined_simplefield")
+	 * @Type("Ujamii\OpenImmo\API\UserDefinedSimplefield")
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;
@@ -40,7 +45,7 @@ class Openimmo {
 	 *
 	 * @return array
 	 */
-	public function getAnbieter(): array {
+	public function getAnbieter() {
 		return $this->anbieter;
 	}
 
