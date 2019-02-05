@@ -31,7 +31,11 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
 
     public function testReadXml()
     {
-        $xmlString = file_get_contents('./example/openimmo-data_127.xml');
+        $file = './example/openimmo-data_127.xml';
+        if (!is_file($file) || !is_readable($file)) {
+            $this->markTestSkipped($file . ' is not part of the distribution package due to license restrictions. Please download yourself from http://www.openimmo.de/go.php/p/24/download.htm (it\'s free)');
+        }
+        $xmlString = file_get_contents($file);
 
         $uebertragung = new Uebertragung();
         $uebertragung
@@ -50,7 +54,21 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($uebertragung, $openImmo->getUebertragung());
         $this->assertCount(1, $openImmo->getAnbieter());
         $this->assertEquals('ABCD13', $openImmo->getAnbieter()[0]->getLizenzkennung());
+    }
 
+    public function testReadRealDataXml()
+    {
+        $file = './example/1548246253_0.xml';
+        if (!is_file($file) || !is_readable($file)) {
+            $this->markTestSkipped('I am not allowed to include real world examples into this distribution package due to license restrictions.');
+        }
+        $xmlString = file_get_contents($file);
+
+        /* @var $openImmo Openimmo */
+        $openImmo = $this->serializer->deserialize($xmlString, OpenImmo::class, 'xml');
+
+        $this->assertCount(1, $openImmo->getAnbieter());
+        $this->assertCount(17, $openImmo->getAnbieter()[0]->getImmobilie());
     }
 
     public function testReadAnhangXml()
