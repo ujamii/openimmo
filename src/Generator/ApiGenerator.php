@@ -40,7 +40,7 @@ class ApiGenerator
     ];
 
     /**
-     * ApiGenerator constructor.
+     * Generates the API classes.
      *
      * @param string $xsdFile file path
      *
@@ -49,7 +49,7 @@ class ApiGenerator
      *
      * @throws \GoetasWebservices\XML\XSDReader\Exception\IOException
      */
-    public function __construct($xsdFile, $wipeTargetFolder = true, $targetFolder = null)
+    public function generateApiClasses($xsdFile, $wipeTargetFolder = true, $targetFolder = null)
     {
         if ( ! is_null($targetFolder) && is_dir($targetFolder) && is_writeable($targetFolder)) {
             $this->targetFolder = $targetFolder;
