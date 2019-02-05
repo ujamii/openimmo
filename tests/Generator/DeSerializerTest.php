@@ -48,8 +48,8 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
         /* @var $openImmo Openimmo */
         $openImmo = $this->serializer->deserialize($xmlString, OpenImmo::class, 'xml');
         $this->assertEquals($uebertragung, $openImmo->getUebertragung());
-//var_dump($openImmo);
-        $this->assertEquals('ABCD13', $openImmo->getAnbieter()->getLizenzkennung());
+        $this->assertCount(1, $openImmo->getAnbieter());
+        $this->assertEquals('ABCD13', $openImmo->getAnbieter()[0]->getLizenzkennung());
 
     }
 
