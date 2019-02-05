@@ -6,7 +6,9 @@
     "authors": [
         {
             "name": "Michael Grundkötter",
-            "email": "mg@ujamii.com"
+            "email": "mg@ujamii.com",
+            "homepage": "https://www.ujamii.com",
+            "role": "Developer"
         }
     ],
     "require": {
