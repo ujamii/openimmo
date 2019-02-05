@@ -26,8 +26,10 @@ use gossi\docblock\tags\TagFactory;
 class ApiGenerator
 {
 
-    //TODO: make this configurable
-    const TARGET_FOLDER = './src/API/';
+    /**
+     * @var string
+     */
+    protected $targetFolder = './src/API/';
 
     /**
      * @var array
@@ -43,11 +45,16 @@ class ApiGenerator
      * @param string $xsdFile file path
      *
      * @param bool $wipeTargetFolder
+     * @param null $targetFolder
      *
      * @throws \GoetasWebservices\XML\XSDReader\Exception\IOException
      */
-    public function __construct($xsdFile, $wipeTargetFolder = true)
+    public function __construct($xsdFile, $wipeTargetFolder = true, $targetFolder = null)
     {
+        if (!is_null($targetFolder) && is_dir($targetFolder) && is_writeable($targetFolder)) {
+            $this->targetFolder = $targetFolder;
+        }
+
         if ($wipeTargetFolder) {
             $this->wipeTargetFolder();
         }
@@ -99,6 +106,7 @@ class ApiGenerator
     /**
      * @param Extension $extension
      * @param PhpClass $class
+     * @param array $attributes
      */
     protected function addSimpleValue(Extension $extension, PhpClass $class, array $attributes)
     {
@@ -202,11 +210,13 @@ class ApiGenerator
         $classProperty->setType($this->getValidType($type, $classProperty, $class));
         $classProperty->getDocblock()->appendTag(TagFactory::create('XmlAttribute'));
 
+        // as the openimmo guys like to switch randomly between lowercase and uppercase, serialized names may differ from property names
         if (strtolower($attribute->getName()) != $attribute->getName()) {
             $classProperty->getDocblock()->appendTag(TagFactory::create('SerializedName("' . $attribute->getName() . '")'));
             $class->addUseStatement('JMS\Serializer\Annotation\SerializedName');
         }
 
+        // on some very few places, there are comments in the xsd file
         if ($attribute->getUse() != '') {
             $classProperty->setDescription($attribute->getUse());
         }
@@ -280,12 +290,13 @@ class ApiGenerator
      */
     protected function extractPhpType(Type $typeFromXsd)
     {
+        $type = 'string';
+
         if ($typeFromXsd->getName() != '') {
             $type = $typeFromXsd->getName();
         } else {
             if ($typeFromXsd instanceof ComplexType) {
                 //TODO: whatever structure UserDefinedExtend->feld really is...
-                $type = 'string';
             } else {
                 if ($typeFromXsd->getRestriction()->getBase() != '') {
                     $type = $typeFromXsd->getRestriction()->getBase()->getName();
@@ -414,7 +425,7 @@ class ApiGenerator
      */
     protected function wipeTargetFolder()
     {
-        array_map('unlink', glob(self::TARGET_FOLDER . '/*.php'));
+        array_map('unlink', glob($this->getTargetFolder() . '/*.php'));
     }
 
     /**
@@ -481,7 +492,23 @@ class ApiGenerator
         $generator = new CodeFileGenerator($this->getGeneratorConfig());
         $code      = $generator->generate($class);
 
-        return file_put_contents(self::TARGET_FOLDER . $class->getName() . '.php', $code);
+        return file_put_contents($this->getTargetFolder() . $class->getName() . '.php', $code);
+    }
+
+    /**
+     * @return string
+     */
+    public function getTargetFolder(): string
+    {
+        return $this->targetFolder;
+    }
+
+    /**
+     * @param string $targetFolder
+     */
+    public function setTargetFolder(string $targetFolder): void
+    {
+        $this->targetFolder = $targetFolder;
     }
 
 }
