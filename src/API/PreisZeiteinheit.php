@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class PreisZeiteinheit
+ * Zeiteinheit für die der Preis gilt, vorrangig bei Ferienobjekten
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("preis_zeiteinheit") 

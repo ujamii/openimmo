@@ -7,6 +7,9 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Aktion
+ * Aktion für Objekt. Wenn nicht vorhanden, dann "ADD", als neu.
+ *  Change= Update der Objektdaten, Delete = Löschen des Objektes
+ *  Referenz= Die Möglichkeit Objekte in Portalen als Verkauft oder Archiv zu definieren.
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("aktion") 

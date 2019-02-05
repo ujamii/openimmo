@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Bewertung
+ * Container für detailierte Bewertungs Parmater
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("bewertung") 

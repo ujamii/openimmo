@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Gesamtkostenprom2von
+ * Gesamtkosten bei Gewerbeobjekten Von - Bis.
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("gesamtkostenprom2von") 

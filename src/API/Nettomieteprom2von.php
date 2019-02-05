@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Nettomieteprom2von
+ * Angaben bei Gewerbe Miete, UmSt. im Attribut.
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("nettomieteprom2von") 

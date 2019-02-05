@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class LageGebiet
+ * Lage Gebiet, Optionen nicht kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("lage_gebiet") 

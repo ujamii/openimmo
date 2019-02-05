@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Monatlichekostennetto
+ * Summe der Monatlichen Kosten einer Wohnung als Information für einen Käufer (Netto), Umst im Attribut.
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("monatlichekostennetto") 

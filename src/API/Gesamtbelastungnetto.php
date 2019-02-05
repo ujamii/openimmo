@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Gesamtbelastungnetto
+ * Die Summe alle Nebenkosten und Mietzinse bei Miete, UmSt. im Attribut.
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("gesamtbelastungnetto") 

@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Befeuerung
+ * Welche Befeuerungsarten sind vorhanden, Optionen kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("befeuerung") 

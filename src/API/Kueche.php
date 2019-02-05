@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Kueche
+ * Welche Eigenschaften besitzt die Küche, Optionen kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("kueche") 

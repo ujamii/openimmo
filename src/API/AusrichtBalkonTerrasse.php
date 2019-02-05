@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class AusrichtBalkonTerrasse
+ * Ausrichtung der Balkone bzw. der Terrassen, Optionen kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("ausricht_balkon_terrasse") 

@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Immobilie
+ * Angaben einer einzelnen Immobile
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("immobilie") 

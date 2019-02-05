@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Geokoordinaten
+ * Geokoordinaten der Immobilie, Pflichtfeld, alternativ mit Ort, PLZ
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("geokoordinaten") 

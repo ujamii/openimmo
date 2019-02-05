@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Erschliessung
+ * Stand der Erschließung, Optionen nicht kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("erschliessung") 

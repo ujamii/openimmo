@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Stellplatzart
+ * Welche Stellplatzarten sind vorhanden, Optionen kombinierbar, als einfache Alternative zu den stp...Elementen
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("stellplatzart") 

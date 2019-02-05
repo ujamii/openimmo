@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class ErschliessungUmfang
+ * Detailbeschreibung der Massnahmen
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("erschliessung_umfang") 

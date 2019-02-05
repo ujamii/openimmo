@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Bad
+ * Welche Eigenschaft besitzt das Bad, Optionen kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("bad") 

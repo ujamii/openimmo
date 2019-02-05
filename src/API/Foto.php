@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Foto
+ * Foto bei der Kontaktperson. Datentyp ähnlich "Anhang"foto from the kontakt person of the sender
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("foto") 

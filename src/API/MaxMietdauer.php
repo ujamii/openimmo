@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class MaxMietdauer
+ * Maximalzeitraum für den die Immobilie gemietet werdenkann, Optionen nicht kombinierbar, vorrangig bei WaZ
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("max_mietdauer") 

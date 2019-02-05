@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class MieteinnahmenIst
+ * Mieteinnahmen pro Periode, Momentan-/Isteinnahmen (Ohne Periode = JAHR)
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("mieteinnahmen_ist") 

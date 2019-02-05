@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Check
+ * Angabe von Daten für die Prüfung auf ein Update
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("check") 

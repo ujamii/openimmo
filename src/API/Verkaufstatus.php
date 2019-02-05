@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Verkaufstatus
+ * Anzeige ob z.B schon verkauft, Optionen nicht kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("verkaufstatus") 

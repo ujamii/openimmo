@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Nutzungsart
+ * nutzungsart
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("nutzungsart") 

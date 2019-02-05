@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class BreitbandZugang
+ * Informationen über die Breitbandmöglichkeiten.
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("breitband_zugang") 

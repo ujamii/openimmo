@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Evbnetto
+ * Erhaltungs- und Verbesserungsbeitrag. Ähnlich Instanthaltungsrücklage, UmSt. im Attribut.
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("evbnetto") 

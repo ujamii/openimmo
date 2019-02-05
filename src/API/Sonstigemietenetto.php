@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Sonstigemietenetto
+ * Ergänzenden Mietkosten, UmSt. im Attribut.
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("sonstigemietenetto") 

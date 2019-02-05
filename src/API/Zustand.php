@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Zustand
+ * Zustand des Objektes, Optionen nicht kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("zustand") 

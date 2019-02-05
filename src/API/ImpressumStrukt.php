@@ -6,6 +6,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class ImpressumStrukt
+ * Ergänzung ($V120)
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("impressum_strukt") 

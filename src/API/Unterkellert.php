@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Unterkellert
+ * Ist das Objekt unterkellert? Optionen nicht kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("unterkellert") 

@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Kaufpreis
+ * Gesamt- (Angebots-)Kaufpreis der Immobilie. Wenn "Auf Anfrage" dann Wert = 0 und Attribut auf TRUE
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("kaufpreis") 

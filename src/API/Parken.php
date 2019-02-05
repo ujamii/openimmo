@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Parken
+ * Objektart für diverse Parkplatz Angaben
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("parken") 

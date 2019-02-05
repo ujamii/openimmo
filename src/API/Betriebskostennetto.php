@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Betriebskostennetto
+ * Betriebskosten eines Objektes bei Vermietun, UmSt. im Attribut
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("betriebskostennetto") 

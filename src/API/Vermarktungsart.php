@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Vermarktungsart
+ * Vermarktungsart, Optionen kombinierbar, Kauf + Miete
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("vermarktungsart") 

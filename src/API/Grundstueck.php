@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Grundstueck
+ * Objektart / Typ f. Grundstücke
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("grundstueck") 

@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class MinMietdauer
+ * Mindestzeitraum für den die Immobilie gemietet werden muss, Optionen nicht kombinierbar, vorrangig bei WaZ
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("min_mietdauer") 

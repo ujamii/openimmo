@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Provisionnetto
+ * Wenn unterschiedliche Provisionen anfallen, dann hier Netto und UmSt. einzeln
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("provisionnetto") 

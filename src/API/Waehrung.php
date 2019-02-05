@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Waehrung
+ * Währung
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("waehrung") 

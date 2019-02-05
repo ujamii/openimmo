@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Serviceleistungen
+ * Welche Serviceleistungen werden angeboten? Optionen kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("serviceleistungen") 

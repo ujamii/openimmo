@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Moebliert
+ * Wie ist die Möblierung: Voll, Teil oder keine Aussage
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("moebliert") 

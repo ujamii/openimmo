@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class BebaubarNach
+ * Bebaubar nach Bebauungsrichtlinien, Optionen nicht kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("bebaubar_nach") 

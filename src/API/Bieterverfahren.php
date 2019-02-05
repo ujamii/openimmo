@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Bieterverfahren
+ * Angaben zum Bieterverfahren
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("bieterverfahren") 

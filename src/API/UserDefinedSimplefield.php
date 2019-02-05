@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class UserDefinedSimplefield
+ * Benutzerdefinierte Angaben
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("user_defined_simplefield") 

@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Einzelhandel
+ * Objektart / Typ f. Handel
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("einzelhandel") 

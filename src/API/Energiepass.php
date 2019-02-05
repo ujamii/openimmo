@@ -6,6 +6,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Energiepass
+ * Energiepass/Ausweis ab 7/2008 vorgeschrieben
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("energiepass") 

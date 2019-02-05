@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Fahrstuhl
+ * Welche Art von Fahrstuhl, Aufzug, Lift - Mehrfachnennung möglich
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("fahrstuhl") 

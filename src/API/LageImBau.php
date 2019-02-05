@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class LageImBau
+ * Angabe über die Lage der Immobilie im Gesamtgebäude, Optionen kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("lage_im_bau") 

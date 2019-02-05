@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Ruecklagenetto
+ * Vorhanden Rücklagen bei einem Kauf Objekt, UmSt. im Attribut.
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("ruecklagenetto") 

@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Boden
+ * Welche Eigenschaft besitzt der Bodenbelag, Optionen kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("boden") 

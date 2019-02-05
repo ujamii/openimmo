@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class LandUndForstwirtschaft
+ * Objektart / Typ f. Land-/Forstwirtschaft
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("land_und_forstwirtschaft") 

@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Sicherheitstechnik
+ * Welche Sicherheitstechnik ist geboten, Optionen kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("sicherheitstechnik") 

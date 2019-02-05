@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class ZinshausRenditeobjekt
+ * Objektyp / Typ f. Zins und Renditehäuser
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("zinshaus_renditeobjekt") 

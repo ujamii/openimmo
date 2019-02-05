@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class ObjektText
+ * Beschreibung in anderer Sprache. "lang" Attribut muss dann vorhanden sein. W3- Language Code Description in other Languages
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("objekt_text") 

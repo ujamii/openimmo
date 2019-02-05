@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Anbieter
+ * Anbieterangaben
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("anbieter") 

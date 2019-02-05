@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Heizkostennetto
+ * Die Heizkosten einer Einheit als Nettowert. Die Umsatzsteuer optional im Attribut
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("heizkostennetto") 

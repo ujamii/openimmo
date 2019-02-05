@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Zimmer
+ * Objekart / Typ f. Zimmer
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("zimmer") 

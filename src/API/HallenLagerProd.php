@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class HallenLagerProd
+ * Objektart / Typ f. Hallen/Lager/Produktion
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("hallen_lager_prod") 

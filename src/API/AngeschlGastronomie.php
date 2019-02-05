@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class AngeschlGastronomie
+ * Welcher Art ist die angeschlossene Gastronomie, Optionen kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("angeschl_gastronomie") 

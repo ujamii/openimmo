@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Heizungsart
+ * Welche Heizungsarten sind vorhanden, Optionen kombinierbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("heizungsart") 

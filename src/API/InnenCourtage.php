@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class InnenCourtage
+ * Maklercourtage, bei Vermittlungs- bzw. Nachweisgeschäften als Betrag in ? / % / MM, daher Textfeld
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("innen_courtage") 

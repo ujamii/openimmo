@@ -8,6 +8,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Distanzen
+ * Welche Distanz zu dem ausgewählten Ziel besteht (Angabe in km),
+ *  Optionen nicht kombinierbar, Distanzelement ist mehrfach erfassbar
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("distanzen") 

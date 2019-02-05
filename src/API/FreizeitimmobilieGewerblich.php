@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class FreizeitimmobilieGewerblich
+ * Objektart / Typ f. gew. Freizeitimmobilen
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("freizeitimmobilie_gewerblich") 

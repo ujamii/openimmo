@@ -6,6 +6,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Daten
+ * Anhangdaten
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("daten") 

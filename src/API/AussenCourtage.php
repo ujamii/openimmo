@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class AussenCourtage
+ * Courtage, die der Kunde zu zahlen hat, als Betrag in ? / % / MM, daher Textfeld
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("aussen_courtage") 

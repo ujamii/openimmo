@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Kaufpreisnetto
+ * Ausgewiesene Kaufpreis Netto, Optional mit Umst im Attribut. Speziell für Gewerbe
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("kaufpreisnetto") 

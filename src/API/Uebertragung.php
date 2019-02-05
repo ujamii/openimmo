@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Uebertragung
+ * Übertragungsangaben
  *
  * @package Ujamii\OpenImmo\API
  * @XmlRoot("uebertragung") 
