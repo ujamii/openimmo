@@ -1,5 +1,7 @@
 # OpenImmo PHP library
 
+[![Packagist](https://img.shields.io/packagist/v/ujamii/openimmo.svg?colorB=green&style=flat)](https://packagist.org/packages/ujamii/openimmo)
+
 OpenImmo and the OpenImmo logo are registered trademarks of the [OpenImmo e.V.](http://www.openimmo.de)
 Neither is this package an official distribution nor am I associated with this organisation!
 
