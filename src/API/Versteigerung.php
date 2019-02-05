@@ -32,14 +32,12 @@ class Versteigerung {
 
 	/**
 	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
-	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $zusatztermin;
 
 	/**
 	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
-	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $zvtermin;

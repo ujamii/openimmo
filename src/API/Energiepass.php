@@ -50,7 +50,6 @@ class Energiepass {
 
 	/**
 	 * @Type("DateTime<'Y-m-d'>") 
-	 * @Type("\DateTime") 
 	 * @var \DateTime
 	 */
 	protected $ausstelldatum;

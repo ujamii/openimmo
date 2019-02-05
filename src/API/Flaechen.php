@@ -267,21 +267,21 @@ class Flaechen {
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_anyfield") 
-	 * @Type("Ujamii\OpenImmo\API\UserDefinedAnyfield") 
+	 * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>") 
 	 * @var UserDefinedAnyfield[]
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_extend") 
-	 * @Type("Ujamii\OpenImmo\API\UserDefinedExtend") 
+	 * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>") 
 	 * @var UserDefinedExtend[]
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList(inline = true, entry = "user_defined_simplefield") 
-	 * @Type("Ujamii\OpenImmo\API\UserDefinedSimplefield") 
+	 * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>") 
 	 * @var UserDefinedSimplefield[]
 	 */
 	protected $userDefinedSimplefield;

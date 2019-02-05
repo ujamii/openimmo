@@ -1,8 +1,10 @@
 <?php
+
 namespace Ujamii\OpenImmo\Tests\Generator;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\SerializerInterface;
+use Ujamii\OpenImmo\API\Anbieter;
 use Ujamii\OpenImmo\API\Ausblick;
 use Ujamii\OpenImmo\API\Distanzen;
 use Ujamii\OpenImmo\API\DistanzenSport;
@@ -10,6 +12,7 @@ use Ujamii\OpenImmo\API\Immobilie;
 use Ujamii\OpenImmo\API\Infrastruktur;
 use Ujamii\OpenImmo\API\Kontaktperson;
 use Ujamii\OpenImmo\API\Nutzungsart;
+use Ujamii\OpenImmo\API\Openimmo;
 use Ujamii\OpenImmo\API\Uebertragung;
 
 /**
@@ -64,7 +67,7 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
 
     public function testWriteNutzungsartXml()
     {
-        $xmlString = '<nutzungsart WOHNEN="true" GEWERBE="false" ANLAGE="false" WAZ="false" />';
+        $xmlString   = '<nutzungsart WOHNEN="true" GEWERBE="false" ANLAGE="false" WAZ="false" />';
         $nutzungsart = new Nutzungsart();
         $nutzungsart
             ->setWohnen(true)
@@ -78,7 +81,7 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
     public function testWriteDistanzenZuSportXml()
     {
         $xmlString = '<distanzen_sport distanz_zu_sport="SEE" >15.0</distanzen_sport>';
-        $phpObj = new DistanzenSport(DistanzenSport::DISTANZ_ZU_SPORT_SEE, 15);
+        $phpObj    = new DistanzenSport(DistanzenSport::DISTANZ_ZU_SPORT_SEE, 15);
 
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($phpObj, 'xml'));
     }
@@ -86,7 +89,7 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
     public function testWriteInfrastrukturXml()
     {
         $this->markTestSkipped('TypeError: Argument 2 passed to JMS\Serializer\XmlSerializationVisitor::startVisitingObject() must be an object, array given');
-        $xmlString = '<infrastruktur>
+        $xmlString    = '<infrastruktur>
             <ausblick blick="BERGE" />
             <distanzen distanz_zu="HAUPTSCHULE" >22.0</distanzen>
             <distanzen_sport distanz_zu_sport="SEE" >15.0</distanzen_sport>
@@ -101,9 +104,22 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
             ])
             ->setDistanzen([
                 new Distanzen(Distanzen::DISTANZ_ZU_HAUPTSCHULE, 22)
-            ])
-        ;
+            ]);
 
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($infrastrktur, 'xml'));
+    }
+
+    public function testWriteAnbieterXml()
+    {
+        $xmlString = '<openimmo>
+        <anbieter>
+        <firma >MusterMannFrau Immobilien</firma >
+        <lizenzkennung>ABCD13</lizenzkennung></anbieter></openimmo>';
+
+        $openImmo = new Openimmo();
+        $anbieter = (new Anbieter())->setFirma('MusterMannFrau Immobilien')->setLizenzkennung('ABCD13');
+        $openImmo->setAnbieter([$anbieter]);
+
+        $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($openImmo, 'xml'));
     }
 }

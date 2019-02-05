@@ -100,7 +100,6 @@ class Uebertragung {
 	/**
 	 * optional
 	 *
-	 * @Type("Ujamii\OpenImmo\API\dateTime") 
 	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
 	 * @XmlAttribute 
 	 * @var \DateTime

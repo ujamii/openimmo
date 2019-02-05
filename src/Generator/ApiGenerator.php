@@ -51,7 +51,7 @@ class ApiGenerator
      */
     public function __construct($xsdFile, $wipeTargetFolder = true, $targetFolder = null)
     {
-        if (!is_null($targetFolder) && is_dir($targetFolder) && is_writeable($targetFolder)) {
+        if ( ! is_null($targetFolder) && is_dir($targetFolder) && is_writeable($targetFolder)) {
             $this->targetFolder = $targetFolder;
         }
 
@@ -116,7 +116,10 @@ class ApiGenerator
         $propertyType = $this->getValidType($this->extractPhpType($extension->getBase()), $classProperty, $class);
         $classProperty->setType($propertyType);
         $classProperty->getDocblock()->appendTag(TagFactory::create('Inline'));
-        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $this->getTypeForSerializer($propertyType) . '")'));
+        // this has been set in getValidType already (including format)
+        if ($propertyType != '\DateTime') {
+            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $this->getTypeForSerializer($propertyType) . '")'));
+        }
 
         $class->addUseStatement('JMS\Serializer\Annotation\Inline');
         $class->setProperty($classProperty);
@@ -167,6 +170,7 @@ class ApiGenerator
         } else {
             $propertyType = $this->extractPhpType($property->getType());;
         }
+
         // take min/max into account, as this may be an array instead
         if ($property->getMax() == -1) {
             $propertyType .= '[]';
@@ -176,7 +180,10 @@ class ApiGenerator
 
         $type = $this->getValidType($propertyType, $classProperty, $class);
         $classProperty->setType($type);
-        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $this->getTypeForSerializer($type) . '")'));
+        // this has been set in getValidType already (including format)
+        if ($type != '\DateTime') {
+            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $this->getTypeForSerializer($type) . '")'));
+        }
 
         if ($property->getType()->getRestriction()) {
             if (empty($propertyType) && ! empty($property->getType()->getRestriction()->getBase())) {
@@ -205,9 +212,13 @@ class ApiGenerator
         $propertyName  = $this->camelize(strtolower($attribute->getName()), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
         $type          = $this->extractPhpType($attribute->getType());
-        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $this->getTypeForSerializer($type) . '")'));
+        $type          = $this->getValidType($type, $classProperty, $class);
 
-        $classProperty->setType($this->getValidType($type, $classProperty, $class));
+        // this has been set in getValidType already (including format)
+        if ($type != '\DateTime') {
+            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $this->getTypeForSerializer($type) . '")'));
+        }
+        $classProperty->setType($type);
         $classProperty->getDocblock()->appendTag(TagFactory::create('XmlAttribute'));
 
         // as the openimmo guys like to switch randomly between lowercase and uppercase, serialized names may differ from property names
@@ -365,6 +376,7 @@ class ApiGenerator
      */
     protected function getTypeForSerializer(string $type)
     {
+        $isPlural = substr($type, -2) == '[]';
         $singular = str_replace('[]', '', $type);
         switch ($singular) {
 
@@ -373,6 +385,7 @@ class ApiGenerator
             case 'int':
             case 'array':
             case 'boolean':
+            case 'dateTime':
             case '\DateTime':
                 $type = $singular;
                 break;
@@ -382,8 +395,11 @@ class ApiGenerator
                 break;
 
             default:
-                $ns = 'Ujamii\\OpenImmo\\API\\';
+                $ns   = 'Ujamii\\OpenImmo\\API\\';
                 $type = $ns . $singular;
+                if ($isPlural) {
+                    $type = 'array<' . $type . '>';
+                }
                 break;
 
         }
