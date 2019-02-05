@@ -1,3 +1,6 @@
+## 0.1.1 (February 05, 2019)
+  - [DOC] changed license id for packagist compliance
+
 ## 0.1.0 (February 05, 2019)
   - [DOC] added some usage examples 
   - [TEST] tests with xml file requirements are automatically skiped if the files are not present (license restrictions)
