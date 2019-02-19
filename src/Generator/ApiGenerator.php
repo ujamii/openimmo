@@ -74,7 +74,7 @@ class ApiGenerator
      */
     protected function parseElementDef(ElementItem $element)
     {
-        $className = $this->camelize($element->getName());
+        $className = self::camelize($element->getName());
 
         $class = new PhpClass();
         $class
@@ -123,7 +123,7 @@ class ApiGenerator
 
         $class->addUseStatement('JMS\Serializer\Annotation\Inline');
         $class->setProperty($classProperty);
-        $this->generateGetterAndSetter($classProperty, $class);
+        self::generateGetterAndSetter($classProperty, $class);
 
         // as this type of object contains just a key and a value, we add a __construct for more convenience
         $constructor = PhpMethod::create('__construct');
@@ -131,7 +131,7 @@ class ApiGenerator
         $constrctorCode = [];
         /* @var $attributeFromXsd Attribute */
         foreach ($attributes as $attributeFromXsd) {
-            $attributeName = $this->camelize(strtolower($attributeFromXsd->getName()), true);
+            $attributeName = self::camelize(strtolower($attributeFromXsd->getName()), true);
             $type          = $this->getValidType($this->extractPhpType($attributeFromXsd->getType()));
             $constructor->addParameter(PhpParameter::create($attributeName)
                                                    ->setType($type)
@@ -159,13 +159,13 @@ class ApiGenerator
      */
     protected function parseProperty(ElementItem $property, PhpClass $class)
     {
-        $propertyName  = $this->camelize($property->getName(), true);
+        $propertyName  = self::camelize($property->getName(), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
         if ($property instanceof ElementRef) {
             if ($property->getReferencedElement()->getType() instanceof SimpleType) {
                 $propertyType = $this->extractPhpType($property->getReferencedElement()->getType());
             } else {
-                $propertyType = $this->camelize($property->getReferencedElement()->getName());
+                $propertyType = self::camelize($property->getReferencedElement()->getName());
             }
         } else {
             $propertyType = $this->extractPhpType($property->getType());;
@@ -200,7 +200,7 @@ class ApiGenerator
 
         $class->setProperty($classProperty);
 
-        $this->generateGetterAndSetter($classProperty, $class);
+        self::generateGetterAndSetter($classProperty, $class);
     }
 
     /**
@@ -209,7 +209,7 @@ class ApiGenerator
      */
     protected function parseAttribute(Attribute $attribute, PhpClass $class)
     {
-        $propertyName  = $this->camelize(strtolower($attribute->getName()), true);
+        $propertyName  = self::camelize(strtolower($attribute->getName()), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
         $type          = $this->extractPhpType($attribute->getType());
         $type          = $this->getValidType($type, $classProperty, $class);
@@ -241,7 +241,7 @@ class ApiGenerator
 
         $class->setProperty($classProperty);
 
-        $this->generateGetterAndSetter($classProperty, $class);
+        self::generateGetterAndSetter($classProperty, $class);
     }
 
     /**
@@ -413,10 +413,10 @@ class ApiGenerator
      * @param PhpClass $class
      * @param bool $fluentApi
      */
-    protected function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true)
+    public static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true)
     {
-        $this->generateSetter($property, $class, $fluentApi);
-        $this->generateGetter($property, $class);
+        self::generateSetter($property, $class, $fluentApi);
+        self::generateGetter($property, $class);
     }
 
     /**
@@ -426,7 +426,7 @@ class ApiGenerator
      *
      * @return mixed|string
      */
-    protected function camelize($input, $lcFirst = false, $separators = ['-', '_'])
+    public static function camelize($input, $lcFirst = false, $separators = ['-', '_'])
     {
         $camel = str_replace($separators, '', ucwords($input, implode('', $separators)));
         if ($lcFirst) {
@@ -464,7 +464,7 @@ class ApiGenerator
      * @param PhpProperty $property
      * @param PhpClass $class
      */
-    protected function generateGetter(PhpProperty $property, PhpClass $class): void
+    public static function generateGetter(PhpProperty $property, PhpClass $class): void
     {
         $returnsArray = substr($property->getType(), -2) == '[]';
         $getter       = PhpMethod::create('get' . ucfirst($property->getName()));
@@ -482,7 +482,7 @@ class ApiGenerator
      * @param PhpClass $class
      * @param $fluentApi
      */
-    protected function generateSetter(PhpProperty $property, PhpClass $class, $fluentApi): void
+    public static function generateSetter(PhpProperty $property, PhpClass $class, $fluentApi): void
     {
         $setter = PhpMethod::create('set' . ucfirst($property->getName()));
         $setter->addParameter(PhpParameter::create($property->getName())
