@@ -1,3 +1,9 @@
+## 0.2.0 (February 19, 2019)
+  - [TASK] some methods are static now, so usage from outside is possible
+  - [DOC] added some more author information
+  - [DOC] added better short description
+  - [DOC] added packagist badge
+
 ## 0.1.1 (February 05, 2019)
   - [DOC] changed license id for packagist compliance
 
