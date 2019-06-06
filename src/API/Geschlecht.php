@@ -7,7 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Geschlecht
- * Soll das Objekt nur an Frauen bzw. nur an Männer vermietet werden,
+ * Soll das Objekt nur an Frauen bzw. nur an Männer vermietet werden, 
  *  fehlende Angabe wird als 'Ja' interpretiert
  *
  * @package Ujamii\OpenImmo\API
