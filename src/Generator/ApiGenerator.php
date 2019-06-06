@@ -36,6 +36,7 @@ class ApiGenerator
      */
     protected $generatorConfig = [
         'generateScalarTypeHints' => true,
+        'generateNullableTypes' => true,
         'generateReturnTypeHints' => true
     ];
 
@@ -474,6 +475,7 @@ class ApiGenerator
         $getterCode   = 'return $this->' . $property->getName() . ';';
         $getter->setBody($getterCode);
         $getter->setType($returnsArray ? 'array' : $property->getType());
+        $getter->setNullable(true);
         if ($returnsArray) {
             $getter->setDescription('Returns array of ' . str_replace('[]', '', $property->getType()));
         }
