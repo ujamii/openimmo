@@ -79,7 +79,10 @@ class ApiGenerator
         $class = new PhpClass();
         $class
             ->setQualifiedName('Ujamii\\OpenImmo\\API\\' . $className)
-            ->setUseStatements(['JMS\Serializer\Annotation\XmlRoot', 'JMS\Serializer\Annotation\Type'])
+            ->setUseStatements([
+                'XmlRoot' => 'JMS\Serializer\Annotation\XmlRoot',
+                'Type' => 'JMS\Serializer\Annotation\Type'
+            ])
             ->setDescription('Class ' . $className . PHP_EOL . $element->getDoc())
             ->getDocblock()
             ->appendTag(TagFactory::create('package', 'Ujamii\OpenImmo\API'))
