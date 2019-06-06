@@ -163,112 +163,112 @@ class VerwaltungObjekt {
 	/**
 	 * @return \DateTime
 	 */
-	public function getAbdatum(): \DateTime {
+	public function getAbdatum(): ?\DateTime {
 		return $this->abdatum;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getAlsFerien(): bool {
+	public function getAlsFerien(): ?bool {
 		return $this->alsFerien;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getBisdatum(): \DateTime {
+	public function getBisdatum(): ?\DateTime {
 		return $this->bisdatum;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getBranchen(): string {
+	public function getBranchen(): ?string {
 		return $this->branchen;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getDenkmalgeschuetzt(): bool {
+	public function getDenkmalgeschuetzt(): ?bool {
 		return $this->denkmalgeschuetzt;
 	}
 
 	/**
 	 * @return Geschlecht
 	 */
-	public function getGeschlecht(): Geschlecht {
+	public function getGeschlecht(): ?Geschlecht {
 		return $this->geschlecht;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGewerblicheNutzung(): bool {
+	public function getGewerblicheNutzung(): ?bool {
 		return $this->gewerblicheNutzung;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGruppennummer(): string {
+	public function getGruppennummer(): ?string {
 		return $this->gruppennummer;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHaustiere(): bool {
+	public function getHaustiere(): ?bool {
 		return $this->haustiere;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHochhaus(): bool {
+	public function getHochhaus(): ?bool {
 		return $this->hochhaus;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getLaufzeit(): float {
+	public function getLaufzeit(): ?float {
 		return $this->laufzeit;
 	}
 
 	/**
 	 * @return MaxMietdauer
 	 */
-	public function getMaxMietdauer(): MaxMietdauer {
+	public function getMaxMietdauer(): ?MaxMietdauer {
 		return $this->maxMietdauer;
 	}
 
 	/**
 	 * @return int
 	 */
-	public function getMaxPersonen(): int {
+	public function getMaxPersonen(): ?int {
 		return $this->maxPersonen;
 	}
 
 	/**
 	 * @return MinMietdauer
 	 */
-	public function getMinMietdauer(): MinMietdauer {
+	public function getMinMietdauer(): ?MinMietdauer {
 		return $this->minMietdauer;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getNichtraucher(): bool {
+	public function getNichtraucher(): ?bool {
 		return $this->nichtraucher;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getObjektadresseFreigeben(): bool {
+	public function getObjektadresseFreigeben(): ?bool {
 		return $this->objektadresseFreigeben;
 	}
 
@@ -277,7 +277,7 @@ class VerwaltungObjekt {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): ?array {
 		return $this->userDefinedAnyfield;
 	}
 
@@ -286,7 +286,7 @@ class VerwaltungObjekt {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): ?array {
 		return $this->userDefinedExtend;
 	}
 
@@ -295,42 +295,42 @@ class VerwaltungObjekt {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): ?array {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getVerfuegbarAb(): string {
+	public function getVerfuegbarAb(): ?string {
 		return $this->verfuegbarAb;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getVermietet(): bool {
+	public function getVermietet(): ?bool {
 		return $this->vermietet;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getVersteigerungstermin(): \DateTime {
+	public function getVersteigerungstermin(): ?\DateTime {
 		return $this->versteigerungstermin;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWbsSozialwohnung(): bool {
+	public function getWbsSozialwohnung(): ?bool {
 		return $this->wbsSozialwohnung;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getZugang(): string {
+	public function getZugang(): ?string {
 		return $this->zugang;
 	}
 

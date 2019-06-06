@@ -158,98 +158,98 @@ class Boden {
 	/**
 	 * @return boolean
 	 */
-	public function getDielen(): bool {
+	public function getDielen(): ?bool {
 		return $this->dielen;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getDoppelboden(): bool {
+	public function getDoppelboden(): ?bool {
 		return $this->doppelboden;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getEstrich(): bool {
+	public function getEstrich(): ?bool {
 		return $this->estrich;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFertigparkett(): bool {
+	public function getFertigparkett(): ?bool {
 		return $this->fertigparkett;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFliesen(): bool {
+	public function getFliesen(): ?bool {
 		return $this->fliesen;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGranit(): bool {
+	public function getGranit(): ?bool {
 		return $this->granit;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKunststoff(): bool {
+	public function getKunststoff(): ?bool {
 		return $this->kunststoff;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getLaminat(): bool {
+	public function getLaminat(): ?bool {
 		return $this->laminat;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getLinoleum(): bool {
+	public function getLinoleum(): ?bool {
 		return $this->linoleum;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getMarmor(): bool {
+	public function getMarmor(): ?bool {
 		return $this->marmor;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getParkett(): bool {
+	public function getParkett(): ?bool {
 		return $this->parkett;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getStein(): bool {
+	public function getStein(): ?bool {
 		return $this->stein;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getTeppich(): bool {
+	public function getTeppich(): ?bool {
 		return $this->teppich;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getTerrakotta(): bool {
+	public function getTerrakotta(): ?bool {
 		return $this->terrakotta;
 	}
 

@@ -35,14 +35,14 @@ class BreitbandZugang {
 	/**
 	 * @return string
 	 */
-	public function getArt(): string {
+	public function getArt(): ?string {
 		return $this->art;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getSpeed(): float {
+	public function getSpeed(): ?float {
 		return $this->speed;
 	}
 

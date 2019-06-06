@@ -43,14 +43,14 @@ class Nettomieteprom2von {
 	/**
 	 * @return float
 	 */
-	public function getNettomieteprom2bis(): float {
+	public function getNettomieteprom2bis(): ?float {
 		return $this->nettomieteprom2bis;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

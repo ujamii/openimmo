@@ -31,7 +31,7 @@ class Zimmer {
 	/**
 	 * @return string
 	 */
-	public function getZimmertyp(): string {
+	public function getZimmertyp(): ?string {
 		return $this->zimmertyp;
 	}
 

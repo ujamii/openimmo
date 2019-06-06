@@ -83,7 +83,7 @@ class Wohnung {
 	/**
 	 * @return string
 	 */
-	public function getWohnungtyp(): string {
+	public function getWohnungtyp(): ?string {
 		return $this->wohnungtyp;
 	}
 

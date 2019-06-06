@@ -43,14 +43,14 @@ class Gesamtbelastungnetto {
 	/**
 	 * @return float
 	 */
-	public function getGesamtbelastungust(): float {
+	public function getGesamtbelastungust(): ?float {
 		return $this->gesamtbelastungust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

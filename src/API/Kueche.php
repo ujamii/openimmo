@@ -48,21 +48,21 @@ class Kueche {
 	/**
 	 * @return boolean
 	 */
-	public function getEbk(): bool {
+	public function getEbk(): ?bool {
 		return $this->ebk;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getOffen(): bool {
+	public function getOffen(): ?bool {
 		return $this->offen;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getPantry(): bool {
+	public function getPantry(): ?bool {
 		return $this->pantry;
 	}
 

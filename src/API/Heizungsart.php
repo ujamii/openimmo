@@ -68,35 +68,35 @@ class Heizungsart {
 	/**
 	 * @return boolean
 	 */
-	public function getEtage(): bool {
+	public function getEtage(): ?bool {
 		return $this->etage;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFern(): bool {
+	public function getFern(): ?bool {
 		return $this->fern;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFussboden(): bool {
+	public function getFussboden(): ?bool {
 		return $this->fussboden;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getOfen(): bool {
+	public function getOfen(): ?bool {
 		return $this->ofen;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getZentral(): bool {
+	public function getZentral(): ?bool {
 		return $this->zentral;
 	}
 

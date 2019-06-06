@@ -58,28 +58,28 @@ class Vermarktungsart {
 	/**
 	 * @return boolean
 	 */
-	public function getErbpacht(): bool {
+	public function getErbpacht(): ?bool {
 		return $this->erbpacht;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKauf(): bool {
+	public function getKauf(): ?bool {
 		return $this->kauf;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getLeasing(): bool {
+	public function getLeasing(): ?bool {
 		return $this->leasing;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getMietePacht(): bool {
+	public function getMietePacht(): ?bool {
 		return $this->mietePacht;
 	}
 

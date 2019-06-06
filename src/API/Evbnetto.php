@@ -43,14 +43,14 @@ class Evbnetto {
 	/**
 	 * @return float
 	 */
-	public function getEvbust(): float {
+	public function getEvbust(): ?float {
 		return $this->evbust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

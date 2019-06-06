@@ -63,7 +63,7 @@ class Einzelhandel {
 	/**
 	 * @return string
 	 */
-	public function getHandelTyp(): string {
+	public function getHandelTyp(): ?string {
 		return $this->handelTyp;
 	}
 

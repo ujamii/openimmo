@@ -243,42 +243,42 @@ class Kontaktperson {
 	/**
 	 * @return boolean
 	 */
-	public function getAdressfreigabe(): bool {
+	public function getAdressfreigabe(): ?bool {
 		return $this->adressfreigabe;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getAnrede(): string {
+	public function getAnrede(): ?string {
 		return $this->anrede;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getAnredeBrief(): string {
+	public function getAnredeBrief(): ?string {
 		return $this->anredeBrief;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getEmailDirekt(): string {
+	public function getEmailDirekt(): ?string {
 		return $this->emailDirekt;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getEmailFeedback(): string {
+	public function getEmailFeedback(): ?string {
 		return $this->emailFeedback;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getEmailPrivat(): string {
+	public function getEmailPrivat(): ?string {
 		return $this->emailPrivat;
 	}
 
@@ -287,154 +287,154 @@ class Kontaktperson {
 	 *
 	 * @return array
 	 */
-	public function getEmailSonstige(): array {
+	public function getEmailSonstige(): ?array {
 		return $this->emailSonstige;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getEmailZentrale(): string {
+	public function getEmailZentrale(): ?string {
 		return $this->emailZentrale;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFirma(): string {
+	public function getFirma(): ?string {
 		return $this->firma;
 	}
 
 	/**
 	 * @return Foto
 	 */
-	public function getFoto(): Foto {
+	public function getFoto(): ?Foto {
 		return $this->foto;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFreitextfeld(): string {
+	public function getFreitextfeld(): ?string {
 		return $this->freitextfeld;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getHausnummer(): string {
+	public function getHausnummer(): ?string {
 		return $this->hausnummer;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getImmobilientreuhaenderid(): string {
+	public function getImmobilientreuhaenderid(): ?string {
 		return $this->immobilientreuhaenderid;
 	}
 
 	/**
 	 * @return Land
 	 */
-	public function getLand(): Land {
+	public function getLand(): ?Land {
 		return $this->land;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getName(): string {
+	public function getName(): ?string {
 		return $this->name;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getOrt(): string {
+	public function getOrt(): ?string {
 		return $this->ort;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPersonennummer(): string {
+	public function getPersonennummer(): ?string {
 		return $this->personennummer;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPlz(): string {
+	public function getPlz(): ?string {
 		return $this->plz;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPosition(): string {
+	public function getPosition(): ?string {
 		return $this->position;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPostfach(): string {
+	public function getPostfach(): ?string {
 		return $this->postfach;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPostfOrt(): string {
+	public function getPostfOrt(): ?string {
 		return $this->postfOrt;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPostfPlz(): string {
+	public function getPostfPlz(): ?string {
 		return $this->postfPlz;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getReferenzId(): string {
+	public function getReferenzId(): ?string {
 		return $this->referenzId;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getStrasse(): string {
+	public function getStrasse(): ?string {
 		return $this->strasse;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getTelDurchw(): string {
+	public function getTelDurchw(): ?string {
 		return $this->telDurchw;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getTelFax(): string {
+	public function getTelFax(): ?string {
 		return $this->telFax;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getTelHandy(): string {
+	public function getTelHandy(): ?string {
 		return $this->telHandy;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getTelPrivat(): string {
+	public function getTelPrivat(): ?string {
 		return $this->telPrivat;
 	}
 
@@ -443,28 +443,28 @@ class Kontaktperson {
 	 *
 	 * @return array
 	 */
-	public function getTelSonstige(): array {
+	public function getTelSonstige(): ?array {
 		return $this->telSonstige;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getTelZentrale(): string {
+	public function getTelZentrale(): ?string {
 		return $this->telZentrale;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getTitel(): string {
+	public function getTitel(): ?string {
 		return $this->titel;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getUrl(): string {
+	public function getUrl(): ?string {
 		return $this->url;
 	}
 
@@ -473,7 +473,7 @@ class Kontaktperson {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): ?array {
 		return $this->userDefinedAnyfield;
 	}
 
@@ -482,7 +482,7 @@ class Kontaktperson {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): ?array {
 		return $this->userDefinedExtend;
 	}
 
@@ -491,21 +491,21 @@ class Kontaktperson {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): ?array {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getVorname(): string {
+	public function getVorname(): ?string {
 		return $this->vorname;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getZusatzfeld(): string {
+	public function getZusatzfeld(): ?string {
 		return $this->zusatzfeld;
 	}
 

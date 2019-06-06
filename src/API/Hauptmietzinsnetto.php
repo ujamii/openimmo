@@ -42,14 +42,14 @@ class Hauptmietzinsnetto {
 	/**
 	 * @return float
 	 */
-	public function getHauptmietzinsust(): float {
+	public function getHauptmietzinsust(): ?float {
 		return $this->hauptmietzinsust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

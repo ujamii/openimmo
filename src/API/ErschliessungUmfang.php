@@ -43,7 +43,7 @@ class ErschliessungUmfang {
 	/**
 	 * @return string
 	 */
-	public function getErschlAttr(): string {
+	public function getErschlAttr(): ?string {
 		return $this->erschlAttr;
 	}
 

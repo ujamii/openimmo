@@ -87,49 +87,49 @@ class Dachform {
 	/**
 	 * @return boolean
 	 */
-	public function getFlachdach(): bool {
+	public function getFlachdach(): ?bool {
 		return $this->flachdach;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKrueppelwalmdach(): bool {
+	public function getKrueppelwalmdach(): ?bool {
 		return $this->krueppelwalmdach;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getMansarddach(): bool {
+	public function getMansarddach(): ?bool {
 		return $this->mansarddach;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getPultdach(): bool {
+	public function getPultdach(): ?bool {
 		return $this->pultdach;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getPyramidendach(): bool {
+	public function getPyramidendach(): ?bool {
 		return $this->pyramidendach;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSatteldach(): bool {
+	public function getSatteldach(): ?bool {
 		return $this->satteldach;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWalmdach(): bool {
+	public function getWalmdach(): ?bool {
 		return $this->walmdach;
 	}
 

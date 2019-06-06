@@ -67,35 +67,35 @@ class Ausbaustufe {
 	/**
 	 * @return boolean
 	 */
-	public function getAusbauhaus(): bool {
+	public function getAusbauhaus(): ?bool {
 		return $this->ausbauhaus;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getBausatzhaus(): bool {
+	public function getBausatzhaus(): ?bool {
 		return $this->bausatzhaus;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSchluesselfertigmitbodenplatte(): bool {
+	public function getSchluesselfertigmitbodenplatte(): ?bool {
 		return $this->schluesselfertigmitbodenplatte;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSchluesselfertigmitkeller(): bool {
+	public function getSchluesselfertigmitkeller(): ?bool {
 		return $this->schluesselfertigmitkeller;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSchluesselfertigohnebodenplatte(): bool {
+	public function getSchluesselfertigohnebodenplatte(): ?bool {
 		return $this->schluesselfertigohnebodenplatte;
 	}
 

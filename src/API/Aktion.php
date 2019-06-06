@@ -41,7 +41,7 @@ class Aktion {
 	/**
 	 * @return string
 	 */
-	public function getAktionart(): string {
+	public function getAktionart(): ?string {
 		return $this->aktionart;
 	}
 

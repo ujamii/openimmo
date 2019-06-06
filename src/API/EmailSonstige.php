@@ -70,21 +70,21 @@ class EmailSonstige {
 	/**
 	 * @return string
 	 */
-	public function getBemerkung(): string {
+	public function getBemerkung(): ?string {
 		return $this->bemerkung;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getEmailart(): string {
+	public function getEmailart(): ?string {
 		return $this->emailart;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getValue(): string {
+	public function getValue(): ?string {
 		return $this->value;
 	}
 

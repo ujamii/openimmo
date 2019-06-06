@@ -43,14 +43,14 @@ class Sonstigekostennetto {
 	/**
 	 * @return float
 	 */
-	public function getSonstigekostenust(): float {
+	public function getSonstigekostenust(): ?float {
 		return $this->sonstigekostenust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

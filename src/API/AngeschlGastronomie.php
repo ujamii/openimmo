@@ -38,14 +38,14 @@ class AngeschlGastronomie {
 	/**
 	 * @return boolean
 	 */
-	public function getBar(): bool {
+	public function getBar(): ?bool {
 		return $this->bar;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHotelrestaurant(): bool {
+	public function getHotelrestaurant(): ?bool {
 		return $this->hotelrestaurant;
 	}
 

@@ -67,7 +67,7 @@ class BueroPraxen {
 	/**
 	 * @return string
 	 */
-	public function getBueroTyp(): string {
+	public function getBueroTyp(): ?string {
 		return $this->bueroTyp;
 	}
 

@@ -43,7 +43,7 @@ class MinMietdauer {
 	/**
 	 * @return string
 	 */
-	public function getMinDauer(): string {
+	public function getMinDauer(): ?string {
 		return $this->minDauer;
 	}
 

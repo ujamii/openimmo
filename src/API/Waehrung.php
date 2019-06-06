@@ -755,7 +755,7 @@ class Waehrung {
 	/**
 	 * @return string
 	 */
-	public function getIsoWaehrung(): string {
+	public function getIsoWaehrung(): ?string {
 		return $this->isoWaehrung;
 	}
 

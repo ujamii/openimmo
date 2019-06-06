@@ -133,42 +133,42 @@ class Anhang {
 	/**
 	 * @return string
 	 */
-	public function getAnhangtitel(): string {
+	public function getAnhangtitel(): ?string {
 		return $this->anhangtitel;
 	}
 
 	/**
 	 * @return Check
 	 */
-	public function getCheck(): Check {
+	public function getCheck(): ?Check {
 		return $this->check;
 	}
 
 	/**
 	 * @return Daten
 	 */
-	public function getDaten(): Daten {
+	public function getDaten(): ?Daten {
 		return $this->daten;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFormat(): string {
+	public function getFormat(): ?string {
 		return $this->format;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGruppe(): string {
+	public function getGruppe(): ?string {
 		return $this->gruppe;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getLocation(): string {
+	public function getLocation(): ?string {
 		return $this->location;
 	}
 

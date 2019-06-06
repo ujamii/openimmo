@@ -121,77 +121,77 @@ class VerwaltungTechn {
 	/**
 	 * @return Aktion
 	 */
-	public function getAktion(): Aktion {
+	public function getAktion(): ?Aktion {
 		return $this->aktion;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getAktivBis(): \DateTime {
+	public function getAktivBis(): ?\DateTime {
 		return $this->aktivBis;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getAktivVon(): \DateTime {
+	public function getAktivVon(): ?\DateTime {
 		return $this->aktivVon;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGruppenKennung(): string {
+	public function getGruppenKennung(): ?string {
 		return $this->gruppenKennung;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getKennungUrsprung(): string {
+	public function getKennungUrsprung(): ?string {
 		return $this->kennungUrsprung;
 	}
 
 	/**
 	 * @return Master
 	 */
-	public function getMaster(): Master {
+	public function getMaster(): ?Master {
 		return $this->master;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getObjektnrExtern(): string {
+	public function getObjektnrExtern(): ?string {
 		return $this->objektnrExtern;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getObjektnrIntern(): string {
+	public function getObjektnrIntern(): ?string {
 		return $this->objektnrIntern;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getOpenimmoObid(): string {
+	public function getOpenimmoObid(): ?string {
 		return $this->openimmoObid;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getSprache(): string {
+	public function getSprache(): ?string {
 		return $this->sprache;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getStandVom(): \DateTime {
+	public function getStandVom(): ?\DateTime {
 		return $this->standVom;
 	}
 
@@ -200,7 +200,7 @@ class VerwaltungTechn {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): ?array {
 		return $this->userDefinedAnyfield;
 	}
 
@@ -209,7 +209,7 @@ class VerwaltungTechn {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): ?array {
 		return $this->userDefinedExtend;
 	}
 
@@ -218,28 +218,28 @@ class VerwaltungTechn {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): ?array {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWeitergabeGenerell(): bool {
+	public function getWeitergabeGenerell(): ?bool {
 		return $this->weitergabeGenerell;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getWeitergabeNegativ(): string {
+	public function getWeitergabeNegativ(): ?string {
 		return $this->weitergabeNegativ;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getWeitergabePositiv(): string {
+	public function getWeitergabePositiv(): ?string {
 		return $this->weitergabePositiv;
 	}
 

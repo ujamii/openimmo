@@ -80,49 +80,49 @@ class Bieterverfahren {
 	/**
 	 * @return \DateTime
 	 */
-	public function getBeginnAngebotsphase(): \DateTime {
+	public function getBeginnAngebotsphase(): ?\DateTime {
 		return $this->beginnAngebotsphase;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getBeginnBietzeit(): \DateTime {
+	public function getBeginnBietzeit(): ?\DateTime {
 		return $this->beginnBietzeit;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getBesichtigungstermin(): \DateTime {
+	public function getBesichtigungstermin(): ?\DateTime {
 		return $this->besichtigungstermin;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getBesichtigungstermin2(): \DateTime {
+	public function getBesichtigungstermin2(): ?\DateTime {
 		return $this->besichtigungstermin2;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getEndeBietzeit(): \DateTime {
+	public function getEndeBietzeit(): ?\DateTime {
 		return $this->endeBietzeit;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHoechstgebotZeigen(): bool {
+	public function getHoechstgebotZeigen(): ?bool {
 		return $this->hoechstgebotZeigen;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getMindestpreis(): float {
+	public function getMindestpreis(): ?float {
 		return $this->mindestpreis;
 	}
 
@@ -131,7 +131,7 @@ class Bieterverfahren {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): ?array {
 		return $this->userDefinedAnyfield;
 	}
 
@@ -140,7 +140,7 @@ class Bieterverfahren {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): ?array {
 		return $this->userDefinedExtend;
 	}
 
@@ -149,7 +149,7 @@ class Bieterverfahren {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): ?array {
 		return $this->userDefinedSimplefield;
 	}
 

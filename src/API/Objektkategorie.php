@@ -55,14 +55,14 @@ class Objektkategorie {
 	/**
 	 * @return Nutzungsart
 	 */
-	public function getNutzungsart(): Nutzungsart {
+	public function getNutzungsart(): ?Nutzungsart {
 		return $this->nutzungsart;
 	}
 
 	/**
 	 * @return Objektart
 	 */
-	public function getObjektart(): Objektart {
+	public function getObjektart(): ?Objektart {
 		return $this->objektart;
 	}
 
@@ -71,7 +71,7 @@ class Objektkategorie {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): ?array {
 		return $this->userDefinedAnyfield;
 	}
 
@@ -80,7 +80,7 @@ class Objektkategorie {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): ?array {
 		return $this->userDefinedExtend;
 	}
 
@@ -89,14 +89,14 @@ class Objektkategorie {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): ?array {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return Vermarktungsart
 	 */
-	public function getVermarktungsart(): Vermarktungsart {
+	public function getVermarktungsart(): ?Vermarktungsart {
 		return $this->vermarktungsart;
 	}
 

@@ -104,35 +104,35 @@ class ZustandAngaben {
 	/**
 	 * @return Alter
 	 */
-	public function getAlter(): Alter {
+	public function getAlter(): ?Alter {
 		return $this->alter;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getAltlasten(): string {
+	public function getAltlasten(): ?string {
 		return $this->altlasten;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getBaujahr(): string {
+	public function getBaujahr(): ?string {
 		return $this->baujahr;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getBauzone(): string {
+	public function getBauzone(): ?string {
 		return $this->bauzone;
 	}
 
 	/**
 	 * @return BebaubarNach
 	 */
-	public function getBebaubarNach(): BebaubarNach {
+	public function getBebaubarNach(): ?BebaubarNach {
 		return $this->bebaubarNach;
 	}
 
@@ -141,28 +141,28 @@ class ZustandAngaben {
 	 *
 	 * @return array
 	 */
-	public function getEnergiepass(): array {
+	public function getEnergiepass(): ?array {
 		return $this->energiepass;
 	}
 
 	/**
 	 * @return Erschliessung
 	 */
-	public function getErschliessung(): Erschliessung {
+	public function getErschliessung(): ?Erschliessung {
 		return $this->erschliessung;
 	}
 
 	/**
 	 * @return ErschliessungUmfang
 	 */
-	public function getErschliessungUmfang(): ErschliessungUmfang {
+	public function getErschliessungUmfang(): ?ErschliessungUmfang {
 		return $this->erschliessungUmfang;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getLetztemodernisierung(): string {
+	public function getLetztemodernisierung(): ?string {
 		return $this->letztemodernisierung;
 	}
 
@@ -171,7 +171,7 @@ class ZustandAngaben {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): ?array {
 		return $this->userDefinedAnyfield;
 	}
 
@@ -180,7 +180,7 @@ class ZustandAngaben {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): ?array {
 		return $this->userDefinedExtend;
 	}
 
@@ -189,21 +189,21 @@ class ZustandAngaben {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): ?array {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return Verkaufstatus
 	 */
-	public function getVerkaufstatus(): Verkaufstatus {
+	public function getVerkaufstatus(): ?Verkaufstatus {
 		return $this->verkaufstatus;
 	}
 
 	/**
 	 * @return Zustand
 	 */
-	public function getZustand(): Zustand {
+	public function getZustand(): ?Zustand {
 		return $this->zustand;
 	}
 

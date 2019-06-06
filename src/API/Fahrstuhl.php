@@ -38,14 +38,14 @@ class Fahrstuhl {
 	/**
 	 * @return boolean
 	 */
-	public function getLasten(): bool {
+	public function getLasten(): ?bool {
 		return $this->lasten;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getPersonen(): bool {
+	public function getPersonen(): ?bool {
 		return $this->personen;
 	}
 

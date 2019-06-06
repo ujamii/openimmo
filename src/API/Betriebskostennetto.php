@@ -43,14 +43,14 @@ class Betriebskostennetto {
 	/**
 	 * @return float
 	 */
-	public function getBetriebskostenust(): float {
+	public function getBetriebskostenust(): ?float {
 		return $this->betriebskostenust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

@@ -98,56 +98,56 @@ class AusrichtBalkonTerrasse {
 	/**
 	 * @return boolean
 	 */
-	public function getNord(): bool {
+	public function getNord(): ?bool {
 		return $this->nord;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getNordost(): bool {
+	public function getNordost(): ?bool {
 		return $this->nordost;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getNordwest(): bool {
+	public function getNordwest(): ?bool {
 		return $this->nordwest;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getOst(): bool {
+	public function getOst(): ?bool {
 		return $this->ost;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSued(): bool {
+	public function getSued(): ?bool {
 		return $this->sued;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSuedost(): bool {
+	public function getSuedost(): ?bool {
 		return $this->suedost;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSuedwest(): bool {
+	public function getSuedwest(): ?bool {
 		return $this->suedwest;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWest(): bool {
+	public function getWest(): ?bool {
 		return $this->west;
 	}
 

@@ -35,14 +35,14 @@ class Geokoordinaten {
 	/**
 	 * @return float
 	 */
-	public function getBreitengrad(): float {
+	public function getBreitengrad(): ?float {
 		return $this->breitengrad;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getLaengengrad(): float {
+	public function getLaengengrad(): ?float {
 		return $this->laengengrad;
 	}
 

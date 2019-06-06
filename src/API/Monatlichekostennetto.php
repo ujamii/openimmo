@@ -43,14 +43,14 @@ class Monatlichekostennetto {
 	/**
 	 * @return float
 	 */
-	public function getMonatlichekostenust(): float {
+	public function getMonatlichekostenust(): ?float {
 		return $this->monatlichekostenust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

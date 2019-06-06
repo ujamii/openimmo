@@ -43,14 +43,14 @@ class Kaufpreis {
 	/**
 	 * @return boolean
 	 */
-	public function getAufAnfrage(): bool {
+	public function getAufAnfrage(): ?bool {
 		return $this->aufAnfrage;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

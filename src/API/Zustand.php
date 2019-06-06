@@ -91,7 +91,7 @@ class Zustand {
 	/**
 	 * @return string
 	 */
-	public function getZustandArt(): string {
+	public function getZustandArt(): ?string {
 		return $this->zustandArt;
 	}
 

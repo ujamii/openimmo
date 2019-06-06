@@ -26,7 +26,7 @@ class UserDefinedSimplefield {
 	/**
 	 * @return string
 	 */
-	public function getFeldname(): string {
+	public function getFeldname(): ?string {
 		return $this->feldname;
 	}
 

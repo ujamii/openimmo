@@ -68,35 +68,35 @@ class Serviceleistungen {
 	/**
 	 * @return boolean
 	 */
-	public function getBetreutesWohnen(): bool {
+	public function getBetreutesWohnen(): ?bool {
 		return $this->betreutesWohnen;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getCatering(): bool {
+	public function getCatering(): ?bool {
 		return $this->catering;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getEinkauf(): bool {
+	public function getEinkauf(): ?bool {
 		return $this->einkauf;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getReinigung(): bool {
+	public function getReinigung(): ?bool {
 		return $this->reinigung;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWachdienst(): bool {
+	public function getWachdienst(): ?bool {
 		return $this->wachdienst;
 	}
 

@@ -129,63 +129,63 @@ class Uebertragung {
 	/**
 	 * @return string
 	 */
-	public function getArt(): string {
+	public function getArt(): ?string {
 		return $this->art;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getModus(): string {
+	public function getModus(): ?string {
 		return $this->modus;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getRegiId(): string {
+	public function getRegiId(): ?string {
 		return $this->regiId;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getSendersoftware(): string {
+	public function getSendersoftware(): ?string {
 		return $this->sendersoftware;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getSenderversion(): string {
+	public function getSenderversion(): ?string {
 		return $this->senderversion;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getTechnEmail(): string {
+	public function getTechnEmail(): ?string {
 		return $this->technEmail;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getTimestamp(): \DateTime {
+	public function getTimestamp(): ?\DateTime {
 		return $this->timestamp;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getUmfang(): string {
+	public function getUmfang(): ?string {
 		return $this->umfang;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getVersion(): string {
+	public function getVersion(): ?string {
 		return $this->version;
 	}
 

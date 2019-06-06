@@ -60,14 +60,14 @@ class MieteinnahmenIst {
 	/**
 	 * @return string
 	 */
-	public function getPeriode(): string {
+	public function getPeriode(): ?string {
 		return $this->periode;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

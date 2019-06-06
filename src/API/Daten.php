@@ -30,14 +30,14 @@ class Daten {
 	/**
 	 * @return string
 	 */
-	public function getAnhanginhalt(): string {
+	public function getAnhanginhalt(): ?string {
 		return $this->anhanginhalt;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPfad(): string {
+	public function getPfad(): ?string {
 		return $this->pfad;
 	}
 

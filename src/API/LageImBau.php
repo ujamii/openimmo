@@ -58,28 +58,28 @@ class LageImBau {
 	/**
 	 * @return boolean
 	 */
-	public function getHinten(): bool {
+	public function getHinten(): ?bool {
 		return $this->hinten;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getLinks(): bool {
+	public function getLinks(): ?bool {
 		return $this->links;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getRechts(): bool {
+	public function getRechts(): ?bool {
 		return $this->rechts;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getVorne(): bool {
+	public function getVorne(): ?bool {
 		return $this->vorne;
 	}
 

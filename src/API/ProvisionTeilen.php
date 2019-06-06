@@ -39,7 +39,7 @@ class ProvisionTeilen {
 	/**
 	 * @return string
 	 */
-	public function getWert(): string {
+	public function getWert(): ?string {
 		return $this->wert;
 	}
 

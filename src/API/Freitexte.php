@@ -79,49 +79,49 @@ class Freitexte {
 	/**
 	 * @return string
 	 */
-	public function getAusstattBeschr(): string {
+	public function getAusstattBeschr(): ?string {
 		return $this->ausstattBeschr;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getDreizeiler(): string {
+	public function getDreizeiler(): ?string {
 		return $this->dreizeiler;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getLage(): string {
+	public function getLage(): ?string {
 		return $this->lage;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getObjektbeschreibung(): string {
+	public function getObjektbeschreibung(): ?string {
 		return $this->objektbeschreibung;
 	}
 
 	/**
 	 * @return ObjektText
 	 */
-	public function getObjektText(): ObjektText {
+	public function getObjektText(): ?ObjektText {
 		return $this->objektText;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getObjekttitel(): string {
+	public function getObjekttitel(): ?string {
 		return $this->objekttitel;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getSonstigeAngaben(): string {
+	public function getSonstigeAngaben(): ?string {
 		return $this->sonstigeAngaben;
 	}
 
@@ -130,7 +130,7 @@ class Freitexte {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): ?array {
 		return $this->userDefinedAnyfield;
 	}
 
@@ -139,7 +139,7 @@ class Freitexte {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): ?array {
 		return $this->userDefinedExtend;
 	}
 
@@ -148,7 +148,7 @@ class Freitexte {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): ?array {
 		return $this->userDefinedSimplefield;
 	}
 

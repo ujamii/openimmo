@@ -955,7 +955,7 @@ class Land {
 	/**
 	 * @return string
 	 */
-	public function getIsoLand(): string {
+	public function getIsoLand(): ?string {
 		return $this->isoLand;
 	}
 

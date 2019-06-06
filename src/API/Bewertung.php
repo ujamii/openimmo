@@ -26,7 +26,7 @@ class Bewertung {
 	 *
 	 * @return array
 	 */
-	public function getFeld(): array {
+	public function getFeld(): ?array {
 		return $this->feld;
 	}
 

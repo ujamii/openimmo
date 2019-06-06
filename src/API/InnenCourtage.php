@@ -26,7 +26,7 @@ class InnenCourtage {
 	/**
 	 * @return boolean
 	 */
-	public function getMitMwst(): bool {
+	public function getMitMwst(): ?bool {
 		return $this->mitMwst;
 	}
 

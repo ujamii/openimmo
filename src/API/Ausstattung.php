@@ -376,280 +376,280 @@ class Ausstattung {
 	/**
 	 * @return boolean
 	 */
-	public function getAbstellraum(): bool {
+	public function getAbstellraum(): ?bool {
 		return $this->abstellraum;
 	}
 
 	/**
 	 * @return AngeschlGastronomie
 	 */
-	public function getAngeschlGastronomie(): AngeschlGastronomie {
+	public function getAngeschlGastronomie(): ?AngeschlGastronomie {
 		return $this->angeschlGastronomie;
 	}
 
 	/**
 	 * @return Ausbaustufe
 	 */
-	public function getAusbaustufe(): Ausbaustufe {
+	public function getAusbaustufe(): ?Ausbaustufe {
 		return $this->ausbaustufe;
 	}
 
 	/**
 	 * @return AusrichtBalkonTerrasse
 	 */
-	public function getAusrichtBalkonTerrasse(): AusrichtBalkonTerrasse {
+	public function getAusrichtBalkonTerrasse(): ?AusrichtBalkonTerrasse {
 		return $this->ausrichtBalkonTerrasse;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getAusstattKategorie(): string {
+	public function getAusstattKategorie(): ?string {
 		return $this->ausstattKategorie;
 	}
 
 	/**
 	 * @return Bad
 	 */
-	public function getBad(): Bad {
+	public function getBad(): ?Bad {
 		return $this->bad;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getBarrierefrei(): bool {
+	public function getBarrierefrei(): ?bool {
 		return $this->barrierefrei;
 	}
 
 	/**
 	 * @return Bauweise
 	 */
-	public function getBauweise(): Bauweise {
+	public function getBauweise(): ?Bauweise {
 		return $this->bauweise;
 	}
 
 	/**
 	 * @return Befeuerung
 	 */
-	public function getBefeuerung(): Befeuerung {
+	public function getBefeuerung(): ?Befeuerung {
 		return $this->befeuerung;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getBibliothek(): bool {
+	public function getBibliothek(): ?bool {
 		return $this->bibliothek;
 	}
 
 	/**
 	 * @return Boden
 	 */
-	public function getBoden(): Boden {
+	public function getBoden(): ?Boden {
 		return $this->boden;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getBrauereibindung(): bool {
+	public function getBrauereibindung(): ?bool {
 		return $this->brauereibindung;
 	}
 
 	/**
 	 * @return BreitbandZugang
 	 */
-	public function getBreitbandZugang(): BreitbandZugang {
+	public function getBreitbandZugang(): ?BreitbandZugang {
 		return $this->breitbandZugang;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getDachboden(): bool {
+	public function getDachboden(): ?bool {
 		return $this->dachboden;
 	}
 
 	/**
 	 * @return Dachform
 	 */
-	public function getDachform(): Dachform {
+	public function getDachform(): ?Dachform {
 		return $this->dachform;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getDvbt(): bool {
+	public function getDvbt(): ?bool {
 		return $this->dvbt;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getDvVerkabelung(): bool {
+	public function getDvVerkabelung(): ?bool {
 		return $this->dvVerkabelung;
 	}
 
 	/**
 	 * @return Energietyp
 	 */
-	public function getEnergietyp(): Energietyp {
+	public function getEnergietyp(): ?Energietyp {
 		return $this->energietyp;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFahrradraum(): bool {
+	public function getFahrradraum(): ?bool {
 		return $this->fahrradraum;
 	}
 
 	/**
 	 * @return Fahrstuhl
 	 */
-	public function getFahrstuhl(): Fahrstuhl {
+	public function getFahrstuhl(): ?Fahrstuhl {
 		return $this->fahrstuhl;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGaestewc(): bool {
+	public function getGaestewc(): ?bool {
 		return $this->gaestewc;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGartennutzung(): bool {
+	public function getGartennutzung(): ?bool {
 		return $this->gartennutzung;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGastterrasse(): bool {
+	public function getGastterrasse(): ?bool {
 		return $this->gastterrasse;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getHallenhoehe(): float {
+	public function getHallenhoehe(): ?float {
 		return $this->hallenhoehe;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHebebuehne(): bool {
+	public function getHebebuehne(): ?bool {
 		return $this->hebebuehne;
 	}
 
 	/**
 	 * @return Heizungsart
 	 */
-	public function getHeizungsart(): Heizungsart {
+	public function getHeizungsart(): ?Heizungsart {
 		return $this->heizungsart;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKabelkanaele(): bool {
+	public function getKabelkanaele(): ?bool {
 		return $this->kabelkanaele;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKabelSatTv(): bool {
+	public function getKabelSatTv(): ?bool {
 		return $this->kabelSatTv;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKamin(): bool {
+	public function getKamin(): ?bool {
 		return $this->kamin;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKantineCafeteria(): bool {
+	public function getKantineCafeteria(): ?bool {
 		return $this->kantineCafeteria;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKlimatisiert(): bool {
+	public function getKlimatisiert(): ?bool {
 		return $this->klimatisiert;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKran(): bool {
+	public function getKran(): ?bool {
 		return $this->kran;
 	}
 
 	/**
 	 * @return Kueche
 	 */
-	public function getKueche(): Kueche {
+	public function getKueche(): ?Kueche {
 		return $this->kueche;
 	}
 
 	/**
 	 * @return Moebliert
 	 */
-	public function getMoebliert(): Moebliert {
+	public function getMoebliert(): ?Moebliert {
 		return $this->moebliert;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getRaeumeVeraenderbar(): bool {
+	public function getRaeumeVeraenderbar(): ?bool {
 		return $this->raeumeVeraenderbar;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getRampe(): bool {
+	public function getRampe(): ?bool {
 		return $this->rampe;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getRolladen(): bool {
+	public function getRolladen(): ?bool {
 		return $this->rolladen;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getRollstuhlgerecht(): bool {
+	public function getRollstuhlgerecht(): ?bool {
 		return $this->rollstuhlgerecht;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSauna(): bool {
+	public function getSauna(): ?bool {
 		return $this->sauna;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSeniorengerecht(): bool {
+	public function getSeniorengerecht(): ?bool {
 		return $this->seniorengerecht;
 	}
 
@@ -658,21 +658,21 @@ class Ausstattung {
 	 *
 	 * @return array
 	 */
-	public function getServiceleistungen(): array {
+	public function getServiceleistungen(): ?array {
 		return $this->serviceleistungen;
 	}
 
 	/**
 	 * @return Sicherheitstechnik
 	 */
-	public function getSicherheitstechnik(): Sicherheitstechnik {
+	public function getSicherheitstechnik(): ?Sicherheitstechnik {
 		return $this->sicherheitstechnik;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSporteinrichtungen(): bool {
+	public function getSporteinrichtungen(): ?bool {
 		return $this->sporteinrichtungen;
 	}
 
@@ -681,49 +681,49 @@ class Ausstattung {
 	 *
 	 * @return array
 	 */
-	public function getStellplatzart(): array {
+	public function getStellplatzart(): ?array {
 		return $this->stellplatzart;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getStromanschlusswert(): string {
+	public function getStromanschlusswert(): ?string {
 		return $this->stromanschlusswert;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSwimmingpool(): bool {
+	public function getSwimmingpool(): ?bool {
 		return $this->swimmingpool;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getTeekueche(): bool {
+	public function getTeekueche(): ?bool {
 		return $this->teekueche;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getTelefonFerienimmobilie(): bool {
+	public function getTelefonFerienimmobilie(): ?bool {
 		return $this->telefonFerienimmobilie;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getUmtsEmpfang(): bool {
+	public function getUmtsEmpfang(): ?bool {
 		return $this->umtsEmpfang;
 	}
 
 	/**
 	 * @return Unterkellert
 	 */
-	public function getUnterkellert(): Unterkellert {
+	public function getUnterkellert(): ?Unterkellert {
 		return $this->unterkellert;
 	}
 
@@ -732,7 +732,7 @@ class Ausstattung {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): ?array {
 		return $this->userDefinedAnyfield;
 	}
 
@@ -741,7 +741,7 @@ class Ausstattung {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): ?array {
 		return $this->userDefinedExtend;
 	}
 
@@ -750,35 +750,35 @@ class Ausstattung {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): ?array {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWaschTrockenraum(): bool {
+	public function getWaschTrockenraum(): ?bool {
 		return $this->waschTrockenraum;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWellnessbereich(): bool {
+	public function getWellnessbereich(): ?bool {
 		return $this->wellnessbereich;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWgGeeignet(): bool {
+	public function getWgGeeignet(): ?bool {
 		return $this->wgGeeignet;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWintergarten(): bool {
+	public function getWintergarten(): ?bool {
 		return $this->wintergarten;
 	}
 

@@ -79,7 +79,7 @@ class LageGebiet {
 	/**
 	 * @return string
 	 */
-	public function getGebiete(): string {
+	public function getGebiete(): ?string {
 		return $this->gebiete;
 	}
 

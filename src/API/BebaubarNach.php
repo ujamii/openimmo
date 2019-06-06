@@ -55,7 +55,7 @@ class BebaubarNach {
 	/**
 	 * @return string
 	 */
-	public function getBebaubarAttr(): string {
+	public function getBebaubarAttr(): ?string {
 		return $this->bebaubarAttr;
 	}
 

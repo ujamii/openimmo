@@ -43,7 +43,7 @@ class PreisZeiteinheit {
 	/**
 	 * @return string
 	 */
-	public function getZeiteinheit(): string {
+	public function getZeiteinheit(): ?string {
 		return $this->zeiteinheit;
 	}
 

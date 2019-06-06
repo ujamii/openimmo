@@ -39,7 +39,7 @@ class Unterkellert {
 	/**
 	 * @return string
 	 */
-	public function getKeller(): string {
+	public function getKeller(): ?string {
 		return $this->keller;
 	}
 

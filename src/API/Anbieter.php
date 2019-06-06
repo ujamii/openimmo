@@ -87,21 +87,21 @@ class Anbieter {
 	/**
 	 * @return string
 	 */
-	public function getAnbieternr(): string {
+	public function getAnbieternr(): ?string {
 		return $this->anbieternr;
 	}
 
 	/**
 	 * @return Anhang
 	 */
-	public function getAnhang(): Anhang {
+	public function getAnhang(): ?Anhang {
 		return $this->anhang;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFirma(): string {
+	public function getFirma(): ?string {
 		return $this->firma;
 	}
 
@@ -110,35 +110,35 @@ class Anbieter {
 	 *
 	 * @return array
 	 */
-	public function getImmobilie(): array {
+	public function getImmobilie(): ?array {
 		return $this->immobilie;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getImpressum(): string {
+	public function getImpressum(): ?string {
 		return $this->impressum;
 	}
 
 	/**
 	 * @return ImpressumStrukt
 	 */
-	public function getImpressumStrukt(): ImpressumStrukt {
+	public function getImpressumStrukt(): ?ImpressumStrukt {
 		return $this->impressumStrukt;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getLizenzkennung(): string {
+	public function getLizenzkennung(): ?string {
 		return $this->lizenzkennung;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getOpenimmoAnid(): string {
+	public function getOpenimmoAnid(): ?string {
 		return $this->openimmoAnid;
 	}
 
@@ -147,7 +147,7 @@ class Anbieter {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): ?array {
 		return $this->userDefinedAnyfield;
 	}
 
@@ -156,7 +156,7 @@ class Anbieter {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): ?array {
 		return $this->userDefinedExtend;
 	}
 
@@ -165,7 +165,7 @@ class Anbieter {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): ?array {
 		return $this->userDefinedSimplefield;
 	}
 

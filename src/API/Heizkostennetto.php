@@ -43,14 +43,14 @@ class Heizkostennetto {
 	/**
 	 * @return float
 	 */
-	public function getHeizkostenust(): float {
+	public function getHeizkostenust(): ?float {
 		return $this->heizkostenust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

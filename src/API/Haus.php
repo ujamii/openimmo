@@ -135,7 +135,7 @@ class Haus {
 	/**
 	 * @return string
 	 */
-	public function getHaustyp(): string {
+	public function getHaustyp(): ?string {
 		return $this->haustyp;
 	}
 

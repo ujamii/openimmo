@@ -63,7 +63,7 @@ class Grundstueck {
 	/**
 	 * @return string
 	 */
-	public function getGrundstTyp(): string {
+	public function getGrundstTyp(): ?string {
 		return $this->grundstTyp;
 	}
 

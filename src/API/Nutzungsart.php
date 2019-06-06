@@ -58,28 +58,28 @@ class Nutzungsart {
 	/**
 	 * @return boolean
 	 */
-	public function getAnlage(): bool {
+	public function getAnlage(): ?bool {
 		return $this->anlage;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGewerbe(): bool {
+	public function getGewerbe(): ?bool {
 		return $this->gewerbe;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWaz(): bool {
+	public function getWaz(): ?bool {
 		return $this->waz;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWohnen(): bool {
+	public function getWohnen(): ?bool {
 		return $this->wohnen;
 	}
 

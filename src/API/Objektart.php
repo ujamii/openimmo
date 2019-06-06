@@ -117,7 +117,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getBueroPraxen(): array {
+	public function getBueroPraxen(): ?array {
 		return $this->bueroPraxen;
 	}
 
@@ -126,7 +126,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getEinzelhandel(): array {
+	public function getEinzelhandel(): ?array {
 		return $this->einzelhandel;
 	}
 
@@ -135,7 +135,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getFreizeitimmobilieGewerblich(): array {
+	public function getFreizeitimmobilieGewerblich(): ?array {
 		return $this->freizeitimmobilieGewerblich;
 	}
 
@@ -144,7 +144,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getGastgewerbe(): array {
+	public function getGastgewerbe(): ?array {
 		return $this->gastgewerbe;
 	}
 
@@ -153,7 +153,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getGrundstueck(): array {
+	public function getGrundstueck(): ?array {
 		return $this->grundstueck;
 	}
 
@@ -162,7 +162,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getHallenLagerProd(): array {
+	public function getHallenLagerProd(): ?array {
 		return $this->hallenLagerProd;
 	}
 
@@ -171,7 +171,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getHaus(): array {
+	public function getHaus(): ?array {
 		return $this->haus;
 	}
 
@@ -180,7 +180,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getLandUndForstwirtschaft(): array {
+	public function getLandUndForstwirtschaft(): ?array {
 		return $this->landUndForstwirtschaft;
 	}
 
@@ -189,7 +189,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getObjektartZusatz(): array {
+	public function getObjektartZusatz(): ?array {
 		return $this->objektartZusatz;
 	}
 
@@ -198,7 +198,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getParken(): array {
+	public function getParken(): ?array {
 		return $this->parken;
 	}
 
@@ -207,7 +207,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getSonstige(): array {
+	public function getSonstige(): ?array {
 		return $this->sonstige;
 	}
 
@@ -216,7 +216,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getWohnung(): array {
+	public function getWohnung(): ?array {
 		return $this->wohnung;
 	}
 
@@ -225,7 +225,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getZimmer(): array {
+	public function getZimmer(): ?array {
 		return $this->zimmer;
 	}
 
@@ -234,7 +234,7 @@ class Objektart {
 	 *
 	 * @return array
 	 */
-	public function getZinshausRenditeobjekt(): array {
+	public function getZinshausRenditeobjekt(): ?array {
 		return $this->zinshausRenditeobjekt;
 	}
 

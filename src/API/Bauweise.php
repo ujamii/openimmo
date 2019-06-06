@@ -47,21 +47,21 @@ class Bauweise {
 	/**
 	 * @return boolean
 	 */
-	public function getFertigteile(): bool {
+	public function getFertigteile(): ?bool {
 		return $this->fertigteile;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHolz(): bool {
+	public function getHolz(): ?bool {
 		return $this->holz;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getMassiv(): bool {
+	public function getMassiv(): ?bool {
 		return $this->massiv;
 	}
 

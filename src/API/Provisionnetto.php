@@ -43,14 +43,14 @@ class Provisionnetto {
 	/**
 	 * @return float
 	 */
-	public function getProvisionust(): float {
+	public function getProvisionust(): ?float {
 		return $this->provisionust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

@@ -63,14 +63,14 @@ class StpSonstige {
 	/**
 	 * @return string
 	 */
-	public function getBemerkung(): string {
+	public function getBemerkung(): ?string {
 		return $this->bemerkung;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPlatzart(): string {
+	public function getPlatzart(): ?string {
 		return $this->platzart;
 	}
 

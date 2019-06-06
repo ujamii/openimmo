@@ -163,133 +163,133 @@ class Geo {
 	/**
 	 * @return int
 	 */
-	public function getAnzahlEtagen(): int {
+	public function getAnzahlEtagen(): ?int {
 		return $this->anzahlEtagen;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getBundesland(): string {
+	public function getBundesland(): ?string {
 		return $this->bundesland;
 	}
 
 	/**
 	 * @return int
 	 */
-	public function getEtage(): int {
+	public function getEtage(): ?int {
 		return $this->etage;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFlur(): string {
+	public function getFlur(): ?string {
 		return $this->flur;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFlurstueck(): string {
+	public function getFlurstueck(): ?string {
 		return $this->flurstueck;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGemarkung(): string {
+	public function getGemarkung(): ?string {
 		return $this->gemarkung;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGemeindecode(): string {
+	public function getGemeindecode(): ?string {
 		return $this->gemeindecode;
 	}
 
 	/**
 	 * @return Geokoordinaten
 	 */
-	public function getGeokoordinaten(): Geokoordinaten {
+	public function getGeokoordinaten(): ?Geokoordinaten {
 		return $this->geokoordinaten;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getHausnummer(): string {
+	public function getHausnummer(): ?string {
 		return $this->hausnummer;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKartenMakro(): bool {
+	public function getKartenMakro(): ?bool {
 		return $this->kartenMakro;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKartenMikro(): bool {
+	public function getKartenMikro(): ?bool {
 		return $this->kartenMikro;
 	}
 
 	/**
 	 * @return LageGebiet
 	 */
-	public function getLageGebiet(): LageGebiet {
+	public function getLageGebiet(): ?LageGebiet {
 		return $this->lageGebiet;
 	}
 
 	/**
 	 * @return LageImBau
 	 */
-	public function getLageImBau(): LageImBau {
+	public function getLageImBau(): ?LageImBau {
 		return $this->lageImBau;
 	}
 
 	/**
 	 * @return Land
 	 */
-	public function getLand(): Land {
+	public function getLand(): ?Land {
 		return $this->land;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getLuftbildern(): bool {
+	public function getLuftbildern(): ?bool {
 		return $this->luftbildern;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getOrt(): string {
+	public function getOrt(): ?string {
 		return $this->ort;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPlz(): string {
+	public function getPlz(): ?string {
 		return $this->plz;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getRegionalerZusatz(): string {
+	public function getRegionalerZusatz(): ?string {
 		return $this->regionalerZusatz;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getStrasse(): string {
+	public function getStrasse(): ?string {
 		return $this->strasse;
 	}
 
@@ -298,7 +298,7 @@ class Geo {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): ?array {
 		return $this->userDefinedAnyfield;
 	}
 
@@ -307,7 +307,7 @@ class Geo {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): ?array {
 		return $this->userDefinedExtend;
 	}
 
@@ -316,21 +316,21 @@ class Geo {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): ?array {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getVirtuelletour(): bool {
+	public function getVirtuelletour(): ?bool {
 		return $this->virtuelletour;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getWohnungsnr(): string {
+	public function getWohnungsnr(): ?string {
 		return $this->wohnungsnr;
 	}
 

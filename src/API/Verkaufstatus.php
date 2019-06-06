@@ -39,7 +39,7 @@ class Verkaufstatus {
 	/**
 	 * @return string
 	 */
-	public function getStand(): string {
+	public function getStand(): ?string {
 		return $this->stand;
 	}
 

@@ -169,133 +169,133 @@ class Energiepass {
 	/**
 	 * @return \DateTime
 	 */
-	public function getAusstelldatum(): \DateTime {
+	public function getAusstelldatum(): ?\DateTime {
 		return $this->ausstelldatum;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getBaujahr(): string {
+	public function getBaujahr(): ?string {
 		return $this->baujahr;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getEndenergiebedarf(): string {
+	public function getEndenergiebedarf(): ?string {
 		return $this->endenergiebedarf;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getEnergieverbrauchkennwert(): string {
+	public function getEnergieverbrauchkennwert(): ?string {
 		return $this->energieverbrauchkennwert;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getEpart(): string {
+	public function getEpart(): ?string {
 		return $this->epart;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getEpasstext(): string {
+	public function getEpasstext(): ?string {
 		return $this->epasstext;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFgeeklasse(): string {
+	public function getFgeeklasse(): ?string {
 		return $this->fgeeklasse;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFgeewert(): string {
+	public function getFgeewert(): ?string {
 		return $this->fgeewert;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGebaeudeart(): string {
+	public function getGebaeudeart(): ?string {
 		return $this->gebaeudeart;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGeg2018(): string {
+	public function getGeg2018(): ?string {
 		return $this->geg2018;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGueltigBis(): string {
+	public function getGueltigBis(): ?string {
 		return $this->gueltigBis;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getHwbklasse(): string {
+	public function getHwbklasse(): ?string {
 		return $this->hwbklasse;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getHwbwert(): string {
+	public function getHwbwert(): ?string {
 		return $this->hwbwert;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getJahrgang(): string {
+	public function getJahrgang(): ?string {
 		return $this->jahrgang;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getMitwarmwasser(): bool {
+	public function getMitwarmwasser(): ?bool {
 		return $this->mitwarmwasser;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPrimaerenergietraeger(): string {
+	public function getPrimaerenergietraeger(): ?string {
 		return $this->primaerenergietraeger;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getStromwert(): string {
+	public function getStromwert(): ?string {
 		return $this->stromwert;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getWaermewert(): string {
+	public function getWaermewert(): ?string {
 		return $this->waermewert;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getWertklasse(): string {
+	public function getWertklasse(): ?string {
 		return $this->wertklasse;
 	}
 

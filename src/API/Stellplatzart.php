@@ -78,42 +78,42 @@ class Stellplatzart {
 	/**
 	 * @return boolean
 	 */
-	public function getCarport(): bool {
+	public function getCarport(): ?bool {
 		return $this->carport;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getDuplex(): bool {
+	public function getDuplex(): ?bool {
 		return $this->duplex;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFreiplatz(): bool {
+	public function getFreiplatz(): ?bool {
 		return $this->freiplatz;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGarage(): bool {
+	public function getGarage(): ?bool {
 		return $this->garage;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getParkhaus(): bool {
+	public function getParkhaus(): ?bool {
 		return $this->parkhaus;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getTiefgarage(): bool {
+	public function getTiefgarage(): ?bool {
 		return $this->tiefgarage;
 	}
 

@@ -43,14 +43,14 @@ class Gesamtmietenetto {
 	/**
 	 * @return float
 	 */
-	public function getGesamtmieteust(): float {
+	public function getGesamtmieteust(): ?float {
 		return $this->gesamtmieteust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

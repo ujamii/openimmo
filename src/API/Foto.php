@@ -47,21 +47,21 @@ class Foto {
 	/**
 	 * @return Daten
 	 */
-	public function getDaten(): Daten {
+	public function getDaten(): ?Daten {
 		return $this->daten;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFormat(): string {
+	public function getFormat(): ?string {
 		return $this->format;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getLocation(): string {
+	public function getLocation(): ?string {
 		return $this->location;
 	}
 

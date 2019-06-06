@@ -75,7 +75,7 @@ class HallenLagerProd {
 	/**
 	 * @return string
 	 */
-	public function getHallenTyp(): string {
+	public function getHallenTyp(): ?string {
 		return $this->hallenTyp;
 	}
 

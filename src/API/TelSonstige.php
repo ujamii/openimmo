@@ -78,21 +78,21 @@ class TelSonstige {
 	/**
 	 * @return string
 	 */
-	public function getBemerkung(): string {
+	public function getBemerkung(): ?string {
 		return $this->bemerkung;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getTelefonart(): string {
+	public function getTelefonart(): ?string {
 		return $this->telefonart;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getValue(): string {
+	public function getValue(): ?string {
 		return $this->value;
 	}
 

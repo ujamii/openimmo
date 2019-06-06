@@ -83,7 +83,7 @@ class LandUndForstwirtschaft {
 	/**
 	 * @return string
 	 */
-	public function getLandTyp(): string {
+	public function getLandTyp(): ?string {
 		return $this->landTyp;
 	}
 

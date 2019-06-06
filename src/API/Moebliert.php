@@ -35,7 +35,7 @@ class Moebliert {
 	/**
 	 * @return string
 	 */
-	public function getMoeb(): string {
+	public function getMoeb(): ?string {
 		return $this->moeb;
 	}
 

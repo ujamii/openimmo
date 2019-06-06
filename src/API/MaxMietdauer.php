@@ -43,7 +43,7 @@ class MaxMietdauer {
 	/**
 	 * @return string
 	 */
-	public function getMaxDauer(): string {
+	public function getMaxDauer(): ?string {
 		return $this->maxDauer;
 	}
 

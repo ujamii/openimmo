@@ -56,14 +56,14 @@ class Check {
 	/**
 	 * @return string
 	 */
-	public function getCtype(): string {
+	public function getCtype(): ?string {
 		return $this->ctype;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getValue(): \DateTime {
+	public function getValue(): ?\DateTime {
 		return $this->value;
 	}
 

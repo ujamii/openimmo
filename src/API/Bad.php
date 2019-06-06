@@ -68,35 +68,35 @@ class Bad {
 	/**
 	 * @return boolean
 	 */
-	public function getBidet(): bool {
+	public function getBidet(): ?bool {
 		return $this->bidet;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getDusche(): bool {
+	public function getDusche(): ?bool {
 		return $this->dusche;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFenster(): bool {
+	public function getFenster(): ?bool {
 		return $this->fenster;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getPissoir(): bool {
+	public function getPissoir(): ?bool {
 		return $this->pissoir;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWanne(): bool {
+	public function getWanne(): ?bool {
 		return $this->wanne;
 	}
 

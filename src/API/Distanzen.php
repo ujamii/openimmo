@@ -101,14 +101,14 @@ class Distanzen {
 	/**
 	 * @return string
 	 */
-	public function getDistanzZu(): string {
+	public function getDistanzZu(): ?string {
 		return $this->distanzZu;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

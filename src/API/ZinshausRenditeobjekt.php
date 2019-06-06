@@ -79,7 +79,7 @@ class ZinshausRenditeobjekt {
 	/**
 	 * @return string
 	 */
-	public function getZinsTyp(): string {
+	public function getZinsTyp(): ?string {
 		return $this->zinsTyp;
 	}
 

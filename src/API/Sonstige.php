@@ -47,7 +47,7 @@ class Sonstige {
 	/**
 	 * @return string
 	 */
-	public function getSonstigeTyp(): string {
+	public function getSonstigeTyp(): ?string {
 		return $this->sonstigeTyp;
 	}
 

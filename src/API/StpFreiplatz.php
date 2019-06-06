@@ -43,21 +43,21 @@ class StpFreiplatz {
 	/**
 	 * @return int
 	 */
-	public function getAnzahl(): int {
+	public function getAnzahl(): ?int {
 		return $this->anzahl;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getStellplatzkaufpreis(): float {
+	public function getStellplatzkaufpreis(): ?float {
 		return $this->stellplatzkaufpreis;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getStellplatzmiete(): float {
+	public function getStellplatzmiete(): ?float {
 		return $this->stellplatzmiete;
 	}
 

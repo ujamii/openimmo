@@ -39,7 +39,7 @@ class FreizeitimmobilieGewerblich {
 	/**
 	 * @return string
 	 */
-	public function getFreizeitTyp(): string {
+	public function getFreizeitTyp(): ?string {
 		return $this->freizeitTyp;
 	}
 

@@ -73,14 +73,14 @@ class DistanzenSport {
 	/**
 	 * @return string
 	 */
-	public function getDistanzZuSport(): string {
+	public function getDistanzZuSport(): ?string {
 		return $this->distanzZuSport;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

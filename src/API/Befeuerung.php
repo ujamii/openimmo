@@ -158,98 +158,98 @@ class Befeuerung {
 	/**
 	 * @return boolean
 	 */
-	public function getAlternativ(): bool {
+	public function getAlternativ(): ?bool {
 		return $this->alternativ;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getBlock(): bool {
+	public function getBlock(): ?bool {
 		return $this->block;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getElektro(): bool {
+	public function getElektro(): ?bool {
 		return $this->elektro;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getErdwaerme(): bool {
+	public function getErdwaerme(): ?bool {
 		return $this->erdwaerme;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFern(): bool {
+	public function getFern(): ?bool {
 		return $this->fern;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFluessiggas(): bool {
+	public function getFluessiggas(): ?bool {
 		return $this->fluessiggas;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGas(): bool {
+	public function getGas(): ?bool {
 		return $this->gas;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHolz(): bool {
+	public function getHolz(): ?bool {
 		return $this->holz;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKohle(): bool {
+	public function getKohle(): ?bool {
 		return $this->kohle;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getLuftwp(): bool {
+	public function getLuftwp(): ?bool {
 		return $this->luftwp;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getOel(): bool {
+	public function getOel(): ?bool {
 		return $this->oel;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getPellet(): bool {
+	public function getPellet(): ?bool {
 		return $this->pellet;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSolar(): bool {
+	public function getSolar(): ?bool {
 		return $this->solar;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWasserElektro(): bool {
+	public function getWasserElektro(): ?bool {
 		return $this->wasserElektro;
 	}
 

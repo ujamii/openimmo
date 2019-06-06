@@ -43,14 +43,14 @@ class Gesamtkostenprom2von {
 	/**
 	 * @return float
 	 */
-	public function getGesamtkostenprom2bis(): float {
+	public function getGesamtkostenprom2bis(): ?float {
 		return $this->gesamtkostenprom2bis;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

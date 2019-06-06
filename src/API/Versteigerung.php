@@ -52,42 +52,42 @@ class Versteigerung {
 	/**
 	 * @return string
 	 */
-	public function getAktenzeichen(): string {
+	public function getAktenzeichen(): ?string {
 		return $this->aktenzeichen;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getAmtsgericht(): string {
+	public function getAmtsgericht(): ?string {
 		return $this->amtsgericht;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getVerkehrswert(): float {
+	public function getVerkehrswert(): ?float {
 		return $this->verkehrswert;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getZusatztermin(): \DateTime {
+	public function getZusatztermin(): ?\DateTime {
 		return $this->zusatztermin;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getZvtermin(): \DateTime {
+	public function getZvtermin(): ?\DateTime {
 		return $this->zvtermin;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getZwangsversteigerung(): bool {
+	public function getZwangsversteigerung(): ?bool {
 		return $this->zwangsversteigerung;
 	}
 

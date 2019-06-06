@@ -40,7 +40,7 @@ class Geschlecht {
 	/**
 	 * @return string
 	 */
-	public function getGeschlAttr(): string {
+	public function getGeschlAttr(): ?string {
 		return $this->geschlAttr;
 	}
 

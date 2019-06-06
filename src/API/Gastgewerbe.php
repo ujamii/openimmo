@@ -71,7 +71,7 @@ class Gastgewerbe {
 	/**
 	 * @return string
 	 */
-	public function getGastgewTyp(): string {
+	public function getGastgewTyp(): ?string {
 		return $this->gastgewTyp;
 	}
 

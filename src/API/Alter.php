@@ -35,7 +35,7 @@ class Alter {
 	/**
 	 * @return string
 	 */
-	public function getAlterAttr(): string {
+	public function getAlterAttr(): ?string {
 		return $this->alterAttr;
 	}
 

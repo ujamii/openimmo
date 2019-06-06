@@ -313,294 +313,294 @@ class Flaechen {
 	/**
 	 * @return float
 	 */
-	public function getAnzahlBadezimmer(): float {
+	public function getAnzahlBadezimmer(): ?float {
 		return $this->anzahlBadezimmer;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getAnzahlBalkone(): float {
+	public function getAnzahlBalkone(): ?float {
 		return $this->anzahlBalkone;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getAnzahlBetten(): float {
+	public function getAnzahlBetten(): ?float {
 		return $this->anzahlBetten;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getAnzahlGewerbeeinheiten(): float {
+	public function getAnzahlGewerbeeinheiten(): ?float {
 		return $this->anzahlGewerbeeinheiten;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getAnzahlLogia(): float {
+	public function getAnzahlLogia(): ?float {
 		return $this->anzahlLogia;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getAnzahlSchlafzimmer(): float {
+	public function getAnzahlSchlafzimmer(): ?float {
 		return $this->anzahlSchlafzimmer;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getAnzahlSepWc(): float {
+	public function getAnzahlSepWc(): ?float {
 		return $this->anzahlSepWc;
 	}
 
 	/**
 	 * @return int
 	 */
-	public function getAnzahlStellplaetze(): int {
+	public function getAnzahlStellplaetze(): ?int {
 		return $this->anzahlStellplaetze;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getAnzahlTagungsraeume(): float {
+	public function getAnzahlTagungsraeume(): ?float {
 		return $this->anzahlTagungsraeume;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getAnzahlTerrassen(): float {
+	public function getAnzahlTerrassen(): ?float {
 		return $this->anzahlTerrassen;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getAnzahlWohneinheiten(): float {
+	public function getAnzahlWohneinheiten(): ?float {
 		return $this->anzahlWohneinheiten;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getAnzahlWohnSchlafzimmer(): float {
+	public function getAnzahlWohnSchlafzimmer(): ?float {
 		return $this->anzahlWohnSchlafzimmer;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getAnzahlZimmer(): float {
+	public function getAnzahlZimmer(): ?float {
 		return $this->anzahlZimmer;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getAusnuetzungsziffer(): float {
+	public function getAusnuetzungsziffer(): ?float {
 		return $this->ausnuetzungsziffer;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getBalkonTerrasseFlaeche(): float {
+	public function getBalkonTerrasseFlaeche(): ?float {
 		return $this->balkonTerrasseFlaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getBeheizbareFlaeche(): float {
+	public function getBeheizbareFlaeche(): ?float {
 		return $this->beheizbareFlaeche;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getBgf(): string {
+	public function getBgf(): ?string {
 		return $this->bgf;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getBmz(): string {
+	public function getBmz(): ?string {
 		return $this->bmz;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getBueroflaeche(): float {
+	public function getBueroflaeche(): ?float {
 		return $this->bueroflaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getBueroteilflaeche(): float {
+	public function getBueroteilflaeche(): ?float {
 		return $this->bueroteilflaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getDachbodenflaeche(): float {
+	public function getDachbodenflaeche(): ?float {
 		return $this->dachbodenflaeche;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getEinliegerwohnung(): bool {
+	public function getEinliegerwohnung(): ?bool {
 		return $this->einliegerwohnung;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getFensterfront(): float {
+	public function getFensterfront(): ?float {
 		return $this->fensterfront;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getFensterfrontQm(): float {
+	public function getFensterfrontQm(): ?float {
 		return $this->fensterfrontQm;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getFlaechebis(): float {
+	public function getFlaechebis(): ?float {
 		return $this->flaechebis;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getFlaechevon(): float {
+	public function getFlaechevon(): ?float {
 		return $this->flaechevon;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getFreiflaeche(): float {
+	public function getFreiflaeche(): ?float {
 		return $this->freiflaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getGartenflaeche(): float {
+	public function getGartenflaeche(): ?float {
 		return $this->gartenflaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getGastroflaeche(): float {
+	public function getGastroflaeche(): ?float {
 		return $this->gastroflaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getGesamtflaeche(): float {
+	public function getGesamtflaeche(): ?float {
 		return $this->gesamtflaeche;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGfz(): string {
+	public function getGfz(): ?string {
 		return $this->gfz;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getGrundstuecksflaeche(): float {
+	public function getGrundstuecksflaeche(): ?float {
 		return $this->grundstuecksflaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getGrundstuecksfront(): float {
+	public function getGrundstuecksfront(): ?float {
 		return $this->grundstuecksfront;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGrz(): string {
+	public function getGrz(): ?string {
 		return $this->grz;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getKellerflaeche(): float {
+	public function getKellerflaeche(): ?float {
 		return $this->kellerflaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getKubatur(): float {
+	public function getKubatur(): ?float {
 		return $this->kubatur;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getLadenflaeche(): float {
+	public function getLadenflaeche(): ?float {
 		return $this->ladenflaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getLagerflaeche(): float {
+	public function getLagerflaeche(): ?float {
 		return $this->lagerflaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getNutzflaeche(): float {
+	public function getNutzflaeche(): ?float {
 		return $this->nutzflaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getPlaetzeGastraum(): float {
+	public function getPlaetzeGastraum(): ?float {
 		return $this->plaetzeGastraum;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getSonstflaeche(): float {
+	public function getSonstflaeche(): ?float {
 		return $this->sonstflaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getTeilbarAb(): float {
+	public function getTeilbarAb(): ?float {
 		return $this->teilbarAb;
 	}
 
@@ -609,7 +609,7 @@ class Flaechen {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): ?array {
 		return $this->userDefinedAnyfield;
 	}
 
@@ -618,7 +618,7 @@ class Flaechen {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): ?array {
 		return $this->userDefinedExtend;
 	}
 
@@ -627,35 +627,35 @@ class Flaechen {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): ?array {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getVerkaufsflaeche(): float {
+	public function getVerkaufsflaeche(): ?float {
 		return $this->verkaufsflaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getVermietbareFlaeche(): float {
+	public function getVermietbareFlaeche(): ?float {
 		return $this->vermietbareFlaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getVerwaltungsflaeche(): float {
+	public function getVerwaltungsflaeche(): ?float {
 		return $this->verwaltungsflaeche;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getWohnflaeche(): float {
+	public function getWohnflaeche(): ?float {
 		return $this->wohnflaeche;
 	}
 

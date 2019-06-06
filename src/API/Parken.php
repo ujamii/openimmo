@@ -67,7 +67,7 @@ class Parken {
 	/**
 	 * @return string
 	 */
-	public function getParkenTyp(): string {
+	public function getParkenTyp(): ?string {
 		return $this->parkenTyp;
 	}
 

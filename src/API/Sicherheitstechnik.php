@@ -48,21 +48,21 @@ class Sicherheitstechnik {
 	/**
 	 * @return boolean
 	 */
-	public function getAlarmanlage(): bool {
+	public function getAlarmanlage(): ?bool {
 		return $this->alarmanlage;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKamera(): bool {
+	public function getKamera(): ?bool {
 		return $this->kamera;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getPolizeiruf(): bool {
+	public function getPolizeiruf(): ?bool {
 		return $this->polizeiruf;
 	}
 

@@ -107,63 +107,63 @@ class Energietyp {
 	/**
 	 * @return boolean
 	 */
-	public function getKfw40(): bool {
+	public function getKfw40(): ?bool {
 		return $this->kfw40;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKfw55(): bool {
+	public function getKfw55(): ?bool {
 		return $this->kfw55;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKfw60(): bool {
+	public function getKfw60(): ?bool {
 		return $this->kfw60;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKfw70(): bool {
+	public function getKfw70(): ?bool {
 		return $this->kfw70;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getMinergiebauweise(): bool {
+	public function getMinergiebauweise(): ?bool {
 		return $this->minergiebauweise;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getMinergieZertifiziert(): bool {
+	public function getMinergieZertifiziert(): ?bool {
 		return $this->minergieZertifiziert;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getNeubaustandard(): bool {
+	public function getNeubaustandard(): ?bool {
 		return $this->neubaustandard;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getNiedrigenergie(): bool {
+	public function getNiedrigenergie(): ?bool {
 		return $this->niedrigenergie;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getPassivhaus(): bool {
+	public function getPassivhaus(): ?bool {
 		return $this->passivhaus;
 	}
 

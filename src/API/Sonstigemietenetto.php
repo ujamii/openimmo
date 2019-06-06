@@ -43,14 +43,14 @@ class Sonstigemietenetto {
 	/**
 	 * @return float
 	 */
-	public function getSonstigemieteust(): float {
+	public function getSonstigemieteust(): ?float {
 		return $this->sonstigemieteust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 

@@ -43,14 +43,14 @@ class Ruecklagenetto {
 	/**
 	 * @return float
 	 */
-	public function getRuecklageust(): float {
+	public function getRuecklageust(): ?float {
 		return $this->ruecklageust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 
