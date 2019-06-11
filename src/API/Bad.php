@@ -104,7 +104,7 @@ class Bad {
 	 * @param boolean $bidet Setter for bidet
 	 * @return Bad
 	 */
-	public function setBidet(bool $bidet) {
+	public function setBidet(?bool $bidet) {
 		$this->bidet = $bidet;
 		return $this;
 	}
@@ -113,7 +113,7 @@ class Bad {
 	 * @param boolean $dusche Setter for dusche
 	 * @return Bad
 	 */
-	public function setDusche(bool $dusche) {
+	public function setDusche(?bool $dusche) {
 		$this->dusche = $dusche;
 		return $this;
 	}
@@ -122,7 +122,7 @@ class Bad {
 	 * @param boolean $fenster Setter for fenster
 	 * @return Bad
 	 */
-	public function setFenster(bool $fenster) {
+	public function setFenster(?bool $fenster) {
 		$this->fenster = $fenster;
 		return $this;
 	}
@@ -131,7 +131,7 @@ class Bad {
 	 * @param boolean $pissoir Setter for pissoir
 	 * @return Bad
 	 */
-	public function setPissoir(bool $pissoir) {
+	public function setPissoir(?bool $pissoir) {
 		$this->pissoir = $pissoir;
 		return $this;
 	}
@@ -140,7 +140,7 @@ class Bad {
 	 * @param boolean $wanne Setter for wanne
 	 * @return Bad
 	 */
-	public function setWanne(bool $wanne) {
+	public function setWanne(?bool $wanne) {
 		$this->wanne = $wanne;
 		return $this;
 	}

@@ -100,7 +100,7 @@ class TelSonstige {
 	 * @param string $bemerkung Setter for bemerkung
 	 * @return TelSonstige
 	 */
-	public function setBemerkung(string $bemerkung) {
+	public function setBemerkung(?string $bemerkung) {
 		$this->bemerkung = $bemerkung;
 		return $this;
 	}
@@ -109,7 +109,7 @@ class TelSonstige {
 	 * @param string $telefonart Setter for telefonart
 	 * @return TelSonstige
 	 */
-	public function setTelefonart(string $telefonart) {
+	public function setTelefonart(?string $telefonart) {
 		$this->telefonart = $telefonart;
 		return $this;
 	}
@@ -118,7 +118,7 @@ class TelSonstige {
 	 * @param string $value Setter for value
 	 * @return TelSonstige
 	 */
-	public function setValue(string $value) {
+	public function setValue(?string $value) {
 		$this->value = $value;
 		return $this;
 	}

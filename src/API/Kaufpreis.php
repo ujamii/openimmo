@@ -58,7 +58,7 @@ class Kaufpreis {
 	 * @param boolean $aufAnfrage Setter for aufAnfrage
 	 * @return Kaufpreis
 	 */
-	public function setAufAnfrage(bool $aufAnfrage) {
+	public function setAufAnfrage(?bool $aufAnfrage) {
 		$this->aufAnfrage = $aufAnfrage;
 		return $this;
 	}
@@ -67,7 +67,7 @@ class Kaufpreis {
 	 * @param float $value Setter for value
 	 * @return Kaufpreis
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

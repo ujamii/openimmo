@@ -963,7 +963,7 @@ class Land {
 	 * @param string $isoLand Setter for isoLand
 	 * @return Land
 	 */
-	public function setIsoLand(string $isoLand) {
+	public function setIsoLand(?string $isoLand) {
 		$this->isoLand = $isoLand;
 		return $this;
 	}

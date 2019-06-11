@@ -39,7 +39,7 @@ class Zimmer {
 	 * @param string $zimmertyp Setter for zimmertyp
 	 * @return Zimmer
 	 */
-	public function setZimmertyp(string $zimmertyp) {
+	public function setZimmertyp(?string $zimmertyp) {
 		$this->zimmertyp = $zimmertyp;
 		return $this;
 	}

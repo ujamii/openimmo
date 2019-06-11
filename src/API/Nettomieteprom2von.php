@@ -58,7 +58,7 @@ class Nettomieteprom2von {
 	 * @param float $nettomieteprom2bis Setter for nettomieteprom2bis
 	 * @return Nettomieteprom2von
 	 */
-	public function setNettomieteprom2bis(float $nettomieteprom2bis) {
+	public function setNettomieteprom2bis(?float $nettomieteprom2bis) {
 		$this->nettomieteprom2bis = $nettomieteprom2bis;
 		return $this;
 	}
@@ -67,7 +67,7 @@ class Nettomieteprom2von {
 	 * @param float $value Setter for value
 	 * @return Nettomieteprom2von
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

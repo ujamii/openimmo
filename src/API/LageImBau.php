@@ -87,7 +87,7 @@ class LageImBau {
 	 * @param boolean $hinten Setter for hinten
 	 * @return LageImBau
 	 */
-	public function setHinten(bool $hinten) {
+	public function setHinten(?bool $hinten) {
 		$this->hinten = $hinten;
 		return $this;
 	}
@@ -96,7 +96,7 @@ class LageImBau {
 	 * @param boolean $links Setter for links
 	 * @return LageImBau
 	 */
-	public function setLinks(bool $links) {
+	public function setLinks(?bool $links) {
 		$this->links = $links;
 		return $this;
 	}
@@ -105,7 +105,7 @@ class LageImBau {
 	 * @param boolean $rechts Setter for rechts
 	 * @return LageImBau
 	 */
-	public function setRechts(bool $rechts) {
+	public function setRechts(?bool $rechts) {
 		$this->rechts = $rechts;
 		return $this;
 	}
@@ -114,7 +114,7 @@ class LageImBau {
 	 * @param boolean $vorne Setter for vorne
 	 * @return LageImBau
 	 */
-	public function setVorne(bool $vorne) {
+	public function setVorne(?bool $vorne) {
 		$this->vorne = $vorne;
 		return $this;
 	}

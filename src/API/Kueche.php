@@ -70,7 +70,7 @@ class Kueche {
 	 * @param boolean $ebk Setter for ebk
 	 * @return Kueche
 	 */
-	public function setEbk(bool $ebk) {
+	public function setEbk(?bool $ebk) {
 		$this->ebk = $ebk;
 		return $this;
 	}
@@ -79,7 +79,7 @@ class Kueche {
 	 * @param boolean $offen Setter for offen
 	 * @return Kueche
 	 */
-	public function setOffen(bool $offen) {
+	public function setOffen(?bool $offen) {
 		$this->offen = $offen;
 		return $this;
 	}
@@ -88,7 +88,7 @@ class Kueche {
 	 * @param boolean $pantry Setter for pantry
 	 * @return Kueche
 	 */
-	public function setPantry(bool $pantry) {
+	public function setPantry(?bool $pantry) {
 		$this->pantry = $pantry;
 		return $this;
 	}

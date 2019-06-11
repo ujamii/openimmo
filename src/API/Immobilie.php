@@ -277,7 +277,7 @@ class Immobilie {
 	 * @param Anhaenge $anhaenge Setter for anhaenge
 	 * @return Immobilie
 	 */
-	public function setAnhaenge(Anhaenge $anhaenge) {
+	public function setAnhaenge(?Anhaenge $anhaenge) {
 		$this->anhaenge = $anhaenge;
 		return $this;
 	}
@@ -286,7 +286,7 @@ class Immobilie {
 	 * @param Ausstattung $ausstattung Setter for ausstattung
 	 * @return Immobilie
 	 */
-	public function setAusstattung(Ausstattung $ausstattung) {
+	public function setAusstattung(?Ausstattung $ausstattung) {
 		$this->ausstattung = $ausstattung;
 		return $this;
 	}
@@ -295,7 +295,7 @@ class Immobilie {
 	 * @param Bewertung $bewertung Setter for bewertung
 	 * @return Immobilie
 	 */
-	public function setBewertung(Bewertung $bewertung) {
+	public function setBewertung(?Bewertung $bewertung) {
 		$this->bewertung = $bewertung;
 		return $this;
 	}
@@ -304,7 +304,7 @@ class Immobilie {
 	 * @param Bieterverfahren $bieterverfahren Setter for bieterverfahren
 	 * @return Immobilie
 	 */
-	public function setBieterverfahren(Bieterverfahren $bieterverfahren) {
+	public function setBieterverfahren(?Bieterverfahren $bieterverfahren) {
 		$this->bieterverfahren = $bieterverfahren;
 		return $this;
 	}
@@ -313,7 +313,7 @@ class Immobilie {
 	 * @param Flaechen $flaechen Setter for flaechen
 	 * @return Immobilie
 	 */
-	public function setFlaechen(Flaechen $flaechen) {
+	public function setFlaechen(?Flaechen $flaechen) {
 		$this->flaechen = $flaechen;
 		return $this;
 	}
@@ -322,7 +322,7 @@ class Immobilie {
 	 * @param Freitexte $freitexte Setter for freitexte
 	 * @return Immobilie
 	 */
-	public function setFreitexte(Freitexte $freitexte) {
+	public function setFreitexte(?Freitexte $freitexte) {
 		$this->freitexte = $freitexte;
 		return $this;
 	}
@@ -340,7 +340,7 @@ class Immobilie {
 	 * @param Infrastruktur $infrastruktur Setter for infrastruktur
 	 * @return Immobilie
 	 */
-	public function setInfrastruktur(Infrastruktur $infrastruktur) {
+	public function setInfrastruktur(?Infrastruktur $infrastruktur) {
 		$this->infrastruktur = $infrastruktur;
 		return $this;
 	}
@@ -367,7 +367,7 @@ class Immobilie {
 	 * @param Preise $preise Setter for preise
 	 * @return Immobilie
 	 */
-	public function setPreise(Preise $preise) {
+	public function setPreise(?Preise $preise) {
 		$this->preise = $preise;
 		return $this;
 	}
@@ -403,7 +403,7 @@ class Immobilie {
 	 * @param Versteigerung $versteigerung Setter for versteigerung
 	 * @return Immobilie
 	 */
-	public function setVersteigerung(Versteigerung $versteigerung) {
+	public function setVersteigerung(?Versteigerung $versteigerung) {
 		$this->versteigerung = $versteigerung;
 		return $this;
 	}
@@ -412,7 +412,7 @@ class Immobilie {
 	 * @param VerwaltungObjekt $verwaltungObjekt Setter for verwaltungObjekt
 	 * @return Immobilie
 	 */
-	public function setVerwaltungObjekt(VerwaltungObjekt $verwaltungObjekt) {
+	public function setVerwaltungObjekt(?VerwaltungObjekt $verwaltungObjekt) {
 		$this->verwaltungObjekt = $verwaltungObjekt;
 		return $this;
 	}
@@ -439,7 +439,7 @@ class Immobilie {
 	 * @param ZustandAngaben $zustandAngaben Setter for zustandAngaben
 	 * @return Immobilie
 	 */
-	public function setZustandAngaben(ZustandAngaben $zustandAngaben) {
+	public function setZustandAngaben(?ZustandAngaben $zustandAngaben) {
 		$this->zustandAngaben = $zustandAngaben;
 		return $this;
 	}

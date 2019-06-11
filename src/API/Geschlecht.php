@@ -48,7 +48,7 @@ class Geschlecht {
 	 * @param string $geschlAttr Setter for geschlAttr
 	 * @return Geschlecht
 	 */
-	public function setGeschlAttr(string $geschlAttr) {
+	public function setGeschlAttr(?string $geschlAttr) {
 		$this->geschlAttr = $geschlAttr;
 		return $this;
 	}

@@ -104,7 +104,7 @@ class Serviceleistungen {
 	 * @param boolean $betreutesWohnen Setter for betreutesWohnen
 	 * @return Serviceleistungen
 	 */
-	public function setBetreutesWohnen(bool $betreutesWohnen) {
+	public function setBetreutesWohnen(?bool $betreutesWohnen) {
 		$this->betreutesWohnen = $betreutesWohnen;
 		return $this;
 	}
@@ -113,7 +113,7 @@ class Serviceleistungen {
 	 * @param boolean $catering Setter for catering
 	 * @return Serviceleistungen
 	 */
-	public function setCatering(bool $catering) {
+	public function setCatering(?bool $catering) {
 		$this->catering = $catering;
 		return $this;
 	}
@@ -122,7 +122,7 @@ class Serviceleistungen {
 	 * @param boolean $einkauf Setter for einkauf
 	 * @return Serviceleistungen
 	 */
-	public function setEinkauf(bool $einkauf) {
+	public function setEinkauf(?bool $einkauf) {
 		$this->einkauf = $einkauf;
 		return $this;
 	}
@@ -131,7 +131,7 @@ class Serviceleistungen {
 	 * @param boolean $reinigung Setter for reinigung
 	 * @return Serviceleistungen
 	 */
-	public function setReinigung(bool $reinigung) {
+	public function setReinigung(?bool $reinigung) {
 		$this->reinigung = $reinigung;
 		return $this;
 	}
@@ -140,7 +140,7 @@ class Serviceleistungen {
 	 * @param boolean $wachdienst Setter for wachdienst
 	 * @return Serviceleistungen
 	 */
-	public function setWachdienst(bool $wachdienst) {
+	public function setWachdienst(?bool $wachdienst) {
 		$this->wachdienst = $wachdienst;
 		return $this;
 	}

@@ -53,7 +53,7 @@ class Fahrstuhl {
 	 * @param boolean $lasten Setter for lasten
 	 * @return Fahrstuhl
 	 */
-	public function setLasten(bool $lasten) {
+	public function setLasten(?bool $lasten) {
 		$this->lasten = $lasten;
 		return $this;
 	}
@@ -62,7 +62,7 @@ class Fahrstuhl {
 	 * @param boolean $personen Setter for personen
 	 * @return Fahrstuhl
 	 */
-	public function setPersonen(bool $personen) {
+	public function setPersonen(?bool $personen) {
 		$this->personen = $personen;
 		return $this;
 	}

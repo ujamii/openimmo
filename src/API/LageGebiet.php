@@ -87,7 +87,7 @@ class LageGebiet {
 	 * @param string $gebiete Setter for gebiete
 	 * @return LageGebiet
 	 */
-	public function setGebiete(string $gebiete) {
+	public function setGebiete(?string $gebiete) {
 		$this->gebiete = $gebiete;
 		return $this;
 	}

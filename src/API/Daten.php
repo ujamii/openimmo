@@ -45,7 +45,7 @@ class Daten {
 	 * @param string $anhanginhalt Setter for anhanginhalt
 	 * @return Daten
 	 */
-	public function setAnhanginhalt(string $anhanginhalt) {
+	public function setAnhanginhalt(?string $anhanginhalt) {
 		$this->anhanginhalt = $anhanginhalt;
 		return $this;
 	}
@@ -54,7 +54,7 @@ class Daten {
 	 * @param string $pfad Setter for pfad
 	 * @return Daten
 	 */
-	public function setPfad(string $pfad) {
+	public function setPfad(?string $pfad) {
 		$this->pfad = $pfad;
 		return $this;
 	}

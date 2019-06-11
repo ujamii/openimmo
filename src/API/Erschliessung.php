@@ -51,7 +51,7 @@ class Erschliessung {
 	 * @param string $erschlAttr Setter for erschlAttr
 	 * @return Erschliessung
 	 */
-	public function setErschlAttr(string $erschlAttr) {
+	public function setErschlAttr(?string $erschlAttr) {
 		$this->erschlAttr = $erschlAttr;
 		return $this;
 	}

@@ -43,7 +43,7 @@ class Moebliert {
 	 * @param string $moeb Setter for moeb
 	 * @return Moebliert
 	 */
-	public function setMoeb(string $moeb) {
+	public function setMoeb(?string $moeb) {
 		$this->moeb = $moeb;
 		return $this;
 	}

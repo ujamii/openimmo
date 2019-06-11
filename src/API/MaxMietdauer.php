@@ -51,7 +51,7 @@ class MaxMietdauer {
 	 * @param string $maxDauer Setter for maxDauer
 	 * @return MaxMietdauer
 	 */
-	public function setMaxDauer(string $maxDauer) {
+	public function setMaxDauer(?string $maxDauer) {
 		$this->maxDauer = $maxDauer;
 		return $this;
 	}

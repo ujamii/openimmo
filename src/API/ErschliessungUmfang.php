@@ -51,7 +51,7 @@ class ErschliessungUmfang {
 	 * @param string $erschlAttr Setter for erschlAttr
 	 * @return ErschliessungUmfang
 	 */
-	public function setErschlAttr(string $erschlAttr) {
+	public function setErschlAttr(?string $erschlAttr) {
 		$this->erschlAttr = $erschlAttr;
 		return $this;
 	}

@@ -47,7 +47,7 @@ class ProvisionTeilen {
 	 * @param string $wert Setter for wert
 	 * @return ProvisionTeilen
 	 */
-	public function setWert(string $wert) {
+	public function setWert(?string $wert) {
 		$this->wert = $wert;
 		return $this;
 	}

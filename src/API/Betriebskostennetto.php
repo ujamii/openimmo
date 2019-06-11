@@ -58,7 +58,7 @@ class Betriebskostennetto {
 	 * @param float $betriebskostenust Setter for betriebskostenust
 	 * @return Betriebskostennetto
 	 */
-	public function setBetriebskostenust(float $betriebskostenust) {
+	public function setBetriebskostenust(?float $betriebskostenust) {
 		$this->betriebskostenust = $betriebskostenust;
 		return $this;
 	}
@@ -67,7 +67,7 @@ class Betriebskostennetto {
 	 * @param float $value Setter for value
 	 * @return Betriebskostennetto
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

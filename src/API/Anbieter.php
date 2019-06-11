@@ -173,7 +173,7 @@ class Anbieter {
 	 * @param string $anbieternr Setter for anbieternr
 	 * @return Anbieter
 	 */
-	public function setAnbieternr(string $anbieternr) {
+	public function setAnbieternr(?string $anbieternr) {
 		$this->anbieternr = $anbieternr;
 		return $this;
 	}
@@ -182,7 +182,7 @@ class Anbieter {
 	 * @param Anhang $anhang Setter for anhang
 	 * @return Anbieter
 	 */
-	public function setAnhang(Anhang $anhang) {
+	public function setAnhang(?Anhang $anhang) {
 		$this->anhang = $anhang;
 		return $this;
 	}
@@ -209,7 +209,7 @@ class Anbieter {
 	 * @param string $impressum Setter for impressum
 	 * @return Anbieter
 	 */
-	public function setImpressum(string $impressum) {
+	public function setImpressum(?string $impressum) {
 		$this->impressum = $impressum;
 		return $this;
 	}
@@ -218,7 +218,7 @@ class Anbieter {
 	 * @param ImpressumStrukt $impressumStrukt Setter for impressumStrukt
 	 * @return Anbieter
 	 */
-	public function setImpressumStrukt(ImpressumStrukt $impressumStrukt) {
+	public function setImpressumStrukt(?ImpressumStrukt $impressumStrukt) {
 		$this->impressumStrukt = $impressumStrukt;
 		return $this;
 	}
@@ -227,7 +227,7 @@ class Anbieter {
 	 * @param string $lizenzkennung Setter for lizenzkennung
 	 * @return Anbieter
 	 */
-	public function setLizenzkennung(string $lizenzkennung) {
+	public function setLizenzkennung(?string $lizenzkennung) {
 		$this->lizenzkennung = $lizenzkennung;
 		return $this;
 	}

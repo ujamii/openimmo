@@ -125,7 +125,7 @@ class Distanzen {
 	 * @param float $value Setter for value
 	 * @return Distanzen
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

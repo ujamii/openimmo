@@ -71,7 +71,7 @@ class Grundstueck {
 	 * @param string $grundstTyp Setter for grundstTyp
 	 * @return Grundstueck
 	 */
-	public function setGrundstTyp(string $grundstTyp) {
+	public function setGrundstTyp(?string $grundstTyp) {
 		$this->grundstTyp = $grundstTyp;
 		return $this;
 	}

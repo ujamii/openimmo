@@ -47,7 +47,7 @@ class FreizeitimmobilieGewerblich {
 	 * @param string $freizeitTyp Setter for freizeitTyp
 	 * @return FreizeitimmobilieGewerblich
 	 */
-	public function setFreizeitTyp(string $freizeitTyp) {
+	public function setFreizeitTyp(?string $freizeitTyp) {
 		$this->freizeitTyp = $freizeitTyp;
 		return $this;
 	}

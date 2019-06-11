@@ -58,7 +58,7 @@ class Ruecklagenetto {
 	 * @param float $ruecklageust Setter for ruecklageust
 	 * @return Ruecklagenetto
 	 */
-	public function setRuecklageust(float $ruecklageust) {
+	public function setRuecklageust(?float $ruecklageust) {
 		$this->ruecklageust = $ruecklageust;
 		return $this;
 	}
@@ -67,7 +67,7 @@ class Ruecklagenetto {
 	 * @param float $value Setter for value
 	 * @return Ruecklagenetto
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

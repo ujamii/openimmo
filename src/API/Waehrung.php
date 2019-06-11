@@ -763,7 +763,7 @@ class Waehrung {
 	 * @param string $isoWaehrung Setter for isoWaehrung
 	 * @return Waehrung
 	 */
-	public function setIsoWaehrung(string $isoWaehrung) {
+	public function setIsoWaehrung(?string $isoWaehrung) {
 		$this->isoWaehrung = $isoWaehrung;
 		return $this;
 	}

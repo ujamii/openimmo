@@ -47,7 +47,7 @@ class Unterkellert {
 	 * @param string $keller Setter for keller
 	 * @return Unterkellert
 	 */
-	public function setKeller(string $keller) {
+	public function setKeller(?string $keller) {
 		$this->keller = $keller;
 		return $this;
 	}

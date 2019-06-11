@@ -47,7 +47,7 @@ class Verkaufstatus {
 	 * @param string $stand Setter for stand
 	 * @return Verkaufstatus
 	 */
-	public function setStand(string $stand) {
+	public function setStand(?string $stand) {
 		$this->stand = $stand;
 		return $this;
 	}

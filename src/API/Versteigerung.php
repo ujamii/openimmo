@@ -95,7 +95,7 @@ class Versteigerung {
 	 * @param string $aktenzeichen Setter for aktenzeichen
 	 * @return Versteigerung
 	 */
-	public function setAktenzeichen(string $aktenzeichen) {
+	public function setAktenzeichen(?string $aktenzeichen) {
 		$this->aktenzeichen = $aktenzeichen;
 		return $this;
 	}
@@ -104,7 +104,7 @@ class Versteigerung {
 	 * @param string $amtsgericht Setter for amtsgericht
 	 * @return Versteigerung
 	 */
-	public function setAmtsgericht(string $amtsgericht) {
+	public function setAmtsgericht(?string $amtsgericht) {
 		$this->amtsgericht = $amtsgericht;
 		return $this;
 	}
@@ -113,7 +113,7 @@ class Versteigerung {
 	 * @param float $verkehrswert Setter for verkehrswert
 	 * @return Versteigerung
 	 */
-	public function setVerkehrswert(float $verkehrswert) {
+	public function setVerkehrswert(?float $verkehrswert) {
 		$this->verkehrswert = $verkehrswert;
 		return $this;
 	}
@@ -122,7 +122,7 @@ class Versteigerung {
 	 * @param \DateTime $zusatztermin Setter for zusatztermin
 	 * @return Versteigerung
 	 */
-	public function setZusatztermin(\DateTime $zusatztermin) {
+	public function setZusatztermin(?\DateTime $zusatztermin) {
 		$this->zusatztermin = $zusatztermin;
 		return $this;
 	}
@@ -131,7 +131,7 @@ class Versteigerung {
 	 * @param \DateTime $zvtermin Setter for zvtermin
 	 * @return Versteigerung
 	 */
-	public function setZvtermin(\DateTime $zvtermin) {
+	public function setZvtermin(?\DateTime $zvtermin) {
 		$this->zvtermin = $zvtermin;
 		return $this;
 	}
@@ -140,7 +140,7 @@ class Versteigerung {
 	 * @param boolean $zwangsversteigerung Setter for zwangsversteigerung
 	 * @return Versteigerung
 	 */
-	public function setZwangsversteigerung(bool $zwangsversteigerung) {
+	public function setZwangsversteigerung(?bool $zwangsversteigerung) {
 		$this->zwangsversteigerung = $zwangsversteigerung;
 		return $this;
 	}

@@ -91,7 +91,7 @@ class LandUndForstwirtschaft {
 	 * @param string $landTyp Setter for landTyp
 	 * @return LandUndForstwirtschaft
 	 */
-	public function setLandTyp(string $landTyp) {
+	public function setLandTyp(?string $landTyp) {
 		$this->landTyp = $landTyp;
 		return $this;
 	}

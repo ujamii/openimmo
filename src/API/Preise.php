@@ -952,7 +952,7 @@ class Preise {
 	 * @param float $abstand Setter for abstand
 	 * @return Preise
 	 */
-	public function setAbstand(float $abstand) {
+	public function setAbstand(?float $abstand) {
 		$this->abstand = $abstand;
 		return $this;
 	}
@@ -961,7 +961,7 @@ class Preise {
 	 * @param AussenCourtage $aussenCourtage Setter for aussenCourtage
 	 * @return Preise
 	 */
-	public function setAussenCourtage(AussenCourtage $aussenCourtage) {
+	public function setAussenCourtage(?AussenCourtage $aussenCourtage) {
 		$this->aussenCourtage = $aussenCourtage;
 		return $this;
 	}
@@ -970,7 +970,7 @@ class Preise {
 	 * @param Betriebskostennetto $betriebskostennetto Setter for betriebskostennetto
 	 * @return Preise
 	 */
-	public function setBetriebskostennetto(Betriebskostennetto $betriebskostennetto) {
+	public function setBetriebskostennetto(?Betriebskostennetto $betriebskostennetto) {
 		$this->betriebskostennetto = $betriebskostennetto;
 		return $this;
 	}
@@ -979,7 +979,7 @@ class Preise {
 	 * @param string $courtageHinweis Setter for courtageHinweis
 	 * @return Preise
 	 */
-	public function setCourtageHinweis(string $courtageHinweis) {
+	public function setCourtageHinweis(?string $courtageHinweis) {
 		$this->courtageHinweis = $courtageHinweis;
 		return $this;
 	}
@@ -988,7 +988,7 @@ class Preise {
 	 * @param float $erbpacht Setter for erbpacht
 	 * @return Preise
 	 */
-	public function setErbpacht(float $erbpacht) {
+	public function setErbpacht(?float $erbpacht) {
 		$this->erbpacht = $erbpacht;
 		return $this;
 	}
@@ -997,7 +997,7 @@ class Preise {
 	 * @param float $erschliessungskosten Setter for erschliessungskosten
 	 * @return Preise
 	 */
-	public function setErschliessungskosten(float $erschliessungskosten) {
+	public function setErschliessungskosten(?float $erschliessungskosten) {
 		$this->erschliessungskosten = $erschliessungskosten;
 		return $this;
 	}
@@ -1006,7 +1006,7 @@ class Preise {
 	 * @param Evbnetto $evbnetto Setter for evbnetto
 	 * @return Preise
 	 */
-	public function setEvbnetto(Evbnetto $evbnetto) {
+	public function setEvbnetto(?Evbnetto $evbnetto) {
 		$this->evbnetto = $evbnetto;
 		return $this;
 	}
@@ -1015,7 +1015,7 @@ class Preise {
 	 * @param string $freitextPreis Setter for freitextPreis
 	 * @return Preise
 	 */
-	public function setFreitextPreis(string $freitextPreis) {
+	public function setFreitextPreis(?string $freitextPreis) {
 		$this->freitextPreis = $freitextPreis;
 		return $this;
 	}
@@ -1024,7 +1024,7 @@ class Preise {
 	 * @param float $gesamtbelastungbrutto Setter for gesamtbelastungbrutto
 	 * @return Preise
 	 */
-	public function setGesamtbelastungbrutto(float $gesamtbelastungbrutto) {
+	public function setGesamtbelastungbrutto(?float $gesamtbelastungbrutto) {
 		$this->gesamtbelastungbrutto = $gesamtbelastungbrutto;
 		return $this;
 	}
@@ -1033,7 +1033,7 @@ class Preise {
 	 * @param Gesamtbelastungnetto $gesamtbelastungnetto Setter for gesamtbelastungnetto
 	 * @return Preise
 	 */
-	public function setGesamtbelastungnetto(Gesamtbelastungnetto $gesamtbelastungnetto) {
+	public function setGesamtbelastungnetto(?Gesamtbelastungnetto $gesamtbelastungnetto) {
 		$this->gesamtbelastungnetto = $gesamtbelastungnetto;
 		return $this;
 	}
@@ -1042,7 +1042,7 @@ class Preise {
 	 * @param Gesamtkostenprom2von $gesamtkostenprom2von Setter for gesamtkostenprom2von
 	 * @return Preise
 	 */
-	public function setGesamtkostenprom2von(Gesamtkostenprom2von $gesamtkostenprom2von) {
+	public function setGesamtkostenprom2von(?Gesamtkostenprom2von $gesamtkostenprom2von) {
 		$this->gesamtkostenprom2von = $gesamtkostenprom2von;
 		return $this;
 	}
@@ -1051,7 +1051,7 @@ class Preise {
 	 * @param float $gesamtmietebrutto Setter for gesamtmietebrutto
 	 * @return Preise
 	 */
-	public function setGesamtmietebrutto(float $gesamtmietebrutto) {
+	public function setGesamtmietebrutto(?float $gesamtmietebrutto) {
 		$this->gesamtmietebrutto = $gesamtmietebrutto;
 		return $this;
 	}
@@ -1060,7 +1060,7 @@ class Preise {
 	 * @param Gesamtmietenetto $gesamtmietenetto Setter for gesamtmietenetto
 	 * @return Preise
 	 */
-	public function setGesamtmietenetto(Gesamtmietenetto $gesamtmietenetto) {
+	public function setGesamtmietenetto(?Gesamtmietenetto $gesamtmietenetto) {
 		$this->gesamtmietenetto = $gesamtmietenetto;
 		return $this;
 	}
@@ -1069,7 +1069,7 @@ class Preise {
 	 * @param float $geschaeftsguthaben Setter for geschaeftsguthaben
 	 * @return Preise
 	 */
-	public function setGeschaeftsguthaben(float $geschaeftsguthaben) {
+	public function setGeschaeftsguthaben(?float $geschaeftsguthaben) {
 		$this->geschaeftsguthaben = $geschaeftsguthaben;
 		return $this;
 	}
@@ -1078,7 +1078,7 @@ class Preise {
 	 * @param Hauptmietzinsnetto $hauptmietzinsnetto Setter for hauptmietzinsnetto
 	 * @return Preise
 	 */
-	public function setHauptmietzinsnetto(Hauptmietzinsnetto $hauptmietzinsnetto) {
+	public function setHauptmietzinsnetto(?Hauptmietzinsnetto $hauptmietzinsnetto) {
 		$this->hauptmietzinsnetto = $hauptmietzinsnetto;
 		return $this;
 	}
@@ -1087,7 +1087,7 @@ class Preise {
 	 * @param float $hausgeld Setter for hausgeld
 	 * @return Preise
 	 */
-	public function setHausgeld(float $hausgeld) {
+	public function setHausgeld(?float $hausgeld) {
 		$this->hausgeld = $hausgeld;
 		return $this;
 	}
@@ -1096,7 +1096,7 @@ class Preise {
 	 * @param float $heizkosten Setter for heizkosten
 	 * @return Preise
 	 */
-	public function setHeizkosten(float $heizkosten) {
+	public function setHeizkosten(?float $heizkosten) {
 		$this->heizkosten = $heizkosten;
 		return $this;
 	}
@@ -1105,7 +1105,7 @@ class Preise {
 	 * @param boolean $heizkostenEnthalten Setter for heizkostenEnthalten
 	 * @return Preise
 	 */
-	public function setHeizkostenEnthalten(bool $heizkostenEnthalten) {
+	public function setHeizkostenEnthalten(?bool $heizkostenEnthalten) {
 		$this->heizkostenEnthalten = $heizkostenEnthalten;
 		return $this;
 	}
@@ -1114,7 +1114,7 @@ class Preise {
 	 * @param Heizkostennetto $heizkostennetto Setter for heizkostennetto
 	 * @return Preise
 	 */
-	public function setHeizkostennetto(Heizkostennetto $heizkostennetto) {
+	public function setHeizkostennetto(?Heizkostennetto $heizkostennetto) {
 		$this->heizkostennetto = $heizkostennetto;
 		return $this;
 	}
@@ -1123,7 +1123,7 @@ class Preise {
 	 * @param InnenCourtage $innenCourtage Setter for innenCourtage
 	 * @return Preise
 	 */
-	public function setInnenCourtage(InnenCourtage $innenCourtage) {
+	public function setInnenCourtage(?InnenCourtage $innenCourtage) {
 		$this->innenCourtage = $innenCourtage;
 		return $this;
 	}
@@ -1132,7 +1132,7 @@ class Preise {
 	 * @param float $kaltmiete Setter for kaltmiete
 	 * @return Preise
 	 */
-	public function setKaltmiete(float $kaltmiete) {
+	public function setKaltmiete(?float $kaltmiete) {
 		$this->kaltmiete = $kaltmiete;
 		return $this;
 	}
@@ -1141,7 +1141,7 @@ class Preise {
 	 * @param Kaufpreis $kaufpreis Setter for kaufpreis
 	 * @return Preise
 	 */
-	public function setKaufpreis(Kaufpreis $kaufpreis) {
+	public function setKaufpreis(?Kaufpreis $kaufpreis) {
 		$this->kaufpreis = $kaufpreis;
 		return $this;
 	}
@@ -1150,7 +1150,7 @@ class Preise {
 	 * @param float $kaufpreisbrutto Setter for kaufpreisbrutto
 	 * @return Preise
 	 */
-	public function setKaufpreisbrutto(float $kaufpreisbrutto) {
+	public function setKaufpreisbrutto(?float $kaufpreisbrutto) {
 		$this->kaufpreisbrutto = $kaufpreisbrutto;
 		return $this;
 	}
@@ -1159,7 +1159,7 @@ class Preise {
 	 * @param Kaufpreisnetto $kaufpreisnetto Setter for kaufpreisnetto
 	 * @return Preise
 	 */
-	public function setKaufpreisnetto(Kaufpreisnetto $kaufpreisnetto) {
+	public function setKaufpreisnetto(?Kaufpreisnetto $kaufpreisnetto) {
 		$this->kaufpreisnetto = $kaufpreisnetto;
 		return $this;
 	}
@@ -1168,7 +1168,7 @@ class Preise {
 	 * @param float $kaufpreisProQm Setter for kaufpreisProQm
 	 * @return Preise
 	 */
-	public function setKaufpreisProQm(float $kaufpreisProQm) {
+	public function setKaufpreisProQm(?float $kaufpreisProQm) {
 		$this->kaufpreisProQm = $kaufpreisProQm;
 		return $this;
 	}
@@ -1177,7 +1177,7 @@ class Preise {
 	 * @param float $kaution Setter for kaution
 	 * @return Preise
 	 */
-	public function setKaution(float $kaution) {
+	public function setKaution(?float $kaution) {
 		$this->kaution = $kaution;
 		return $this;
 	}
@@ -1186,7 +1186,7 @@ class Preise {
 	 * @param string $kautionText Setter for kautionText
 	 * @return Preise
 	 */
-	public function setKautionText(string $kautionText) {
+	public function setKautionText(?string $kautionText) {
 		$this->kautionText = $kautionText;
 		return $this;
 	}
@@ -1195,7 +1195,7 @@ class Preise {
 	 * @param MieteinnahmenIst $mieteinnahmenIst Setter for mieteinnahmenIst
 	 * @return Preise
 	 */
-	public function setMieteinnahmenIst(MieteinnahmenIst $mieteinnahmenIst) {
+	public function setMieteinnahmenIst(?MieteinnahmenIst $mieteinnahmenIst) {
 		$this->mieteinnahmenIst = $mieteinnahmenIst;
 		return $this;
 	}
@@ -1204,7 +1204,7 @@ class Preise {
 	 * @param MieteinnahmenSoll $mieteinnahmenSoll Setter for mieteinnahmenSoll
 	 * @return Preise
 	 */
-	public function setMieteinnahmenSoll(MieteinnahmenSoll $mieteinnahmenSoll) {
+	public function setMieteinnahmenSoll(?MieteinnahmenSoll $mieteinnahmenSoll) {
 		$this->mieteinnahmenSoll = $mieteinnahmenSoll;
 		return $this;
 	}
@@ -1213,7 +1213,7 @@ class Preise {
 	 * @param float $mietpreisProQm Setter for mietpreisProQm
 	 * @return Preise
 	 */
-	public function setMietpreisProQm(float $mietpreisProQm) {
+	public function setMietpreisProQm(?float $mietpreisProQm) {
 		$this->mietpreisProQm = $mietpreisProQm;
 		return $this;
 	}
@@ -1222,7 +1222,7 @@ class Preise {
 	 * @param float $mietzuschlaege Setter for mietzuschlaege
 	 * @return Preise
 	 */
-	public function setMietzuschlaege(float $mietzuschlaege) {
+	public function setMietzuschlaege(?float $mietzuschlaege) {
 		$this->mietzuschlaege = $mietzuschlaege;
 		return $this;
 	}
@@ -1231,7 +1231,7 @@ class Preise {
 	 * @param float $monatlichekostenbrutto Setter for monatlichekostenbrutto
 	 * @return Preise
 	 */
-	public function setMonatlichekostenbrutto(float $monatlichekostenbrutto) {
+	public function setMonatlichekostenbrutto(?float $monatlichekostenbrutto) {
 		$this->monatlichekostenbrutto = $monatlichekostenbrutto;
 		return $this;
 	}
@@ -1240,7 +1240,7 @@ class Preise {
 	 * @param Monatlichekostennetto $monatlichekostennetto Setter for monatlichekostennetto
 	 * @return Preise
 	 */
-	public function setMonatlichekostennetto(Monatlichekostennetto $monatlichekostennetto) {
+	public function setMonatlichekostennetto(?Monatlichekostennetto $monatlichekostennetto) {
 		$this->monatlichekostennetto = $monatlichekostennetto;
 		return $this;
 	}
@@ -1249,7 +1249,7 @@ class Preise {
 	 * @param float $mwstGesamt Setter for mwstGesamt
 	 * @return Preise
 	 */
-	public function setMwstGesamt(float $mwstGesamt) {
+	public function setMwstGesamt(?float $mwstGesamt) {
 		$this->mwstGesamt = $mwstGesamt;
 		return $this;
 	}
@@ -1258,7 +1258,7 @@ class Preise {
 	 * @param float $mwstSatz Setter for mwstSatz
 	 * @return Preise
 	 */
-	public function setMwstSatz(float $mwstSatz) {
+	public function setMwstSatz(?float $mwstSatz) {
 		$this->mwstSatz = $mwstSatz;
 		return $this;
 	}
@@ -1267,7 +1267,7 @@ class Preise {
 	 * @param float $nebenkosten Setter for nebenkosten
 	 * @return Preise
 	 */
-	public function setNebenkosten(float $nebenkosten) {
+	public function setNebenkosten(?float $nebenkosten) {
 		$this->nebenkosten = $nebenkosten;
 		return $this;
 	}
@@ -1276,7 +1276,7 @@ class Preise {
 	 * @param Nebenkostenprom2von $nebenkostenprom2von Setter for nebenkostenprom2von
 	 * @return Preise
 	 */
-	public function setNebenkostenprom2von(Nebenkostenprom2von $nebenkostenprom2von) {
+	public function setNebenkostenprom2von(?Nebenkostenprom2von $nebenkostenprom2von) {
 		$this->nebenkostenprom2von = $nebenkostenprom2von;
 		return $this;
 	}
@@ -1285,7 +1285,7 @@ class Preise {
 	 * @param float $nettokaltmiete Setter for nettokaltmiete
 	 * @return Preise
 	 */
-	public function setNettokaltmiete(float $nettokaltmiete) {
+	public function setNettokaltmiete(?float $nettokaltmiete) {
 		$this->nettokaltmiete = $nettokaltmiete;
 		return $this;
 	}
@@ -1294,7 +1294,7 @@ class Preise {
 	 * @param Nettomieteprom2von $nettomieteprom2von Setter for nettomieteprom2von
 	 * @return Preise
 	 */
-	public function setNettomieteprom2von(Nettomieteprom2von $nettomieteprom2von) {
+	public function setNettomieteprom2von(?Nettomieteprom2von $nettomieteprom2von) {
 		$this->nettomieteprom2von = $nettomieteprom2von;
 		return $this;
 	}
@@ -1303,7 +1303,7 @@ class Preise {
 	 * @param float $nettorendite Setter for nettorendite
 	 * @return Preise
 	 */
-	public function setNettorendite(float $nettorendite) {
+	public function setNettorendite(?float $nettorendite) {
 		$this->nettorendite = $nettorendite;
 		return $this;
 	}
@@ -1312,7 +1312,7 @@ class Preise {
 	 * @param float $nettorenditeIst Setter for nettorenditeIst
 	 * @return Preise
 	 */
-	public function setNettorenditeIst(float $nettorenditeIst) {
+	public function setNettorenditeIst(?float $nettorenditeIst) {
 		$this->nettorenditeIst = $nettorenditeIst;
 		return $this;
 	}
@@ -1321,7 +1321,7 @@ class Preise {
 	 * @param float $nettorenditeSoll Setter for nettorenditeSoll
 	 * @return Preise
 	 */
-	public function setNettorenditeSoll(float $nettorenditeSoll) {
+	public function setNettorenditeSoll(?float $nettorenditeSoll) {
 		$this->nettorenditeSoll = $nettorenditeSoll;
 		return $this;
 	}
@@ -1330,7 +1330,7 @@ class Preise {
 	 * @param float $pacht Setter for pacht
 	 * @return Preise
 	 */
-	public function setPacht(float $pacht) {
+	public function setPacht(?float $pacht) {
 		$this->pacht = $pacht;
 		return $this;
 	}
@@ -1339,7 +1339,7 @@ class Preise {
 	 * @param float $pauschalmiete Setter for pauschalmiete
 	 * @return Preise
 	 */
-	public function setPauschalmiete(float $pauschalmiete) {
+	public function setPauschalmiete(?float $pauschalmiete) {
 		$this->pauschalmiete = $pauschalmiete;
 		return $this;
 	}
@@ -1348,7 +1348,7 @@ class Preise {
 	 * @param PreisZeiteinheit $preisZeiteinheit Setter for preisZeiteinheit
 	 * @return Preise
 	 */
-	public function setPreisZeiteinheit(PreisZeiteinheit $preisZeiteinheit) {
+	public function setPreisZeiteinheit(?PreisZeiteinheit $preisZeiteinheit) {
 		$this->preisZeiteinheit = $preisZeiteinheit;
 		return $this;
 	}
@@ -1357,7 +1357,7 @@ class Preise {
 	 * @param \DateTime $preisZeitraumBis Setter for preisZeitraumBis
 	 * @return Preise
 	 */
-	public function setPreisZeitraumBis(\DateTime $preisZeitraumBis) {
+	public function setPreisZeitraumBis(?\DateTime $preisZeitraumBis) {
 		$this->preisZeitraumBis = $preisZeitraumBis;
 		return $this;
 	}
@@ -1366,7 +1366,7 @@ class Preise {
 	 * @param \DateTime $preisZeitraumVon Setter for preisZeitraumVon
 	 * @return Preise
 	 */
-	public function setPreisZeitraumVon(\DateTime $preisZeitraumVon) {
+	public function setPreisZeitraumVon(?\DateTime $preisZeitraumVon) {
 		$this->preisZeitraumVon = $preisZeitraumVon;
 		return $this;
 	}
@@ -1375,7 +1375,7 @@ class Preise {
 	 * @param float $provisionbrutto Setter for provisionbrutto
 	 * @return Preise
 	 */
-	public function setProvisionbrutto(float $provisionbrutto) {
+	public function setProvisionbrutto(?float $provisionbrutto) {
 		$this->provisionbrutto = $provisionbrutto;
 		return $this;
 	}
@@ -1384,7 +1384,7 @@ class Preise {
 	 * @param Provisionnetto $provisionnetto Setter for provisionnetto
 	 * @return Preise
 	 */
-	public function setProvisionnetto(Provisionnetto $provisionnetto) {
+	public function setProvisionnetto(?Provisionnetto $provisionnetto) {
 		$this->provisionnetto = $provisionnetto;
 		return $this;
 	}
@@ -1393,7 +1393,7 @@ class Preise {
 	 * @param boolean $provisionspflichtig Setter for provisionspflichtig
 	 * @return Preise
 	 */
-	public function setProvisionspflichtig(bool $provisionspflichtig) {
+	public function setProvisionspflichtig(?bool $provisionspflichtig) {
 		$this->provisionspflichtig = $provisionspflichtig;
 		return $this;
 	}
@@ -1402,7 +1402,7 @@ class Preise {
 	 * @param ProvisionTeilen $provisionTeilen Setter for provisionTeilen
 	 * @return Preise
 	 */
-	public function setProvisionTeilen(ProvisionTeilen $provisionTeilen) {
+	public function setProvisionTeilen(?ProvisionTeilen $provisionTeilen) {
 		$this->provisionTeilen = $provisionTeilen;
 		return $this;
 	}
@@ -1411,7 +1411,7 @@ class Preise {
 	 * @param float $richtpreis Setter for richtpreis
 	 * @return Preise
 	 */
-	public function setRichtpreis(float $richtpreis) {
+	public function setRichtpreis(?float $richtpreis) {
 		$this->richtpreis = $richtpreis;
 		return $this;
 	}
@@ -1420,7 +1420,7 @@ class Preise {
 	 * @param float $richtpreisprom2 Setter for richtpreisprom2
 	 * @return Preise
 	 */
-	public function setRichtpreisprom2(float $richtpreisprom2) {
+	public function setRichtpreisprom2(?float $richtpreisprom2) {
 		$this->richtpreisprom2 = $richtpreisprom2;
 		return $this;
 	}
@@ -1429,7 +1429,7 @@ class Preise {
 	 * @param Ruecklagenetto $ruecklagenetto Setter for ruecklagenetto
 	 * @return Preise
 	 */
-	public function setRuecklagenetto(Ruecklagenetto $ruecklagenetto) {
+	public function setRuecklagenetto(?Ruecklagenetto $ruecklagenetto) {
 		$this->ruecklagenetto = $ruecklagenetto;
 		return $this;
 	}
@@ -1438,7 +1438,7 @@ class Preise {
 	 * @param Sonstigekostennetto $sonstigekostennetto Setter for sonstigekostennetto
 	 * @return Preise
 	 */
-	public function setSonstigekostennetto(Sonstigekostennetto $sonstigekostennetto) {
+	public function setSonstigekostennetto(?Sonstigekostennetto $sonstigekostennetto) {
 		$this->sonstigekostennetto = $sonstigekostennetto;
 		return $this;
 	}
@@ -1447,7 +1447,7 @@ class Preise {
 	 * @param Sonstigemietenetto $sonstigemietenetto Setter for sonstigemietenetto
 	 * @return Preise
 	 */
-	public function setSonstigemietenetto(Sonstigemietenetto $sonstigemietenetto) {
+	public function setSonstigemietenetto(?Sonstigemietenetto $sonstigemietenetto) {
 		$this->sonstigemietenetto = $sonstigemietenetto;
 		return $this;
 	}
@@ -1456,7 +1456,7 @@ class Preise {
 	 * @param StpCarport $stpCarport Setter for stpCarport
 	 * @return Preise
 	 */
-	public function setStpCarport(StpCarport $stpCarport) {
+	public function setStpCarport(?StpCarport $stpCarport) {
 		$this->stpCarport = $stpCarport;
 		return $this;
 	}
@@ -1465,7 +1465,7 @@ class Preise {
 	 * @param StpDuplex $stpDuplex Setter for stpDuplex
 	 * @return Preise
 	 */
-	public function setStpDuplex(StpDuplex $stpDuplex) {
+	public function setStpDuplex(?StpDuplex $stpDuplex) {
 		$this->stpDuplex = $stpDuplex;
 		return $this;
 	}
@@ -1474,7 +1474,7 @@ class Preise {
 	 * @param StpFreiplatz $stpFreiplatz Setter for stpFreiplatz
 	 * @return Preise
 	 */
-	public function setStpFreiplatz(StpFreiplatz $stpFreiplatz) {
+	public function setStpFreiplatz(?StpFreiplatz $stpFreiplatz) {
 		$this->stpFreiplatz = $stpFreiplatz;
 		return $this;
 	}
@@ -1483,7 +1483,7 @@ class Preise {
 	 * @param StpGarage $stpGarage Setter for stpGarage
 	 * @return Preise
 	 */
-	public function setStpGarage(StpGarage $stpGarage) {
+	public function setStpGarage(?StpGarage $stpGarage) {
 		$this->stpGarage = $stpGarage;
 		return $this;
 	}
@@ -1492,7 +1492,7 @@ class Preise {
 	 * @param StpParkhaus $stpParkhaus Setter for stpParkhaus
 	 * @return Preise
 	 */
-	public function setStpParkhaus(StpParkhaus $stpParkhaus) {
+	public function setStpParkhaus(?StpParkhaus $stpParkhaus) {
 		$this->stpParkhaus = $stpParkhaus;
 		return $this;
 	}
@@ -1510,7 +1510,7 @@ class Preise {
 	 * @param StpTiefgarage $stpTiefgarage Setter for stpTiefgarage
 	 * @return Preise
 	 */
-	public function setStpTiefgarage(StpTiefgarage $stpTiefgarage) {
+	public function setStpTiefgarage(?StpTiefgarage $stpTiefgarage) {
 		$this->stpTiefgarage = $stpTiefgarage;
 		return $this;
 	}
@@ -1519,7 +1519,7 @@ class Preise {
 	 * @param Summemietenetto $summemietenetto Setter for summemietenetto
 	 * @return Preise
 	 */
-	public function setSummemietenetto(Summemietenetto $summemietenetto) {
+	public function setSummemietenetto(?Summemietenetto $summemietenetto) {
 		$this->summemietenetto = $summemietenetto;
 		return $this;
 	}
@@ -1555,7 +1555,7 @@ class Preise {
 	 * @param Waehrung $waehrung Setter for waehrung
 	 * @return Preise
 	 */
-	public function setWaehrung(Waehrung $waehrung) {
+	public function setWaehrung(?Waehrung $waehrung) {
 		$this->waehrung = $waehrung;
 		return $this;
 	}
@@ -1564,7 +1564,7 @@ class Preise {
 	 * @param float $warmmiete Setter for warmmiete
 	 * @return Preise
 	 */
-	public function setWarmmiete(float $warmmiete) {
+	public function setWarmmiete(?float $warmmiete) {
 		$this->warmmiete = $warmmiete;
 		return $this;
 	}
@@ -1573,7 +1573,7 @@ class Preise {
 	 * @param string $xFache Setter for xFache
 	 * @return Preise
 	 */
-	public function setXFache(string $xFache) {
+	public function setXFache(?string $xFache) {
 		$this->xFache = $xFache;
 		return $this;
 	}
@@ -1582,7 +1582,7 @@ class Preise {
 	 * @param boolean $zzgMehrwertsteuer Setter for zzgMehrwertsteuer
 	 * @return Preise
 	 */
-	public function setZzgMehrwertsteuer(bool $zzgMehrwertsteuer) {
+	public function setZzgMehrwertsteuer(?bool $zzgMehrwertsteuer) {
 		$this->zzgMehrwertsteuer = $zzgMehrwertsteuer;
 		return $this;
 	}

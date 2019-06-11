@@ -99,7 +99,7 @@ class Zustand {
 	 * @param string $zustandArt Setter for zustandArt
 	 * @return Zustand
 	 */
-	public function setZustandArt(string $zustandArt) {
+	public function setZustandArt(?string $zustandArt) {
 		$this->zustandArt = $zustandArt;
 		return $this;
 	}

@@ -156,7 +156,7 @@ class Freitexte {
 	 * @param string $ausstattBeschr Setter for ausstattBeschr
 	 * @return Freitexte
 	 */
-	public function setAusstattBeschr(string $ausstattBeschr) {
+	public function setAusstattBeschr(?string $ausstattBeschr) {
 		$this->ausstattBeschr = $ausstattBeschr;
 		return $this;
 	}
@@ -165,7 +165,7 @@ class Freitexte {
 	 * @param string $dreizeiler Setter for dreizeiler
 	 * @return Freitexte
 	 */
-	public function setDreizeiler(string $dreizeiler) {
+	public function setDreizeiler(?string $dreizeiler) {
 		$this->dreizeiler = $dreizeiler;
 		return $this;
 	}
@@ -174,7 +174,7 @@ class Freitexte {
 	 * @param string $lage Setter for lage
 	 * @return Freitexte
 	 */
-	public function setLage(string $lage) {
+	public function setLage(?string $lage) {
 		$this->lage = $lage;
 		return $this;
 	}
@@ -183,7 +183,7 @@ class Freitexte {
 	 * @param string $objektbeschreibung Setter for objektbeschreibung
 	 * @return Freitexte
 	 */
-	public function setObjektbeschreibung(string $objektbeschreibung) {
+	public function setObjektbeschreibung(?string $objektbeschreibung) {
 		$this->objektbeschreibung = $objektbeschreibung;
 		return $this;
 	}
@@ -192,7 +192,7 @@ class Freitexte {
 	 * @param ObjektText $objektText Setter for objektText
 	 * @return Freitexte
 	 */
-	public function setObjektText(ObjektText $objektText) {
+	public function setObjektText(?ObjektText $objektText) {
 		$this->objektText = $objektText;
 		return $this;
 	}
@@ -201,7 +201,7 @@ class Freitexte {
 	 * @param string $objekttitel Setter for objekttitel
 	 * @return Freitexte
 	 */
-	public function setObjekttitel(string $objekttitel) {
+	public function setObjekttitel(?string $objekttitel) {
 		$this->objekttitel = $objekttitel;
 		return $this;
 	}
@@ -210,7 +210,7 @@ class Freitexte {
 	 * @param string $sonstigeAngaben Setter for sonstigeAngaben
 	 * @return Freitexte
 	 */
-	public function setSonstigeAngaben(string $sonstigeAngaben) {
+	public function setSonstigeAngaben(?string $sonstigeAngaben) {
 		$this->sonstigeAngaben = $sonstigeAngaben;
 		return $this;
 	}

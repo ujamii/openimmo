@@ -211,7 +211,7 @@ class ZustandAngaben {
 	 * @param Alter $alter Setter for alter
 	 * @return ZustandAngaben
 	 */
-	public function setAlter(Alter $alter) {
+	public function setAlter(?Alter $alter) {
 		$this->alter = $alter;
 		return $this;
 	}
@@ -220,7 +220,7 @@ class ZustandAngaben {
 	 * @param string $altlasten Setter for altlasten
 	 * @return ZustandAngaben
 	 */
-	public function setAltlasten(string $altlasten) {
+	public function setAltlasten(?string $altlasten) {
 		$this->altlasten = $altlasten;
 		return $this;
 	}
@@ -229,7 +229,7 @@ class ZustandAngaben {
 	 * @param string $baujahr Setter for baujahr
 	 * @return ZustandAngaben
 	 */
-	public function setBaujahr(string $baujahr) {
+	public function setBaujahr(?string $baujahr) {
 		$this->baujahr = $baujahr;
 		return $this;
 	}
@@ -238,7 +238,7 @@ class ZustandAngaben {
 	 * @param string $bauzone Setter for bauzone
 	 * @return ZustandAngaben
 	 */
-	public function setBauzone(string $bauzone) {
+	public function setBauzone(?string $bauzone) {
 		$this->bauzone = $bauzone;
 		return $this;
 	}
@@ -247,7 +247,7 @@ class ZustandAngaben {
 	 * @param BebaubarNach $bebaubarNach Setter for bebaubarNach
 	 * @return ZustandAngaben
 	 */
-	public function setBebaubarNach(BebaubarNach $bebaubarNach) {
+	public function setBebaubarNach(?BebaubarNach $bebaubarNach) {
 		$this->bebaubarNach = $bebaubarNach;
 		return $this;
 	}
@@ -265,7 +265,7 @@ class ZustandAngaben {
 	 * @param Erschliessung $erschliessung Setter for erschliessung
 	 * @return ZustandAngaben
 	 */
-	public function setErschliessung(Erschliessung $erschliessung) {
+	public function setErschliessung(?Erschliessung $erschliessung) {
 		$this->erschliessung = $erschliessung;
 		return $this;
 	}
@@ -274,7 +274,7 @@ class ZustandAngaben {
 	 * @param ErschliessungUmfang $erschliessungUmfang Setter for erschliessungUmfang
 	 * @return ZustandAngaben
 	 */
-	public function setErschliessungUmfang(ErschliessungUmfang $erschliessungUmfang) {
+	public function setErschliessungUmfang(?ErschliessungUmfang $erschliessungUmfang) {
 		$this->erschliessungUmfang = $erschliessungUmfang;
 		return $this;
 	}
@@ -283,7 +283,7 @@ class ZustandAngaben {
 	 * @param string $letztemodernisierung Setter for letztemodernisierung
 	 * @return ZustandAngaben
 	 */
-	public function setLetztemodernisierung(string $letztemodernisierung) {
+	public function setLetztemodernisierung(?string $letztemodernisierung) {
 		$this->letztemodernisierung = $letztemodernisierung;
 		return $this;
 	}
@@ -319,7 +319,7 @@ class ZustandAngaben {
 	 * @param Verkaufstatus $verkaufstatus Setter for verkaufstatus
 	 * @return ZustandAngaben
 	 */
-	public function setVerkaufstatus(Verkaufstatus $verkaufstatus) {
+	public function setVerkaufstatus(?Verkaufstatus $verkaufstatus) {
 		$this->verkaufstatus = $verkaufstatus;
 		return $this;
 	}
@@ -328,7 +328,7 @@ class ZustandAngaben {
 	 * @param Zustand $zustand Setter for zustand
 	 * @return ZustandAngaben
 	 */
-	public function setZustand(Zustand $zustand) {
+	public function setZustand(?Zustand $zustand) {
 		$this->zustand = $zustand;
 		return $this;
 	}

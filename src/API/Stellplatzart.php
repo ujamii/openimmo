@@ -121,7 +121,7 @@ class Stellplatzart {
 	 * @param boolean $carport Setter for carport
 	 * @return Stellplatzart
 	 */
-	public function setCarport(bool $carport) {
+	public function setCarport(?bool $carport) {
 		$this->carport = $carport;
 		return $this;
 	}
@@ -130,7 +130,7 @@ class Stellplatzart {
 	 * @param boolean $duplex Setter for duplex
 	 * @return Stellplatzart
 	 */
-	public function setDuplex(bool $duplex) {
+	public function setDuplex(?bool $duplex) {
 		$this->duplex = $duplex;
 		return $this;
 	}
@@ -139,7 +139,7 @@ class Stellplatzart {
 	 * @param boolean $freiplatz Setter for freiplatz
 	 * @return Stellplatzart
 	 */
-	public function setFreiplatz(bool $freiplatz) {
+	public function setFreiplatz(?bool $freiplatz) {
 		$this->freiplatz = $freiplatz;
 		return $this;
 	}
@@ -148,7 +148,7 @@ class Stellplatzart {
 	 * @param boolean $garage Setter for garage
 	 * @return Stellplatzart
 	 */
-	public function setGarage(bool $garage) {
+	public function setGarage(?bool $garage) {
 		$this->garage = $garage;
 		return $this;
 	}
@@ -157,7 +157,7 @@ class Stellplatzart {
 	 * @param boolean $parkhaus Setter for parkhaus
 	 * @return Stellplatzart
 	 */
-	public function setParkhaus(bool $parkhaus) {
+	public function setParkhaus(?bool $parkhaus) {
 		$this->parkhaus = $parkhaus;
 		return $this;
 	}
@@ -166,7 +166,7 @@ class Stellplatzart {
 	 * @param boolean $tiefgarage Setter for tiefgarage
 	 * @return Stellplatzart
 	 */
-	public function setTiefgarage(bool $tiefgarage) {
+	public function setTiefgarage(?bool $tiefgarage) {
 		$this->tiefgarage = $tiefgarage;
 		return $this;
 	}

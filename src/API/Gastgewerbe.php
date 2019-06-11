@@ -79,7 +79,7 @@ class Gastgewerbe {
 	 * @param string $gastgewTyp Setter for gastgewTyp
 	 * @return Gastgewerbe
 	 */
-	public function setGastgewTyp(string $gastgewTyp) {
+	public function setGastgewTyp(?string $gastgewTyp) {
 		$this->gastgewTyp = $gastgewTyp;
 		return $this;
 	}

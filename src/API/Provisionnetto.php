@@ -58,7 +58,7 @@ class Provisionnetto {
 	 * @param float $provisionust Setter for provisionust
 	 * @return Provisionnetto
 	 */
-	public function setProvisionust(float $provisionust) {
+	public function setProvisionust(?float $provisionust) {
 		$this->provisionust = $provisionust;
 		return $this;
 	}
@@ -67,7 +67,7 @@ class Provisionnetto {
 	 * @param float $value Setter for value
 	 * @return Provisionnetto
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

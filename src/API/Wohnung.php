@@ -91,7 +91,7 @@ class Wohnung {
 	 * @param string $wohnungtyp Setter for wohnungtyp
 	 * @return Wohnung
 	 */
-	public function setWohnungtyp(string $wohnungtyp) {
+	public function setWohnungtyp(?string $wohnungtyp) {
 		$this->wohnungtyp = $wohnungtyp;
 		return $this;
 	}

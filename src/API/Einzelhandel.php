@@ -71,7 +71,7 @@ class Einzelhandel {
 	 * @param string $handelTyp Setter for handelTyp
 	 * @return Einzelhandel
 	 */
-	public function setHandelTyp(string $handelTyp) {
+	public function setHandelTyp(?string $handelTyp) {
 		$this->handelTyp = $handelTyp;
 		return $this;
 	}

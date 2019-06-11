@@ -87,7 +87,7 @@ class Vermarktungsart {
 	 * @param boolean $erbpacht Setter for erbpacht
 	 * @return Vermarktungsart
 	 */
-	public function setErbpacht(bool $erbpacht) {
+	public function setErbpacht(?bool $erbpacht) {
 		$this->erbpacht = $erbpacht;
 		return $this;
 	}
@@ -105,7 +105,7 @@ class Vermarktungsart {
 	 * @param boolean $leasing Setter for leasing
 	 * @return Vermarktungsart
 	 */
-	public function setLeasing(bool $leasing) {
+	public function setLeasing(?bool $leasing) {
 		$this->leasing = $leasing;
 		return $this;
 	}

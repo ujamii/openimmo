@@ -75,7 +75,7 @@ class BueroPraxen {
 	 * @param string $bueroTyp Setter for bueroTyp
 	 * @return BueroPraxen
 	 */
-	public function setBueroTyp(string $bueroTyp) {
+	public function setBueroTyp(?string $bueroTyp) {
 		$this->bueroTyp = $bueroTyp;
 		return $this;
 	}

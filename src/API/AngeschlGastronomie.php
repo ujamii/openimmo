@@ -53,7 +53,7 @@ class AngeschlGastronomie {
 	 * @param boolean $bar Setter for bar
 	 * @return AngeschlGastronomie
 	 */
-	public function setBar(bool $bar) {
+	public function setBar(?bool $bar) {
 		$this->bar = $bar;
 		return $this;
 	}
@@ -62,7 +62,7 @@ class AngeschlGastronomie {
 	 * @param boolean $hotelrestaurant Setter for hotelrestaurant
 	 * @return AngeschlGastronomie
 	 */
-	public function setHotelrestaurant(bool $hotelrestaurant) {
+	public function setHotelrestaurant(?bool $hotelrestaurant) {
 		$this->hotelrestaurant = $hotelrestaurant;
 		return $this;
 	}

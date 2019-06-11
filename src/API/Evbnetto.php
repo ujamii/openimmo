@@ -58,7 +58,7 @@ class Evbnetto {
 	 * @param float $evbust Setter for evbust
 	 * @return Evbnetto
 	 */
-	public function setEvbust(float $evbust) {
+	public function setEvbust(?float $evbust) {
 		$this->evbust = $evbust;
 		return $this;
 	}
@@ -67,7 +67,7 @@ class Evbnetto {
 	 * @param float $value Setter for value
 	 * @return Evbnetto
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

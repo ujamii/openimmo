@@ -123,7 +123,7 @@ class Infrastruktur {
 	 * @param Ausblick $ausblick Setter for ausblick
 	 * @return Infrastruktur
 	 */
-	public function setAusblick(Ausblick $ausblick) {
+	public function setAusblick(?Ausblick $ausblick) {
 		$this->ausblick = $ausblick;
 		return $this;
 	}
@@ -177,7 +177,7 @@ class Infrastruktur {
 	 * @param boolean $zulieferung Setter for zulieferung
 	 * @return Infrastruktur
 	 */
-	public function setZulieferung(bool $zulieferung) {
+	public function setZulieferung(?bool $zulieferung) {
 		$this->zulieferung = $zulieferung;
 		return $this;
 	}

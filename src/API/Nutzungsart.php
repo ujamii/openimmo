@@ -87,7 +87,7 @@ class Nutzungsart {
 	 * @param boolean $anlage Setter for anlage
 	 * @return Nutzungsart
 	 */
-	public function setAnlage(bool $anlage) {
+	public function setAnlage(?bool $anlage) {
 		$this->anlage = $anlage;
 		return $this;
 	}
@@ -105,7 +105,7 @@ class Nutzungsart {
 	 * @param boolean $waz Setter for waz
 	 * @return Nutzungsart
 	 */
-	public function setWaz(bool $waz) {
+	public function setWaz(?bool $waz) {
 		$this->waz = $waz;
 		return $this;
 	}

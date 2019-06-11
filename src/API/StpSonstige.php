@@ -78,7 +78,7 @@ class StpSonstige {
 	 * @param string $bemerkung Setter for bemerkung
 	 * @return StpSonstige
 	 */
-	public function setBemerkung(string $bemerkung) {
+	public function setBemerkung(?string $bemerkung) {
 		$this->bemerkung = $bemerkung;
 		return $this;
 	}
@@ -87,7 +87,7 @@ class StpSonstige {
 	 * @param string $platzart Setter for platzart
 	 * @return StpSonstige
 	 */
-	public function setPlatzart(string $platzart) {
+	public function setPlatzart(?string $platzart) {
 		$this->platzart = $platzart;
 		return $this;
 	}

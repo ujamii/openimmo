@@ -58,7 +58,7 @@ class Sonstigekostennetto {
 	 * @param float $sonstigekostenust Setter for sonstigekostenust
 	 * @return Sonstigekostennetto
 	 */
-	public function setSonstigekostenust(float $sonstigekostenust) {
+	public function setSonstigekostenust(?float $sonstigekostenust) {
 		$this->sonstigekostenust = $sonstigekostenust;
 		return $this;
 	}
@@ -67,7 +67,7 @@ class Sonstigekostennetto {
 	 * @param float $value Setter for value
 	 * @return Sonstigekostennetto
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

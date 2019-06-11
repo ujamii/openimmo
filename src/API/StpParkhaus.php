@@ -65,7 +65,7 @@ class StpParkhaus {
 	 * @param int $anzahl Setter for anzahl
 	 * @return StpParkhaus
 	 */
-	public function setAnzahl(int $anzahl) {
+	public function setAnzahl(?int $anzahl) {
 		$this->anzahl = $anzahl;
 		return $this;
 	}
@@ -74,7 +74,7 @@ class StpParkhaus {
 	 * @param float $stellplatzkaufpreis Setter for stellplatzkaufpreis
 	 * @return StpParkhaus
 	 */
-	public function setStellplatzkaufpreis(float $stellplatzkaufpreis) {
+	public function setStellplatzkaufpreis(?float $stellplatzkaufpreis) {
 		$this->stellplatzkaufpreis = $stellplatzkaufpreis;
 		return $this;
 	}
@@ -83,7 +83,7 @@ class StpParkhaus {
 	 * @param float $stellplatzmiete Setter for stellplatzmiete
 	 * @return StpParkhaus
 	 */
-	public function setStellplatzmiete(float $stellplatzmiete) {
+	public function setStellplatzmiete(?float $stellplatzmiete) {
 		$this->stellplatzmiete = $stellplatzmiete;
 		return $this;
 	}

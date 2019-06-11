@@ -55,7 +55,7 @@ class Sonstige {
 	 * @param string $sonstigeTyp Setter for sonstigeTyp
 	 * @return Sonstige
 	 */
-	public function setSonstigeTyp(string $sonstigeTyp) {
+	public function setSonstigeTyp(?string $sonstigeTyp) {
 		$this->sonstigeTyp = $sonstigeTyp;
 		return $this;
 	}

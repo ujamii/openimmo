@@ -58,7 +58,7 @@ class Gesamtkostenprom2von {
 	 * @param float $gesamtkostenprom2bis Setter for gesamtkostenprom2bis
 	 * @return Gesamtkostenprom2von
 	 */
-	public function setGesamtkostenprom2bis(float $gesamtkostenprom2bis) {
+	public function setGesamtkostenprom2bis(?float $gesamtkostenprom2bis) {
 		$this->gesamtkostenprom2bis = $gesamtkostenprom2bis;
 		return $this;
 	}
@@ -67,7 +67,7 @@ class Gesamtkostenprom2von {
 	 * @param float $value Setter for value
 	 * @return Gesamtkostenprom2von
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

@@ -51,7 +51,7 @@ class MinMietdauer {
 	 * @param string $minDauer Setter for minDauer
 	 * @return MinMietdauer
 	 */
-	public function setMinDauer(string $minDauer) {
+	public function setMinDauer(?string $minDauer) {
 		$this->minDauer = $minDauer;
 		return $this;
 	}

@@ -58,7 +58,7 @@ class Gesamtbelastungnetto {
 	 * @param float $gesamtbelastungust Setter for gesamtbelastungust
 	 * @return Gesamtbelastungnetto
 	 */
-	public function setGesamtbelastungust(float $gesamtbelastungust) {
+	public function setGesamtbelastungust(?float $gesamtbelastungust) {
 		$this->gesamtbelastungust = $gesamtbelastungust;
 		return $this;
 	}
@@ -67,7 +67,7 @@ class Gesamtbelastungnetto {
 	 * @param float $value Setter for value
 	 * @return Gesamtbelastungnetto
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

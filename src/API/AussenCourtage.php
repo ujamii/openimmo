@@ -34,7 +34,7 @@ class AussenCourtage {
 	 * @param boolean $mitMwst Setter for mitMwst
 	 * @return AussenCourtage
 	 */
-	public function setMitMwst(bool $mitMwst) {
+	public function setMitMwst(?bool $mitMwst) {
 		$this->mitMwst = $mitMwst;
 		return $this;
 	}

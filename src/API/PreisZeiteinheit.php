@@ -51,7 +51,7 @@ class PreisZeiteinheit {
 	 * @param string $zeiteinheit Setter for zeiteinheit
 	 * @return PreisZeiteinheit
 	 */
-	public function setZeiteinheit(string $zeiteinheit) {
+	public function setZeiteinheit(?string $zeiteinheit) {
 		$this->zeiteinheit = $zeiteinheit;
 		return $this;
 	}

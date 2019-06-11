@@ -83,7 +83,7 @@ class HallenLagerProd {
 	 * @param string $hallenTyp Setter for hallenTyp
 	 * @return HallenLagerProd
 	 */
-	public function setHallenTyp(string $hallenTyp) {
+	public function setHallenTyp(?string $hallenTyp) {
 		$this->hallenTyp = $hallenTyp;
 		return $this;
 	}

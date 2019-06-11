@@ -176,7 +176,7 @@ class Anhang {
 	 * @param string $anhangtitel Setter for anhangtitel
 	 * @return Anhang
 	 */
-	public function setAnhangtitel(string $anhangtitel) {
+	public function setAnhangtitel(?string $anhangtitel) {
 		$this->anhangtitel = $anhangtitel;
 		return $this;
 	}
@@ -185,7 +185,7 @@ class Anhang {
 	 * @param Check $check Setter for check
 	 * @return Anhang
 	 */
-	public function setCheck(Check $check) {
+	public function setCheck(?Check $check) {
 		$this->check = $check;
 		return $this;
 	}
@@ -212,7 +212,7 @@ class Anhang {
 	 * @param string $gruppe Setter for gruppe
 	 * @return Anhang
 	 */
-	public function setGruppe(string $gruppe) {
+	public function setGruppe(?string $gruppe) {
 		$this->gruppe = $gruppe;
 		return $this;
 	}

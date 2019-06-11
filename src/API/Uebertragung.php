@@ -202,7 +202,7 @@ class Uebertragung {
 	 * @param string $modus Setter for modus
 	 * @return Uebertragung
 	 */
-	public function setModus(string $modus) {
+	public function setModus(?string $modus) {
 		$this->modus = $modus;
 		return $this;
 	}
@@ -211,7 +211,7 @@ class Uebertragung {
 	 * @param string $regiId Setter for regiId
 	 * @return Uebertragung
 	 */
-	public function setRegiId(string $regiId) {
+	public function setRegiId(?string $regiId) {
 		$this->regiId = $regiId;
 		return $this;
 	}
@@ -238,7 +238,7 @@ class Uebertragung {
 	 * @param string $technEmail Setter for technEmail
 	 * @return Uebertragung
 	 */
-	public function setTechnEmail(string $technEmail) {
+	public function setTechnEmail(?string $technEmail) {
 		$this->technEmail = $technEmail;
 		return $this;
 	}
@@ -247,7 +247,7 @@ class Uebertragung {
 	 * @param \DateTime $timestamp Setter for timestamp
 	 * @return Uebertragung
 	 */
-	public function setTimestamp(\DateTime $timestamp) {
+	public function setTimestamp(?\DateTime $timestamp) {
 		$this->timestamp = $timestamp;
 		return $this;
 	}

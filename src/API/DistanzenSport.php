@@ -97,7 +97,7 @@ class DistanzenSport {
 	 * @param float $value Setter for value
 	 * @return DistanzenSport
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

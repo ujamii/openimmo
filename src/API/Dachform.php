@@ -137,7 +137,7 @@ class Dachform {
 	 * @param boolean $flachdach Setter for flachdach
 	 * @return Dachform
 	 */
-	public function setFlachdach(bool $flachdach) {
+	public function setFlachdach(?bool $flachdach) {
 		$this->flachdach = $flachdach;
 		return $this;
 	}
@@ -146,7 +146,7 @@ class Dachform {
 	 * @param boolean $krueppelwalmdach Setter for krueppelwalmdach
 	 * @return Dachform
 	 */
-	public function setKrueppelwalmdach(bool $krueppelwalmdach) {
+	public function setKrueppelwalmdach(?bool $krueppelwalmdach) {
 		$this->krueppelwalmdach = $krueppelwalmdach;
 		return $this;
 	}
@@ -155,7 +155,7 @@ class Dachform {
 	 * @param boolean $mansarddach Setter for mansarddach
 	 * @return Dachform
 	 */
-	public function setMansarddach(bool $mansarddach) {
+	public function setMansarddach(?bool $mansarddach) {
 		$this->mansarddach = $mansarddach;
 		return $this;
 	}
@@ -164,7 +164,7 @@ class Dachform {
 	 * @param boolean $pultdach Setter for pultdach
 	 * @return Dachform
 	 */
-	public function setPultdach(bool $pultdach) {
+	public function setPultdach(?bool $pultdach) {
 		$this->pultdach = $pultdach;
 		return $this;
 	}
@@ -173,7 +173,7 @@ class Dachform {
 	 * @param boolean $pyramidendach Setter for pyramidendach
 	 * @return Dachform
 	 */
-	public function setPyramidendach(bool $pyramidendach) {
+	public function setPyramidendach(?bool $pyramidendach) {
 		$this->pyramidendach = $pyramidendach;
 		return $this;
 	}
@@ -182,7 +182,7 @@ class Dachform {
 	 * @param boolean $satteldach Setter for satteldach
 	 * @return Dachform
 	 */
-	public function setSatteldach(bool $satteldach) {
+	public function setSatteldach(?bool $satteldach) {
 		$this->satteldach = $satteldach;
 		return $this;
 	}
@@ -191,7 +191,7 @@ class Dachform {
 	 * @param boolean $walmdach Setter for walmdach
 	 * @return Dachform
 	 */
-	public function setWalmdach(bool $walmdach) {
+	public function setWalmdach(?bool $walmdach) {
 		$this->walmdach = $walmdach;
 		return $this;
 	}
