@@ -287,8 +287,8 @@ class Kontaktperson {
 	 *
 	 * @return array
 	 */
-	public function getEmailSonstige(): ?array {
-		return $this->emailSonstige;
+	public function getEmailSonstige(): array {
+		return $this->emailSonstige ?? [];
 	}
 
 	/**
@@ -443,8 +443,8 @@ class Kontaktperson {
 	 *
 	 * @return array
 	 */
-	public function getTelSonstige(): ?array {
-		return $this->telSonstige;
+	public function getTelSonstige(): array {
+		return $this->telSonstige ?? [];
 	}
 
 	/**
@@ -473,8 +473,8 @@ class Kontaktperson {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): ?array {
-		return $this->userDefinedAnyfield;
+	public function getUserDefinedAnyfield(): array {
+		return $this->userDefinedAnyfield ?? [];
 	}
 
 	/**
@@ -482,8 +482,8 @@ class Kontaktperson {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): ?array {
-		return $this->userDefinedExtend;
+	public function getUserDefinedExtend(): array {
+		return $this->userDefinedExtend ?? [];
 	}
 
 	/**
@@ -491,8 +491,8 @@ class Kontaktperson {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): ?array {
-		return $this->userDefinedSimplefield;
+	public function getUserDefinedSimplefield(): array {
+		return $this->userDefinedSimplefield ?? [];
 	}
 
 	/**

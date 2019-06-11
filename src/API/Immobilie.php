@@ -214,8 +214,8 @@ class Immobilie {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): ?array {
-		return $this->userDefinedAnyfield;
+	public function getUserDefinedAnyfield(): array {
+		return $this->userDefinedAnyfield ?? [];
 	}
 
 	/**
@@ -223,8 +223,8 @@ class Immobilie {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): ?array {
-		return $this->userDefinedExtend;
+	public function getUserDefinedExtend(): array {
+		return $this->userDefinedExtend ?? [];
 	}
 
 	/**
@@ -232,8 +232,8 @@ class Immobilie {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): ?array {
-		return $this->userDefinedSimplefield;
+	public function getUserDefinedSimplefield(): array {
+		return $this->userDefinedSimplefield ?? [];
 	}
 
 	/**
@@ -262,8 +262,8 @@ class Immobilie {
 	 *
 	 * @return array
 	 */
-	public function getWeitereAdresse(): ?array {
-		return $this->weitereAdresse;
+	public function getWeitereAdresse(): array {
+		return $this->weitereAdresse ?? [];
 	}
 
 	/**

@@ -200,8 +200,8 @@ class VerwaltungTechn {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): ?array {
-		return $this->userDefinedAnyfield;
+	public function getUserDefinedAnyfield(): array {
+		return $this->userDefinedAnyfield ?? [];
 	}
 
 	/**
@@ -209,8 +209,8 @@ class VerwaltungTechn {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): ?array {
-		return $this->userDefinedExtend;
+	public function getUserDefinedExtend(): array {
+		return $this->userDefinedExtend ?? [];
 	}
 
 	/**
@@ -218,8 +218,8 @@ class VerwaltungTechn {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): ?array {
-		return $this->userDefinedSimplefield;
+	public function getUserDefinedSimplefield(): array {
+		return $this->userDefinedSimplefield ?? [];
 	}
 
 	/**

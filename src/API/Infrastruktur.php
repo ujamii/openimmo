@@ -72,8 +72,8 @@ class Infrastruktur {
 	 *
 	 * @return array
 	 */
-	public function getDistanzen(): ?array {
-		return $this->distanzen;
+	public function getDistanzen(): array {
+		return $this->distanzen ?? [];
 	}
 
 	/**
@@ -81,8 +81,8 @@ class Infrastruktur {
 	 *
 	 * @return array
 	 */
-	public function getDistanzenSport(): ?array {
-		return $this->distanzenSport;
+	public function getDistanzenSport(): array {
+		return $this->distanzenSport ?? [];
 	}
 
 	/**
@@ -90,8 +90,8 @@ class Infrastruktur {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedAnyfield(): ?array {
-		return $this->userDefinedAnyfield;
+	public function getUserDefinedAnyfield(): array {
+		return $this->userDefinedAnyfield ?? [];
 	}
 
 	/**
@@ -99,8 +99,8 @@ class Infrastruktur {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedExtend(): ?array {
-		return $this->userDefinedExtend;
+	public function getUserDefinedExtend(): array {
+		return $this->userDefinedExtend ?? [];
 	}
 
 	/**
@@ -108,8 +108,8 @@ class Infrastruktur {
 	 *
 	 * @return array
 	 */
-	public function getUserDefinedSimplefield(): ?array {
-		return $this->userDefinedSimplefield;
+	public function getUserDefinedSimplefield(): array {
+		return $this->userDefinedSimplefield ?? [];
 	}
 
 	/**
