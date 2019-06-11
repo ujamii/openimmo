@@ -222,6 +222,7 @@ class ApiGenerator
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
         $type          = $this->extractPhpType($attribute->getType());
         $type          = $this->getValidType($type, $classProperty, $class);
+        $nullable      = true;
 
         // this has been set in getValidType already (including format)
         if ($type != '\DateTime') {
@@ -239,6 +240,9 @@ class ApiGenerator
         // on some very few places, there are comments in the xsd file
         if ($attribute->getUse() != '') {
             $classProperty->setDescription($attribute->getUse());
+            if ($attribute->getUse() === 'required') {
+                $nullable = false;
+            }
         }
 
         $this->parseRestriction(
@@ -250,7 +254,7 @@ class ApiGenerator
 
         $class->setProperty($classProperty);
 
-        self::generateGetterAndSetter($classProperty, $class);
+        self::generateGetterAndSetter($classProperty, $class, true, $nullable);
     }
 
     /**
