@@ -429,7 +429,7 @@ class ApiGenerator
      */
     public static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true, $nullable = true)
     {
-        self::generateSetter($property, $class, $fluentApi);
+        self::generateSetter($property, $class, $fluentApi, $nullable);
         self::generateGetter($property, $class, $nullable);
     }
 
@@ -501,13 +501,15 @@ class ApiGenerator
     /**
      * @param PhpProperty $property
      * @param PhpClass $class
-     * @param $fluentApi
+     * @param bool $fluentApi
+     * @param bool $nullable
      */
-    public static function generateSetter(PhpProperty $property, PhpClass $class, $fluentApi): void
+    public static function generateSetter(PhpProperty $property, PhpClass $class, bool $fluentApi, bool $nullable): void
     {
         $setter = PhpMethod::create('set' . ucfirst($property->getName()));
         $setter->addParameter(PhpParameter::create($property->getName())
                                           ->setType(substr($property->getType(), -2) == '[]' ? 'array' : $property->getType())
+                                          ->setNullable(substr($property->getType(), -2) == '[]' ? false : $nullable)
                                           ->setDescription('Setter for ' . $property->getName())
         );
         $setterCode = '$this->' . $property->getName() . ' = $' . $property->getName() . ';';
