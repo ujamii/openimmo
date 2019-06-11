@@ -175,6 +175,11 @@ class ApiGenerator
             $propertyType = $this->extractPhpType($property->getType());;
         }
 
+        $nullable = false;
+        if ($property->getMin() === 0) {
+            $nullable = true;
+        }
+
         // take min/max into account, as this may be an array instead
         if ($property->getMax() == -1) {
             $propertyType .= '[]';
@@ -204,7 +209,7 @@ class ApiGenerator
 
         $class->setProperty($classProperty);
 
-        self::generateGetterAndSetter($classProperty, $class);
+        self::generateGetterAndSetter($classProperty, $class, true, $nullable);
     }
 
     /**
@@ -416,11 +421,12 @@ class ApiGenerator
      * @param PhpProperty $property
      * @param PhpClass $class
      * @param bool $fluentApi
+     * @param bool $nullable
      */
-    public static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true)
+    public static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true, $nullable = true)
     {
         self::generateSetter($property, $class, $fluentApi);
-        self::generateGetter($property, $class);
+        self::generateGetter($property, $class, $nullable);
     }
 
     /**
@@ -467,8 +473,9 @@ class ApiGenerator
     /**
      * @param PhpProperty $property
      * @param PhpClass $class
+     * @param bool $nullable
      */
-    public static function generateGetter(PhpProperty $property, PhpClass $class): void
+    public static function generateGetter(PhpProperty $property, PhpClass $class, bool $nullable): void
     {
         $returnsArray = substr($property->getType(), -2) == '[]';
         $getter       = PhpMethod::create('get' . ucfirst($property->getName()));
@@ -482,7 +489,7 @@ class ApiGenerator
             $getterCode   = 'return $this->' . $property->getName() . ';';
             $getter->setBody($getterCode);
             $getter->setType($returnsArray ? 'array' : $property->getType());
-            $getter->setNullable(true);
+            $getter->setNullable($nullable);
 	}
         $class->setMethod($getter);
     }
