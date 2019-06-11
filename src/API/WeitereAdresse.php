@@ -223,7 +223,7 @@ class WeitereAdresse {
 	/**
 	 * @return string
 	 */
-	public function getAdressart(): ?string {
+	public function getAdressart(): string {
 		return $this->adressart;
 	}
 

@@ -73,7 +73,7 @@ class DistanzenSport {
 	/**
 	 * @return string
 	 */
-	public function getDistanzZuSport(): ?string {
+	public function getDistanzZuSport(): string {
 		return $this->distanzZuSport;
 	}
 

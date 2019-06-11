@@ -65,7 +65,7 @@ class Vermarktungsart {
 	/**
 	 * @return boolean
 	 */
-	public function getKauf(): ?bool {
+	public function getKauf(): bool {
 		return $this->kauf;
 	}
 
@@ -79,7 +79,7 @@ class Vermarktungsart {
 	/**
 	 * @return boolean
 	 */
-	public function getMietePacht(): ?bool {
+	public function getMietePacht(): bool {
 		return $this->mietePacht;
 	}
 

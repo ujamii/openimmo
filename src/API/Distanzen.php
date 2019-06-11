@@ -101,7 +101,7 @@ class Distanzen {
 	/**
 	 * @return string
 	 */
-	public function getDistanzZu(): ?string {
+	public function getDistanzZu(): string {
 		return $this->distanzZu;
 	}
 

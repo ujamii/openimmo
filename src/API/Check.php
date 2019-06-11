@@ -56,7 +56,7 @@ class Check {
 	/**
 	 * @return string
 	 */
-	public function getCtype(): ?string {
+	public function getCtype(): string {
 		return $this->ctype;
 	}
 

@@ -29,7 +29,7 @@ class Master {
 	/**
 	 * @return boolean
 	 */
-	public function getVisible(): ?bool {
+	public function getVisible(): bool {
 		return $this->visible;
 	}
 

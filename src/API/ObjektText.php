@@ -26,7 +26,7 @@ class ObjektText {
 	/**
 	 * @return string
 	 */
-	public function getLang(): ?string {
+	public function getLang(): string {
 		return $this->lang;
 	}
 

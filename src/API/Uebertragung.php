@@ -129,7 +129,7 @@ class Uebertragung {
 	/**
 	 * @return string
 	 */
-	public function getArt(): ?string {
+	public function getArt(): string {
 		return $this->art;
 	}
 
@@ -150,14 +150,14 @@ class Uebertragung {
 	/**
 	 * @return string
 	 */
-	public function getSendersoftware(): ?string {
+	public function getSendersoftware(): string {
 		return $this->sendersoftware;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getSenderversion(): ?string {
+	public function getSenderversion(): string {
 		return $this->senderversion;
 	}
 
@@ -178,14 +178,14 @@ class Uebertragung {
 	/**
 	 * @return string
 	 */
-	public function getUmfang(): ?string {
+	public function getUmfang(): string {
 		return $this->umfang;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getVersion(): ?string {
+	public function getVersion(): string {
 		return $this->version;
 	}
 

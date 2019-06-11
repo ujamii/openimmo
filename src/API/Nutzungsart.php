@@ -65,7 +65,7 @@ class Nutzungsart {
 	/**
 	 * @return boolean
 	 */
-	public function getGewerbe(): ?bool {
+	public function getGewerbe(): bool {
 		return $this->gewerbe;
 	}
 
@@ -79,7 +79,7 @@ class Nutzungsart {
 	/**
 	 * @return boolean
 	 */
-	public function getWohnen(): ?bool {
+	public function getWohnen(): bool {
 		return $this->wohnen;
 	}
 
