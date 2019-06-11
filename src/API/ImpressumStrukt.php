@@ -76,70 +76,70 @@ class ImpressumStrukt {
 	/**
 	 * @return string
 	 */
-	public function getBerufsaufsichtsbehoerde(): ?string {
+	public function getBerufsaufsichtsbehoerde(): string {
 		return $this->berufsaufsichtsbehoerde;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFirmenanschrift(): ?string {
+	public function getFirmenanschrift(): string {
 		return $this->firmenanschrift;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFirmenname(): ?string {
+	public function getFirmenname(): string {
 		return $this->firmenname;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getHandelsregister(): ?string {
+	public function getHandelsregister(): string {
 		return $this->handelsregister;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getHandelsregisterNr(): ?string {
+	public function getHandelsregisterNr(): string {
 		return $this->handelsregisterNr;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getSteuernummer(): ?string {
+	public function getSteuernummer(): string {
 		return $this->steuernummer;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getTelefon(): ?string {
+	public function getTelefon(): string {
 		return $this->telefon;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getUmsstId(): ?string {
+	public function getUmsstId(): string {
 		return $this->umsstId;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getVertretungsberechtigter(): ?string {
+	public function getVertretungsberechtigter(): string {
 		return $this->vertretungsberechtigter;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getWeiteres(): ?string {
+	public function getWeiteres(): string {
 		return $this->weiteres;
 	}
 

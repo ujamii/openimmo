@@ -53,7 +53,7 @@ class Openimmo {
 	/**
 	 * @return Uebertragung
 	 */
-	public function getUebertragung(): ?Uebertragung {
+	public function getUebertragung(): Uebertragung {
 		return $this->uebertragung;
 	}
 

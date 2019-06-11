@@ -147,14 +147,14 @@ class Anhang {
 	/**
 	 * @return Daten
 	 */
-	public function getDaten(): ?Daten {
+	public function getDaten(): Daten {
 		return $this->daten;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFormat(): ?string {
+	public function getFormat(): string {
 		return $this->format;
 	}
 

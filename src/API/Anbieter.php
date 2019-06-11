@@ -101,7 +101,7 @@ class Anbieter {
 	/**
 	 * @return string
 	 */
-	public function getFirma(): ?string {
+	public function getFirma(): string {
 		return $this->firma;
 	}
 
@@ -138,7 +138,7 @@ class Anbieter {
 	/**
 	 * @return string
 	 */
-	public function getOpenimmoAnid(): ?string {
+	public function getOpenimmoAnid(): string {
 		return $this->openimmoAnid;
 	}
 

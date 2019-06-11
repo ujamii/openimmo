@@ -55,14 +55,14 @@ class Objektkategorie {
 	/**
 	 * @return Nutzungsart
 	 */
-	public function getNutzungsart(): ?Nutzungsart {
+	public function getNutzungsart(): Nutzungsart {
 		return $this->nutzungsart;
 	}
 
 	/**
 	 * @return Objektart
 	 */
-	public function getObjektart(): ?Objektart {
+	public function getObjektart(): Objektart {
 		return $this->objektart;
 	}
 
@@ -96,7 +96,7 @@ class Objektkategorie {
 	/**
 	 * @return Vermarktungsart
 	 */
-	public function getVermarktungsart(): ?Vermarktungsart {
+	public function getVermarktungsart(): Vermarktungsart {
 		return $this->vermarktungsart;
 	}
 

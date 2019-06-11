@@ -121,7 +121,7 @@ class VerwaltungTechn {
 	/**
 	 * @return Aktion
 	 */
-	public function getAktion(): ?Aktion {
+	public function getAktion(): Aktion {
 		return $this->aktion;
 	}
 
@@ -163,7 +163,7 @@ class VerwaltungTechn {
 	/**
 	 * @return string
 	 */
-	public function getObjektnrExtern(): ?string {
+	public function getObjektnrExtern(): string {
 		return $this->objektnrExtern;
 	}
 
@@ -177,7 +177,7 @@ class VerwaltungTechn {
 	/**
 	 * @return string
 	 */
-	public function getOpenimmoObid(): ?string {
+	public function getOpenimmoObid(): string {
 		return $this->openimmoObid;
 	}
 
@@ -191,7 +191,7 @@ class VerwaltungTechn {
 	/**
 	 * @return \DateTime
 	 */
-	public function getStandVom(): ?\DateTime {
+	public function getStandVom(): \DateTime {
 		return $this->standVom;
 	}
 

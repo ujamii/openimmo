@@ -177,7 +177,7 @@ class Immobilie {
 	/**
 	 * @return Geo
 	 */
-	public function getGeo(): ?Geo {
+	public function getGeo(): Geo {
 		return $this->geo;
 	}
 
@@ -191,14 +191,14 @@ class Immobilie {
 	/**
 	 * @return Kontaktperson
 	 */
-	public function getKontaktperson(): ?Kontaktperson {
+	public function getKontaktperson(): Kontaktperson {
 		return $this->kontaktperson;
 	}
 
 	/**
 	 * @return Objektkategorie
 	 */
-	public function getObjektkategorie(): ?Objektkategorie {
+	public function getObjektkategorie(): Objektkategorie {
 		return $this->objektkategorie;
 	}
 
@@ -253,7 +253,7 @@ class Immobilie {
 	/**
 	 * @return VerwaltungTechn
 	 */
-	public function getVerwaltungTechn(): ?VerwaltungTechn {
+	public function getVerwaltungTechn(): VerwaltungTechn {
 		return $this->verwaltungTechn;
 	}
 
