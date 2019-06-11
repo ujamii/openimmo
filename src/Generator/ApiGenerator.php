@@ -472,13 +472,18 @@ class ApiGenerator
     {
         $returnsArray = substr($property->getType(), -2) == '[]';
         $getter       = PhpMethod::create('get' . ucfirst($property->getName()));
-        $getterCode   = 'return $this->' . $property->getName() . ';';
-        $getter->setBody($getterCode);
-        $getter->setType($returnsArray ? 'array' : $property->getType());
-        $getter->setNullable(true);
         if ($returnsArray) {
+            $getterCode   = 'return $this->' . $property->getName() . ' ?? [];';
+            $getter->setBody($getterCode);
+            $getter->setType('array');
             $getter->setDescription('Returns array of ' . str_replace('[]', '', $property->getType()));
-        }
+            $getter->setNullable(false);
+        } else {
+            $getterCode   = 'return $this->' . $property->getName() . ';';
+            $getter->setBody($getterCode);
+            $getter->setType($returnsArray ? 'array' : $property->getType());
+            $getter->setNullable(true);
+	}
         $class->setMethod($getter);
     }
 
