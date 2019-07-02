@@ -72,7 +72,7 @@ class Objektart {
 
 	/**
 	 * @XmlList(inline = true, entry = "objektart_zusatz") 
-	 * @Type("string") 
+	 * @Type("array<string>") 
 	 * @var string[]
 	 */
 	protected $objektartZusatz;

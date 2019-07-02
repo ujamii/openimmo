@@ -15,7 +15,7 @@ class UserDefinedExtend {
 
 	/**
 	 * @XmlList(inline = true, entry = "feld") 
-	 * @Type("string") 
+	 * @Type("array<string>") 
 	 * @var string[]
 	 */
 	protected $feld;

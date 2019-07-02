@@ -410,13 +410,13 @@ class ApiGenerator
             default:
                 $ns   = 'Ujamii\\OpenImmo\\API\\';
                 $type = $ns . $singular;
-                if ($isPlural) {
-                    $type = 'array<' . $type . '>';
-                }
                 break;
 
         }
 
+        if ($isPlural) {
+            $type = 'array<' . $type . '>';
+        }
 
         return $type;
     }
