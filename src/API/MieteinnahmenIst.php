@@ -60,14 +60,14 @@ class MieteinnahmenIst {
 	/**
 	 * @return string
 	 */
-	public function getPeriode(): string {
+	public function getPeriode(): ?string {
 		return $this->periode;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 
@@ -75,7 +75,7 @@ class MieteinnahmenIst {
 	 * @param string $periode Setter for periode
 	 * @return MieteinnahmenIst
 	 */
-	public function setPeriode(string $periode) {
+	public function setPeriode(?string $periode) {
 		$this->periode = $periode;
 		return $this;
 	}
@@ -84,7 +84,7 @@ class MieteinnahmenIst {
 	 * @param float $value Setter for value
 	 * @return MieteinnahmenIst
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

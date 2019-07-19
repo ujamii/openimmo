@@ -43,14 +43,14 @@ class Sonstigemietenetto {
 	/**
 	 * @return float
 	 */
-	public function getSonstigemieteust(): float {
+	public function getSonstigemieteust(): ?float {
 		return $this->sonstigemieteust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 
@@ -58,7 +58,7 @@ class Sonstigemietenetto {
 	 * @param float $sonstigemieteust Setter for sonstigemieteust
 	 * @return Sonstigemietenetto
 	 */
-	public function setSonstigemieteust(float $sonstigemieteust) {
+	public function setSonstigemieteust(?float $sonstigemieteust) {
 		$this->sonstigemieteust = $sonstigemieteust;
 		return $this;
 	}
@@ -67,7 +67,7 @@ class Sonstigemietenetto {
 	 * @param float $value Setter for value
 	 * @return Sonstigemietenetto
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

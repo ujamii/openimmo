@@ -15,7 +15,7 @@ class UserDefinedExtend {
 
 	/**
 	 * @XmlList(inline = true, entry = "feld") 
-	 * @Type("string") 
+	 * @Type("array<string>") 
 	 * @var string[]
 	 */
 	protected $feld;
@@ -26,7 +26,7 @@ class UserDefinedExtend {
 	 * @return array
 	 */
 	public function getFeld(): array {
-		return $this->feld;
+		return $this->feld ?? [];
 	}
 
 	/**

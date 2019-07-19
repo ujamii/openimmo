@@ -91,7 +91,7 @@ class Zustand {
 	/**
 	 * @return string
 	 */
-	public function getZustandArt(): string {
+	public function getZustandArt(): ?string {
 		return $this->zustandArt;
 	}
 
@@ -99,7 +99,7 @@ class Zustand {
 	 * @param string $zustandArt Setter for zustandArt
 	 * @return Zustand
 	 */
-	public function setZustandArt(string $zustandArt) {
+	public function setZustandArt(?string $zustandArt) {
 		$this->zustandArt = $zustandArt;
 		return $this;
 	}

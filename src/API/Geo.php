@@ -163,133 +163,133 @@ class Geo {
 	/**
 	 * @return int
 	 */
-	public function getAnzahlEtagen(): int {
+	public function getAnzahlEtagen(): ?int {
 		return $this->anzahlEtagen;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getBundesland(): string {
+	public function getBundesland(): ?string {
 		return $this->bundesland;
 	}
 
 	/**
 	 * @return int
 	 */
-	public function getEtage(): int {
+	public function getEtage(): ?int {
 		return $this->etage;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFlur(): string {
+	public function getFlur(): ?string {
 		return $this->flur;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getFlurstueck(): string {
+	public function getFlurstueck(): ?string {
 		return $this->flurstueck;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGemarkung(): string {
+	public function getGemarkung(): ?string {
 		return $this->gemarkung;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGemeindecode(): string {
+	public function getGemeindecode(): ?string {
 		return $this->gemeindecode;
 	}
 
 	/**
 	 * @return Geokoordinaten
 	 */
-	public function getGeokoordinaten(): Geokoordinaten {
+	public function getGeokoordinaten(): ?Geokoordinaten {
 		return $this->geokoordinaten;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getHausnummer(): string {
+	public function getHausnummer(): ?string {
 		return $this->hausnummer;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKartenMakro(): bool {
+	public function getKartenMakro(): ?bool {
 		return $this->kartenMakro;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKartenMikro(): bool {
+	public function getKartenMikro(): ?bool {
 		return $this->kartenMikro;
 	}
 
 	/**
 	 * @return LageGebiet
 	 */
-	public function getLageGebiet(): LageGebiet {
+	public function getLageGebiet(): ?LageGebiet {
 		return $this->lageGebiet;
 	}
 
 	/**
 	 * @return LageImBau
 	 */
-	public function getLageImBau(): LageImBau {
+	public function getLageImBau(): ?LageImBau {
 		return $this->lageImBau;
 	}
 
 	/**
 	 * @return Land
 	 */
-	public function getLand(): Land {
+	public function getLand(): ?Land {
 		return $this->land;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getLuftbildern(): bool {
+	public function getLuftbildern(): ?bool {
 		return $this->luftbildern;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getOrt(): string {
+	public function getOrt(): ?string {
 		return $this->ort;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getPlz(): string {
+	public function getPlz(): ?string {
 		return $this->plz;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getRegionalerZusatz(): string {
+	public function getRegionalerZusatz(): ?string {
 		return $this->regionalerZusatz;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getStrasse(): string {
+	public function getStrasse(): ?string {
 		return $this->strasse;
 	}
 
@@ -299,7 +299,7 @@ class Geo {
 	 * @return array
 	 */
 	public function getUserDefinedAnyfield(): array {
-		return $this->userDefinedAnyfield;
+		return $this->userDefinedAnyfield ?? [];
 	}
 
 	/**
@@ -308,7 +308,7 @@ class Geo {
 	 * @return array
 	 */
 	public function getUserDefinedExtend(): array {
-		return $this->userDefinedExtend;
+		return $this->userDefinedExtend ?? [];
 	}
 
 	/**
@@ -317,20 +317,20 @@ class Geo {
 	 * @return array
 	 */
 	public function getUserDefinedSimplefield(): array {
-		return $this->userDefinedSimplefield;
+		return $this->userDefinedSimplefield ?? [];
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getVirtuelletour(): bool {
+	public function getVirtuelletour(): ?bool {
 		return $this->virtuelletour;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getWohnungsnr(): string {
+	public function getWohnungsnr(): ?string {
 		return $this->wohnungsnr;
 	}
 
@@ -338,7 +338,7 @@ class Geo {
 	 * @param int $anzahlEtagen Setter for anzahlEtagen
 	 * @return Geo
 	 */
-	public function setAnzahlEtagen(int $anzahlEtagen) {
+	public function setAnzahlEtagen(?int $anzahlEtagen) {
 		$this->anzahlEtagen = $anzahlEtagen;
 		return $this;
 	}
@@ -347,7 +347,7 @@ class Geo {
 	 * @param string $bundesland Setter for bundesland
 	 * @return Geo
 	 */
-	public function setBundesland(string $bundesland) {
+	public function setBundesland(?string $bundesland) {
 		$this->bundesland = $bundesland;
 		return $this;
 	}
@@ -356,7 +356,7 @@ class Geo {
 	 * @param int $etage Setter for etage
 	 * @return Geo
 	 */
-	public function setEtage(int $etage) {
+	public function setEtage(?int $etage) {
 		$this->etage = $etage;
 		return $this;
 	}
@@ -365,7 +365,7 @@ class Geo {
 	 * @param string $flur Setter for flur
 	 * @return Geo
 	 */
-	public function setFlur(string $flur) {
+	public function setFlur(?string $flur) {
 		$this->flur = $flur;
 		return $this;
 	}
@@ -374,7 +374,7 @@ class Geo {
 	 * @param string $flurstueck Setter for flurstueck
 	 * @return Geo
 	 */
-	public function setFlurstueck(string $flurstueck) {
+	public function setFlurstueck(?string $flurstueck) {
 		$this->flurstueck = $flurstueck;
 		return $this;
 	}
@@ -383,7 +383,7 @@ class Geo {
 	 * @param string $gemarkung Setter for gemarkung
 	 * @return Geo
 	 */
-	public function setGemarkung(string $gemarkung) {
+	public function setGemarkung(?string $gemarkung) {
 		$this->gemarkung = $gemarkung;
 		return $this;
 	}
@@ -392,7 +392,7 @@ class Geo {
 	 * @param string $gemeindecode Setter for gemeindecode
 	 * @return Geo
 	 */
-	public function setGemeindecode(string $gemeindecode) {
+	public function setGemeindecode(?string $gemeindecode) {
 		$this->gemeindecode = $gemeindecode;
 		return $this;
 	}
@@ -401,7 +401,7 @@ class Geo {
 	 * @param Geokoordinaten $geokoordinaten Setter for geokoordinaten
 	 * @return Geo
 	 */
-	public function setGeokoordinaten(Geokoordinaten $geokoordinaten) {
+	public function setGeokoordinaten(?Geokoordinaten $geokoordinaten) {
 		$this->geokoordinaten = $geokoordinaten;
 		return $this;
 	}
@@ -410,7 +410,7 @@ class Geo {
 	 * @param string $hausnummer Setter for hausnummer
 	 * @return Geo
 	 */
-	public function setHausnummer(string $hausnummer) {
+	public function setHausnummer(?string $hausnummer) {
 		$this->hausnummer = $hausnummer;
 		return $this;
 	}
@@ -419,7 +419,7 @@ class Geo {
 	 * @param boolean $kartenMakro Setter for kartenMakro
 	 * @return Geo
 	 */
-	public function setKartenMakro(bool $kartenMakro) {
+	public function setKartenMakro(?bool $kartenMakro) {
 		$this->kartenMakro = $kartenMakro;
 		return $this;
 	}
@@ -428,7 +428,7 @@ class Geo {
 	 * @param boolean $kartenMikro Setter for kartenMikro
 	 * @return Geo
 	 */
-	public function setKartenMikro(bool $kartenMikro) {
+	public function setKartenMikro(?bool $kartenMikro) {
 		$this->kartenMikro = $kartenMikro;
 		return $this;
 	}
@@ -437,7 +437,7 @@ class Geo {
 	 * @param LageGebiet $lageGebiet Setter for lageGebiet
 	 * @return Geo
 	 */
-	public function setLageGebiet(LageGebiet $lageGebiet) {
+	public function setLageGebiet(?LageGebiet $lageGebiet) {
 		$this->lageGebiet = $lageGebiet;
 		return $this;
 	}
@@ -446,7 +446,7 @@ class Geo {
 	 * @param LageImBau $lageImBau Setter for lageImBau
 	 * @return Geo
 	 */
-	public function setLageImBau(LageImBau $lageImBau) {
+	public function setLageImBau(?LageImBau $lageImBau) {
 		$this->lageImBau = $lageImBau;
 		return $this;
 	}
@@ -455,7 +455,7 @@ class Geo {
 	 * @param Land $land Setter for land
 	 * @return Geo
 	 */
-	public function setLand(Land $land) {
+	public function setLand(?Land $land) {
 		$this->land = $land;
 		return $this;
 	}
@@ -464,7 +464,7 @@ class Geo {
 	 * @param boolean $luftbildern Setter for luftbildern
 	 * @return Geo
 	 */
-	public function setLuftbildern(bool $luftbildern) {
+	public function setLuftbildern(?bool $luftbildern) {
 		$this->luftbildern = $luftbildern;
 		return $this;
 	}
@@ -473,7 +473,7 @@ class Geo {
 	 * @param string $ort Setter for ort
 	 * @return Geo
 	 */
-	public function setOrt(string $ort) {
+	public function setOrt(?string $ort) {
 		$this->ort = $ort;
 		return $this;
 	}
@@ -482,7 +482,7 @@ class Geo {
 	 * @param string $plz Setter for plz
 	 * @return Geo
 	 */
-	public function setPlz(string $plz) {
+	public function setPlz(?string $plz) {
 		$this->plz = $plz;
 		return $this;
 	}
@@ -491,7 +491,7 @@ class Geo {
 	 * @param string $regionalerZusatz Setter for regionalerZusatz
 	 * @return Geo
 	 */
-	public function setRegionalerZusatz(string $regionalerZusatz) {
+	public function setRegionalerZusatz(?string $regionalerZusatz) {
 		$this->regionalerZusatz = $regionalerZusatz;
 		return $this;
 	}
@@ -500,7 +500,7 @@ class Geo {
 	 * @param string $strasse Setter for strasse
 	 * @return Geo
 	 */
-	public function setStrasse(string $strasse) {
+	public function setStrasse(?string $strasse) {
 		$this->strasse = $strasse;
 		return $this;
 	}
@@ -536,7 +536,7 @@ class Geo {
 	 * @param boolean $virtuelletour Setter for virtuelletour
 	 * @return Geo
 	 */
-	public function setVirtuelletour(bool $virtuelletour) {
+	public function setVirtuelletour(?bool $virtuelletour) {
 		$this->virtuelletour = $virtuelletour;
 		return $this;
 	}
@@ -545,7 +545,7 @@ class Geo {
 	 * @param string $wohnungsnr Setter for wohnungsnr
 	 * @return Geo
 	 */
-	public function setWohnungsnr(string $wohnungsnr) {
+	public function setWohnungsnr(?string $wohnungsnr) {
 		$this->wohnungsnr = $wohnungsnr;
 		return $this;
 	}

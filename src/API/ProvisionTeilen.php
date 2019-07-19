@@ -39,7 +39,7 @@ class ProvisionTeilen {
 	/**
 	 * @return string
 	 */
-	public function getWert(): string {
+	public function getWert(): ?string {
 		return $this->wert;
 	}
 
@@ -47,7 +47,7 @@ class ProvisionTeilen {
 	 * @param string $wert Setter for wert
 	 * @return ProvisionTeilen
 	 */
-	public function setWert(string $wert) {
+	public function setWert(?string $wert) {
 		$this->wert = $wert;
 		return $this;
 	}

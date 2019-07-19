@@ -35,14 +35,14 @@ class BreitbandZugang {
 	/**
 	 * @return string
 	 */
-	public function getArt(): string {
+	public function getArt(): ?string {
 		return $this->art;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getSpeed(): float {
+	public function getSpeed(): ?float {
 		return $this->speed;
 	}
 
@@ -50,7 +50,7 @@ class BreitbandZugang {
 	 * @param string $art Setter for art
 	 * @return BreitbandZugang
 	 */
-	public function setArt(string $art) {
+	public function setArt(?string $art) {
 		$this->art = $art;
 		return $this;
 	}
@@ -59,7 +59,7 @@ class BreitbandZugang {
 	 * @param float $speed Setter for speed
 	 * @return BreitbandZugang
 	 */
-	public function setSpeed(float $speed) {
+	public function setSpeed(?float $speed) {
 		$this->speed = $speed;
 		return $this;
 	}

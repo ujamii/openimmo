@@ -43,14 +43,14 @@ class Kaufpreisnetto {
 	/**
 	 * @return float
 	 */
-	public function getKaufpreisust(): float {
+	public function getKaufpreisust(): ?float {
 		return $this->kaufpreisust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 
@@ -58,7 +58,7 @@ class Kaufpreisnetto {
 	 * @param float $kaufpreisust Setter for kaufpreisust
 	 * @return Kaufpreisnetto
 	 */
-	public function setKaufpreisust(float $kaufpreisust) {
+	public function setKaufpreisust(?float $kaufpreisust) {
 		$this->kaufpreisust = $kaufpreisust;
 		return $this;
 	}
@@ -67,7 +67,7 @@ class Kaufpreisnetto {
 	 * @param float $value Setter for value
 	 * @return Kaufpreisnetto
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

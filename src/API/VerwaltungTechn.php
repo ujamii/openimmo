@@ -128,35 +128,35 @@ class VerwaltungTechn {
 	/**
 	 * @return \DateTime
 	 */
-	public function getAktivBis(): \DateTime {
+	public function getAktivBis(): ?\DateTime {
 		return $this->aktivBis;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getAktivVon(): \DateTime {
+	public function getAktivVon(): ?\DateTime {
 		return $this->aktivVon;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getGruppenKennung(): string {
+	public function getGruppenKennung(): ?string {
 		return $this->gruppenKennung;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getKennungUrsprung(): string {
+	public function getKennungUrsprung(): ?string {
 		return $this->kennungUrsprung;
 	}
 
 	/**
 	 * @return Master
 	 */
-	public function getMaster(): Master {
+	public function getMaster(): ?Master {
 		return $this->master;
 	}
 
@@ -170,7 +170,7 @@ class VerwaltungTechn {
 	/**
 	 * @return string
 	 */
-	public function getObjektnrIntern(): string {
+	public function getObjektnrIntern(): ?string {
 		return $this->objektnrIntern;
 	}
 
@@ -184,7 +184,7 @@ class VerwaltungTechn {
 	/**
 	 * @return string
 	 */
-	public function getSprache(): string {
+	public function getSprache(): ?string {
 		return $this->sprache;
 	}
 
@@ -201,7 +201,7 @@ class VerwaltungTechn {
 	 * @return array
 	 */
 	public function getUserDefinedAnyfield(): array {
-		return $this->userDefinedAnyfield;
+		return $this->userDefinedAnyfield ?? [];
 	}
 
 	/**
@@ -210,7 +210,7 @@ class VerwaltungTechn {
 	 * @return array
 	 */
 	public function getUserDefinedExtend(): array {
-		return $this->userDefinedExtend;
+		return $this->userDefinedExtend ?? [];
 	}
 
 	/**
@@ -219,27 +219,27 @@ class VerwaltungTechn {
 	 * @return array
 	 */
 	public function getUserDefinedSimplefield(): array {
-		return $this->userDefinedSimplefield;
+		return $this->userDefinedSimplefield ?? [];
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWeitergabeGenerell(): bool {
+	public function getWeitergabeGenerell(): ?bool {
 		return $this->weitergabeGenerell;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getWeitergabeNegativ(): string {
+	public function getWeitergabeNegativ(): ?string {
 		return $this->weitergabeNegativ;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getWeitergabePositiv(): string {
+	public function getWeitergabePositiv(): ?string {
 		return $this->weitergabePositiv;
 	}
 
@@ -256,7 +256,7 @@ class VerwaltungTechn {
 	 * @param \DateTime $aktivBis Setter for aktivBis
 	 * @return VerwaltungTechn
 	 */
-	public function setAktivBis(\DateTime $aktivBis) {
+	public function setAktivBis(?\DateTime $aktivBis) {
 		$this->aktivBis = $aktivBis;
 		return $this;
 	}
@@ -265,7 +265,7 @@ class VerwaltungTechn {
 	 * @param \DateTime $aktivVon Setter for aktivVon
 	 * @return VerwaltungTechn
 	 */
-	public function setAktivVon(\DateTime $aktivVon) {
+	public function setAktivVon(?\DateTime $aktivVon) {
 		$this->aktivVon = $aktivVon;
 		return $this;
 	}
@@ -274,7 +274,7 @@ class VerwaltungTechn {
 	 * @param string $gruppenKennung Setter for gruppenKennung
 	 * @return VerwaltungTechn
 	 */
-	public function setGruppenKennung(string $gruppenKennung) {
+	public function setGruppenKennung(?string $gruppenKennung) {
 		$this->gruppenKennung = $gruppenKennung;
 		return $this;
 	}
@@ -283,7 +283,7 @@ class VerwaltungTechn {
 	 * @param string $kennungUrsprung Setter for kennungUrsprung
 	 * @return VerwaltungTechn
 	 */
-	public function setKennungUrsprung(string $kennungUrsprung) {
+	public function setKennungUrsprung(?string $kennungUrsprung) {
 		$this->kennungUrsprung = $kennungUrsprung;
 		return $this;
 	}
@@ -292,7 +292,7 @@ class VerwaltungTechn {
 	 * @param Master $master Setter for master
 	 * @return VerwaltungTechn
 	 */
-	public function setMaster(Master $master) {
+	public function setMaster(?Master $master) {
 		$this->master = $master;
 		return $this;
 	}
@@ -310,7 +310,7 @@ class VerwaltungTechn {
 	 * @param string $objektnrIntern Setter for objektnrIntern
 	 * @return VerwaltungTechn
 	 */
-	public function setObjektnrIntern(string $objektnrIntern) {
+	public function setObjektnrIntern(?string $objektnrIntern) {
 		$this->objektnrIntern = $objektnrIntern;
 		return $this;
 	}
@@ -328,7 +328,7 @@ class VerwaltungTechn {
 	 * @param string $sprache Setter for sprache
 	 * @return VerwaltungTechn
 	 */
-	public function setSprache(string $sprache) {
+	public function setSprache(?string $sprache) {
 		$this->sprache = $sprache;
 		return $this;
 	}
@@ -373,7 +373,7 @@ class VerwaltungTechn {
 	 * @param boolean $weitergabeGenerell Setter for weitergabeGenerell
 	 * @return VerwaltungTechn
 	 */
-	public function setWeitergabeGenerell(bool $weitergabeGenerell) {
+	public function setWeitergabeGenerell(?bool $weitergabeGenerell) {
 		$this->weitergabeGenerell = $weitergabeGenerell;
 		return $this;
 	}
@@ -382,7 +382,7 @@ class VerwaltungTechn {
 	 * @param string $weitergabeNegativ Setter for weitergabeNegativ
 	 * @return VerwaltungTechn
 	 */
-	public function setWeitergabeNegativ(string $weitergabeNegativ) {
+	public function setWeitergabeNegativ(?string $weitergabeNegativ) {
 		$this->weitergabeNegativ = $weitergabeNegativ;
 		return $this;
 	}
@@ -391,7 +391,7 @@ class VerwaltungTechn {
 	 * @param string $weitergabePositiv Setter for weitergabePositiv
 	 * @return VerwaltungTechn
 	 */
-	public function setWeitergabePositiv(string $weitergabePositiv) {
+	public function setWeitergabePositiv(?string $weitergabePositiv) {
 		$this->weitergabePositiv = $weitergabePositiv;
 		return $this;
 	}

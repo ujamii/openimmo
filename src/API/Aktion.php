@@ -41,7 +41,7 @@ class Aktion {
 	/**
 	 * @return string
 	 */
-	public function getAktionart(): string {
+	public function getAktionart(): ?string {
 		return $this->aktionart;
 	}
 
@@ -49,7 +49,7 @@ class Aktion {
 	 * @param string $aktionart Setter for aktionart
 	 * @return Aktion
 	 */
-	public function setAktionart(string $aktionart) {
+	public function setAktionart(?string $aktionart) {
 		$this->aktionart = $aktionart;
 		return $this;
 	}

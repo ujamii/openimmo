@@ -7,7 +7,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Geschlecht
- * Soll das Objekt nur an Frauen bzw. nur an Männer vermietet werden,
+ * Soll das Objekt nur an Frauen bzw. nur an Männer vermietet werden, 
  *  fehlende Angabe wird als 'Ja' interpretiert
  *
  * @package Ujamii\OpenImmo\API
@@ -40,7 +40,7 @@ class Geschlecht {
 	/**
 	 * @return string
 	 */
-	public function getGeschlAttr(): string {
+	public function getGeschlAttr(): ?string {
 		return $this->geschlAttr;
 	}
 
@@ -48,7 +48,7 @@ class Geschlecht {
 	 * @param string $geschlAttr Setter for geschlAttr
 	 * @return Geschlecht
 	 */
-	public function setGeschlAttr(string $geschlAttr) {
+	public function setGeschlAttr(?string $geschlAttr) {
 		$this->geschlAttr = $geschlAttr;
 		return $this;
 	}

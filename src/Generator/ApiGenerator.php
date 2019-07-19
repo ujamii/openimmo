@@ -36,6 +36,7 @@ class ApiGenerator
      */
     protected $generatorConfig = [
         'generateScalarTypeHints' => true,
+        'generateNullableTypes' => true,
         'generateReturnTypeHints' => true
     ];
 
@@ -79,7 +80,10 @@ class ApiGenerator
         $class = new PhpClass();
         $class
             ->setQualifiedName('Ujamii\\OpenImmo\\API\\' . $className)
-            ->setUseStatements(['JMS\Serializer\Annotation\XmlRoot', 'JMS\Serializer\Annotation\Type'])
+            ->setUseStatements([
+                'XmlRoot' => 'JMS\Serializer\Annotation\XmlRoot',
+                'Type' => 'JMS\Serializer\Annotation\Type'
+            ])
             ->setDescription('Class ' . $className . PHP_EOL . $element->getDoc())
             ->getDocblock()
             ->appendTag(TagFactory::create('package', 'Ujamii\OpenImmo\API'))
@@ -171,6 +175,11 @@ class ApiGenerator
             $propertyType = $this->extractPhpType($property->getType());;
         }
 
+        $nullable = false;
+        if ($property->getMin() === 0) {
+            $nullable = true;
+        }
+
         // take min/max into account, as this may be an array instead
         if ($property->getMax() == -1) {
             $propertyType .= '[]';
@@ -200,7 +209,7 @@ class ApiGenerator
 
         $class->setProperty($classProperty);
 
-        self::generateGetterAndSetter($classProperty, $class);
+        self::generateGetterAndSetter($classProperty, $class, true, $nullable);
     }
 
     /**
@@ -213,6 +222,7 @@ class ApiGenerator
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
         $type          = $this->extractPhpType($attribute->getType());
         $type          = $this->getValidType($type, $classProperty, $class);
+        $nullable      = true;
 
         // this has been set in getValidType already (including format)
         if ($type != '\DateTime') {
@@ -230,6 +240,9 @@ class ApiGenerator
         // on some very few places, there are comments in the xsd file
         if ($attribute->getUse() != '') {
             $classProperty->setDescription($attribute->getUse());
+            if ($attribute->getUse() === 'required') {
+                $nullable = false;
+            }
         }
 
         $this->parseRestriction(
@@ -241,7 +254,7 @@ class ApiGenerator
 
         $class->setProperty($classProperty);
 
-        self::generateGetterAndSetter($classProperty, $class);
+        self::generateGetterAndSetter($classProperty, $class, true, $nullable);
     }
 
     /**
@@ -397,13 +410,13 @@ class ApiGenerator
             default:
                 $ns   = 'Ujamii\\OpenImmo\\API\\';
                 $type = $ns . $singular;
-                if ($isPlural) {
-                    $type = 'array<' . $type . '>';
-                }
                 break;
 
         }
 
+        if ($isPlural) {
+            $type = 'array<' . $type . '>';
+        }
 
         return $type;
     }
@@ -412,11 +425,12 @@ class ApiGenerator
      * @param PhpProperty $property
      * @param PhpClass $class
      * @param bool $fluentApi
+     * @param bool $nullable
      */
-    public static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true)
+    public static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true, $nullable = true)
     {
-        self::generateSetter($property, $class, $fluentApi);
-        self::generateGetter($property, $class);
+        self::generateSetter($property, $class, $fluentApi, $nullable);
+        self::generateGetter($property, $class, $nullable);
     }
 
     /**
@@ -463,30 +477,39 @@ class ApiGenerator
     /**
      * @param PhpProperty $property
      * @param PhpClass $class
+     * @param bool $nullable
      */
-    public static function generateGetter(PhpProperty $property, PhpClass $class): void
+    public static function generateGetter(PhpProperty $property, PhpClass $class, bool $nullable): void
     {
         $returnsArray = substr($property->getType(), -2) == '[]';
         $getter       = PhpMethod::create('get' . ucfirst($property->getName()));
-        $getterCode   = 'return $this->' . $property->getName() . ';';
-        $getter->setBody($getterCode);
-        $getter->setType($returnsArray ? 'array' : $property->getType());
         if ($returnsArray) {
+            $getterCode   = 'return $this->' . $property->getName() . ' ?? [];';
+            $getter->setBody($getterCode);
+            $getter->setType('array');
             $getter->setDescription('Returns array of ' . str_replace('[]', '', $property->getType()));
-        }
+            $getter->setNullable(false);
+        } else {
+            $getterCode   = 'return $this->' . $property->getName() . ';';
+            $getter->setBody($getterCode);
+            $getter->setType($returnsArray ? 'array' : $property->getType());
+            $getter->setNullable($nullable);
+	}
         $class->setMethod($getter);
     }
 
     /**
      * @param PhpProperty $property
      * @param PhpClass $class
-     * @param $fluentApi
+     * @param bool $fluentApi
+     * @param bool $nullable
      */
-    public static function generateSetter(PhpProperty $property, PhpClass $class, $fluentApi): void
+    public static function generateSetter(PhpProperty $property, PhpClass $class, bool $fluentApi, bool $nullable): void
     {
         $setter = PhpMethod::create('set' . ucfirst($property->getName()));
         $setter->addParameter(PhpParameter::create($property->getName())
                                           ->setType(substr($property->getType(), -2) == '[]' ? 'array' : $property->getType())
+                                          ->setNullable(substr($property->getType(), -2) == '[]' ? false : $nullable)
                                           ->setDescription('Setter for ' . $property->getName())
         );
         $setterCode = '$this->' . $property->getName() . ' = $' . $property->getName() . ';';

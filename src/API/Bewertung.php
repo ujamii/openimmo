@@ -16,7 +16,7 @@ class Bewertung {
 
 	/**
 	 * @XmlList(inline = true, entry = "feld") 
-	 * @Type("string") 
+	 * @Type("array<string>") 
 	 * @var string[]
 	 */
 	protected $feld;
@@ -27,7 +27,7 @@ class Bewertung {
 	 * @return array
 	 */
 	public function getFeld(): array {
-		return $this->feld;
+		return $this->feld ?? [];
 	}
 
 	/**

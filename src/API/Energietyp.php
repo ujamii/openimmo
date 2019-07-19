@@ -107,63 +107,63 @@ class Energietyp {
 	/**
 	 * @return boolean
 	 */
-	public function getKfw40(): bool {
+	public function getKfw40(): ?bool {
 		return $this->kfw40;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKfw55(): bool {
+	public function getKfw55(): ?bool {
 		return $this->kfw55;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKfw60(): bool {
+	public function getKfw60(): ?bool {
 		return $this->kfw60;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKfw70(): bool {
+	public function getKfw70(): ?bool {
 		return $this->kfw70;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getMinergiebauweise(): bool {
+	public function getMinergiebauweise(): ?bool {
 		return $this->minergiebauweise;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getMinergieZertifiziert(): bool {
+	public function getMinergieZertifiziert(): ?bool {
 		return $this->minergieZertifiziert;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getNeubaustandard(): bool {
+	public function getNeubaustandard(): ?bool {
 		return $this->neubaustandard;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getNiedrigenergie(): bool {
+	public function getNiedrigenergie(): ?bool {
 		return $this->niedrigenergie;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getPassivhaus(): bool {
+	public function getPassivhaus(): ?bool {
 		return $this->passivhaus;
 	}
 
@@ -171,7 +171,7 @@ class Energietyp {
 	 * @param boolean $kfw40 Setter for kfw40
 	 * @return Energietyp
 	 */
-	public function setKfw40(bool $kfw40) {
+	public function setKfw40(?bool $kfw40) {
 		$this->kfw40 = $kfw40;
 		return $this;
 	}
@@ -180,7 +180,7 @@ class Energietyp {
 	 * @param boolean $kfw55 Setter for kfw55
 	 * @return Energietyp
 	 */
-	public function setKfw55(bool $kfw55) {
+	public function setKfw55(?bool $kfw55) {
 		$this->kfw55 = $kfw55;
 		return $this;
 	}
@@ -189,7 +189,7 @@ class Energietyp {
 	 * @param boolean $kfw60 Setter for kfw60
 	 * @return Energietyp
 	 */
-	public function setKfw60(bool $kfw60) {
+	public function setKfw60(?bool $kfw60) {
 		$this->kfw60 = $kfw60;
 		return $this;
 	}
@@ -198,7 +198,7 @@ class Energietyp {
 	 * @param boolean $kfw70 Setter for kfw70
 	 * @return Energietyp
 	 */
-	public function setKfw70(bool $kfw70) {
+	public function setKfw70(?bool $kfw70) {
 		$this->kfw70 = $kfw70;
 		return $this;
 	}
@@ -207,7 +207,7 @@ class Energietyp {
 	 * @param boolean $minergiebauweise Setter for minergiebauweise
 	 * @return Energietyp
 	 */
-	public function setMinergiebauweise(bool $minergiebauweise) {
+	public function setMinergiebauweise(?bool $minergiebauweise) {
 		$this->minergiebauweise = $minergiebauweise;
 		return $this;
 	}
@@ -216,7 +216,7 @@ class Energietyp {
 	 * @param boolean $minergieZertifiziert Setter for minergieZertifiziert
 	 * @return Energietyp
 	 */
-	public function setMinergieZertifiziert(bool $minergieZertifiziert) {
+	public function setMinergieZertifiziert(?bool $minergieZertifiziert) {
 		$this->minergieZertifiziert = $minergieZertifiziert;
 		return $this;
 	}
@@ -225,7 +225,7 @@ class Energietyp {
 	 * @param boolean $neubaustandard Setter for neubaustandard
 	 * @return Energietyp
 	 */
-	public function setNeubaustandard(bool $neubaustandard) {
+	public function setNeubaustandard(?bool $neubaustandard) {
 		$this->neubaustandard = $neubaustandard;
 		return $this;
 	}
@@ -234,7 +234,7 @@ class Energietyp {
 	 * @param boolean $niedrigenergie Setter for niedrigenergie
 	 * @return Energietyp
 	 */
-	public function setNiedrigenergie(bool $niedrigenergie) {
+	public function setNiedrigenergie(?bool $niedrigenergie) {
 		$this->niedrigenergie = $niedrigenergie;
 		return $this;
 	}
@@ -243,7 +243,7 @@ class Energietyp {
 	 * @param boolean $passivhaus Setter for passivhaus
 	 * @return Energietyp
 	 */
-	public function setPassivhaus(bool $passivhaus) {
+	public function setPassivhaus(?bool $passivhaus) {
 		$this->passivhaus = $passivhaus;
 		return $this;
 	}

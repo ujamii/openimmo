@@ -87,14 +87,14 @@ class Anbieter {
 	/**
 	 * @return string
 	 */
-	public function getAnbieternr(): string {
+	public function getAnbieternr(): ?string {
 		return $this->anbieternr;
 	}
 
 	/**
 	 * @return Anhang
 	 */
-	public function getAnhang(): Anhang {
+	public function getAnhang(): ?Anhang {
 		return $this->anhang;
 	}
 
@@ -111,27 +111,27 @@ class Anbieter {
 	 * @return array
 	 */
 	public function getImmobilie(): array {
-		return $this->immobilie;
+		return $this->immobilie ?? [];
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getImpressum(): string {
+	public function getImpressum(): ?string {
 		return $this->impressum;
 	}
 
 	/**
 	 * @return ImpressumStrukt
 	 */
-	public function getImpressumStrukt(): ImpressumStrukt {
+	public function getImpressumStrukt(): ?ImpressumStrukt {
 		return $this->impressumStrukt;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getLizenzkennung(): string {
+	public function getLizenzkennung(): ?string {
 		return $this->lizenzkennung;
 	}
 
@@ -148,7 +148,7 @@ class Anbieter {
 	 * @return array
 	 */
 	public function getUserDefinedAnyfield(): array {
-		return $this->userDefinedAnyfield;
+		return $this->userDefinedAnyfield ?? [];
 	}
 
 	/**
@@ -157,7 +157,7 @@ class Anbieter {
 	 * @return array
 	 */
 	public function getUserDefinedExtend(): array {
-		return $this->userDefinedExtend;
+		return $this->userDefinedExtend ?? [];
 	}
 
 	/**
@@ -166,14 +166,14 @@ class Anbieter {
 	 * @return array
 	 */
 	public function getUserDefinedSimplefield(): array {
-		return $this->userDefinedSimplefield;
+		return $this->userDefinedSimplefield ?? [];
 	}
 
 	/**
 	 * @param string $anbieternr Setter for anbieternr
 	 * @return Anbieter
 	 */
-	public function setAnbieternr(string $anbieternr) {
+	public function setAnbieternr(?string $anbieternr) {
 		$this->anbieternr = $anbieternr;
 		return $this;
 	}
@@ -182,7 +182,7 @@ class Anbieter {
 	 * @param Anhang $anhang Setter for anhang
 	 * @return Anbieter
 	 */
-	public function setAnhang(Anhang $anhang) {
+	public function setAnhang(?Anhang $anhang) {
 		$this->anhang = $anhang;
 		return $this;
 	}
@@ -209,7 +209,7 @@ class Anbieter {
 	 * @param string $impressum Setter for impressum
 	 * @return Anbieter
 	 */
-	public function setImpressum(string $impressum) {
+	public function setImpressum(?string $impressum) {
 		$this->impressum = $impressum;
 		return $this;
 	}
@@ -218,7 +218,7 @@ class Anbieter {
 	 * @param ImpressumStrukt $impressumStrukt Setter for impressumStrukt
 	 * @return Anbieter
 	 */
-	public function setImpressumStrukt(ImpressumStrukt $impressumStrukt) {
+	public function setImpressumStrukt(?ImpressumStrukt $impressumStrukt) {
 		$this->impressumStrukt = $impressumStrukt;
 		return $this;
 	}
@@ -227,7 +227,7 @@ class Anbieter {
 	 * @param string $lizenzkennung Setter for lizenzkennung
 	 * @return Anbieter
 	 */
-	public function setLizenzkennung(string $lizenzkennung) {
+	public function setLizenzkennung(?string $lizenzkennung) {
 		$this->lizenzkennung = $lizenzkennung;
 		return $this;
 	}

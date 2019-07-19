@@ -135,42 +135,42 @@ class Immobilie {
 	/**
 	 * @return Anhaenge
 	 */
-	public function getAnhaenge(): Anhaenge {
+	public function getAnhaenge(): ?Anhaenge {
 		return $this->anhaenge;
 	}
 
 	/**
 	 * @return Ausstattung
 	 */
-	public function getAusstattung(): Ausstattung {
+	public function getAusstattung(): ?Ausstattung {
 		return $this->ausstattung;
 	}
 
 	/**
 	 * @return Bewertung
 	 */
-	public function getBewertung(): Bewertung {
+	public function getBewertung(): ?Bewertung {
 		return $this->bewertung;
 	}
 
 	/**
 	 * @return Bieterverfahren
 	 */
-	public function getBieterverfahren(): Bieterverfahren {
+	public function getBieterverfahren(): ?Bieterverfahren {
 		return $this->bieterverfahren;
 	}
 
 	/**
 	 * @return Flaechen
 	 */
-	public function getFlaechen(): Flaechen {
+	public function getFlaechen(): ?Flaechen {
 		return $this->flaechen;
 	}
 
 	/**
 	 * @return Freitexte
 	 */
-	public function getFreitexte(): Freitexte {
+	public function getFreitexte(): ?Freitexte {
 		return $this->freitexte;
 	}
 
@@ -184,7 +184,7 @@ class Immobilie {
 	/**
 	 * @return Infrastruktur
 	 */
-	public function getInfrastruktur(): Infrastruktur {
+	public function getInfrastruktur(): ?Infrastruktur {
 		return $this->infrastruktur;
 	}
 
@@ -205,7 +205,7 @@ class Immobilie {
 	/**
 	 * @return Preise
 	 */
-	public function getPreise(): Preise {
+	public function getPreise(): ?Preise {
 		return $this->preise;
 	}
 
@@ -215,7 +215,7 @@ class Immobilie {
 	 * @return array
 	 */
 	public function getUserDefinedAnyfield(): array {
-		return $this->userDefinedAnyfield;
+		return $this->userDefinedAnyfield ?? [];
 	}
 
 	/**
@@ -224,7 +224,7 @@ class Immobilie {
 	 * @return array
 	 */
 	public function getUserDefinedExtend(): array {
-		return $this->userDefinedExtend;
+		return $this->userDefinedExtend ?? [];
 	}
 
 	/**
@@ -233,20 +233,20 @@ class Immobilie {
 	 * @return array
 	 */
 	public function getUserDefinedSimplefield(): array {
-		return $this->userDefinedSimplefield;
+		return $this->userDefinedSimplefield ?? [];
 	}
 
 	/**
 	 * @return Versteigerung
 	 */
-	public function getVersteigerung(): Versteigerung {
+	public function getVersteigerung(): ?Versteigerung {
 		return $this->versteigerung;
 	}
 
 	/**
 	 * @return VerwaltungObjekt
 	 */
-	public function getVerwaltungObjekt(): VerwaltungObjekt {
+	public function getVerwaltungObjekt(): ?VerwaltungObjekt {
 		return $this->verwaltungObjekt;
 	}
 
@@ -263,13 +263,13 @@ class Immobilie {
 	 * @return array
 	 */
 	public function getWeitereAdresse(): array {
-		return $this->weitereAdresse;
+		return $this->weitereAdresse ?? [];
 	}
 
 	/**
 	 * @return ZustandAngaben
 	 */
-	public function getZustandAngaben(): ZustandAngaben {
+	public function getZustandAngaben(): ?ZustandAngaben {
 		return $this->zustandAngaben;
 	}
 
@@ -277,7 +277,7 @@ class Immobilie {
 	 * @param Anhaenge $anhaenge Setter for anhaenge
 	 * @return Immobilie
 	 */
-	public function setAnhaenge(Anhaenge $anhaenge) {
+	public function setAnhaenge(?Anhaenge $anhaenge) {
 		$this->anhaenge = $anhaenge;
 		return $this;
 	}
@@ -286,7 +286,7 @@ class Immobilie {
 	 * @param Ausstattung $ausstattung Setter for ausstattung
 	 * @return Immobilie
 	 */
-	public function setAusstattung(Ausstattung $ausstattung) {
+	public function setAusstattung(?Ausstattung $ausstattung) {
 		$this->ausstattung = $ausstattung;
 		return $this;
 	}
@@ -295,7 +295,7 @@ class Immobilie {
 	 * @param Bewertung $bewertung Setter for bewertung
 	 * @return Immobilie
 	 */
-	public function setBewertung(Bewertung $bewertung) {
+	public function setBewertung(?Bewertung $bewertung) {
 		$this->bewertung = $bewertung;
 		return $this;
 	}
@@ -304,7 +304,7 @@ class Immobilie {
 	 * @param Bieterverfahren $bieterverfahren Setter for bieterverfahren
 	 * @return Immobilie
 	 */
-	public function setBieterverfahren(Bieterverfahren $bieterverfahren) {
+	public function setBieterverfahren(?Bieterverfahren $bieterverfahren) {
 		$this->bieterverfahren = $bieterverfahren;
 		return $this;
 	}
@@ -313,7 +313,7 @@ class Immobilie {
 	 * @param Flaechen $flaechen Setter for flaechen
 	 * @return Immobilie
 	 */
-	public function setFlaechen(Flaechen $flaechen) {
+	public function setFlaechen(?Flaechen $flaechen) {
 		$this->flaechen = $flaechen;
 		return $this;
 	}
@@ -322,7 +322,7 @@ class Immobilie {
 	 * @param Freitexte $freitexte Setter for freitexte
 	 * @return Immobilie
 	 */
-	public function setFreitexte(Freitexte $freitexte) {
+	public function setFreitexte(?Freitexte $freitexte) {
 		$this->freitexte = $freitexte;
 		return $this;
 	}
@@ -340,7 +340,7 @@ class Immobilie {
 	 * @param Infrastruktur $infrastruktur Setter for infrastruktur
 	 * @return Immobilie
 	 */
-	public function setInfrastruktur(Infrastruktur $infrastruktur) {
+	public function setInfrastruktur(?Infrastruktur $infrastruktur) {
 		$this->infrastruktur = $infrastruktur;
 		return $this;
 	}
@@ -367,7 +367,7 @@ class Immobilie {
 	 * @param Preise $preise Setter for preise
 	 * @return Immobilie
 	 */
-	public function setPreise(Preise $preise) {
+	public function setPreise(?Preise $preise) {
 		$this->preise = $preise;
 		return $this;
 	}
@@ -403,7 +403,7 @@ class Immobilie {
 	 * @param Versteigerung $versteigerung Setter for versteigerung
 	 * @return Immobilie
 	 */
-	public function setVersteigerung(Versteigerung $versteigerung) {
+	public function setVersteigerung(?Versteigerung $versteigerung) {
 		$this->versteigerung = $versteigerung;
 		return $this;
 	}
@@ -412,7 +412,7 @@ class Immobilie {
 	 * @param VerwaltungObjekt $verwaltungObjekt Setter for verwaltungObjekt
 	 * @return Immobilie
 	 */
-	public function setVerwaltungObjekt(VerwaltungObjekt $verwaltungObjekt) {
+	public function setVerwaltungObjekt(?VerwaltungObjekt $verwaltungObjekt) {
 		$this->verwaltungObjekt = $verwaltungObjekt;
 		return $this;
 	}
@@ -439,7 +439,7 @@ class Immobilie {
 	 * @param ZustandAngaben $zustandAngaben Setter for zustandAngaben
 	 * @return Immobilie
 	 */
-	public function setZustandAngaben(ZustandAngaben $zustandAngaben) {
+	public function setZustandAngaben(?ZustandAngaben $zustandAngaben) {
 		$this->zustandAngaben = $zustandAngaben;
 		return $this;
 	}

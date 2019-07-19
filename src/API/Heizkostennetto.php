@@ -43,14 +43,14 @@ class Heizkostennetto {
 	/**
 	 * @return float
 	 */
-	public function getHeizkostenust(): float {
+	public function getHeizkostenust(): ?float {
 		return $this->heizkostenust;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 
@@ -58,7 +58,7 @@ class Heizkostennetto {
 	 * @param float $heizkostenust Setter for heizkostenust
 	 * @return Heizkostennetto
 	 */
-	public function setHeizkostenust(float $heizkostenust) {
+	public function setHeizkostenust(?float $heizkostenust) {
 		$this->heizkostenust = $heizkostenust;
 		return $this;
 	}
@@ -67,7 +67,7 @@ class Heizkostennetto {
 	 * @param float $value Setter for value
 	 * @return Heizkostennetto
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

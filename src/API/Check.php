@@ -63,7 +63,7 @@ class Check {
 	/**
 	 * @return \DateTime
 	 */
-	public function getValue(): \DateTime {
+	public function getValue(): ?\DateTime {
 		return $this->value;
 	}
 
@@ -80,7 +80,7 @@ class Check {
 	 * @param \DateTime $value Setter for value
 	 * @return Check
 	 */
-	public function setValue(\DateTime $value) {
+	public function setValue(?\DateTime $value) {
 		$this->value = $value;
 		return $this;
 	}

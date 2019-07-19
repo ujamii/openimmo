@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Sonstige
  * Objektart / Typ f. Sonstiges
- * Bitte ab Version 1.2.3 die Attribute GARAGEN, PARKFLACHE nicht mehr verwenden.
+ * Bitte ab Version 1.2.3 die Attribute GARAGEN, PARKFLACHE nicht mehr verwenden. 
  * Objekte befinden sich jetzt unter Element parken.
  * Aus kompatibilitätegründen bleiben die Attribute NOCH! erhalten.
  * In nachfolgenden Versionen wird die Unterstützung an dieser Stelle eingestellt.
@@ -47,7 +47,7 @@ class Sonstige {
 	/**
 	 * @return string
 	 */
-	public function getSonstigeTyp(): string {
+	public function getSonstigeTyp(): ?string {
 		return $this->sonstigeTyp;
 	}
 
@@ -55,7 +55,7 @@ class Sonstige {
 	 * @param string $sonstigeTyp Setter for sonstigeTyp
 	 * @return Sonstige
 	 */
-	public function setSonstigeTyp(string $sonstigeTyp) {
+	public function setSonstigeTyp(?string $sonstigeTyp) {
 		$this->sonstigeTyp = $sonstigeTyp;
 		return $this;
 	}

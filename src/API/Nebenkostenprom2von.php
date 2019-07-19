@@ -43,14 +43,14 @@ class Nebenkostenprom2von {
 	/**
 	 * @return float
 	 */
-	public function getNebenkostenprom2bis(): float {
+	public function getNebenkostenprom2bis(): ?float {
 		return $this->nebenkostenprom2bis;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 
@@ -58,7 +58,7 @@ class Nebenkostenprom2von {
 	 * @param float $nebenkostenprom2bis Setter for nebenkostenprom2bis
 	 * @return Nebenkostenprom2von
 	 */
-	public function setNebenkostenprom2bis(float $nebenkostenprom2bis) {
+	public function setNebenkostenprom2bis(?float $nebenkostenprom2bis) {
 		$this->nebenkostenprom2bis = $nebenkostenprom2bis;
 		return $this;
 	}
@@ -67,7 +67,7 @@ class Nebenkostenprom2von {
 	 * @param float $value Setter for value
 	 * @return Nebenkostenprom2von
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

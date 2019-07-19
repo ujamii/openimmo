@@ -43,7 +43,7 @@ class Ausblick {
 	/**
 	 * @return string
 	 */
-	public function getBlick(): string {
+	public function getBlick(): ?string {
 		return $this->blick;
 	}
 
@@ -51,7 +51,7 @@ class Ausblick {
 	 * @param string $blick Setter for blick
 	 * @return Ausblick
 	 */
-	public function setBlick(string $blick) {
+	public function setBlick(?string $blick) {
 		$this->blick = $blick;
 		return $this;
 	}

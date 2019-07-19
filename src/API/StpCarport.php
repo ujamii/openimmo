@@ -43,21 +43,21 @@ class StpCarport {
 	/**
 	 * @return int
 	 */
-	public function getAnzahl(): int {
+	public function getAnzahl(): ?int {
 		return $this->anzahl;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getStellplatzkaufpreis(): float {
+	public function getStellplatzkaufpreis(): ?float {
 		return $this->stellplatzkaufpreis;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getStellplatzmiete(): float {
+	public function getStellplatzmiete(): ?float {
 		return $this->stellplatzmiete;
 	}
 
@@ -65,7 +65,7 @@ class StpCarport {
 	 * @param int $anzahl Setter for anzahl
 	 * @return StpCarport
 	 */
-	public function setAnzahl(int $anzahl) {
+	public function setAnzahl(?int $anzahl) {
 		$this->anzahl = $anzahl;
 		return $this;
 	}
@@ -74,7 +74,7 @@ class StpCarport {
 	 * @param float $stellplatzkaufpreis Setter for stellplatzkaufpreis
 	 * @return StpCarport
 	 */
-	public function setStellplatzkaufpreis(float $stellplatzkaufpreis) {
+	public function setStellplatzkaufpreis(?float $stellplatzkaufpreis) {
 		$this->stellplatzkaufpreis = $stellplatzkaufpreis;
 		return $this;
 	}
@@ -83,7 +83,7 @@ class StpCarport {
 	 * @param float $stellplatzmiete Setter for stellplatzmiete
 	 * @return StpCarport
 	 */
-	public function setStellplatzmiete(float $stellplatzmiete) {
+	public function setStellplatzmiete(?float $stellplatzmiete) {
 		$this->stellplatzmiete = $stellplatzmiete;
 		return $this;
 	}

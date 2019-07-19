@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class DistanzenSport
- * Welche Distanz zu dem ausgewählen Sport-/Freizeitziel besteht(Angabe in km),
+ * Welche Distanz zu dem ausgewählen Sport-/Freizeitziel besteht(Angabe in km), 
  *  Optionen nicht kombinierbar, Distanzelement ist mehrfach erfassbar
  *
  * @package Ujamii\OpenImmo\API
@@ -80,7 +80,7 @@ class DistanzenSport {
 	/**
 	 * @return float
 	 */
-	public function getValue(): float {
+	public function getValue(): ?float {
 		return $this->value;
 	}
 
@@ -97,7 +97,7 @@ class DistanzenSport {
 	 * @param float $value Setter for value
 	 * @return DistanzenSport
 	 */
-	public function setValue(float $value) {
+	public function setValue(?float $value) {
 		$this->value = $value;
 		return $this;
 	}

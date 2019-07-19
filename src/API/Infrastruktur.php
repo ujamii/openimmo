@@ -63,7 +63,7 @@ class Infrastruktur {
 	/**
 	 * @return Ausblick
 	 */
-	public function getAusblick(): Ausblick {
+	public function getAusblick(): ?Ausblick {
 		return $this->ausblick;
 	}
 
@@ -73,7 +73,7 @@ class Infrastruktur {
 	 * @return array
 	 */
 	public function getDistanzen(): array {
-		return $this->distanzen;
+		return $this->distanzen ?? [];
 	}
 
 	/**
@@ -82,7 +82,7 @@ class Infrastruktur {
 	 * @return array
 	 */
 	public function getDistanzenSport(): array {
-		return $this->distanzenSport;
+		return $this->distanzenSport ?? [];
 	}
 
 	/**
@@ -91,7 +91,7 @@ class Infrastruktur {
 	 * @return array
 	 */
 	public function getUserDefinedAnyfield(): array {
-		return $this->userDefinedAnyfield;
+		return $this->userDefinedAnyfield ?? [];
 	}
 
 	/**
@@ -100,7 +100,7 @@ class Infrastruktur {
 	 * @return array
 	 */
 	public function getUserDefinedExtend(): array {
-		return $this->userDefinedExtend;
+		return $this->userDefinedExtend ?? [];
 	}
 
 	/**
@@ -109,13 +109,13 @@ class Infrastruktur {
 	 * @return array
 	 */
 	public function getUserDefinedSimplefield(): array {
-		return $this->userDefinedSimplefield;
+		return $this->userDefinedSimplefield ?? [];
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getZulieferung(): bool {
+	public function getZulieferung(): ?bool {
 		return $this->zulieferung;
 	}
 
@@ -123,7 +123,7 @@ class Infrastruktur {
 	 * @param Ausblick $ausblick Setter for ausblick
 	 * @return Infrastruktur
 	 */
-	public function setAusblick(Ausblick $ausblick) {
+	public function setAusblick(?Ausblick $ausblick) {
 		$this->ausblick = $ausblick;
 		return $this;
 	}
@@ -177,7 +177,7 @@ class Infrastruktur {
 	 * @param boolean $zulieferung Setter for zulieferung
 	 * @return Infrastruktur
 	 */
-	public function setZulieferung(bool $zulieferung) {
+	public function setZulieferung(?bool $zulieferung) {
 		$this->zulieferung = $zulieferung;
 		return $this;
 	}

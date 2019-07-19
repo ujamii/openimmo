@@ -55,7 +55,7 @@ class BebaubarNach {
 	/**
 	 * @return string
 	 */
-	public function getBebaubarAttr(): string {
+	public function getBebaubarAttr(): ?string {
 		return $this->bebaubarAttr;
 	}
 
@@ -63,7 +63,7 @@ class BebaubarNach {
 	 * @param string $bebaubarAttr Setter for bebaubarAttr
 	 * @return BebaubarNach
 	 */
-	public function setBebaubarAttr(string $bebaubarAttr) {
+	public function setBebaubarAttr(?string $bebaubarAttr) {
 		$this->bebaubarAttr = $bebaubarAttr;
 		return $this;
 	}

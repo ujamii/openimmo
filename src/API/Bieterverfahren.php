@@ -80,49 +80,49 @@ class Bieterverfahren {
 	/**
 	 * @return \DateTime
 	 */
-	public function getBeginnAngebotsphase(): \DateTime {
+	public function getBeginnAngebotsphase(): ?\DateTime {
 		return $this->beginnAngebotsphase;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getBeginnBietzeit(): \DateTime {
+	public function getBeginnBietzeit(): ?\DateTime {
 		return $this->beginnBietzeit;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getBesichtigungstermin(): \DateTime {
+	public function getBesichtigungstermin(): ?\DateTime {
 		return $this->besichtigungstermin;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getBesichtigungstermin2(): \DateTime {
+	public function getBesichtigungstermin2(): ?\DateTime {
 		return $this->besichtigungstermin2;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getEndeBietzeit(): \DateTime {
+	public function getEndeBietzeit(): ?\DateTime {
 		return $this->endeBietzeit;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHoechstgebotZeigen(): bool {
+	public function getHoechstgebotZeigen(): ?bool {
 		return $this->hoechstgebotZeigen;
 	}
 
 	/**
 	 * @return float
 	 */
-	public function getMindestpreis(): float {
+	public function getMindestpreis(): ?float {
 		return $this->mindestpreis;
 	}
 
@@ -132,7 +132,7 @@ class Bieterverfahren {
 	 * @return array
 	 */
 	public function getUserDefinedAnyfield(): array {
-		return $this->userDefinedAnyfield;
+		return $this->userDefinedAnyfield ?? [];
 	}
 
 	/**
@@ -141,7 +141,7 @@ class Bieterverfahren {
 	 * @return array
 	 */
 	public function getUserDefinedExtend(): array {
-		return $this->userDefinedExtend;
+		return $this->userDefinedExtend ?? [];
 	}
 
 	/**
@@ -150,14 +150,14 @@ class Bieterverfahren {
 	 * @return array
 	 */
 	public function getUserDefinedSimplefield(): array {
-		return $this->userDefinedSimplefield;
+		return $this->userDefinedSimplefield ?? [];
 	}
 
 	/**
 	 * @param \DateTime $beginnAngebotsphase Setter for beginnAngebotsphase
 	 * @return Bieterverfahren
 	 */
-	public function setBeginnAngebotsphase(\DateTime $beginnAngebotsphase) {
+	public function setBeginnAngebotsphase(?\DateTime $beginnAngebotsphase) {
 		$this->beginnAngebotsphase = $beginnAngebotsphase;
 		return $this;
 	}
@@ -166,7 +166,7 @@ class Bieterverfahren {
 	 * @param \DateTime $beginnBietzeit Setter for beginnBietzeit
 	 * @return Bieterverfahren
 	 */
-	public function setBeginnBietzeit(\DateTime $beginnBietzeit) {
+	public function setBeginnBietzeit(?\DateTime $beginnBietzeit) {
 		$this->beginnBietzeit = $beginnBietzeit;
 		return $this;
 	}
@@ -175,7 +175,7 @@ class Bieterverfahren {
 	 * @param \DateTime $besichtigungstermin Setter for besichtigungstermin
 	 * @return Bieterverfahren
 	 */
-	public function setBesichtigungstermin(\DateTime $besichtigungstermin) {
+	public function setBesichtigungstermin(?\DateTime $besichtigungstermin) {
 		$this->besichtigungstermin = $besichtigungstermin;
 		return $this;
 	}
@@ -184,7 +184,7 @@ class Bieterverfahren {
 	 * @param \DateTime $besichtigungstermin2 Setter for besichtigungstermin2
 	 * @return Bieterverfahren
 	 */
-	public function setBesichtigungstermin2(\DateTime $besichtigungstermin2) {
+	public function setBesichtigungstermin2(?\DateTime $besichtigungstermin2) {
 		$this->besichtigungstermin2 = $besichtigungstermin2;
 		return $this;
 	}
@@ -193,7 +193,7 @@ class Bieterverfahren {
 	 * @param \DateTime $endeBietzeit Setter for endeBietzeit
 	 * @return Bieterverfahren
 	 */
-	public function setEndeBietzeit(\DateTime $endeBietzeit) {
+	public function setEndeBietzeit(?\DateTime $endeBietzeit) {
 		$this->endeBietzeit = $endeBietzeit;
 		return $this;
 	}
@@ -202,7 +202,7 @@ class Bieterverfahren {
 	 * @param boolean $hoechstgebotZeigen Setter for hoechstgebotZeigen
 	 * @return Bieterverfahren
 	 */
-	public function setHoechstgebotZeigen(bool $hoechstgebotZeigen) {
+	public function setHoechstgebotZeigen(?bool $hoechstgebotZeigen) {
 		$this->hoechstgebotZeigen = $hoechstgebotZeigen;
 		return $this;
 	}
@@ -211,7 +211,7 @@ class Bieterverfahren {
 	 * @param float $mindestpreis Setter for mindestpreis
 	 * @return Bieterverfahren
 	 */
-	public function setMindestpreis(float $mindestpreis) {
+	public function setMindestpreis(?float $mindestpreis) {
 		$this->mindestpreis = $mindestpreis;
 		return $this;
 	}

@@ -158,98 +158,98 @@ class Befeuerung {
 	/**
 	 * @return boolean
 	 */
-	public function getAlternativ(): bool {
+	public function getAlternativ(): ?bool {
 		return $this->alternativ;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getBlock(): bool {
+	public function getBlock(): ?bool {
 		return $this->block;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getElektro(): bool {
+	public function getElektro(): ?bool {
 		return $this->elektro;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getErdwaerme(): bool {
+	public function getErdwaerme(): ?bool {
 		return $this->erdwaerme;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFern(): bool {
+	public function getFern(): ?bool {
 		return $this->fern;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getFluessiggas(): bool {
+	public function getFluessiggas(): ?bool {
 		return $this->fluessiggas;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getGas(): bool {
+	public function getGas(): ?bool {
 		return $this->gas;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getHolz(): bool {
+	public function getHolz(): ?bool {
 		return $this->holz;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getKohle(): bool {
+	public function getKohle(): ?bool {
 		return $this->kohle;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getLuftwp(): bool {
+	public function getLuftwp(): ?bool {
 		return $this->luftwp;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getOel(): bool {
+	public function getOel(): ?bool {
 		return $this->oel;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getPellet(): bool {
+	public function getPellet(): ?bool {
 		return $this->pellet;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getSolar(): bool {
+	public function getSolar(): ?bool {
 		return $this->solar;
 	}
 
 	/**
 	 * @return boolean
 	 */
-	public function getWasserElektro(): bool {
+	public function getWasserElektro(): ?bool {
 		return $this->wasserElektro;
 	}
 
@@ -257,7 +257,7 @@ class Befeuerung {
 	 * @param boolean $alternativ Setter for alternativ
 	 * @return Befeuerung
 	 */
-	public function setAlternativ(bool $alternativ) {
+	public function setAlternativ(?bool $alternativ) {
 		$this->alternativ = $alternativ;
 		return $this;
 	}
@@ -266,7 +266,7 @@ class Befeuerung {
 	 * @param boolean $block Setter for block
 	 * @return Befeuerung
 	 */
-	public function setBlock(bool $block) {
+	public function setBlock(?bool $block) {
 		$this->block = $block;
 		return $this;
 	}
@@ -275,7 +275,7 @@ class Befeuerung {
 	 * @param boolean $elektro Setter for elektro
 	 * @return Befeuerung
 	 */
-	public function setElektro(bool $elektro) {
+	public function setElektro(?bool $elektro) {
 		$this->elektro = $elektro;
 		return $this;
 	}
@@ -284,7 +284,7 @@ class Befeuerung {
 	 * @param boolean $erdwaerme Setter for erdwaerme
 	 * @return Befeuerung
 	 */
-	public function setErdwaerme(bool $erdwaerme) {
+	public function setErdwaerme(?bool $erdwaerme) {
 		$this->erdwaerme = $erdwaerme;
 		return $this;
 	}
@@ -293,7 +293,7 @@ class Befeuerung {
 	 * @param boolean $fern Setter for fern
 	 * @return Befeuerung
 	 */
-	public function setFern(bool $fern) {
+	public function setFern(?bool $fern) {
 		$this->fern = $fern;
 		return $this;
 	}
@@ -302,7 +302,7 @@ class Befeuerung {
 	 * @param boolean $fluessiggas Setter for fluessiggas
 	 * @return Befeuerung
 	 */
-	public function setFluessiggas(bool $fluessiggas) {
+	public function setFluessiggas(?bool $fluessiggas) {
 		$this->fluessiggas = $fluessiggas;
 		return $this;
 	}
@@ -311,7 +311,7 @@ class Befeuerung {
 	 * @param boolean $gas Setter for gas
 	 * @return Befeuerung
 	 */
-	public function setGas(bool $gas) {
+	public function setGas(?bool $gas) {
 		$this->gas = $gas;
 		return $this;
 	}
@@ -320,7 +320,7 @@ class Befeuerung {
 	 * @param boolean $holz Setter for holz
 	 * @return Befeuerung
 	 */
-	public function setHolz(bool $holz) {
+	public function setHolz(?bool $holz) {
 		$this->holz = $holz;
 		return $this;
 	}
@@ -329,7 +329,7 @@ class Befeuerung {
 	 * @param boolean $kohle Setter for kohle
 	 * @return Befeuerung
 	 */
-	public function setKohle(bool $kohle) {
+	public function setKohle(?bool $kohle) {
 		$this->kohle = $kohle;
 		return $this;
 	}
@@ -338,7 +338,7 @@ class Befeuerung {
 	 * @param boolean $luftwp Setter for luftwp
 	 * @return Befeuerung
 	 */
-	public function setLuftwp(bool $luftwp) {
+	public function setLuftwp(?bool $luftwp) {
 		$this->luftwp = $luftwp;
 		return $this;
 	}
@@ -347,7 +347,7 @@ class Befeuerung {
 	 * @param boolean $oel Setter for oel
 	 * @return Befeuerung
 	 */
-	public function setOel(bool $oel) {
+	public function setOel(?bool $oel) {
 		$this->oel = $oel;
 		return $this;
 	}
@@ -356,7 +356,7 @@ class Befeuerung {
 	 * @param boolean $pellet Setter for pellet
 	 * @return Befeuerung
 	 */
-	public function setPellet(bool $pellet) {
+	public function setPellet(?bool $pellet) {
 		$this->pellet = $pellet;
 		return $this;
 	}
@@ -365,7 +365,7 @@ class Befeuerung {
 	 * @param boolean $solar Setter for solar
 	 * @return Befeuerung
 	 */
-	public function setSolar(bool $solar) {
+	public function setSolar(?bool $solar) {
 		$this->solar = $solar;
 		return $this;
 	}
@@ -374,7 +374,7 @@ class Befeuerung {
 	 * @param boolean $wasserElektro Setter for wasserElektro
 	 * @return Befeuerung
 	 */
-	public function setWasserElektro(bool $wasserElektro) {
+	public function setWasserElektro(?bool $wasserElektro) {
 		$this->wasserElektro = $wasserElektro;
 		return $this;
 	}

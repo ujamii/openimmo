@@ -35,7 +35,7 @@ class Alter {
 	/**
 	 * @return string
 	 */
-	public function getAlterAttr(): string {
+	public function getAlterAttr(): ?string {
 		return $this->alterAttr;
 	}
 
@@ -43,7 +43,7 @@ class Alter {
 	 * @param string $alterAttr Setter for alterAttr
 	 * @return Alter
 	 */
-	public function setAlterAttr(string $alterAttr) {
+	public function setAlterAttr(?string $alterAttr) {
 		$this->alterAttr = $alterAttr;
 		return $this;
 	}

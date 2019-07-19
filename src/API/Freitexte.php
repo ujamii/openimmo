@@ -79,49 +79,49 @@ class Freitexte {
 	/**
 	 * @return string
 	 */
-	public function getAusstattBeschr(): string {
+	public function getAusstattBeschr(): ?string {
 		return $this->ausstattBeschr;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getDreizeiler(): string {
+	public function getDreizeiler(): ?string {
 		return $this->dreizeiler;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getLage(): string {
+	public function getLage(): ?string {
 		return $this->lage;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getObjektbeschreibung(): string {
+	public function getObjektbeschreibung(): ?string {
 		return $this->objektbeschreibung;
 	}
 
 	/**
 	 * @return ObjektText
 	 */
-	public function getObjektText(): ObjektText {
+	public function getObjektText(): ?ObjektText {
 		return $this->objektText;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getObjekttitel(): string {
+	public function getObjekttitel(): ?string {
 		return $this->objekttitel;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getSonstigeAngaben(): string {
+	public function getSonstigeAngaben(): ?string {
 		return $this->sonstigeAngaben;
 	}
 
@@ -131,7 +131,7 @@ class Freitexte {
 	 * @return array
 	 */
 	public function getUserDefinedAnyfield(): array {
-		return $this->userDefinedAnyfield;
+		return $this->userDefinedAnyfield ?? [];
 	}
 
 	/**
@@ -140,7 +140,7 @@ class Freitexte {
 	 * @return array
 	 */
 	public function getUserDefinedExtend(): array {
-		return $this->userDefinedExtend;
+		return $this->userDefinedExtend ?? [];
 	}
 
 	/**
@@ -149,14 +149,14 @@ class Freitexte {
 	 * @return array
 	 */
 	public function getUserDefinedSimplefield(): array {
-		return $this->userDefinedSimplefield;
+		return $this->userDefinedSimplefield ?? [];
 	}
 
 	/**
 	 * @param string $ausstattBeschr Setter for ausstattBeschr
 	 * @return Freitexte
 	 */
-	public function setAusstattBeschr(string $ausstattBeschr) {
+	public function setAusstattBeschr(?string $ausstattBeschr) {
 		$this->ausstattBeschr = $ausstattBeschr;
 		return $this;
 	}
@@ -165,7 +165,7 @@ class Freitexte {
 	 * @param string $dreizeiler Setter for dreizeiler
 	 * @return Freitexte
 	 */
-	public function setDreizeiler(string $dreizeiler) {
+	public function setDreizeiler(?string $dreizeiler) {
 		$this->dreizeiler = $dreizeiler;
 		return $this;
 	}
@@ -174,7 +174,7 @@ class Freitexte {
 	 * @param string $lage Setter for lage
 	 * @return Freitexte
 	 */
-	public function setLage(string $lage) {
+	public function setLage(?string $lage) {
 		$this->lage = $lage;
 		return $this;
 	}
@@ -183,7 +183,7 @@ class Freitexte {
 	 * @param string $objektbeschreibung Setter for objektbeschreibung
 	 * @return Freitexte
 	 */
-	public function setObjektbeschreibung(string $objektbeschreibung) {
+	public function setObjektbeschreibung(?string $objektbeschreibung) {
 		$this->objektbeschreibung = $objektbeschreibung;
 		return $this;
 	}
@@ -192,7 +192,7 @@ class Freitexte {
 	 * @param ObjektText $objektText Setter for objektText
 	 * @return Freitexte
 	 */
-	public function setObjektText(ObjektText $objektText) {
+	public function setObjektText(?ObjektText $objektText) {
 		$this->objektText = $objektText;
 		return $this;
 	}
@@ -201,7 +201,7 @@ class Freitexte {
 	 * @param string $objekttitel Setter for objekttitel
 	 * @return Freitexte
 	 */
-	public function setObjekttitel(string $objekttitel) {
+	public function setObjekttitel(?string $objekttitel) {
 		$this->objekttitel = $objekttitel;
 		return $this;
 	}
@@ -210,7 +210,7 @@ class Freitexte {
 	 * @param string $sonstigeAngaben Setter for sonstigeAngaben
 	 * @return Freitexte
 	 */
-	public function setSonstigeAngaben(string $sonstigeAngaben) {
+	public function setSonstigeAngaben(?string $sonstigeAngaben) {
 		$this->sonstigeAngaben = $sonstigeAngaben;
 		return $this;
 	}
