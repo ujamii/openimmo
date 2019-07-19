@@ -1,3 +1,21 @@
+## 0.3.0 (July 19, 2019)
+  - [DOC] added contribution hint
+  - Merge pull request #1 from qbus-agentur/nullable-getter-returndeclarations
+	  - Properly support arrays of simple types
+	  - Rebuild API for nullable setters
+	  - Generate nullable setters for optional elements/attributes
+	  - Renegerate API for non-nullable attribute return types
+	  - Add support for non-nullable attributes
+	  - Regenerate for non-nullable change
+	  - Do not generate nullable return type for required elements
+	  - Regenerate API for non-nullable array change
+	  - Do not generate nullable array return types
+	  - Rebuild API classes for nullable return type declarations
+	  - Use nullable return type declarations, as value may be be unpopulated
+	  - Add trailing spaces, TODO: remove
+	  - Update to php-code-generator dev-master to support setNullable for php methods
+  - [DOC] added integration list
+
 ## 0.2.0 (February 19, 2019)
   - [TASK] some methods are static now, so usage from outside is possible
   - [DOC] added some more author information
