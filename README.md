@@ -135,3 +135,7 @@ As this is OpenSource, you are very welcome to contribute by reporting bugs, imp
 whatever you are able to do to improve the project.
 
 If you want to do me a favour, buy me something from my [Amazon wishlist](https://www.amazon.de/registry/wishlist/2C7LSRMLEAD4F).
+
+### Thank you!
+
+- [Qbus Internetagentur GmbH](https://www.qbus.de/) for yor code contribution
