@@ -1,3 +1,8 @@
+## 0.3.1 (September 04, 2019)
+  - [TASK] updated composer packages and re-generated api classes
+  - Merge pull request #2 from qbus-agentur/fix-api-regeneration
+  - composer.json: Include pull request #64 of gossi/php-code-generator to fix api (re)generation
+
 ## 0.3.0 (July 19, 2019)
   - [DOC] added contribution hint
   - Merge pull request #1 from qbus-agentur/nullable-getter-returndeclarations
