@@ -14,9 +14,15 @@
     "require": {
         "jms/serializer": "^2.1"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/bnf/php-code-generator.git"
+        }
+    ],
     "require-dev": {
         "goetas-webservices/xsd-reader": "^0.3",
-        "gossi/php-code-generator": "dev-master@dev",
+        "gossi/php-code-generator": "dev-prevent-fatal-error@dev",
         "phpunit/phpunit": "^7.5",
         "mihaeu/test-generator": "dev-master@dev"
     },
