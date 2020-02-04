@@ -12,7 +12,7 @@
         }
     ],
     "require": {
-        "jms/serializer": "^2.1"
+        "jms/serializer": "^2.1 || ^3.4"
     },
     "repositories": [
         {
@@ -33,5 +33,11 @@
             "Ujamii\\OpenImmo\\": "src",
             "Ujamii\\OpenImmo\\Tests\\": "tests"
         }
+    },
+    "scripts": {
+        "tests": "vendor/bin/phpunit -c ."
+    },
+    "scripts-descriptions": {
+        "tests": "Runs the unit tests in this package, configured in phpunit.xml.dist."
     }
 }
