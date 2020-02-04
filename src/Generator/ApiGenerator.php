@@ -3,6 +3,7 @@
 namespace Ujamii\OpenImmo\Generator;
 
 use GoetasWebservices\XML\XSDReader\Schema\Attribute\Attribute;
+use GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementItem;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementRef;
 use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Extension;
@@ -71,9 +72,9 @@ class ApiGenerator
     }
 
     /**
-     * @param ElementItem $element
+     * @param ElementDef $element
      */
-    protected function parseElementDef(ElementItem $element)
+    protected function parseElementDef(ElementDef $element)
     {
         $className = self::camelize($element->getName());
 
@@ -132,7 +133,7 @@ class ApiGenerator
         // as this type of object contains just a key and a value, we add a __construct for more convenience
         $constructor = PhpMethod::create('__construct');
 
-        $constrctorCode = [];
+        $constructorCode = [];
         /* @var $attributeFromXsd Attribute */
         foreach ($attributes as $attributeFromXsd) {
             $attributeName = self::camelize(strtolower($attributeFromXsd->getName()), true);
@@ -142,7 +143,7 @@ class ApiGenerator
                                                    ->setValue(null)
                                                    ->setDescription('Shortcut setter for ' . $attributeName)
             );
-            $constrctorCode[] = '$this->' . $attributeName . ' = $' . $attributeName . ';';
+            $constructorCode[] = '$this->' . $attributeName . ' = $' . $attributeName . ';';
         }
 
         // now the value itself
@@ -151,9 +152,9 @@ class ApiGenerator
                                                ->setValue(null)
                                                ->setDescription('the actual value')
         );
-        $constrctorCode[] = '$this->' . $propertyName . ' = $' . $propertyName . ';';
+        $constructorCode[] = '$this->' . $propertyName . ' = $' . $propertyName . ';';
 
-        $constructor->setBody(implode(PHP_EOL, $constrctorCode));
+        $constructor->setBody(implode(PHP_EOL, $constructorCode));
         $class->setMethod($constructor);
     }
 
