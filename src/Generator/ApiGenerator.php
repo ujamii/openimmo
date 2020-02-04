@@ -354,7 +354,7 @@ class ApiGenerator
             case 'dateTime':
                 $propertyType = '\DateTime';
                 if ( ! is_null($classProperty)) {
-                    $classProperty->getDocblock()->appendTag(TagFactory::create('Type("DateTime<\'Y-m-d\TH:i:s\'>")'));
+                    $classProperty->getDocblock()->appendTag(TagFactory::create('Type("DateTime<\'Y-m-d\TH:i:s\', null, [\'Y-m-d\TH:i:sP\', \'Y-m-d\TH:i:s\']>")'));
                     $class->addUseStatement('JMS\Serializer\Annotation\Type');
                 }
                 break;
