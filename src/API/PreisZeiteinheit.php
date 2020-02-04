@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -31,6 +32,13 @@ class PreisZeiteinheit {
 	const ZEITEINHEIT_WOCHE = 'WOCHE';
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
 	 * optional
 	 *
 	 * @Type("string") 
@@ -41,10 +49,35 @@ class PreisZeiteinheit {
 	protected $zeiteinheit;
 
 	/**
+	 * @param string $zeiteinheit Shortcut setter for zeiteinheit
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $zeiteinheit = null, string $value = null) {
+		$this->zeiteinheit = $zeiteinheit;
+		$this->value = $value;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getZeiteinheit(): ?string {
 		return $this->zeiteinheit;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return PreisZeiteinheit
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
+		return $this;
 	}
 
 	/**

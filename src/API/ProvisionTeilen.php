@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -27,6 +28,13 @@ class ProvisionTeilen {
 	const WERT_TEXT = 'text';
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
 	 * optional
 	 *
 	 * @Type("string") 
@@ -37,10 +45,35 @@ class ProvisionTeilen {
 	protected $wert;
 
 	/**
+	 * @param string $wert Shortcut setter for wert
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $wert = null, string $value = null) {
+		$this->wert = $wert;
+		$this->value = $value;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getWert(): ?string {
 		return $this->wert;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return ProvisionTeilen
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
+		return $this;
 	}
 
 	/**

@@ -4,6 +4,7 @@ namespace Ujamii\OpenImmo\Tests\Generator;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\SerializerInterface;
 use Ujamii\OpenImmo\API\Anhang;
+use Ujamii\OpenImmo\API\AussenCourtage;
 use Ujamii\OpenImmo\API\Openimmo;
 use Ujamii\OpenImmo\API\Uebertragung;
 
@@ -87,6 +88,17 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(Anhang::LOCATION_EXTERN, $anhang->getLocation());
         $this->assertEquals(Anhang::GRUPPE_BILD, $anhang->getGruppe());
         $this->assertEquals('/dev/null', $anhang->getDaten()->getPfad());
+    }
+
+    public function testReadAussenCourtageXml()
+    {
+        $xmlString = '<aussen_courtage mit_mwst="true">12354,12 €</aussen_courtage>';
+
+        /* @var $aussenCourtage AussenCourtage */
+        $aussenCourtage = $this->serializer->deserialize($xmlString, AussenCourtage::class, 'xml');
+
+        $this->assertEquals(true, $aussenCourtage->getMitMwst());
+        $this->assertEquals('12354,12 €', $aussenCourtage->getValue());
     }
 
 }

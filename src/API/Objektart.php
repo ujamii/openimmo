@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -92,6 +93,13 @@ class Objektart {
 	protected $sonstige;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
 	 * @XmlList(inline = true, entry = "wohnung") 
 	 * @Type("array<Ujamii\OpenImmo\API\Wohnung>") 
 	 * @var Wohnung[]
@@ -111,6 +119,13 @@ class Objektart {
 	 * @var ZinshausRenditeobjekt[]
 	 */
 	protected $zinshausRenditeobjekt;
+
+	/**
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $value = null) {
+		$this->value = $value;
+	}
 
 	/**
 	 * Returns array of BueroPraxen
@@ -209,6 +224,13 @@ class Objektart {
 	 */
 	public function getSonstige(): array {
 		return $this->sonstige ?? [];
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -334,6 +356,15 @@ class Objektart {
 	 */
 	public function setSonstige(array $sonstige) {
 		$this->sonstige = $sonstige;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Objektart
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 

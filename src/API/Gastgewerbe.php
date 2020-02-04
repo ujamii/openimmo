@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -69,10 +70,33 @@ class Gastgewerbe {
 	protected $gastgewTyp;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param string $gastgewTyp Shortcut setter for gastgewTyp
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $gastgewTyp = null, string $value = null) {
+		$this->gastgewTyp = $gastgewTyp;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getGastgewTyp(): ?string {
 		return $this->gastgewTyp;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -81,6 +105,15 @@ class Gastgewerbe {
 	 */
 	public function setGastgewTyp(?string $gastgewTyp) {
 		$this->gastgewTyp = $gastgewTyp;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Gastgewerbe
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

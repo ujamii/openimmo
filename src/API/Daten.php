@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -28,6 +29,20 @@ class Daten {
 	protected $pfad;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $value = null) {
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getAnhanginhalt(): ?string {
@@ -39,6 +54,13 @@ class Daten {
 	 */
 	public function getPfad(): ?string {
 		return $this->pfad;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -56,6 +78,15 @@ class Daten {
 	 */
 	public function setPfad(?string $pfad) {
 		$this->pfad = $pfad;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Daten
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -46,6 +47,13 @@ class LageImBau {
 	protected $rechts;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
 	 * optional
 	 *
 	 * @Type("boolean") 
@@ -54,6 +62,21 @@ class LageImBau {
 	 * @var boolean
 	 */
 	protected $vorne;
+
+	/**
+	 * @param boolean $links Shortcut setter for links
+	 * @param boolean $rechts Shortcut setter for rechts
+	 * @param boolean $vorne Shortcut setter for vorne
+	 * @param boolean $hinten Shortcut setter for hinten
+	 * @param string $value the actual value
+	 */
+	public function __construct(bool $links = null, bool $rechts = null, bool $vorne = null, bool $hinten = null, string $value = null) {
+		$this->links = $links;
+		$this->rechts = $rechts;
+		$this->vorne = $vorne;
+		$this->hinten = $hinten;
+		$this->value = $value;
+	}
 
 	/**
 	 * @return boolean
@@ -74,6 +97,13 @@ class LageImBau {
 	 */
 	public function getRechts(): ?bool {
 		return $this->rechts;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -107,6 +137,15 @@ class LageImBau {
 	 */
 	public function setRechts(?bool $rechts) {
 		$this->rechts = $rechts;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return LageImBau
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 

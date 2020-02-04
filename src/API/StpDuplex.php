@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -41,6 +42,26 @@ class StpDuplex {
 	protected $stellplatzmiete;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param float $stellplatzmiete Shortcut setter for stellplatzmiete
+	 * @param float $stellplatzkaufpreis Shortcut setter for stellplatzkaufpreis
+	 * @param int $anzahl Shortcut setter for anzahl
+	 * @param string $value the actual value
+	 */
+	public function __construct(float $stellplatzmiete = null, float $stellplatzkaufpreis = null, int $anzahl = null, string $value = null) {
+		$this->stellplatzmiete = $stellplatzmiete;
+		$this->stellplatzkaufpreis = $stellplatzkaufpreis;
+		$this->anzahl = $anzahl;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return int
 	 */
 	public function getAnzahl(): ?int {
@@ -59,6 +80,13 @@ class StpDuplex {
 	 */
 	public function getStellplatzmiete(): ?float {
 		return $this->stellplatzmiete;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -85,6 +113,15 @@ class StpDuplex {
 	 */
 	public function setStellplatzmiete(?float $stellplatzmiete) {
 		$this->stellplatzmiete = $stellplatzmiete;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return StpDuplex
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -133,10 +134,33 @@ class Haus {
 	protected $haustyp;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param string $haustyp Shortcut setter for haustyp
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $haustyp = null, string $value = null) {
+		$this->haustyp = $haustyp;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getHaustyp(): ?string {
 		return $this->haustyp;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -145,6 +169,15 @@ class Haus {
 	 */
 	public function setHaustyp(?string $haustyp) {
 		$this->haustyp = $haustyp;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Haus
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -73,10 +74,33 @@ class HallenLagerProd {
 	protected $hallenTyp;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param string $hallenTyp Shortcut setter for hallenTyp
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $hallenTyp = null, string $value = null) {
+		$this->hallenTyp = $hallenTyp;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getHallenTyp(): ?string {
 		return $this->hallenTyp;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -85,6 +109,15 @@ class HallenLagerProd {
 	 */
 	public function setHallenTyp(?string $hallenTyp) {
 		$this->hallenTyp = $hallenTyp;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return HallenLagerProd
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

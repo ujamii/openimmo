@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -77,10 +78,33 @@ class LageGebiet {
 	protected $gebiete;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param string $gebiete Shortcut setter for gebiete
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $gebiete = null, string $value = null) {
+		$this->gebiete = $gebiete;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getGebiete(): ?string {
 		return $this->gebiete;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -89,6 +113,15 @@ class LageGebiet {
 	 */
 	public function setGebiete(?string $gebiete) {
 		$this->gebiete = $gebiete;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return LageGebiet
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -45,6 +46,22 @@ class Foto {
 	protected $location;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param string $location Shortcut setter for location
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $location = null, string $value = null) {
+		$this->location = $location;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return Daten
 	 */
 	public function getDaten(): Daten {
@@ -63,6 +80,13 @@ class Foto {
 	 */
 	public function getLocation(): string {
 		return $this->location;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -89,6 +113,15 @@ class Foto {
 	 */
 	public function setLocation(string $location) {
 		$this->location = $location;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Foto
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

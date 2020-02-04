@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -36,6 +37,24 @@ class Fahrstuhl {
 	protected $personen;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param boolean $personen Shortcut setter for personen
+	 * @param boolean $lasten Shortcut setter for lasten
+	 * @param string $value the actual value
+	 */
+	public function __construct(bool $personen = null, bool $lasten = null, string $value = null) {
+		$this->personen = $personen;
+		$this->lasten = $lasten;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getLasten(): ?bool {
@@ -47,6 +66,13 @@ class Fahrstuhl {
 	 */
 	public function getPersonen(): ?bool {
 		return $this->personen;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -64,6 +90,15 @@ class Fahrstuhl {
 	 */
 	public function setPersonen(?bool $personen) {
 		$this->personen = $personen;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Fahrstuhl
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

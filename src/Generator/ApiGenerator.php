@@ -8,6 +8,7 @@ use GoetasWebservices\XML\XSDReader\Schema\Element\ElementItem;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementRef;
 use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Extension;
 use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction;
+use GoetasWebservices\XML\XSDReader\Schema\Type\BaseComplexType;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexTypeSimpleContent;
 use GoetasWebservices\XML\XSDReader\Schema\Type\SimpleType;
@@ -92,6 +93,14 @@ class ApiGenerator
 
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
             $this->addSimpleValue($element->getType()->getExtension(), $class, $element->getType()->getAttributes());
+        } else if ($element->getType() instanceof BaseComplexType) {
+            // TODO: this needs to be a special type in the future to fix https://github.com/ujamii/openimmo/issues/3
+            // @see https://github.com/goetas-webservices/xsd-reader/issues/50
+            // @see https://github.com/goetas-webservices/xsd2php/issues/99#issuecomment-550447364
+            $this->addSimpleValue(null, $class, $element->getType()->getAttributes());
+            foreach ($element->getType()->getElements() as $property) {
+                $this->parseProperty($property, $class);
+            }
         } else {
             foreach ($element->getType()->getElements() as $property) {
                 $this->parseProperty($property, $class);
@@ -113,12 +122,17 @@ class ApiGenerator
      * @param PhpClass $class
      * @param array $attributes
      */
-    protected function addSimpleValue(Extension $extension, PhpClass $class, array $attributes)
+    protected function addSimpleValue(?Extension $extension, PhpClass $class, array $attributes)
     {
         $propertyName  = 'value';
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
 
-        $propertyType = $this->getValidType($this->extractPhpType($extension->getBase()), $classProperty, $class);
+        if (is_null($extension)) {
+            $propertyType = 'string';
+        } else {
+            $propertyType = $this->getValidType($this->extractPhpType($extension->getBase()), $classProperty, $class);
+        }
+
         $classProperty->setType($propertyType);
         $classProperty->getDocblock()->appendTag(TagFactory::create('Inline'));
         // this has been set in getValidType already (including format)

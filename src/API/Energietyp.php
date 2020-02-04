@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -105,6 +106,38 @@ class Energietyp {
 	protected $passivhaus;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param boolean $passivhaus Shortcut setter for passivhaus
+	 * @param boolean $niedrigenergie Shortcut setter for niedrigenergie
+	 * @param boolean $neubaustandard Shortcut setter for neubaustandard
+	 * @param boolean $kfw40 Shortcut setter for kfw40
+	 * @param boolean $kfw60 Shortcut setter for kfw60
+	 * @param boolean $kfw55 Shortcut setter for kfw55
+	 * @param boolean $kfw70 Shortcut setter for kfw70
+	 * @param boolean $minergiebauweise Shortcut setter for minergiebauweise
+	 * @param boolean $minergieZertifiziert Shortcut setter for minergieZertifiziert
+	 * @param string $value the actual value
+	 */
+	public function __construct(bool $passivhaus = null, bool $niedrigenergie = null, bool $neubaustandard = null, bool $kfw40 = null, bool $kfw60 = null, bool $kfw55 = null, bool $kfw70 = null, bool $minergiebauweise = null, bool $minergieZertifiziert = null, string $value = null) {
+		$this->passivhaus = $passivhaus;
+		$this->niedrigenergie = $niedrigenergie;
+		$this->neubaustandard = $neubaustandard;
+		$this->kfw40 = $kfw40;
+		$this->kfw60 = $kfw60;
+		$this->kfw55 = $kfw55;
+		$this->kfw70 = $kfw70;
+		$this->minergiebauweise = $minergiebauweise;
+		$this->minergieZertifiziert = $minergieZertifiziert;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getKfw40(): ?bool {
@@ -165,6 +198,13 @@ class Energietyp {
 	 */
 	public function getPassivhaus(): ?bool {
 		return $this->passivhaus;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -245,6 +285,15 @@ class Energietyp {
 	 */
 	public function setPassivhaus(?bool $passivhaus) {
 		$this->passivhaus = $passivhaus;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Energietyp
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -287,6 +288,13 @@ class Flaechen {
 	protected $userDefinedSimplefield;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
 	 * @Type("float") 
 	 * @var float
 	 */
@@ -309,6 +317,13 @@ class Flaechen {
 	 * @var float
 	 */
 	protected $wohnflaeche;
+
+	/**
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $value = null) {
+		$this->value = $value;
+	}
 
 	/**
 	 * @return float
@@ -629,6 +644,13 @@ class Flaechen {
 	 */
 	public function getUserDefinedSimplefield(): array {
 		return $this->userDefinedSimplefield ?? [];
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -1061,6 +1083,15 @@ class Flaechen {
 	 */
 	public function setUserDefinedSimplefield(array $userDefinedSimplefield) {
 		$this->userDefinedSimplefield = $userDefinedSimplefield;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Flaechen
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 

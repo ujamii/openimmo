@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -56,6 +57,13 @@ class Bad {
 	protected $pissoir;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
 	 * optional
 	 *
 	 * @Type("boolean") 
@@ -64,6 +72,23 @@ class Bad {
 	 * @var boolean
 	 */
 	protected $wanne;
+
+	/**
+	 * @param boolean $dusche Shortcut setter for dusche
+	 * @param boolean $wanne Shortcut setter for wanne
+	 * @param boolean $fenster Shortcut setter for fenster
+	 * @param boolean $bidet Shortcut setter for bidet
+	 * @param boolean $pissoir Shortcut setter for pissoir
+	 * @param string $value the actual value
+	 */
+	public function __construct(bool $dusche = null, bool $wanne = null, bool $fenster = null, bool $bidet = null, bool $pissoir = null, string $value = null) {
+		$this->dusche = $dusche;
+		$this->wanne = $wanne;
+		$this->fenster = $fenster;
+		$this->bidet = $bidet;
+		$this->pissoir = $pissoir;
+		$this->value = $value;
+	}
 
 	/**
 	 * @return boolean
@@ -91,6 +116,13 @@ class Bad {
 	 */
 	public function getPissoir(): ?bool {
 		return $this->pissoir;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -133,6 +165,15 @@ class Bad {
 	 */
 	public function setPissoir(?bool $pissoir) {
 		$this->pissoir = $pissoir;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Bad
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 

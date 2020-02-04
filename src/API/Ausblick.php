@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -41,10 +42,33 @@ class Ausblick {
 	protected $blick;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param string $blick Shortcut setter for blick
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $blick = null, string $value = null) {
+		$this->blick = $blick;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getBlick(): ?string {
 		return $this->blick;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -53,6 +77,15 @@ class Ausblick {
 	 */
 	public function setBlick(?string $blick) {
 		$this->blick = $blick;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Ausblick
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

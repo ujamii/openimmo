@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -24,10 +25,33 @@ class ObjektText {
 	protected $lang;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param string $lang Shortcut setter for lang
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $lang = null, string $value = null) {
+		$this->lang = $lang;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getLang(): string {
 		return $this->lang;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -36,6 +60,15 @@ class ObjektText {
 	 */
 	public function setLang(string $lang) {
 		$this->lang = $lang;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return ObjektText
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

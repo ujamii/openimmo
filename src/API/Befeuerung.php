@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -146,6 +147,13 @@ class Befeuerung {
 	protected $solar;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
 	 * optional
 	 *
 	 * @Type("boolean") 
@@ -154,6 +162,41 @@ class Befeuerung {
 	 * @var boolean
 	 */
 	protected $wasserElektro;
+
+	/**
+	 * @param boolean $oel Shortcut setter for oel
+	 * @param boolean $gas Shortcut setter for gas
+	 * @param boolean $elektro Shortcut setter for elektro
+	 * @param boolean $alternativ Shortcut setter for alternativ
+	 * @param boolean $solar Shortcut setter for solar
+	 * @param boolean $erdwaerme Shortcut setter for erdwaerme
+	 * @param boolean $luftwp Shortcut setter for luftwp
+	 * @param boolean $fern Shortcut setter for fern
+	 * @param boolean $block Shortcut setter for block
+	 * @param boolean $wasserElektro Shortcut setter for wasserElektro
+	 * @param boolean $pellet Shortcut setter for pellet
+	 * @param boolean $kohle Shortcut setter for kohle
+	 * @param boolean $holz Shortcut setter for holz
+	 * @param boolean $fluessiggas Shortcut setter for fluessiggas
+	 * @param string $value the actual value
+	 */
+	public function __construct(bool $oel = null, bool $gas = null, bool $elektro = null, bool $alternativ = null, bool $solar = null, bool $erdwaerme = null, bool $luftwp = null, bool $fern = null, bool $block = null, bool $wasserElektro = null, bool $pellet = null, bool $kohle = null, bool $holz = null, bool $fluessiggas = null, string $value = null) {
+		$this->oel = $oel;
+		$this->gas = $gas;
+		$this->elektro = $elektro;
+		$this->alternativ = $alternativ;
+		$this->solar = $solar;
+		$this->erdwaerme = $erdwaerme;
+		$this->luftwp = $luftwp;
+		$this->fern = $fern;
+		$this->block = $block;
+		$this->wasserElektro = $wasserElektro;
+		$this->pellet = $pellet;
+		$this->kohle = $kohle;
+		$this->holz = $holz;
+		$this->fluessiggas = $fluessiggas;
+		$this->value = $value;
+	}
 
 	/**
 	 * @return boolean
@@ -244,6 +287,13 @@ class Befeuerung {
 	 */
 	public function getSolar(): ?bool {
 		return $this->solar;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -367,6 +417,15 @@ class Befeuerung {
 	 */
 	public function setSolar(?bool $solar) {
 		$this->solar = $solar;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Befeuerung
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 

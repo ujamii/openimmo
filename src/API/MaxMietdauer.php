@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -41,10 +42,33 @@ class MaxMietdauer {
 	protected $maxDauer;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param string $maxDauer Shortcut setter for maxDauer
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $maxDauer = null, string $value = null) {
+		$this->maxDauer = $maxDauer;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getMaxDauer(): ?string {
 		return $this->maxDauer;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -53,6 +77,15 @@ class MaxMietdauer {
 	 */
 	public function setMaxDauer(?string $maxDauer) {
 		$this->maxDauer = $maxDauer;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return MaxMietdauer
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -156,6 +157,48 @@ class Boden {
 	protected $terrakotta;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param boolean $fliesen Shortcut setter for fliesen
+	 * @param boolean $stein Shortcut setter for stein
+	 * @param boolean $teppich Shortcut setter for teppich
+	 * @param boolean $parkett Shortcut setter for parkett
+	 * @param boolean $fertigparkett Shortcut setter for fertigparkett
+	 * @param boolean $laminat Shortcut setter for laminat
+	 * @param boolean $dielen Shortcut setter for dielen
+	 * @param boolean $kunststoff Shortcut setter for kunststoff
+	 * @param boolean $estrich Shortcut setter for estrich
+	 * @param boolean $doppelboden Shortcut setter for doppelboden
+	 * @param boolean $linoleum Shortcut setter for linoleum
+	 * @param boolean $marmor Shortcut setter for marmor
+	 * @param boolean $terrakotta Shortcut setter for terrakotta
+	 * @param boolean $granit Shortcut setter for granit
+	 * @param string $value the actual value
+	 */
+	public function __construct(bool $fliesen = null, bool $stein = null, bool $teppich = null, bool $parkett = null, bool $fertigparkett = null, bool $laminat = null, bool $dielen = null, bool $kunststoff = null, bool $estrich = null, bool $doppelboden = null, bool $linoleum = null, bool $marmor = null, bool $terrakotta = null, bool $granit = null, string $value = null) {
+		$this->fliesen = $fliesen;
+		$this->stein = $stein;
+		$this->teppich = $teppich;
+		$this->parkett = $parkett;
+		$this->fertigparkett = $fertigparkett;
+		$this->laminat = $laminat;
+		$this->dielen = $dielen;
+		$this->kunststoff = $kunststoff;
+		$this->estrich = $estrich;
+		$this->doppelboden = $doppelboden;
+		$this->linoleum = $linoleum;
+		$this->marmor = $marmor;
+		$this->terrakotta = $terrakotta;
+		$this->granit = $granit;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getDielen(): ?bool {
@@ -251,6 +294,13 @@ class Boden {
 	 */
 	public function getTerrakotta(): ?bool {
 		return $this->terrakotta;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -376,6 +426,15 @@ class Boden {
 	 */
 	public function setTerrakotta(?bool $terrakotta) {
 		$this->terrakotta = $terrakotta;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Boden
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

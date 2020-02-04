@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -45,10 +46,33 @@ class Sonstige {
 	protected $sonstigeTyp;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param string $sonstigeTyp Shortcut setter for sonstigeTyp
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $sonstigeTyp = null, string $value = null) {
+		$this->sonstigeTyp = $sonstigeTyp;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getSonstigeTyp(): ?string {
 		return $this->sonstigeTyp;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -57,6 +81,15 @@ class Sonstige {
 	 */
 	public function setSonstigeTyp(?string $sonstigeTyp) {
 		$this->sonstigeTyp = $sonstigeTyp;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Sonstige
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -45,6 +46,26 @@ class Bauweise {
 	protected $massiv;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param boolean $massiv Shortcut setter for massiv
+	 * @param boolean $fertigteile Shortcut setter for fertigteile
+	 * @param boolean $holz Shortcut setter for holz
+	 * @param string $value the actual value
+	 */
+	public function __construct(bool $massiv = null, bool $fertigteile = null, bool $holz = null, string $value = null) {
+		$this->massiv = $massiv;
+		$this->fertigteile = $fertigteile;
+		$this->holz = $holz;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getFertigteile(): ?bool {
@@ -63,6 +84,13 @@ class Bauweise {
 	 */
 	public function getMassiv(): ?bool {
 		return $this->massiv;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -89,6 +117,15 @@ class Bauweise {
 	 */
 	public function setMassiv(?bool $massiv) {
 		$this->massiv = $massiv;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Bauweise
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }
