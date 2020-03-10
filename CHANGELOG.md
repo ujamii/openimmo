@@ -1,3 +1,11 @@
+## 0.4.0 (March 10, 2020)
+  - Merge branch 'feature/multiple-date-formats'
+  - [FEATURE] with https://github.com/schmittjoh/serializer/pull/1108 merged now, multiple date formats are supported here as well
+  - [TASK] fixed typo 
+  - [TASK] fixed wrong type hint
+  - [TASK] also works with jms/serializer^3.4 
+  - [TASK] running the tests can now also be done by `composer run tests`
+
 ## 0.3.1 (September 04, 2019)
   - [TASK] updated composer packages and re-generated api classes
   - Merge pull request #2 from qbus-agentur/fix-api-regeneration
