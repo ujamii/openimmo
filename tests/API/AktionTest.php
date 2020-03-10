@@ -14,8 +14,22 @@ class AktionTest extends TestCase
         $this->aktion = new Aktion();
     }
 
-    public function testMissing()
+    public function testAktionart()
     {
-        $this->markTestIncomplete('Test not yet implemented');
+        $this->aktion->setAktionart(Aktion::AKTIONART_REFERENZ);
+        $this->assertEquals(Aktion::AKTIONART_REFERENZ, $this->aktion->getAktionart());
+    }
+
+    public function testValue()
+    {
+        $this->aktion->setValue('FooBar 123!');
+        $this->assertEquals('FooBar 123!', $this->aktion->getValue());
+    }
+
+    public function test__construct()
+    {
+        $this->aktion = new Aktion(Aktion::AKTIONART_DELETE, 'LÖSCHEN!!!');
+        $this->assertEquals(Aktion::AKTIONART_DELETE, $this->aktion->getAktionart());
+        $this->assertEquals('LÖSCHEN!!!', $this->aktion->getValue());
     }
 }
