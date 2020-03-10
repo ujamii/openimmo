@@ -21,7 +21,7 @@ class Bieterverfahren {
 	protected $beginnAngebotsphase;
 
 	/**
-	 * @Type("DateTime<'Y-m-d\TH:i:s'>") 
+	 * @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>") 
 	 * @var \DateTime
 	 */
 	protected $beginnBietzeit;

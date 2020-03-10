@@ -65,6 +65,24 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($uebertragung, 'xml'));
     }
 
+    public function testWriteUebertragungXmlRealWorld()
+    {
+        $xmlString = '<uebertragung art="OFFLINE" umfang="TEIL" modus="CHANGE" version="1.2.7" sendersoftware="OOF" senderversion="$Rev: 85202 $" techn_email="xxx@xxx.de" timestamp="2019-09-30T12:42:27"/>';
+
+        $uebertragung = new Uebertragung();
+        $uebertragung
+            ->setArt(Uebertragung::ART_OFFLINE)
+            ->setUmfang(Uebertragung::UMFANG_TEIL)
+            ->setModus(Uebertragung::MODUS_CHANGE)
+            ->setVersion('1.2.7')
+            ->setSendersoftware('OOF')
+            ->setSenderversion('$Rev: 85202 $')
+            ->setTechnEmail('xxx@xxx.de')
+            ->setTimestamp(new \DateTime('2019-09-30T12:42:27.000+00:00'));
+
+        $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($uebertragung, 'xml'));
+    }
+
     public function testWriteNutzungsartXml()
     {
         $xmlString   = '<nutzungsart WOHNEN="true" GEWERBE="false" ANLAGE="false" WAZ="false" />';
