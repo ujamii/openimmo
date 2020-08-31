@@ -32,7 +32,7 @@ composer req ujamii/openimmo
 If you like to use this API as base for an integration into a CMS or Framework, feel free to contact me, I will link it here.
 
 - Integration into TYPO3 CMS, [extension "openimmo"](https://github.com/ujamii/openimmo-typo3)
-
+- NEOS CMS, [package "Ujamii.OpenImmoNeos"](https://github.com/ujamii/openimmo-neos)
 
 ## Usage
 
