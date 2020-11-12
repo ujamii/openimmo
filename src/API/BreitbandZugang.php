@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -34,24 +33,6 @@ class BreitbandZugang {
 	protected $speed;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $art Shortcut setter for art
-	 * @param float $speed Shortcut setter for speed
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $art = null, float $speed = null, string $value = null) {
-		$this->art = $art;
-		$this->speed = $speed;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getArt(): ?string {
@@ -63,13 +44,6 @@ class BreitbandZugang {
 	 */
 	public function getSpeed(): ?float {
 		return $this->speed;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -87,15 +61,6 @@ class BreitbandZugang {
 	 */
 	public function setSpeed(?float $speed) {
 		$this->speed = $speed;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return BreitbandZugang
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

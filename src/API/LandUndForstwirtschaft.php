@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -82,33 +81,10 @@ class LandUndForstwirtschaft {
 	protected $landTyp;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $landTyp Shortcut setter for landTyp
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $landTyp = null, string $value = null) {
-		$this->landTyp = $landTyp;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getLandTyp(): ?string {
 		return $this->landTyp;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -117,15 +93,6 @@ class LandUndForstwirtschaft {
 	 */
 	public function setLandTyp(?string $landTyp) {
 		$this->landTyp = $landTyp;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return LandUndForstwirtschaft
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

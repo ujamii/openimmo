@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -66,30 +65,6 @@ class Ausbaustufe {
 	protected $schluesselfertigohnebodenplatte;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param boolean $bausatzhaus Shortcut setter for bausatzhaus
-	 * @param boolean $ausbauhaus Shortcut setter for ausbauhaus
-	 * @param boolean $schluesselfertigmitkeller Shortcut setter for schluesselfertigmitkeller
-	 * @param boolean $schluesselfertigohnebodenplatte Shortcut setter for schluesselfertigohnebodenplatte
-	 * @param boolean $schluesselfertigmitbodenplatte Shortcut setter for schluesselfertigmitbodenplatte
-	 * @param string $value the actual value
-	 */
-	public function __construct(bool $bausatzhaus = null, bool $ausbauhaus = null, bool $schluesselfertigmitkeller = null, bool $schluesselfertigohnebodenplatte = null, bool $schluesselfertigmitbodenplatte = null, string $value = null) {
-		$this->bausatzhaus = $bausatzhaus;
-		$this->ausbauhaus = $ausbauhaus;
-		$this->schluesselfertigmitkeller = $schluesselfertigmitkeller;
-		$this->schluesselfertigohnebodenplatte = $schluesselfertigohnebodenplatte;
-		$this->schluesselfertigmitbodenplatte = $schluesselfertigmitbodenplatte;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return boolean
 	 */
 	public function getAusbauhaus(): ?bool {
@@ -122,13 +97,6 @@ class Ausbaustufe {
 	 */
 	public function getSchluesselfertigohnebodenplatte(): ?bool {
 		return $this->schluesselfertigohnebodenplatte;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -173,15 +141,6 @@ class Ausbaustufe {
 	 */
 	public function setSchluesselfertigohnebodenplatte(?bool $schluesselfertigohnebodenplatte) {
 		$this->schluesselfertigohnebodenplatte = $schluesselfertigohnebodenplatte;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Ausbaustufe
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

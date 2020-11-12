@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -63,13 +62,6 @@ class ImpressumStrukt {
 	protected $umsstId;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
 	 * @Type("string") 
 	 * @var string
 	 */
@@ -80,13 +72,6 @@ class ImpressumStrukt {
 	 * @var string
 	 */
 	protected $weiteres;
-
-	/**
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $value = null) {
-		$this->value = $value;
-	}
 
 	/**
 	 * @return string
@@ -142,13 +127,6 @@ class ImpressumStrukt {
 	 */
 	public function getUmsstId(): string {
 		return $this->umsstId;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -234,15 +212,6 @@ class ImpressumStrukt {
 	 */
 	public function setUmsstId(string $umsstId) {
 		$this->umsstId = $umsstId;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return ImpressumStrukt
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 

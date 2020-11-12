@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -66,33 +65,10 @@ class BueroPraxen {
 	protected $bueroTyp;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $bueroTyp Shortcut setter for bueroTyp
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $bueroTyp = null, string $value = null) {
-		$this->bueroTyp = $bueroTyp;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getBueroTyp(): ?string {
 		return $this->bueroTyp;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -101,15 +77,6 @@ class BueroPraxen {
 	 */
 	public function setBueroTyp(?string $bueroTyp) {
 		$this->bueroTyp = $bueroTyp;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return BueroPraxen
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

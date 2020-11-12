@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -25,13 +24,6 @@ class Versteigerung {
 	 * @var string
 	 */
 	protected $amtsgericht;
-
-	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
 
 	/**
 	 * @Type("float") 
@@ -58,13 +50,6 @@ class Versteigerung {
 	protected $zwangsversteigerung;
 
 	/**
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $value = null) {
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getAktenzeichen(): ?string {
@@ -76,13 +61,6 @@ class Versteigerung {
 	 */
 	public function getAmtsgericht(): ?string {
 		return $this->amtsgericht;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -128,15 +106,6 @@ class Versteigerung {
 	 */
 	public function setAmtsgericht(?string $amtsgericht) {
 		$this->amtsgericht = $amtsgericht;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Versteigerung
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 

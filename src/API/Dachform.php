@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -76,13 +75,6 @@ class Dachform {
 	protected $satteldach;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
 	 * optional
 	 *
 	 * @Type("boolean") 
@@ -91,27 +83,6 @@ class Dachform {
 	 * @var boolean
 	 */
 	protected $walmdach;
-
-	/**
-	 * @param boolean $krueppelwalmdach Shortcut setter for krueppelwalmdach
-	 * @param boolean $mansarddach Shortcut setter for mansarddach
-	 * @param boolean $pultdach Shortcut setter for pultdach
-	 * @param boolean $satteldach Shortcut setter for satteldach
-	 * @param boolean $walmdach Shortcut setter for walmdach
-	 * @param boolean $flachdach Shortcut setter for flachdach
-	 * @param boolean $pyramidendach Shortcut setter for pyramidendach
-	 * @param string $value the actual value
-	 */
-	public function __construct(bool $krueppelwalmdach = null, bool $mansarddach = null, bool $pultdach = null, bool $satteldach = null, bool $walmdach = null, bool $flachdach = null, bool $pyramidendach = null, string $value = null) {
-		$this->krueppelwalmdach = $krueppelwalmdach;
-		$this->mansarddach = $mansarddach;
-		$this->pultdach = $pultdach;
-		$this->satteldach = $satteldach;
-		$this->walmdach = $walmdach;
-		$this->flachdach = $flachdach;
-		$this->pyramidendach = $pyramidendach;
-		$this->value = $value;
-	}
 
 	/**
 	 * @return boolean
@@ -153,13 +124,6 @@ class Dachform {
 	 */
 	public function getSatteldach(): ?bool {
 		return $this->satteldach;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -220,15 +184,6 @@ class Dachform {
 	 */
 	public function setSatteldach(?bool $satteldach) {
 		$this->satteldach = $satteldach;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Dachform
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 

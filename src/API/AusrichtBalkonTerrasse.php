@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -87,13 +86,6 @@ class AusrichtBalkonTerrasse {
 	protected $suedwest;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
 	 * optional
 	 *
 	 * @Type("boolean") 
@@ -102,29 +94,6 @@ class AusrichtBalkonTerrasse {
 	 * @var boolean
 	 */
 	protected $west;
-
-	/**
-	 * @param boolean $nord Shortcut setter for nord
-	 * @param boolean $ost Shortcut setter for ost
-	 * @param boolean $sued Shortcut setter for sued
-	 * @param boolean $west Shortcut setter for west
-	 * @param boolean $nordost Shortcut setter for nordost
-	 * @param boolean $nordwest Shortcut setter for nordwest
-	 * @param boolean $suedost Shortcut setter for suedost
-	 * @param boolean $suedwest Shortcut setter for suedwest
-	 * @param string $value the actual value
-	 */
-	public function __construct(bool $nord = null, bool $ost = null, bool $sued = null, bool $west = null, bool $nordost = null, bool $nordwest = null, bool $suedost = null, bool $suedwest = null, string $value = null) {
-		$this->nord = $nord;
-		$this->ost = $ost;
-		$this->sued = $sued;
-		$this->west = $west;
-		$this->nordost = $nordost;
-		$this->nordwest = $nordwest;
-		$this->suedost = $suedost;
-		$this->suedwest = $suedwest;
-		$this->value = $value;
-	}
 
 	/**
 	 * @return boolean
@@ -173,13 +142,6 @@ class AusrichtBalkonTerrasse {
 	 */
 	public function getSuedwest(): ?bool {
 		return $this->suedwest;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -249,15 +211,6 @@ class AusrichtBalkonTerrasse {
 	 */
 	public function setSuedwest(?bool $suedwest) {
 		$this->suedwest = $suedwest;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return AusrichtBalkonTerrasse
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 

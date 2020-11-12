@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -47,26 +46,6 @@ class Sicherheitstechnik {
 	protected $polizeiruf;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param boolean $alarmanlage Shortcut setter for alarmanlage
-	 * @param boolean $kamera Shortcut setter for kamera
-	 * @param boolean $polizeiruf Shortcut setter for polizeiruf
-	 * @param string $value the actual value
-	 */
-	public function __construct(bool $alarmanlage = null, bool $kamera = null, bool $polizeiruf = null, string $value = null) {
-		$this->alarmanlage = $alarmanlage;
-		$this->kamera = $kamera;
-		$this->polizeiruf = $polizeiruf;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return boolean
 	 */
 	public function getAlarmanlage(): ?bool {
@@ -85,13 +64,6 @@ class Sicherheitstechnik {
 	 */
 	public function getPolizeiruf(): ?bool {
 		return $this->polizeiruf;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -118,15 +90,6 @@ class Sicherheitstechnik {
 	 */
 	public function setPolizeiruf(?bool $polizeiruf) {
 		$this->polizeiruf = $polizeiruf;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Sicherheitstechnik
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

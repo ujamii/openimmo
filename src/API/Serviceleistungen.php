@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -57,13 +56,6 @@ class Serviceleistungen {
 	protected $reinigung;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
 	 * optional
 	 *
 	 * @Type("boolean") 
@@ -72,23 +64,6 @@ class Serviceleistungen {
 	 * @var boolean
 	 */
 	protected $wachdienst;
-
-	/**
-	 * @param boolean $betreutesWohnen Shortcut setter for betreutesWohnen
-	 * @param boolean $catering Shortcut setter for catering
-	 * @param boolean $reinigung Shortcut setter for reinigung
-	 * @param boolean $einkauf Shortcut setter for einkauf
-	 * @param boolean $wachdienst Shortcut setter for wachdienst
-	 * @param string $value the actual value
-	 */
-	public function __construct(bool $betreutesWohnen = null, bool $catering = null, bool $reinigung = null, bool $einkauf = null, bool $wachdienst = null, string $value = null) {
-		$this->betreutesWohnen = $betreutesWohnen;
-		$this->catering = $catering;
-		$this->reinigung = $reinigung;
-		$this->einkauf = $einkauf;
-		$this->wachdienst = $wachdienst;
-		$this->value = $value;
-	}
 
 	/**
 	 * @return boolean
@@ -116,13 +91,6 @@ class Serviceleistungen {
 	 */
 	public function getReinigung(): ?bool {
 		return $this->reinigung;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -165,15 +133,6 @@ class Serviceleistungen {
 	 */
 	public function setReinigung(?bool $reinigung) {
 		$this->reinigung = $reinigung;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Serviceleistungen
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 

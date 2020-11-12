@@ -6,6 +6,7 @@ use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\SerializerInterface;
 use Ujamii\OpenImmo\API\Anbieter;
 use Ujamii\OpenImmo\API\Ausblick;
+use Ujamii\OpenImmo\API\AussenCourtage;
 use Ujamii\OpenImmo\API\Distanzen;
 use Ujamii\OpenImmo\API\DistanzenSport;
 use Ujamii\OpenImmo\API\Immobilie;
@@ -120,7 +121,7 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
                 new DistanzenSport(DistanzenSport::DISTANZ_ZU_SPORT_SEE, 15)
             ])
             ->setDistanzen([
-                new Distanzen(Distanzen::DISTANZ_ZU_HAUPTSCHULE, 22)
+                new Distanzen(Distanzen::DISTANZ_ZU_HAUPTSCHULE, '22.0')
             ]);
 
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($infrastrktur, 'xml'));
@@ -138,5 +139,13 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
         $openImmo->setAnbieter([$anbieter]);
 
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($openImmo, 'xml'));
+    }
+
+    public function testWriteComplexTypeMixed()
+    {
+        $xmlString = '<aussen_courtage>k.A.</aussen_courtage>';
+        $subject = new AussenCourtage(null, 'k.A.');
+
+        $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($subject, 'xml'));
     }
 }

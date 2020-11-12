@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -34,33 +33,10 @@ class Moebliert {
 	protected $moeb;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $moeb Shortcut setter for moeb
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $moeb = null, string $value = null) {
-		$this->moeb = $moeb;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getMoeb(): ?string {
 		return $this->moeb;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -69,15 +45,6 @@ class Moebliert {
 	 */
 	public function setMoeb(?string $moeb) {
 		$this->moeb = $moeb;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Moebliert
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

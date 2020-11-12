@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -156,13 +155,6 @@ class Energiepass {
 	protected $stromwert;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
 	 * @Type("string") 
 	 * @var string
 	 */
@@ -173,13 +165,6 @@ class Energiepass {
 	 * @var string
 	 */
 	protected $wertklasse;
-
-	/**
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $value = null) {
-		$this->value = $value;
-	}
 
 	/**
 	 * @return \DateTime
@@ -298,13 +283,6 @@ class Energiepass {
 	 */
 	public function getStromwert(): ?string {
 		return $this->stromwert;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -471,15 +449,6 @@ class Energiepass {
 	 */
 	public function setStromwert(?string $stromwert) {
 		$this->stromwert = $stromwert;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Energiepass
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 

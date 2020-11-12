@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -754,33 +753,10 @@ class Waehrung {
 	protected $isoWaehrung;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $isoWaehrung Shortcut setter for isoWaehrung
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $isoWaehrung = null, string $value = null) {
-		$this->isoWaehrung = $isoWaehrung;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getIsoWaehrung(): ?string {
 		return $this->isoWaehrung;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -789,15 +765,6 @@ class Waehrung {
 	 */
 	public function setIsoWaehrung(?string $isoWaehrung) {
 		$this->isoWaehrung = $isoWaehrung;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Waehrung
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

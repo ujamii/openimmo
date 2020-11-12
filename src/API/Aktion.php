@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -40,33 +39,10 @@ class Aktion {
 	protected $aktionart;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $aktionart Shortcut setter for aktionart
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $aktionart = null, string $value = null) {
-		$this->aktionart = $aktionart;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getAktionart(): ?string {
 		return $this->aktionart;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -75,15 +51,6 @@ class Aktion {
 	 */
 	public function setAktionart(?string $aktionart) {
 		$this->aktionart = $aktionart;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Aktion
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

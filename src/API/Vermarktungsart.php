@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -57,28 +56,6 @@ class Vermarktungsart {
 	protected $mietePacht;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param boolean $kauf Shortcut setter for kauf
-	 * @param boolean $mietePacht Shortcut setter for mietePacht
-	 * @param boolean $erbpacht Shortcut setter for erbpacht
-	 * @param boolean $leasing Shortcut setter for leasing
-	 * @param string $value the actual value
-	 */
-	public function __construct(bool $kauf = null, bool $mietePacht = null, bool $erbpacht = null, bool $leasing = null, string $value = null) {
-		$this->kauf = $kauf;
-		$this->mietePacht = $mietePacht;
-		$this->erbpacht = $erbpacht;
-		$this->leasing = $leasing;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return boolean
 	 */
 	public function getErbpacht(): ?bool {
@@ -104,13 +81,6 @@ class Vermarktungsart {
 	 */
 	public function getMietePacht(): bool {
 		return $this->mietePacht;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -146,15 +116,6 @@ class Vermarktungsart {
 	 */
 	public function setMietePacht(bool $mietePacht) {
 		$this->mietePacht = $mietePacht;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Vermarktungsart
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

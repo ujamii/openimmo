@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -62,33 +61,10 @@ class Einzelhandel {
 	protected $handelTyp;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $handelTyp Shortcut setter for handelTyp
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $handelTyp = null, string $value = null) {
-		$this->handelTyp = $handelTyp;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getHandelTyp(): ?string {
 		return $this->handelTyp;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -97,15 +73,6 @@ class Einzelhandel {
 	 */
 	public function setHandelTyp(?string $handelTyp) {
 		$this->handelTyp = $handelTyp;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Einzelhandel
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

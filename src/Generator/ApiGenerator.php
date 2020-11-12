@@ -20,6 +20,7 @@ use gossi\codegen\model\PhpMethod;
 use gossi\codegen\model\PhpParameter;
 use gossi\codegen\model\PhpProperty;
 use gossi\docblock\tags\TagFactory;
+use Ujamii\OpenImmo\XSDReader\Schema\Type\ComplexTypeMixed;
 
 /**
  * Class ApiGenerator
@@ -93,10 +94,8 @@ class ApiGenerator
 
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
             $this->addSimpleValue($element->getType()->getExtension(), $class, $element->getType()->getAttributes());
-        } else if ($element->getType() instanceof BaseComplexType) {
-            // TODO: this needs to be a special type in the future to fix https://github.com/ujamii/openimmo/issues/3
-            // @see https://github.com/goetas-webservices/xsd-reader/issues/50
-            // @see https://github.com/goetas-webservices/xsd2php/issues/99#issuecomment-550447364
+        } else if ($element->getType() instanceof ComplexTypeMixed) {
+            // @see https://github.com/ujamii/openimmo/issues/3
             $this->addSimpleValue(null, $class, $element->getType()->getAttributes());
             foreach ($element->getType()->getElements() as $property) {
                 $this->parseProperty($property, $class);

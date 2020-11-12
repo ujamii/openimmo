@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -43,20 +42,6 @@ class Anhaenge {
 	protected $userDefinedSimplefield;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $value = null) {
-		$this->value = $value;
-	}
-
-	/**
 	 * Returns array of Anhang
 	 *
 	 * @return array
@@ -93,13 +78,6 @@ class Anhaenge {
 	}
 
 	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
-	}
-
-	/**
 	 * @param array $anhang Setter for anhang
 	 * @return Anhaenge
 	 */
@@ -132,15 +110,6 @@ class Anhaenge {
 	 */
 	public function setUserDefinedSimplefield(array $userDefinedSimplefield) {
 		$this->userDefinedSimplefield = $userDefinedSimplefield;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Anhaenge
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

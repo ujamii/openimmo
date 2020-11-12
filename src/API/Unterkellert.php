@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -38,33 +37,10 @@ class Unterkellert {
 	protected $keller;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $keller Shortcut setter for keller
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $keller = null, string $value = null) {
-		$this->keller = $keller;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getKeller(): ?string {
 		return $this->keller;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -73,15 +49,6 @@ class Unterkellert {
 	 */
 	public function setKeller(?string $keller) {
 		$this->keller = $keller;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Unterkellert
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

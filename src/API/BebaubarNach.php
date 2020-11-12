@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -54,33 +53,10 @@ class BebaubarNach {
 	protected $bebaubarAttr;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $bebaubarAttr Shortcut setter for bebaubarAttr
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $bebaubarAttr = null, string $value = null) {
-		$this->bebaubarAttr = $bebaubarAttr;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getBebaubarAttr(): ?string {
 		return $this->bebaubarAttr;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -89,15 +65,6 @@ class BebaubarNach {
 	 */
 	public function setBebaubarAttr(?string $bebaubarAttr) {
 		$this->bebaubarAttr = $bebaubarAttr;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return BebaubarNach
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

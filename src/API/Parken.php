@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -66,33 +65,10 @@ class Parken {
 	protected $parkenTyp;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $parkenTyp Shortcut setter for parkenTyp
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $parkenTyp = null, string $value = null) {
-		$this->parkenTyp = $parkenTyp;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getParkenTyp(): ?string {
 		return $this->parkenTyp;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -101,15 +77,6 @@ class Parken {
 	 */
 	public function setParkenTyp(?string $parkenTyp) {
 		$this->parkenTyp = $parkenTyp;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Parken
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

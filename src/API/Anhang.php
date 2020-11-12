@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -132,24 +131,6 @@ class Anhang {
 	protected $location;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $location Shortcut setter for location
-	 * @param string $gruppe Shortcut setter for gruppe
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $location = null, string $gruppe = null, string $value = null) {
-		$this->location = $location;
-		$this->gruppe = $gruppe;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getAnhangtitel(): ?string {
@@ -189,13 +170,6 @@ class Anhang {
 	 */
 	public function getLocation(): string {
 		return $this->location;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -249,15 +223,6 @@ class Anhang {
 	 */
 	public function setLocation(string $location) {
 		$this->location = $location;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Anhang
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

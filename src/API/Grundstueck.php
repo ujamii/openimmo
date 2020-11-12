@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -62,33 +61,10 @@ class Grundstueck {
 	protected $grundstTyp;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $grundstTyp Shortcut setter for grundstTyp
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $grundstTyp = null, string $value = null) {
-		$this->grundstTyp = $grundstTyp;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getGrundstTyp(): ?string {
 		return $this->grundstTyp;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -97,15 +73,6 @@ class Grundstueck {
 	 */
 	public function setGrundstTyp(?string $grundstTyp) {
 		$this->grundstTyp = $grundstTyp;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Grundstueck
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

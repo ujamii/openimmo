@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -34,24 +33,6 @@ class Geokoordinaten {
 	protected $laengengrad;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param float $breitengrad Shortcut setter for breitengrad
-	 * @param float $laengengrad Shortcut setter for laengengrad
-	 * @param string $value the actual value
-	 */
-	public function __construct(float $breitengrad = null, float $laengengrad = null, string $value = null) {
-		$this->breitengrad = $breitengrad;
-		$this->laengengrad = $laengengrad;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return float
 	 */
 	public function getBreitengrad(): float {
@@ -63,13 +44,6 @@ class Geokoordinaten {
 	 */
 	public function getLaengengrad(): float {
 		return $this->laengengrad;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -87,15 +61,6 @@ class Geokoordinaten {
 	 */
 	public function setLaengengrad(float $laengengrad) {
 		$this->laengengrad = $laengengrad;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Geokoordinaten
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

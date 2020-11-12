@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlList;
@@ -210,13 +209,6 @@ class WeitereAdresse {
 	protected $userDefinedSimplefield;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
 	 * @Type("string") 
 	 * @var string
 	 */
@@ -227,15 +219,6 @@ class WeitereAdresse {
 	 * @var string
 	 */
 	protected $zusatzfeld;
-
-	/**
-	 * @param string $adressart Shortcut setter for adressart
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $adressart = null, string $value = null) {
-		$this->adressart = $adressart;
-		$this->value = $value;
-	}
 
 	/**
 	 * @return string
@@ -462,13 +445,6 @@ class WeitereAdresse {
 	 */
 	public function getUserDefinedSimplefield(): array {
 		return $this->userDefinedSimplefield ?? [];
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -761,15 +737,6 @@ class WeitereAdresse {
 	 */
 	public function setUserDefinedSimplefield(array $userDefinedSimplefield) {
 		$this->userDefinedSimplefield = $userDefinedSimplefield;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return WeitereAdresse
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 

@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -77,32 +76,6 @@ class Stellplatzart {
 	protected $tiefgarage;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param boolean $garage Shortcut setter for garage
-	 * @param boolean $tiefgarage Shortcut setter for tiefgarage
-	 * @param boolean $carport Shortcut setter for carport
-	 * @param boolean $freiplatz Shortcut setter for freiplatz
-	 * @param boolean $parkhaus Shortcut setter for parkhaus
-	 * @param boolean $duplex Shortcut setter for duplex
-	 * @param string $value the actual value
-	 */
-	public function __construct(bool $garage = null, bool $tiefgarage = null, bool $carport = null, bool $freiplatz = null, bool $parkhaus = null, bool $duplex = null, string $value = null) {
-		$this->garage = $garage;
-		$this->tiefgarage = $tiefgarage;
-		$this->carport = $carport;
-		$this->freiplatz = $freiplatz;
-		$this->parkhaus = $parkhaus;
-		$this->duplex = $duplex;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return boolean
 	 */
 	public function getCarport(): ?bool {
@@ -142,13 +115,6 @@ class Stellplatzart {
 	 */
 	public function getTiefgarage(): ?bool {
 		return $this->tiefgarage;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -202,15 +168,6 @@ class Stellplatzart {
 	 */
 	public function setTiefgarage(?bool $tiefgarage) {
 		$this->tiefgarage = $tiefgarage;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Stellplatzart
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -37,13 +36,6 @@ class Nutzungsart {
 	protected $gewerbe;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
 	 * optional
 	 *
 	 * @Type("boolean") 
@@ -64,21 +56,6 @@ class Nutzungsart {
 	protected $wohnen;
 
 	/**
-	 * @param boolean $wohnen Shortcut setter for wohnen
-	 * @param boolean $gewerbe Shortcut setter for gewerbe
-	 * @param boolean $anlage Shortcut setter for anlage
-	 * @param boolean $waz Shortcut setter for waz
-	 * @param string $value the actual value
-	 */
-	public function __construct(bool $wohnen = null, bool $gewerbe = null, bool $anlage = null, bool $waz = null, string $value = null) {
-		$this->wohnen = $wohnen;
-		$this->gewerbe = $gewerbe;
-		$this->anlage = $anlage;
-		$this->waz = $waz;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return boolean
 	 */
 	public function getAnlage(): ?bool {
@@ -90,13 +67,6 @@ class Nutzungsart {
 	 */
 	public function getGewerbe(): bool {
 		return $this->gewerbe;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -128,15 +98,6 @@ class Nutzungsart {
 	 */
 	public function setGewerbe(bool $gewerbe) {
 		$this->gewerbe = $gewerbe;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Nutzungsart
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 

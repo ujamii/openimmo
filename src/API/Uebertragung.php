@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -119,13 +118,6 @@ class Uebertragung {
 	protected $umfang;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
 	 * required
 	 *
 	 * @Type("string") 
@@ -133,31 +125,6 @@ class Uebertragung {
 	 * @var string
 	 */
 	protected $version;
-
-	/**
-	 * @param string $art Shortcut setter for art
-	 * @param string $umfang Shortcut setter for umfang
-	 * @param string $modus Shortcut setter for modus
-	 * @param string $version Shortcut setter for version
-	 * @param string $sendersoftware Shortcut setter for sendersoftware
-	 * @param string $senderversion Shortcut setter for senderversion
-	 * @param string $technEmail Shortcut setter for technEmail
-	 * @param string $regiId Shortcut setter for regiId
-	 * @param \DateTime $timestamp Shortcut setter for timestamp
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $art = null, string $umfang = null, string $modus = null, string $version = null, string $sendersoftware = null, string $senderversion = null, string $technEmail = null, string $regiId = null, \DateTime $timestamp = null, string $value = null) {
-		$this->art = $art;
-		$this->umfang = $umfang;
-		$this->modus = $modus;
-		$this->version = $version;
-		$this->sendersoftware = $sendersoftware;
-		$this->senderversion = $senderversion;
-		$this->technEmail = $technEmail;
-		$this->regiId = $regiId;
-		$this->timestamp = $timestamp;
-		$this->value = $value;
-	}
 
 	/**
 	 * @return string
@@ -213,13 +180,6 @@ class Uebertragung {
 	 */
 	public function getUmfang(): string {
 		return $this->umfang;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -298,15 +258,6 @@ class Uebertragung {
 	 */
 	public function setUmfang(string $umfang) {
 		$this->umfang = $umfang;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Uebertragung
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 

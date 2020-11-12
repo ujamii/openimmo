@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -80,13 +79,6 @@ class Zustand {
 	const ZUSTAND_ART_VOLL_SANIERT = 'VOLL_SANIERT';
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
 	 * optional
 	 *
 	 * @Type("string") 
@@ -97,35 +89,10 @@ class Zustand {
 	protected $zustandArt;
 
 	/**
-	 * @param string $zustandArt Shortcut setter for zustandArt
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $zustandArt = null, string $value = null) {
-		$this->zustandArt = $zustandArt;
-		$this->value = $value;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getZustandArt(): ?string {
 		return $this->zustandArt;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Zustand
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
-		return $this;
 	}
 
 	/**

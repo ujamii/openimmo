@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -37,24 +36,6 @@ class AngeschlGastronomie {
 	protected $hotelrestaurant;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param boolean $hotelrestaurant Shortcut setter for hotelrestaurant
-	 * @param boolean $bar Shortcut setter for bar
-	 * @param string $value the actual value
-	 */
-	public function __construct(bool $hotelrestaurant = null, bool $bar = null, string $value = null) {
-		$this->hotelrestaurant = $hotelrestaurant;
-		$this->bar = $bar;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return boolean
 	 */
 	public function getBar(): ?bool {
@@ -66,13 +47,6 @@ class AngeschlGastronomie {
 	 */
 	public function getHotelrestaurant(): ?bool {
 		return $this->hotelrestaurant;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -90,15 +64,6 @@ class AngeschlGastronomie {
 	 */
 	public function setHotelrestaurant(?bool $hotelrestaurant) {
 		$this->hotelrestaurant = $hotelrestaurant;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return AngeschlGastronomie
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

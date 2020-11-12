@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -954,33 +953,10 @@ class Land {
 	protected $isoLand;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param string $isoLand Shortcut setter for isoLand
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $isoLand = null, string $value = null) {
-		$this->isoLand = $isoLand;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getIsoLand(): ?string {
 		return $this->isoLand;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -989,15 +965,6 @@ class Land {
 	 */
 	public function setIsoLand(?string $isoLand) {
 		$this->isoLand = $isoLand;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Land
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

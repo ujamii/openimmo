@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -68,13 +67,6 @@ class ZinshausRenditeobjekt {
 	const ZINS_TYP_WOHNANLAGEN = 'WOHNANLAGEN';
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
 	 * optional
 	 *
 	 * @Type("string") 
@@ -85,35 +77,10 @@ class ZinshausRenditeobjekt {
 	protected $zinsTyp;
 
 	/**
-	 * @param string $zinsTyp Shortcut setter for zinsTyp
-	 * @param string $value the actual value
-	 */
-	public function __construct(string $zinsTyp = null, string $value = null) {
-		$this->zinsTyp = $zinsTyp;
-		$this->value = $value;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getZinsTyp(): ?string {
 		return $this->zinsTyp;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return ZinshausRenditeobjekt
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
-		return $this;
 	}
 
 	/**

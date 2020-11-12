@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
-use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -47,26 +46,6 @@ class Kueche {
 	protected $pantry;
 
 	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
-
-	/**
-	 * @param boolean $ebk Shortcut setter for ebk
-	 * @param boolean $offen Shortcut setter for offen
-	 * @param boolean $pantry Shortcut setter for pantry
-	 * @param string $value the actual value
-	 */
-	public function __construct(bool $ebk = null, bool $offen = null, bool $pantry = null, string $value = null) {
-		$this->ebk = $ebk;
-		$this->offen = $offen;
-		$this->pantry = $pantry;
-		$this->value = $value;
-	}
-
-	/**
 	 * @return boolean
 	 */
 	public function getEbk(): ?bool {
@@ -85,13 +64,6 @@ class Kueche {
 	 */
 	public function getPantry(): ?bool {
 		return $this->pantry;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
 	}
 
 	/**
@@ -118,15 +90,6 @@ class Kueche {
 	 */
 	public function setPantry(?bool $pantry) {
 		$this->pantry = $pantry;
-		return $this;
-	}
-
-	/**
-	 * @param string $value Setter for value
-	 * @return Kueche
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
 		return $this;
 	}
 }

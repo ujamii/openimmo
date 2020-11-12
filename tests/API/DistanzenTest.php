@@ -18,7 +18,7 @@ class DistanzenTest extends TestCase
     protected function setUp()
     {
         $this->distanzZu = Distanzen::DISTANZ_ZU_AUTOBAHN;
-        $this->value = 3265.6534;
+        $this->value = '3265.6534';
         $this->distanzen = new Distanzen(
             $this->distanzZu,
             $this->value
@@ -30,8 +30,8 @@ class DistanzenTest extends TestCase
         $this->assertEquals($this->value, $this->distanzen->getValue());
         $this->assertEquals($this->distanzZu, $this->distanzen->getDistanzZu());
 
-        $this->distanzen->setValue(555.77);
-        $this->assertEquals(555.77, $this->distanzen->getValue());
+        $this->distanzen->setValue('555.77');
+        $this->assertEquals('555.77', $this->distanzen->getValue());
 
         $this->distanzen->setDistanzZu(Distanzen::DISTANZ_ZU_GASTSTAETTEN);
         $this->assertEquals(Distanzen::DISTANZ_ZU_GASTSTAETTEN, $this->distanzen->getDistanzZu());
