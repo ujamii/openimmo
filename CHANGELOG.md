@@ -1,3 +1,8 @@
+## 0.5.0 (August 28, 2020)
+  - [FEATURE] added DateTime handler class to serializer to prevent errors with differences in datetime values from xml
+  - [TEST] removed get/setValue from test cases as this feature was only added in the bugfix/issue-3 branch
+  - [TASK] added some tests
+
 ## 0.4.0 (March 10, 2020)
   - Merge branch 'feature/multiple-date-formats'
   - [FEATURE] with https://github.com/schmittjoh/serializer/pull/1108 merged now, multiple date formats are supported here as well

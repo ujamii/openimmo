@@ -32,7 +32,7 @@ composer req ujamii/openimmo
 If you like to use this API as base for an integration into a CMS or Framework, feel free to contact me, I will link it here.
 
 - Integration into TYPO3 CMS, [extension "openimmo"](https://github.com/ujamii/openimmo-typo3)
-
+- NEOS CMS, [package "Ujamii.OpenImmoNeos"](https://github.com/ujamii/openimmo-neos)
 
 ## Usage
 
@@ -114,6 +114,32 @@ foreach ($openImmo->getAnbieter() as $anbieter) {
 }
 ```
 
+### Possible issues
+
+#### DateTime format not working
+
+Some tools may generate DateTime values in the xml, which cause errors like
+
+```
+Fatal error: Uncaught JMS\Serializer\Exception\RuntimeException: Invalid datetime "2020-08-07T11:56:39.1242974+02:00", expected one of the format "Y-m-d\TH:i:sP", "Y-m-d\TH:i:s".
+```
+
+This can be caused by a different precision for the microsecond part (1242974) of this value. As the default PHP precision may be lower
+that the one of the tool, which the xml was generated with. If this problem occurs with the data you use, you can add a handler, included
+in this package, to the serializer like this:
+
+```php
+use JMS\Serializer\Handler\HandlerRegistryInterface;
+use Ujamii\OpenImmo\Handler\DateTimeHandler;
+
+$builder = \JMS\Serializer\SerializerBuilder::create();
+$builder
+    ->configureHandlers(function(HandlerRegistryInterface $registry) {
+        $registry->registerSubscribingHandler(new DateTimeHandler());
+    })
+;
+$this->serializer = $builder->build();
+```
 
 ### Update API classes with a new OpenImmo version 
 

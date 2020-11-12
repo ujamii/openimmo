@@ -2,11 +2,13 @@
 namespace Ujamii\OpenImmo\Tests\Generator;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
+use JMS\Serializer\Handler\HandlerRegistryInterface;
 use JMS\Serializer\SerializerInterface;
 use Ujamii\OpenImmo\API\Anhang;
 use Ujamii\OpenImmo\API\AussenCourtage;
 use Ujamii\OpenImmo\API\Openimmo;
 use Ujamii\OpenImmo\API\Uebertragung;
+use Ujamii\OpenImmo\Handler\DateTimeHandler;
 
 /**
  * Class SerializerTest
@@ -25,7 +27,13 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
      */
     public function setUp()
     {
-        $this->serializer = \JMS\Serializer\SerializerBuilder::create()->build();
+        $builder = \JMS\Serializer\SerializerBuilder::create();
+        $builder
+            ->configureHandlers(function(HandlerRegistryInterface $registry) {
+                $registry->registerSubscribingHandler(new DateTimeHandler());
+            })
+        ;
+        $this->serializer = $builder->build();
         // @see https://stackoverflow.com/questions/14629137/jmsserializer-stand-alone-annotation-does-not-exist-or-cannot-be-auto-loaded
         AnnotationRegistry::registerLoader('class_exists');
     }
@@ -88,6 +96,24 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(Anhang::LOCATION_EXTERN, $anhang->getLocation());
         $this->assertEquals(Anhang::GRUPPE_BILD, $anhang->getGruppe());
         $this->assertEquals('/dev/null', $anhang->getDaten()->getPfad());
+    }
+
+    /**
+     * Note the difference in microsecond precision! As the default `precision` (in PHP.ini) is 14, the microsecond
+     * part will only have 6 digits, while other tools may generate longer values!
+     */
+    public function testDateTimeWithMicroseconds()
+    {
+        $xmlString = '<uebertragung art="ONLINE" umfang="VOLL" version="1.2.7" sendersoftware="IMEX" senderversion="1.56" timestamp="2020-08-07T11:56:39.1242974+02:00" />';
+        /* @var Uebertragung $uebertragung */
+        $uebertragung = $this->serializer->deserialize($xmlString, Uebertragung::class, 'xml');
+
+        $this->assertEquals(Uebertragung::ART_ONLINE, $uebertragung->getArt());
+        $this->assertEquals(Uebertragung::UMFANG_VOLL, $uebertragung->getUmfang());
+        $this->assertEquals('1.2.7', $uebertragung->getVersion());
+        $this->assertEquals('IMEX', $uebertragung->getSendersoftware());
+        $this->assertEquals('1.56', $uebertragung->getSenderversion());
+        $this->assertEquals('2020-08-07T11:56:39.124297+02:00', $uebertragung->getTimestamp()->format('Y-m-d\TH:i:s.uP'));
     }
 
     public function testReadAussenCourtageXml()
