@@ -1,12 +1,15 @@
 <?php
+
 namespace Ujamii\OpenImmo\Tests\Generator;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\Handler\HandlerRegistryInterface;
 use JMS\Serializer\SerializerInterface;
 use Ujamii\OpenImmo\API\Anhang;
+use Ujamii\OpenImmo\API\Objektkategorie;
 use Ujamii\OpenImmo\API\Openimmo;
 use Ujamii\OpenImmo\API\Uebertragung;
+use Ujamii\OpenImmo\API\Wohnung;
 use Ujamii\OpenImmo\Handler\DateTimeHandler;
 
 /**
@@ -28,10 +31,9 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
     {
         $builder = \JMS\Serializer\SerializerBuilder::create();
         $builder
-            ->configureHandlers(function(HandlerRegistryInterface $registry) {
+            ->configureHandlers(function (HandlerRegistryInterface $registry) {
                 $registry->registerSubscribingHandler(new DateTimeHandler());
-            })
-        ;
+            });
         $this->serializer = $builder->build();
         // @see https://stackoverflow.com/questions/14629137/jmsserializer-stand-alone-annotation-does-not-exist-or-cannot-be-auto-loaded
         AnnotationRegistry::registerLoader('class_exists');
@@ -40,7 +42,7 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
     public function testReadXml()
     {
         $file = './example/openimmo-data_127.xml';
-        if (!is_file($file) || !is_readable($file)) {
+        if ( ! is_file($file) || ! is_readable($file)) {
             $this->markTestSkipped($file . ' is not part of the distribution package due to license restrictions. Please download yourself from http://www.openimmo.de/go.php/p/24/download.htm (it\'s free)');
         }
         $xmlString = file_get_contents($file);
@@ -67,7 +69,7 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
     public function testReadRealDataXml()
     {
         $file = './example/1548246253_0.xml';
-        if (!is_file($file) || !is_readable($file)) {
+        if ( ! is_file($file) || ! is_readable($file)) {
             $this->markTestSkipped('I am not allowed to include real world examples into this distribution package due to license restrictions.');
         }
         $xmlString = file_get_contents($file);
@@ -113,6 +115,30 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('IMEX', $uebertragung->getSendersoftware());
         $this->assertEquals('1.56', $uebertragung->getSenderversion());
         $this->assertEquals('2020-08-07T11:56:39.124297+02:00', $uebertragung->getTimestamp()->format('Y-m-d\TH:i:s.uP'));
+    }
+
+    public function testReadObjektKategorieXml()
+    {
+        $xmlString = '<objektkategorie>
+        <nutzungsart WOHNEN="true" GEWERBE="false" />
+        <objektart>
+          <objektart_zusatz>Dachgeschoss</objektart_zusatz>
+          <wohnung wohnungtyp="MAISONETTE" />
+        </objektart>
+        <vermarktungsart KAUF="false" MIETE_PACHT="true" />
+      </objektkategorie>';
+
+        /* @var Objektkategorie $category */
+        $category = $this->serializer->deserialize($xmlString, Objektkategorie::class, 'xml');
+
+        $this->assertTrue($category->getNutzungsart()->getWohnen());
+        $this->assertFalse($category->getNutzungsart()->getGewerbe());
+
+        $this->assertTrue($category->getVermarktungsart()->getMietePacht());
+        $this->assertFalse($category->getVermarktungsart()->getKauf());
+
+        $this->assertEquals(Wohnung::WOHNUNGTYP_MAISONETTE, $category->getObjektart()->getWohnung()[0]->getWohnungtyp());
+        $this->assertEquals('Dachgeschoss', $category->getObjektart()->getObjektartZusatz()[0]);
     }
 
 }

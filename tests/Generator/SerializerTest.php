@@ -12,8 +12,12 @@ use Ujamii\OpenImmo\API\Immobilie;
 use Ujamii\OpenImmo\API\Infrastruktur;
 use Ujamii\OpenImmo\API\Kontaktperson;
 use Ujamii\OpenImmo\API\Nutzungsart;
+use Ujamii\OpenImmo\API\Objektart;
+use Ujamii\OpenImmo\API\Objektkategorie;
 use Ujamii\OpenImmo\API\Openimmo;
 use Ujamii\OpenImmo\API\Uebertragung;
+use Ujamii\OpenImmo\API\Vermarktungsart;
+use Ujamii\OpenImmo\API\Wohnung;
 
 /**
  * Class SerializerTest
@@ -138,5 +142,28 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
         $openImmo->setAnbieter([$anbieter]);
 
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($openImmo, 'xml'));
+    }
+
+    public function testWriteObjektKategorieXml()
+    {
+        $xmlString = '<objektkategorie>
+        <nutzungsart WOHNEN="true" GEWERBE="false" />
+        <objektart>
+          <objektart_zusatz>Dachgeschoss</objektart_zusatz>
+          <wohnung wohnungtyp="MAISONETTE" />
+        </objektart>
+        <vermarktungsart KAUF="false" MIETE_PACHT="true" />
+      </objektkategorie>';
+
+        $category = new Objektkategorie();
+        $category->setNutzungsart((new Nutzungsart())->setWohnen(true)->setGewerbe(false));
+        $category->setVermarktungsart((new Vermarktungsart())->setKauf(false)->setMietePacht(true));
+
+        $art = new Objektart();
+        $art->setWohnung([(new Wohnung())->setWohnungtyp(Wohnung::WOHNUNGTYP_MAISONETTE)]);
+        $art->setObjektartZusatz(['Dachgeschoss']);
+
+        $category->setObjektart($art);
+        $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($category, 'xml'));
     }
 }
