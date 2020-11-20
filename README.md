@@ -164,4 +164,4 @@ If you want to do me a favour, buy me something from my [Amazon wishlist](https:
 
 ### Thank you!
 
-- [Qbus Internetagentur GmbH](https://www.qbus.de/) for yor code contribution
+- [Qbus Internetagentur GmbH](https://www.qbus.de/) for your code contribution
