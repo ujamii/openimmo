@@ -1,3 +1,13 @@
+## 0.6.0 (November 26, 2020)
+  - Merge branch 'bugfix/issue-3'
+  - [DOC] fixed typo
+  - [TEST] added new real world test data
+  - [WIP][FEATURE] added new custom type to fix #3
+  - Merge branch 'master' into bugfix/issue-3
+  - [DOC] added NEOS CMS package link
+  - Merge branch 'master' into bugfix/issue-3
+  - [WIP][BUGFIX] possible solution for #3. As the ElementDef does not provide any information about the "mixed=true" attribute of the xsd node, we have to generate the $value property for every class, although this is not correct.
+
 ## 0.5.0 (August 28, 2020)
   - [FEATURE] added DateTime handler class to serializer to prevent errors with differences in datetime values from xml
   - [TEST] removed get/setValue from test cases as this feature was only added in the bugfix/issue-3 branch
