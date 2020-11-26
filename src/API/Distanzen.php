@@ -84,16 +84,16 @@ class Distanzen {
 
 	/**
 	 * @Inline 
-	 * @Type("float") 
-	 * @var float
+	 * @Type("string") 
+	 * @var string
 	 */
 	protected $value;
 
 	/**
 	 * @param string $distanzZu Shortcut setter for distanzZu
-	 * @param float $value the actual value
+	 * @param string $value the actual value
 	 */
-	public function __construct(string $distanzZu = null, float $value = null) {
+	public function __construct(string $distanzZu = null, string $value = null) {
 		$this->distanzZu = $distanzZu;
 		$this->value = $value;
 	}
@@ -106,9 +106,9 @@ class Distanzen {
 	}
 
 	/**
-	 * @return float
+	 * @return string
 	 */
-	public function getValue(): ?float {
+	public function getValue(): ?string {
 		return $this->value;
 	}
 
@@ -122,10 +122,10 @@ class Distanzen {
 	}
 
 	/**
-	 * @param float $value Setter for value
+	 * @param string $value Setter for value
 	 * @return Distanzen
 	 */
-	public function setValue(?float $value) {
+	public function setValue(?string $value) {
 		$this->value = $value;
 		return $this;
 	}

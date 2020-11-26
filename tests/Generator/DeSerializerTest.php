@@ -6,6 +6,7 @@ use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\Handler\HandlerRegistryInterface;
 use JMS\Serializer\SerializerInterface;
 use Ujamii\OpenImmo\API\Anhang;
+use Ujamii\OpenImmo\API\AussenCourtage;
 use Ujamii\OpenImmo\API\Objektkategorie;
 use Ujamii\OpenImmo\API\Openimmo;
 use Ujamii\OpenImmo\API\Uebertragung;
@@ -115,6 +116,17 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('IMEX', $uebertragung->getSendersoftware());
         $this->assertEquals('1.56', $uebertragung->getSenderversion());
         $this->assertEquals('2020-08-07T11:56:39.124297+02:00', $uebertragung->getTimestamp()->format('Y-m-d\TH:i:s.uP'));
+    }
+
+    public function testReadAussenCourtageXml()
+    {
+        $xmlString = '<aussen_courtage mit_mwst="true">12354,12 €</aussen_courtage>';
+
+        /* @var $aussenCourtage AussenCourtage */
+        $aussenCourtage = $this->serializer->deserialize($xmlString, AussenCourtage::class, 'xml');
+
+        $this->assertEquals(true, $aussenCourtage->getMitMwst());
+        $this->assertEquals('12354,12 €', $aussenCourtage->getValue());
     }
 
     public function testReadObjektKategorieXml()

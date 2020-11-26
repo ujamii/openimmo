@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -41,10 +42,33 @@ class MinMietdauer {
 	protected $minDauer;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param string $minDauer Shortcut setter for minDauer
+	 * @param string $value the actual value
+	 */
+	public function __construct(string $minDauer = null, string $value = null) {
+		$this->minDauer = $minDauer;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getMinDauer(): ?string {
 		return $this->minDauer;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -53,6 +77,15 @@ class MinMietdauer {
 	 */
 	public function setMinDauer(?string $minDauer) {
 		$this->minDauer = $minDauer;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return MinMietdauer
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }

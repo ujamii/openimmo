@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -18,6 +19,13 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Master {
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
 	 * required
 	 *
 	 * @Type("boolean") 
@@ -27,10 +35,35 @@ class Master {
 	protected $visible;
 
 	/**
+	 * @param boolean $visible Shortcut setter for visible
+	 * @param string $value the actual value
+	 */
+	public function __construct(bool $visible = null, string $value = null) {
+		$this->visible = $visible;
+		$this->value = $value;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getVisible(): bool {
 		return $this->visible;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return Master
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
+		return $this;
 	}
 
 	/**

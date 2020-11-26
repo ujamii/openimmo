@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\Inline;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -24,10 +25,33 @@ class InnenCourtage {
 	protected $mitMwst;
 
 	/**
+	 * @Inline 
+	 * @Type("string") 
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * @param boolean $mitMwst Shortcut setter for mitMwst
+	 * @param string $value the actual value
+	 */
+	public function __construct(bool $mitMwst = null, string $value = null) {
+		$this->mitMwst = $mitMwst;
+		$this->value = $value;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getMitMwst(): ?bool {
 		return $this->mitMwst;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string {
+		return $this->value;
 	}
 
 	/**
@@ -36,6 +60,15 @@ class InnenCourtage {
 	 */
 	public function setMitMwst(?bool $mitMwst) {
 		$this->mitMwst = $mitMwst;
+		return $this;
+	}
+
+	/**
+	 * @param string $value Setter for value
+	 * @return InnenCourtage
+	 */
+	public function setValue(?string $value) {
+		$this->value = $value;
 		return $this;
 	}
 }
