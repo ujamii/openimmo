@@ -32,7 +32,8 @@
         "goetas-webservices/xsd-reader": "^0.3",
         "gossi/php-code-generator": "dev-prevent-fatal-error@dev",
         "phpunit/phpunit": "^7.5",
-        "mihaeu/test-generator": "dev-master@dev"
+        "mihaeu/test-generator": "dev-master@dev",
+        "phpstan/phpstan": "^0.12.58"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

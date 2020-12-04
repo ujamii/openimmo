@@ -47,15 +47,14 @@ class ApiGenerator
      * Generates the API classes.
      *
      * @param string $xsdFile file path
-     *
      * @param bool $wipeTargetFolder
      * @param null $targetFolder
      *
      * @throws \GoetasWebservices\XML\XSDReader\Exception\IOException
      */
-    public function generateApiClasses($xsdFile, $wipeTargetFolder = true, $targetFolder = null)
+    public function generateApiClasses(string $xsdFile, $wipeTargetFolder = true, $targetFolder = null)
     {
-        if ( ! is_null($targetFolder) && is_dir($targetFolder) && is_writeable($targetFolder)) {
+        if ( !is_null($targetFolder) && is_dir($targetFolder) && is_writeable($targetFolder)) {
             $this->targetFolder = $targetFolder;
         }
 
@@ -97,6 +96,7 @@ class ApiGenerator
         } else if ($element->getType() instanceof ComplexTypeMixed) {
             // @see https://github.com/ujamii/openimmo/issues/3
             $this->addSimpleValue(null, $class, $element->getType()->getAttributes());
+            $complexTypeMixed = $element->getType();
             foreach ($element->getType()->getElements() as $property) {
                 $this->parseProperty($property, $class);
             }
@@ -314,7 +314,6 @@ class ApiGenerator
 
                     default:
                         throw new \InvalidArgumentException(vsprintf('Type "%s" is not handled in %s->parseAttribute', [$type, __CLASS__]));
-                        break;
 
                 }
             }
@@ -448,13 +447,13 @@ class ApiGenerator
     }
 
     /**
-     * @param $input
+     * @param string $input
      * @param bool $lcFirst
      * @param array $separators
      *
-     * @return mixed|string
+     * @return string
      */
-    public static function camelize($input, $lcFirst = false, $separators = ['-', '_'])
+    public static function camelize(string $input, $lcFirst = false, $separators = ['-', '_']): string
     {
         $camel = str_replace($separators, '', ucwords($input, implode('', $separators)));
         if ($lcFirst) {
@@ -495,7 +494,7 @@ class ApiGenerator
      */
     public static function generateGetter(PhpProperty $property, PhpClass $class, bool $nullable): void
     {
-        $returnsArray = substr($property->getType(), -2) == '[]';
+        $returnsArray = substr($property->getType(), -2) === '[]';
         $getter       = PhpMethod::create('get' . ucfirst($property->getName()));
         if ($returnsArray) {
             $getterCode   = 'return $this->' . $property->getName() . ' ?? [];';
@@ -506,7 +505,7 @@ class ApiGenerator
         } else {
             $getterCode   = 'return $this->' . $property->getName() . ';';
             $getter->setBody($getterCode);
-            $getter->setType($returnsArray ? 'array' : $property->getType());
+            $getter->setType($property->getType());
             $getter->setNullable($nullable);
 	}
         $class->setMethod($getter);
