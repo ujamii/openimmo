@@ -98,7 +98,7 @@ objects (addresses).
 ```php
 $xmlString = file_get_contents('./example/foobar.xml');
 /* @var $openImmo \Ujamii\OpenImmo\API\Openimmo */
-$openImmo = $this->serializer->deserialize($xmlString, \Ujamii\OpenImmo\API\Openimmo::class, 'xml');
+$openImmo = $serializer->deserialize($xmlString, \Ujamii\OpenImmo\API\Openimmo::class, 'xml');
 
 /* @var $anbieter \Ujamii\OpenImmo\API\Anbieter */
 foreach ($openImmo->getAnbieter() as $anbieter) {
@@ -138,7 +138,7 @@ $builder
         $registry->registerSubscribingHandler(new DateTimeHandler());
     })
 ;
-$this->serializer = $builder->build();
+$serializer = $builder->build();
 ```
 
 ### Update API classes with a new OpenImmo version 
