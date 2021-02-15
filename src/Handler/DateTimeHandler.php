@@ -39,7 +39,7 @@ class DateTimeHandler implements SubscribingHandlerInterface
     /**
      * @param XmlSerializationVisitor $visitor
      * @param \DateTime $date
-     * @param array $type
+     * @param array<string> $type
      * @param Context $context
      *
      * @return string
@@ -52,7 +52,7 @@ class DateTimeHandler implements SubscribingHandlerInterface
     /**
      * @param XmlDeserializationVisitor $visitor
      * @param \SimpleXMLElement $dateAsString
-     * @param array $type
+     * @param array<string> $type
      * @param Context $context
      *
      * @return \DateTime

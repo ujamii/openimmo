@@ -8,7 +8,6 @@ use GoetasWebservices\XML\XSDReader\Schema\Element\ElementItem;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementRef;
 use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Extension;
 use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction;
-use GoetasWebservices\XML\XSDReader\Schema\Type\BaseComplexType;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexTypeSimpleContent;
 use GoetasWebservices\XML\XSDReader\Schema\Type\SimpleType;
@@ -35,11 +34,11 @@ class ApiGenerator
     protected $targetFolder = './src/API/';
 
     /**
-     * @var array
+     * @var array<bool>
      */
     protected $generatorConfig = [
         'generateScalarTypeHints' => true,
-        'generateNullableTypes' => true,
+        'generateNullableTypes'   => true,
         'generateReturnTypeHints' => true
     ];
 
@@ -52,9 +51,9 @@ class ApiGenerator
      *
      * @throws \GoetasWebservices\XML\XSDReader\Exception\IOException
      */
-    public function generateApiClasses(string $xsdFile, $wipeTargetFolder = true, $targetFolder = null)
+    public function generateApiClasses(string $xsdFile, $wipeTargetFolder = true, $targetFolder = null): void
     {
-        if ( !is_null($targetFolder) && is_dir($targetFolder) && is_writeable($targetFolder)) {
+        if ( ! is_null($targetFolder) && is_dir($targetFolder) && is_writeable($targetFolder)) {
             $this->targetFolder = $targetFolder;
         }
 
@@ -75,7 +74,7 @@ class ApiGenerator
     /**
      * @param ElementDef $element
      */
-    protected function parseElementDef(ElementDef $element)
+    protected function parseElementDef(ElementDef $element): void
     {
         $className = self::camelize($element->getName());
 
@@ -84,7 +83,7 @@ class ApiGenerator
             ->setQualifiedName('Ujamii\\OpenImmo\\API\\' . $className)
             ->setUseStatements([
                 'XmlRoot' => 'JMS\Serializer\Annotation\XmlRoot',
-                'Type' => 'JMS\Serializer\Annotation\Type'
+                'Type'    => 'JMS\Serializer\Annotation\Type'
             ])
             ->setDescription('Class ' . $className . PHP_EOL . $element->getDoc())
             ->getDocblock()
@@ -93,7 +92,7 @@ class ApiGenerator
 
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
             $this->addSimpleValue($element->getType()->getExtension(), $class, $element->getType()->getAttributes());
-        } else if ($element->getType() instanceof ComplexTypeMixed) {
+        } elseif ($element->getType() instanceof ComplexTypeMixed) {
             // @see https://github.com/ujamii/openimmo/issues/3
             $this->addSimpleValue(null, $class, $element->getType()->getAttributes());
             $complexTypeMixed = $element->getType();
@@ -121,7 +120,7 @@ class ApiGenerator
      * @param PhpClass $class
      * @param array $attributes
      */
-    protected function addSimpleValue(?Extension $extension, PhpClass $class, array $attributes)
+    protected function addSimpleValue(?Extension $extension, PhpClass $class, array $attributes): void
     {
         $propertyName  = 'value';
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
@@ -175,7 +174,7 @@ class ApiGenerator
      * @param ElementItem $property
      * @param PhpClass $class
      */
-    protected function parseProperty(ElementItem $property, PhpClass $class)
+    protected function parseProperty(ElementItem $property, PhpClass $class): void
     {
         $propertyName  = self::camelize($property->getName(), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
@@ -230,7 +229,7 @@ class ApiGenerator
      * @param Attribute $attribute
      * @param PhpClass $class
      */
-    protected function parseAttribute(Attribute $attribute, PhpClass $class)
+    protected function parseAttribute(Attribute $attribute, PhpClass $class): void
     {
         $propertyName  = self::camelize(strtolower($attribute->getName()), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
@@ -277,7 +276,7 @@ class ApiGenerator
      * @param PhpClass $class
      * @param PhpProperty $classProperty
      */
-    protected function parseRestriction(Restriction $restriction, string $nameInXsd, PhpClass $class, PhpProperty $classProperty)
+    protected function parseRestriction(Restriction $restriction, string $nameInXsd, PhpClass $class, PhpProperty $classProperty): void
     {
         if (count($restriction->getChecks()) > 0) {
             foreach ($restriction->getChecks() as $type => $options) {
@@ -325,7 +324,7 @@ class ApiGenerator
      *
      * @return string|null
      */
-    protected function extractPhpType(Type $typeFromXsd)
+    protected function extractPhpType(Type $typeFromXsd): ?string
     {
         $type = 'string';
 
@@ -352,7 +351,7 @@ class ApiGenerator
      *
      * @return string
      */
-    protected function getValidType(string $propertyType, ?PhpProperty $classProperty = null, ?PhpClass $class = null)
+    protected function getValidType(string $propertyType, ?PhpProperty $classProperty = null, ?PhpClass $class = null): string
     {
         switch ($propertyType) {
 
@@ -440,7 +439,7 @@ class ApiGenerator
      * @param bool $fluentApi
      * @param bool $nullable
      */
-    public static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true, $nullable = true)
+    public static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true, $nullable = true): void
     {
         self::generateSetter($property, $class, $fluentApi, $nullable);
         self::generateGetter($property, $class, $nullable);
@@ -449,7 +448,7 @@ class ApiGenerator
     /**
      * @param string $input
      * @param bool $lcFirst
-     * @param array $separators
+     * @param array<string> $separators
      *
      * @return string
      */
@@ -466,13 +465,13 @@ class ApiGenerator
     /**
      * Removes all files in the target folder.
      */
-    protected function wipeTargetFolder()
+    protected function wipeTargetFolder(): void
     {
         array_map('unlink', glob($this->getTargetFolder() . '/*.php'));
     }
 
     /**
-     * @return array
+     * @return array<bool>
      */
     public function getGeneratorConfig(): array
     {
@@ -480,7 +479,7 @@ class ApiGenerator
     }
 
     /**
-     * @param array $generatorConfig
+     * @param array<bool> $generatorConfig
      */
     public function setGeneratorConfig(array $generatorConfig): void
     {
@@ -497,17 +496,17 @@ class ApiGenerator
         $returnsArray = substr($property->getType(), -2) === '[]';
         $getter       = PhpMethod::create('get' . ucfirst($property->getName()));
         if ($returnsArray) {
-            $getterCode   = 'return $this->' . $property->getName() . ' ?? [];';
+            $getterCode = 'return $this->' . $property->getName() . ' ?? [];';
             $getter->setBody($getterCode);
             $getter->setType('array');
             $getter->setDescription('Returns array of ' . str_replace('[]', '', $property->getType()));
             $getter->setNullable(false);
         } else {
-            $getterCode   = 'return $this->' . $property->getName() . ';';
+            $getterCode = 'return $this->' . $property->getName() . ';';
             $getter->setBody($getterCode);
             $getter->setType($property->getType());
             $getter->setNullable($nullable);
-	}
+        }
         $class->setMethod($getter);
     }
 
@@ -519,12 +518,14 @@ class ApiGenerator
      */
     public static function generateSetter(PhpProperty $property, PhpClass $class, bool $fluentApi, bool $nullable): void
     {
-        $setter = PhpMethod::create('set' . ucfirst($property->getName()));
-        $setter->addParameter(PhpParameter::create($property->getName())
-                                          ->setType(substr($property->getType(), -2) == '[]' ? 'array' : $property->getType())
-                                          ->setNullable(substr($property->getType(), -2) == '[]' ? false : $nullable)
-                                          ->setDescription('Setter for ' . $property->getName())
-        );
+        $setter   = PhpMethod::create('set' . ucfirst($property->getName()));
+        $isPlural = substr($property->getType(), -2) == '[]';
+
+        $parameter = PhpParameter::create($property->getName())
+                                 ->setType($isPlural ? 'array' : $property->getType())
+                                 ->setNullable($isPlural ? false : $nullable)
+                                 ->setDescription('Setter for ' . $property->getName());
+        $setter->addParameter($parameter);
         $setterCode = '$this->' . $property->getName() . ' = $' . $property->getName() . ';';
         if ($fluentApi) {
             $setterCode .= PHP_EOL . 'return $this;';
