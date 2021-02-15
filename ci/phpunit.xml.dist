@@ -8,21 +8,21 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false"
-         bootstrap="vendor/autoload.php"
+         bootstrap="../vendor/autoload.php"
 >
     <testsuites>
         <testsuite name="Code Generator Test Suite">
-            <directory>tests/</directory>
+            <directory>../tests/</directory>
         </testsuite>
     </testsuites>
 
     <filter>
     	<whitelist processUncoveredFilesFromWhitelist="true">
-    		<directory suffix=".php">src/</directory>
+    		<directory suffix=".php">../src/</directory>
     	</whitelist>
     </filter>
 
     <logging>
-		<log type="coverage-html" target="coverage"/>
+		<log type="coverage-html" target="../coverage"/>
 	</logging>
 </phpunit>

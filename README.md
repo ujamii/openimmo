@@ -151,7 +151,7 @@ $serializer = $builder->build();
 
 ### Running tests
 
-1. `vendor/bin/phpunit -c .`
+1. `composer run phpunit`
 
 ## License and Contribution
 

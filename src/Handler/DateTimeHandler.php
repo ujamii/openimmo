@@ -51,15 +51,15 @@ class DateTimeHandler implements SubscribingHandlerInterface
 
     /**
      * @param XmlDeserializationVisitor $visitor
-     * @param string $dateAsString
+     * @param \SimpleXMLElement $dateAsString
      * @param array $type
      * @param Context $context
      *
      * @return \DateTime
      * @throws \Exception
      */
-    public function deserializeDateTimeToXml(XmlDeserializationVisitor $visitor, string $dateAsString, array $type, Context $context): \DateTime
+    public function deserializeDateTimeToXml(XmlDeserializationVisitor $visitor, \SimpleXMLElement $dateAsString, array $type, Context $context): \DateTime
     {
-        return new \DateTime($dateAsString);
+        return new \DateTime((string) $dateAsString);
     }
 }
