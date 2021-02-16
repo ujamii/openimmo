@@ -12,6 +12,7 @@
         }
     ],
     "require": {
+        "ext-dom": "*",
         "ext-simplexml": "*",
         "jms/serializer": "^2.1 || ^3.5",
         "cweagans/composer-patches": "^1.7"

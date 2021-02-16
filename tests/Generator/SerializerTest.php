@@ -3,6 +3,7 @@
 namespace Ujamii\OpenImmo\Tests\Generator;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
+use JMS\Serializer\Handler\HandlerRegistryInterface;
 use JMS\Serializer\SerializerInterface;
 use Ujamii\OpenImmo\API\Anbieter;
 use Ujamii\OpenImmo\API\Ausblick;
@@ -19,6 +20,7 @@ use Ujamii\OpenImmo\API\Openimmo;
 use Ujamii\OpenImmo\API\Uebertragung;
 use Ujamii\OpenImmo\API\Vermarktungsart;
 use Ujamii\OpenImmo\API\Wohnung;
+use Ujamii\OpenImmo\Handler\DateTimeHandler;
 
 /**
  * Class SerializerTest
@@ -37,7 +39,12 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
      */
     public function setUp()
     {
-        $this->serializer = \JMS\Serializer\SerializerBuilder::create()->build();
+        $builder = \JMS\Serializer\SerializerBuilder::create();
+        $builder
+            ->configureHandlers(function (HandlerRegistryInterface $registry) {
+                $registry->registerSubscribingHandler(new DateTimeHandler());
+            });
+        $this->serializer = $builder->build();
         // @see https://stackoverflow.com/questions/14629137/jmsserializer-stand-alone-annotation-does-not-exist-or-cannot-be-auto-loaded
         AnnotationRegistry::registerLoader('class_exists');
     }
@@ -53,7 +60,7 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
 
     public function testWriteUebertragungXml()
     {
-        $xmlString = '<uebertragung art="ONLINE" umfang="VOLL" modus="NEW" version="1.2.7" sendersoftware="OIGEN" senderversion="0.9" techn_email="" timestamp="2014-06-01T10:00:00"  regi_id="ABCD143" />';
+        $xmlString = '<uebertragung art="ONLINE" umfang="VOLL" modus="NEW" version="1.2.7" sendersoftware="OIGEN" senderversion="0.9" techn_email="" timestamp="2014-06-01T10:00:00" regi_id="ABCD143" />';
 
         $uebertragung = new Uebertragung();
         $uebertragung

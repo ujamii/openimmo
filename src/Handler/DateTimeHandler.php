@@ -42,11 +42,11 @@ class DateTimeHandler implements SubscribingHandlerInterface
      * @param array<string> $type
      * @param Context $context
      *
-     * @return string
+     * @return \DOMText
      */
-    public function serializeDateTimeToXml(XmlSerializationVisitor $visitor, \DateTime $date, array $type, Context $context): string
+    public function serializeDateTimeToXml(XmlSerializationVisitor $visitor, \DateTime $date, array $type, Context $context): \DOMText
     {
-        return $date->format($type['params'][0]);
+        return new \DOMText($date->format($type['params'][0]));
     }
 
     /**
