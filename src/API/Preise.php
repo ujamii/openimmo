@@ -213,12 +213,14 @@ class Preise {
 
 	/**
 	 * @Type("float") 
+	 * @example 123456.12
 	 * @var float
 	 */
 	protected $mwstGesamt;
 
 	/**
 	 * @Type("float") 
+	 * @example 123456.12
 	 * @var float
 	 */
 	protected $mwstSatz;

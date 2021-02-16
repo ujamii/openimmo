@@ -308,7 +308,7 @@ class ApiGenerator
                         break;
 
                     case 'fractionDigits':
-                        //TODO
+                        $classProperty->getDocblock()->appendTag(TagFactory::create('example', number_format(123456.123, $options[0]['value'], '.', '')));
                         break;
 
                     default:
