@@ -33,7 +33,7 @@ class Nebenkostenprom2von {
 
 	/**
 	 * @param float $nebenkostenprom2bis Shortcut setter for nebenkostenprom2bis
-	 * @param float $value the actual value
+	 * @param float $value
 	 */
 	public function __construct(float $nebenkostenprom2bis = null, float $value = null) {
 		$this->nebenkostenprom2bis = $nebenkostenprom2bis;

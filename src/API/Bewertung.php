@@ -16,13 +16,20 @@ class Bewertung {
 
 	/**
 	 * @XmlList(inline = true, entry = "feld") 
-	 * @Type("array<string>") 
-	 * @var string[]
+	 * @Type("array<Ujamii\OpenImmo\API\Feld>") 
+	 * @var Feld[]
 	 */
 	protected $feld;
 
 	/**
-	 * Returns array of string
+	 * @param array $feld Shortcut setter for feld
+	 */
+	public function __construct(array $feld = []) {
+		$this->feld = $feld;
+	}
+
+	/**
+	 * Returns array of Feld
 	 *
 	 * @return array
 	 */

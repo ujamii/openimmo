@@ -28,6 +28,15 @@ class Daten {
 	protected $pfad;
 
 	/**
+	 * @param string $pfad Shortcut setter for pfad
+	 * @param string $anhanginhalt Shortcut setter for anhanginhalt
+	 */
+	public function __construct(string $pfad = null, string $anhanginhalt = null) {
+		$this->pfad = $pfad;
+		$this->anhanginhalt = $anhanginhalt;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getAnhanginhalt(): ?string {

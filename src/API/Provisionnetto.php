@@ -33,7 +33,7 @@ class Provisionnetto {
 
 	/**
 	 * @param float $provisionust Shortcut setter for provisionust
-	 * @param float $value the actual value
+	 * @param float $value
 	 */
 	public function __construct(float $provisionust = null, float $value = null) {
 		$this->provisionust = $provisionust;

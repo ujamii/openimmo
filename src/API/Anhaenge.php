@@ -42,6 +42,19 @@ class Anhaenge {
 	protected $userDefinedSimplefield;
 
 	/**
+	 * @param array $anhang Shortcut setter for anhang
+	 * @param array $userDefinedSimplefield Shortcut setter for userDefinedSimplefield
+	 * @param array $userDefinedAnyfield Shortcut setter for userDefinedAnyfield
+	 * @param array $userDefinedExtend Shortcut setter for userDefinedExtend
+	 */
+	public function __construct(array $anhang = [], array $userDefinedSimplefield = [], array $userDefinedAnyfield = [], array $userDefinedExtend = []) {
+		$this->anhang = $anhang;
+		$this->userDefinedSimplefield = $userDefinedSimplefield;
+		$this->userDefinedAnyfield = $userDefinedAnyfield;
+		$this->userDefinedExtend = $userDefinedExtend;
+	}
+
+	/**
 	 * Returns array of Anhang
 	 *
 	 * @return array

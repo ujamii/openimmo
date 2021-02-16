@@ -33,7 +33,7 @@ class Nettomieteprom2von {
 
 	/**
 	 * @param float $nettomieteprom2bis Shortcut setter for nettomieteprom2bis
-	 * @param float $value the actual value
+	 * @param float $value
 	 */
 	public function __construct(float $nettomieteprom2bis = null, float $value = null) {
 		$this->nettomieteprom2bis = $nettomieteprom2bis;

@@ -43,6 +43,19 @@ class Openimmo {
 	protected $userDefinedSimplefield;
 
 	/**
+	 * @param Uebertragung $uebertragung Shortcut setter for uebertragung
+	 * @param array $anbieter Shortcut setter for anbieter
+	 * @param array $userDefinedSimplefield Shortcut setter for userDefinedSimplefield
+	 * @param array $userDefinedAnyfield Shortcut setter for userDefinedAnyfield
+	 */
+	public function __construct(Uebertragung $uebertragung = null, array $anbieter = [], array $userDefinedSimplefield = [], array $userDefinedAnyfield = []) {
+		$this->uebertragung = $uebertragung;
+		$this->anbieter = $anbieter;
+		$this->userDefinedSimplefield = $userDefinedSimplefield;
+		$this->userDefinedAnyfield = $userDefinedAnyfield;
+	}
+
+	/**
 	 * Returns array of Anbieter
 	 *
 	 * @return array

@@ -46,6 +46,15 @@ class Foto {
 	protected $location;
 
 	/**
+	 * @param string $format Shortcut setter for format
+	 * @param Daten $daten Shortcut setter for daten
+	 */
+	public function __construct(string $format = null, Daten $daten = null) {
+		$this->format = $format;
+		$this->daten = $daten;
+	}
+
+	/**
 	 * @return Daten
 	 */
 	public function getDaten(): Daten {

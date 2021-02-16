@@ -33,7 +33,7 @@ class Kaufpreis {
 
 	/**
 	 * @param boolean $aufAnfrage Shortcut setter for aufAnfrage
-	 * @param float $value the actual value
+	 * @param float $value
 	 */
 	public function __construct(bool $aufAnfrage = null, float $value = null) {
 		$this->aufAnfrage = $aufAnfrage;

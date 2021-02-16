@@ -33,7 +33,7 @@ class Betriebskostennetto {
 
 	/**
 	 * @param float $betriebskostenust Shortcut setter for betriebskostenust
-	 * @param float $value the actual value
+	 * @param float $value
 	 */
 	public function __construct(float $betriebskostenust = null, float $value = null) {
 		$this->betriebskostenust = $betriebskostenust;

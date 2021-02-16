@@ -21,7 +21,7 @@ class UserDefinedAnyfield {
 	protected $value;
 
 	/**
-	 * @param string $value the actual value
+	 * @param string $value
 	 */
 	public function __construct(string $value = null) {
 		$this->value = $value;

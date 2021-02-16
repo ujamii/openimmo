@@ -33,7 +33,7 @@ class InnenCourtage {
 
 	/**
 	 * @param boolean $mitMwst Shortcut setter for mitMwst
-	 * @param string $value the actual value
+	 * @param string $value
 	 */
 	public function __construct(bool $mitMwst = null, string $value = null) {
 		$this->mitMwst = $mitMwst;

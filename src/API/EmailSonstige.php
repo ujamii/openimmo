@@ -59,7 +59,7 @@ class EmailSonstige {
 	/**
 	 * @param string $emailart Shortcut setter for emailart
 	 * @param string $bemerkung Shortcut setter for bemerkung
-	 * @param string $value the actual value
+	 * @param string $value
 	 */
 	public function __construct(string $emailart = null, string $bemerkung = null, string $value = null) {
 		$this->emailart = $emailart;

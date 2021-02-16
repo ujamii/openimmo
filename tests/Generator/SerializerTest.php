@@ -8,8 +8,10 @@ use JMS\Serializer\SerializerInterface;
 use Ujamii\OpenImmo\API\Anbieter;
 use Ujamii\OpenImmo\API\Ausblick;
 use Ujamii\OpenImmo\API\AussenCourtage;
+use Ujamii\OpenImmo\API\Bewertung;
 use Ujamii\OpenImmo\API\Distanzen;
 use Ujamii\OpenImmo\API\DistanzenSport;
+use Ujamii\OpenImmo\API\Feld;
 use Ujamii\OpenImmo\API\Immobilie;
 use Ujamii\OpenImmo\API\Infrastruktur;
 use Ujamii\OpenImmo\API\Kontaktperson;
@@ -179,6 +181,22 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
     {
         $xmlString = '<aussen_courtage>k.A.</aussen_courtage>';
         $subject = new AussenCourtage(null, 'k.A.');
+
+        $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($subject, 'xml'));
+    }
+
+    public function testWriteComplexType()
+    {
+        $xmlString = '<bewertung>
+            <feld>
+              <modus>kauf</modus>
+              <name>abc</name>
+              <typ>int</typ>
+              <wert>100</wert>
+            </feld>
+          </bewertung>';
+        $subject = new Bewertung();
+        $subject->setFeld([new Feld('abc', 100, ['int'], ['kauf'])]);
 
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($subject, 'xml'));
     }

@@ -33,7 +33,7 @@ class Sonstigemietenetto {
 
 	/**
 	 * @param float $sonstigemieteust Shortcut setter for sonstigemieteust
-	 * @param float $value the actual value
+	 * @param float $value
 	 */
 	public function __construct(float $sonstigemieteust = null, float $value = null) {
 		$this->sonstigemieteust = $sonstigemieteust;

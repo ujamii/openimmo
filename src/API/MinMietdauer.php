@@ -50,7 +50,7 @@ class MinMietdauer {
 
 	/**
 	 * @param string $minDauer Shortcut setter for minDauer
-	 * @param string $value the actual value
+	 * @param string $value
 	 */
 	public function __construct(string $minDauer = null, string $value = null) {
 		$this->minDauer = $minDauer;

@@ -3,11 +3,11 @@
 namespace Ujamii\OpenImmo\Generator;
 
 use GoetasWebservices\XML\XSDReader\Schema\Attribute\Attribute;
-use GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementItem;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementRef;
 use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Extension;
 use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction;
+use GoetasWebservices\XML\XSDReader\Schema\Item;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexTypeSimpleContent;
 use GoetasWebservices\XML\XSDReader\Schema\Type\SimpleType;
@@ -29,6 +29,13 @@ class ApiGenerator
 {
 
     /**
+     * Maximum number of properties a class should have for generating
+     * a constructor. Read: If a class has more than X properties, no constructor
+     * method will be generated.
+     */
+    public const MAX_PROPERTIES_IN_CONSTRUCTOR = 5;
+
+    /**
      * @var string
      */
     protected $targetFolder = './src/API/';
@@ -37,10 +44,16 @@ class ApiGenerator
      * @var array<bool>
      */
     protected $generatorConfig = [
-        'generateScalarTypeHints' => true,
-        'generateNullableTypes'   => true,
-        'generateReturnTypeHints' => true
+        'generateScalarTypeHints'    => true,
+        'generateNullableTypes'      => true,
+        'generateReturnTypeHints'    => true,
     ];
+
+    /**
+     * Additional elements may be referenced inside of MixedComplexTypes.
+     * @var array
+     */
+    protected $referencedInlineElements = [];
 
     /**
      * Generates the API classes.
@@ -61,20 +74,24 @@ class ApiGenerator
             $this->wipeTargetFolder();
         }
 
-        $reader = new SchemaReader();
-        $schema = $reader->readFile($xsdFile);
+        $reader                         = new SchemaReader();
+        $schema                         = $reader->readFile($xsdFile);
+        $this->referencedInlineElements = [];
 
         foreach ($schema->getElements() as $element) {
             if ( ! ($element->getType() instanceof SimpleType)) {
                 $this->parseElementDef($element);
             }
         }
+        foreach ($this->referencedInlineElements as $element) {
+            $this->parseElementDef($element);
+        }
     }
 
     /**
-     * @param ElementDef $element
+     * @param Item|ElementItem $element
      */
-    protected function parseElementDef(ElementDef $element): void
+    protected function parseElementDef($element): void
     {
         $className = self::camelize($element->getName());
 
@@ -95,13 +112,19 @@ class ApiGenerator
         } elseif ($element->getType() instanceof ComplexTypeMixed) {
             // @see https://github.com/ujamii/openimmo/issues/3
             $this->addSimpleValue(null, $class, $element->getType()->getAttributes());
+            /* @var ComplexTypeMixed $complexTypeMixed */
             $complexTypeMixed = $element->getType();
-            foreach ($element->getType()->getElements() as $property) {
+            foreach ($complexTypeMixed->getElements() as $property) {
                 $this->parseProperty($property, $class);
             }
         } else {
+            /* @var ComplexType $complexType */
             foreach ($element->getType()->getElements() as $property) {
                 $this->parseProperty($property, $class);
+            }
+            $classPropertyCount = count($element->getType()->getElements());
+            if ($classPropertyCount > 0 && $classPropertyCount <= self::MAX_PROPERTIES_IN_CONSTRUCTOR) {
+                $this->generateConstructor($class, $element->getType()->getElements());
             }
         }
         /* @var $attributeFromXsd Attribute */
@@ -116,7 +139,7 @@ class ApiGenerator
     }
 
     /**
-     * @param Extension $extension
+     * @param Extension|null $extension
      * @param PhpClass $class
      * @param array $attributes
      */
@@ -143,28 +166,47 @@ class ApiGenerator
         self::generateGetterAndSetter($classProperty, $class);
 
         // as this type of object contains just a key and a value, we add a __construct for more convenience
+        $this->generateConstructor($class, $attributes, [$propertyName => $propertyType]);
+    }
+
+    /**
+     * @param PhpClass $class
+     * @param array $classProperties
+     * @param array $additionalProperties
+     *
+     * @return void
+     */
+    protected function generateConstructor(PhpClass $class, array $classProperties, array $additionalProperties = []): void
+    {
         $constructor = PhpMethod::create('__construct');
 
         $constructorCode = [];
-        /* @var $attributeFromXsd Attribute */
-        foreach ($attributes as $attributeFromXsd) {
+        /* @var $attributeFromXsd Attribute|ElementRef */
+        foreach ($classProperties as $attributeFromXsd) {
             $attributeName = self::camelize(strtolower($attributeFromXsd->getName()), true);
-            $type          = $this->getValidType($this->extractPhpType($attributeFromXsd->getType()));
-            $constructor->addParameter(PhpParameter::create($attributeName)
-                                                   ->setType($type)
-                                                   ->setValue(null)
-                                                   ->setDescription('Shortcut setter for ' . $attributeName)
-            );
+            $type          = $this->getPhpPropertyTypeFromXsdElement($attributeFromXsd);
+            $typeIsArray   = substr($type, -2) === '[]';
+            $type          = $this->getValidType($type);
+            $phpParam      = PhpParameter::create($attributeName)
+                                         ->setType($typeIsArray ? 'array' : $type)
+                                         ->setDescription('Shortcut setter for ' . $attributeName);
+            if ($typeIsArray) {
+                $phpParam->setExpression('[]');
+            } else {
+                $phpParam->setValue(null);
+            }
+            $constructor->addParameter($phpParam);
+
             $constructorCode[] = '$this->' . $attributeName . ' = $' . $attributeName . ';';
         }
 
-        // now the value itself
-        $constructor->addParameter(PhpParameter::create($propertyName)
-                                               ->setType($propertyType)
-                                               ->setValue(null)
-                                               ->setDescription('the actual value')
-        );
-        $constructorCode[] = '$this->' . $propertyName . ' = $' . $propertyName . ';';
+        foreach ($additionalProperties as $propertyName => $propertyType) {
+            $constructor->addParameter(PhpParameter::create($propertyName)
+                                                   ->setType($propertyType)
+                                                   ->setValue(null)
+            );
+            $constructorCode[] = '$this->' . $propertyName . ' = $' . $propertyName . ';';
+        }
 
         $constructor->setBody(implode(PHP_EOL, $constructorCode));
         $class->setMethod($constructor);
@@ -178,24 +220,10 @@ class ApiGenerator
     {
         $propertyName  = self::camelize($property->getName(), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
-        if ($property instanceof ElementRef) {
-            if ($property->getReferencedElement()->getType() instanceof SimpleType) {
-                $propertyType = $this->extractPhpType($property->getReferencedElement()->getType());
-            } else {
-                $propertyType = self::camelize($property->getReferencedElement()->getName());
-            }
-        } else {
-            $propertyType = $this->extractPhpType($property->getType());;
-        }
-
-        $nullable = false;
-        if ($property->getMin() === 0) {
-            $nullable = true;
-        }
+        $propertyType  = $this->getPhpPropertyTypeFromXsdElement($property);
 
         // take min/max into account, as this may be an array instead
         if ($property->getMax() == -1) {
-            $propertyType .= '[]';
             $classProperty->getDocblock()->appendTag(TagFactory::create('XmlList(inline = true, entry = "' . $property->getName() . '")'));
             $class->addUseStatement('JMS\Serializer\Annotation\XmlList');
         }
@@ -222,7 +250,37 @@ class ApiGenerator
 
         $class->setProperty($classProperty);
 
+        $nullable = $property->getMin() === 0;
         self::generateGetterAndSetter($classProperty, $class, true, $nullable);
+    }
+
+    /**
+     * @param Item|ElementItem $property
+     *
+     * @return string
+     */
+    protected function getPhpPropertyTypeFromXsdElement($property): string
+    {
+        if ($property instanceof ElementRef) {
+            if ($property->getReferencedElement()->getType() instanceof SimpleType) {
+                $propertyType = $this->extractPhpType($property->getReferencedElement()->getType());
+            } else {
+                $propertyType = self::camelize($property->getReferencedElement()->getName());
+            }
+        } else {
+            if ($property->getType() instanceof ComplexType) {
+                $this->referencedInlineElements[] = $property;
+                $propertyType                     = $this->extractPhpType($property->getType(), self::camelize($property->getName(), true));
+            } else {
+                $propertyType = $this->extractPhpType($property->getType());
+            }
+        }
+
+        if ( ! ($property instanceof Attribute) && $property->getMax() == -1) {
+            $propertyType .= '[]';
+        }
+
+        return $propertyType;
     }
 
     /**
@@ -341,10 +399,11 @@ class ApiGenerator
 
     /**
      * @param Type $typeFromXsd
+     * @param string|null $propertyName
      *
      * @return string|null
      */
-    protected function extractPhpType(Type $typeFromXsd): ?string
+    protected function extractPhpType(Type $typeFromXsd, ?string $propertyName = null): ?string
     {
         $type = 'string';
 
@@ -352,10 +411,16 @@ class ApiGenerator
             $type = $typeFromXsd->getName();
         } else {
             if ($typeFromXsd instanceof ComplexType) {
-                //TODO: whatever structure UserDefinedExtend->feld really is...
+                if (null !== $propertyName) {
+                    return ucfirst($propertyName);
+                }
             } else {
-                if ($typeFromXsd->getRestriction()->getBase() != '') {
-                    $type = $typeFromXsd->getRestriction()->getBase()->getName();
+                if ($typeFromXsd instanceof ComplexTypeSimpleContent) {
+                    // is default string
+                } else {
+                    if ($typeFromXsd->getRestriction()->getBase() != '') {
+                        $type = $typeFromXsd->getRestriction()->getBase()->getName();
+                    }
                 }
             }
         }

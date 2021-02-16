@@ -33,7 +33,7 @@ class Evbnetto {
 
 	/**
 	 * @param float $evbust Shortcut setter for evbust
-	 * @param float $value the actual value
+	 * @param float $value
 	 */
 	public function __construct(float $evbust = null, float $value = null) {
 		$this->evbust = $evbust;

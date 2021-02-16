@@ -33,7 +33,7 @@ class Gesamtbelastungnetto {
 
 	/**
 	 * @param float $gesamtbelastungust Shortcut setter for gesamtbelastungust
-	 * @param float $value the actual value
+	 * @param float $value
 	 */
 	public function __construct(float $gesamtbelastungust = null, float $value = null) {
 		$this->gesamtbelastungust = $gesamtbelastungust;

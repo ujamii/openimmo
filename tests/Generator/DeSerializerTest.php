@@ -7,6 +7,7 @@ use JMS\Serializer\Handler\HandlerRegistryInterface;
 use JMS\Serializer\SerializerInterface;
 use Ujamii\OpenImmo\API\Anhang;
 use Ujamii\OpenImmo\API\AussenCourtage;
+use Ujamii\OpenImmo\API\Bewertung;
 use Ujamii\OpenImmo\API\Objektkategorie;
 use Ujamii\OpenImmo\API\Openimmo;
 use Ujamii\OpenImmo\API\Uebertragung;
@@ -85,12 +86,12 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
     public function testReadAnhangXml()
     {
         $xmlString = '<anhang location="EXTERN" gruppe="BILD">
-      <anhangtitel />
-      <format />
-      <daten>
-        <pfad>/dev/null</pfad>
-      </daten>
-    </anhang>';
+          <anhangtitel />
+          <format />
+          <daten>
+            <pfad>/dev/null</pfad>
+          </daten>
+        </anhang>';
 
         /* @var $anhang Anhang */
         $anhang = $this->serializer->deserialize($xmlString, Anhang::class, 'xml');
@@ -132,13 +133,13 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
     public function testReadObjektKategorieXml()
     {
         $xmlString = '<objektkategorie>
-        <nutzungsart WOHNEN="true" GEWERBE="false" />
-        <objektart>
-          <objektart_zusatz>Dachgeschoss</objektart_zusatz>
-          <wohnung wohnungtyp="MAISONETTE" />
-        </objektart>
-        <vermarktungsart KAUF="false" MIETE_PACHT="true" />
-      </objektkategorie>';
+            <nutzungsart WOHNEN="true" GEWERBE="false" />
+            <objektart>
+              <objektart_zusatz>Dachgeschoss</objektart_zusatz>
+              <wohnung wohnungtyp="MAISONETTE" />
+            </objektart>
+            <vermarktungsart KAUF="false" MIETE_PACHT="true" />
+          </objektkategorie>';
 
         /* @var Objektkategorie $category */
         $category = $this->serializer->deserialize($xmlString, Objektkategorie::class, 'xml');
@@ -151,6 +152,58 @@ class DeSerializerTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(Wohnung::WOHNUNGTYP_MAISONETTE, $category->getObjektart()->getWohnung()[0]->getWohnungtyp());
         $this->assertEquals('Dachgeschoss', $category->getObjektart()->getObjektartZusatz()[0]);
+    }
+
+    public function testReadComplexType()
+    {
+        $xmlString = '<bewertung>
+            <feld>
+              <modus>kauf</modus>
+              <name>abc</name>
+              <typ>int</typ>
+              <wert>100</wert>
+            </feld>
+          </bewertung>';
+
+        /* @var Bewertung $subject */
+        $subject = $this->serializer->deserialize($xmlString, Bewertung::class, 'xml');
+        $fields  = $subject->getFeld();
+
+        $this->assertCount(1, $fields);
+        $feld = $fields[0];
+
+        $this->assertEquals(['kauf'], $feld->getModus());
+        $this->assertEquals(['int'], $feld->getTyp());
+        $this->assertEquals('abc', $feld->getName());
+        $this->assertEquals(100, $feld->getWert());
+    }
+
+    public function testReadComplexTypeWithArrays()
+    {
+        $xmlString = '<bewertung>
+            <feld>
+              <modus>kauf</modus>
+              <modus>miete</modus>
+              <modus>pacht</modus>
+              <name>abc</name>
+              <typ>int</typ>
+              <typ>float</typ>
+              <typ>string</typ>
+              <wert>100</wert>
+            </feld>
+          </bewertung>';
+
+        /* @var Bewertung $subject */
+        $subject = $this->serializer->deserialize($xmlString, Bewertung::class, 'xml');
+        $fields  = $subject->getFeld();
+
+        $this->assertCount(1, $fields);
+        $feld = $fields[0];
+
+        $this->assertEquals(['kauf', 'miete', 'pacht'], $feld->getModus());
+        $this->assertEquals(['int', 'float', 'string'], $feld->getTyp());
+        $this->assertEquals('abc', $feld->getName());
+        $this->assertEquals(100, $feld->getWert());
     }
 
 }

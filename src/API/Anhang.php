@@ -131,6 +131,19 @@ class Anhang {
 	protected $location;
 
 	/**
+	 * @param string $anhangtitel Shortcut setter for anhangtitel
+	 * @param string $format Shortcut setter for format
+	 * @param Check $check Shortcut setter for check
+	 * @param Daten $daten Shortcut setter for daten
+	 */
+	public function __construct(string $anhangtitel = null, string $format = null, Check $check = null, Daten $daten = null) {
+		$this->anhangtitel = $anhangtitel;
+		$this->format = $format;
+		$this->check = $check;
+		$this->daten = $daten;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getAnhangtitel(): ?string {
