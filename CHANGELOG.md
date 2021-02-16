@@ -1,3 +1,21 @@
+## 0.7.0 (February 16, 2021)
+  - [BUGFIX] solved dependency problems
+  - [TASK] refactoring to simplify generator class
+  - [TEST] added some tests
+  - [FEATURE] classes with up to 6 properties now have constructor methods for convenience
+  - [TEST] added some tests
+  - [TASK] solved last TODO (UserDefinedExtend was not fully functional)
+  - [FEATURE] classes with up to 5 properties now have constructor methods for convenience
+  - [TASK] added type description for minInclusive and maxInclusive restrictions
+  - [TASK] added type description for fractionDigits and minLength restrictions
+  - [TASK] added example docblock tag for fractionDigits restriction
+  - [BUGFIX] fixed wrong return type in DateTimeHandler::serializeDateTimeToXml
+  - [TASK] some minor refactoring
+  - [BUGFIX] fixed wrong expected type in datetime handler
+  - [TEST] added composer run command for phpunit
+  - [DOC] closes #5
+  - [TEST] added phpstan and did some improvements
+
 ## 0.6.0 (November 26, 2020)
   - Merge branch 'bugfix/issue-3'
   - [DOC] fixed typo
