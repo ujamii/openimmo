@@ -87,7 +87,7 @@ class VerwaltungObjekt {
 
 	/**
 	 * @Type("int") 
-	 * @var int
+	 * @var int Minimum value (inclusive): 1
 	 */
 	protected $maxPersonen;
 

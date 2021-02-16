@@ -296,19 +296,19 @@ class ApiGenerator
                         break;
 
                     case 'minLength':
-                        $classProperty->setTypeDescription('Minimum length: ' . $options[0]['value']);
+                        self::addDescriptionPart($classProperty, 'Minimum length: ' . $options[0]['value']);
                         break;
 
                     case 'minInclusive':
-                        //TODO
+                        self::addDescriptionPart($classProperty, 'Minimum value (inclusive): ' . $options[0]['value']);
                         break;
 
                     case 'maxInclusive':
-                        //TODO
+                        self::addDescriptionPart($classProperty, 'Maximum value (inclusive): ' . $options[0]['value']);
                         break;
 
                     case 'fractionDigits':
-                        $classProperty->setTypeDescription('Maximum precision: ' . $options[0]['value']);
+                        self::addDescriptionPart($classProperty, 'Maximum precision: ' . $options[0]['value']);
                         break;
 
                     default:
@@ -317,6 +317,26 @@ class ApiGenerator
                 }
             }
         }
+    }
+
+    /**
+     * Adds a new description part to the given class property.
+     *
+     * @param PhpProperty $classProperty
+     * @param string $descriptionPart
+     * @param string $separator
+     *
+     * @return void
+     */
+    public static function addDescriptionPart(PhpProperty $classProperty, string $descriptionPart, string $separator = ', '): void
+    {
+        if ('' === trim($classProperty->getTypeDescription())) {
+            $currentDescriptionParts = [];
+        } else {
+            $currentDescriptionParts = explode($separator, $classProperty->getTypeDescription());
+        }
+        $currentDescriptionParts[] = $descriptionPart;
+        $classProperty->setTypeDescription(implode($separator, $currentDescriptionParts));
     }
 
     /**
@@ -338,7 +358,6 @@ class ApiGenerator
                     $type = $typeFromXsd->getRestriction()->getBase()->getName();
                 }
             }
-
         }
 
         return $type;
@@ -346,8 +365,8 @@ class ApiGenerator
 
     /**
      * @param string $propertyType
-     * @param PhpProperty $classProperty
-     * @param PhpClass $class
+     * @param PhpProperty|null $classProperty
+     * @param PhpClass|null $class
      *
      * @return string
      */
@@ -399,7 +418,7 @@ class ApiGenerator
      *
      * @return string
      */
-    protected function getTypeForSerializer(string $type)
+    protected function getTypeForSerializer(string $type): string
     {
         $isPlural = substr($type, -2) == '[]';
         $singular = str_replace('[]', '', $type);

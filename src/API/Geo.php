@@ -15,7 +15,7 @@ class Geo {
 
 	/**
 	 * @Type("int") 
-	 * @var int
+	 * @var int Minimum value (inclusive): -2147483648, Maximum value (inclusive): 2147483647
 	 */
 	protected $anzahlEtagen;
 
@@ -27,7 +27,7 @@ class Geo {
 
 	/**
 	 * @Type("int") 
-	 * @var int
+	 * @var int Minimum value (inclusive): -2147483648, Maximum value (inclusive): 2147483647
 	 */
 	protected $etage;
 
