@@ -93,7 +93,7 @@ class ApiGenerator
      */
     protected function parseElementDef($element): void
     {
-        $className = self::camelize($element->getName());
+        $className = TypeUtil::camelize($element->getName());
 
         $class = new PhpClass();
         $class
@@ -113,7 +113,7 @@ class ApiGenerator
         }
 
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
-            $this->addSimpleValue($element->getType()->getExtension(), $class, $element->getType()->getAttributes());
+            $this->addSimpleValue($element->getType()->getExtension(), $class);
         } elseif ($element->getType() instanceof ComplexTypeMixed) {
             /* @var ComplexTypeMixed $complexTypeMixed */
             $complexTypeMixed = $element->getType();
@@ -121,7 +121,7 @@ class ApiGenerator
                 $this->parseProperty($property, $class);
             }
             // @see https://github.com/ujamii/openimmo/issues/3
-            $this->addSimpleValue(null, $class, $element->getType()->getAttributes());
+            $this->addSimpleValue(null, $class);
         } else {
             /* @var ComplexType $complexType */
             foreach ($element->getType()->getElements() as $property) {
@@ -145,9 +145,8 @@ class ApiGenerator
     /**
      * @param Extension|null $extension
      * @param PhpClass $class
-     * @param array $attributes
      */
-    protected function addSimpleValue(?Extension $extension, PhpClass $class, array $attributes): void
+    protected function addSimpleValue(?Extension $extension, PhpClass $class): void
     {
         $propertyName  = 'value';
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
@@ -162,7 +161,7 @@ class ApiGenerator
         $classProperty->getDocblock()->appendTag(TagFactory::create('Inline'));
         // this has been set in getValidType already (including format)
         if ($propertyType != '\DateTime') {
-            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $this->getTypeForSerializer($propertyType) . '")'));
+            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . TypeUtil::getTypeForSerializer($propertyType) . '")'));
         }
 
         $class->addUseStatement('JMS\Serializer\Annotation\Inline');
@@ -218,7 +217,7 @@ class ApiGenerator
      */
     protected function parseProperty(ElementItem $property, PhpClass $class): void
     {
-        $propertyName  = self::camelize($property->getName(), true);
+        $propertyName  = TypeUtil::camelize($property->getName(), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
         $propertyType  = $this->getPhpPropertyTypeFromXsdElement($property);
 
@@ -232,7 +231,7 @@ class ApiGenerator
         $classProperty->setType($type);
         // this has been set in getValidType already (including format)
         if ($type != '\DateTime') {
-            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $this->getTypeForSerializer($type) . '")'));
+            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . TypeUtil::getTypeForSerializer($type) . '")'));
         }
 
         if ($property->getType()->getRestriction()) {
@@ -265,12 +264,12 @@ class ApiGenerator
             if ($property->getReferencedElement()->getType() instanceof SimpleType) {
                 $propertyType = $this->extractPhpType($property->getReferencedElement()->getType());
             } else {
-                $propertyType = self::camelize($property->getReferencedElement()->getName());
+                $propertyType = TypeUtil::camelize($property->getReferencedElement()->getName());
             }
         } else {
             if ($property->getType() instanceof ComplexType) {
                 $this->referencedInlineElements[] = $property;
-                $propertyType                     = $this->extractPhpType($property->getType(), self::camelize($property->getName(), true));
+                $propertyType                     = $this->extractPhpType($property->getType(), TypeUtil::camelize($property->getName(), true));
             } else {
                 $propertyType = $this->extractPhpType($property->getType());
             }
@@ -289,7 +288,7 @@ class ApiGenerator
      */
     protected function parseAttribute(Attribute $attribute, PhpClass $class): void
     {
-        $propertyName  = self::camelize(strtolower($attribute->getName()), true);
+        $propertyName  = TypeUtil::camelize(strtolower($attribute->getName()), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
         $type          = $this->extractPhpType($attribute->getType());
         $type          = $this->getValidType($type, $classProperty, $class);
@@ -297,7 +296,7 @@ class ApiGenerator
 
         // this has been set in getValidType already (including format)
         if ($type != '\DateTime') {
-            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $this->getTypeForSerializer($type) . '")'));
+            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . TypeUtil::getTypeForSerializer($type) . '")'));
         }
         $classProperty->setType($type);
         $classProperty->getDocblock()->appendTag(TagFactory::create('XmlAttribute'));
@@ -479,45 +478,6 @@ class ApiGenerator
     }
 
     /**
-     * @param string $type
-     *
-     * @return string
-     */
-    protected function getTypeForSerializer(string $type): string
-    {
-        $isPlural = substr($type, -2) == '[]';
-        $singular = str_replace('[]', '', $type);
-        switch ($singular) {
-
-            case 'string':
-            case 'float':
-            case 'int':
-            case 'array':
-            case 'boolean':
-            case 'dateTime':
-            case '\DateTime':
-                $type = $singular;
-                break;
-
-            case 'decimal':
-                $type = 'float';
-                break;
-
-            default:
-                $ns   = 'Ujamii\\OpenImmo\\API\\';
-                $type = $ns . $singular;
-                break;
-
-        }
-
-        if ($isPlural) {
-            $type = 'array<' . $type . '>';
-        }
-
-        return $type;
-    }
-
-    /**
      * @param PhpProperty $property
      * @param PhpClass $class
      * @param bool $fluentApi
@@ -529,22 +489,7 @@ class ApiGenerator
         self::generateGetter($property, $class, $nullable);
     }
 
-    /**
-     * @param string $input
-     * @param bool $lcFirst
-     * @param array<string> $separators
-     *
-     * @return string
-     */
-    public static function camelize(string $input, $lcFirst = false, $separators = ['-', '_']): string
-    {
-        $camel = str_replace($separators, '', ucwords($input, implode('', $separators)));
-        if ($lcFirst) {
-            $camel = lcfirst($camel);
-        }
 
-        return $camel;
-    }
 
     /**
      * Removes all files in the target folder.
