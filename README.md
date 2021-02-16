@@ -18,7 +18,6 @@ Do not be fooled by "Open" in OpenImmo ;-)
 
 ## TODOs
 
-- solve all TODOs in code
 - add test cases, especially for the example file provided with the official download package.
 
 ## Installation

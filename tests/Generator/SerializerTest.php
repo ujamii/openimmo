@@ -97,7 +97,7 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($uebertragung, 'xml'));
     }
 
-    public function testWriteNutzungsartXml()
+    public function testWriteNutzungsartXmlAsUsedInReadme()
     {
         $xmlString   = '<nutzungsart WOHNEN="true" GEWERBE="false" ANLAGE="false" WAZ="false" />';
         $nutzungsart = new Nutzungsart();
@@ -118,7 +118,7 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($phpObj, 'xml'));
     }
 
-    public function testWriteInfrastrukturXml()
+    public function testWriteInfrastrukturXmlAsUsedInReadme()
     {
         $xmlString    = '<infrastruktur>
             <ausblick blick="BERGE" />
