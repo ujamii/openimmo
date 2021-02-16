@@ -45,6 +45,13 @@ class Sonstige {
 	protected $sonstigeTyp;
 
 	/**
+	 * @param string $sonstigeTyp Shortcut setter for sonstigeTyp
+	 */
+	public function __construct(string $sonstigeTyp = null) {
+		$this->sonstigeTyp = $sonstigeTyp;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getSonstigeTyp(): ?string {

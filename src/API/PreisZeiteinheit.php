@@ -41,6 +41,13 @@ class PreisZeiteinheit {
 	protected $zeiteinheit;
 
 	/**
+	 * @param string $zeiteinheit Shortcut setter for zeiteinheit
+	 */
+	public function __construct(string $zeiteinheit = null) {
+		$this->zeiteinheit = $zeiteinheit;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getZeiteinheit(): ?string {

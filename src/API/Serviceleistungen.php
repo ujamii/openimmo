@@ -66,6 +66,21 @@ class Serviceleistungen {
 	protected $wachdienst;
 
 	/**
+	 * @param boolean $betreutesWohnen Shortcut setter for betreutesWohnen
+	 * @param boolean $catering Shortcut setter for catering
+	 * @param boolean $reinigung Shortcut setter for reinigung
+	 * @param boolean $einkauf Shortcut setter for einkauf
+	 * @param boolean $wachdienst Shortcut setter for wachdienst
+	 */
+	public function __construct(bool $betreutesWohnen = null, bool $catering = null, bool $reinigung = null, bool $einkauf = null, bool $wachdienst = null) {
+		$this->betreutesWohnen = $betreutesWohnen;
+		$this->catering = $catering;
+		$this->reinigung = $reinigung;
+		$this->einkauf = $einkauf;
+		$this->wachdienst = $wachdienst;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getBetreutesWohnen(): ?bool {

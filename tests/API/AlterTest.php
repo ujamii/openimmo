@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php declare(strict_types=1);
 
 namespace Ujamii\OpenImmo\API;
 
@@ -20,18 +20,9 @@ class AlterTest extends TestCase
         $this->assertEquals(Alter::ALTER_ATTR_ALTBAU, $this->alter->getAlterAttr());
     }
 
-    public function testValue()
-    {
-        $this->markTestIncomplete();
-//        $this->alter->setValue('234 Jahre');
-//        $this->assertEquals('234 Jahre', $this->alter->getValue());
-    }
-
     public function testConstructor()
     {
-        $this->markTestIncomplete();
-//        $this->alter = new Alter(Alter::ALTER_ATTR_NEUBAU, '3 Tage');
-//        $this->assertEquals(Alter::ALTER_ATTR_NEUBAU, $this->alter->getAlterAttr());
-//        $this->assertEquals('3 Tage', $this->alter->getValue());
+        $this->alter = new Alter(Alter::ALTER_ATTR_NEUBAU);
+        $this->assertEquals(Alter::ALTER_ATTR_NEUBAU, $this->alter->getAlterAttr());
     }
 }

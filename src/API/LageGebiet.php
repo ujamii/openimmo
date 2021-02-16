@@ -77,6 +77,13 @@ class LageGebiet {
 	protected $gebiete;
 
 	/**
+	 * @param string $gebiete Shortcut setter for gebiete
+	 */
+	public function __construct(string $gebiete = null) {
+		$this->gebiete = $gebiete;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getGebiete(): ?string {

@@ -753,6 +753,13 @@ class Waehrung {
 	protected $isoWaehrung;
 
 	/**
+	 * @param string $isoWaehrung Shortcut setter for isoWaehrung
+	 */
+	public function __construct(string $isoWaehrung = null) {
+		$this->isoWaehrung = $isoWaehrung;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getIsoWaehrung(): ?string {

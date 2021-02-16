@@ -953,6 +953,13 @@ class Land {
 	protected $isoLand;
 
 	/**
+	 * @param string $isoLand Shortcut setter for isoLand
+	 */
+	public function __construct(string $isoLand = null) {
+		$this->isoLand = $isoLand;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getIsoLand(): ?string {

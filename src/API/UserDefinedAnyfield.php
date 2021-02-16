@@ -21,7 +21,7 @@ class UserDefinedAnyfield {
 	protected $value;
 
 	/**
-	 * @param string $value
+	 * @param string $value Shortcut setter for value
 	 */
 	public function __construct(string $value = null) {
 		$this->value = $value;

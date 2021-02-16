@@ -41,6 +41,17 @@ class StpGarage {
 	protected $stellplatzmiete;
 
 	/**
+	 * @param float $stellplatzmiete Shortcut setter for stellplatzmiete
+	 * @param float $stellplatzkaufpreis Shortcut setter for stellplatzkaufpreis
+	 * @param int $anzahl Shortcut setter for anzahl
+	 */
+	public function __construct(float $stellplatzmiete = null, float $stellplatzkaufpreis = null, int $anzahl = null) {
+		$this->stellplatzmiete = $stellplatzmiete;
+		$this->stellplatzkaufpreis = $stellplatzkaufpreis;
+		$this->anzahl = $anzahl;
+	}
+
+	/**
 	 * @return int
 	 */
 	public function getAnzahl(): ?int {

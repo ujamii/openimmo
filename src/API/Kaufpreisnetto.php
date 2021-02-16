@@ -33,7 +33,7 @@ class Kaufpreisnetto {
 
 	/**
 	 * @param float $kaufpreisust Shortcut setter for kaufpreisust
-	 * @param float $value
+	 * @param float $value Shortcut setter for value
 	 */
 	public function __construct(float $kaufpreisust = null, float $value = null) {
 		$this->kaufpreisust = $kaufpreisust;

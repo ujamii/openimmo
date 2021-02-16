@@ -65,6 +65,13 @@ class BueroPraxen {
 	protected $bueroTyp;
 
 	/**
+	 * @param string $bueroTyp Shortcut setter for bueroTyp
+	 */
+	public function __construct(string $bueroTyp = null) {
+		$this->bueroTyp = $bueroTyp;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getBueroTyp(): ?string {

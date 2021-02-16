@@ -14,8 +14,23 @@ class StpTiefgarageTest extends TestCase
         $this->stpTiefgarage = new StpTiefgarage();
     }
 
-    public function testMissing()
+    public function testProperties()
     {
-        $this->markTestIncomplete('Test not yet implemented');
+        $this->stpTiefgarage->setAnzahl(23);
+        $this->stpTiefgarage->setStellplatzkaufpreis(98754.54);
+        $this->stpTiefgarage->setStellplatzmiete(94.54);
+
+        $this->assertEquals(23, $this->stpTiefgarage->getAnzahl());
+        $this->assertEquals(98754.54, $this->stpTiefgarage->getStellplatzkaufpreis());
+        $this->assertEquals(94.54, $this->stpTiefgarage->getStellplatzmiete());
+    }
+
+    public function testConstructor()
+    {
+        $this->stpTiefgarage = new StpTiefgarage(123, 65487.54, 42);
+
+        $this->assertEquals(42, $this->stpTiefgarage->getAnzahl());
+        $this->assertEquals(65487.54, $this->stpTiefgarage->getStellplatzkaufpreis());
+        $this->assertEquals(123, $this->stpTiefgarage->getStellplatzmiete());
     }
 }

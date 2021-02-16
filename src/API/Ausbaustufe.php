@@ -65,6 +65,21 @@ class Ausbaustufe {
 	protected $schluesselfertigohnebodenplatte;
 
 	/**
+	 * @param boolean $bausatzhaus Shortcut setter for bausatzhaus
+	 * @param boolean $ausbauhaus Shortcut setter for ausbauhaus
+	 * @param boolean $schluesselfertigmitkeller Shortcut setter for schluesselfertigmitkeller
+	 * @param boolean $schluesselfertigohnebodenplatte Shortcut setter for schluesselfertigohnebodenplatte
+	 * @param boolean $schluesselfertigmitbodenplatte Shortcut setter for schluesselfertigmitbodenplatte
+	 */
+	public function __construct(bool $bausatzhaus = null, bool $ausbauhaus = null, bool $schluesselfertigmitkeller = null, bool $schluesselfertigohnebodenplatte = null, bool $schluesselfertigmitbodenplatte = null) {
+		$this->bausatzhaus = $bausatzhaus;
+		$this->ausbauhaus = $ausbauhaus;
+		$this->schluesselfertigmitkeller = $schluesselfertigmitkeller;
+		$this->schluesselfertigohnebodenplatte = $schluesselfertigohnebodenplatte;
+		$this->schluesselfertigmitbodenplatte = $schluesselfertigmitbodenplatte;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getAusbauhaus(): ?bool {

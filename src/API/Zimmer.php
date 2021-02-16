@@ -29,6 +29,13 @@ class Zimmer {
 	protected $zimmertyp;
 
 	/**
+	 * @param string $zimmertyp Shortcut setter for zimmertyp
+	 */
+	public function __construct(string $zimmertyp = null) {
+		$this->zimmertyp = $zimmertyp;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getZimmertyp(): ?string {

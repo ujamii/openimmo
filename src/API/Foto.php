@@ -46,10 +46,12 @@ class Foto {
 	protected $location;
 
 	/**
+	 * @param string $location Shortcut setter for location
 	 * @param string $format Shortcut setter for format
 	 * @param Daten $daten Shortcut setter for daten
 	 */
-	public function __construct(string $format = null, Daten $daten = null) {
+	public function __construct(string $location = null, string $format = null, Daten $daten = null) {
+		$this->location = $location;
 		$this->format = $format;
 		$this->daten = $daten;
 	}

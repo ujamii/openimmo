@@ -69,6 +69,13 @@ class Gastgewerbe {
 	protected $gastgewTyp;
 
 	/**
+	 * @param string $gastgewTyp Shortcut setter for gastgewTyp
+	 */
+	public function __construct(string $gastgewTyp = null) {
+		$this->gastgewTyp = $gastgewTyp;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getGastgewTyp(): ?string {

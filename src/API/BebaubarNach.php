@@ -53,6 +53,13 @@ class BebaubarNach {
 	protected $bebaubarAttr;
 
 	/**
+	 * @param string $bebaubarAttr Shortcut setter for bebaubarAttr
+	 */
+	public function __construct(string $bebaubarAttr = null) {
+		$this->bebaubarAttr = $bebaubarAttr;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getBebaubarAttr(): ?string {

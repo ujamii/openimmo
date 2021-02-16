@@ -46,6 +46,17 @@ class Sicherheitstechnik {
 	protected $polizeiruf;
 
 	/**
+	 * @param boolean $alarmanlage Shortcut setter for alarmanlage
+	 * @param boolean $kamera Shortcut setter for kamera
+	 * @param boolean $polizeiruf Shortcut setter for polizeiruf
+	 */
+	public function __construct(bool $alarmanlage = null, bool $kamera = null, bool $polizeiruf = null) {
+		$this->alarmanlage = $alarmanlage;
+		$this->kamera = $kamera;
+		$this->polizeiruf = $polizeiruf;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getAlarmanlage(): ?bool {

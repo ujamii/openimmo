@@ -33,7 +33,7 @@ class Gesamtkostenprom2von {
 
 	/**
 	 * @param float $gesamtkostenprom2bis Shortcut setter for gesamtkostenprom2bis
-	 * @param float $value
+	 * @param float $value Shortcut setter for value
 	 */
 	public function __construct(float $gesamtkostenprom2bis = null, float $value = null) {
 		$this->gesamtkostenprom2bis = $gesamtkostenprom2bis;

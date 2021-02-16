@@ -41,6 +41,13 @@ class Erschliessung {
 	protected $erschlAttr;
 
 	/**
+	 * @param string $erschlAttr Shortcut setter for erschlAttr
+	 */
+	public function __construct(string $erschlAttr = null) {
+		$this->erschlAttr = $erschlAttr;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getErschlAttr(): ?string {

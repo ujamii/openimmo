@@ -37,6 +37,13 @@ class Verkaufstatus {
 	protected $stand;
 
 	/**
+	 * @param string $stand Shortcut setter for stand
+	 */
+	public function __construct(string $stand = null) {
+		$this->stand = $stand;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getStand(): ?string {

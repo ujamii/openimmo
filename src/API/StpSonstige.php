@@ -61,6 +61,15 @@ class StpSonstige {
 	protected $platzart;
 
 	/**
+	 * @param string $platzart Shortcut setter for platzart
+	 * @param string $bemerkung Shortcut setter for bemerkung
+	 */
+	public function __construct(string $platzart = null, string $bemerkung = null) {
+		$this->platzart = $platzart;
+		$this->bemerkung = $bemerkung;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getBemerkung(): ?string {

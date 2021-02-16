@@ -41,6 +41,13 @@ class Ausblick {
 	protected $blick;
 
 	/**
+	 * @param string $blick Shortcut setter for blick
+	 */
+	public function __construct(string $blick = null) {
+		$this->blick = $blick;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getBlick(): ?string {

@@ -38,6 +38,13 @@ class Geschlecht {
 	protected $geschlAttr;
 
 	/**
+	 * @param string $geschlAttr Shortcut setter for geschlAttr
+	 */
+	public function __construct(string $geschlAttr = null) {
+		$this->geschlAttr = $geschlAttr;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getGeschlAttr(): ?string {

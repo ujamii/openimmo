@@ -81,6 +81,13 @@ class LandUndForstwirtschaft {
 	protected $landTyp;
 
 	/**
+	 * @param string $landTyp Shortcut setter for landTyp
+	 */
+	public function __construct(string $landTyp = null) {
+		$this->landTyp = $landTyp;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getLandTyp(): ?string {

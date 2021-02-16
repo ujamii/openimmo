@@ -36,6 +36,15 @@ class AngeschlGastronomie {
 	protected $hotelrestaurant;
 
 	/**
+	 * @param boolean $hotelrestaurant Shortcut setter for hotelrestaurant
+	 * @param boolean $bar Shortcut setter for bar
+	 */
+	public function __construct(bool $hotelrestaurant = null, bool $bar = null) {
+		$this->hotelrestaurant = $hotelrestaurant;
+		$this->bar = $bar;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getBar(): ?bool {

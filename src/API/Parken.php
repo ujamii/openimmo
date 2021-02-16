@@ -65,6 +65,13 @@ class Parken {
 	protected $parkenTyp;
 
 	/**
+	 * @param string $parkenTyp Shortcut setter for parkenTyp
+	 */
+	public function __construct(string $parkenTyp = null) {
+		$this->parkenTyp = $parkenTyp;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getParkenTyp(): ?string {

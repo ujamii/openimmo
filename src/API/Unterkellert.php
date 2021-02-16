@@ -37,6 +37,13 @@ class Unterkellert {
 	protected $keller;
 
 	/**
+	 * @param string $keller Shortcut setter for keller
+	 */
+	public function __construct(string $keller = null) {
+		$this->keller = $keller;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getKeller(): ?string {

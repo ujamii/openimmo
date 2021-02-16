@@ -33,7 +33,7 @@ class Gesamtmietenetto {
 
 	/**
 	 * @param float $gesamtmieteust Shortcut setter for gesamtmieteust
-	 * @param float $value
+	 * @param float $value Shortcut setter for value
 	 */
 	public function __construct(float $gesamtmieteust = null, float $value = null) {
 		$this->gesamtmieteust = $gesamtmieteust;

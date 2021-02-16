@@ -34,7 +34,7 @@ class ObjektText {
 
 	/**
 	 * @param string $lang Shortcut setter for lang
-	 * @param string $value
+	 * @param string $value Shortcut setter for value
 	 */
 	public function __construct(string $lang = null, string $value = null) {
 		$this->lang = $lang;

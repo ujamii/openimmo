@@ -81,6 +81,13 @@ class Wohnung {
 	protected $wohnungtyp;
 
 	/**
+	 * @param string $wohnungtyp Shortcut setter for wohnungtyp
+	 */
+	public function __construct(string $wohnungtyp = null) {
+		$this->wohnungtyp = $wohnungtyp;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getWohnungtyp(): ?string {

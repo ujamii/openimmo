@@ -61,6 +61,13 @@ class Einzelhandel {
 	protected $handelTyp;
 
 	/**
+	 * @param string $handelTyp Shortcut setter for handelTyp
+	 */
+	public function __construct(string $handelTyp = null) {
+		$this->handelTyp = $handelTyp;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getHandelTyp(): ?string {

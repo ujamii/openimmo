@@ -77,6 +77,13 @@ class ZinshausRenditeobjekt {
 	protected $zinsTyp;
 
 	/**
+	 * @param string $zinsTyp Shortcut setter for zinsTyp
+	 */
+	public function __construct(string $zinsTyp = null) {
+		$this->zinsTyp = $zinsTyp;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getZinsTyp(): ?string {

@@ -89,6 +89,13 @@ class Zustand {
 	protected $zustandArt;
 
 	/**
+	 * @param string $zustandArt Shortcut setter for zustandArt
+	 */
+	public function __construct(string $zustandArt = null) {
+		$this->zustandArt = $zustandArt;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getZustandArt(): ?string {

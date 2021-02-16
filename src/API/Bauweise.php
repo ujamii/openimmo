@@ -45,6 +45,17 @@ class Bauweise {
 	protected $massiv;
 
 	/**
+	 * @param boolean $massiv Shortcut setter for massiv
+	 * @param boolean $fertigteile Shortcut setter for fertigteile
+	 * @param boolean $holz Shortcut setter for holz
+	 */
+	public function __construct(bool $massiv = null, bool $fertigteile = null, bool $holz = null) {
+		$this->massiv = $massiv;
+		$this->fertigteile = $fertigteile;
+		$this->holz = $holz;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getFertigteile(): ?bool {

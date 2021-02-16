@@ -33,6 +33,15 @@ class Geokoordinaten {
 	protected $laengengrad;
 
 	/**
+	 * @param float $breitengrad Shortcut setter for breitengrad
+	 * @param float $laengengrad Shortcut setter for laengengrad
+	 */
+	public function __construct(float $breitengrad = null, float $laengengrad = null) {
+		$this->breitengrad = $breitengrad;
+		$this->laengengrad = $laengengrad;
+	}
+
+	/**
 	 * @return float
 	 */
 	public function getBreitengrad(): float {

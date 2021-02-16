@@ -33,7 +33,7 @@ class Monatlichekostennetto {
 
 	/**
 	 * @param float $monatlichekostenust Shortcut setter for monatlichekostenust
-	 * @param float $value
+	 * @param float $value Shortcut setter for value
 	 */
 	public function __construct(float $monatlichekostenust = null, float $value = null) {
 		$this->monatlichekostenust = $monatlichekostenust;

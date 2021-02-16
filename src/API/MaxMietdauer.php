@@ -50,7 +50,7 @@ class MaxMietdauer {
 
 	/**
 	 * @param string $maxDauer Shortcut setter for maxDauer
-	 * @param string $value
+	 * @param string $value Shortcut setter for value
 	 */
 	public function __construct(string $maxDauer = null, string $value = null) {
 		$this->maxDauer = $maxDauer;

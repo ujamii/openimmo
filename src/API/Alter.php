@@ -33,6 +33,13 @@ class Alter {
 	protected $alterAttr;
 
 	/**
+	 * @param string $alterAttr Shortcut setter for alterAttr
+	 */
+	public function __construct(string $alterAttr = null) {
+		$this->alterAttr = $alterAttr;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getAlterAttr(): ?string {

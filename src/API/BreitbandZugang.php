@@ -33,6 +33,15 @@ class BreitbandZugang {
 	protected $speed;
 
 	/**
+	 * @param string $art Shortcut setter for art
+	 * @param float $speed Shortcut setter for speed
+	 */
+	public function __construct(string $art = null, float $speed = null) {
+		$this->art = $art;
+		$this->speed = $speed;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getArt(): ?string {

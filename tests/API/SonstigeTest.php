@@ -14,8 +14,15 @@ class SonstigeTest extends TestCase
         $this->sonstige = new Sonstige();
     }
 
-    public function testMissing()
+    public function testProperties()
     {
-        $this->markTestIncomplete('Test not yet implemented');
+        $this->sonstige->setSonstigeTyp(Sonstige::SONSTIGE_TYP_PARKHAUS);
+        $this->assertEquals(Sonstige::SONSTIGE_TYP_PARKHAUS, $this->sonstige->getSonstigeTyp());
+    }
+
+    public function testConstructor()
+    {
+        $this->sonstige = new Sonstige(Sonstige::SONSTIGE_TYP_KRANKENHAUS);
+        $this->assertEquals(Sonstige::SONSTIGE_TYP_KRANKENHAUS, $this->sonstige->getSonstigeTyp());
     }
 }

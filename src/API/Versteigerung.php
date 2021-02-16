@@ -50,6 +50,23 @@ class Versteigerung {
 	protected $zwangsversteigerung;
 
 	/**
+	 * @param boolean $zwangsversteigerung Shortcut setter for zwangsversteigerung
+	 * @param string $aktenzeichen Shortcut setter for aktenzeichen
+	 * @param \DateTime $zvtermin Shortcut setter for zvtermin
+	 * @param \DateTime $zusatztermin Shortcut setter for zusatztermin
+	 * @param string $amtsgericht Shortcut setter for amtsgericht
+	 * @param float $verkehrswert Shortcut setter for verkehrswert
+	 */
+	public function __construct(bool $zwangsversteigerung = null, string $aktenzeichen = null, \DateTime $zvtermin = null, \DateTime $zusatztermin = null, string $amtsgericht = null, float $verkehrswert = null) {
+		$this->zwangsversteigerung = $zwangsversteigerung;
+		$this->aktenzeichen = $aktenzeichen;
+		$this->zvtermin = $zvtermin;
+		$this->zusatztermin = $zusatztermin;
+		$this->amtsgericht = $amtsgericht;
+		$this->verkehrswert = $verkehrswert;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getAktenzeichen(): ?string {

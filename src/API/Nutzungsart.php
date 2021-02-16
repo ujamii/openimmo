@@ -56,6 +56,19 @@ class Nutzungsart {
 	protected $wohnen;
 
 	/**
+	 * @param boolean $wohnen Shortcut setter for wohnen
+	 * @param boolean $gewerbe Shortcut setter for gewerbe
+	 * @param boolean $anlage Shortcut setter for anlage
+	 * @param boolean $waz Shortcut setter for waz
+	 */
+	public function __construct(bool $wohnen = null, bool $gewerbe = null, bool $anlage = null, bool $waz = null) {
+		$this->wohnen = $wohnen;
+		$this->gewerbe = $gewerbe;
+		$this->anlage = $anlage;
+		$this->waz = $waz;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getAnlage(): ?bool {

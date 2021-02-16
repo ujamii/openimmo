@@ -112,7 +112,7 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
 
     public function testWriteDistanzenZuSportXml()
     {
-        $xmlString = '<distanzen_sport distanz_zu_sport="SEE" >15.0</distanzen_sport>';
+        $xmlString = '<distanzen_sport distanz_zu_sport="SEE">15.0</distanzen_sport>';
         $phpObj    = new DistanzenSport(DistanzenSport::DISTANZ_ZU_SPORT_SEE, 15);
 
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($phpObj, 'xml'));
@@ -122,8 +122,8 @@ class SerializerTest extends \PHPUnit\Framework\TestCase
     {
         $xmlString    = '<infrastruktur>
             <ausblick blick="BERGE" />
-            <distanzen distanz_zu="HAUPTSCHULE" >22.0</distanzen>
-            <distanzen_sport distanz_zu_sport="SEE" >15.0</distanzen_sport>
+            <distanzen distanz_zu="HAUPTSCHULE">22.0</distanzen>
+            <distanzen_sport distanz_zu_sport="SEE">15.0</distanzen_sport>
             <zulieferung>false</zulieferung>
           </infrastruktur>';
         $infrastrktur = new Infrastruktur();

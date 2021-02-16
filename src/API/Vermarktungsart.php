@@ -56,6 +56,19 @@ class Vermarktungsart {
 	protected $mietePacht;
 
 	/**
+	 * @param boolean $kauf Shortcut setter for kauf
+	 * @param boolean $mietePacht Shortcut setter for mietePacht
+	 * @param boolean $erbpacht Shortcut setter for erbpacht
+	 * @param boolean $leasing Shortcut setter for leasing
+	 */
+	public function __construct(bool $kauf = null, bool $mietePacht = null, bool $erbpacht = null, bool $leasing = null) {
+		$this->kauf = $kauf;
+		$this->mietePacht = $mietePacht;
+		$this->erbpacht = $erbpacht;
+		$this->leasing = $leasing;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getErbpacht(): ?bool {

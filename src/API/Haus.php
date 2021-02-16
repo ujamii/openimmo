@@ -133,6 +133,13 @@ class Haus {
 	protected $haustyp;
 
 	/**
+	 * @param string $haustyp Shortcut setter for haustyp
+	 */
+	public function __construct(string $haustyp = null) {
+		$this->haustyp = $haustyp;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getHaustyp(): ?string {

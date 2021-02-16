@@ -66,6 +66,21 @@ class Heizungsart {
 	protected $zentral;
 
 	/**
+	 * @param boolean $ofen Shortcut setter for ofen
+	 * @param boolean $etage Shortcut setter for etage
+	 * @param boolean $zentral Shortcut setter for zentral
+	 * @param boolean $fern Shortcut setter for fern
+	 * @param boolean $fussboden Shortcut setter for fussboden
+	 */
+	public function __construct(bool $ofen = null, bool $etage = null, bool $zentral = null, bool $fern = null, bool $fussboden = null) {
+		$this->ofen = $ofen;
+		$this->etage = $etage;
+		$this->zentral = $zentral;
+		$this->fern = $fern;
+		$this->fussboden = $fussboden;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getEtage(): ?bool {

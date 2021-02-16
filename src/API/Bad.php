@@ -66,6 +66,21 @@ class Bad {
 	protected $wanne;
 
 	/**
+	 * @param boolean $dusche Shortcut setter for dusche
+	 * @param boolean $wanne Shortcut setter for wanne
+	 * @param boolean $fenster Shortcut setter for fenster
+	 * @param boolean $bidet Shortcut setter for bidet
+	 * @param boolean $pissoir Shortcut setter for pissoir
+	 */
+	public function __construct(bool $dusche = null, bool $wanne = null, bool $fenster = null, bool $bidet = null, bool $pissoir = null) {
+		$this->dusche = $dusche;
+		$this->wanne = $wanne;
+		$this->fenster = $fenster;
+		$this->bidet = $bidet;
+		$this->pissoir = $pissoir;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getBidet(): ?bool {

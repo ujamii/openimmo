@@ -50,7 +50,7 @@ class MieteinnahmenSoll {
 
 	/**
 	 * @param string $periode Shortcut setter for periode
-	 * @param float $value
+	 * @param float $value Shortcut setter for value
 	 */
 	public function __construct(string $periode = null, float $value = null) {
 		$this->periode = $periode;

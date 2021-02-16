@@ -36,6 +36,15 @@ class Fahrstuhl {
 	protected $personen;
 
 	/**
+	 * @param boolean $personen Shortcut setter for personen
+	 * @param boolean $lasten Shortcut setter for lasten
+	 */
+	public function __construct(bool $personen = null, bool $lasten = null) {
+		$this->personen = $personen;
+		$this->lasten = $lasten;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getLasten(): ?bool {

@@ -39,6 +39,13 @@ class Aktion {
 	protected $aktionart;
 
 	/**
+	 * @param string $aktionart Shortcut setter for aktionart
+	 */
+	public function __construct(string $aktionart = null) {
+		$this->aktionart = $aktionart;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getAktionart(): ?string {

@@ -63,7 +63,7 @@ class DistanzenSport {
 
 	/**
 	 * @param string $distanzZuSport Shortcut setter for distanzZuSport
-	 * @param float $value
+	 * @param float $value Shortcut setter for value
 	 */
 	public function __construct(string $distanzZuSport = null, float $value = null) {
 		$this->distanzZuSport = $distanzZuSport;

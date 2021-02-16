@@ -73,6 +73,13 @@ class HallenLagerProd {
 	protected $hallenTyp;
 
 	/**
+	 * @param string $hallenTyp Shortcut setter for hallenTyp
+	 */
+	public function __construct(string $hallenTyp = null) {
+		$this->hallenTyp = $hallenTyp;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getHallenTyp(): ?string {

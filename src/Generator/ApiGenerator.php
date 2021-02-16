@@ -33,7 +33,7 @@ class ApiGenerator
      * a constructor. Read: If a class has more than X properties, no constructor
      * method will be generated.
      */
-    public const MAX_PROPERTIES_IN_CONSTRUCTOR = 5;
+    public const MAX_PROPERTIES_IN_CONSTRUCTOR = 6;
 
     /**
      * @var string
@@ -107,32 +107,36 @@ class ApiGenerator
             ->appendTag(TagFactory::create('package', 'Ujamii\OpenImmo\API'))
             ->appendTag(TagFactory::create('XmlRoot("' . $element->getName() . '")'));
 
+        /* @var $attributeFromXsd Attribute */
+        foreach ($element->getType()->getAttributes() as $attributeFromXsd) {
+            $this->parseAttribute($attributeFromXsd, $class);
+        }
+
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
             $this->addSimpleValue($element->getType()->getExtension(), $class, $element->getType()->getAttributes());
         } elseif ($element->getType() instanceof ComplexTypeMixed) {
-            // @see https://github.com/ujamii/openimmo/issues/3
-            $this->addSimpleValue(null, $class, $element->getType()->getAttributes());
             /* @var ComplexTypeMixed $complexTypeMixed */
             $complexTypeMixed = $element->getType();
             foreach ($complexTypeMixed->getElements() as $property) {
                 $this->parseProperty($property, $class);
             }
+            // @see https://github.com/ujamii/openimmo/issues/3
+            $this->addSimpleValue(null, $class, $element->getType()->getAttributes());
         } else {
             /* @var ComplexType $complexType */
             foreach ($element->getType()->getElements() as $property) {
                 $this->parseProperty($property, $class);
             }
-            $classPropertyCount = count($element->getType()->getElements());
-            if ($classPropertyCount > 0 && $classPropertyCount <= self::MAX_PROPERTIES_IN_CONSTRUCTOR) {
-                $this->generateConstructor($class, $element->getType()->getElements());
-            }
         }
-        /* @var $attributeFromXsd Attribute */
-        foreach ($element->getType()->getAttributes() as $attributeFromXsd) {
-            $this->parseAttribute($attributeFromXsd, $class);
-        }
+
         if (count($element->getType()->getAttributes()) > 0) {
             $class->addUseStatement('JMS\Serializer\Annotation\XmlAttribute');
+        }
+
+        $classPropertyCount = $class->getPropertyNames()->size();
+        $hasConstructor = $class->hasMethod('__construct');
+        if (!$hasConstructor && $classPropertyCount > 0 && $classPropertyCount <= self::MAX_PROPERTIES_IN_CONSTRUCTOR) {
+            $this->generateConstructor($class);
         }
 
         $this->createPhpFile($class);
@@ -164,48 +168,44 @@ class ApiGenerator
         $class->addUseStatement('JMS\Serializer\Annotation\Inline');
         $class->setProperty($classProperty);
         self::generateGetterAndSetter($classProperty, $class);
-
-        // as this type of object contains just a key and a value, we add a __construct for more convenience
-        $this->generateConstructor($class, $attributes, [$propertyName => $propertyType]);
     }
 
     /**
      * @param PhpClass $class
-     * @param array $classProperties
-     * @param array $additionalProperties
+     * @param array<string> $primaryConstructorProperties
      *
      * @return void
      */
-    protected function generateConstructor(PhpClass $class, array $classProperties, array $additionalProperties = []): void
+    protected function generateConstructor(PhpClass $class, array $primaryConstructorProperties = []): void
     {
         $constructor = PhpMethod::create('__construct');
 
         $constructorCode = [];
-        /* @var $attributeFromXsd Attribute|ElementRef */
-        foreach ($classProperties as $attributeFromXsd) {
-            $attributeName = self::camelize(strtolower($attributeFromXsd->getName()), true);
-            $type          = $this->getPhpPropertyTypeFromXsdElement($attributeFromXsd);
+        $prioParams = [];
+        $otherParams = [];
+        foreach ($class->getPropertyNames() as $classPropertyName) {
+            $type          = $class->getProperty($classPropertyName)->getType();
             $typeIsArray   = substr($type, -2) === '[]';
             $type          = $this->getValidType($type);
-            $phpParam      = PhpParameter::create($attributeName)
+            $phpParam      = PhpParameter::create($classPropertyName)
                                          ->setType($typeIsArray ? 'array' : $type)
-                                         ->setDescription('Shortcut setter for ' . $attributeName);
+                                         ->setDescription('Shortcut setter for ' . $classPropertyName);
             if ($typeIsArray) {
                 $phpParam->setExpression('[]');
             } else {
                 $phpParam->setValue(null);
             }
-            $constructor->addParameter($phpParam);
+            if (in_array($classPropertyName, $primaryConstructorProperties)) {
+                $prioParams[] = $phpParam;
+            } else {
+                $otherParams[] = $phpParam;
+            }
 
-            $constructorCode[] = '$this->' . $attributeName . ' = $' . $attributeName . ';';
+            $constructorCode[] = '$this->' . $classPropertyName . ' = $' . $classPropertyName . ';';
         }
 
-        foreach ($additionalProperties as $propertyName => $propertyType) {
-            $constructor->addParameter(PhpParameter::create($propertyName)
-                                                   ->setType($propertyType)
-                                                   ->setValue(null)
-            );
-            $constructorCode[] = '$this->' . $propertyName . ' = $' . $propertyName . ';';
+        foreach (array_merge($prioParams, $otherParams) as $phpParam) {
+            $constructor->addParameter($phpParam);
         }
 
         $constructor->setBody(implode(PHP_EOL, $constructorCode));

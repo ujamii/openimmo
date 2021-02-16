@@ -46,6 +46,17 @@ class Kueche {
 	protected $pantry;
 
 	/**
+	 * @param boolean $ebk Shortcut setter for ebk
+	 * @param boolean $offen Shortcut setter for offen
+	 * @param boolean $pantry Shortcut setter for pantry
+	 */
+	public function __construct(bool $ebk = null, bool $offen = null, bool $pantry = null) {
+		$this->ebk = $ebk;
+		$this->offen = $offen;
+		$this->pantry = $pantry;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getEbk(): ?bool {

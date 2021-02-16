@@ -33,7 +33,7 @@ class UserDefinedSimplefield {
 
 	/**
 	 * @param string $feldname Shortcut setter for feldname
-	 * @param string $value
+	 * @param string $value Shortcut setter for value
 	 */
 	public function __construct(string $feldname = null, string $value = null) {
 		$this->feldname = $feldname;

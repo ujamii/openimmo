@@ -56,6 +56,19 @@ class LageImBau {
 	protected $vorne;
 
 	/**
+	 * @param boolean $links Shortcut setter for links
+	 * @param boolean $rechts Shortcut setter for rechts
+	 * @param boolean $vorne Shortcut setter for vorne
+	 * @param boolean $hinten Shortcut setter for hinten
+	 */
+	public function __construct(bool $links = null, bool $rechts = null, bool $vorne = null, bool $hinten = null) {
+		$this->links = $links;
+		$this->rechts = $rechts;
+		$this->vorne = $vorne;
+		$this->hinten = $hinten;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getHinten(): ?bool {

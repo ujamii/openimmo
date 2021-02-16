@@ -46,7 +46,7 @@ class ProvisionTeilen {
 
 	/**
 	 * @param string $wert Shortcut setter for wert
-	 * @param string $value
+	 * @param string $value Shortcut setter for value
 	 */
 	public function __construct(string $wert = null, string $value = null) {
 		$this->wert = $wert;

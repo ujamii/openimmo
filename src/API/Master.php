@@ -36,7 +36,7 @@ class Master {
 
 	/**
 	 * @param boolean $visible Shortcut setter for visible
-	 * @param string $value
+	 * @param string $value Shortcut setter for value
 	 */
 	public function __construct(bool $visible = null, string $value = null) {
 		$this->visible = $visible;

@@ -67,7 +67,7 @@ class TelSonstige {
 	/**
 	 * @param string $telefonart Shortcut setter for telefonart
 	 * @param string $bemerkung Shortcut setter for bemerkung
-	 * @param string $value
+	 * @param string $value Shortcut setter for value
 	 */
 	public function __construct(string $telefonart = null, string $bemerkung = null, string $value = null) {
 		$this->telefonart = $telefonart;

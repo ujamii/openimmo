@@ -33,7 +33,7 @@ class AussenCourtage {
 
 	/**
 	 * @param boolean $mitMwst Shortcut setter for mitMwst
-	 * @param string $value
+	 * @param string $value Shortcut setter for value
 	 */
 	public function __construct(bool $mitMwst = null, string $value = null) {
 		$this->mitMwst = $mitMwst;

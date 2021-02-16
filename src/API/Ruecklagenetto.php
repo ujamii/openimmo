@@ -33,7 +33,7 @@ class Ruecklagenetto {
 
 	/**
 	 * @param float $ruecklageust Shortcut setter for ruecklageust
-	 * @param float $value
+	 * @param float $value Shortcut setter for value
 	 */
 	public function __construct(float $ruecklageust = null, float $value = null) {
 		$this->ruecklageust = $ruecklageust;

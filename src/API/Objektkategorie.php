@@ -53,6 +53,23 @@ class Objektkategorie {
 	protected $vermarktungsart;
 
 	/**
+	 * @param Nutzungsart $nutzungsart Shortcut setter for nutzungsart
+	 * @param Vermarktungsart $vermarktungsart Shortcut setter for vermarktungsart
+	 * @param Objektart $objektart Shortcut setter for objektart
+	 * @param array $userDefinedSimplefield Shortcut setter for userDefinedSimplefield
+	 * @param array $userDefinedAnyfield Shortcut setter for userDefinedAnyfield
+	 * @param array $userDefinedExtend Shortcut setter for userDefinedExtend
+	 */
+	public function __construct(Nutzungsart $nutzungsart = null, Vermarktungsart $vermarktungsart = null, Objektart $objektart = null, array $userDefinedSimplefield = [], array $userDefinedAnyfield = [], array $userDefinedExtend = []) {
+		$this->nutzungsart = $nutzungsart;
+		$this->vermarktungsart = $vermarktungsart;
+		$this->objektart = $objektart;
+		$this->userDefinedSimplefield = $userDefinedSimplefield;
+		$this->userDefinedAnyfield = $userDefinedAnyfield;
+		$this->userDefinedExtend = $userDefinedExtend;
+	}
+
+	/**
 	 * @return Nutzungsart
 	 */
 	public function getNutzungsart(): Nutzungsart {

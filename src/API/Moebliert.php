@@ -33,6 +33,13 @@ class Moebliert {
 	protected $moeb;
 
 	/**
+	 * @param string $moeb Shortcut setter for moeb
+	 */
+	public function __construct(string $moeb = null) {
+		$this->moeb = $moeb;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getMoeb(): ?string {

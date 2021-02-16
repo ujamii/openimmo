@@ -33,7 +33,7 @@ class Heizkostennetto {
 
 	/**
 	 * @param float $heizkostenust Shortcut setter for heizkostenust
-	 * @param float $value
+	 * @param float $value Shortcut setter for value
 	 */
 	public function __construct(float $heizkostenust = null, float $value = null) {
 		$this->heizkostenust = $heizkostenust;

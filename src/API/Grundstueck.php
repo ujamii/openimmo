@@ -61,6 +61,13 @@ class Grundstueck {
 	protected $grundstTyp;
 
 	/**
+	 * @param string $grundstTyp Shortcut setter for grundstTyp
+	 */
+	public function __construct(string $grundstTyp = null) {
+		$this->grundstTyp = $grundstTyp;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getGrundstTyp(): ?string {

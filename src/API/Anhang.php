@@ -131,12 +131,16 @@ class Anhang {
 	protected $location;
 
 	/**
+	 * @param string $location Shortcut setter for location
+	 * @param string $gruppe Shortcut setter for gruppe
 	 * @param string $anhangtitel Shortcut setter for anhangtitel
 	 * @param string $format Shortcut setter for format
 	 * @param Check $check Shortcut setter for check
 	 * @param Daten $daten Shortcut setter for daten
 	 */
-	public function __construct(string $anhangtitel = null, string $format = null, Check $check = null, Daten $daten = null) {
+	public function __construct(string $location = null, string $gruppe = null, string $anhangtitel = null, string $format = null, Check $check = null, Daten $daten = null) {
+		$this->location = $location;
+		$this->gruppe = $gruppe;
 		$this->anhangtitel = $anhangtitel;
 		$this->format = $format;
 		$this->check = $check;

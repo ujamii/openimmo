@@ -91,7 +91,7 @@ class Distanzen {
 
 	/**
 	 * @param string $distanzZu Shortcut setter for distanzZu
-	 * @param string $value
+	 * @param string $value Shortcut setter for value
 	 */
 	public function __construct(string $distanzZu = null, string $value = null) {
 		$this->distanzZu = $distanzZu;

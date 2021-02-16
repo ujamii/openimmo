@@ -20,18 +20,9 @@ class AktionTest extends TestCase
         $this->assertEquals(Aktion::AKTIONART_REFERENZ, $this->aktion->getAktionart());
     }
 
-    public function testValue()
-    {
-        $this->markTestIncomplete();
-//        $this->aktion->setValue('FooBar 123!');
-//        $this->assertEquals('FooBar 123!', $this->aktion->getValue());
-    }
-
     public function test__construct()
     {
-        $this->markTestIncomplete();
-//        $this->aktion = new Aktion(Aktion::AKTIONART_DELETE, 'LÖSCHEN!!!');
-//        $this->assertEquals(Aktion::AKTIONART_DELETE, $this->aktion->getAktionart());
-//        $this->assertEquals('LÖSCHEN!!!', $this->aktion->getValue());
+        $this->aktion = new Aktion(Aktion::AKTIONART_DELETE);
+        $this->assertEquals(Aktion::AKTIONART_DELETE, $this->aktion->getAktionart());
     }
 }

@@ -76,6 +76,23 @@ class Stellplatzart {
 	protected $tiefgarage;
 
 	/**
+	 * @param boolean $garage Shortcut setter for garage
+	 * @param boolean $tiefgarage Shortcut setter for tiefgarage
+	 * @param boolean $carport Shortcut setter for carport
+	 * @param boolean $freiplatz Shortcut setter for freiplatz
+	 * @param boolean $parkhaus Shortcut setter for parkhaus
+	 * @param boolean $duplex Shortcut setter for duplex
+	 */
+	public function __construct(bool $garage = null, bool $tiefgarage = null, bool $carport = null, bool $freiplatz = null, bool $parkhaus = null, bool $duplex = null) {
+		$this->garage = $garage;
+		$this->tiefgarage = $tiefgarage;
+		$this->carport = $carport;
+		$this->freiplatz = $freiplatz;
+		$this->parkhaus = $parkhaus;
+		$this->duplex = $duplex;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function getCarport(): ?bool {

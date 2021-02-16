@@ -37,6 +37,13 @@ class FreizeitimmobilieGewerblich {
 	protected $freizeitTyp;
 
 	/**
+	 * @param string $freizeitTyp Shortcut setter for freizeitTyp
+	 */
+	public function __construct(string $freizeitTyp = null) {
+		$this->freizeitTyp = $freizeitTyp;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getFreizeitTyp(): ?string {
