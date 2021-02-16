@@ -60,15 +60,14 @@ class ApiGenerator
      *
      * @param string $xsdFile file path
      * @param bool $wipeTargetFolder
-     * @param null $targetFolder
+     * @param ?string $targetFolder
      *
      * @throws \GoetasWebservices\XML\XSDReader\Exception\IOException
+     * @throws \Exception
      */
     public function generateApiClasses(string $xsdFile, $wipeTargetFolder = true, $targetFolder = null): void
     {
-        if ( ! is_null($targetFolder) && is_dir($targetFolder) && is_writeable($targetFolder)) {
-            $this->targetFolder = $targetFolder;
-        }
+        $this->setTargetFolder($targetFolder);
 
         if ($wipeTargetFolder) {
             $this->wipeTargetFolder();
@@ -586,11 +585,16 @@ class ApiGenerator
     }
 
     /**
-     * @param string $targetFolder
+     * @param string|null $targetFolder
      */
-    public function setTargetFolder(string $targetFolder): void
+    public function setTargetFolder(?string $targetFolder): void
     {
-        $this->targetFolder = $targetFolder;
+        if ( ! is_null($targetFolder)) {
+            if (!(is_dir($targetFolder) && is_writeable($targetFolder))) {
+                throw new \Exception("Directory {$targetFolder} does not exist or is not writeable!");
+            }
+            $this->targetFolder = $targetFolder;
+        }
     }
 
 }

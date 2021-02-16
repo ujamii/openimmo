@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xsd:element name="ausblick">
+		<xsd:annotation>
+			<xsd:documentation>Welcher Ausblick ist vorhanden, Optionen nicht kombinierbar</xsd:documentation>
+			<xsd:documentation xml:lang="en"></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="blick">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="FERNE"/>
+						<xsd:enumeration value="SEE"/>
+						<xsd:enumeration value="BERGE"/>
+						<xsd:enumeration value="MEER"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
