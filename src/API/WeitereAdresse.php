@@ -43,13 +43,13 @@ class WeitereAdresse {
 
 	/**
 	 * @Type("string") 
-	 * @var string
+	 * @var string Minimum length: 1
 	 */
 	protected $emailDirekt;
 
 	/**
 	 * @Type("string") 
-	 * @var string
+	 * @var string Minimum length: 1
 	 */
 	protected $emailPrivat;
 
@@ -62,7 +62,7 @@ class WeitereAdresse {
 
 	/**
 	 * @Type("string") 
-	 * @var string
+	 * @var string Minimum length: 1
 	 */
 	protected $emailZentrale;
 
@@ -140,25 +140,25 @@ class WeitereAdresse {
 
 	/**
 	 * @Type("string") 
-	 * @var string
+	 * @var string Minimum length: 1
 	 */
 	protected $telDurchw;
 
 	/**
 	 * @Type("string") 
-	 * @var string
+	 * @var string Minimum length: 1
 	 */
 	protected $telFax;
 
 	/**
 	 * @Type("string") 
-	 * @var string
+	 * @var string Minimum length: 1
 	 */
 	protected $telHandy;
 
 	/**
 	 * @Type("string") 
-	 * @var string
+	 * @var string Minimum length: 1
 	 */
 	protected $telPrivat;
 
@@ -171,7 +171,7 @@ class WeitereAdresse {
 
 	/**
 	 * @Type("string") 
-	 * @var string
+	 * @var string Minimum length: 1
 	 */
 	protected $telZentrale;
 

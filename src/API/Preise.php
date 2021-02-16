@@ -213,15 +213,13 @@ class Preise {
 
 	/**
 	 * @Type("float") 
-	 * @example 123456.12
-	 * @var float
+	 * @var float Maximum precision: 2
 	 */
 	protected $mwstGesamt;
 
 	/**
 	 * @Type("float") 
-	 * @example 123456.12
-	 * @var float
+	 * @var float Maximum precision: 2
 	 */
 	protected $mwstSatz;
 

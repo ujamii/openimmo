@@ -292,11 +292,11 @@ class ApiGenerator
                         break;
 
                     case 'whiteSpace':
-                        // do nothing
+                        // do nothing. This is not a real restriction, it is just an empty block.
                         break;
 
                     case 'minLength':
-                        //TODO
+                        $classProperty->setTypeDescription('Minimum length: ' . $options[0]['value']);
                         break;
 
                     case 'minInclusive':
@@ -308,7 +308,7 @@ class ApiGenerator
                         break;
 
                     case 'fractionDigits':
-                        $classProperty->getDocblock()->appendTag(TagFactory::create('example', number_format(123456.123, $options[0]['value'], '.', '')));
+                        $classProperty->setTypeDescription('Maximum precision: ' . $options[0]['value']);
                         break;
 
                     default:
