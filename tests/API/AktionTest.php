@@ -16,8 +16,9 @@ class AktionTest extends TestCase
 
     public function testAktionart()
     {
-        $this->aktion->setAktionart(Aktion::AKTIONART_REFERENZ);
+        $return = $this->aktion->setAktionart(Aktion::AKTIONART_REFERENZ);
         $this->assertEquals(Aktion::AKTIONART_REFERENZ, $this->aktion->getAktionart());
+        $this->assertEquals($this->aktion, $return);
     }
 
     public function test__construct()

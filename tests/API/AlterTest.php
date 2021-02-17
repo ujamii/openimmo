@@ -16,8 +16,9 @@ class AlterTest extends TestCase
 
     public function testAlterAttr()
     {
-        $this->alter->setAlterAttr(Alter::ALTER_ATTR_ALTBAU);
+        $return = $this->alter->setAlterAttr(Alter::ALTER_ATTR_ALTBAU);
         $this->assertEquals(Alter::ALTER_ATTR_ALTBAU, $this->alter->getAlterAttr());
+        $this->assertEquals($this->alter, $return);
     }
 
     public function testConstructor()

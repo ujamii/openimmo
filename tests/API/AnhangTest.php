@@ -32,4 +32,27 @@ class AnhangTest extends TestCase
         $this->assertEquals($daten, $this->anhang->getDaten());
         $this->assertEquals($check, $this->anhang->getCheck());
     }
+
+    public function testFluentSetters()
+    {
+        $return = $this->anhang->setAnhangtitel('Foobar 123');
+        $this->assertEquals($this->anhang, $return);
+
+        $return = $this->anhang->setFormat('JPEG');
+        $this->assertEquals($this->anhang, $return);
+
+        $return = $this->anhang->setGruppe('Random');
+        $this->assertEquals($this->anhang, $return);
+
+        $return = $this->anhang->setLocation('C:');
+        $this->assertEquals($this->anhang, $return);
+
+        $daten = new Daten('/dev/null', 'base64encodedBinary');
+        $return = $this->anhang->setDaten($daten);
+        $this->assertEquals($this->anhang, $return);
+
+        $check = new Check(Check::CTYPE_DATETIME, new \DateTime());
+        $return = $this->anhang->setCheck($check);
+        $this->assertEquals($this->anhang, $return);
+    }
 }

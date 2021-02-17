@@ -3,3 +3,5 @@
 /example/*
 /coverage
 /composer.lock
+/.php_cs.cache
+/ci/*.log
