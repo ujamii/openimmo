@@ -6,6 +6,7 @@ use gossi\codegen\model\PhpClass;
 use gossi\docblock\tags\AbstractTag;
 use PHPUnit\Framework\TestCase;
 use Ujamii\OpenImmo\Generator\ApiGenerator;
+use Ujamii\OpenImmo\Generator\TypeUtil;
 
 abstract class FileGeneratingTest extends TestCase
 {
@@ -67,14 +68,16 @@ abstract class FileGeneratingTest extends TestCase
         $property = $class->getProperty($propertyName);
         $this->assertEquals($type, $property->getType());
         $this->assertTrue($property->getDocblock()->hasTag('Type'));
-        $this->assertEquals('("' . $type . '")', trim($property->getDocblock()->getTags('Type')->get(0)->getDescription()));
+
+        $serializerType = TypeUtil::getTypeForSerializer($type);
+        $this->assertEquals('("' . $serializerType . '")', trim($property->getDocblock()->getTags('Type')->get(0)->getDescription()));
 
         foreach ($docTags as $tagName => $tagValue) {
             $this->assertTrue($property->getDocblock()->hasTag($tagName));
             if ( ! empty($tagValue)) {
                 /* @var AbstractTag $docTag */
                 $docTag = $property->getDocblock()->getTags($tagName)->get(0);
-                $this->assertEquals($tagValue, $docTag->__toString());
+                $this->assertEquals($tagValue, trim($docTag->getDescription()));
             }
         }
 
@@ -82,16 +85,17 @@ abstract class FileGeneratingTest extends TestCase
             $this->assertEquals('protected', $property->getVisibility());
             $this->assertTrue($class->hasMethod('get' . ucfirst($propertyName)));
 
+            $phpType = preg_replace('%([^<>]+).*%', '$1', $serializerType);
             $getter = $class->getMethod('get' . ucfirst($propertyName));
             $this->assertEquals('public', $getter->getVisibility());
-            $this->assertEquals($type, $getter->getType());
+            $this->assertEquals($phpType, $getter->getType());
             //$this->assertTrue($getter->getNullable());
 
             $setter = $class->getMethod('set' . ucfirst($propertyName));
             $this->assertEquals('public', $setter->getVisibility());
             $this->assertEquals($class->getName(), $setter->getType());
             $this->assertTrue($setter->hasParameter($propertyName));
-            $this->assertEquals($type, $setter->getParameter($propertyName)->getType());
+            $this->assertEquals($phpType, $setter->getParameter($propertyName)->getType());
             //$this->assertTrue($setter->getParameter($propertyName)->getNullable());
         }
     }
@@ -104,7 +108,9 @@ abstract class FileGeneratingTest extends TestCase
         $constructor = $class->getMethod('__construct');
         foreach ($properties as $propertyConfig) {
             list($propertyName, $type) = $propertyConfig;
-            $this->assertEquals($type, $constructor->getParameter($propertyName)->getType());
+            $serializerType = TypeUtil::getTypeForSerializer($type);
+            $phpType = preg_replace('%([^<>]+).*%', '$1', $serializerType);
+            $this->assertEquals($phpType, $constructor->getParameter($propertyName)->getType());
 //        $this->assertFalse($constructor->getParameter($propertyName)->getNullable());
         }
     }
