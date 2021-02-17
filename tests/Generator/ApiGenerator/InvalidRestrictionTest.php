@@ -2,18 +2,18 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
-class TypeWithRestrictionsTest extends FileGeneratingTest
+class InvalidRestrictionTest extends FileGeneratingTest
 {
 
     public function testGenerateApiClassDefault(): void
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         $generatedClass = $this->getGeneratedClassFromFile(
-            'type_with_restrictions'
+            'invalid_restriction'
         );
         $properties     = [
             self::getPropertyConfig('mwstSatz', 'float', true, []),
-            self::getPropertyConfig('anzahlEtagen', 'int', true, []),
-            self::getPropertyConfig('telDurchw', 'string', true, []),
         ];
         $this->assertClassHasProperties($generatedClass, $properties);
     }

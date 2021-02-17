@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xsd:element name="invalid_restriction">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mwst_satz"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="mwst_satz">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:decimal">
+				<xsd:totalDigits value="2"/>
+				<xsd:maxExclusive value="1000"/>
+				<xsd:minInclusive value="0"/>
+				<xsd:maxLength value="255"/>
+				<xsd:pattern value="foobar"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+</xsd:schema>
