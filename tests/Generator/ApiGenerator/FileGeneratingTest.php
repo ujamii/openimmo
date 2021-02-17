@@ -36,6 +36,36 @@ abstract class FileGeneratingTest extends TestCase
     }
 
     /**
+     * @param string $nameInXsd
+     * @param string $docBlockComment
+     *
+     * @return PhpClass
+     * @throws \GoetasWebservices\XML\XSDReader\Exception\IOException
+     */
+    public function getGeneratedClassFromFile(string $nameInXsd, string $docBlockComment = ''): PhpClass
+    {
+        $className = TypeUtil::camelize($nameInXsd);
+        $fixtureFile = "./tests/fixtures/{$className}.xsd";
+        $this->generator->generateApiClasses($fixtureFile, true, $this->tmpDir);
+
+        $classFileName = "{$this->tmpDir}{$className}.php";
+        $this->assertFileExists($classFileName);
+        $generatedClass = PhpClass::fromFile($classFileName);
+
+        if ('' !== $docBlockComment) {
+            $this->assertContains(
+                $docBlockComment,
+                $generatedClass->getDocblock()->getShortDescription()
+            );
+        }
+
+        $this->assertCount(1, $generatedClass->getDocblock()->getTags('XmlRoot'));
+        $this->assertEquals('("'.$nameInXsd.'")', $generatedClass->getDocblock()->getTags('XmlRoot')->get(0)->getDescription());
+
+        return $generatedClass;
+    }
+
+    /**
      * @param PhpClass $generatedClass
      * @param array $constants
      */

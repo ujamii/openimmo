@@ -9,14 +9,9 @@ class PositiveIntegerTypeTest extends FileGeneratingTest
 
     public function testGenerateApiClassPositiveIntegerType(): void
     {
-        $fixtureFile = './tests/fixtures/PositiveIntegerType.xsd';
-        $this->generator->generateApiClasses($fixtureFile, true, $this->tmpDir);
-
-        $this->assertFileExists($this->tmpDir . 'PositiveIntegerType.php');
-        $generatedClass = PhpClass::fromFile($this->tmpDir . 'PositiveIntegerType.php');
-
-        $this->assertCount(1, $generatedClass->getDocblock()->getTags('XmlRoot'));
-        $this->assertEquals('("positive_integer_type")', $generatedClass->getDocblock()->getTags('XmlRoot')->get(0)->getDescription());
+        $generatedClass = $this->getGeneratedClassFromFile(
+            'positive_integer_type'
+        );
 
         $properties = [
             self::getPropertyConfig('positiveInteger', 'int', true, [])

@@ -9,18 +9,10 @@ class SimpleContentClassTest extends FileGeneratingTest
 
     public function testGenerateApiClassSimpleContent(): void
     {
-        $fixtureFile = './tests/fixtures/UserDefinedSimplefield.xsd';
-        $this->generator->generateApiClasses($fixtureFile, true, $this->tmpDir);
-
-        $this->assertFileExists($this->tmpDir . 'UserDefinedSimplefield.php');
-        $generatedClass = PhpClass::fromFile($this->tmpDir . 'UserDefinedSimplefield.php');
-
-        $this->assertContains(
-            'Benutzerdefinierte Angaben',
-            $generatedClass->getDocblock()->getShortDescription()
+        $generatedClass = $this->getGeneratedClassFromFile(
+            'user_defined_simplefield',
+            'Benutzerdefinierte Angaben'
         );
-        $this->assertCount(1, $generatedClass->getDocblock()->getTags('XmlRoot'));
-        $this->assertEquals('("user_defined_simplefield")', $generatedClass->getDocblock()->getTags('XmlRoot')->get(0)->getDescription());
 
         $properties = [
             self::getPropertyConfig('feldname'),

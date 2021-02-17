@@ -9,18 +9,10 @@ class DefaultClassTest extends FileGeneratingTest
 
     public function testGenerateApiClassDefault(): void
     {
-        $fixtureFile = './tests/fixtures/Ausblick.xsd';
-        $this->generator->generateApiClasses($fixtureFile, true, $this->tmpDir);
-
-        $this->assertFileExists($this->tmpDir . 'Ausblick.php');
-        $generatedClass = PhpClass::fromFile($this->tmpDir . 'Ausblick.php');
-
-        $this->assertContains(
-            'Welcher Ausblick ist vorhanden, Optionen nicht kombinierbar',
-            $generatedClass->getDocblock()->getShortDescription()
+        $generatedClass = $this->getGeneratedClassFromFile(
+            'ausblick',
+            'Welcher Ausblick ist vorhanden, Optionen nicht kombinierbar'
         );
-        $this->assertCount(1, $generatedClass->getDocblock()->getTags('XmlRoot'));
-        $this->assertEquals('("ausblick")', $generatedClass->getDocblock()->getTags('XmlRoot')->get(0)->getDescription());
 
         $this->assertClassHasConstants($generatedClass, [
             'BLICK_BERGE' => 'BERGE',
