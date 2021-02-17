@@ -26,8 +26,8 @@ class Ausstattung {
 	const AUSSTATT_KATEGORIE_STANDARD = 'STANDARD';
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $abstellraum;
 
@@ -63,8 +63,8 @@ class Ausstattung {
 	protected $bad;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $barrierefrei;
 
@@ -81,8 +81,8 @@ class Ausstattung {
 	protected $befeuerung;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $bibliothek;
 
@@ -93,8 +93,8 @@ class Ausstattung {
 	protected $boden;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $brauereibindung;
 
@@ -105,8 +105,8 @@ class Ausstattung {
 	protected $breitbandZugang;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $dachboden;
 
@@ -117,14 +117,14 @@ class Ausstattung {
 	protected $dachform;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $dvbt;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $dvVerkabelung;
 
@@ -135,8 +135,8 @@ class Ausstattung {
 	protected $energietyp;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $fahrradraum;
 
@@ -147,20 +147,20 @@ class Ausstattung {
 	protected $fahrstuhl;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $gaestewc;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $gartennutzung;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $gastterrasse;
 
@@ -171,8 +171,8 @@ class Ausstattung {
 	protected $hallenhoehe;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $hebebuehne;
 
@@ -183,38 +183,38 @@ class Ausstattung {
 	protected $heizungsart;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $kabelkanaele;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $kabelSatTv;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $kamin;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $kantineCafeteria;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $klimatisiert;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $kran;
 
@@ -231,38 +231,38 @@ class Ausstattung {
 	protected $moebliert;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $raeumeVeraenderbar;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $rampe;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $rolladen;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $rollstuhlgerecht;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $sauna;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $seniorengerecht;
 
@@ -280,8 +280,8 @@ class Ausstattung {
 	protected $sicherheitstechnik;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $sporteinrichtungen;
 
@@ -299,26 +299,26 @@ class Ausstattung {
 	protected $stromanschlusswert;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $swimmingpool;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $teekueche;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $telefonFerienimmobilie;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $umtsEmpfang;
 
@@ -350,31 +350,31 @@ class Ausstattung {
 	protected $userDefinedSimplefield;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $waschTrockenraum;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $wellnessbereich;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $wgGeeignet;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $wintergarten;
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getAbstellraum(): ?bool {
 		return $this->abstellraum;
@@ -416,7 +416,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getBarrierefrei(): ?bool {
 		return $this->barrierefrei;
@@ -437,7 +437,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getBibliothek(): ?bool {
 		return $this->bibliothek;
@@ -451,7 +451,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getBrauereibindung(): ?bool {
 		return $this->brauereibindung;
@@ -465,7 +465,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getDachboden(): ?bool {
 		return $this->dachboden;
@@ -479,14 +479,14 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getDvbt(): ?bool {
 		return $this->dvbt;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getDvVerkabelung(): ?bool {
 		return $this->dvVerkabelung;
@@ -500,7 +500,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getFahrradraum(): ?bool {
 		return $this->fahrradraum;
@@ -514,21 +514,21 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getGaestewc(): ?bool {
 		return $this->gaestewc;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getGartennutzung(): ?bool {
 		return $this->gartennutzung;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getGastterrasse(): ?bool {
 		return $this->gastterrasse;
@@ -542,7 +542,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getHebebuehne(): ?bool {
 		return $this->hebebuehne;
@@ -556,42 +556,42 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getKabelkanaele(): ?bool {
 		return $this->kabelkanaele;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getKabelSatTv(): ?bool {
 		return $this->kabelSatTv;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getKamin(): ?bool {
 		return $this->kamin;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getKantineCafeteria(): ?bool {
 		return $this->kantineCafeteria;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getKlimatisiert(): ?bool {
 		return $this->klimatisiert;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getKran(): ?bool {
 		return $this->kran;
@@ -612,42 +612,42 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getRaeumeVeraenderbar(): ?bool {
 		return $this->raeumeVeraenderbar;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getRampe(): ?bool {
 		return $this->rampe;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getRolladen(): ?bool {
 		return $this->rolladen;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getRollstuhlgerecht(): ?bool {
 		return $this->rollstuhlgerecht;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getSauna(): ?bool {
 		return $this->sauna;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getSeniorengerecht(): ?bool {
 		return $this->seniorengerecht;
@@ -670,7 +670,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getSporteinrichtungen(): ?bool {
 		return $this->sporteinrichtungen;
@@ -693,28 +693,28 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getSwimmingpool(): ?bool {
 		return $this->swimmingpool;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getTeekueche(): ?bool {
 		return $this->teekueche;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getTelefonFerienimmobilie(): ?bool {
 		return $this->telefonFerienimmobilie;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getUmtsEmpfang(): ?bool {
 		return $this->umtsEmpfang;
@@ -755,35 +755,35 @@ class Ausstattung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getWaschTrockenraum(): ?bool {
 		return $this->waschTrockenraum;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getWellnessbereich(): ?bool {
 		return $this->wellnessbereich;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getWgGeeignet(): ?bool {
 		return $this->wgGeeignet;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getWintergarten(): ?bool {
 		return $this->wintergarten;
 	}
 
 	/**
-	 * @param boolean $abstellraum Setter for abstellraum
+	 * @param bool $abstellraum Setter for abstellraum
 	 * @return Ausstattung
 	 */
 	public function setAbstellraum(?bool $abstellraum) {
@@ -837,7 +837,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $barrierefrei Setter for barrierefrei
+	 * @param bool $barrierefrei Setter for barrierefrei
 	 * @return Ausstattung
 	 */
 	public function setBarrierefrei(?bool $barrierefrei) {
@@ -864,7 +864,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $bibliothek Setter for bibliothek
+	 * @param bool $bibliothek Setter for bibliothek
 	 * @return Ausstattung
 	 */
 	public function setBibliothek(?bool $bibliothek) {
@@ -882,7 +882,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $brauereibindung Setter for brauereibindung
+	 * @param bool $brauereibindung Setter for brauereibindung
 	 * @return Ausstattung
 	 */
 	public function setBrauereibindung(?bool $brauereibindung) {
@@ -900,7 +900,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $dachboden Setter for dachboden
+	 * @param bool $dachboden Setter for dachboden
 	 * @return Ausstattung
 	 */
 	public function setDachboden(?bool $dachboden) {
@@ -918,7 +918,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $dvbt Setter for dvbt
+	 * @param bool $dvbt Setter for dvbt
 	 * @return Ausstattung
 	 */
 	public function setDvbt(?bool $dvbt) {
@@ -927,7 +927,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $dvVerkabelung Setter for dvVerkabelung
+	 * @param bool $dvVerkabelung Setter for dvVerkabelung
 	 * @return Ausstattung
 	 */
 	public function setDvVerkabelung(?bool $dvVerkabelung) {
@@ -945,7 +945,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $fahrradraum Setter for fahrradraum
+	 * @param bool $fahrradraum Setter for fahrradraum
 	 * @return Ausstattung
 	 */
 	public function setFahrradraum(?bool $fahrradraum) {
@@ -963,7 +963,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $gaestewc Setter for gaestewc
+	 * @param bool $gaestewc Setter for gaestewc
 	 * @return Ausstattung
 	 */
 	public function setGaestewc(?bool $gaestewc) {
@@ -972,7 +972,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $gartennutzung Setter for gartennutzung
+	 * @param bool $gartennutzung Setter for gartennutzung
 	 * @return Ausstattung
 	 */
 	public function setGartennutzung(?bool $gartennutzung) {
@@ -981,7 +981,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $gastterrasse Setter for gastterrasse
+	 * @param bool $gastterrasse Setter for gastterrasse
 	 * @return Ausstattung
 	 */
 	public function setGastterrasse(?bool $gastterrasse) {
@@ -999,7 +999,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $hebebuehne Setter for hebebuehne
+	 * @param bool $hebebuehne Setter for hebebuehne
 	 * @return Ausstattung
 	 */
 	public function setHebebuehne(?bool $hebebuehne) {
@@ -1017,7 +1017,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $kabelkanaele Setter for kabelkanaele
+	 * @param bool $kabelkanaele Setter for kabelkanaele
 	 * @return Ausstattung
 	 */
 	public function setKabelkanaele(?bool $kabelkanaele) {
@@ -1026,7 +1026,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $kabelSatTv Setter for kabelSatTv
+	 * @param bool $kabelSatTv Setter for kabelSatTv
 	 * @return Ausstattung
 	 */
 	public function setKabelSatTv(?bool $kabelSatTv) {
@@ -1035,7 +1035,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $kamin Setter for kamin
+	 * @param bool $kamin Setter for kamin
 	 * @return Ausstattung
 	 */
 	public function setKamin(?bool $kamin) {
@@ -1044,7 +1044,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $kantineCafeteria Setter for kantineCafeteria
+	 * @param bool $kantineCafeteria Setter for kantineCafeteria
 	 * @return Ausstattung
 	 */
 	public function setKantineCafeteria(?bool $kantineCafeteria) {
@@ -1053,7 +1053,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $klimatisiert Setter for klimatisiert
+	 * @param bool $klimatisiert Setter for klimatisiert
 	 * @return Ausstattung
 	 */
 	public function setKlimatisiert(?bool $klimatisiert) {
@@ -1062,7 +1062,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $kran Setter for kran
+	 * @param bool $kran Setter for kran
 	 * @return Ausstattung
 	 */
 	public function setKran(?bool $kran) {
@@ -1089,7 +1089,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $raeumeVeraenderbar Setter for raeumeVeraenderbar
+	 * @param bool $raeumeVeraenderbar Setter for raeumeVeraenderbar
 	 * @return Ausstattung
 	 */
 	public function setRaeumeVeraenderbar(?bool $raeumeVeraenderbar) {
@@ -1098,7 +1098,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $rampe Setter for rampe
+	 * @param bool $rampe Setter for rampe
 	 * @return Ausstattung
 	 */
 	public function setRampe(?bool $rampe) {
@@ -1107,7 +1107,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $rolladen Setter for rolladen
+	 * @param bool $rolladen Setter for rolladen
 	 * @return Ausstattung
 	 */
 	public function setRolladen(?bool $rolladen) {
@@ -1116,7 +1116,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $rollstuhlgerecht Setter for rollstuhlgerecht
+	 * @param bool $rollstuhlgerecht Setter for rollstuhlgerecht
 	 * @return Ausstattung
 	 */
 	public function setRollstuhlgerecht(?bool $rollstuhlgerecht) {
@@ -1125,7 +1125,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $sauna Setter for sauna
+	 * @param bool $sauna Setter for sauna
 	 * @return Ausstattung
 	 */
 	public function setSauna(?bool $sauna) {
@@ -1134,7 +1134,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $seniorengerecht Setter for seniorengerecht
+	 * @param bool $seniorengerecht Setter for seniorengerecht
 	 * @return Ausstattung
 	 */
 	public function setSeniorengerecht(?bool $seniorengerecht) {
@@ -1161,7 +1161,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $sporteinrichtungen Setter for sporteinrichtungen
+	 * @param bool $sporteinrichtungen Setter for sporteinrichtungen
 	 * @return Ausstattung
 	 */
 	public function setSporteinrichtungen(?bool $sporteinrichtungen) {
@@ -1188,7 +1188,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $swimmingpool Setter for swimmingpool
+	 * @param bool $swimmingpool Setter for swimmingpool
 	 * @return Ausstattung
 	 */
 	public function setSwimmingpool(?bool $swimmingpool) {
@@ -1197,7 +1197,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $teekueche Setter for teekueche
+	 * @param bool $teekueche Setter for teekueche
 	 * @return Ausstattung
 	 */
 	public function setTeekueche(?bool $teekueche) {
@@ -1206,7 +1206,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $telefonFerienimmobilie Setter for telefonFerienimmobilie
+	 * @param bool $telefonFerienimmobilie Setter for telefonFerienimmobilie
 	 * @return Ausstattung
 	 */
 	public function setTelefonFerienimmobilie(?bool $telefonFerienimmobilie) {
@@ -1215,7 +1215,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $umtsEmpfang Setter for umtsEmpfang
+	 * @param bool $umtsEmpfang Setter for umtsEmpfang
 	 * @return Ausstattung
 	 */
 	public function setUmtsEmpfang(?bool $umtsEmpfang) {
@@ -1260,7 +1260,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $waschTrockenraum Setter for waschTrockenraum
+	 * @param bool $waschTrockenraum Setter for waschTrockenraum
 	 * @return Ausstattung
 	 */
 	public function setWaschTrockenraum(?bool $waschTrockenraum) {
@@ -1269,7 +1269,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $wellnessbereich Setter for wellnessbereich
+	 * @param bool $wellnessbereich Setter for wellnessbereich
 	 * @return Ausstattung
 	 */
 	public function setWellnessbereich(?bool $wellnessbereich) {
@@ -1278,7 +1278,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $wgGeeignet Setter for wgGeeignet
+	 * @param bool $wgGeeignet Setter for wgGeeignet
 	 * @return Ausstattung
 	 */
 	public function setWgGeeignet(?bool $wgGeeignet) {
@@ -1287,7 +1287,7 @@ class Ausstattung {
 	}
 
 	/**
-	 * @param boolean $wintergarten Setter for wintergarten
+	 * @param bool $wintergarten Setter for wintergarten
 	 * @return Ausstattung
 	 */
 	public function setWintergarten(?bool $wintergarten) {

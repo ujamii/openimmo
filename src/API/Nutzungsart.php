@@ -18,48 +18,48 @@ class Nutzungsart {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("ANLAGE") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $anlage;
 
 	/**
 	 * required
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("GEWERBE") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $gewerbe;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("WAZ") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $waz;
 
 	/**
 	 * required
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("WOHNEN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $wohnen;
 
 	/**
-	 * @param boolean $wohnen Shortcut setter for wohnen
-	 * @param boolean $gewerbe Shortcut setter for gewerbe
-	 * @param boolean $anlage Shortcut setter for anlage
-	 * @param boolean $waz Shortcut setter for waz
+	 * @param bool $wohnen Shortcut setter for wohnen
+	 * @param bool $gewerbe Shortcut setter for gewerbe
+	 * @param bool $anlage Shortcut setter for anlage
+	 * @param bool $waz Shortcut setter for waz
 	 */
 	public function __construct(bool $wohnen = null, bool $gewerbe = null, bool $anlage = null, bool $waz = null) {
 		$this->wohnen = $wohnen;
@@ -69,35 +69,35 @@ class Nutzungsart {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getAnlage(): ?bool {
 		return $this->anlage;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getGewerbe(): bool {
 		return $this->gewerbe;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getWaz(): ?bool {
 		return $this->waz;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getWohnen(): bool {
 		return $this->wohnen;
 	}
 
 	/**
-	 * @param boolean $anlage Setter for anlage
+	 * @param bool $anlage Setter for anlage
 	 * @return Nutzungsart
 	 */
 	public function setAnlage(?bool $anlage) {
@@ -106,7 +106,7 @@ class Nutzungsart {
 	}
 
 	/**
-	 * @param boolean $gewerbe Setter for gewerbe
+	 * @param bool $gewerbe Setter for gewerbe
 	 * @return Nutzungsart
 	 */
 	public function setGewerbe(bool $gewerbe) {
@@ -115,7 +115,7 @@ class Nutzungsart {
 	}
 
 	/**
-	 * @param boolean $waz Setter for waz
+	 * @param bool $waz Setter for waz
 	 * @return Nutzungsart
 	 */
 	public function setWaz(?bool $waz) {
@@ -124,7 +124,7 @@ class Nutzungsart {
 	}
 
 	/**
-	 * @param boolean $wohnen Setter for wohnen
+	 * @param bool $wohnen Setter for wohnen
 	 * @return Nutzungsart
 	 */
 	public function setWohnen(bool $wohnen) {

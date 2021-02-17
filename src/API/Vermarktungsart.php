@@ -18,48 +18,48 @@ class Vermarktungsart {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("ERBPACHT") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $erbpacht;
 
 	/**
 	 * required
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("KAUF") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $kauf;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("LEASING") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $leasing;
 
 	/**
 	 * required
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("MIETE_PACHT") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $mietePacht;
 
 	/**
-	 * @param boolean $kauf Shortcut setter for kauf
-	 * @param boolean $mietePacht Shortcut setter for mietePacht
-	 * @param boolean $erbpacht Shortcut setter for erbpacht
-	 * @param boolean $leasing Shortcut setter for leasing
+	 * @param bool $kauf Shortcut setter for kauf
+	 * @param bool $mietePacht Shortcut setter for mietePacht
+	 * @param bool $erbpacht Shortcut setter for erbpacht
+	 * @param bool $leasing Shortcut setter for leasing
 	 */
 	public function __construct(bool $kauf = null, bool $mietePacht = null, bool $erbpacht = null, bool $leasing = null) {
 		$this->kauf = $kauf;
@@ -69,35 +69,35 @@ class Vermarktungsart {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getErbpacht(): ?bool {
 		return $this->erbpacht;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getKauf(): bool {
 		return $this->kauf;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getLeasing(): ?bool {
 		return $this->leasing;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getMietePacht(): bool {
 		return $this->mietePacht;
 	}
 
 	/**
-	 * @param boolean $erbpacht Setter for erbpacht
+	 * @param bool $erbpacht Setter for erbpacht
 	 * @return Vermarktungsart
 	 */
 	public function setErbpacht(?bool $erbpacht) {
@@ -106,7 +106,7 @@ class Vermarktungsart {
 	}
 
 	/**
-	 * @param boolean $kauf Setter for kauf
+	 * @param bool $kauf Setter for kauf
 	 * @return Vermarktungsart
 	 */
 	public function setKauf(bool $kauf) {
@@ -115,7 +115,7 @@ class Vermarktungsart {
 	}
 
 	/**
-	 * @param boolean $leasing Setter for leasing
+	 * @param bool $leasing Setter for leasing
 	 * @return Vermarktungsart
 	 */
 	public function setLeasing(?bool $leasing) {
@@ -124,7 +124,7 @@ class Vermarktungsart {
 	}
 
 	/**
-	 * @param boolean $mietePacht Setter for mietePacht
+	 * @param bool $mietePacht Setter for mietePacht
 	 * @return Vermarktungsart
 	 */
 	public function setMietePacht(bool $mietePacht) {

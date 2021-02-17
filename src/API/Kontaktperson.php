@@ -14,8 +14,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Kontaktperson {
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $adressfreigabe;
 
@@ -241,7 +241,7 @@ class Kontaktperson {
 	protected $zusatzfeld;
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getAdressfreigabe(): ?bool {
 		return $this->adressfreigabe;
@@ -510,7 +510,7 @@ class Kontaktperson {
 	}
 
 	/**
-	 * @param boolean $adressfreigabe Setter for adressfreigabe
+	 * @param bool $adressfreigabe Setter for adressfreigabe
 	 * @return Kontaktperson
 	 */
 	public function setAdressfreigabe(?bool $adressfreigabe) {

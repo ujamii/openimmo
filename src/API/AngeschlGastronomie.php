@@ -18,26 +18,26 @@ class AngeschlGastronomie {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("BAR") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $bar;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("HOTELRESTAURANT") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $hotelrestaurant;
 
 	/**
-	 * @param boolean $hotelrestaurant Shortcut setter for hotelrestaurant
-	 * @param boolean $bar Shortcut setter for bar
+	 * @param bool $hotelrestaurant Shortcut setter for hotelrestaurant
+	 * @param bool $bar Shortcut setter for bar
 	 */
 	public function __construct(bool $hotelrestaurant = null, bool $bar = null) {
 		$this->hotelrestaurant = $hotelrestaurant;
@@ -45,21 +45,21 @@ class AngeschlGastronomie {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getBar(): ?bool {
 		return $this->bar;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getHotelrestaurant(): ?bool {
 		return $this->hotelrestaurant;
 	}
 
 	/**
-	 * @param boolean $bar Setter for bar
+	 * @param bool $bar Setter for bar
 	 * @return AngeschlGastronomie
 	 */
 	public function setBar(?bool $bar) {
@@ -68,7 +68,7 @@ class AngeschlGastronomie {
 	}
 
 	/**
-	 * @param boolean $hotelrestaurant Setter for hotelrestaurant
+	 * @param bool $hotelrestaurant Setter for hotelrestaurant
 	 * @return AngeschlGastronomie
 	 */
 	public function setHotelrestaurant(?bool $hotelrestaurant) {

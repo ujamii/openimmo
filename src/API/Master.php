@@ -28,14 +28,14 @@ class Master {
 	/**
 	 * required
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $visible;
 
 	/**
-	 * @param boolean $visible Shortcut setter for visible
+	 * @param bool $visible Shortcut setter for visible
 	 * @param string $value Shortcut setter for value
 	 */
 	public function __construct(bool $visible = null, string $value = null) {
@@ -51,7 +51,7 @@ class Master {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getVisible(): bool {
 		return $this->visible;
@@ -67,7 +67,7 @@ class Master {
 	}
 
 	/**
-	 * @param boolean $visible Setter for visible
+	 * @param bool $visible Setter for visible
 	 * @return Master
 	 */
 	public function setVisible(bool $visible) {

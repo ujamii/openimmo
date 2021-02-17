@@ -18,243 +18,243 @@ class Boden {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("DIELEN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $dielen;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("DOPPELBODEN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $doppelboden;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("ESTRICH") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $estrich;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("FERTIGPARKETT") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $fertigparkett;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("FLIESEN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $fliesen;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("GRANIT") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $granit;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("KUNSTSTOFF") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $kunststoff;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("LAMINAT") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $laminat;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("LINOLEUM") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $linoleum;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("MARMOR") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $marmor;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("PARKETT") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $parkett;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("STEIN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $stein;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("TEPPICH") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $teppich;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("TERRAKOTTA") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $terrakotta;
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getDielen(): ?bool {
 		return $this->dielen;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getDoppelboden(): ?bool {
 		return $this->doppelboden;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getEstrich(): ?bool {
 		return $this->estrich;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getFertigparkett(): ?bool {
 		return $this->fertigparkett;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getFliesen(): ?bool {
 		return $this->fliesen;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getGranit(): ?bool {
 		return $this->granit;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getKunststoff(): ?bool {
 		return $this->kunststoff;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getLaminat(): ?bool {
 		return $this->laminat;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getLinoleum(): ?bool {
 		return $this->linoleum;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getMarmor(): ?bool {
 		return $this->marmor;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getParkett(): ?bool {
 		return $this->parkett;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getStein(): ?bool {
 		return $this->stein;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getTeppich(): ?bool {
 		return $this->teppich;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getTerrakotta(): ?bool {
 		return $this->terrakotta;
 	}
 
 	/**
-	 * @param boolean $dielen Setter for dielen
+	 * @param bool $dielen Setter for dielen
 	 * @return Boden
 	 */
 	public function setDielen(?bool $dielen) {
@@ -263,7 +263,7 @@ class Boden {
 	}
 
 	/**
-	 * @param boolean $doppelboden Setter for doppelboden
+	 * @param bool $doppelboden Setter for doppelboden
 	 * @return Boden
 	 */
 	public function setDoppelboden(?bool $doppelboden) {
@@ -272,7 +272,7 @@ class Boden {
 	}
 
 	/**
-	 * @param boolean $estrich Setter for estrich
+	 * @param bool $estrich Setter for estrich
 	 * @return Boden
 	 */
 	public function setEstrich(?bool $estrich) {
@@ -281,7 +281,7 @@ class Boden {
 	}
 
 	/**
-	 * @param boolean $fertigparkett Setter for fertigparkett
+	 * @param bool $fertigparkett Setter for fertigparkett
 	 * @return Boden
 	 */
 	public function setFertigparkett(?bool $fertigparkett) {
@@ -290,7 +290,7 @@ class Boden {
 	}
 
 	/**
-	 * @param boolean $fliesen Setter for fliesen
+	 * @param bool $fliesen Setter for fliesen
 	 * @return Boden
 	 */
 	public function setFliesen(?bool $fliesen) {
@@ -299,7 +299,7 @@ class Boden {
 	}
 
 	/**
-	 * @param boolean $granit Setter for granit
+	 * @param bool $granit Setter for granit
 	 * @return Boden
 	 */
 	public function setGranit(?bool $granit) {
@@ -308,7 +308,7 @@ class Boden {
 	}
 
 	/**
-	 * @param boolean $kunststoff Setter for kunststoff
+	 * @param bool $kunststoff Setter for kunststoff
 	 * @return Boden
 	 */
 	public function setKunststoff(?bool $kunststoff) {
@@ -317,7 +317,7 @@ class Boden {
 	}
 
 	/**
-	 * @param boolean $laminat Setter for laminat
+	 * @param bool $laminat Setter for laminat
 	 * @return Boden
 	 */
 	public function setLaminat(?bool $laminat) {
@@ -326,7 +326,7 @@ class Boden {
 	}
 
 	/**
-	 * @param boolean $linoleum Setter for linoleum
+	 * @param bool $linoleum Setter for linoleum
 	 * @return Boden
 	 */
 	public function setLinoleum(?bool $linoleum) {
@@ -335,7 +335,7 @@ class Boden {
 	}
 
 	/**
-	 * @param boolean $marmor Setter for marmor
+	 * @param bool $marmor Setter for marmor
 	 * @return Boden
 	 */
 	public function setMarmor(?bool $marmor) {
@@ -344,7 +344,7 @@ class Boden {
 	}
 
 	/**
-	 * @param boolean $parkett Setter for parkett
+	 * @param bool $parkett Setter for parkett
 	 * @return Boden
 	 */
 	public function setParkett(?bool $parkett) {
@@ -353,7 +353,7 @@ class Boden {
 	}
 
 	/**
-	 * @param boolean $stein Setter for stein
+	 * @param bool $stein Setter for stein
 	 * @return Boden
 	 */
 	public function setStein(?bool $stein) {
@@ -362,7 +362,7 @@ class Boden {
 	}
 
 	/**
-	 * @param boolean $teppich Setter for teppich
+	 * @param bool $teppich Setter for teppich
 	 * @return Boden
 	 */
 	public function setTeppich(?bool $teppich) {
@@ -371,7 +371,7 @@ class Boden {
 	}
 
 	/**
-	 * @param boolean $terrakotta Setter for terrakotta
+	 * @param bool $terrakotta Setter for terrakotta
 	 * @return Boden
 	 */
 	public function setTerrakotta(?bool $terrakotta) {

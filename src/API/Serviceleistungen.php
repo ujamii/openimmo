@@ -18,59 +18,59 @@ class Serviceleistungen {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("BETREUTES_WOHNEN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $betreutesWohnen;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("CATERING") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $catering;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("EINKAUF") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $einkauf;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("REINIGUNG") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $reinigung;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("WACHDIENST") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $wachdienst;
 
 	/**
-	 * @param boolean $betreutesWohnen Shortcut setter for betreutesWohnen
-	 * @param boolean $catering Shortcut setter for catering
-	 * @param boolean $reinigung Shortcut setter for reinigung
-	 * @param boolean $einkauf Shortcut setter for einkauf
-	 * @param boolean $wachdienst Shortcut setter for wachdienst
+	 * @param bool $betreutesWohnen Shortcut setter for betreutesWohnen
+	 * @param bool $catering Shortcut setter for catering
+	 * @param bool $reinigung Shortcut setter for reinigung
+	 * @param bool $einkauf Shortcut setter for einkauf
+	 * @param bool $wachdienst Shortcut setter for wachdienst
 	 */
 	public function __construct(bool $betreutesWohnen = null, bool $catering = null, bool $reinigung = null, bool $einkauf = null, bool $wachdienst = null) {
 		$this->betreutesWohnen = $betreutesWohnen;
@@ -81,42 +81,42 @@ class Serviceleistungen {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getBetreutesWohnen(): ?bool {
 		return $this->betreutesWohnen;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getCatering(): ?bool {
 		return $this->catering;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getEinkauf(): ?bool {
 		return $this->einkauf;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getReinigung(): ?bool {
 		return $this->reinigung;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getWachdienst(): ?bool {
 		return $this->wachdienst;
 	}
 
 	/**
-	 * @param boolean $betreutesWohnen Setter for betreutesWohnen
+	 * @param bool $betreutesWohnen Setter for betreutesWohnen
 	 * @return Serviceleistungen
 	 */
 	public function setBetreutesWohnen(?bool $betreutesWohnen) {
@@ -125,7 +125,7 @@ class Serviceleistungen {
 	}
 
 	/**
-	 * @param boolean $catering Setter for catering
+	 * @param bool $catering Setter for catering
 	 * @return Serviceleistungen
 	 */
 	public function setCatering(?bool $catering) {
@@ -134,7 +134,7 @@ class Serviceleistungen {
 	}
 
 	/**
-	 * @param boolean $einkauf Setter for einkauf
+	 * @param bool $einkauf Setter for einkauf
 	 * @return Serviceleistungen
 	 */
 	public function setEinkauf(?bool $einkauf) {
@@ -143,7 +143,7 @@ class Serviceleistungen {
 	}
 
 	/**
-	 * @param boolean $reinigung Setter for reinigung
+	 * @param bool $reinigung Setter for reinigung
 	 * @return Serviceleistungen
 	 */
 	public function setReinigung(?bool $reinigung) {
@@ -152,7 +152,7 @@ class Serviceleistungen {
 	}
 
 	/**
-	 * @param boolean $wachdienst Setter for wachdienst
+	 * @param bool $wachdienst Setter for wachdienst
 	 * @return Serviceleistungen
 	 */
 	public function setWachdienst(?bool $wachdienst) {

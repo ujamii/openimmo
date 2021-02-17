@@ -44,13 +44,13 @@ class Versteigerung {
 	protected $zvtermin;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $zwangsversteigerung;
 
 	/**
-	 * @param boolean $zwangsversteigerung Shortcut setter for zwangsversteigerung
+	 * @param bool $zwangsversteigerung Shortcut setter for zwangsversteigerung
 	 * @param string $aktenzeichen Shortcut setter for aktenzeichen
 	 * @param \DateTime $zvtermin Shortcut setter for zvtermin
 	 * @param \DateTime $zusatztermin Shortcut setter for zusatztermin
@@ -102,7 +102,7 @@ class Versteigerung {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getZwangsversteigerung(): ?bool {
 		return $this->zwangsversteigerung;
@@ -154,7 +154,7 @@ class Versteigerung {
 	}
 
 	/**
-	 * @param boolean $zwangsversteigerung Setter for zwangsversteigerung
+	 * @param bool $zwangsversteigerung Setter for zwangsversteigerung
 	 * @return Versteigerung
 	 */
 	public function setZwangsversteigerung(?bool $zwangsversteigerung) {

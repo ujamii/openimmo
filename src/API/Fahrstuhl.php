@@ -18,26 +18,26 @@ class Fahrstuhl {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("LASTEN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $lasten;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("PERSONEN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $personen;
 
 	/**
-	 * @param boolean $personen Shortcut setter for personen
-	 * @param boolean $lasten Shortcut setter for lasten
+	 * @param bool $personen Shortcut setter for personen
+	 * @param bool $lasten Shortcut setter for lasten
 	 */
 	public function __construct(bool $personen = null, bool $lasten = null) {
 		$this->personen = $personen;
@@ -45,21 +45,21 @@ class Fahrstuhl {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getLasten(): ?bool {
 		return $this->lasten;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getPersonen(): ?bool {
 		return $this->personen;
 	}
 
 	/**
-	 * @param boolean $lasten Setter for lasten
+	 * @param bool $lasten Setter for lasten
 	 * @return Fahrstuhl
 	 */
 	public function setLasten(?bool $lasten) {
@@ -68,7 +68,7 @@ class Fahrstuhl {
 	}
 
 	/**
-	 * @param boolean $personen Setter for personen
+	 * @param bool $personen Setter for personen
 	 * @return Fahrstuhl
 	 */
 	public function setPersonen(?bool $personen) {

@@ -17,37 +17,37 @@ class Bauweise {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("FERTIGTEILE") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $fertigteile;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("HOLZ") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $holz;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("MASSIV") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $massiv;
 
 	/**
-	 * @param boolean $massiv Shortcut setter for massiv
-	 * @param boolean $fertigteile Shortcut setter for fertigteile
-	 * @param boolean $holz Shortcut setter for holz
+	 * @param bool $massiv Shortcut setter for massiv
+	 * @param bool $fertigteile Shortcut setter for fertigteile
+	 * @param bool $holz Shortcut setter for holz
 	 */
 	public function __construct(bool $massiv = null, bool $fertigteile = null, bool $holz = null) {
 		$this->massiv = $massiv;
@@ -56,28 +56,28 @@ class Bauweise {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getFertigteile(): ?bool {
 		return $this->fertigteile;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getHolz(): ?bool {
 		return $this->holz;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getMassiv(): ?bool {
 		return $this->massiv;
 	}
 
 	/**
-	 * @param boolean $fertigteile Setter for fertigteile
+	 * @param bool $fertigteile Setter for fertigteile
 	 * @return Bauweise
 	 */
 	public function setFertigteile(?bool $fertigteile) {
@@ -86,7 +86,7 @@ class Bauweise {
 	}
 
 	/**
-	 * @param boolean $holz Setter for holz
+	 * @param bool $holz Setter for holz
 	 * @return Bauweise
 	 */
 	public function setHolz(?bool $holz) {
@@ -95,7 +95,7 @@ class Bauweise {
 	}
 
 	/**
-	 * @param boolean $massiv Setter for massiv
+	 * @param bool $massiv Setter for massiv
 	 * @return Bauweise
 	 */
 	public function setMassiv(?bool $massiv) {

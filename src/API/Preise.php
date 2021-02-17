@@ -116,8 +116,8 @@ class Preise {
 	protected $heizkosten;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $heizkostenEnthalten;
 
@@ -308,8 +308,8 @@ class Preise {
 	protected $provisionnetto;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $provisionspflichtig;
 
@@ -438,8 +438,8 @@ class Preise {
 	protected $xFache;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $zzgMehrwertsteuer;
 
@@ -563,7 +563,7 @@ class Preise {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getHeizkostenEnthalten(): ?bool {
 		return $this->heizkostenEnthalten;
@@ -787,7 +787,7 @@ class Preise {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getProvisionspflichtig(): ?bool {
 		return $this->provisionspflichtig;
@@ -942,7 +942,7 @@ class Preise {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getZzgMehrwertsteuer(): ?bool {
 		return $this->zzgMehrwertsteuer;
@@ -1102,7 +1102,7 @@ class Preise {
 	}
 
 	/**
-	 * @param boolean $heizkostenEnthalten Setter for heizkostenEnthalten
+	 * @param bool $heizkostenEnthalten Setter for heizkostenEnthalten
 	 * @return Preise
 	 */
 	public function setHeizkostenEnthalten(?bool $heizkostenEnthalten) {
@@ -1390,7 +1390,7 @@ class Preise {
 	}
 
 	/**
-	 * @param boolean $provisionspflichtig Setter for provisionspflichtig
+	 * @param bool $provisionspflichtig Setter for provisionspflichtig
 	 * @return Preise
 	 */
 	public function setProvisionspflichtig(?bool $provisionspflichtig) {
@@ -1579,7 +1579,7 @@ class Preise {
 	}
 
 	/**
-	 * @param boolean $zzgMehrwertsteuer Setter for zzgMehrwertsteuer
+	 * @param bool $zzgMehrwertsteuer Setter for zzgMehrwertsteuer
 	 * @return Preise
 	 */
 	public function setZzgMehrwertsteuer(?bool $zzgMehrwertsteuer) {

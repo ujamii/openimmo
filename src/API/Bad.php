@@ -18,59 +18,59 @@ class Bad {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("BIDET") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $bidet;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("DUSCHE") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $dusche;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("FENSTER") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $fenster;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("PISSOIR") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $pissoir;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("WANNE") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $wanne;
 
 	/**
-	 * @param boolean $dusche Shortcut setter for dusche
-	 * @param boolean $wanne Shortcut setter for wanne
-	 * @param boolean $fenster Shortcut setter for fenster
-	 * @param boolean $bidet Shortcut setter for bidet
-	 * @param boolean $pissoir Shortcut setter for pissoir
+	 * @param bool $dusche Shortcut setter for dusche
+	 * @param bool $wanne Shortcut setter for wanne
+	 * @param bool $fenster Shortcut setter for fenster
+	 * @param bool $bidet Shortcut setter for bidet
+	 * @param bool $pissoir Shortcut setter for pissoir
 	 */
 	public function __construct(bool $dusche = null, bool $wanne = null, bool $fenster = null, bool $bidet = null, bool $pissoir = null) {
 		$this->dusche = $dusche;
@@ -81,42 +81,42 @@ class Bad {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getBidet(): ?bool {
 		return $this->bidet;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getDusche(): ?bool {
 		return $this->dusche;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getFenster(): ?bool {
 		return $this->fenster;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getPissoir(): ?bool {
 		return $this->pissoir;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getWanne(): ?bool {
 		return $this->wanne;
 	}
 
 	/**
-	 * @param boolean $bidet Setter for bidet
+	 * @param bool $bidet Setter for bidet
 	 * @return Bad
 	 */
 	public function setBidet(?bool $bidet) {
@@ -125,7 +125,7 @@ class Bad {
 	}
 
 	/**
-	 * @param boolean $dusche Setter for dusche
+	 * @param bool $dusche Setter for dusche
 	 * @return Bad
 	 */
 	public function setDusche(?bool $dusche) {
@@ -134,7 +134,7 @@ class Bad {
 	}
 
 	/**
-	 * @param boolean $fenster Setter for fenster
+	 * @param bool $fenster Setter for fenster
 	 * @return Bad
 	 */
 	public function setFenster(?bool $fenster) {
@@ -143,7 +143,7 @@ class Bad {
 	}
 
 	/**
-	 * @param boolean $pissoir Setter for pissoir
+	 * @param bool $pissoir Setter for pissoir
 	 * @return Bad
 	 */
 	public function setPissoir(?bool $pissoir) {
@@ -152,7 +152,7 @@ class Bad {
 	}
 
 	/**
-	 * @param boolean $wanne Setter for wanne
+	 * @param bool $wanne Setter for wanne
 	 * @return Bad
 	 */
 	public function setWanne(?bool $wanne) {

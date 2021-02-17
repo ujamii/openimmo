@@ -18,141 +18,141 @@ class AusrichtBalkonTerrasse {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("NORD") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $nord;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("NORDOST") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $nordost;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("NORDWEST") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $nordwest;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("OST") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $ost;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("SUED") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $sued;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("SUEDOST") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $suedost;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("SUEDWEST") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $suedwest;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("WEST") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $west;
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getNord(): ?bool {
 		return $this->nord;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getNordost(): ?bool {
 		return $this->nordost;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getNordwest(): ?bool {
 		return $this->nordwest;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getOst(): ?bool {
 		return $this->ost;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getSued(): ?bool {
 		return $this->sued;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getSuedost(): ?bool {
 		return $this->suedost;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getSuedwest(): ?bool {
 		return $this->suedwest;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getWest(): ?bool {
 		return $this->west;
 	}
 
 	/**
-	 * @param boolean $nord Setter for nord
+	 * @param bool $nord Setter for nord
 	 * @return AusrichtBalkonTerrasse
 	 */
 	public function setNord(?bool $nord) {
@@ -161,7 +161,7 @@ class AusrichtBalkonTerrasse {
 	}
 
 	/**
-	 * @param boolean $nordost Setter for nordost
+	 * @param bool $nordost Setter for nordost
 	 * @return AusrichtBalkonTerrasse
 	 */
 	public function setNordost(?bool $nordost) {
@@ -170,7 +170,7 @@ class AusrichtBalkonTerrasse {
 	}
 
 	/**
-	 * @param boolean $nordwest Setter for nordwest
+	 * @param bool $nordwest Setter for nordwest
 	 * @return AusrichtBalkonTerrasse
 	 */
 	public function setNordwest(?bool $nordwest) {
@@ -179,7 +179,7 @@ class AusrichtBalkonTerrasse {
 	}
 
 	/**
-	 * @param boolean $ost Setter for ost
+	 * @param bool $ost Setter for ost
 	 * @return AusrichtBalkonTerrasse
 	 */
 	public function setOst(?bool $ost) {
@@ -188,7 +188,7 @@ class AusrichtBalkonTerrasse {
 	}
 
 	/**
-	 * @param boolean $sued Setter for sued
+	 * @param bool $sued Setter for sued
 	 * @return AusrichtBalkonTerrasse
 	 */
 	public function setSued(?bool $sued) {
@@ -197,7 +197,7 @@ class AusrichtBalkonTerrasse {
 	}
 
 	/**
-	 * @param boolean $suedost Setter for suedost
+	 * @param bool $suedost Setter for suedost
 	 * @return AusrichtBalkonTerrasse
 	 */
 	public function setSuedost(?bool $suedost) {
@@ -206,7 +206,7 @@ class AusrichtBalkonTerrasse {
 	}
 
 	/**
-	 * @param boolean $suedwest Setter for suedwest
+	 * @param bool $suedwest Setter for suedwest
 	 * @return AusrichtBalkonTerrasse
 	 */
 	public function setSuedwest(?bool $suedwest) {
@@ -215,7 +215,7 @@ class AusrichtBalkonTerrasse {
 	}
 
 	/**
-	 * @param boolean $west Setter for west
+	 * @param bool $west Setter for west
 	 * @return AusrichtBalkonTerrasse
 	 */
 	public function setWest(?bool $west) {

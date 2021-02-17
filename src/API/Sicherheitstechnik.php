@@ -18,37 +18,37 @@ class Sicherheitstechnik {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("ALARMANLAGE") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $alarmanlage;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("KAMERA") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $kamera;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("POLIZEIRUF") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $polizeiruf;
 
 	/**
-	 * @param boolean $alarmanlage Shortcut setter for alarmanlage
-	 * @param boolean $kamera Shortcut setter for kamera
-	 * @param boolean $polizeiruf Shortcut setter for polizeiruf
+	 * @param bool $alarmanlage Shortcut setter for alarmanlage
+	 * @param bool $kamera Shortcut setter for kamera
+	 * @param bool $polizeiruf Shortcut setter for polizeiruf
 	 */
 	public function __construct(bool $alarmanlage = null, bool $kamera = null, bool $polizeiruf = null) {
 		$this->alarmanlage = $alarmanlage;
@@ -57,28 +57,28 @@ class Sicherheitstechnik {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getAlarmanlage(): ?bool {
 		return $this->alarmanlage;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getKamera(): ?bool {
 		return $this->kamera;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getPolizeiruf(): ?bool {
 		return $this->polizeiruf;
 	}
 
 	/**
-	 * @param boolean $alarmanlage Setter for alarmanlage
+	 * @param bool $alarmanlage Setter for alarmanlage
 	 * @return Sicherheitstechnik
 	 */
 	public function setAlarmanlage(?bool $alarmanlage) {
@@ -87,7 +87,7 @@ class Sicherheitstechnik {
 	}
 
 	/**
-	 * @param boolean $kamera Setter for kamera
+	 * @param bool $kamera Setter for kamera
 	 * @return Sicherheitstechnik
 	 */
 	public function setKamera(?bool $kamera) {
@@ -96,7 +96,7 @@ class Sicherheitstechnik {
 	}
 
 	/**
-	 * @param boolean $polizeiruf Setter for polizeiruf
+	 * @param bool $polizeiruf Setter for polizeiruf
 	 * @return Sicherheitstechnik
 	 */
 	public function setPolizeiruf(?bool $polizeiruf) {

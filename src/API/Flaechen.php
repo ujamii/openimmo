@@ -140,8 +140,8 @@ class Flaechen {
 	protected $dachbodenflaeche;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $einliegerwohnung;
 
@@ -458,7 +458,7 @@ class Flaechen {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getEinliegerwohnung(): ?bool {
 		return $this->einliegerwohnung;
@@ -849,7 +849,7 @@ class Flaechen {
 	}
 
 	/**
-	 * @param boolean $einliegerwohnung Setter for einliegerwohnung
+	 * @param bool $einliegerwohnung Setter for einliegerwohnung
 	 * @return Flaechen
 	 */
 	public function setEinliegerwohnung(?bool $einliegerwohnung) {

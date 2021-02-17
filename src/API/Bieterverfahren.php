@@ -45,8 +45,8 @@ class Bieterverfahren {
 	protected $endeBietzeit;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $hoechstgebotZeigen;
 
@@ -113,7 +113,7 @@ class Bieterverfahren {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getHoechstgebotZeigen(): ?bool {
 		return $this->hoechstgebotZeigen;
@@ -199,7 +199,7 @@ class Bieterverfahren {
 	}
 
 	/**
-	 * @param boolean $hoechstgebotZeigen Setter for hoechstgebotZeigen
+	 * @param bool $hoechstgebotZeigen Setter for hoechstgebotZeigen
 	 * @return Bieterverfahren
 	 */
 	public function setHoechstgebotZeigen(?bool $hoechstgebotZeigen) {

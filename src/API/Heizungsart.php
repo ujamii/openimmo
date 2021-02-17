@@ -18,59 +18,59 @@ class Heizungsart {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("ETAGE") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $etage;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("FERN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $fern;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("FUSSBODEN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $fussboden;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("OFEN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $ofen;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("ZENTRAL") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $zentral;
 
 	/**
-	 * @param boolean $ofen Shortcut setter for ofen
-	 * @param boolean $etage Shortcut setter for etage
-	 * @param boolean $zentral Shortcut setter for zentral
-	 * @param boolean $fern Shortcut setter for fern
-	 * @param boolean $fussboden Shortcut setter for fussboden
+	 * @param bool $ofen Shortcut setter for ofen
+	 * @param bool $etage Shortcut setter for etage
+	 * @param bool $zentral Shortcut setter for zentral
+	 * @param bool $fern Shortcut setter for fern
+	 * @param bool $fussboden Shortcut setter for fussboden
 	 */
 	public function __construct(bool $ofen = null, bool $etage = null, bool $zentral = null, bool $fern = null, bool $fussboden = null) {
 		$this->ofen = $ofen;
@@ -81,42 +81,42 @@ class Heizungsart {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getEtage(): ?bool {
 		return $this->etage;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getFern(): ?bool {
 		return $this->fern;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getFussboden(): ?bool {
 		return $this->fussboden;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getOfen(): ?bool {
 		return $this->ofen;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getZentral(): ?bool {
 		return $this->zentral;
 	}
 
 	/**
-	 * @param boolean $etage Setter for etage
+	 * @param bool $etage Setter for etage
 	 * @return Heizungsart
 	 */
 	public function setEtage(?bool $etage) {
@@ -125,7 +125,7 @@ class Heizungsart {
 	}
 
 	/**
-	 * @param boolean $fern Setter for fern
+	 * @param bool $fern Setter for fern
 	 * @return Heizungsart
 	 */
 	public function setFern(?bool $fern) {
@@ -134,7 +134,7 @@ class Heizungsart {
 	}
 
 	/**
-	 * @param boolean $fussboden Setter for fussboden
+	 * @param bool $fussboden Setter for fussboden
 	 * @return Heizungsart
 	 */
 	public function setFussboden(?bool $fussboden) {
@@ -143,7 +143,7 @@ class Heizungsart {
 	}
 
 	/**
-	 * @param boolean $ofen Setter for ofen
+	 * @param bool $ofen Setter for ofen
 	 * @return Heizungsart
 	 */
 	public function setOfen(?bool $ofen) {
@@ -152,7 +152,7 @@ class Heizungsart {
 	}
 
 	/**
-	 * @param boolean $zentral Setter for zentral
+	 * @param bool $zentral Setter for zentral
 	 * @return Heizungsart
 	 */
 	public function setZentral(?bool $zentral) {

@@ -18,9 +18,9 @@ class InnenCourtage {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $mitMwst;
 
@@ -32,7 +32,7 @@ class InnenCourtage {
 	protected $value;
 
 	/**
-	 * @param boolean $mitMwst Shortcut setter for mitMwst
+	 * @param bool $mitMwst Shortcut setter for mitMwst
 	 * @param string $value Shortcut setter for value
 	 */
 	public function __construct(bool $mitMwst = null, string $value = null) {
@@ -41,7 +41,7 @@ class InnenCourtage {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getMitMwst(): ?bool {
 		return $this->mitMwst;
@@ -55,7 +55,7 @@ class InnenCourtage {
 	}
 
 	/**
-	 * @param boolean $mitMwst Setter for mitMwst
+	 * @param bool $mitMwst Setter for mitMwst
 	 * @return InnenCourtage
 	 */
 	public function setMitMwst(?bool $mitMwst) {

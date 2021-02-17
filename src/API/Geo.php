@@ -68,14 +68,14 @@ class Geo {
 	protected $hausnummer;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $kartenMakro;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $kartenMikro;
 
@@ -98,8 +98,8 @@ class Geo {
 	protected $land;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $luftbildern;
 
@@ -149,8 +149,8 @@ class Geo {
 	protected $userDefinedSimplefield;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $virtuelletour;
 
@@ -224,14 +224,14 @@ class Geo {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getKartenMakro(): ?bool {
 		return $this->kartenMakro;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getKartenMikro(): ?bool {
 		return $this->kartenMikro;
@@ -259,7 +259,7 @@ class Geo {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getLuftbildern(): ?bool {
 		return $this->luftbildern;
@@ -321,7 +321,7 @@ class Geo {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getVirtuelletour(): ?bool {
 		return $this->virtuelletour;
@@ -416,7 +416,7 @@ class Geo {
 	}
 
 	/**
-	 * @param boolean $kartenMakro Setter for kartenMakro
+	 * @param bool $kartenMakro Setter for kartenMakro
 	 * @return Geo
 	 */
 	public function setKartenMakro(?bool $kartenMakro) {
@@ -425,7 +425,7 @@ class Geo {
 	}
 
 	/**
-	 * @param boolean $kartenMikro Setter for kartenMikro
+	 * @param bool $kartenMikro Setter for kartenMikro
 	 * @return Geo
 	 */
 	public function setKartenMikro(?bool $kartenMikro) {
@@ -461,7 +461,7 @@ class Geo {
 	}
 
 	/**
-	 * @param boolean $luftbildern Setter for luftbildern
+	 * @param bool $luftbildern Setter for luftbildern
 	 * @return Geo
 	 */
 	public function setLuftbildern(?bool $luftbildern) {
@@ -533,7 +533,7 @@ class Geo {
 	}
 
 	/**
-	 * @param boolean $virtuelletour Setter for virtuelletour
+	 * @param bool $virtuelletour Setter for virtuelletour
 	 * @return Geo
 	 */
 	public function setVirtuelletour(?bool $virtuelletour) {

@@ -18,70 +18,70 @@ class Stellplatzart {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("CARPORT") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $carport;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("DUPLEX") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $duplex;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("FREIPLATZ") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $freiplatz;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("GARAGE") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $garage;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("PARKHAUS") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $parkhaus;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("TIEFGARAGE") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $tiefgarage;
 
 	/**
-	 * @param boolean $garage Shortcut setter for garage
-	 * @param boolean $tiefgarage Shortcut setter for tiefgarage
-	 * @param boolean $carport Shortcut setter for carport
-	 * @param boolean $freiplatz Shortcut setter for freiplatz
-	 * @param boolean $parkhaus Shortcut setter for parkhaus
-	 * @param boolean $duplex Shortcut setter for duplex
+	 * @param bool $garage Shortcut setter for garage
+	 * @param bool $tiefgarage Shortcut setter for tiefgarage
+	 * @param bool $carport Shortcut setter for carport
+	 * @param bool $freiplatz Shortcut setter for freiplatz
+	 * @param bool $parkhaus Shortcut setter for parkhaus
+	 * @param bool $duplex Shortcut setter for duplex
 	 */
 	public function __construct(bool $garage = null, bool $tiefgarage = null, bool $carport = null, bool $freiplatz = null, bool $parkhaus = null, bool $duplex = null) {
 		$this->garage = $garage;
@@ -93,49 +93,49 @@ class Stellplatzart {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getCarport(): ?bool {
 		return $this->carport;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getDuplex(): ?bool {
 		return $this->duplex;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getFreiplatz(): ?bool {
 		return $this->freiplatz;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getGarage(): ?bool {
 		return $this->garage;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getParkhaus(): ?bool {
 		return $this->parkhaus;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getTiefgarage(): ?bool {
 		return $this->tiefgarage;
 	}
 
 	/**
-	 * @param boolean $carport Setter for carport
+	 * @param bool $carport Setter for carport
 	 * @return Stellplatzart
 	 */
 	public function setCarport(?bool $carport) {
@@ -144,7 +144,7 @@ class Stellplatzart {
 	}
 
 	/**
-	 * @param boolean $duplex Setter for duplex
+	 * @param bool $duplex Setter for duplex
 	 * @return Stellplatzart
 	 */
 	public function setDuplex(?bool $duplex) {
@@ -153,7 +153,7 @@ class Stellplatzart {
 	}
 
 	/**
-	 * @param boolean $freiplatz Setter for freiplatz
+	 * @param bool $freiplatz Setter for freiplatz
 	 * @return Stellplatzart
 	 */
 	public function setFreiplatz(?bool $freiplatz) {
@@ -162,7 +162,7 @@ class Stellplatzart {
 	}
 
 	/**
-	 * @param boolean $garage Setter for garage
+	 * @param bool $garage Setter for garage
 	 * @return Stellplatzart
 	 */
 	public function setGarage(?bool $garage) {
@@ -171,7 +171,7 @@ class Stellplatzart {
 	}
 
 	/**
-	 * @param boolean $parkhaus Setter for parkhaus
+	 * @param bool $parkhaus Setter for parkhaus
 	 * @return Stellplatzart
 	 */
 	public function setParkhaus(?bool $parkhaus) {
@@ -180,7 +180,7 @@ class Stellplatzart {
 	}
 
 	/**
-	 * @param boolean $tiefgarage Setter for tiefgarage
+	 * @param bool $tiefgarage Setter for tiefgarage
 	 * @return Stellplatzart
 	 */
 	public function setTiefgarage(?bool $tiefgarage) {

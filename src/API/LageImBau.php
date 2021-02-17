@@ -18,48 +18,48 @@ class LageImBau {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("HINTEN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $hinten;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("LINKS") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $links;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("RECHTS") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $rechts;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("VORNE") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $vorne;
 
 	/**
-	 * @param boolean $links Shortcut setter for links
-	 * @param boolean $rechts Shortcut setter for rechts
-	 * @param boolean $vorne Shortcut setter for vorne
-	 * @param boolean $hinten Shortcut setter for hinten
+	 * @param bool $links Shortcut setter for links
+	 * @param bool $rechts Shortcut setter for rechts
+	 * @param bool $vorne Shortcut setter for vorne
+	 * @param bool $hinten Shortcut setter for hinten
 	 */
 	public function __construct(bool $links = null, bool $rechts = null, bool $vorne = null, bool $hinten = null) {
 		$this->links = $links;
@@ -69,35 +69,35 @@ class LageImBau {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getHinten(): ?bool {
 		return $this->hinten;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getLinks(): ?bool {
 		return $this->links;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getRechts(): ?bool {
 		return $this->rechts;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getVorne(): ?bool {
 		return $this->vorne;
 	}
 
 	/**
-	 * @param boolean $hinten Setter for hinten
+	 * @param bool $hinten Setter for hinten
 	 * @return LageImBau
 	 */
 	public function setHinten(?bool $hinten) {
@@ -106,7 +106,7 @@ class LageImBau {
 	}
 
 	/**
-	 * @param boolean $links Setter for links
+	 * @param bool $links Setter for links
 	 * @return LageImBau
 	 */
 	public function setLinks(?bool $links) {
@@ -115,7 +115,7 @@ class LageImBau {
 	}
 
 	/**
-	 * @param boolean $rechts Setter for rechts
+	 * @param bool $rechts Setter for rechts
 	 * @return LageImBau
 	 */
 	public function setRechts(?bool $rechts) {
@@ -124,7 +124,7 @@ class LageImBau {
 	}
 
 	/**
-	 * @param boolean $vorne Setter for vorne
+	 * @param bool $vorne Setter for vorne
 	 * @return LageImBau
 	 */
 	public function setVorne(?bool $vorne) {

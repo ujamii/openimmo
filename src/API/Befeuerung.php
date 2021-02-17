@@ -18,243 +18,243 @@ class Befeuerung {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("ALTERNATIV") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $alternativ;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("BLOCK") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $block;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("ELEKTRO") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $elektro;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("ERDWAERME") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $erdwaerme;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("FERN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $fern;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("FLUESSIGGAS") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $fluessiggas;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("GAS") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $gas;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("HOLZ") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $holz;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("KOHLE") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $kohle;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("LUFTWP") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $luftwp;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("OEL") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $oel;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("PELLET") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $pellet;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("SOLAR") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $solar;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("WASSER-ELEKTRO") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $wasserElektro;
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getAlternativ(): ?bool {
 		return $this->alternativ;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getBlock(): ?bool {
 		return $this->block;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getElektro(): ?bool {
 		return $this->elektro;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getErdwaerme(): ?bool {
 		return $this->erdwaerme;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getFern(): ?bool {
 		return $this->fern;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getFluessiggas(): ?bool {
 		return $this->fluessiggas;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getGas(): ?bool {
 		return $this->gas;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getHolz(): ?bool {
 		return $this->holz;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getKohle(): ?bool {
 		return $this->kohle;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getLuftwp(): ?bool {
 		return $this->luftwp;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getOel(): ?bool {
 		return $this->oel;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getPellet(): ?bool {
 		return $this->pellet;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getSolar(): ?bool {
 		return $this->solar;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getWasserElektro(): ?bool {
 		return $this->wasserElektro;
 	}
 
 	/**
-	 * @param boolean $alternativ Setter for alternativ
+	 * @param bool $alternativ Setter for alternativ
 	 * @return Befeuerung
 	 */
 	public function setAlternativ(?bool $alternativ) {
@@ -263,7 +263,7 @@ class Befeuerung {
 	}
 
 	/**
-	 * @param boolean $block Setter for block
+	 * @param bool $block Setter for block
 	 * @return Befeuerung
 	 */
 	public function setBlock(?bool $block) {
@@ -272,7 +272,7 @@ class Befeuerung {
 	}
 
 	/**
-	 * @param boolean $elektro Setter for elektro
+	 * @param bool $elektro Setter for elektro
 	 * @return Befeuerung
 	 */
 	public function setElektro(?bool $elektro) {
@@ -281,7 +281,7 @@ class Befeuerung {
 	}
 
 	/**
-	 * @param boolean $erdwaerme Setter for erdwaerme
+	 * @param bool $erdwaerme Setter for erdwaerme
 	 * @return Befeuerung
 	 */
 	public function setErdwaerme(?bool $erdwaerme) {
@@ -290,7 +290,7 @@ class Befeuerung {
 	}
 
 	/**
-	 * @param boolean $fern Setter for fern
+	 * @param bool $fern Setter for fern
 	 * @return Befeuerung
 	 */
 	public function setFern(?bool $fern) {
@@ -299,7 +299,7 @@ class Befeuerung {
 	}
 
 	/**
-	 * @param boolean $fluessiggas Setter for fluessiggas
+	 * @param bool $fluessiggas Setter for fluessiggas
 	 * @return Befeuerung
 	 */
 	public function setFluessiggas(?bool $fluessiggas) {
@@ -308,7 +308,7 @@ class Befeuerung {
 	}
 
 	/**
-	 * @param boolean $gas Setter for gas
+	 * @param bool $gas Setter for gas
 	 * @return Befeuerung
 	 */
 	public function setGas(?bool $gas) {
@@ -317,7 +317,7 @@ class Befeuerung {
 	}
 
 	/**
-	 * @param boolean $holz Setter for holz
+	 * @param bool $holz Setter for holz
 	 * @return Befeuerung
 	 */
 	public function setHolz(?bool $holz) {
@@ -326,7 +326,7 @@ class Befeuerung {
 	}
 
 	/**
-	 * @param boolean $kohle Setter for kohle
+	 * @param bool $kohle Setter for kohle
 	 * @return Befeuerung
 	 */
 	public function setKohle(?bool $kohle) {
@@ -335,7 +335,7 @@ class Befeuerung {
 	}
 
 	/**
-	 * @param boolean $luftwp Setter for luftwp
+	 * @param bool $luftwp Setter for luftwp
 	 * @return Befeuerung
 	 */
 	public function setLuftwp(?bool $luftwp) {
@@ -344,7 +344,7 @@ class Befeuerung {
 	}
 
 	/**
-	 * @param boolean $oel Setter for oel
+	 * @param bool $oel Setter for oel
 	 * @return Befeuerung
 	 */
 	public function setOel(?bool $oel) {
@@ -353,7 +353,7 @@ class Befeuerung {
 	}
 
 	/**
-	 * @param boolean $pellet Setter for pellet
+	 * @param bool $pellet Setter for pellet
 	 * @return Befeuerung
 	 */
 	public function setPellet(?bool $pellet) {
@@ -362,7 +362,7 @@ class Befeuerung {
 	}
 
 	/**
-	 * @param boolean $solar Setter for solar
+	 * @param bool $solar Setter for solar
 	 * @return Befeuerung
 	 */
 	public function setSolar(?bool $solar) {
@@ -371,7 +371,7 @@ class Befeuerung {
 	}
 
 	/**
-	 * @param boolean $wasserElektro Setter for wasserElektro
+	 * @param bool $wasserElektro Setter for wasserElektro
 	 * @return Befeuerung
 	 */
 	public function setWasserElektro(?bool $wasserElektro) {

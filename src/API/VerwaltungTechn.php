@@ -101,8 +101,8 @@ class VerwaltungTechn {
 	protected $userDefinedSimplefield;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $weitergabeGenerell;
 
@@ -223,7 +223,7 @@ class VerwaltungTechn {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getWeitergabeGenerell(): ?bool {
 		return $this->weitergabeGenerell;
@@ -370,7 +370,7 @@ class VerwaltungTechn {
 	}
 
 	/**
-	 * @param boolean $weitergabeGenerell Setter for weitergabeGenerell
+	 * @param bool $weitergabeGenerell Setter for weitergabeGenerell
 	 * @return VerwaltungTechn
 	 */
 	public function setWeitergabeGenerell(?bool $weitergabeGenerell) {

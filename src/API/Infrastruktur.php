@@ -55,8 +55,8 @@ class Infrastruktur {
 	protected $userDefinedSimplefield;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $zulieferung;
 
@@ -113,7 +113,7 @@ class Infrastruktur {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getZulieferung(): ?bool {
 		return $this->zulieferung;
@@ -174,7 +174,7 @@ class Infrastruktur {
 	}
 
 	/**
-	 * @param boolean $zulieferung Setter for zulieferung
+	 * @param bool $zulieferung Setter for zulieferung
 	 * @return Infrastruktur
 	 */
 	public function setZulieferung(?bool $zulieferung) {

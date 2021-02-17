@@ -18,9 +18,9 @@ class Kaufpreis {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $aufAnfrage;
 
@@ -32,7 +32,7 @@ class Kaufpreis {
 	protected $value;
 
 	/**
-	 * @param boolean $aufAnfrage Shortcut setter for aufAnfrage
+	 * @param bool $aufAnfrage Shortcut setter for aufAnfrage
 	 * @param float $value Shortcut setter for value
 	 */
 	public function __construct(bool $aufAnfrage = null, float $value = null) {
@@ -41,7 +41,7 @@ class Kaufpreis {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getAufAnfrage(): ?bool {
 		return $this->aufAnfrage;
@@ -55,7 +55,7 @@ class Kaufpreis {
 	}
 
 	/**
-	 * @param boolean $aufAnfrage Setter for aufAnfrage
+	 * @param bool $aufAnfrage Setter for aufAnfrage
 	 * @return Kaufpreis
 	 */
 	public function setAufAnfrage(?bool $aufAnfrage) {

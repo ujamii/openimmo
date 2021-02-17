@@ -137,8 +137,8 @@ class Energiepass {
 	protected $jahrgang;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $mitwarmwasser;
 
@@ -265,7 +265,7 @@ class Energiepass {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getMitwarmwasser(): ?bool {
 		return $this->mitwarmwasser;
@@ -426,7 +426,7 @@ class Energiepass {
 	}
 
 	/**
-	 * @param boolean $mitwarmwasser Setter for mitwarmwasser
+	 * @param bool $mitwarmwasser Setter for mitwarmwasser
 	 * @return Energiepass
 	 */
 	public function setMitwarmwasser(?bool $mitwarmwasser) {

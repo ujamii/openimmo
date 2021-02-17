@@ -19,6 +19,7 @@ class TypeUtil
             case 'float':
             case 'int':
             case 'array':
+            case 'bool':
             case 'boolean':
             case 'dateTime':
             case '\DateTime':

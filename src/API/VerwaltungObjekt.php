@@ -20,8 +20,8 @@ class VerwaltungObjekt {
 	protected $abdatum;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $alsFerien;
 
@@ -38,8 +38,8 @@ class VerwaltungObjekt {
 	protected $branchen;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $denkmalgeschuetzt;
 
@@ -50,8 +50,8 @@ class VerwaltungObjekt {
 	protected $geschlecht;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $gewerblicheNutzung;
 
@@ -62,14 +62,14 @@ class VerwaltungObjekt {
 	protected $gruppennummer;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $haustiere;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $hochhaus;
 
@@ -98,14 +98,14 @@ class VerwaltungObjekt {
 	protected $minMietdauer;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $nichtraucher;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $objektadresseFreigeben;
 
@@ -137,8 +137,8 @@ class VerwaltungObjekt {
 	protected $verfuegbarAb;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $vermietet;
 
@@ -149,8 +149,8 @@ class VerwaltungObjekt {
 	protected $versteigerungstermin;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $wbsSozialwohnung;
 
@@ -168,7 +168,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getAlsFerien(): ?bool {
 		return $this->alsFerien;
@@ -189,7 +189,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getDenkmalgeschuetzt(): ?bool {
 		return $this->denkmalgeschuetzt;
@@ -203,7 +203,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getGewerblicheNutzung(): ?bool {
 		return $this->gewerblicheNutzung;
@@ -217,14 +217,14 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getHaustiere(): ?bool {
 		return $this->haustiere;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getHochhaus(): ?bool {
 		return $this->hochhaus;
@@ -259,14 +259,14 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getNichtraucher(): ?bool {
 		return $this->nichtraucher;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getObjektadresseFreigeben(): ?bool {
 		return $this->objektadresseFreigeben;
@@ -307,7 +307,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getVermietet(): ?bool {
 		return $this->vermietet;
@@ -321,7 +321,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getWbsSozialwohnung(): ?bool {
 		return $this->wbsSozialwohnung;
@@ -344,7 +344,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param boolean $alsFerien Setter for alsFerien
+	 * @param bool $alsFerien Setter for alsFerien
 	 * @return VerwaltungObjekt
 	 */
 	public function setAlsFerien(?bool $alsFerien) {
@@ -371,7 +371,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param boolean $denkmalgeschuetzt Setter for denkmalgeschuetzt
+	 * @param bool $denkmalgeschuetzt Setter for denkmalgeschuetzt
 	 * @return VerwaltungObjekt
 	 */
 	public function setDenkmalgeschuetzt(?bool $denkmalgeschuetzt) {
@@ -389,7 +389,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param boolean $gewerblicheNutzung Setter for gewerblicheNutzung
+	 * @param bool $gewerblicheNutzung Setter for gewerblicheNutzung
 	 * @return VerwaltungObjekt
 	 */
 	public function setGewerblicheNutzung(?bool $gewerblicheNutzung) {
@@ -407,7 +407,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param boolean $haustiere Setter for haustiere
+	 * @param bool $haustiere Setter for haustiere
 	 * @return VerwaltungObjekt
 	 */
 	public function setHaustiere(?bool $haustiere) {
@@ -416,7 +416,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param boolean $hochhaus Setter for hochhaus
+	 * @param bool $hochhaus Setter for hochhaus
 	 * @return VerwaltungObjekt
 	 */
 	public function setHochhaus(?bool $hochhaus) {
@@ -461,7 +461,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param boolean $nichtraucher Setter for nichtraucher
+	 * @param bool $nichtraucher Setter for nichtraucher
 	 * @return VerwaltungObjekt
 	 */
 	public function setNichtraucher(?bool $nichtraucher) {
@@ -470,7 +470,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param boolean $objektadresseFreigeben Setter for objektadresseFreigeben
+	 * @param bool $objektadresseFreigeben Setter for objektadresseFreigeben
 	 * @return VerwaltungObjekt
 	 */
 	public function setObjektadresseFreigeben(?bool $objektadresseFreigeben) {
@@ -515,7 +515,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param boolean $vermietet Setter for vermietet
+	 * @param bool $vermietet Setter for vermietet
 	 * @return VerwaltungObjekt
 	 */
 	public function setVermietet(?bool $vermietet) {
@@ -533,7 +533,7 @@ class VerwaltungObjekt {
 	}
 
 	/**
-	 * @param boolean $wbsSozialwohnung Setter for wbsSozialwohnung
+	 * @param bool $wbsSozialwohnung Setter for wbsSozialwohnung
 	 * @return VerwaltungObjekt
 	 */
 	public function setWbsSozialwohnung(?bool $wbsSozialwohnung) {

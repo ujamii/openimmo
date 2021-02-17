@@ -18,37 +18,37 @@ class Kueche {
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("EBK") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $ebk;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("OFFEN") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $offen;
 
 	/**
 	 * optional
 	 *
-	 * @Type("boolean") 
+	 * @Type("bool") 
 	 * @XmlAttribute 
 	 * @SerializedName("PANTRY") 
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $pantry;
 
 	/**
-	 * @param boolean $ebk Shortcut setter for ebk
-	 * @param boolean $offen Shortcut setter for offen
-	 * @param boolean $pantry Shortcut setter for pantry
+	 * @param bool $ebk Shortcut setter for ebk
+	 * @param bool $offen Shortcut setter for offen
+	 * @param bool $pantry Shortcut setter for pantry
 	 */
 	public function __construct(bool $ebk = null, bool $offen = null, bool $pantry = null) {
 		$this->ebk = $ebk;
@@ -57,28 +57,28 @@ class Kueche {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getEbk(): ?bool {
 		return $this->ebk;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getOffen(): ?bool {
 		return $this->offen;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getPantry(): ?bool {
 		return $this->pantry;
 	}
 
 	/**
-	 * @param boolean $ebk Setter for ebk
+	 * @param bool $ebk Setter for ebk
 	 * @return Kueche
 	 */
 	public function setEbk(?bool $ebk) {
@@ -87,7 +87,7 @@ class Kueche {
 	}
 
 	/**
-	 * @param boolean $offen Setter for offen
+	 * @param bool $offen Setter for offen
 	 * @return Kueche
 	 */
 	public function setOffen(?bool $offen) {
@@ -96,7 +96,7 @@ class Kueche {
 	}
 
 	/**
-	 * @param boolean $pantry Setter for pantry
+	 * @param bool $pantry Setter for pantry
 	 * @return Kueche
 	 */
 	public function setPantry(?bool $pantry) {

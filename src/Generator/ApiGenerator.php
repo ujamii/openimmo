@@ -429,6 +429,10 @@ class ApiGenerator
                 $propertyType = 'float';
                 break;
 
+            case 'boolean':
+                $propertyType = 'bool';
+                break;
+
             case 'positiveInteger':
                 $propertyType = 'int';
                 break;

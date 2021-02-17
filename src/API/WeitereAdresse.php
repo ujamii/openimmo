@@ -24,8 +24,8 @@ class WeitereAdresse {
 	protected $adressart;
 
 	/**
-	 * @Type("boolean") 
-	 * @var boolean
+	 * @Type("bool") 
+	 * @var bool
 	 */
 	protected $adressfreigabe;
 
@@ -228,7 +228,7 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getAdressfreigabe(): ?bool {
 		return $this->adressfreigabe;
@@ -471,7 +471,7 @@ class WeitereAdresse {
 	}
 
 	/**
-	 * @param boolean $adressfreigabe Setter for adressfreigabe
+	 * @param bool $adressfreigabe Setter for adressfreigabe
 	 * @return WeitereAdresse
 	 */
 	public function setAdressfreigabe(?bool $adressfreigabe) {
