@@ -47,8 +47,22 @@ abstract class FileGeneratingTest extends TestCase
         $this->assertCount(count($constants), $generatedClass->getConstantNames());
     }
 
-    public function assertClassHasProperty(PhpClass $class, string $propertyName, string $type = 'string', bool $hasGetterAndSetter = true, array $docTags = ['XmlAttribute' => ''])
-    {
+    public static function getPropertyConfig(
+        string $propertyName,
+        string $type = 'string',
+        bool $hasGetterAndSetter = true,
+        array $docTags = ['XmlAttribute' => '']
+    ): array {
+        return [$propertyName, $type, $hasGetterAndSetter, $docTags];
+    }
+
+    public function assertClassHasProperty(
+        PhpClass $class,
+        string $propertyName,
+        string $type = 'string',
+        bool $hasGetterAndSetter = true,
+        array $docTags = ['XmlAttribute' => '']
+    ): void {
         $this->assertTrue($class->hasProperty($propertyName));
         $property = $class->getProperty($propertyName);
         $this->assertEquals($type, $property->getType());
@@ -57,7 +71,7 @@ abstract class FileGeneratingTest extends TestCase
 
         foreach ($docTags as $tagName => $tagValue) {
             $this->assertTrue($property->getDocblock()->hasTag($tagName));
-            if (!empty($tagValue)) {
+            if ( ! empty($tagValue)) {
                 /* @var AbstractTag $docTag */
                 $docTag = $property->getDocblock()->getTags($tagName)->get(0);
                 $this->assertEquals($tagValue, $docTag->__toString());
@@ -79,6 +93,31 @@ abstract class FileGeneratingTest extends TestCase
             $this->assertTrue($setter->hasParameter($propertyName));
             $this->assertEquals($type, $setter->getParameter($propertyName)->getType());
             //$this->assertTrue($setter->getParameter($propertyName)->getNullable());
+        }
+    }
+
+    public function assertClassHasConstructor(PhpClass $class, array $properties): void
+    {
+        $this->assertTrue($class->hasMethod('__construct'));
+        $this->assertCount(count($properties), $class->getMethod('__construct')->getParameters());
+
+        $constructor = $class->getMethod('__construct');
+        foreach ($properties as $propertyConfig) {
+            list($propertyName, $type) = $propertyConfig;
+            $this->assertEquals($type, $constructor->getParameter($propertyName)->getType());
+//        $this->assertFalse($constructor->getParameter($propertyName)->getNullable());
+        }
+    }
+
+    public function assertClassHasProperties(PhpClass $class, array $properties): void
+    {
+        foreach ($properties as $propertyConfig) {
+            $this->assertClassHasProperty($class, ...$propertyConfig);
+        }
+
+        $propCount = count($properties);
+        if ($propCount > 0 && $propCount <= ApiGenerator::MAX_PROPERTIES_IN_CONSTRUCTOR) {
+            $this->assertClassHasConstructor($class, $properties);
         }
     }
 }

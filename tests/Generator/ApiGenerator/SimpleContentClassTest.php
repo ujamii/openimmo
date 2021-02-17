@@ -3,7 +3,6 @@
 namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 use gossi\codegen\model\PhpClass;
-use gossi\docblock\tags\AbstractTag;
 
 class SimpleContentClassTest extends FileGeneratingTest
 {
@@ -23,10 +22,12 @@ class SimpleContentClassTest extends FileGeneratingTest
         $this->assertCount(1, $generatedClass->getDocblock()->getTags('XmlRoot'));
         $this->assertEquals('("user_defined_simplefield")', $generatedClass->getDocblock()->getTags('XmlRoot')->get(0)->getDescription());
 
-        $this->assertClassHasProperty($generatedClass, 'feldname');
-        $this->assertClassHasProperty($generatedClass, 'value', 'string', true, ['Inline' => '']);
+        $properties = [
+            self::getPropertyConfig('feldname'),
+            self::getPropertyConfig('value', 'string', true, ['Inline' => ''])
+        ];
 
-        // TODO: test constructor
+        $this->assertClassHasProperties($generatedClass, $properties);
     }
 
 }

@@ -3,8 +3,6 @@
 namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 use gossi\codegen\model\PhpClass;
-use gossi\docblock\tags\AbstractTag;
-use Ujamii\OpenImmo\Tests\Generator\ApiGenerator\FileGeneratingTest;
 
 class DefaultClassTest extends FileGeneratingTest
 {
@@ -31,14 +29,9 @@ class DefaultClassTest extends FileGeneratingTest
             'BLICK_SEE'   => 'SEE',
         ]);
 
-        $this->assertClassHasProperty($generatedClass, 'blick', 'string', true, ['XmlAttribute' => '', 'see' => '@see BLICK_* constants']);
-
-        $this->assertTrue($generatedClass->hasMethod('__construct'));
-        $this->assertCount(1, $generatedClass->getMethod('__construct')->getParameters());
-        $this->assertEquals('string', $generatedClass->getMethod('__construct')->getParameter('blick')->getType());
-//        $this->assertFalse($generatedClass->getMethod('__construct')->getParameter('blick')->getNullable());
+        $properties = [
+            self::getPropertyConfig('blick', 'string', true, ['XmlAttribute' => '', 'see' => '@see BLICK_* constants']),
+        ];
+        $this->assertClassHasProperties($generatedClass, $properties);
     }
-
-
-
 }
