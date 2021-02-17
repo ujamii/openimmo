@@ -26,7 +26,7 @@ abstract class FileGeneratingTest extends TestCase
     {
         $this->generator = new ApiGenerator();
         $this->tmpDir    = self::CLASSES_TARGET_FOLDER . DIRECTORY_SEPARATOR . time() . DIRECTORY_SEPARATOR;
-        mkdir($this->tmpDir);
+        @mkdir($this->tmpDir);
     }
 
     public function tearDown(): void
@@ -73,7 +73,7 @@ abstract class FileGeneratingTest extends TestCase
         $this->assertEquals('("' . $serializerType . '")', trim($property->getDocblock()->getTags('Type')->get(0)->getDescription()));
 
         foreach ($docTags as $tagName => $tagValue) {
-            $this->assertTrue($property->getDocblock()->hasTag($tagName));
+            $this->assertTrue($property->getDocblock()->hasTag($tagName), $tagName . ' not found in DocBlock');
             if ( ! empty($tagValue)) {
                 /* @var AbstractTag $docTag */
                 $docTag = $property->getDocblock()->getTags($tagName)->get(0);
