@@ -7,7 +7,7 @@ use gossi\codegen\model\PhpClass;
 class ComplexTypeClassTest extends FileGeneratingTest
 {
 
-    public function testGenerateApiClassAusblick(): void
+    public function testGenerateApiClassComplexType(): void
     {
         $fixtureFile = './tests/fixtures/UserDefinedExtend.xsd';
         $this->generator->generateApiClasses($fixtureFile, true, $this->tmpDir);

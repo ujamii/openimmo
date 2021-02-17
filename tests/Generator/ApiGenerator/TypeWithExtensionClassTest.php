@@ -7,7 +7,7 @@ use gossi\codegen\model\PhpClass;
 class TypeWithExtensionClassTest extends FileGeneratingTest
 {
 
-    public function testGenerateApiClassAusblick(): void
+    public function testGenerateApiClassTypeWithExtension(): void
     {
         $fixtureFile = './tests/fixtures/TypeWithExtension.xsd';
         $this->generator->generateApiClasses($fixtureFile, true, $this->tmpDir);

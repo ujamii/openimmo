@@ -7,7 +7,7 @@ use gossi\codegen\model\PhpClass;
 class SimpleContentClassTest extends FileGeneratingTest
 {
 
-    public function testGenerateApiClassAusblick(): void
+    public function testGenerateApiClassSimpleContent(): void
     {
         $fixtureFile = './tests/fixtures/UserDefinedSimplefield.xsd';
         $this->generator->generateApiClasses($fixtureFile, true, $this->tmpDir);

@@ -7,7 +7,7 @@ use gossi\codegen\model\PhpClass;
 class PositiveIntegerTypeTest extends FileGeneratingTest
 {
 
-    public function testGenerateApiClassAusblick(): void
+    public function testGenerateApiClassPositiveIntegerType(): void
     {
         $fixtureFile = './tests/fixtures/PositiveIntegerType.xsd';
         $this->generator->generateApiClasses($fixtureFile, true, $this->tmpDir);
