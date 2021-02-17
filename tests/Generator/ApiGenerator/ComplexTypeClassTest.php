@@ -2,8 +2,6 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
-use gossi\codegen\model\PhpClass;
-
 class ComplexTypeClassTest extends FileGeneratingTest
 {
 
@@ -12,7 +10,7 @@ class ComplexTypeClassTest extends FileGeneratingTest
         $generatedClass = $this->getGeneratedClassFromFile(
             'user_defined_extend'
         );
-        $properties = [
+        $properties     = [
             self::getPropertyConfig('feld', 'Feld[]', true, ['XmlList' => '(inline = true, entry = "feld")'])
         ];
 

@@ -2,8 +2,6 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
-use gossi\codegen\model\PhpClass;
-
 class PositiveIntegerTypeTest extends FileGeneratingTest
 {
 

@@ -44,7 +44,7 @@ abstract class FileGeneratingTest extends TestCase
      */
     public function getGeneratedClassFromFile(string $nameInXsd, string $docBlockComment = ''): PhpClass
     {
-        $className = TypeUtil::camelize($nameInXsd);
+        $className   = TypeUtil::camelize($nameInXsd);
         $fixtureFile = "./tests/fixtures/{$className}.xsd";
         $this->generator->generateApiClasses($fixtureFile, true, $this->tmpDir);
 
@@ -60,7 +60,7 @@ abstract class FileGeneratingTest extends TestCase
         }
 
         $this->assertCount(1, $generatedClass->getDocblock()->getTags('XmlRoot'));
-        $this->assertEquals('("'.$nameInXsd.'")', $generatedClass->getDocblock()->getTags('XmlRoot')->get(0)->getDescription());
+        $this->assertEquals('("' . $nameInXsd . '")', $generatedClass->getDocblock()->getTags('XmlRoot')->get(0)->getDescription());
 
         return $generatedClass;
     }
@@ -115,8 +115,8 @@ abstract class FileGeneratingTest extends TestCase
             $this->assertEquals('protected', $property->getVisibility());
             $this->assertTrue($class->hasMethod('get' . ucfirst($propertyName)));
 
-            $phpType = preg_replace('%([^<>]+).*%', '$1', $serializerType);
-            $getter = $class->getMethod('get' . ucfirst($propertyName));
+            $phpType = preg_replace('%([^<>]+).*%', '$1', str_replace('Ujamii\\OpenImmo\\API\\', '', $serializerType));
+            $getter  = $class->getMethod('get' . ucfirst($propertyName));
             $this->assertEquals('public', $getter->getVisibility());
             $this->assertEquals($phpType, $getter->getType(), "Return type of {$getter->getName()}");
             //$this->assertTrue($getter->getNullable());
@@ -139,7 +139,7 @@ abstract class FileGeneratingTest extends TestCase
         foreach ($properties as $propertyConfig) {
             list($propertyName, $type) = $propertyConfig;
             $serializerType = TypeUtil::getTypeForSerializer($type);
-            $phpType = preg_replace('%([^<>]+).*%', '$1', $serializerType);
+            $phpType        = preg_replace('%([^<>]+).*%', '$1', str_replace('Ujamii\\OpenImmo\\API\\', '', $serializerType));
             $this->assertEquals($phpType, $constructor->getParameter($propertyName)->getType());
 //        $this->assertFalse($constructor->getParameter($propertyName)->getNullable());
         }

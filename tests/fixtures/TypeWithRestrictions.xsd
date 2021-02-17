@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xsd:element name="type_with_restrictions">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mwst_satz" minOccurs="0"/>
+				<xsd:element ref="anzahl_etagen" minOccurs="0"/>
+				<xsd:element ref="tel_durchw"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="mwst_satz">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:decimal">
+				<xsd:fractionDigits value="2"/>
+				<xsd:minInclusive value="0"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="anzahl_etagen" type="xsd:int"/>
+	<xsd:element name="tel_durchw">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="1"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+</xsd:schema>
