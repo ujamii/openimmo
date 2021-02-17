@@ -170,17 +170,14 @@ class ApiGenerator
 
     /**
      * @param PhpClass $class
-     * @param array<string> $primaryConstructorProperties
      *
      * @return void
      */
-    protected function generateConstructor(PhpClass $class, array $primaryConstructorProperties = []): void
+    protected function generateConstructor(PhpClass $class): void
     {
         $constructor = PhpMethod::create('__construct');
 
         $constructorCode = [];
-        $prioParams = [];
-        $otherParams = [];
         foreach ($class->getPropertyNames() as $classPropertyName) {
             $type          = $class->getProperty($classPropertyName)->getType();
             $typeIsArray   = substr($type, -2) === '[]';
@@ -193,17 +190,8 @@ class ApiGenerator
             } else {
                 $phpParam->setValue(null);
             }
-            if (in_array($classPropertyName, $primaryConstructorProperties)) {
-                $prioParams[] = $phpParam;
-            } else {
-                $otherParams[] = $phpParam;
-            }
-
-            $constructorCode[] = '$this->' . $classPropertyName . ' = $' . $classPropertyName . ';';
-        }
-
-        foreach (array_merge($prioParams, $otherParams) as $phpParam) {
             $constructor->addParameter($phpParam);
+            $constructorCode[] = '$this->' . $classPropertyName . ' = $' . $classPropertyName . ';';
         }
 
         $constructor->setBody(implode(PHP_EOL, $constructorCode));
