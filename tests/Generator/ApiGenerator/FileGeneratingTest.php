@@ -88,7 +88,7 @@ abstract class FileGeneratingTest extends TestCase
             $phpType = preg_replace('%([^<>]+).*%', '$1', $serializerType);
             $getter = $class->getMethod('get' . ucfirst($propertyName));
             $this->assertEquals('public', $getter->getVisibility());
-            $this->assertEquals($phpType, $getter->getType());
+            $this->assertEquals($phpType, $getter->getType(), "Return type of {$getter->getName()}");
             //$this->assertTrue($getter->getNullable());
 
             $setter = $class->getMethod('set' . ucfirst($propertyName));
