@@ -5,6 +5,7 @@ namespace Ujamii\OpenImmo\Tests\Generator;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\Handler\HandlerRegistryInterface;
 use JMS\Serializer\SerializerInterface;
+use PHPUnit\Framework\TestCase;
 use Ujamii\OpenImmo\API\Anbieter;
 use Ujamii\OpenImmo\API\Ausblick;
 use Ujamii\OpenImmo\API\AussenCourtage;
@@ -24,11 +25,7 @@ use Ujamii\OpenImmo\API\Vermarktungsart;
 use Ujamii\OpenImmo\API\Wohnung;
 use Ujamii\OpenImmo\Handler\DateTimeHandler;
 
-/**
- * Class SerializerTest
- * @package Ujamii\OpenImmo\Tests\Generator
- */
-class SerializerTest extends \PHPUnit\Framework\TestCase
+class SerializerTest extends TestCase
 {
 
     /**

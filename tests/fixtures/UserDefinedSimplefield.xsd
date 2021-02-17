@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xsd:element name="user_defined_simplefield">
+		<xsd:annotation>
+			<xsd:documentation>Benutzerdefinierte Angaben</xsd:documentation>
+			<xsd:documentation xml:lang="en"></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType mixed="true">
+			<xsd:attribute name="feldname" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

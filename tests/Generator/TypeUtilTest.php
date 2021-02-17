@@ -5,10 +5,6 @@ namespace Ujamii\OpenImmo\Tests\Generator;
 use PHPUnit\Framework\TestCase;
 use Ujamii\OpenImmo\Generator\TypeUtil;
 
-/**
- * Class SerializerTest
- * @package Ujamii\OpenImmo\Tests\Generator
- */
 class TypeUtilTest extends TestCase
 {
 
