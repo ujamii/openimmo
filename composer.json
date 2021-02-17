@@ -45,14 +45,28 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Ujamii\\OpenImmo\\": "src",
+            "Ujamii\\OpenImmo\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Ujamii\\OpenImmo\\Tests\\": "tests"
         }
     },
     "scripts": {
+        "generate-api": "php -f ./generate-api.php",
         "phpunit": "vendor/bin/phpunit -c ci/phpunit.xml.dist",
         "phpstan": "vendor/bin/phpstan analyse -c ci/phpstan.neon",
-        "infection": "vendor/bin/infection --configuration=./ci/infection.json.dist --threads=4"
+        "infection": [
+            "vendor/bin/infection --configuration=./ci/infection.json.dist --threads=4",
+            "@generate-api"
+        ],
+        "testall": [
+            "@generate-api",
+            "@phpunit",
+            "@phpstan",
+            "@infection"
+        ]
     },
     "scripts-descriptions": {
         "tests": "Runs the unit tests in this package, configured in phpunit.xml.dist."
