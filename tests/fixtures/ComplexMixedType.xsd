@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xsd:element name="complex_mixed_type">
+		<xsd:annotation>
+			<xsd:documentation>Courtage, die der Kunde zu zahlen hat, als Betrag in ? / % / MM, daher Textfeld</xsd:documentation>
+			<xsd:documentation xml:lang="en"></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType mixed="true">
+			<xsd:attribute name="mit_Pommes" type="xsd:boolean">
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
