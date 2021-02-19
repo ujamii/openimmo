@@ -9,7 +9,7 @@ class ZinshausRenditeobjektTest extends TestCase
     /** @var ZinshausRenditeobjekt */
     private $zinshausRenditeobjekt;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->zinshausRenditeobjekt = new ZinshausRenditeobjekt();
     }

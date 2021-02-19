@@ -9,7 +9,7 @@ class NutzungsartTest extends TestCase
     /** @var Nutzungsart */
     private $nutzungsart;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->nutzungsart = new Nutzungsart();
     }

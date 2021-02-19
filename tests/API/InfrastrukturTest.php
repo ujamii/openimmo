@@ -9,7 +9,7 @@ class InfrastrukturTest extends TestCase
     /** @var Infrastruktur */
     private $infrastruktur;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->infrastruktur = new Infrastruktur();
     }

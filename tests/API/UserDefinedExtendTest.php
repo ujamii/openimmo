@@ -9,7 +9,7 @@ class UserDefinedExtendTest extends TestCase
     /** @var UserDefinedExtend */
     private $userDefinedExtend;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->userDefinedExtend = new UserDefinedExtend();
     }

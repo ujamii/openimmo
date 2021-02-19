@@ -9,7 +9,7 @@ class ImpressumStruktTest extends TestCase
     /** @var ImpressumStrukt */
     private $impressumStrukt;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->impressumStrukt = new ImpressumStrukt();
     }

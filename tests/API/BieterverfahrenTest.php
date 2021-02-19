@@ -9,7 +9,7 @@ class BieterverfahrenTest extends TestCase
     /** @var Bieterverfahren */
     private $bieterverfahren;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->bieterverfahren = new Bieterverfahren();
     }

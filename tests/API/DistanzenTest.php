@@ -15,7 +15,7 @@ class DistanzenTest extends TestCase
     /** @var float */
     private $value;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->distanzZu = Distanzen::DISTANZ_ZU_AUTOBAHN;
         $this->value = '3265.6534';

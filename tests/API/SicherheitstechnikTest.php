@@ -9,7 +9,7 @@ class SicherheitstechnikTest extends TestCase
     /** @var Sicherheitstechnik */
     private $sicherheitstechnik;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->sicherheitstechnik = new Sicherheitstechnik();
     }

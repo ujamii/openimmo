@@ -15,7 +15,7 @@
         "ext-dom": "*",
         "ext-simplexml": "*",
         "jms/serializer": "^2.1 || ^3.5",
-        "cweagans/composer-patches": "^1.7"
+        "cweagans/composer-patches": "^1.7 || ^2.0"
     },
     "extra": {
         "patches": {
@@ -37,9 +37,9 @@
     "require-dev": {
         "goetas-webservices/xsd-reader": "^0.3",
         "gossi/php-code-generator": "dev-prevent-fatal-error",
-        "phpunit/phpunit": "^7.5",
+        "phpunit/phpunit": ">=7.5",
         "phpstan/phpstan": "^0.12",
-        "infection/infection": "^0.21.0"
+        "infection/infection": "^0.16"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -68,7 +68,7 @@
             "@generate-api",
             "@phpunit",
             "@phpstan",
-            "@infection"
+            "@infection-rebuild"
         ]
     },
     "scripts-descriptions": {

@@ -9,7 +9,7 @@ class KontaktpersonTest extends TestCase
     /** @var Kontaktperson */
     private $kontaktperson;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->kontaktperson = new Kontaktperson();
     }

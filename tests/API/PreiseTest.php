@@ -9,7 +9,7 @@ class PreiseTest extends TestCase
     /** @var Preise */
     private $preise;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->preise = new Preise();
     }

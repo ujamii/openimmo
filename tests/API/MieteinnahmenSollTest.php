@@ -15,7 +15,7 @@ class MieteinnahmenSollTest extends TestCase
     /** @var float */
     private $value;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->periode = null;
         $this->value = null;

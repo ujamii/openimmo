@@ -15,7 +15,7 @@ class RuecklagenettoTest extends TestCase
     /** @var float */
     private $value;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->ruecklageust = null;
         $this->value = null;

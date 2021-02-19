@@ -9,7 +9,7 @@ class BauweiseTest extends TestCase
     /** @var Bauweise */
     private $bauweise;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->bauweise = new Bauweise();
     }

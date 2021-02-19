@@ -9,7 +9,7 @@ class AussenCourtageTest extends TestCase
     /** @var AussenCourtage */
     private $aussenCourtage;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->aussenCourtage = new AussenCourtage();
     }

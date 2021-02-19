@@ -9,7 +9,7 @@ class StpGarageTest extends TestCase
     /** @var StpGarage */
     private $stpGarage;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->stpGarage = new StpGarage();
     }

@@ -9,7 +9,7 @@ class FreitexteTest extends TestCase
     /** @var Freitexte */
     private $freitexte;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->freitexte = new Freitexte();
     }

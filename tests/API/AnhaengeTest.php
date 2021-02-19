@@ -9,7 +9,7 @@ class AnhaengeTest extends TestCase
     /** @var Anhaenge */
     private $anhaenge;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->anhaenge = new Anhaenge();
     }

@@ -9,7 +9,7 @@ class WaehrungTest extends TestCase
     /** @var Waehrung */
     private $waehrung;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->waehrung = new Waehrung();
     }

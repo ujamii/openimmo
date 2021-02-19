@@ -9,7 +9,7 @@ class VerkaufstatusTest extends TestCase
     /** @var Verkaufstatus */
     private $verkaufstatus;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->verkaufstatus = new Verkaufstatus();
     }

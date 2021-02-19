@@ -9,7 +9,7 @@ class UnterkellertTest extends TestCase
     /** @var Unterkellert */
     private $unterkellert;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->unterkellert = new Unterkellert();
     }

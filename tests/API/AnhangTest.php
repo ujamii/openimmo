@@ -9,7 +9,7 @@ class AnhangTest extends TestCase
     /** @var Anhang */
     private $anhang;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->anhang = new Anhang();
     }

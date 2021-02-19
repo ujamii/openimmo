@@ -9,7 +9,7 @@ class ErschliessungTest extends TestCase
     /** @var Erschliessung */
     private $erschliessung;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->erschliessung = new Erschliessung();
     }

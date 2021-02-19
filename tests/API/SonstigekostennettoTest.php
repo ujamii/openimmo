@@ -15,7 +15,7 @@ class SonstigekostennettoTest extends TestCase
     /** @var float */
     private $value;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->sonstigekostenust = null;
         $this->value = null;

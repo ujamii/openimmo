@@ -9,7 +9,7 @@ class FahrstuhlTest extends TestCase
     /** @var Fahrstuhl */
     private $fahrstuhl;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->fahrstuhl = new Fahrstuhl();
     }

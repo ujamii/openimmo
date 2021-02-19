@@ -9,7 +9,7 @@ class DatenTest extends TestCase
     /** @var Daten */
     private $daten;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->daten = new Daten();
     }

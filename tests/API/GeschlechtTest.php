@@ -9,7 +9,7 @@ class GeschlechtTest extends TestCase
     /** @var Geschlecht */
     private $geschlecht;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->geschlecht = new Geschlecht();
     }

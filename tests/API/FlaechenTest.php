@@ -9,7 +9,7 @@ class FlaechenTest extends TestCase
     /** @var Flaechen */
     private $flaechen;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->flaechen = new Flaechen();
     }

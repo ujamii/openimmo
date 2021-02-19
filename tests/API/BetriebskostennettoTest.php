@@ -15,7 +15,7 @@ class BetriebskostennettoTest extends TestCase
     /** @var float */
     private $value;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->betriebskostenust = null;
         $this->value = null;

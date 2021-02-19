@@ -9,7 +9,7 @@ class AusbaustufeTest extends TestCase
     /** @var Ausbaustufe */
     private $ausbaustufe;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->ausbaustufe = new Ausbaustufe();
     }

@@ -9,7 +9,7 @@ class BefeuerungTest extends TestCase
     /** @var Befeuerung */
     private $befeuerung;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->befeuerung = new Befeuerung();
     }

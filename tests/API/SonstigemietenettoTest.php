@@ -15,7 +15,7 @@ class SonstigemietenettoTest extends TestCase
     /** @var float */
     private $value;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->sonstigemieteust = null;
         $this->value = null;

@@ -9,7 +9,7 @@ class ServiceleistungenTest extends TestCase
     /** @var Serviceleistungen */
     private $serviceleistungen;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->serviceleistungen = new Serviceleistungen();
     }

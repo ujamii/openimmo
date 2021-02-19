@@ -9,7 +9,7 @@ class StellplatzartTest extends TestCase
     /** @var Stellplatzart */
     private $stellplatzart;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->stellplatzart = new Stellplatzart();
     }

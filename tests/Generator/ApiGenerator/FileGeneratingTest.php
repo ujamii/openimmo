@@ -53,7 +53,7 @@ abstract class FileGeneratingTest extends TestCase
         $generatedClass = PhpClass::fromFile($classFileName);
 
         if ('' !== $docBlockComment) {
-            $this->assertContains(
+            $this->assertStringContainsString(
                 $docBlockComment,
                 $generatedClass->getDocblock()->getShortDescription()
             );

@@ -9,7 +9,7 @@ class AusstattungTest extends TestCase
     /** @var Ausstattung */
     private $ausstattung;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->ausstattung = new Ausstattung();
     }

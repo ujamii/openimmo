@@ -9,7 +9,7 @@ class ObjektTextTest extends TestCase
     /** @var ObjektText */
     private $objektText;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->objektText = new ObjektText();
     }

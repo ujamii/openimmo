@@ -9,7 +9,7 @@ class BueroPraxenTest extends TestCase
     /** @var BueroPraxen */
     private $bueroPraxen;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->bueroPraxen = new BueroPraxen();
     }

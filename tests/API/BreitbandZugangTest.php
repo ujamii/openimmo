@@ -9,7 +9,7 @@ class BreitbandZugangTest extends TestCase
     /** @var BreitbandZugang */
     private $breitbandZugang;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->breitbandZugang = new BreitbandZugang();
     }

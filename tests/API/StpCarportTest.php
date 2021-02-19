@@ -9,7 +9,7 @@ class StpCarportTest extends TestCase
     /** @var StpCarport */
     private $stpCarport;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->stpCarport = new StpCarport();
     }

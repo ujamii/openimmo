@@ -9,7 +9,7 @@ class ParkenTest extends TestCase
     /** @var Parken */
     private $parken;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->parken = new Parken();
     }

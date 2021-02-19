@@ -9,7 +9,7 @@ class AngeschlGastronomieTest extends TestCase
     /** @var AngeschlGastronomie */
     private $angeschlGastronomie;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->angeschlGastronomie = new AngeschlGastronomie();
     }

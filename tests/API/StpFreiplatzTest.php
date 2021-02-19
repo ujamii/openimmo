@@ -9,7 +9,7 @@ class StpFreiplatzTest extends TestCase
     /** @var StpFreiplatz */
     private $stpFreiplatz;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->stpFreiplatz = new StpFreiplatz();
     }
