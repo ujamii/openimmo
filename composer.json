@@ -59,6 +59,9 @@
         "phpstan": "vendor/bin/phpstan analyse -c ci/phpstan.neon",
         "infection": [
             "vendor/bin/infection --configuration=./ci/infection.json.dist --threads=4",
+        ],
+        "infection-rebuild": [
+            "@infection",
             "@generate-api"
         ],
         "testall": [
