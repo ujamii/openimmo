@@ -6,7 +6,11 @@ on:
 
 jobs:
   build:
+    name: PHP ${{ matrix.php }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['7.1', '7.2', '7.3', '7.4', '8.0']
 
     steps:
     - uses: actions/checkout@v2
@@ -14,7 +18,7 @@ jobs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '7.4'
+        php-version: ${{ matrix.php }}
         tools: composer
         coverage: xdebug
         extensions: dom, simplexml

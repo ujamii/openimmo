@@ -37,7 +37,7 @@
     "require-dev": {
         "goetas-webservices/xsd-reader": "^0.3",
         "gossi/php-code-generator": "dev-prevent-fatal-error",
-        "phpunit/phpunit": "^7.5",
+        "phpunit/phpunit": ">=7.5",
         "phpstan/phpstan": "^0.12",
         "infection/infection": "^0.21.0"
     },
