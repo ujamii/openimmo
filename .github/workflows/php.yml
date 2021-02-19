@@ -30,7 +30,8 @@ jobs:
         path: /tmp/composer-cache
         key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
 
-    - uses: php-actions/composer@v5
+    - name: composer install
+      run: composer install
 
     - name: Generate API files
       run: composer run generate-api
