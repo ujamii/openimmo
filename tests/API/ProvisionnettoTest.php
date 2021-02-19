@@ -15,7 +15,7 @@ class ProvisionnettoTest extends TestCase
     /** @var float */
     private $value;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->provisionust = null;
         $this->value = null;

@@ -9,7 +9,7 @@ class StpSonstigeTest extends TestCase
     /** @var StpSonstige */
     private $stpSonstige;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->stpSonstige = new StpSonstige();
     }

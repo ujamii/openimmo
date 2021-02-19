@@ -9,7 +9,7 @@ class AktionTest extends TestCase
     /** @var Aktion */
     private $aktion;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->aktion = new Aktion();
     }

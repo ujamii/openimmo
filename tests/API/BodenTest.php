@@ -9,7 +9,7 @@ class BodenTest extends TestCase
     /** @var Boden */
     private $boden;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->boden = new Boden();
     }

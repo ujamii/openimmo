@@ -9,7 +9,7 @@ class MasterTest extends TestCase
     /** @var Master */
     private $master;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->master = new Master();
     }

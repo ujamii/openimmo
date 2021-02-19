@@ -9,7 +9,7 @@ class VermarktungsartTest extends TestCase
     /** @var Vermarktungsart */
     private $vermarktungsart;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->vermarktungsart = new Vermarktungsart();
     }

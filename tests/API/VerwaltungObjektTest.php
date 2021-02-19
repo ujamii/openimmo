@@ -9,7 +9,7 @@ class VerwaltungObjektTest extends TestCase
     /** @var VerwaltungObjekt */
     private $verwaltungObjekt;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->verwaltungObjekt = new VerwaltungObjekt();
     }

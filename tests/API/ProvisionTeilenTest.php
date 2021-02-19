@@ -9,7 +9,7 @@ class ProvisionTeilenTest extends TestCase
     /** @var ProvisionTeilen */
     private $provisionTeilen;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->provisionTeilen = new ProvisionTeilen();
     }

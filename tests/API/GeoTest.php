@@ -9,7 +9,7 @@ class GeoTest extends TestCase
     /** @var Geo */
     private $geo;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->geo = new Geo();
     }

@@ -9,7 +9,7 @@ class BewertungTest extends TestCase
     /** @var Bewertung */
     private $bewertung;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->bewertung = new Bewertung();
     }

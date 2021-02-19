@@ -9,7 +9,7 @@ class EnergiepassTest extends TestCase
     /** @var Energiepass */
     private $energiepass;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->energiepass = new Energiepass();
     }

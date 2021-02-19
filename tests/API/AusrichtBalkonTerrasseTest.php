@@ -9,7 +9,7 @@ class AusrichtBalkonTerrasseTest extends TestCase
     /** @var AusrichtBalkonTerrasse */
     private $ausrichtBalkonTerrasse;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->ausrichtBalkonTerrasse = new AusrichtBalkonTerrasse();
     }

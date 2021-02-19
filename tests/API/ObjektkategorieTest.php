@@ -9,7 +9,7 @@ class ObjektkategorieTest extends TestCase
     /** @var Objektkategorie */
     private $objektkategorie;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->objektkategorie = new Objektkategorie();
     }

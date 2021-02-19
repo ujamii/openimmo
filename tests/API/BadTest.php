@@ -9,7 +9,7 @@ class BadTest extends TestCase
     /** @var Bad */
     private $bad;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->bad = new Bad();
     }

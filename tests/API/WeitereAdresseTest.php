@@ -9,7 +9,7 @@ class WeitereAdresseTest extends TestCase
     /** @var WeitereAdresse */
     private $weitereAdresse;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->weitereAdresse = new WeitereAdresse();
     }

@@ -9,7 +9,7 @@ class LandUndForstwirtschaftTest extends TestCase
     /** @var LandUndForstwirtschaft */
     private $landUndForstwirtschaft;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->landUndForstwirtschaft = new LandUndForstwirtschaft();
     }

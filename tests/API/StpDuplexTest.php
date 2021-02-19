@@ -9,7 +9,7 @@ class StpDuplexTest extends TestCase
     /** @var StpDuplex */
     private $stpDuplex;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->stpDuplex = new StpDuplex();
     }

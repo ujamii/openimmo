@@ -9,7 +9,7 @@ class FotoTest extends TestCase
     /** @var Foto */
     private $foto;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->foto = new Foto();
     }

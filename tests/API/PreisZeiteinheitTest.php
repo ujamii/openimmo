@@ -9,7 +9,7 @@ class PreisZeiteinheitTest extends TestCase
     /** @var PreisZeiteinheit */
     private $preisZeiteinheit;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->preisZeiteinheit = new PreisZeiteinheit();
     }

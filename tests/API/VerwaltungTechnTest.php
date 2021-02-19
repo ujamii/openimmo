@@ -9,7 +9,7 @@ class VerwaltungTechnTest extends TestCase
     /** @var VerwaltungTechn */
     private $verwaltungTechn;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->verwaltungTechn = new VerwaltungTechn();
     }

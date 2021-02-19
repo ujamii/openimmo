@@ -9,7 +9,7 @@ class HausTest extends TestCase
     /** @var Haus */
     private $haus;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->haus = new Haus();
     }

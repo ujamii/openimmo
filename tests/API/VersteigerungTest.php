@@ -9,7 +9,7 @@ class VersteigerungTest extends TestCase
     /** @var Versteigerung */
     private $versteigerung;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->versteigerung = new Versteigerung();
     }

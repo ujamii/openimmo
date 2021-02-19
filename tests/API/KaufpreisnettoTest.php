@@ -15,7 +15,7 @@ class KaufpreisnettoTest extends TestCase
     /** @var float */
     private $value;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->kaufpreisust = null;
         $this->value = null;

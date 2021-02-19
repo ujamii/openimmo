@@ -15,7 +15,7 @@ class Gesamtkostenprom2vonTest extends TestCase
     /** @var float */
     private $value;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->gesamtkostenprom2bis = null;
         $this->value = null;

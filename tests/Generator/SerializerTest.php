@@ -36,7 +36,7 @@ class SerializerTest extends TestCase
     /**
      *
      */
-    public function setUp()
+    public function setUp(): void
     {
         $builder = \JMS\Serializer\SerializerBuilder::create();
         $builder

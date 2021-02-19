@@ -9,7 +9,7 @@ class BebaubarNachTest extends TestCase
     /** @var BebaubarNach */
     private $bebaubarNach;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->bebaubarNach = new BebaubarNach();
     }

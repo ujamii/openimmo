@@ -9,7 +9,7 @@ class EnergietypTest extends TestCase
     /** @var Energietyp */
     private $energietyp;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->energietyp = new Energietyp();
     }

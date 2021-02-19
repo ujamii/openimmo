@@ -9,7 +9,7 @@ class ZimmerTest extends TestCase
     /** @var Zimmer */
     private $zimmer;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->zimmer = new Zimmer();
     }

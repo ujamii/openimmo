@@ -9,7 +9,7 @@ class FreizeitimmobilieGewerblichTest extends TestCase
     /** @var FreizeitimmobilieGewerblich */
     private $freizeitimmobilieGewerblich;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->freizeitimmobilieGewerblich = new FreizeitimmobilieGewerblich();
     }

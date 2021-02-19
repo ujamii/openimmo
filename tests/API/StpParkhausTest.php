@@ -9,7 +9,7 @@ class StpParkhausTest extends TestCase
     /** @var StpParkhaus */
     private $stpParkhaus;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->stpParkhaus = new StpParkhaus();
     }

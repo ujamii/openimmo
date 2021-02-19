@@ -15,7 +15,7 @@ class HauptmietzinsnettoTest extends TestCase
     /** @var float */
     private $value;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->hauptmietzinsust = null;
         $this->value = null;

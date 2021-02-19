@@ -9,7 +9,7 @@ class AusblickTest extends TestCase
     /** @var Ausblick */
     private $ausblick;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->ausblick = new Ausblick();
     }

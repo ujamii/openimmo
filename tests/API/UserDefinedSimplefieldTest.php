@@ -9,7 +9,7 @@ class UserDefinedSimplefieldTest extends TestCase
     /** @var UserDefinedSimplefield */
     private $userDefinedSimplefield;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->userDefinedSimplefield = new UserDefinedSimplefield();
     }

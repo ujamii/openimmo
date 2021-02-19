@@ -9,7 +9,7 @@ class OpenimmoTest extends TestCase
     /** @var Openimmo */
     private $openimmo;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->openimmo = new Openimmo();
     }

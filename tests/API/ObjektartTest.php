@@ -9,7 +9,7 @@ class ObjektartTest extends TestCase
     /** @var Objektart */
     private $objektart;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->objektart = new Objektart();
     }

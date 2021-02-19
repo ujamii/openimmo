@@ -9,7 +9,7 @@ class HeizungsartTest extends TestCase
     /** @var Heizungsart */
     private $heizungsart;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->heizungsart = new Heizungsart();
     }

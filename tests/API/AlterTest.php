@@ -9,7 +9,7 @@ class AlterTest extends TestCase
     /** @var Alter */
     private $alter;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->alter = new Alter();
     }

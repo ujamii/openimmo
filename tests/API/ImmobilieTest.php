@@ -9,7 +9,7 @@ class ImmobilieTest extends TestCase
     /** @var Immobilie */
     private $immobilie;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->immobilie = new Immobilie();
     }

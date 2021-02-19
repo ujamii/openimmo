@@ -9,7 +9,7 @@ class UserDefinedAnyfieldTest extends TestCase
     /** @var UserDefinedAnyfield */
     private $userDefinedAnyfield;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->userDefinedAnyfield = new UserDefinedAnyfield();
     }

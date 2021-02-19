@@ -9,7 +9,7 @@ class UebertragungTest extends TestCase
     /** @var Uebertragung */
     private $uebertragung;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->uebertragung = new Uebertragung();
     }

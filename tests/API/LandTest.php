@@ -9,7 +9,7 @@ class LandTest extends TestCase
     /** @var Land */
     private $land;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->land = new Land();
     }

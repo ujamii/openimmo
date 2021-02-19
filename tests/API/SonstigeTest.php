@@ -9,7 +9,7 @@ class SonstigeTest extends TestCase
     /** @var Sonstige */
     private $sonstige;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->sonstige = new Sonstige();
     }

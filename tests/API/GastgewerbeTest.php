@@ -9,7 +9,7 @@ class GastgewerbeTest extends TestCase
     /** @var Gastgewerbe */
     private $gastgewerbe;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->gastgewerbe = new Gastgewerbe();
     }

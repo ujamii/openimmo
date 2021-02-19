@@ -9,7 +9,7 @@ class AnbieterTest extends TestCase
     /** @var Anbieter */
     private $anbieter;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->anbieter = new Anbieter();
     }

@@ -9,7 +9,7 @@ class KuecheTest extends TestCase
     /** @var Kueche */
     private $kueche;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->kueche = new Kueche();
     }
