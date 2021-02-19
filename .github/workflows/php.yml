@@ -13,7 +13,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-   
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+        coverage: xdebug
+        extensions: dom, simplexml
+
     - name: Validate composer.json and composer.lock
       run: composer validate
 
@@ -33,6 +40,6 @@ jobs:
 
     - name: Run test suite
       run: composer run phpunit
-      
+
     - name: Run PHPInfection
       run: cmoopser run infection
