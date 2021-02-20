@@ -58,7 +58,7 @@
         "phpunit": "vendor/bin/phpunit -c ci/phpunit.xml.dist",
         "phpstan": "vendor/bin/phpstan analyse -c ci/phpstan.neon",
         "infection": [
-            "vendor/bin/infection --only-covered --configuration=./ci/infection.json.dist --threads=4 --min-msi 90"
+            "vendor/bin/infection --only-covered --configuration=./ci/infection.json.dist --threads=4 --min-msi=90"
         ],
         "infection-rebuild": [
             "@infection",
