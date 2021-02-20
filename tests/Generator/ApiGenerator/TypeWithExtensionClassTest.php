@@ -12,7 +12,7 @@ class TypeWithExtensionClassTest extends FileGeneratingTest
         );
 
         $properties = [
-            self::getPropertyConfig('foobar', 'float'),
+            self::getPropertyConfig('foobar', 'float', true, ['XmlAttribute' => '']),
             self::getPropertyConfig('value', 'float', true, ['Inline' => ''])
         ];
 

@@ -20,7 +20,7 @@ class DefaultClassTest extends FileGeneratingTest
         ]);
 
         $properties = [
-            self::getPropertyConfig('blick'),
+            self::getPropertyConfig('blick', 'string', true, ['XmlAttribute' => '']),
         ];
         $this->assertClassHasProperties($generatedClass, $properties);
     }

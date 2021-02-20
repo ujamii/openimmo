@@ -82,7 +82,7 @@ abstract class FileGeneratingTest extends TestCase
         string $propertyName,
         string $type = 'string',
         bool $hasGetterAndSetter = true,
-        array $docTags = ['XmlAttribute' => ''],
+        array $docTags = [],
         ?string $xsdType = null
     ): array {
         return [$propertyName, $type, $hasGetterAndSetter, $docTags, $xsdType];
@@ -93,7 +93,7 @@ abstract class FileGeneratingTest extends TestCase
         string $propertyName,
         string $type = 'string',
         bool $hasGetterAndSetter = true,
-        array $docTags = ['XmlAttribute' => ''],
+        array $docTags = [],
         ?string $xsdType = null
     ): void {
         $this->assertTrue($class->hasProperty($propertyName));

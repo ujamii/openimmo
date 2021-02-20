@@ -11,9 +11,9 @@ class TypeWithRestrictionsTest extends FileGeneratingTest
             'type_with_restrictions'
         );
         $properties     = [
-            self::getPropertyConfig('mwstSatz', 'float', true, []),
-            self::getPropertyConfig('anzahlEtagen', 'int', true, []),
-            self::getPropertyConfig('telDurchw', 'string', true, []),
+            self::getPropertyConfig('mwstSatz', 'float'),
+            self::getPropertyConfig('anzahlEtagen', 'int'),
+            self::getPropertyConfig('telDurchw'),
         ];
         $this->assertClassHasProperties($generatedClass, $properties);
     }

@@ -13,7 +13,7 @@ class InvalidRestrictionTest extends FileGeneratingTest
             'invalid_restriction'
         );
         $properties     = [
-            self::getPropertyConfig('mwstSatz', 'float', true, []),
+            self::getPropertyConfig('mwstSatz', 'float'),
         ];
         $this->assertClassHasProperties($generatedClass, $properties);
     }

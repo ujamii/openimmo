@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xsd:element name="strange_string_types">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="tel_zentrale" minOccurs="0"/>
+				<xsd:element ref="anhanginhalt" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="tel_zentrale" type="kontakt"/>
+
+	<xsd:simpleType name="kontakt">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:element name="anhanginhalt" type="xsd:base64Binary"/>
+</xsd:schema>

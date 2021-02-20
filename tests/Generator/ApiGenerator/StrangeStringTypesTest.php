@@ -2,17 +2,18 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
-class PositiveIntegerTypeTest extends FileGeneratingTest
+class StrangeStringTypesTest extends FileGeneratingTest
 {
 
-    public function testGenerateApiClassPositiveIntegerType(): void
+    public function testGenerateApiClassWithDateTypes(): void
     {
         $generatedClass = $this->getGeneratedClassFromFile(
-            'positive_integer_type'
+            'strange_string_types'
         );
 
         $properties = [
-            self::getPropertyConfig('positiveInteger', 'int')
+            self::getPropertyConfig('telZentrale'),
+            self::getPropertyConfig('anhanginhalt'),
         ];
 
         $this->assertClassHasProperties($generatedClass, $properties);
