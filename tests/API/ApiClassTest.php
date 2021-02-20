@@ -5,10 +5,14 @@ namespace Ujamii\OpenImmo\Tests\API;
 use gossi\codegen\model\PhpClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\Finder;
-use Ujamii\OpenImmo\API;
 
 class ApiClassTest extends TestCase
 {
+
+    /**
+     * Instead of creating 100+ test classes containing almost the same code for all
+     * the api class objects (basically just DTOs), this could easily be automated, so here we go.
+     */
     public function testClassProperty()
     {
         $finder = new Finder();
@@ -22,7 +26,15 @@ class ApiClassTest extends TestCase
         }
     }
 
-    protected function automateTestClassProperties(string $className, string $propertyName, string $type = 'string')
+    /**
+     * This automation creates a new instance of the given class and tests the
+     * setter and getter for the given property.
+     *
+     * @param string $className
+     * @param string $propertyName
+     * @param string $type
+     */
+    protected function automateTestClassProperties(string $className, string $propertyName, string $type)
     {
         $typeWithNs = "Ujamii\\OpenImmo\\API\\{$className}";
         $subject = new $typeWithNs;
@@ -32,6 +44,11 @@ class ApiClassTest extends TestCase
         $this->assertEquals($subject, $return);
     }
 
+    /**
+     * @param string $type
+     *
+     * @return array|bool|bool[]|\DateTime|\DateTime[]|float|float[]|int|int[]|object|object[]|string|string[]
+     */
     protected function getExampleData(string $type)
     {
         $isPlural = substr($type, -2) == '[]';
