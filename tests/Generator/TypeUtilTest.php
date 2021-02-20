@@ -49,20 +49,19 @@ class TypeUtilTest extends TestCase
     {
         return [
             ['string', 'string'],
-            ['dateTime', 'dateTime'],
+            ['dateTime', "DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>"],
+            ['date', "DateTime<'Y-m-d'>"],
             ['float', 'float'],
             ['int', 'int'],
             ['array', 'array'],
-            ['boolean', 'boolean'],
-            ['\DateTime', '\DateTime'],
+            ['boolean', 'bool'],
+            ['\DateTime', "DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>"],
             ['decimal', 'float'],
 
             ['string[]', 'array<string>'],
-            ['dateTime[]', 'array<dateTime>'],
             ['float[]', 'array<float>'],
             ['int[]', 'array<int>'],
-            ['boolean[]', 'array<boolean>'],
-            ['\DateTime[]', 'array<\DateTime>'],
+            ['boolean[]', 'array<bool>'],
             ['decimal[]', 'array<float>'],
 
             ['FooBarClassName', 'Ujamii\\OpenImmo\\API\\FooBarClassName'],

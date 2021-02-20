@@ -90,7 +90,7 @@ class TypeUtil
 
             case 'date':
             case 'dateTime':
-                $propertyType = '\DateTime';
+                $propertyType = '\\' . \DateTime::class;
                 break;
 
             case 'kontakt':

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xsd:element name="type_with_dates">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="date_time" type="xsd:dateTime" minOccurs="0"/>
+				<xsd:element name="date" type="xsd:date" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
