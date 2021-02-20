@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xsd:element name="type_with_inconsistent_naming">
+		<xsd:complexType>
+			<xsd:attribute name="UPPERCASEFTW" type="xsd:boolean"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
