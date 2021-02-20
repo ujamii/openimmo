@@ -14,8 +14,6 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Daten {
 
 	/**
-	 * Base64 encoded binary
-	 *
 	 * @Type("string") 
 	 * @var string
 	 */

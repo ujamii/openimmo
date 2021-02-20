@@ -11,7 +11,6 @@ use GoetasWebservices\XML\XSDReader\Schema\Item;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexTypeSimpleContent;
 use GoetasWebservices\XML\XSDReader\Schema\Type\SimpleType;
-use GoetasWebservices\XML\XSDReader\Schema\Type\Type;
 use GoetasWebservices\XML\XSDReader\SchemaReader;
 use gossi\codegen\generator\CodeFileGenerator;
 use gossi\codegen\model\PhpClass;
@@ -44,9 +43,9 @@ class ApiGenerator
      * @var array<bool>
      */
     protected $generatorConfig = [
-        'generateScalarTypeHints'    => true,
-        'generateNullableTypes'      => true,
-        'generateReturnTypeHints'    => true,
+        'generateScalarTypeHints' => true,
+        'generateNullableTypes'   => true,
+        'generateReturnTypeHints' => true,
     ];
 
     /**
@@ -133,8 +132,8 @@ class ApiGenerator
         }
 
         $classPropertyCount = $class->getPropertyNames()->size();
-        $hasConstructor = $class->hasMethod('__construct');
-        if (!$hasConstructor && $classPropertyCount > 0 && $classPropertyCount <= self::MAX_PROPERTIES_IN_CONSTRUCTOR) {
+        $hasConstructor     = $class->hasMethod('__construct');
+        if ( ! $hasConstructor && $classPropertyCount > 0 && $classPropertyCount <= self::MAX_PROPERTIES_IN_CONSTRUCTOR) {
             $this->generateConstructor($class);
         }
 
@@ -151,17 +150,16 @@ class ApiGenerator
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
 
         if (is_null($extension)) {
-            $propertyType = 'string';
+            $xsdType = 'string';
         } else {
-            $propertyType = $this->getValidType($this->extractPhpType($extension->getBase()), $classProperty, $class);
+            $xsdType = TypeUtil::extractTypeForPhp($extension->getBase());
         }
 
+        $propertyType = TypeUtil::getValidPhpType($xsdType);
         $classProperty->setType($propertyType);
         $classProperty->getDocblock()->appendTag(TagFactory::create('Inline'));
-        // this has been set in getValidType already (including format)
-        if ($propertyType != '\DateTime') {
-            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . TypeUtil::getTypeForSerializer($propertyType) . '")'));
-        }
+        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")'));
+        $class->addUseStatement('JMS\Serializer\Annotation\Type');
 
         $class->addUseStatement('JMS\Serializer\Annotation\Inline');
         $class->setProperty($classProperty);
@@ -179,12 +177,12 @@ class ApiGenerator
 
         $constructorCode = [];
         foreach ($class->getPropertyNames() as $classPropertyName) {
-            $type          = $class->getProperty($classPropertyName)->getType();
-            $typeIsArray   = substr($type, -2) === '[]';
-            $type          = $this->getValidType($type);
-            $phpParam      = PhpParameter::create($classPropertyName)
-                                         ->setType($typeIsArray ? 'array' : $type)
-                                         ->setDescription('Shortcut setter for ' . $classPropertyName);
+            $type        = $class->getProperty($classPropertyName)->getType();
+            $typeIsArray = substr($type, -2) === '[]';
+            $type        = TypeUtil::getValidPhpType($type);
+            $phpParam    = PhpParameter::create($classPropertyName)
+                                       ->setType($typeIsArray ? 'array' : $type)
+                                       ->setDescription('Shortcut setter for ' . $classPropertyName);
             if ($typeIsArray) {
                 $phpParam->setExpression('[]');
             } else {
@@ -206,7 +204,7 @@ class ApiGenerator
     {
         $propertyName  = TypeUtil::camelize($property->getName(), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
-        $propertyType  = $this->getPhpPropertyTypeFromXsdElement($property);
+        $xsdType  = $this->getPhpPropertyTypeFromXsdElement($property);
 
         // take min/max into account, as this may be an array instead
         if ($property->getMax() == -1) {
@@ -214,17 +212,17 @@ class ApiGenerator
             $class->addUseStatement('JMS\Serializer\Annotation\XmlList');
         }
 
-        $type = $this->getValidType($propertyType, $classProperty, $class);
-        $classProperty->setType($type);
-        // this has been set in getValidType already (including format)
-        if ($type != '\DateTime') {
-            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . TypeUtil::getTypeForSerializer($type) . '")'));
-        }
+        $phpType = TypeUtil::getValidPhpType($xsdType);
+        $classProperty->setType($phpType);
+
+        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")'));
+        $class->addUseStatement('JMS\Serializer\Annotation\Type');
 
         if ($property->getType()->getRestriction()) {
-            if (empty($propertyType) && ! empty($property->getType()->getRestriction()->getBase())) {
-                $propertyType = $this->getValidType($property->getType()->getRestriction()->getBase()->getName(), $classProperty, $class);
-                $classProperty->setType($propertyType);
+            if (empty($xsdType) && ! empty($property->getType()->getRestriction()->getBase())) {
+                $xsdType = $property->getType()->getRestriction()->getBase()->getName();
+                $phpType = TypeUtil::getValidPhpType($xsdType);
+                $classProperty->setType($phpType);
             }
             $this->parseRestriction(
                 $property->getType()->getRestriction(),
@@ -249,16 +247,16 @@ class ApiGenerator
     {
         if ($property instanceof ElementRef) {
             if ($property->getReferencedElement()->getType() instanceof SimpleType) {
-                $propertyType = $this->extractPhpType($property->getReferencedElement()->getType());
+                $propertyType = TypeUtil::extractTypeForPhp($property->getReferencedElement()->getType());
             } else {
                 $propertyType = TypeUtil::camelize($property->getReferencedElement()->getName());
             }
         } else {
             if ($property->getType() instanceof ComplexType) {
                 $this->referencedInlineElements[] = $property;
-                $propertyType                     = $this->extractPhpType($property->getType(), TypeUtil::camelize($property->getName(), true));
+                $propertyType                     = TypeUtil::extractTypeForPhp($property->getType(), TypeUtil::camelize($property->getName(), true));
             } else {
-                $propertyType = $this->extractPhpType($property->getType());
+                $propertyType = TypeUtil::extractTypeForPhp($property->getType());
             }
         }
 
@@ -277,15 +275,13 @@ class ApiGenerator
     {
         $propertyName  = TypeUtil::camelize(strtolower($attribute->getName()), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
-        $type          = $this->extractPhpType($attribute->getType());
-        $type          = $this->getValidType($type, $classProperty, $class);
-        $nullable      = true;
+        $xsdType       = TypeUtil::extractTypeForPhp($attribute->getType());
+        $phpType       = TypeUtil::getValidPhpType($xsdType);
+        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")'));
+        $class->addUseStatement('JMS\Serializer\Annotation\Type');
+        $nullable = true;
 
-        // this has been set in getValidType already (including format)
-        if ($type != '\DateTime') {
-            $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . TypeUtil::getTypeForSerializer($type) . '")'));
-        }
-        $classProperty->setType($type);
+        $classProperty->setType($phpType);
         $classProperty->getDocblock()->appendTag(TagFactory::create('XmlAttribute'));
 
         // as the openimmo guys like to switch randomly between lowercase and uppercase, serialized names may differ from property names
@@ -384,91 +380,6 @@ class ApiGenerator
     }
 
     /**
-     * @param Type $typeFromXsd
-     * @param string|null $propertyName
-     *
-     * @return string|null
-     */
-    protected function extractPhpType(Type $typeFromXsd, ?string $propertyName = null): ?string
-    {
-        $type = 'string';
-
-        if ($typeFromXsd->getName() != '') {
-            $type = $typeFromXsd->getName();
-        } else {
-            if ($typeFromXsd instanceof ComplexType) {
-                if (null !== $propertyName) {
-                    return ucfirst($propertyName);
-                }
-            } else {
-                if ($typeFromXsd instanceof ComplexTypeSimpleContent) {
-                    // is default string
-                } else {
-                    if ($typeFromXsd->getRestriction()->getBase() != '') {
-                        $type = $typeFromXsd->getRestriction()->getBase()->getName();
-                    }
-                }
-            }
-        }
-
-        return $type;
-    }
-
-    /**
-     * @param string $propertyType
-     * @param PhpProperty|null $classProperty
-     * @param PhpClass|null $class
-     *
-     * @return string
-     */
-    protected function getValidType(string $propertyType, ?PhpProperty $classProperty = null, ?PhpClass $class = null): string
-    {
-        switch ($propertyType) {
-
-            case 'decimal':
-                $propertyType = 'float';
-                break;
-
-            case 'boolean':
-                $propertyType = 'bool';
-                break;
-
-            case 'positiveInteger':
-                $propertyType = 'int';
-                break;
-
-            case 'dateTime':
-                $propertyType = '\DateTime';
-                if ( ! is_null($classProperty)) {
-                    $classProperty->getDocblock()->appendTag(TagFactory::create('Type("DateTime<\'Y-m-d\TH:i:s\', null, [\'Y-m-d\TH:i:sP\', \'Y-m-d\TH:i:s\']>")'));
-                    $class->addUseStatement('JMS\Serializer\Annotation\Type');
-                }
-                break;
-
-            case 'date':
-                $propertyType = '\DateTime';
-                if ( ! is_null($classProperty)) {
-                    $classProperty->getDocblock()->appendTag(TagFactory::create('Type("DateTime<\'Y-m-d\'>")'));
-                    $class->addUseStatement('JMS\Serializer\Annotation\Type');
-                }
-                break;
-
-            case 'base64Binary':
-                $propertyType = 'string';
-                if ( ! is_null($classProperty)) {
-                    $classProperty->setDescription('Base64 encoded binary');
-                }
-                break;
-
-            case 'kontakt':
-                $propertyType = 'string';
-                break;
-        }
-
-        return $propertyType;
-    }
-
-    /**
      * @param PhpProperty $property
      * @param PhpClass $class
      * @param bool $fluentApi
@@ -479,7 +390,6 @@ class ApiGenerator
         self::generateSetter($property, $class, $fluentApi, $nullable);
         self::generateGetter($property, $class, $nullable);
     }
-
 
 
     /**
@@ -582,7 +492,7 @@ class ApiGenerator
     public function setTargetFolder(?string $targetFolder): void
     {
         if ( ! is_null($targetFolder)) {
-            if (!(is_dir($targetFolder) && is_writeable($targetFolder))) {
+            if ( ! (is_dir($targetFolder) && is_writeable($targetFolder))) {
                 throw new \Exception("Directory {$targetFolder} does not exist or is not writeable!");
             }
             $this->targetFolder = $targetFolder;
