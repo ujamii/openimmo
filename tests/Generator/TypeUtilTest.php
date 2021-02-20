@@ -19,6 +19,9 @@ class TypeUtilTest extends TestCase
     {
         $generatedName = TypeUtil::camelize($nameInXsd, $lcFirst);
         $this->assertEquals($expectedPhpName, $generatedName);
+
+        // test lcFirst is false by default
+        $this->assertEquals('FooBar', TypeUtil::camelize('foo_bar'));
     }
 
     public function camelizeDataProvider(): array

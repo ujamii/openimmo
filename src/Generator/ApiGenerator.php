@@ -89,7 +89,7 @@ class ApiGenerator
     /**
      * @param Item|ElementItem $element
      */
-    protected function parseElementDef($element): void
+    private function parseElementDef($element): void
     {
         $className = TypeUtil::camelize($element->getName());
 
@@ -139,7 +139,7 @@ class ApiGenerator
      * @param Extension|null $extension
      * @param PhpClass $class
      */
-    protected function addSimpleValue(?Extension $extension, PhpClass $class): void
+    private function addSimpleValue(?Extension $extension, PhpClass $class): void
     {
         $propertyName  = 'value';
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
@@ -166,7 +166,7 @@ class ApiGenerator
      *
      * @return void
      */
-    protected function generateConstructor(PhpClass $class): void
+    private function generateConstructor(PhpClass $class): void
     {
         $constructor = PhpMethod::create('__construct');
 
@@ -195,7 +195,7 @@ class ApiGenerator
      * @param ElementItem $property
      * @param PhpClass $class
      */
-    protected function parseProperty(ElementItem $property, PhpClass $class): void
+    private function parseProperty(ElementItem $property, PhpClass $class): void
     {
         $propertyName  = TypeUtil::camelize($property->getName(), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
@@ -233,7 +233,7 @@ class ApiGenerator
      *
      * @return string
      */
-    protected function getPhpPropertyTypeFromXsdElement($property): string
+    private function getPhpPropertyTypeFromXsdElement($property): string
     {
         if ($property instanceof ElementRef) {
             if ($property->getReferencedElement()->getType() instanceof SimpleType) {
@@ -261,7 +261,7 @@ class ApiGenerator
      * @param Attribute $attribute
      * @param PhpClass $class
      */
-    protected function parseAttribute(Attribute $attribute, PhpClass $class): void
+    private function parseAttribute(Attribute $attribute, PhpClass $class): void
     {
         $propertyName  = TypeUtil::camelize(strtolower($attribute->getName()), true);
         $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
@@ -306,7 +306,7 @@ class ApiGenerator
      * @param PhpClass $class
      * @param PhpProperty $classProperty
      */
-    protected function parseRestriction(Restriction $restriction, string $nameInXsd, PhpClass $class, PhpProperty $classProperty): void
+    private function parseRestriction(Restriction $restriction, string $nameInXsd, PhpClass $class, PhpProperty $classProperty): void
     {
         if (count($restriction->getChecks()) > 0) {
             foreach ($restriction->getChecks() as $type => $options) {
@@ -385,7 +385,7 @@ class ApiGenerator
     /**
      * Removes all files in the target folder.
      */
-    protected function wipeTargetFolder(): void
+    private function wipeTargetFolder(): void
     {
         array_map('unlink', glob($this->getTargetFolder() . '/*.php'));
     }
@@ -460,7 +460,7 @@ class ApiGenerator
      *
      * @return bool|int
      */
-    protected function createPhpFile(PhpClass $class)
+    private function createPhpFile(PhpClass $class)
     {
         $generator = new CodeFileGenerator($this->getGeneratorConfig());
         $code      = $generator->generate($class);
@@ -478,6 +478,8 @@ class ApiGenerator
 
     /**
      * @param string|null $targetFolder
+     *
+     * @throws \Exception
      */
     public function setTargetFolder(?string $targetFolder): void
     {

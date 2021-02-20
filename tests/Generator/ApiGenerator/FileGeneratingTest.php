@@ -143,7 +143,13 @@ abstract class FileGeneratingTest extends TestCase
         $constructor = $class->getMethod('__construct');
         foreach ($properties as $propertyConfig) {
             list($propertyName, $type, $hasGetterAndSetter, $docTags, $xsdType) = $propertyConfig;
-            $this->assertEquals($type, $constructor->getParameter($propertyName)->getType());
+            $constructorParam = $constructor->getParameter($propertyName);
+            $this->assertEquals($type, $constructorParam->getType());
+            if ($constructorParam->getType() == 'array') {
+                $this->assertEquals('[]', $constructorParam->getExpression());
+            } else {
+                $this->assertNull($constructorParam->getValue());
+            }
 //        $this->assertFalse($constructor->getParameter($propertyName)->getNullable());
         }
     }
