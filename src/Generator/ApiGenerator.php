@@ -113,11 +113,6 @@ class ApiGenerator
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
             $this->addSimpleValue($element->getType()->getExtension(), $class);
         } elseif ($element->getType() instanceof ComplexTypeMixed) {
-            /* @var ComplexTypeMixed $complexTypeMixed */
-            $complexTypeMixed = $element->getType();
-            foreach ($complexTypeMixed->getElements() as $property) {
-                $this->parseProperty($property, $class);
-            }
             // @see https://github.com/ujamii/openimmo/issues/3
             $this->addSimpleValue(null, $class);
         } else {
@@ -219,11 +214,6 @@ class ApiGenerator
         $class->addUseStatement('JMS\Serializer\Annotation\Type');
 
         if ($property->getType()->getRestriction()) {
-            if (empty($xsdType) && ! empty($property->getType()->getRestriction()->getBase())) {
-                $xsdType = $property->getType()->getRestriction()->getBase()->getName();
-                $phpType = TypeUtil::getValidPhpType($xsdType);
-                $classProperty->setType($phpType);
-            }
             $this->parseRestriction(
                 $property->getType()->getRestriction(),
                 $property->getName(),

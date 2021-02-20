@@ -17,7 +17,7 @@ parameters:
 
 		-
 			message: "#^Call to an undefined method GoetasWebservices\\\\XML\\\\XSDReader\\\\Schema\\\\Element\\\\ElementItem\\:\\:getType\\(\\)\\.$#"
-			count: 4
+			count: 2
 			path: ../src/Generator/ApiGenerator.php
 
 		-

@@ -6,8 +6,7 @@
 			<xsd:documentation xml:lang="en"></xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
-			<xsd:attribute name="mit_Pommes" type="xsd:boolean">
-			</xsd:attribute>
+			<xsd:attribute name="mit_Pommes" type="xsd:boolean"/>
 		</xsd:complexType>
 	</xsd:element>
 </xsd:schema>
