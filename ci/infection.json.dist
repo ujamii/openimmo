@@ -8,7 +8,10 @@
         "configDir": ".\/"
     },
     "logs": {
-        "text": "./ci/infection-full.log"
+        "text": "./ci/infection-full.log",
+        "badge": {
+            "branch": "master"
+        }
     },
     "mutators": {
         "@default": true
