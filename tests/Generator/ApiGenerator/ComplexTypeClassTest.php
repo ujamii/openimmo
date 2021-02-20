@@ -11,7 +11,7 @@ class ComplexTypeClassTest extends FileGeneratingTest
             'user_defined_extend'
         );
         $properties     = [
-            self::getPropertyConfig('feld', 'Feld[]', true, ['XmlList' => '(inline = true, entry = "feld")'])
+            self::getPropertyConfig('feld', 'array', true, ['XmlList' => '(inline = true, entry = "feld")'], 'Feld[]')
         ];
 
         $this->assertClassHasProperties($generatedClass, $properties);

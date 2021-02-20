@@ -82,9 +82,10 @@ abstract class FileGeneratingTest extends TestCase
         string $propertyName,
         string $type = 'string',
         bool $hasGetterAndSetter = true,
-        array $docTags = ['XmlAttribute' => '']
+        array $docTags = [],
+        ?string $xsdType = null
     ): array {
-        return [$propertyName, $type, $hasGetterAndSetter, $docTags];
+        return [$propertyName, $type, $hasGetterAndSetter, $docTags, $xsdType];
     }
 
     public function assertClassHasProperty(
@@ -92,14 +93,18 @@ abstract class FileGeneratingTest extends TestCase
         string $propertyName,
         string $type = 'string',
         bool $hasGetterAndSetter = true,
-        array $docTags = ['XmlAttribute' => '']
+        array $docTags = [],
+        ?string $xsdType = null
     ): void {
         $this->assertTrue($class->hasProperty($propertyName));
         $property = $class->getProperty($propertyName);
-        $this->assertEquals($type, $property->getType());
+
+        // TODO property type may be Feld[] instead of array<Feld>
+        $propertyType = TypeUtil::getValidPhpType(null !== $xsdType ? $xsdType : $type);
+        $this->assertEquals($propertyType, $property->getType());
         $this->assertTrue($property->getDocblock()->hasTag('Type'));
 
-        $serializerType = TypeUtil::getTypeForSerializer($type);
+        $serializerType = TypeUtil::getTypeForSerializer(null !== $xsdType ? $xsdType : $type);
         $this->assertEquals('("' . $serializerType . '")', trim($property->getDocblock()->getTags('Type')->get(0)->getDescription()));
 
         foreach ($docTags as $tagName => $tagValue) {
@@ -115,7 +120,7 @@ abstract class FileGeneratingTest extends TestCase
             $this->assertEquals('protected', $property->getVisibility());
             $this->assertTrue($class->hasMethod('get' . ucfirst($propertyName)));
 
-            $phpType = preg_replace('%([^<>]+).*%', '$1', str_replace('Ujamii\\OpenImmo\\API\\', '', $serializerType));
+            $phpType = TypeUtil::getValidPhpType($type);
             $getter  = $class->getMethod('get' . ucfirst($propertyName));
             $this->assertEquals('public', $getter->getVisibility());
             $this->assertEquals($phpType, $getter->getType(), "Return type of {$getter->getName()}");
@@ -137,10 +142,8 @@ abstract class FileGeneratingTest extends TestCase
 
         $constructor = $class->getMethod('__construct');
         foreach ($properties as $propertyConfig) {
-            list($propertyName, $type) = $propertyConfig;
-            $serializerType = TypeUtil::getTypeForSerializer($type);
-            $phpType        = preg_replace('%([^<>]+).*%', '$1', str_replace('Ujamii\\OpenImmo\\API\\', '', $serializerType));
-            $this->assertEquals($phpType, $constructor->getParameter($propertyName)->getType());
+            list($propertyName, $type, $hasGetterAndSetter, $docTags, $xsdType) = $propertyConfig;
+            $this->assertEquals($type, $constructor->getParameter($propertyName)->getType());
 //        $this->assertFalse($constructor->getParameter($propertyName)->getNullable());
         }
     }

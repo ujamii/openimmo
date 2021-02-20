@@ -38,8 +38,8 @@ class Check {
 	protected $ctype;
 
 	/**
-	 * @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>") 
 	 * @Inline 
+	 * @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>") 
 	 * @var \DateTime
 	 */
 	protected $value;

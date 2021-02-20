@@ -13,7 +13,7 @@ class ComplexMixedTypeTest extends FileGeneratingTest
         );
 
         $properties = [
-            self::getPropertyConfig('mitPommes', 'bool'),
+            self::getPropertyConfig('mitPommes', 'bool', true, ['XmlAttribute' => '']),
             self::getPropertyConfig('value', 'string', true, ['Inline' => '']),
         ];
 

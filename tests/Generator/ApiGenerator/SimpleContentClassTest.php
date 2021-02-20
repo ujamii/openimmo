@@ -13,7 +13,7 @@ class SimpleContentClassTest extends FileGeneratingTest
         );
 
         $properties = [
-            self::getPropertyConfig('feldname'),
+            self::getPropertyConfig('feldname', 'string', true, ['XmlAttribute' => '']),
             self::getPropertyConfig('value', 'string', true, ['Inline' => ''])
         ];
 
