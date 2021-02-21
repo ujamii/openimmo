@@ -71,4 +71,5 @@ jobs:
       run: composer run phpunit
 
     - name: Run PHPInfection
+      if: ${{ matrix.php != '7.3' }}
       run: composer run infection
