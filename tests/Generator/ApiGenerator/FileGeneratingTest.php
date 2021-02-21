@@ -67,6 +67,21 @@ abstract class FileGeneratingTest extends TestCase
 
     /**
      * @param PhpClass $generatedClass
+     *
+     * @return \ReflectionClass
+     * @throws \ReflectionException
+     */
+    public function getReflectionClassFromgeneratedClass(PhpClass $generatedClass): \ReflectionClass
+    {
+        $classFileName = "{$this->tmpDir}{$generatedClass->getName()}.php";
+        require_once($classFileName);
+        $subjectClassName = $generatedClass->getQualifiedName();
+
+        return new \ReflectionClass(new $subjectClassName);
+    }
+
+    /**
+     * @param PhpClass $generatedClass
      * @param array $constants
      */
     public function assertClassHasConstants(PhpClass $generatedClass, array $constants): void
