@@ -73,3 +73,5 @@ jobs:
     - name: Run PHPInfection
       if: ${{ matrix.php != '7.3' }}
       run: composer run infection
+      env:
+        STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
