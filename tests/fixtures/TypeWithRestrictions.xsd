@@ -14,6 +14,7 @@
 			<xsd:restriction base="xsd:decimal">
 				<xsd:fractionDigits value="2"/>
 				<xsd:minInclusive value="0"/>
+				<xsd:maxInclusive value="10"/>
 			</xsd:restriction>
 		</xsd:simpleType>
 	</xsd:element>

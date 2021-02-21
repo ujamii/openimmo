@@ -20,5 +20,6 @@ class TypeWithRestrictionsTest extends FileGeneratingTest
         $property = $generatedClass->getProperty('mwstSatz');
         $this->assertStringContainsString('Maximum precision: 2', $property->getDocblock()->__toString());
         $this->assertStringContainsString('Minimum value (inclusive): 0', $property->getDocblock()->__toString());
+        $this->assertStringContainsString('Maximum value (inclusive): 10', $property->getDocblock()->__toString());
     }
 }
