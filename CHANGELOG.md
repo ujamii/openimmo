@@ -1,3 +1,63 @@
+## 0.8.0 (February 21, 2021)
+  - Merge pull request #9 from ujamii/feature/coverage-badge
+  - [DOC] added coverage badge
+  - [TEST] added coverage upload to github actions
+  - [TEST] fixed version constraint for php 7.3
+  - [TEST] one more mutant showed up
+  - [TEST] increased threads for infection
+  - [TEST] added missing stryker key env variable
+  - [TEST] killed last mutant
+  - [TEST] run infection only on php 7.4, as 7.3 compatible version does not support github logger
+  - [TEST] fixed infection constraint
+  - [TEST] added infection logs
+  - [TEST] killed some more mutants
+  - [DOC] added some badges
+  - [TEST] killed some more mutants
+  - [TEST] as we now have 100% coverage, lets kill the last mutants
+  - [TEST] added some docs to this special test
+  - [TEST] replaced generated single test files with one test to rule them all
+  - [TEST] limited infection results to covered code
+  - [BUGFIX] removed unreachable code as ComplexTypeMixed can not have properties, only attributes in xsd schema
+  - Merge pull request #8 from ujamii/refactoring-typeutil
+  - [TEST] added test, so TypeUtil has 100% coverage now
+  - [TEST] refactored the property config helper
+  - [TEST] added test case with datetime
+  - [TASK] moved some type related code to the typeutil to simplify the generator class
+  - Merge pull request #7 from ujamii/feature/matrix-test
+  - [TEST] divided ci build into 2 jobs
+  - [TEST] some config changes in github actions
+  - [TEST] lowered min version of infection to run on php 7.3
+  - [TEST] set php matrix to currently supported 7 versions
+  - [TEST] test cases are now compatible to phpunit 9
+  - [TEST] added matrix test
+  - [TEST] removed comma
+  - [TEST] removed generation during ci build
+  - [TEST] fixed typo
+  - [TEST] test github workflow actions
+  - [TEST] test github workflow actions
+  - [TEST] test github workflow actions
+  - Update php.yml
+  - test github ci features
+  - [TEST] added test
+  - [TEST] added test
+  - [TEST] refactored tests to minimize duplicate code
+  - [TEST] added test
+  - [TEST] added comment
+  - [!!!] "bool" is now consequently used instead of "boolean". Although this makes now  difference for the serializer and IDEs, it may break packages parsing the doc blocks.
+  - [TEST] code format
+  - [TEST] renamed test methods
+  - [TEST] added tests
+  - [TEST] restructured scripts section in composer.json
+  - [TEST] separated autoload for prod and dev
+  - [TEST] added tests
+  - [CLEANUP] removed unused feature
+  - [TEST] added tests
+  - [TEST] refactored the test cases
+  - [TEST] refactored the test case structure
+  - [TEST] added infection testing
+  - [TEST] added more tests
+  - [DOC] as all the TODOs are solved now, I can remove this from the docs *yay!*
+
 ## 0.7.0 (February 16, 2021)
   - [BUGFIX] solved dependency problems
   - [TASK] refactoring to simplify generator class
