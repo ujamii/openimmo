@@ -8,8 +8,8 @@
         "configDir": ".\/"
     },
     "logs": {
-        "text": "./ci/infection-full.log",
-        "summary": "./ci/infection-summary.log",
+        "text": "./build/coverage/infection-full.log",
+        "summary": "./build/coverage/infection-summary.log",
         "github": true,
         "badge": {
             "branch": "master"

@@ -1,7 +1,6 @@
 /vendor/
 /.idea
 /example/*
-/coverage
+/build/coverage
 /composer.lock
-/.php_cs.cache
-/ci/*.log
+/build/cache/*

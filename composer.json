@@ -55,8 +55,8 @@
     },
     "scripts": {
         "generate-api": "php -f ./generate-api.php",
-        "phpunit": "vendor/bin/phpunit -c ci/phpunit.xml.dist",
-        "phpstan": "vendor/bin/phpstan analyse -c ci/phpstan.neon",
+        "phpunit": "vendor/bin/phpunit -c build/config/phpunit.xml.dist",
+        "phpstan": "vendor/bin/phpstan analyse -c build/config/phpstan.neon",
         "infection": [
             "vendor/bin/infection --only-covered --configuration=./ci/infection.json.dist --threads=8 --min-msi=99"
         ],

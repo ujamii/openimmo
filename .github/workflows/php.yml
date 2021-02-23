@@ -73,7 +73,7 @@ jobs:
     - uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        files: ./ci/clover.xml
+        files: ./build/coverage/clover.xml
 
     - name: Run PHPInfection
       if: ${{ matrix.php != '7.3' }}
