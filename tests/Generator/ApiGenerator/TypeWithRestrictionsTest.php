@@ -4,7 +4,6 @@ namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 class TypeWithRestrictionsTest extends FileGeneratingTest
 {
-
     public function testGenerateApiClassDefault(): void
     {
         $generatedClass = $this->getGeneratedClassFromFile(
@@ -21,5 +20,8 @@ class TypeWithRestrictionsTest extends FileGeneratingTest
         $this->assertStringContainsString('Maximum precision: 2', $property->getDocblock()->__toString());
         $this->assertStringContainsString('Minimum value (inclusive): 0', $property->getDocblock()->__toString());
         $this->assertStringContainsString('Maximum value (inclusive): 10', $property->getDocblock()->__toString());
+
+        $telDurchw = $generatedClass->getProperty('telDurchw');
+        $this->assertStringContainsString('Minimum length: 1', $telDurchw->getDocblock()->__toString());
     }
 }

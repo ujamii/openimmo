@@ -22,11 +22,9 @@ use Ujamii\OpenImmo\XSDReader\Schema\Type\ComplexTypeMixed;
 
 /**
  * Class ApiGenerator
- * @package Ujamii\OpenImmo\Generator
  */
 class ApiGenerator
 {
-
     /**
      * Maximum number of properties a class should have for generating
      * a constructor. Read: If a class has more than X properties, no constructor
@@ -77,7 +75,7 @@ class ApiGenerator
         $this->referencedInlineElements = [];
 
         foreach ($schema->getElements() as $element) {
-            if ( ! ($element->getType() instanceof SimpleType)) {
+            if (! ($element->getType() instanceof SimpleType)) {
                 $this->parseElementDef($element);
             }
         }
@@ -102,7 +100,6 @@ class ApiGenerator
             ])
             ->setDescription('Class ' . $className . PHP_EOL . $element->getDoc())
             ->getDocblock()
-            ->appendTag(TagFactory::create('package', 'Ujamii\OpenImmo\API'))
             ->appendTag(TagFactory::create('XmlRoot("' . $element->getName() . '")'));
 
         /* @var $attributeFromXsd Attribute */
@@ -128,7 +125,7 @@ class ApiGenerator
 
         $classPropertyCount = $class->getPropertyNames()->size();
         $hasConstructor     = $class->hasMethod('__construct');
-        if ( ! $hasConstructor && $classPropertyCount > 0 && $classPropertyCount <= self::MAX_PROPERTIES_IN_CONSTRUCTOR) {
+        if (! $hasConstructor && $classPropertyCount > 0 && $classPropertyCount <= self::MAX_PROPERTIES_IN_CONSTRUCTOR) {
             $this->generateConstructor($class);
         }
 
@@ -250,7 +247,7 @@ class ApiGenerator
             }
         }
 
-        if ( ! ($property instanceof Attribute) && $property->getMax() == -1) {
+        if (! ($property instanceof Attribute) && $property->getMax() == -1) {
             $propertyType .= '[]';
         }
 
@@ -358,7 +355,7 @@ class ApiGenerator
      *
      * @return void
      */
-    public static function addDescriptionPart(PhpProperty $classProperty, string $descriptionPart, string $separator = ', '): void
+    private static function addDescriptionPart(PhpProperty $classProperty, string $descriptionPart, string $separator = ', '): void
     {
         if ('' === trim($classProperty->getTypeDescription())) {
             $currentDescriptionParts = [];
@@ -375,12 +372,11 @@ class ApiGenerator
      * @param bool $fluentApi
      * @param bool $nullable
      */
-    public static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true, $nullable = true): void
+    private static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true, $nullable = true): void
     {
         self::generateSetter($property, $class, $fluentApi, $nullable);
         self::generateGetter($property, $class, $nullable);
     }
-
 
     /**
      * Removes all files in the target folder.
@@ -411,7 +407,7 @@ class ApiGenerator
      * @param PhpClass $class
      * @param bool $nullable
      */
-    public static function generateGetter(PhpProperty $property, PhpClass $class, bool $nullable): void
+    private static function generateGetter(PhpProperty $property, PhpClass $class, bool $nullable): void
     {
         $returnsArray = substr($property->getType(), -2) === '[]';
         $getter       = PhpMethod::create('get' . ucfirst($property->getName()));
@@ -436,7 +432,7 @@ class ApiGenerator
      * @param bool $fluentApi
      * @param bool $nullable
      */
-    public static function generateSetter(PhpProperty $property, PhpClass $class, bool $fluentApi, bool $nullable): void
+    private static function generateSetter(PhpProperty $property, PhpClass $class, bool $fluentApi, bool $nullable): void
     {
         $setter   = PhpMethod::create('set' . ucfirst($property->getName()));
         $isPlural = substr($property->getType(), -2) == '[]';
@@ -483,12 +479,11 @@ class ApiGenerator
      */
     public function setTargetFolder(?string $targetFolder): void
     {
-        if ( ! is_null($targetFolder)) {
-            if ( ! (is_dir($targetFolder) && is_writeable($targetFolder))) {
+        if (! is_null($targetFolder)) {
+            if (! (is_dir($targetFolder) && is_writeable($targetFolder))) {
                 throw new \Exception("Directory {$targetFolder} does not exist or is not writeable!");
             }
             $this->targetFolder = $targetFolder;
         }
     }
-
 }

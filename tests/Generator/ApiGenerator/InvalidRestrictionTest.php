@@ -4,7 +4,6 @@ namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 class InvalidRestrictionTest extends FileGeneratingTest
 {
-
     public function testGenerateApiClassDefault(): void
     {
         $this->expectException(\InvalidArgumentException::class);

@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Ujamii\OpenImmo\Tests\API;
 
@@ -8,7 +10,6 @@ use Symfony\Component\Finder\Finder;
 
 class ApiClassTest extends TestCase
 {
-
     /**
      * Instead of creating 100+ test classes containing almost the same code for all
      * the api class objects (basically just DTOs), this could easily be automated, so here we go.
@@ -37,7 +38,7 @@ class ApiClassTest extends TestCase
     protected function automateTestClassProperties(string $className, string $propertyName, string $type)
     {
         $typeWithNs = "Ujamii\\OpenImmo\\API\\{$className}";
-        $subject = new $typeWithNs;
+        $subject = new $typeWithNs();
         $testValue = $this->getExampleData($type);
         $return = $subject->{'set' . ucfirst($propertyName)}($testValue);
         $this->assertEquals($testValue, $subject->{'get' . ucfirst($propertyName)}());
@@ -84,5 +85,4 @@ class ApiClassTest extends TestCase
         }
         return $value;
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\Type;
@@ -9,57 +10,59 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Class Ausblick
  * Welcher Ausblick ist vorhanden, Optionen nicht kombinierbar
  *
- * @package Ujamii\OpenImmo\API
- * @XmlRoot("ausblick") 
+ * @XmlRoot("ausblick")
  */
-class Ausblick {
+class Ausblick
+{
+    /**
+     */
+    public const BLICK_BERGE = 'BERGE';
 
-	/**
-	 */
-	const BLICK_BERGE = 'BERGE';
+    /**
+     */
+    public const BLICK_FERNE = 'FERNE';
 
-	/**
-	 */
-	const BLICK_FERNE = 'FERNE';
+    /**
+     */
+    public const BLICK_MEER = 'MEER';
 
-	/**
-	 */
-	const BLICK_MEER = 'MEER';
+    /**
+     */
+    public const BLICK_SEE = 'SEE';
 
-	/**
-	 */
-	const BLICK_SEE = 'SEE';
+    /**
+     * optional
+     *
+     * @Type("string")
+     * @XmlAttribute
+     * @see BLICK_* constants
+     * @var string
+     */
+    protected $blick;
 
-	/**
-	 * optional
-	 *
-	 * @Type("string") 
-	 * @XmlAttribute 
-	 * @see BLICK_* constants
-	 * @var string
-	 */
-	protected $blick;
+    /**
+     * @param string $blick Shortcut setter for blick
+     */
+    public function __construct(string $blick = null)
+    {
+        $this->blick = $blick;
+    }
 
-	/**
-	 * @param string $blick Shortcut setter for blick
-	 */
-	public function __construct(string $blick = null) {
-		$this->blick = $blick;
-	}
+    /**
+     * @return string
+     */
+    public function getBlick(): ?string
+    {
+        return $this->blick;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getBlick(): ?string {
-		return $this->blick;
-	}
-
-	/**
-	 * @param string $blick Setter for blick
-	 * @return Ausblick
-	 */
-	public function setBlick(?string $blick) {
-		$this->blick = $blick;
-		return $this;
-	}
+    /**
+     * @param string $blick Setter for blick
+     * @return Ausblick
+     */
+    public function setBlick(?string $blick)
+    {
+        $this->blick = $blick;
+        return $this;
+    }
 }

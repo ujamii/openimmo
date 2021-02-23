@@ -4,7 +4,6 @@ namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 class DefaultClassTest extends FileGeneratingTest
 {
-
     public function testGenerateApiClassDefault(): void
     {
         $generatedClass = $this->getGeneratedClassFromFile(
