@@ -355,7 +355,7 @@ class ApiGenerator
      *
      * @return void
      */
-    public static function addDescriptionPart(PhpProperty $classProperty, string $descriptionPart, string $separator = ', '): void
+    private static function addDescriptionPart(PhpProperty $classProperty, string $descriptionPart, string $separator = ', '): void
     {
         if ('' === trim($classProperty->getTypeDescription())) {
             $currentDescriptionParts = [];
@@ -372,7 +372,7 @@ class ApiGenerator
      * @param bool $fluentApi
      * @param bool $nullable
      */
-    public static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true, $nullable = true): void
+    private static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true, $nullable = true): void
     {
         self::generateSetter($property, $class, $fluentApi, $nullable);
         self::generateGetter($property, $class, $nullable);
@@ -407,7 +407,7 @@ class ApiGenerator
      * @param PhpClass $class
      * @param bool $nullable
      */
-    public static function generateGetter(PhpProperty $property, PhpClass $class, bool $nullable): void
+    private static function generateGetter(PhpProperty $property, PhpClass $class, bool $nullable): void
     {
         $returnsArray = substr($property->getType(), -2) === '[]';
         $getter       = PhpMethod::create('get' . ucfirst($property->getName()));
@@ -432,7 +432,7 @@ class ApiGenerator
      * @param bool $fluentApi
      * @param bool $nullable
      */
-    public static function generateSetter(PhpProperty $property, PhpClass $class, bool $fluentApi, bool $nullable): void
+    private static function generateSetter(PhpProperty $property, PhpClass $class, bool $fluentApi, bool $nullable): void
     {
         $setter   = PhpMethod::create('set' . ucfirst($property->getName()));
         $isPlural = substr($property->getType(), -2) == '[]';

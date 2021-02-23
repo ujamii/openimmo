@@ -63,7 +63,7 @@
         "phpstan": "vendor/bin/phpstan analyse -c build/config/phpstan.neon",
         "php-cs-fixer": "vendor/bin/php-cs-fixer fix --config build/config/cs.php",
         "infection": [
-            "vendor/bin/infection --only-covered --configuration=./build/config/infection.json.dist --threads=8 --min-msi=99"
+            "vendor/bin/infection --only-covered --configuration=./build/config/infection.json.dist --threads=8 --min-msi=100"
         ],
         "infection-rebuild": [
             "@infection",

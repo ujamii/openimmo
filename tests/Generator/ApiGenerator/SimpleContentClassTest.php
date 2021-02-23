@@ -17,5 +17,6 @@ class SimpleContentClassTest extends FileGeneratingTest
         ];
 
         $this->assertClassHasProperties($generatedClass, $properties);
+        $this->assertTrue($generatedClass->hasUseStatement('JMS\\Serializer\\Annotation\\Type'));
     }
 }
