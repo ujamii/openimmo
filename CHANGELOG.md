@@ -1,3 +1,17 @@
+## 0.8.1 (February 23, 2021)
+  - Merge pull request #10 from ujamii/task/build-structure
+  - [TEST] kill one more mutant
+  - [TEST] kill two more mutants
+  - [TEST] kill one more mutant with another test
+  - [DOC] added PHP8 todo
+  - [FEATURE] added php-cs-fixer to generate-api task
+  - [TEST] as the last mutant was killed successfully, we can raise the min msi to 100
+  - [TEST] added test to kill one more mutant
+  - [FEATURE] added php-cs-fixer and applied PSR-12 rules to src and test files
+  - [BUGFIX] fixed config path for infection in composer.json
+  - [DOC] added missing script descriptions in composer.json
+  - [TASK] reorganized build files to meet standards
+
 ## 0.8.0 (February 21, 2021)
   - Merge pull request #9 from ujamii/feature/coverage-badge
   - [DOC] added coverage badge
