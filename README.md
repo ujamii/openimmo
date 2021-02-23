@@ -21,6 +21,7 @@ Do not be fooled by "Open" in OpenImmo ;-)
 
 ## TODOs
 
+- test/add PHP8 compatibility
 - add test cases, especially for the example file provided with the official download package.
 
 ## Installation
@@ -37,9 +38,6 @@ If you like to use this API as base for an integration into a CMS or Framework, 
 - NEOS CMS, [package "Ujamii.OpenImmoNeos"](https://github.com/ujamii/openimmo-neos)
 
 ## Usage
-
-1. Install composer package.
-2. Done :-)
 
 ### Writing OpenImmo XML
 
