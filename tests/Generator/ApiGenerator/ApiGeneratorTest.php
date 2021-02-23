@@ -66,5 +66,13 @@ class ApiGeneratorTest extends FileGeneratingTest
         file_put_contents($filename, $content);
         $this->generator->generateApiClasses('./tests/fixtures/Ausblick.xsd', true, $this->tmpDir);
         $this->assertFileDoesNotExist($filename);
+
+        // test wipe by default
+        $filename = $targetFolder . 'testfile3.php';
+        $content = 'This file should be wiped';
+        file_put_contents($filename, $content);
+        $this->generator->setTargetFolder($this->tmpDir);
+        $this->generator->generateApiClasses('./tests/fixtures/Ausblick.xsd');
+        $this->assertFileDoesNotExist($filename);
     }
 }
