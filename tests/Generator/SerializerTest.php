@@ -27,7 +27,6 @@ use Ujamii\OpenImmo\Handler\DateTimeHandler;
 
 class SerializerTest extends TestCase
 {
-
     /**
      * @var SerializerInterface
      */

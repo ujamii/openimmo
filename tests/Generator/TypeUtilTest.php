@@ -7,7 +7,6 @@ use Ujamii\OpenImmo\Generator\TypeUtil;
 
 class TypeUtilTest extends TestCase
 {
-
     /**
      * @param string $nameInXsd
      * @param string $expectedPhpName
@@ -71,5 +70,4 @@ class TypeUtilTest extends TestCase
             ['FooBarClassName[]', 'array<Ujamii\\OpenImmo\\API\\FooBarClassName>'],
         ];
     }
-
 }

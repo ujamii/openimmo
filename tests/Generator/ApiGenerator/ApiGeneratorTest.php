@@ -4,7 +4,6 @@ namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 class ApiGeneratorTest extends FileGeneratingTest
 {
-
     public function testDefaultGeneratorConfig(): void
     {
         $config = [
@@ -49,5 +48,4 @@ class ApiGeneratorTest extends FileGeneratingTest
         $folder = '/dev/null';
         $this->generator->setTargetFolder($folder);
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\Type;
@@ -9,45 +10,47 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Class Zimmer
  * Objekart / Typ f. Zimmer
  *
- * @package Ujamii\OpenImmo\API
- * @XmlRoot("zimmer") 
+ * @XmlRoot("zimmer")
  */
-class Zimmer {
+class Zimmer
+{
+    /**
+     */
+    public const ZIMMERTYP_ZIMMER = 'ZIMMER';
 
-	/**
-	 */
-	const ZIMMERTYP_ZIMMER = 'ZIMMER';
+    /**
+     * optional
+     *
+     * @Type("string")
+     * @XmlAttribute
+     * @see ZIMMERTYP_* constants
+     * @var string
+     */
+    protected $zimmertyp;
 
-	/**
-	 * optional
-	 *
-	 * @Type("string") 
-	 * @XmlAttribute 
-	 * @see ZIMMERTYP_* constants
-	 * @var string
-	 */
-	protected $zimmertyp;
+    /**
+     * @param string $zimmertyp Shortcut setter for zimmertyp
+     */
+    public function __construct(string $zimmertyp = null)
+    {
+        $this->zimmertyp = $zimmertyp;
+    }
 
-	/**
-	 * @param string $zimmertyp Shortcut setter for zimmertyp
-	 */
-	public function __construct(string $zimmertyp = null) {
-		$this->zimmertyp = $zimmertyp;
-	}
+    /**
+     * @return string
+     */
+    public function getZimmertyp(): ?string
+    {
+        return $this->zimmertyp;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getZimmertyp(): ?string {
-		return $this->zimmertyp;
-	}
-
-	/**
-	 * @param string $zimmertyp Setter for zimmertyp
-	 * @return Zimmer
-	 */
-	public function setZimmertyp(?string $zimmertyp) {
-		$this->zimmertyp = $zimmertyp;
-		return $this;
-	}
+    /**
+     * @param string $zimmertyp Setter for zimmertyp
+     * @return Zimmer
+     */
+    public function setZimmertyp(?string $zimmertyp)
+    {
+        $this->zimmertyp = $zimmertyp;
+        return $this;
+    }
 }

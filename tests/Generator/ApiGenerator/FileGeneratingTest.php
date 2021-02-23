@@ -77,7 +77,7 @@ abstract class FileGeneratingTest extends TestCase
         require_once($classFileName);
         $subjectClassName = $generatedClass->getQualifiedName();
 
-        return new \ReflectionClass(new $subjectClassName);
+        return new \ReflectionClass(new $subjectClassName());
     }
 
     /**
@@ -124,7 +124,7 @@ abstract class FileGeneratingTest extends TestCase
 
         foreach ($docTags as $tagName => $tagValue) {
             $this->assertTrue($property->getDocblock()->hasTag($tagName), $tagName . ' not found in DocBlock');
-            if ( ! empty($tagValue)) {
+            if (! empty($tagValue)) {
                 /* @var AbstractTag $docTag */
                 $docTag = $property->getDocblock()->getTags($tagName)->get(0);
                 $this->assertEquals($tagValue, trim($docTag->getDescription()));

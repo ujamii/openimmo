@@ -4,7 +4,6 @@ namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 class SimpleContentClassTest extends FileGeneratingTest
 {
-
     public function testGenerateApiClassSimpleContent(): void
     {
         $generatedClass = $this->getGeneratedClassFromFile(
@@ -19,5 +18,4 @@ class SimpleContentClassTest extends FileGeneratingTest
 
         $this->assertClassHasProperties($generatedClass, $properties);
     }
-
 }

@@ -4,7 +4,6 @@ namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 class PositiveIntegerTypeTest extends FileGeneratingTest
 {
-
     public function testGenerateApiClassPositiveIntegerType(): void
     {
         $generatedClass = $this->getGeneratedClassFromFile(
@@ -17,5 +16,4 @@ class PositiveIntegerTypeTest extends FileGeneratingTest
 
         $this->assertClassHasProperties($generatedClass, $properties);
     }
-
 }

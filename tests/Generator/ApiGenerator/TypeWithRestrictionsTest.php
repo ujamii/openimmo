@@ -4,7 +4,6 @@ namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 class TypeWithRestrictionsTest extends FileGeneratingTest
 {
-
     public function testGenerateApiClassDefault(): void
     {
         $generatedClass = $this->getGeneratedClassFromFile(

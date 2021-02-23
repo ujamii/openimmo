@@ -1,4 +1,5 @@
 <?php
+
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\Type;
@@ -13,57 +14,59 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Aus kompatibilitätegründen bleiben die Attribute NOCH! erhalten.
  * In nachfolgenden Versionen wird die Unterstützung an dieser Stelle eingestellt.
  *
- * @package Ujamii\OpenImmo\API
- * @XmlRoot("sonstige") 
+ * @XmlRoot("sonstige")
  */
-class Sonstige {
+class Sonstige
+{
+    /**
+     */
+    public const SONSTIGE_TYP_KRANKENHAUS = 'KRANKENHAUS';
 
-	/**
-	 */
-	const SONSTIGE_TYP_KRANKENHAUS = 'KRANKENHAUS';
+    /**
+     */
+    public const SONSTIGE_TYP_PARKHAUS = 'PARKHAUS';
 
-	/**
-	 */
-	const SONSTIGE_TYP_PARKHAUS = 'PARKHAUS';
+    /**
+     */
+    public const SONSTIGE_TYP_SONSTIGE = 'SONSTIGE';
 
-	/**
-	 */
-	const SONSTIGE_TYP_SONSTIGE = 'SONSTIGE';
+    /**
+     */
+    public const SONSTIGE_TYP_TANKSTELLE = 'TANKSTELLE';
 
-	/**
-	 */
-	const SONSTIGE_TYP_TANKSTELLE = 'TANKSTELLE';
+    /**
+     * optional
+     *
+     * @Type("string")
+     * @XmlAttribute
+     * @see SONSTIGE_TYP_* constants
+     * @var string
+     */
+    protected $sonstigeTyp;
 
-	/**
-	 * optional
-	 *
-	 * @Type("string") 
-	 * @XmlAttribute 
-	 * @see SONSTIGE_TYP_* constants
-	 * @var string
-	 */
-	protected $sonstigeTyp;
+    /**
+     * @param string $sonstigeTyp Shortcut setter for sonstigeTyp
+     */
+    public function __construct(string $sonstigeTyp = null)
+    {
+        $this->sonstigeTyp = $sonstigeTyp;
+    }
 
-	/**
-	 * @param string $sonstigeTyp Shortcut setter for sonstigeTyp
-	 */
-	public function __construct(string $sonstigeTyp = null) {
-		$this->sonstigeTyp = $sonstigeTyp;
-	}
+    /**
+     * @return string
+     */
+    public function getSonstigeTyp(): ?string
+    {
+        return $this->sonstigeTyp;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getSonstigeTyp(): ?string {
-		return $this->sonstigeTyp;
-	}
-
-	/**
-	 * @param string $sonstigeTyp Setter for sonstigeTyp
-	 * @return Sonstige
-	 */
-	public function setSonstigeTyp(?string $sonstigeTyp) {
-		$this->sonstigeTyp = $sonstigeTyp;
-		return $this;
-	}
+    /**
+     * @param string $sonstigeTyp Setter for sonstigeTyp
+     * @return Sonstige
+     */
+    public function setSonstigeTyp(?string $sonstigeTyp)
+    {
+        $this->sonstigeTyp = $sonstigeTyp;
+        return $this;
+    }
 }

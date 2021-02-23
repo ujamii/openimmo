@@ -39,7 +39,8 @@
         "gossi/php-code-generator": "dev-prevent-fatal-error",
         "phpunit/phpunit": ">=7.5",
         "phpstan/phpstan": "^0.12",
-        "infection/infection": ">=0.16"
+        "infection/infection": ">=0.16",
+        "friendsofphp/php-cs-fixer": "^2.18"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -57,6 +58,7 @@
         "generate-api": "php -f ./generate-api.php",
         "phpunit": "vendor/bin/phpunit -c build/config/phpunit.xml.dist",
         "phpstan": "vendor/bin/phpstan analyse -c build/config/phpstan.neon",
+        "php-cs-fixer": "vendor/bin/php-cs-fixer fix --config build/config/cs.php",
         "infection": [
             "vendor/bin/infection --only-covered --configuration=./build/config/infection.json.dist --threads=8 --min-msi=99"
         ],

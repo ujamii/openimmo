@@ -4,7 +4,6 @@ namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 class StrangeStringTypesTest extends FileGeneratingTest
 {
-
     public function testGenerateApiClassWithDateTypes(): void
     {
         $generatedClass = $this->getGeneratedClassFromFile(
@@ -18,5 +17,4 @@ class StrangeStringTypesTest extends FileGeneratingTest
 
         $this->assertClassHasProperties($generatedClass, $properties);
     }
-
 }

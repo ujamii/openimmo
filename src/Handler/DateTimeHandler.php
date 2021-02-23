@@ -14,7 +14,6 @@ use JMS\Serializer\XmlSerializationVisitor;
  */
 class DateTimeHandler implements SubscribingHandlerInterface
 {
-
     /**
      * @return array|array[]
      */

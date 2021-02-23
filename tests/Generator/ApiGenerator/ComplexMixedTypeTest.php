@@ -4,7 +4,6 @@ namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 class ComplexMixedTypeTest extends FileGeneratingTest
 {
-
     public function testGenerateApiClassComplexMixedType(): void
     {
         $generatedClass = $this->getGeneratedClassFromFile(
@@ -19,5 +18,4 @@ class ComplexMixedTypeTest extends FileGeneratingTest
 
         $this->assertClassHasProperties($generatedClass, $properties);
     }
-
 }

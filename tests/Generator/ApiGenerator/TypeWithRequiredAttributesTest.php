@@ -4,7 +4,6 @@ namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 class TypeWithRequiredAttributesTest extends FileGeneratingTest
 {
-
     public function testGenerateApiClassWithRequiredAttributes(): void
     {
         $generatedClass = $this->getGeneratedClassFromFile('type_with_required_attributes');
@@ -29,5 +28,4 @@ class TypeWithRequiredAttributesTest extends FileGeneratingTest
         $anlageGetter = $reflectionClass->getMethod('getAnlage');
         $this->assertTrue($anlageGetter->getReturnType()->allowsNull());
     }
-
 }

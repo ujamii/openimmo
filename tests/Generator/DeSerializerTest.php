@@ -17,7 +17,6 @@ use Ujamii\OpenImmo\Handler\DateTimeHandler;
 
 class DeSerializerTest extends TestCase
 {
-
     /**
      * @var SerializerInterface
      */
@@ -41,7 +40,7 @@ class DeSerializerTest extends TestCase
     public function testReadXml()
     {
         $file = './example/openimmo-data_127.xml';
-        if ( ! is_file($file) || ! is_readable($file)) {
+        if (! is_file($file) || ! is_readable($file)) {
             $this->markTestSkipped($file . ' is not part of the distribution package due to license restrictions. Please download yourself from http://www.openimmo.de/go.php/p/24/download.htm (it\'s free)');
         }
         $xmlString = file_get_contents($file);
@@ -68,7 +67,7 @@ class DeSerializerTest extends TestCase
     public function testReadRealDataXml()
     {
         $file = './example/1548246253_0.xml';
-        if ( ! is_file($file) || ! is_readable($file)) {
+        if (! is_file($file) || ! is_readable($file)) {
             $this->markTestSkipped('I am not allowed to include real world examples into this distribution package due to license restrictions.');
         }
         $xmlString = file_get_contents($file);
@@ -202,5 +201,4 @@ class DeSerializerTest extends TestCase
         $this->assertEquals('abc', $feld->getName());
         $this->assertEquals(100, $feld->getWert());
     }
-
 }

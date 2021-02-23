@@ -1,4 +1,5 @@
 <?php
+
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\Inline;
@@ -13,65 +14,69 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Damit die Anzeige des Master Objektes gesteuert werden kann, wird im Master ein Flag
  *  visible eingesetzt. Das Attribut ist dann zwingend anzugeben
  *
- * @package Ujamii\OpenImmo\API
- * @XmlRoot("master") 
+ * @XmlRoot("master")
  */
-class Master {
+class Master
+{
+    /**
+     * @Inline
+     * @Type("string")
+     * @var string
+     */
+    protected $value;
 
-	/**
-	 * @Inline 
-	 * @Type("string") 
-	 * @var string
-	 */
-	protected $value;
+    /**
+     * required
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @var bool
+     */
+    protected $visible;
 
-	/**
-	 * required
-	 *
-	 * @Type("bool") 
-	 * @XmlAttribute 
-	 * @var bool
-	 */
-	protected $visible;
+    /**
+     * @param bool $visible Shortcut setter for visible
+     * @param string $value Shortcut setter for value
+     */
+    public function __construct(bool $visible = null, string $value = null)
+    {
+        $this->visible = $visible;
+        $this->value = $value;
+    }
 
-	/**
-	 * @param bool $visible Shortcut setter for visible
-	 * @param string $value Shortcut setter for value
-	 */
-	public function __construct(bool $visible = null, string $value = null) {
-		$this->visible = $visible;
-		$this->value = $value;
-	}
+    /**
+     * @return string
+     */
+    public function getValue(): ?string
+    {
+        return $this->value;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getValue(): ?string {
-		return $this->value;
-	}
+    /**
+     * @return bool
+     */
+    public function getVisible(): bool
+    {
+        return $this->visible;
+    }
 
-	/**
-	 * @return bool
-	 */
-	public function getVisible(): bool {
-		return $this->visible;
-	}
+    /**
+     * @param string $value Setter for value
+     * @return Master
+     */
+    public function setValue(?string $value)
+    {
+        $this->value = $value;
+        return $this;
+    }
 
-	/**
-	 * @param string $value Setter for value
-	 * @return Master
-	 */
-	public function setValue(?string $value) {
-		$this->value = $value;
-		return $this;
-	}
-
-	/**
-	 * @param bool $visible Setter for visible
-	 * @return Master
-	 */
-	public function setVisible(bool $visible) {
-		$this->visible = $visible;
-		return $this;
-	}
+    /**
+     * @param bool $visible Setter for visible
+     * @return Master
+     */
+    public function setVisible(bool $visible)
+    {
+        $this->visible = $visible;
+        return $this;
+    }
 }
