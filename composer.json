@@ -58,7 +58,7 @@
         "phpunit": "vendor/bin/phpunit -c build/config/phpunit.xml.dist",
         "phpstan": "vendor/bin/phpstan analyse -c build/config/phpstan.neon",
         "infection": [
-            "vendor/bin/infection --only-covered --configuration=./ci/infection.json.dist --threads=8 --min-msi=99"
+            "vendor/bin/infection --only-covered --configuration=./build/config/infection.json.dist --threads=8 --min-msi=99"
         ],
         "infection-rebuild": [
             "@infection",
@@ -72,6 +72,11 @@
         ]
     },
     "scripts-descriptions": {
-        "tests": "Runs the unit tests in this package, configured in phpunit.xml.dist."
+        "generate-api": "Re-creates all the API classes. This tasks expects you have downloaded the xsd file (http://www.openimmo.de/go.php/p/24/download.htm)",
+        "phpunit": "Runs the unit tests in this package, configured in build/config/phpunit.xml.dist.",
+        "phpstan": "Runs static code analysis, configured in build/config/phpstan.neon.",
+        "infection": "Runs mutation testing, configured in build/config/infection.json.dist.",
+        "infection-rebuild": "Runs mutation testing and re-creates all API classes afterwards, as the folder gets wiped during mutation tests.",
+        "testall": "Runs the whole set of tests."
     }
 }
