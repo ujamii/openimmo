@@ -9,10 +9,13 @@ use PHPUnit\Framework\TestCase;
 use Ujamii\OpenImmo\API\Anhang;
 use Ujamii\OpenImmo\API\AussenCourtage;
 use Ujamii\OpenImmo\API\Bewertung;
+use Ujamii\OpenImmo\API\EmailSonstige;
+use Ujamii\OpenImmo\API\Foto;
 use Ujamii\OpenImmo\API\Objektkategorie;
 use Ujamii\OpenImmo\API\Openimmo;
 use Ujamii\OpenImmo\API\Uebertragung;
 use Ujamii\OpenImmo\API\Wohnung;
+use Ujamii\OpenImmo\API\Zimmer;
 use Ujamii\OpenImmo\Handler\DateTimeHandler;
 
 class DeSerializerTest extends TestCase
@@ -62,6 +65,38 @@ class DeSerializerTest extends TestCase
         $this->assertEquals($uebertragung, $openImmo->getUebertragung());
         $this->assertCount(1, $openImmo->getAnbieter());
         $this->assertEquals('ABCD13', $openImmo->getAnbieter()[0]->getLizenzkennung());
+
+        $immobilie = $openImmo->getAnbieter()[0]->getImmobilie()[0];
+        $this->assertTrue($immobilie->getObjektkategorie()->getNutzungsart()->getWohnen());
+        $this->assertFalse($immobilie->getObjektkategorie()->getNutzungsart()->getGewerbe());
+        $this->assertFalse($immobilie->getObjektkategorie()->getNutzungsart()->getAnlage());
+        $this->assertFalse($immobilie->getObjektkategorie()->getNutzungsart()->getWaz());
+
+        $this->assertTrue($immobilie->getObjektkategorie()->getVermarktungsart()->getKauf());
+        $this->assertFalse($immobilie->getObjektkategorie()->getVermarktungsart()->getMietePacht());
+        $this->assertFalse($immobilie->getObjektkategorie()->getVermarktungsart()->getErbpacht());
+        $this->assertFalse($immobilie->getObjektkategorie()->getVermarktungsart()->getLeasing());
+
+        $this->assertCount(1, $immobilie->getObjektkategorie()->getObjektart()->getZimmer());
+        $this->assertEquals(Zimmer::ZIMMERTYP_ZIMMER, $immobilie->getObjektkategorie()->getObjektart()->getZimmer()[0]->getZimmertyp());
+        $this->assertCount(1, $immobilie->getObjektkategorie()->getObjektart()->getObjektartZusatz());
+        $this->assertEquals('Moebeliert', $immobilie->getObjektkategorie()->getObjektart()->getObjektartZusatz()[0]);
+
+        $this->assertCount(1, $immobilie->getKontaktperson()->getEmailSonstige());
+        $this->assertEquals(EmailSonstige::EMAILART_EM_DIREKT, $immobilie->getKontaktperson()->getEmailSonstige()[0]->getEmailart());
+        $this->assertEquals('1', $immobilie->getKontaktperson()->getEmailSonstige()[0]->getBemerkung());
+        $this->assertEquals('foo@bar.de', $immobilie->getKontaktperson()->getEmailSonstige()[0]->getValue());
+        $this->assertEquals('yx@y.de', $immobilie->getKontaktperson()->getEmailFeedback());
+
+        $this->assertEquals(Foto::LOCATION_EXTERN, $immobilie->getKontaktperson()->getFoto()->getLocation());
+        $this->assertEquals('abc.jpg', $immobilie->getKontaktperson()->getFoto()->getDaten()->getPfad());
+        $this->assertEquals('JPEG', $immobilie->getKontaktperson()->getFoto()->getFormat());
+
+        $this->assertEquals('Schönes Appartment im Stadtzentrum', $immobilie->getFreitexte()->getObjekttitel());
+        $this->assertEquals('Hier können Hinweise auf die Regelung im Fernabsatzgesetz stehen.', $immobilie->getFreitexte()->getSonstigeAngaben());
+        $this->assertNotNull($immobilie->getFreitexte()->getObjektText());
+        $this->assertEquals('Nice appartment in the inner city', $immobilie->getFreitexte()->getObjektText()->getValue());
+        $this->assertEquals('en', $immobilie->getFreitexte()->getObjektText()->getLang());
     }
 
     public function testReadRealDataXml()
