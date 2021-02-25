@@ -1,6 +1,7 @@
 # OpenImmo PHP library
 
 [![Packagist](https://img.shields.io/packagist/v/ujamii/openimmo.svg?colorB=green&style=flat)](https://packagist.org/packages/ujamii/openimmo)
+[![Minimum PHP Version](https://img.shields.io/badge/php-7.3%2B-8892BF.svg?style=flat)](https://php.net/)
 [![Continuous Integration](https://github.com/ujamii/openimmo/actions/workflows/php.yml/badge.svg)](https://github.com/ujamii/openimmo/actions)
 [![codecov](https://codecov.io/gh/ujamii/openimmo/branch/master/graph/badge.svg?token=97D799UX1B)](https://codecov.io/gh/ujamii/openimmo)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fujamii%2Fopenimmo%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/ujamii/openimmo/master)
@@ -8,7 +9,7 @@
 OpenImmo and the OpenImmo logo are registered trademarks of the [OpenImmo e.V.](http://www.openimmo.de)
 Neither is this package an official distribution nor am I associated with this organisation!
 
-This library just wraps the OpenImmo XML format with some PHP7 classes.
+This library just wraps the OpenImmo XML format with some PHP7/8 classes.
 
 There is an official library available at http://www.openimmo.de/go.php/p/22/support20.htm which costs 95 EUR excl. VAT and is PHP5 only. 
 To completely convince you, you will only be allowed to see the code **after** you have paid and they have a no-refund policy. 
@@ -21,7 +22,6 @@ Do not be fooled by "Open" in OpenImmo ;-)
 
 ## TODOs
 
-- test/add PHP8 compatibility
 - add test cases, especially for the example file provided with the official download package.
 
 ## Installation
