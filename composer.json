@@ -1,6 +1,6 @@
 {
     "name": "ujamii/openimmo",
-    "description": "OpenImmo library for PHP7. Read and write OpenImmo xml format with JMS Serializer.",
+    "description": "OpenImmo library for PHP7/8. Read and write OpenImmo xml format with JMS Serializer.",
     "type": "library",
     "license": "GPL-3.0-only",
     "authors": [
