@@ -192,7 +192,7 @@ class SerializerTest extends TestCase
             </feld>
           </bewertung>';
         $subject = new Bewertung();
-        $subject->setFeld([new Feld('abc', 100, ['int'], ['kauf'])]);
+        $subject->setFeld([new Feld('abc', '100', ['int'], ['kauf'])]);
 
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($subject, 'xml'));
     }
