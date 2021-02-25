@@ -155,7 +155,7 @@ class ApiGenerator
 
         $class->addUseStatement('JMS\Serializer\Annotation\Inline');
         $class->setProperty($classProperty);
-        self::generateGetterAndSetter($classProperty, $class);
+        CodeGenUtil::generateGetterAndSetter($classProperty, $class);
     }
 
     /**
@@ -222,7 +222,7 @@ class ApiGenerator
         $class->setProperty($classProperty);
 
         $nullable = $property->getMin() === 0;
-        self::generateGetterAndSetter($classProperty, $class, true, $nullable);
+        CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable);
     }
 
     /**
@@ -294,7 +294,7 @@ class ApiGenerator
 
         $class->setProperty($classProperty);
 
-        self::generateGetterAndSetter($classProperty, $class, true, $nullable);
+        CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable);
     }
 
     /**
@@ -323,19 +323,19 @@ class ApiGenerator
                         break;
 
                     case 'minLength':
-                        self::addDescriptionPart($classProperty, 'Minimum length: ' . $options[0]['value']);
+                        CodeGenUtil::addDescriptionPart($classProperty, 'Minimum length: ' . $options[0]['value']);
                         break;
 
                     case 'minInclusive':
-                        self::addDescriptionPart($classProperty, 'Minimum value (inclusive): ' . $options[0]['value']);
+                        CodeGenUtil::addDescriptionPart($classProperty, 'Minimum value (inclusive): ' . $options[0]['value']);
                         break;
 
                     case 'maxInclusive':
-                        self::addDescriptionPart($classProperty, 'Maximum value (inclusive): ' . $options[0]['value']);
+                        CodeGenUtil::addDescriptionPart($classProperty, 'Maximum value (inclusive): ' . $options[0]['value']);
                         break;
 
                     case 'fractionDigits':
-                        self::addDescriptionPart($classProperty, 'Maximum precision: ' . $options[0]['value']);
+                        CodeGenUtil::addDescriptionPart($classProperty, 'Maximum precision: ' . $options[0]['value']);
                         break;
 
                     default:
@@ -344,38 +344,6 @@ class ApiGenerator
                 }
             }
         }
-    }
-
-    /**
-     * Adds a new description part to the given class property.
-     *
-     * @param PhpProperty $classProperty
-     * @param string $descriptionPart
-     * @param string $separator
-     *
-     * @return void
-     */
-    private static function addDescriptionPart(PhpProperty $classProperty, string $descriptionPart, string $separator = ', '): void
-    {
-        if ('' === trim($classProperty->getTypeDescription())) {
-            $currentDescriptionParts = [];
-        } else {
-            $currentDescriptionParts = explode($separator, $classProperty->getTypeDescription());
-        }
-        $currentDescriptionParts[] = $descriptionPart;
-        $classProperty->setTypeDescription(implode($separator, $currentDescriptionParts));
-    }
-
-    /**
-     * @param PhpProperty $property
-     * @param PhpClass $class
-     * @param bool $fluentApi
-     * @param bool $nullable
-     */
-    private static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true, $nullable = true): void
-    {
-        self::generateSetter($property, $class, $fluentApi, $nullable);
-        self::generateGetter($property, $class, $nullable);
     }
 
     /**
@@ -400,55 +368,6 @@ class ApiGenerator
     public function setGeneratorConfig(array $generatorConfig): void
     {
         $this->generatorConfig = $generatorConfig;
-    }
-
-    /**
-     * @param PhpProperty $property
-     * @param PhpClass $class
-     * @param bool $nullable
-     */
-    private static function generateGetter(PhpProperty $property, PhpClass $class, bool $nullable): void
-    {
-        $returnsArray = substr($property->getType(), -2) === '[]';
-        $getter       = PhpMethod::create('get' . ucfirst($property->getName()));
-        if ($returnsArray) {
-            $getterCode = 'return $this->' . $property->getName() . ' ?? [];';
-            $getter->setBody($getterCode);
-            $getter->setType('array');
-            $getter->setDescription('Returns array of ' . str_replace('[]', '', $property->getType()));
-            $getter->setNullable(false);
-        } else {
-            $getterCode = 'return $this->' . $property->getName() . ';';
-            $getter->setBody($getterCode);
-            $getter->setType($property->getType());
-            $getter->setNullable($nullable);
-        }
-        $class->setMethod($getter);
-    }
-
-    /**
-     * @param PhpProperty $property
-     * @param PhpClass $class
-     * @param bool $fluentApi
-     * @param bool $nullable
-     */
-    private static function generateSetter(PhpProperty $property, PhpClass $class, bool $fluentApi, bool $nullable): void
-    {
-        $setter   = PhpMethod::create('set' . ucfirst($property->getName()));
-        $isPlural = substr($property->getType(), -2) == '[]';
-
-        $parameter = PhpParameter::create($property->getName())
-                                 ->setType($isPlural ? 'array' : $property->getType())
-                                 ->setNullable($isPlural ? false : $nullable)
-                                 ->setDescription('Setter for ' . $property->getName());
-        $setter->addParameter($parameter);
-        $setterCode = '$this->' . $property->getName() . ' = $' . $property->getName() . ';';
-        if ($fluentApi) {
-            $setterCode .= PHP_EOL . 'return $this;';
-            $setter->getDocblock()->appendTag(TagFactory::create('return', $class->getName()));
-        }
-        $setter->setBody($setterCode);
-        $class->setMethod($setter);
     }
 
     /**
