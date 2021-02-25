@@ -17,5 +17,8 @@ class ComplexMixedTypeTest extends FileGeneratingTest
         ];
 
         $this->assertClassHasProperties($generatedClass, $properties);
+        $this->assertTrue($generatedClass->hasUseStatement('JMS\\Serializer\\Annotation\\Type'));
+        $this->assertTrue($generatedClass->hasUseStatement('JMS\\Serializer\\Annotation\\Inline'));
+        $this->assertTrue($generatedClass->hasUseStatement('JMS\\Serializer\\Annotation\\XmlAttribute'));
     }
 }
