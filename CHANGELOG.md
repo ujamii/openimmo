@@ -1,3 +1,14 @@
+## 0.9.0 (February 25, 2021)
+  - Merge pull request #11 from ujamii/feature/php8
+  - [TEST] added a comment to a bool assertion
+  - [TEST] added class use assertions
+  - [TEST] fixed class namespace
+  - [TEST] test classes are now included in the phpstan job
+  - [CLEANUP] move remaining static methods from ApiGenerator to a new CodeGenUtil class
+  - [TEST] added some tests for the example xml file
+  - [DOC] adjusted readme as PHP8 seems to work without issues
+  - [TASK] test ci build with php 8.0
+
 ## 0.8.1 (February 23, 2021)
   - Merge pull request #10 from ujamii/task/build-structure
   - [TEST] kill one more mutant
