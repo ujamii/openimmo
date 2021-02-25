@@ -15,6 +15,6 @@ class TypeWithInconsistentNamingTest extends FileGeneratingTest
         ];
 
         $this->assertClassHasProperties($generatedClass, $properties);
-        $this->assertTrue($generatedClass->hasUseStatement('JMS\Serializer\Annotation\SerializedName'));
+        $this->assertTrue($generatedClass->hasUseStatement('JMS\\Serializer\\Annotation\\SerializedName'));
     }
 }
