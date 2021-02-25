@@ -64,7 +64,7 @@ class ApiClassTest extends TestCase
                 break;
 
             case 'int':
-                $value = (int) mt_rand(0, 10000);
+                $value = mt_rand(0, 10000);
                 break;
 
             case 'bool':

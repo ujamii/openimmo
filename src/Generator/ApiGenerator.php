@@ -305,43 +305,41 @@ class ApiGenerator
      */
     private function parseRestriction(Restriction $restriction, string $nameInXsd, PhpClass $class, PhpProperty $classProperty): void
     {
-        if (count($restriction->getChecks()) > 0) {
-            foreach ($restriction->getChecks() as $type => $options) {
-                switch ($type) {
+        foreach ($restriction->getChecks() as $type => $options) {
+            switch ($type) {
 
-                    case 'enumeration':
-                        $constantPrefix = strtoupper($nameInXsd . '_');
-                        foreach ($options as $possibleValue) {
-                            $constantName = strtoupper($constantPrefix . str_replace([' ', '-'], '_', $possibleValue['value']));
-                            $class->setConstant($constantName, $possibleValue['value']);
-                        }
-                        $classProperty->getDocblock()->appendTag(TagFactory::create('see', $constantPrefix . '* constants'));
-                        break;
+                case 'enumeration':
+                    $constantPrefix = strtoupper($nameInXsd . '_');
+                    foreach ($options as $possibleValue) {
+                        $constantName = strtoupper($constantPrefix . str_replace([' ', '-'], '_', $possibleValue['value']));
+                        $class->setConstant($constantName, $possibleValue['value']);
+                    }
+                    $classProperty->getDocblock()->appendTag(TagFactory::create('see', $constantPrefix . '* constants'));
+                    break;
 
-                    case 'whiteSpace':
-                        // do nothing. This is not a real restriction, it is just an empty block.
-                        break;
+                case 'whiteSpace':
+                    // do nothing. This is not a real restriction, it is just an empty block.
+                    break;
 
-                    case 'minLength':
-                        CodeGenUtil::addDescriptionPart($classProperty, 'Minimum length: ' . $options[0]['value']);
-                        break;
+                case 'minLength':
+                    CodeGenUtil::addDescriptionPart($classProperty, 'Minimum length: ' . $options[0]['value']);
+                    break;
 
-                    case 'minInclusive':
-                        CodeGenUtil::addDescriptionPart($classProperty, 'Minimum value (inclusive): ' . $options[0]['value']);
-                        break;
+                case 'minInclusive':
+                    CodeGenUtil::addDescriptionPart($classProperty, 'Minimum value (inclusive): ' . $options[0]['value']);
+                    break;
 
-                    case 'maxInclusive':
-                        CodeGenUtil::addDescriptionPart($classProperty, 'Maximum value (inclusive): ' . $options[0]['value']);
-                        break;
+                case 'maxInclusive':
+                    CodeGenUtil::addDescriptionPart($classProperty, 'Maximum value (inclusive): ' . $options[0]['value']);
+                    break;
 
-                    case 'fractionDigits':
-                        CodeGenUtil::addDescriptionPart($classProperty, 'Maximum precision: ' . $options[0]['value']);
-                        break;
+                case 'fractionDigits':
+                    CodeGenUtil::addDescriptionPart($classProperty, 'Maximum precision: ' . $options[0]['value']);
+                    break;
 
-                    default:
-                        throw new \InvalidArgumentException(vsprintf('Type "%s" is not handled in %s->parseAttribute', [$type, __CLASS__]));
+                default:
+                    throw new \InvalidArgumentException(vsprintf('Type "%s" is not handled in %s->parseAttribute', [$type, __CLASS__]));
 
-                }
             }
         }
     }
