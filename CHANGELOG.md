@@ -1,3 +1,6 @@
+## 0.9.1 (February 25, 2021)
+  - [TEST] lowered the msi score as the infection job randomly finds new mutants although no code change has been made
+
 ## 0.9.0 (February 25, 2021)
   - Merge pull request #11 from ujamii/feature/php8
   - [TEST] added a comment to a bool assertion
