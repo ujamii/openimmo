@@ -87,7 +87,7 @@ abstract class FileGeneratingTest extends TestCase
     public function assertClassHasConstants(PhpClass $generatedClass, array $constants): void
     {
         foreach ($constants as $constantName => $constantValue) {
-            $this->assertTrue($generatedClass->hasConstant($constantName));
+            $this->assertTrue($generatedClass->hasConstant($constantName), "Constant {$constantName} does not exist");
             $this->assertEquals($constantValue, $generatedClass->getConstant($constantName)->getValue());
         }
         $this->assertCount(count($constants), $generatedClass->getConstantNames());
