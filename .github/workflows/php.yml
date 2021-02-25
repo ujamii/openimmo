@@ -100,4 +100,4 @@ jobs:
         run: composer install --no-interaction --no-progress
 
       - name: Execute Rector
-        run: vendor/bin/rector process src -c build/config/rector.php --dry-run
+        run: vendor/bin/rector process src tests -c build/config/rector.php --dry-run
