@@ -1,3 +1,25 @@
+## 0.9.2 (May 28, 2021)
+  - Merge pull request #18 from ujamii/dependabot/github_actions/actions/checkout-2.3.4
+  - Merge pull request #17 from ujamii/dependabot/github_actions/codecov/codecov-action-1.5.0
+  - Merge pull request #15 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.11.0
+  - Merge pull request #21 from ujamii/dependabot/composer/friendsofphp/php-cs-fixer-tw-2.18or-tw-3.0
+  - Merge pull request #22 from ujamii/dependabot/github_actions/actions/cache-2.1.6
+  - Bump actions/cache from 2.1.4 to 2.1.6
+  - Update friendsofphp/php-cs-fixer requirement from ^2.18 to ^2.18 || ^3.0
+  - Merge pull request #19 from ujamii/dependabot/composer/rector/rector-tw-0.9.31or-tw-0.11.0
+  - Update rector/rector requirement from ^0.9.31 to ^0.9.31 || ^0.11.0
+  - Bump actions/checkout from 2 to 2.3.4
+  - Bump codecov/codecov-action from 1 to 1.5.0
+  - Bump shivammathur/setup-php from 2 to 2.11.0
+  - Merge pull request #13 from ujamii/dependabot/github_actions/actions/cache-v2.1.4
+  - Bump actions/cache from v2 to v2.1.4
+  - Update dependabot.yml
+  - added dependabot config
+  - [DOC] added PHP8 to composer description
+  - Merge pull request #12 from ujamii/feature/rector
+  - [TEST] also run rector on tests directory
+  - [TEST] added rector to the project
+
 ## 0.9.1 (February 25, 2021)
   - [TEST] lowered the msi score as the infection job randomly finds new mutants although no code change has been made
 
