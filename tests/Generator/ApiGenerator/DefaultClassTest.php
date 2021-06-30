@@ -13,7 +13,7 @@ class DefaultClassTest extends FileGeneratingTest
 
         $this->assertClassHasConstants($generatedClass, [
             'BLICK_BERGE' => 'BERGE',
-            'BLICK_FERNE' => 'FERNE',
+            'BLICK_IN_DIE_FERNE' => 'IN DIE FERNE',
             'BLICK_MEER'  => 'MEER',
             'BLICK_SEE'   => 'SEE',
         ]);

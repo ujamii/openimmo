@@ -9,7 +9,7 @@
 			<xsd:attribute name="blick">
 				<xsd:simpleType>
 					<xsd:restriction base="xsd:string">
-						<xsd:enumeration value="FERNE"/>
+						<xsd:enumeration value="IN DIE FERNE"/>
 						<xsd:enumeration value="SEE"/>
 						<xsd:enumeration value="BERGE"/>
 						<xsd:enumeration value="MEER"/>
