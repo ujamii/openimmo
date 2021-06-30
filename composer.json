@@ -35,13 +35,15 @@
         }
     ],
     "require-dev": {
+        "ext-json": "*",
         "goetas-webservices/xsd-reader": "^0.3",
         "gossi/php-code-generator": "dev-prevent-fatal-error",
         "phpunit/phpunit": ">=7.5",
         "phpstan/phpstan": "^0.12",
         "infection/infection": ">=0.16",
         "friendsofphp/php-cs-fixer": "^2.18 || ^3.0",
-        "rector/rector": "^0.9.31 || ^0.11.0"
+        "rector/rector": "^0.9.31 || ^0.11.0",
+        "symfony/serializer": "^5.3"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
