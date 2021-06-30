@@ -27,6 +27,7 @@ return $config->setRules([
         'no_superfluous_elseif' => true,
         'no_useless_else' => true,
         'phpdoc_types' => true,
+        'no_superfluous_phpdoc_tags' => false,
         'phpdoc_types_order' => ['null_adjustment' => 'always_last', 'sort_algorithm' => 'none'],
         'return_type_declaration' => ['space_before' => 'none'],
     ])
