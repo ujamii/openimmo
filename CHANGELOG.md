@@ -1,3 +1,13 @@
+## 0.9.3 (June 30, 2021)
+  - [BUGFIX] dont remove phpdoc tags with rector for backwards compat in the api generation process
+  - [BUGFIX] dont remove phpdoc tags with phpcsfixer for backwards compat in the api generation process
+  - [TEST] add new constant name with spaces
+  - [CLEANUP] removed unused import
+  - [CI] fixed build pipeline
+  - [CLEANUP] removed old rules
+  - Merge pull request #23 from ujamii/dependabot/github_actions/codecov/codecov-action-1.5.2
+  - Bump codecov/codecov-action from 1.5.0 to 1.5.2
+
 ## 0.9.2 (May 28, 2021)
   - Merge pull request #18 from ujamii/dependabot/github_actions/actions/checkout-2.3.4
   - Merge pull request #17 from ujamii/dependabot/github_actions/codecov/codecov-action-1.5.0
