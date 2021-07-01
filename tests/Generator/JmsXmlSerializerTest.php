@@ -25,7 +25,7 @@ use Ujamii\OpenImmo\API\Vermarktungsart;
 use Ujamii\OpenImmo\API\Wohnung;
 use Ujamii\OpenImmo\Handler\DateTimeHandler;
 
-class SerializerTest extends TestCase
+class JmsXmlSerializerTest extends TestCase
 {
     /**
      * @var SerializerInterface
@@ -53,7 +53,8 @@ class SerializerTest extends TestCase
         $data->setKontaktperson((new Kontaktperson())->setAnrede('Herr'));
 
         $xmlContent = $this->serializer->serialize($data, 'xml');
-        $this->assertXmlStringEqualsXmlString('<immobilie><kontaktperson><anrede>Herr</anrede></kontaktperson></immobilie>', $xmlContent);
+        // as soon as https://github.com/schmittjoh/serializer/pull/883 is merged, the <name/> can be removed
+        $this->assertXmlStringEqualsXmlString('<immobilie><kontaktperson><anrede>Herr</anrede><name/></kontaktperson></immobilie>', $xmlContent);
     }
 
     public function testWriteUebertragungXml()
@@ -138,10 +139,14 @@ class SerializerTest extends TestCase
 
     public function testWriteAnbieterXml()
     {
+        // as soon as https://github.com/schmittjoh/serializer/pull/883 is merged, the <openimmo_anid/> can be removed
         $xmlString = '<openimmo>
-        <anbieter>
-        <firma >MusterMannFrau Immobilien</firma >
-        <lizenzkennung>ABCD13</lizenzkennung></anbieter></openimmo>';
+            <anbieter>
+            <firma >MusterMannFrau Immobilien</firma>
+            <lizenzkennung>ABCD13</lizenzkennung>
+            <openimmo_anid/>
+            </anbieter>
+        </openimmo>';
 
         $openImmo = new Openimmo();
         $anbieter = (new Anbieter())->setFirma('MusterMannFrau Immobilien')->setLizenzkennung('ABCD13');

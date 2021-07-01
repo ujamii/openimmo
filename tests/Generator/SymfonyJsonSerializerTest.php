@@ -30,7 +30,7 @@ use Ujamii\OpenImmo\API\Vermarktungsart;
 use Ujamii\OpenImmo\API\VerwaltungTechn;
 use Ujamii\OpenImmo\API\Wohnung;
 
-class JsonSerializerTest extends TestCase
+class SymfonyJsonSerializerTest extends TestCase
 {
     /**
      * @var SerializerInterface

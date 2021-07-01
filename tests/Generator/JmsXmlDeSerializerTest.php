@@ -18,7 +18,7 @@ use Ujamii\OpenImmo\API\Wohnung;
 use Ujamii\OpenImmo\API\Zimmer;
 use Ujamii\OpenImmo\Handler\DateTimeHandler;
 
-class DeSerializerTest extends TestCase
+class JmsXmlDeSerializerTest extends TestCase
 {
     /**
      * @var SerializerInterface
