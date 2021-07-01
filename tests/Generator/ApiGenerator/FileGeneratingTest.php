@@ -163,7 +163,9 @@ abstract class FileGeneratingTest extends TestCase
             if ($constructorParam->getType() == 'array') {
                 $this->assertEquals('[]', $constructorParam->getExpression());
             } else {
-                $this->assertNull($constructorParam->getValue());
+                if ($constructorParam->getNullable()) {
+                    $this->assertNull($constructorParam->getValue());
+                }
             }
 //        $this->assertFalse($constructor->getParameter($propertyName)->getNullable());
         }

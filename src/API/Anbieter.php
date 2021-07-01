@@ -2,6 +2,7 @@
 
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SkipWhenEmpty;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -28,9 +29,10 @@ class Anbieter
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $firma;
+    protected $firma = '';
 
     /**
      * @XmlList(inline = true, entry = "immobilie")
@@ -59,9 +61,10 @@ class Anbieter
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $openimmoAnid;
+    protected $openimmoAnid = '';
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")

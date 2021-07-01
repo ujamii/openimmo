@@ -2,6 +2,7 @@
 
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SkipWhenEmpty;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -31,9 +32,10 @@ class Foto
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $format;
+    protected $format = '';
 
     /**
      * required
@@ -50,7 +52,7 @@ class Foto
      * @param string $format Shortcut setter for format
      * @param Daten $daten Shortcut setter for daten
      */
-    public function __construct(string $location = null, string $format = null, Daten $daten = null)
+    public function __construct(string $location = null, string $format = '', Daten $daten = null)
     {
         $this->location = $location;
         $this->format = $format;
@@ -60,7 +62,7 @@ class Foto
     /**
      * @return Daten
      */
-    public function getDaten(): Daten
+    public function getDaten(): ?Daten
     {
         return $this->daten;
     }
@@ -85,7 +87,7 @@ class Foto
      * @param Daten $daten Setter for daten
      * @return Foto
      */
-    public function setDaten(Daten $daten)
+    public function setDaten(?Daten $daten)
     {
         $this->daten = $daten;
         return $this;

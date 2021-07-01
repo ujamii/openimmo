@@ -2,6 +2,7 @@
 
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SkipWhenEmpty;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -100,9 +101,10 @@ class Kontaktperson
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $name;
+    protected $name = '';
 
     /**
      * @Type("string")

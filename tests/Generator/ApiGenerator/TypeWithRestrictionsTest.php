@@ -23,5 +23,10 @@ class TypeWithRestrictionsTest extends FileGeneratingTest
 
         $telDurchw = $generatedClass->getProperty('telDurchw');
         $this->assertStringContainsString('Minimum length: 1', $telDurchw->getDocblock()->__toString());
+
+        require_once "{$this->tmpDir}{$generatedClass->getName()}.php";
+        $className = $generatedClass->getQualifiedName();
+        $subject = new $className();
+        $this->assertSame(0.0, $subject->getMwstSatz());
     }
 }

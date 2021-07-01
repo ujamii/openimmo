@@ -178,7 +178,11 @@ class ApiGenerator
             if ($typeIsArray) {
                 $phpParam->setExpression('[]');
             } else {
-                $phpParam->setValue(null);
+                if ($class->getProperty($classPropertyName)->getNullable()) {
+                    $phpParam->setValue(null);
+                } else {
+                    $phpParam->setValue($class->getProperty($classPropertyName)->getValue());
+                }
             }
             $constructor->addParameter($phpParam);
             $constructorCode[] = '$this->' . $classPropertyName . ' = $' . $classPropertyName . ';';
@@ -207,8 +211,27 @@ class ApiGenerator
         $phpType = TypeUtil::getValidPhpType($xsdType);
         $classProperty->setType($phpType);
 
-        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")'));
+        $serializerType = TypeUtil::getTypeForSerializer($xsdType);
+
+        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $serializerType . '")'));
         $class->addUseStatement('JMS\Serializer\Annotation\Type');
+
+        $nullable = $property->getMin() === 0;
+        // if the property type is an object, it should be nullable
+        if (strpos($serializerType, 'Ujamii\\OpenImmo\\API\\') === 0 || '\DateTime' === $phpType) {
+            $nullable = true;
+        }
+        if (!$nullable) {
+            $defaultValue = TypeUtil::getDefaultValueForType($phpType);
+            if ('[]' === substr($phpType, -2)) {
+                $classProperty->setExpression($defaultValue);
+            } else {
+                $classProperty->setValue($defaultValue);
+            }
+
+            $classProperty->getDocblock()->appendTag(TagFactory::create('SkipWhenEmpty'));
+            $class->addUseStatement('JMS\Serializer\Annotation\SkipWhenEmpty');
+        }
 
         if ($property->getType()->getRestriction()) {
             $this->parseRestriction(
@@ -220,8 +243,6 @@ class ApiGenerator
         }
 
         $class->setProperty($classProperty);
-
-        $nullable = $property->getMin() === 0;
         CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable);
     }
 

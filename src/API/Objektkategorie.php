@@ -73,7 +73,7 @@ class Objektkategorie
     /**
      * @return Nutzungsart
      */
-    public function getNutzungsart(): Nutzungsart
+    public function getNutzungsart(): ?Nutzungsart
     {
         return $this->nutzungsart;
     }
@@ -81,7 +81,7 @@ class Objektkategorie
     /**
      * @return Objektart
      */
-    public function getObjektart(): Objektart
+    public function getObjektart(): ?Objektart
     {
         return $this->objektart;
     }
@@ -119,7 +119,7 @@ class Objektkategorie
     /**
      * @return Vermarktungsart
      */
-    public function getVermarktungsart(): Vermarktungsart
+    public function getVermarktungsart(): ?Vermarktungsart
     {
         return $this->vermarktungsart;
     }
@@ -128,7 +128,7 @@ class Objektkategorie
      * @param Nutzungsart $nutzungsart Setter for nutzungsart
      * @return Objektkategorie
      */
-    public function setNutzungsart(Nutzungsart $nutzungsart)
+    public function setNutzungsart(?Nutzungsart $nutzungsart)
     {
         $this->nutzungsart = $nutzungsart;
         return $this;
@@ -138,7 +138,7 @@ class Objektkategorie
      * @param Objektart $objektart Setter for objektart
      * @return Objektkategorie
      */
-    public function setObjektart(Objektart $objektart)
+    public function setObjektart(?Objektart $objektart)
     {
         $this->objektart = $objektart;
         return $this;
@@ -178,7 +178,7 @@ class Objektkategorie
      * @param Vermarktungsart $vermarktungsart Setter for vermarktungsart
      * @return Objektkategorie
      */
-    public function setVermarktungsart(Vermarktungsart $vermarktungsart)
+    public function setVermarktungsart(?Vermarktungsart $vermarktungsart)
     {
         $this->vermarktungsart = $vermarktungsart;
         return $this;

@@ -2,6 +2,7 @@
 
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SkipWhenEmpty;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -51,9 +52,10 @@ class VerwaltungTechn
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $objektnrExtern;
+    protected $objektnrExtern = '';
 
     /**
      * @Type("string")
@@ -63,9 +65,10 @@ class VerwaltungTechn
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $openimmoObid;
+    protected $openimmoObid = '';
 
     /**
      * @Type("string")
@@ -121,7 +124,7 @@ class VerwaltungTechn
     /**
      * @return Aktion
      */
-    public function getAktion(): Aktion
+    public function getAktion(): ?Aktion
     {
         return $this->aktion;
     }
@@ -201,7 +204,7 @@ class VerwaltungTechn
     /**
      * @return \DateTime
      */
-    public function getStandVom(): \DateTime
+    public function getStandVom(): ?\DateTime
     {
         return $this->standVom;
     }
@@ -264,7 +267,7 @@ class VerwaltungTechn
      * @param Aktion $aktion Setter for aktion
      * @return VerwaltungTechn
      */
-    public function setAktion(Aktion $aktion)
+    public function setAktion(?Aktion $aktion)
     {
         $this->aktion = $aktion;
         return $this;
@@ -364,7 +367,7 @@ class VerwaltungTechn
      * @param \DateTime $standVom Setter for standVom
      * @return VerwaltungTechn
      */
-    public function setStandVom(\DateTime $standVom)
+    public function setStandVom(?\DateTime $standVom)
     {
         $this->standVom = $standVom;
         return $this;

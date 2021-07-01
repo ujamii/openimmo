@@ -103,6 +103,42 @@ class TypeUtil
     }
 
     /**
+     * @param string $propertyType
+     *
+     * @return false|float|int|string|null
+     */
+    public static function getDefaultValueForType(string $propertyType)
+    {
+        switch ($propertyType) {
+
+            case 'float':
+                $defaultValue = 0.0;
+                break;
+
+            case 'bool':
+                $defaultValue = false;
+                break;
+
+            case 'int':
+                $defaultValue = 0;
+                break;
+
+            case 'string':
+                $defaultValue = '';
+                break;
+
+            default:
+                if ('[]' === substr($propertyType, -2)) {
+                    $defaultValue = '[]';
+                } else {
+                    $defaultValue = null;
+                }
+        }
+
+        return $defaultValue;
+    }
+
+    /**
      * @param Type $typeFromXsd
      * @param string|null $propertyName
      *

@@ -2,6 +2,7 @@
 
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SkipWhenEmpty;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -18,9 +19,10 @@ class Openimmo
     /**
      * @XmlList(inline = true, entry = "anbieter")
      * @Type("array<Ujamii\OpenImmo\API\Anbieter>")
+     * @SkipWhenEmpty
      * @var Anbieter[]
      */
-    protected $anbieter;
+    protected $anbieter = [];
 
     /**
      * @Type("Ujamii\OpenImmo\API\Uebertragung")
@@ -69,7 +71,7 @@ class Openimmo
     /**
      * @return Uebertragung
      */
-    public function getUebertragung(): Uebertragung
+    public function getUebertragung(): ?Uebertragung
     {
         return $this->uebertragung;
     }
@@ -108,7 +110,7 @@ class Openimmo
      * @param Uebertragung $uebertragung Setter for uebertragung
      * @return Openimmo
      */
-    public function setUebertragung(Uebertragung $uebertragung)
+    public function setUebertragung(?Uebertragung $uebertragung)
     {
         $this->uebertragung = $uebertragung;
         return $this;

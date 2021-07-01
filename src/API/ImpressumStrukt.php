@@ -2,6 +2,7 @@
 
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SkipWhenEmpty;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlRoot;
 
@@ -15,63 +16,73 @@ class ImpressumStrukt
 {
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $berufsaufsichtsbehoerde;
+    protected $berufsaufsichtsbehoerde = '';
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $firmenanschrift;
+    protected $firmenanschrift = '';
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $firmenname;
+    protected $firmenname = '';
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $handelsregister;
+    protected $handelsregister = '';
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $handelsregisterNr;
+    protected $handelsregisterNr = '';
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $steuernummer;
+    protected $steuernummer = '';
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $telefon;
+    protected $telefon = '';
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $umsstId;
+    protected $umsstId = '';
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $vertretungsberechtigter;
+    protected $vertretungsberechtigter = '';
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $weiteres;
+    protected $weiteres = '';
 
     /**
      * @return string

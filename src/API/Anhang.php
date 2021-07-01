@@ -2,6 +2,7 @@
 
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SkipWhenEmpty;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -106,9 +107,10 @@ class Anhang
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $format;
+    protected $format = '';
 
     /**
      * optional
@@ -138,7 +140,7 @@ class Anhang
      * @param Check $check Shortcut setter for check
      * @param Daten $daten Shortcut setter for daten
      */
-    public function __construct(string $location = null, string $gruppe = null, string $anhangtitel = null, string $format = null, Check $check = null, Daten $daten = null)
+    public function __construct(string $location = null, string $gruppe = null, string $anhangtitel = null, string $format = '', Check $check = null, Daten $daten = null)
     {
         $this->location = $location;
         $this->gruppe = $gruppe;
@@ -167,7 +169,7 @@ class Anhang
     /**
      * @return Daten
      */
-    public function getDaten(): Daten
+    public function getDaten(): ?Daten
     {
         return $this->daten;
     }
@@ -220,7 +222,7 @@ class Anhang
      * @param Daten $daten Setter for daten
      * @return Anhang
      */
-    public function setDaten(Daten $daten)
+    public function setDaten(?Daten $daten)
     {
         $this->daten = $daten;
         return $this;

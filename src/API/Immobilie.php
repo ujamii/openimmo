@@ -183,7 +183,7 @@ class Immobilie
     /**
      * @return Geo
      */
-    public function getGeo(): Geo
+    public function getGeo(): ?Geo
     {
         return $this->geo;
     }
@@ -199,7 +199,7 @@ class Immobilie
     /**
      * @return Kontaktperson
      */
-    public function getKontaktperson(): Kontaktperson
+    public function getKontaktperson(): ?Kontaktperson
     {
         return $this->kontaktperson;
     }
@@ -207,7 +207,7 @@ class Immobilie
     /**
      * @return Objektkategorie
      */
-    public function getObjektkategorie(): Objektkategorie
+    public function getObjektkategorie(): ?Objektkategorie
     {
         return $this->objektkategorie;
     }
@@ -269,7 +269,7 @@ class Immobilie
     /**
      * @return VerwaltungTechn
      */
-    public function getVerwaltungTechn(): VerwaltungTechn
+    public function getVerwaltungTechn(): ?VerwaltungTechn
     {
         return $this->verwaltungTechn;
     }
@@ -356,7 +356,7 @@ class Immobilie
      * @param Geo $geo Setter for geo
      * @return Immobilie
      */
-    public function setGeo(Geo $geo)
+    public function setGeo(?Geo $geo)
     {
         $this->geo = $geo;
         return $this;
@@ -376,7 +376,7 @@ class Immobilie
      * @param Kontaktperson $kontaktperson Setter for kontaktperson
      * @return Immobilie
      */
-    public function setKontaktperson(Kontaktperson $kontaktperson)
+    public function setKontaktperson(?Kontaktperson $kontaktperson)
     {
         $this->kontaktperson = $kontaktperson;
         return $this;
@@ -386,7 +386,7 @@ class Immobilie
      * @param Objektkategorie $objektkategorie Setter for objektkategorie
      * @return Immobilie
      */
-    public function setObjektkategorie(Objektkategorie $objektkategorie)
+    public function setObjektkategorie(?Objektkategorie $objektkategorie)
     {
         $this->objektkategorie = $objektkategorie;
         return $this;
@@ -456,7 +456,7 @@ class Immobilie
      * @param VerwaltungTechn $verwaltungTechn Setter for verwaltungTechn
      * @return Immobilie
      */
-    public function setVerwaltungTechn(VerwaltungTechn $verwaltungTechn)
+    public function setVerwaltungTechn(?VerwaltungTechn $verwaltungTechn)
     {
         $this->verwaltungTechn = $verwaltungTechn;
         return $this;

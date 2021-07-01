@@ -3,7 +3,7 @@
 	<xsd:element name="type_with_restrictions">
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element ref="mwst_satz" minOccurs="0"/>
+				<xsd:element ref="mwst_satz" minOccurs="1"/>
 				<xsd:element ref="anzahl_etagen" minOccurs="0"/>
 				<xsd:element ref="tel_durchw"/>
 			</xsd:sequence>

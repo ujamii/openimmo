@@ -2,6 +2,7 @@
 
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SkipWhenEmpty;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -22,9 +23,10 @@ class Feld
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $name;
+    protected $name = '';
 
     /**
      * @XmlList(inline = true, entry = "typ")
@@ -35,9 +37,10 @@ class Feld
 
     /**
      * @Type("string")
+     * @SkipWhenEmpty
      * @var string
      */
-    protected $wert;
+    protected $wert = '';
 
     /**
      * @param string $name Shortcut setter for name
@@ -45,7 +48,7 @@ class Feld
      * @param array $typ Shortcut setter for typ
      * @param array $modus Shortcut setter for modus
      */
-    public function __construct(string $name = null, string $wert = null, array $typ = [], array $modus = [])
+    public function __construct(string $name = '', string $wert = '', array $typ = [], array $modus = [])
     {
         $this->name = $name;
         $this->wert = $wert;
