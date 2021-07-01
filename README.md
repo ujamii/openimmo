@@ -114,6 +114,41 @@ foreach ($openImmo->getAnbieter() as $anbieter) {
 }
 ```
 
+### Writing JSON (since v0.10)
+
+Although the OpenImmo standard just describes an XML version, there may be cases when you want to generate JSON from the given data.
+Sadly, there is [an issue](https://github.com/schmittjoh/serializer/issues/1251) with custom types, scalar values and JSON serialization in the JMS serializer.
+Nevertheless it is still possible to write JSON format with the [Symfony serializer component](https://symfony.com/doc/current/components/serializer.html).
+
+```shell
+composer require symfony/serializer
+```
+
+Generating JSON then works like this:
+
+```php
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+use Symfony\Component\Serializer\Serializer;
+
+$openImmoObject = null; // this may be any object of one of the API classes from this package
+$encoders    = [new JsonEncoder()];
+$normalizers = [
+    new DateTimeNormalizer(),
+    new GetSetMethodNormalizer()
+];
+$serializerContext = [
+    AbstractObjectNormalizer::SKIP_NULL_VALUES       => true,
+    AbstractObjectNormalizer::PRESERVE_EMPTY_OBJECTS => false,
+    'json_encode_options'                            => \JSON_PRESERVE_ZERO_FRACTION
+];
+
+$serializer = new Serializer($normalizers, $encoders);
+$jsonContent = $this->serializer->serialize($openImmoObject, JsonEncoder::FORMAT, $serializerContext);
+```
+
 ### Possible issues
 
 #### DateTime format not working
