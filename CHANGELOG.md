@@ -1,3 +1,9 @@
+## 0.10.0 (July 01, 2021)
+  - [DOC] added description and example of howto create json output
+  - [TEST] renamed tests cases to prepare for Symfony serializer usage
+  - [BUGFIX] not nullable object properties have appropriate default values now
+  - [TEST] added test for symfony serializer with json encoder
+
 ## 0.9.3 (June 30, 2021)
   - [BUGFIX] dont remove phpdoc tags with rector for backwards compat in the api generation process
   - [BUGFIX] dont remove phpdoc tags with phpcsfixer for backwards compat in the api generation process
