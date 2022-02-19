@@ -1,5 +1,4 @@
 <?php
-
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\Type;
@@ -9,42 +8,39 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class UserDefinedExtend
  *
- * @XmlRoot("user_defined_extend")
+ * @XmlRoot("user_defined_extend") 
  */
-class UserDefinedExtend
-{
-    /**
-     * @XmlList(inline = true, entry = "feld")
-     * @Type("array<Ujamii\OpenImmo\API\Feld>")
-     * @var Feld[]
-     */
-    protected $feld;
+class UserDefinedExtend {
 
-    /**
-     * @param array $feld Shortcut setter for feld
-     */
-    public function __construct(array $feld = [])
-    {
-        $this->feld = $feld;
-    }
+	/**
+	 * @XmlList(inline = true, entry = "feld") 
+	 * @Type("array<Ujamii\OpenImmo\API\Feld>") 
+	 * @var Feld[]
+	 */
+	protected $feld;
 
-    /**
-     * Returns array of Feld
-     *
-     * @return array
-     */
-    public function getFeld(): array
-    {
-        return $this->feld ?? [];
-    }
+	/**
+	 * @param array $feld Shortcut setter for feld
+	 */
+	public function __construct(array $feld = []) {
+		$this->feld = $feld;
+	}
 
-    /**
-     * @param array $feld Setter for feld
-     * @return UserDefinedExtend
-     */
-    public function setFeld(array $feld)
-    {
-        $this->feld = $feld;
-        return $this;
-    }
+	/**
+	 * Returns array of Feld
+	 *
+	 * @return array
+	 */
+	public function getFeld(): array {
+		return $this->feld ?? [];
+	}
+
+	/**
+	 * @param array $feld Setter for feld
+	 * @return UserDefinedExtend
+	 */
+	public function setFeld(array $feld) {
+		$this->feld = $feld;
+		return $this;
+	}
 }
