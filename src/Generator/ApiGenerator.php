@@ -35,12 +35,12 @@ class ApiGenerator
     /**
      * @var string
      */
-    protected $targetFolder = './src/API/';
+    protected string $targetFolder = './src/API/';
 
     /**
      * @var array<bool>
      */
-    protected $generatorConfig = [
+    protected array $generatorConfig = [
         'generateScalarTypeHints' => true,
         'generateNullableTypes'   => true,
         'generateReturnTypeHints' => true,
@@ -50,7 +50,7 @@ class ApiGenerator
      * Additional elements may be referenced inside of MixedComplexTypes.
      * @var array
      */
-    protected $referencedInlineElements = [];
+    protected array $referencedInlineElements = [];
 
     /**
      * Generates the API classes.
@@ -62,7 +62,7 @@ class ApiGenerator
      * @throws \GoetasWebservices\XML\XSDReader\Exception\IOException
      * @throws \Exception
      */
-    public function generateApiClasses(string $xsdFile, $wipeTargetFolder = true, $targetFolder = null): void
+    public function generateApiClasses(string $xsdFile, bool $wipeTargetFolder = true, ?string $targetFolder = null): void
     {
         $this->setTargetFolder($targetFolder);
 
@@ -418,7 +418,7 @@ class ApiGenerator
     public function setTargetFolder(?string $targetFolder): void
     {
         if (! is_null($targetFolder)) {
-            if (! (is_dir($targetFolder) && is_writeable($targetFolder))) {
+            if (! (is_dir($targetFolder) && is_writable($targetFolder))) {
                 throw new \Exception("Directory {$targetFolder} does not exist or is not writeable!");
             }
             $this->targetFolder = $targetFolder;
