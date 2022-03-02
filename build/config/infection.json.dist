@@ -11,8 +11,8 @@
         "text": "./build/coverage/infection-full.log",
         "summary": "./build/coverage/infection-summary.log",
         "github": true,
-        "badge": {
-            "branch": "master"
+        "stryker": {
+	        "badge": "master"
         }
     },
     "mutators": {

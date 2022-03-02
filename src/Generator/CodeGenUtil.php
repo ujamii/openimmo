@@ -27,7 +27,7 @@ class CodeGenUtil
         if ('' === trim($classProperty->getTypeDescription())) {
             $currentDescriptionParts = [];
         } else {
-            $currentDescriptionParts = explode($separator, $classProperty->getTypeDescription());
+            $currentDescriptionParts = explode($separator ?: ',', $classProperty->getTypeDescription());
         }
         $currentDescriptionParts[] = $descriptionPart;
         $classProperty->setTypeDescription(implode($separator, $currentDescriptionParts));
@@ -39,7 +39,7 @@ class CodeGenUtil
      * @param bool $fluentApi
      * @param bool $nullable
      */
-    public static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, $fluentApi = true, $nullable = true): void
+    public static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, bool $fluentApi = true, bool $nullable = true): void
     {
         self::generateSetter($property, $class, $fluentApi, $nullable);
         self::generateGetter($property, $class, $nullable);
@@ -78,7 +78,7 @@ class CodeGenUtil
     public static function generateSetter(PhpProperty $property, PhpClass $class, bool $fluentApi, bool $nullable): void
     {
         $setter   = PhpMethod::create('set' . ucfirst($property->getName()));
-        $isPlural = substr($property->getType(), -2) == '[]';
+        $isPlural = substr($property->getType(), -2) === '[]';
 
         $parameter = PhpParameter::create($property->getName())
                                  ->setType($isPlural ? 'array' : $property->getType())

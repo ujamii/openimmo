@@ -15,7 +15,7 @@ class TypeUtil
      */
     public static function getTypeForSerializer(string $type): string
     {
-        $isPlural = substr($type, -2) == '[]';
+        $isPlural = substr($type, -2) === '[]';
         $singular = str_replace('[]', '', $type);
         switch ($singular) {
 
@@ -176,7 +176,7 @@ class TypeUtil
      *
      * @return string
      */
-    public static function camelize(string $input, $lcFirst = false, $separators = ['-', '_']): string
+    public static function camelize(string $input, bool $lcFirst = false, array $separators = ['-', '_']): string
     {
         $camel = str_replace($separators, '', ucwords($input, implode('', $separators)));
         if ($lcFirst) {

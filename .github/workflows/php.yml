@@ -42,7 +42,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.3', '7.4', '8.0', '8.1']
+        php: ['7.4', '8.0', '8.1']
 
     steps:
     - uses: actions/checkout@v2.4.0
@@ -76,7 +76,6 @@ jobs:
         files: ./build/coverage/clover.xml
 
     - name: Run PHPInfection
-      if: ${{ matrix.php != '7.3' }}
       run: composer run infection
       env:
         STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
