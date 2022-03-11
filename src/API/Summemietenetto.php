@@ -10,70 +10,48 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Summemietenetto
  * Gesamtsumme der Mietkosten, UmSt. im Attribut.
- *
  * @XmlRoot("summemietenetto")
  */
 class Summemietenetto
 {
     /**
-     * optional
-     *
      * @Type("float")
      * @XmlAttribute
-     * @var float
+     * optional
      */
-    protected $summemieteust;
+    protected ?float $summemieteust;
 
     /**
      * @Inline
      * @Type("float")
-     * @var float
      */
-    protected $value;
+    protected ?float $value;
 
-    /**
-     * @param float $summemieteust Shortcut setter for summemieteust
-     * @param float $value Shortcut setter for value
-     */
-    public function __construct(float $summemieteust = null, float $value = null)
-    {
-        $this->summemieteust = $summemieteust;
-        $this->value = $value;
-    }
-
-    /**
-     * @return float
-     */
     public function getSummemieteust(): ?float
     {
         return $this->summemieteust;
     }
 
-    /**
-     * @return float
-     */
-    public function getValue(): ?float
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param float $summemieteust Setter for summemieteust
-     * @return Summemietenetto
-     */
-    public function setSummemieteust(?float $summemieteust)
+    public function setSummemieteust(?float $summemieteust): Summemietenetto
     {
         $this->summemieteust = $summemieteust;
         return $this;
     }
 
-    /**
-     * @param float $value Setter for value
-     * @return Summemietenetto
-     */
-    public function setValue(?float $value)
+    public function getValue(): ?float
+    {
+        return $this->value;
+    }
+
+    public function setValue(?float $value): Summemietenetto
     {
         $this->value = $value;
         return $this;
+    }
+
+    public function __construct(float $summemieteust = null, float $value = null)
+    {
+        $this->summemieteust = $summemieteust;
+        $this->value = $value;
     }
 }

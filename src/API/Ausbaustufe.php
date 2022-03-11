@@ -15,158 +15,111 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Ausbaustufe
 {
     /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("AUSBAUHAUS")
-     * @var bool
-     */
-    protected $ausbauhaus;
-
-    /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("BAUSATZHAUS")
-     * @var bool
+     * optional
      */
-    protected $bausatzhaus;
+    protected ?bool $bausatzhaus;
 
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
-     * @SerializedName("SCHLUESSELFERTIGMITBODENPLATTE")
-     * @var bool
+     * @SerializedName("AUSBAUHAUS")
+     * optional
      */
-    protected $schluesselfertigmitbodenplatte;
+    protected ?bool $ausbauhaus;
 
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("SCHLUESSELFERTIGMITKELLER")
-     * @var bool
+     * optional
      */
-    protected $schluesselfertigmitkeller;
+    protected ?bool $schluesselfertigmitkeller;
 
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("SCHLUESSELFERTIGOHNEBODENPLATTE")
-     * @var bool
+     * optional
      */
-    protected $schluesselfertigohnebodenplatte;
+    protected ?bool $schluesselfertigohnebodenplatte;
 
     /**
-     * @param bool $bausatzhaus Shortcut setter for bausatzhaus
-     * @param bool $ausbauhaus Shortcut setter for ausbauhaus
-     * @param bool $schluesselfertigmitkeller Shortcut setter for schluesselfertigmitkeller
-     * @param bool $schluesselfertigohnebodenplatte Shortcut setter for schluesselfertigohnebodenplatte
-     * @param bool $schluesselfertigmitbodenplatte Shortcut setter for schluesselfertigmitbodenplatte
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("SCHLUESSELFERTIGMITBODENPLATTE")
+     * optional
      */
-    public function __construct(bool $bausatzhaus = null, bool $ausbauhaus = null, bool $schluesselfertigmitkeller = null, bool $schluesselfertigohnebodenplatte = null, bool $schluesselfertigmitbodenplatte = null)
-    {
-        $this->bausatzhaus = $bausatzhaus;
-        $this->ausbauhaus = $ausbauhaus;
-        $this->schluesselfertigmitkeller = $schluesselfertigmitkeller;
-        $this->schluesselfertigohnebodenplatte = $schluesselfertigohnebodenplatte;
-        $this->schluesselfertigmitbodenplatte = $schluesselfertigmitbodenplatte;
-    }
+    protected ?bool $schluesselfertigmitbodenplatte;
 
-    /**
-     * @return bool
-     */
-    public function getAusbauhaus(): ?bool
-    {
-        return $this->ausbauhaus;
-    }
-
-    /**
-     * @return bool
-     */
     public function getBausatzhaus(): ?bool
     {
         return $this->bausatzhaus;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSchluesselfertigmitbodenplatte(): ?bool
-    {
-        return $this->schluesselfertigmitbodenplatte;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getSchluesselfertigmitkeller(): ?bool
-    {
-        return $this->schluesselfertigmitkeller;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getSchluesselfertigohnebodenplatte(): ?bool
-    {
-        return $this->schluesselfertigohnebodenplatte;
-    }
-
-    /**
-     * @param bool $ausbauhaus Setter for ausbauhaus
-     * @return Ausbaustufe
-     */
-    public function setAusbauhaus(?bool $ausbauhaus)
-    {
-        $this->ausbauhaus = $ausbauhaus;
-        return $this;
-    }
-
-    /**
-     * @param bool $bausatzhaus Setter for bausatzhaus
-     * @return Ausbaustufe
-     */
-    public function setBausatzhaus(?bool $bausatzhaus)
+    public function setBausatzhaus(?bool $bausatzhaus): Ausbaustufe
     {
         $this->bausatzhaus = $bausatzhaus;
         return $this;
     }
 
-    /**
-     * @param bool $schluesselfertigmitbodenplatte Setter for schluesselfertigmitbodenplatte
-     * @return Ausbaustufe
-     */
-    public function setSchluesselfertigmitbodenplatte(?bool $schluesselfertigmitbodenplatte)
+    public function getAusbauhaus(): ?bool
     {
-        $this->schluesselfertigmitbodenplatte = $schluesselfertigmitbodenplatte;
+        return $this->ausbauhaus;
+    }
+
+    public function setAusbauhaus(?bool $ausbauhaus): Ausbaustufe
+    {
+        $this->ausbauhaus = $ausbauhaus;
         return $this;
     }
 
-    /**
-     * @param bool $schluesselfertigmitkeller Setter for schluesselfertigmitkeller
-     * @return Ausbaustufe
-     */
-    public function setSchluesselfertigmitkeller(?bool $schluesselfertigmitkeller)
+    public function getSchluesselfertigmitkeller(): ?bool
+    {
+        return $this->schluesselfertigmitkeller;
+    }
+
+    public function setSchluesselfertigmitkeller(?bool $schluesselfertigmitkeller): Ausbaustufe
     {
         $this->schluesselfertigmitkeller = $schluesselfertigmitkeller;
         return $this;
     }
 
-    /**
-     * @param bool $schluesselfertigohnebodenplatte Setter for schluesselfertigohnebodenplatte
-     * @return Ausbaustufe
-     */
-    public function setSchluesselfertigohnebodenplatte(?bool $schluesselfertigohnebodenplatte)
+    public function getSchluesselfertigohnebodenplatte(): ?bool
+    {
+        return $this->schluesselfertigohnebodenplatte;
+    }
+
+    public function setSchluesselfertigohnebodenplatte(?bool $schluesselfertigohnebodenplatte): Ausbaustufe
     {
         $this->schluesselfertigohnebodenplatte = $schluesselfertigohnebodenplatte;
         return $this;
+    }
+
+    public function getSchluesselfertigmitbodenplatte(): ?bool
+    {
+        return $this->schluesselfertigmitbodenplatte;
+    }
+
+    public function setSchluesselfertigmitbodenplatte(?bool $schluesselfertigmitbodenplatte): Ausbaustufe
+    {
+        $this->schluesselfertigmitbodenplatte = $schluesselfertigmitbodenplatte;
+        return $this;
+    }
+
+    public function __construct(
+        bool $bausatzhaus = null,
+        bool $ausbauhaus = null,
+        bool $schluesselfertigmitkeller = null,
+        bool $schluesselfertigohnebodenplatte = null,
+        bool $schluesselfertigmitbodenplatte = null
+    ) {
+        $this->bausatzhaus = $bausatzhaus;
+        $this->ausbauhaus = $ausbauhaus;
+        $this->schluesselfertigmitkeller = $schluesselfertigmitkeller;
+        $this->schluesselfertigohnebodenplatte = $schluesselfertigohnebodenplatte;
+        $this->schluesselfertigmitbodenplatte = $schluesselfertigmitbodenplatte;
     }
 }

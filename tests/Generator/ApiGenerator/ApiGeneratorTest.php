@@ -4,29 +4,6 @@ namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 class ApiGeneratorTest extends FileGeneratingTest
 {
-    public function testDefaultGeneratorConfig(): void
-    {
-        $config = [
-            'generateScalarTypeHints' => true,
-            'generateNullableTypes'   => true,
-            'generateReturnTypeHints' => true,
-        ];
-
-        $this->assertEquals($config, $this->generator->getGeneratorConfig());
-    }
-
-    public function testSetGeneratorConfig(): void
-    {
-        $config = [
-            'generateScalarTypeHints' => false,
-            'generateNullableTypes'   => false,
-            'generateReturnTypeHints' => false,
-        ];
-        $this->generator->setGeneratorConfig($config);
-
-        $this->assertEquals($config, $this->generator->getGeneratorConfig());
-    }
-
     public function testDefaultTargetFolder(): void
     {
         $this->assertEquals('./src/API/', $this->generator->getTargetFolder());

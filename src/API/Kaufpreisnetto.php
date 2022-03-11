@@ -10,70 +10,48 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Kaufpreisnetto
  * Ausgewiesene Kaufpreis Netto, Optional mit Umst im Attribut. Speziell für Gewerbe
- *
  * @XmlRoot("kaufpreisnetto")
  */
 class Kaufpreisnetto
 {
     /**
-     * optional
-     *
      * @Type("float")
      * @XmlAttribute
-     * @var float
+     * optional
      */
-    protected $kaufpreisust;
+    protected ?float $kaufpreisust;
 
     /**
      * @Inline
      * @Type("float")
-     * @var float
      */
-    protected $value;
+    protected ?float $value;
 
-    /**
-     * @param float $kaufpreisust Shortcut setter for kaufpreisust
-     * @param float $value Shortcut setter for value
-     */
-    public function __construct(float $kaufpreisust = null, float $value = null)
-    {
-        $this->kaufpreisust = $kaufpreisust;
-        $this->value = $value;
-    }
-
-    /**
-     * @return float
-     */
     public function getKaufpreisust(): ?float
     {
         return $this->kaufpreisust;
     }
 
-    /**
-     * @return float
-     */
-    public function getValue(): ?float
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param float $kaufpreisust Setter for kaufpreisust
-     * @return Kaufpreisnetto
-     */
-    public function setKaufpreisust(?float $kaufpreisust)
+    public function setKaufpreisust(?float $kaufpreisust): Kaufpreisnetto
     {
         $this->kaufpreisust = $kaufpreisust;
         return $this;
     }
 
-    /**
-     * @param float $value Setter for value
-     * @return Kaufpreisnetto
-     */
-    public function setValue(?float $value)
+    public function getValue(): ?float
+    {
+        return $this->value;
+    }
+
+    public function setValue(?float $value): Kaufpreisnetto
     {
         $this->value = $value;
         return $this;
+    }
+
+    public function __construct(float $kaufpreisust = null, float $value = null)
+    {
+        $this->kaufpreisust = $kaufpreisust;
+        $this->value = $value;
     }
 }

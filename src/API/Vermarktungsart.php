@@ -10,134 +10,91 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Vermarktungsart
  * Vermarktungsart, Optionen kombinierbar, Kauf + Miete
- *
  * @XmlRoot("vermarktungsart")
  */
 class Vermarktungsart
 {
     /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("ERBPACHT")
-     * @var bool
-     */
-    protected $erbpacht;
-
-    /**
-     * required
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("KAUF")
-     * @var bool
-     */
-    protected $kauf;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("LEASING")
-     * @var bool
-     */
-    protected $leasing;
-
-    /**
      * required
-     *
+     */
+    protected ?bool $kauf;
+
+    /**
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("MIETE_PACHT")
-     * @var bool
+     * required
      */
-    protected $mietePacht;
+    protected ?bool $mietePacht;
 
     /**
-     * @param bool $kauf Shortcut setter for kauf
-     * @param bool $mietePacht Shortcut setter for mietePacht
-     * @param bool $erbpacht Shortcut setter for erbpacht
-     * @param bool $leasing Shortcut setter for leasing
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("ERBPACHT")
+     * optional
      */
+    protected ?bool $erbpacht;
+
+    /**
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("LEASING")
+     * optional
+     */
+    protected ?bool $leasing;
+
+    public function getKauf(): bool
+    {
+        return $this->kauf;
+    }
+
+    public function setKauf(bool $kauf): Vermarktungsart
+    {
+        $this->kauf = $kauf;
+        return $this;
+    }
+
+    public function getMietePacht(): bool
+    {
+        return $this->mietePacht;
+    }
+
+    public function setMietePacht(bool $mietePacht): Vermarktungsart
+    {
+        $this->mietePacht = $mietePacht;
+        return $this;
+    }
+
+    public function getErbpacht(): ?bool
+    {
+        return $this->erbpacht;
+    }
+
+    public function setErbpacht(?bool $erbpacht): Vermarktungsart
+    {
+        $this->erbpacht = $erbpacht;
+        return $this;
+    }
+
+    public function getLeasing(): ?bool
+    {
+        return $this->leasing;
+    }
+
+    public function setLeasing(?bool $leasing): Vermarktungsart
+    {
+        $this->leasing = $leasing;
+        return $this;
+    }
+
     public function __construct(bool $kauf = null, bool $mietePacht = null, bool $erbpacht = null, bool $leasing = null)
     {
         $this->kauf = $kauf;
         $this->mietePacht = $mietePacht;
         $this->erbpacht = $erbpacht;
         $this->leasing = $leasing;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getErbpacht(): ?bool
-    {
-        return $this->erbpacht;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getKauf(): bool
-    {
-        return $this->kauf;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getLeasing(): ?bool
-    {
-        return $this->leasing;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getMietePacht(): bool
-    {
-        return $this->mietePacht;
-    }
-
-    /**
-     * @param bool $erbpacht Setter for erbpacht
-     * @return Vermarktungsart
-     */
-    public function setErbpacht(?bool $erbpacht)
-    {
-        $this->erbpacht = $erbpacht;
-        return $this;
-    }
-
-    /**
-     * @param bool $kauf Setter for kauf
-     * @return Vermarktungsart
-     */
-    public function setKauf(bool $kauf)
-    {
-        $this->kauf = $kauf;
-        return $this;
-    }
-
-    /**
-     * @param bool $leasing Setter for leasing
-     * @return Vermarktungsart
-     */
-    public function setLeasing(?bool $leasing)
-    {
-        $this->leasing = $leasing;
-        return $this;
-    }
-
-    /**
-     * @param bool $mietePacht Setter for mietePacht
-     * @return Vermarktungsart
-     */
-    public function setMietePacht(bool $mietePacht)
-    {
-        $this->mietePacht = $mietePacht;
-        return $this;
     }
 }

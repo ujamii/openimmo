@@ -10,251 +10,149 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Anhang
  * Element für Anhänge
- *
  * @XmlRoot("anhang")
  */
 class Anhang
 {
-    /**
-     */
+    public const LOCATION_INTERN = 'INTERN';
+    public const LOCATION_EXTERN = 'EXTERN';
+    public const LOCATION_REMOTE = 'REMOTE';
+    public const GRUPPE_TITELBILD = 'TITELBILD';
+    public const GRUPPE_INNENANSICHTEN = 'INNENANSICHTEN';
+    public const GRUPPE_AUSSENANSICHTEN = 'AUSSENANSICHTEN';
+    public const GRUPPE_GRUNDRISS = 'GRUNDRISS';
+    public const GRUPPE_KARTEN_LAGEPLAN = 'KARTEN_LAGEPLAN';
     public const GRUPPE_ANBIETERLOGO = 'ANBIETERLOGO';
-
-    /**
-     */
+    public const GRUPPE_BILD = 'BILD';
+    public const GRUPPE_DOKUMENTE = 'DOKUMENTE';
+    public const GRUPPE_LINKS = 'LINKS';
+    public const GRUPPE_PANORAMA = 'PANORAMA';
+    public const GRUPPE_QRCODE = 'QRCODE';
+    public const GRUPPE_FILM = 'FILM';
+    public const GRUPPE_FILMLINK = 'FILMLINK';
+    public const GRUPPE_EPASS_SKALA = 'EPASS-SKALA';
     public const GRUPPE_ANBOBJURL = 'ANBOBJURL';
 
     /**
+     * @Type("string")
+     * @XmlAttribute
+     * required
+     * @see LOCATION_* constants
      */
-    public const GRUPPE_AUSSENANSICHTEN = 'AUSSENANSICHTEN';
+    protected ?string $location;
 
     /**
+     * @Type("string")
+     * @XmlAttribute
+     * optional
+     * @see GRUPPE_* constants
      */
-    public const GRUPPE_BILD = 'BILD';
+    protected ?string $gruppe;
 
     /**
+     * @Type("string")
+     * @var ?string
      */
-    public const GRUPPE_DOKUMENTE = 'DOKUMENTE';
-
-    /**
-     */
-    public const GRUPPE_EPASS_SKALA = 'EPASS-SKALA';
-
-    /**
-     */
-    public const GRUPPE_FILM = 'FILM';
-
-    /**
-     */
-    public const GRUPPE_FILMLINK = 'FILMLINK';
-
-    /**
-     */
-    public const GRUPPE_GRUNDRISS = 'GRUNDRISS';
-
-    /**
-     */
-    public const GRUPPE_INNENANSICHTEN = 'INNENANSICHTEN';
-
-    /**
-     */
-    public const GRUPPE_KARTEN_LAGEPLAN = 'KARTEN_LAGEPLAN';
-
-    /**
-     */
-    public const GRUPPE_LINKS = 'LINKS';
-
-    /**
-     */
-    public const GRUPPE_PANORAMA = 'PANORAMA';
-
-    /**
-     */
-    public const GRUPPE_QRCODE = 'QRCODE';
-
-    /**
-     */
-    public const GRUPPE_TITELBILD = 'TITELBILD';
-
-    /**
-     */
-    public const LOCATION_EXTERN = 'EXTERN';
-
-    /**
-     */
-    public const LOCATION_INTERN = 'INTERN';
-
-    /**
-     */
-    public const LOCATION_REMOTE = 'REMOTE';
+    protected ?string $anhangtitel = null;
 
     /**
      * @Type("string")
      * @var string
+     * @SkipWhenEmpty
      */
-    protected $anhangtitel;
+    protected string $format = '';
 
     /**
      * @Type("Ujamii\OpenImmo\API\Check")
-     * @var Check
+     * @var ?\Ujamii\OpenImmo\API\Check
      */
-    protected $check;
+    protected ?Check $check = null;
 
     /**
      * @Type("Ujamii\OpenImmo\API\Daten")
-     * @var Daten
+     * @var ?\Ujamii\OpenImmo\API\Daten
      */
-    protected $daten;
+    protected ?Daten $daten = null;
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     * @var string
-     */
-    protected $format = '';
-
-    /**
-     * optional
-     *
-     * @Type("string")
-     * @XmlAttribute
-     * @see GRUPPE_* constants
-     * @var string
-     */
-    protected $gruppe;
-
-    /**
-     * required
-     *
-     * @Type("string")
-     * @XmlAttribute
-     * @see LOCATION_* constants
-     * @var string
-     */
-    protected $location;
-
-    /**
-     * @param string $location Shortcut setter for location
-     * @param string $gruppe Shortcut setter for gruppe
-     * @param string $anhangtitel Shortcut setter for anhangtitel
-     * @param string $format Shortcut setter for format
-     * @param Check $check Shortcut setter for check
-     * @param Daten $daten Shortcut setter for daten
-     */
-    public function __construct(string $location = null, string $gruppe = null, string $anhangtitel = null, string $format = '', Check $check = null, Daten $daten = null)
-    {
-        $this->location = $location;
-        $this->gruppe = $gruppe;
-        $this->anhangtitel = $anhangtitel;
-        $this->format = $format;
-        $this->check = $check;
-        $this->daten = $daten;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAnhangtitel(): ?string
-    {
-        return $this->anhangtitel;
-    }
-
-    /**
-     * @return Check
-     */
-    public function getCheck(): ?Check
-    {
-        return $this->check;
-    }
-
-    /**
-     * @return Daten
-     */
-    public function getDaten(): ?Daten
-    {
-        return $this->daten;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFormat(): string
-    {
-        return $this->format;
-    }
-
-    /**
-     * @return string
-     */
-    public function getGruppe(): ?string
-    {
-        return $this->gruppe;
-    }
-
-    /**
-     * @return string
-     */
     public function getLocation(): string
     {
         return $this->location;
     }
 
-    /**
-     * @param string $anhangtitel Setter for anhangtitel
-     * @return Anhang
-     */
-    public function setAnhangtitel(?string $anhangtitel)
+    public function setLocation(string $location): Anhang
     {
-        $this->anhangtitel = $anhangtitel;
+        $this->location = $location;
         return $this;
     }
 
-    /**
-     * @param Check $check Setter for check
-     * @return Anhang
-     */
-    public function setCheck(?Check $check)
+    public function getGruppe(): string
     {
-        $this->check = $check;
-        return $this;
+        return $this->gruppe;
     }
 
-    /**
-     * @param Daten $daten Setter for daten
-     * @return Anhang
-     */
-    public function setDaten(?Daten $daten)
-    {
-        $this->daten = $daten;
-        return $this;
-    }
-
-    /**
-     * @param string $format Setter for format
-     * @return Anhang
-     */
-    public function setFormat(string $format)
-    {
-        $this->format = $format;
-        return $this;
-    }
-
-    /**
-     * @param string $gruppe Setter for gruppe
-     * @return Anhang
-     */
-    public function setGruppe(?string $gruppe)
+    public function setGruppe(string $gruppe): Anhang
     {
         $this->gruppe = $gruppe;
         return $this;
     }
 
-    /**
-     * @param string $location Setter for location
-     * @return Anhang
-     */
-    public function setLocation(string $location)
+    public function getAnhangtitel(): ?string
     {
-        $this->location = $location;
+        return $this->anhangtitel;
+    }
+
+    public function setAnhangtitel(?string $anhangtitel): Anhang
+    {
+        $this->anhangtitel = $anhangtitel;
         return $this;
+    }
+
+    public function getFormat(): string
+    {
+        return $this->format;
+    }
+
+    public function setFormat(string $format): Anhang
+    {
+        $this->format = $format;
+        return $this;
+    }
+
+    public function getCheck(): ?Check
+    {
+        return $this->check;
+    }
+
+    public function setCheck(?Check $check): Anhang
+    {
+        $this->check = $check;
+        return $this;
+    }
+
+    public function getDaten(): ?Daten
+    {
+        return $this->daten;
+    }
+
+    public function setDaten(?Daten $daten): Anhang
+    {
+        $this->daten = $daten;
+        return $this;
+    }
+
+    public function __construct(
+        string $location = null,
+        string $gruppe = null,
+        string $anhangtitel = null,
+        string $format = null,
+        \Ujamii\OpenImmo\API\Check $check = null,
+        \Ujamii\OpenImmo\API\Daten $daten = null
+    ) {
+        $this->location = $location;
+        $this->gruppe = $gruppe;
+        $this->anhangtitel = $anhangtitel;
+        $this->format = $format;
+        $this->check = $check;
+        $this->daten = $daten;
     }
 }

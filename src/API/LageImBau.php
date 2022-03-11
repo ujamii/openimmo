@@ -10,134 +10,91 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class LageImBau
  * Angabe über die Lage der Immobilie im Gesamtgebäude, Optionen kombinierbar
- *
  * @XmlRoot("lage_im_bau")
  */
 class LageImBau
 {
     /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("HINTEN")
-     * @var bool
-     */
-    protected $hinten;
-
-    /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("LINKS")
-     * @var bool
+     * optional
      */
-    protected $links;
+    protected ?bool $links;
 
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("RECHTS")
-     * @var bool
+     * optional
      */
-    protected $rechts;
+    protected ?bool $rechts;
 
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("VORNE")
-     * @var bool
+     * optional
      */
-    protected $vorne;
+    protected ?bool $vorne;
 
     /**
-     * @param bool $links Shortcut setter for links
-     * @param bool $rechts Shortcut setter for rechts
-     * @param bool $vorne Shortcut setter for vorne
-     * @param bool $hinten Shortcut setter for hinten
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("HINTEN")
+     * optional
      */
+    protected ?bool $hinten;
+
+    public function getLinks(): ?bool
+    {
+        return $this->links;
+    }
+
+    public function setLinks(?bool $links): LageImBau
+    {
+        $this->links = $links;
+        return $this;
+    }
+
+    public function getRechts(): ?bool
+    {
+        return $this->rechts;
+    }
+
+    public function setRechts(?bool $rechts): LageImBau
+    {
+        $this->rechts = $rechts;
+        return $this;
+    }
+
+    public function getVorne(): ?bool
+    {
+        return $this->vorne;
+    }
+
+    public function setVorne(?bool $vorne): LageImBau
+    {
+        $this->vorne = $vorne;
+        return $this;
+    }
+
+    public function getHinten(): ?bool
+    {
+        return $this->hinten;
+    }
+
+    public function setHinten(?bool $hinten): LageImBau
+    {
+        $this->hinten = $hinten;
+        return $this;
+    }
+
     public function __construct(bool $links = null, bool $rechts = null, bool $vorne = null, bool $hinten = null)
     {
         $this->links = $links;
         $this->rechts = $rechts;
         $this->vorne = $vorne;
         $this->hinten = $hinten;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getHinten(): ?bool
-    {
-        return $this->hinten;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getLinks(): ?bool
-    {
-        return $this->links;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getRechts(): ?bool
-    {
-        return $this->rechts;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getVorne(): ?bool
-    {
-        return $this->vorne;
-    }
-
-    /**
-     * @param bool $hinten Setter for hinten
-     * @return LageImBau
-     */
-    public function setHinten(?bool $hinten)
-    {
-        $this->hinten = $hinten;
-        return $this;
-    }
-
-    /**
-     * @param bool $links Setter for links
-     * @return LageImBau
-     */
-    public function setLinks(?bool $links)
-    {
-        $this->links = $links;
-        return $this;
-    }
-
-    /**
-     * @param bool $rechts Setter for rechts
-     * @return LageImBau
-     */
-    public function setRechts(?bool $rechts)
-    {
-        $this->rechts = $rechts;
-        return $this;
-    }
-
-    /**
-     * @param bool $vorne Setter for vorne
-     * @return LageImBau
-     */
-    public function setVorne(?bool $vorne)
-    {
-        $this->vorne = $vorne;
-        return $this;
     }
 }

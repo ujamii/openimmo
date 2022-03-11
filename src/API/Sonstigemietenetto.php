@@ -10,70 +10,48 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Sonstigemietenetto
  * Ergänzenden Mietkosten, UmSt. im Attribut.
- *
  * @XmlRoot("sonstigemietenetto")
  */
 class Sonstigemietenetto
 {
     /**
-     * optional
-     *
      * @Type("float")
      * @XmlAttribute
-     * @var float
+     * optional
      */
-    protected $sonstigemieteust;
+    protected ?float $sonstigemieteust;
 
     /**
      * @Inline
      * @Type("float")
-     * @var float
      */
-    protected $value;
+    protected ?float $value;
 
-    /**
-     * @param float $sonstigemieteust Shortcut setter for sonstigemieteust
-     * @param float $value Shortcut setter for value
-     */
-    public function __construct(float $sonstigemieteust = null, float $value = null)
-    {
-        $this->sonstigemieteust = $sonstigemieteust;
-        $this->value = $value;
-    }
-
-    /**
-     * @return float
-     */
     public function getSonstigemieteust(): ?float
     {
         return $this->sonstigemieteust;
     }
 
-    /**
-     * @return float
-     */
-    public function getValue(): ?float
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param float $sonstigemieteust Setter for sonstigemieteust
-     * @return Sonstigemietenetto
-     */
-    public function setSonstigemieteust(?float $sonstigemieteust)
+    public function setSonstigemieteust(?float $sonstigemieteust): Sonstigemietenetto
     {
         $this->sonstigemieteust = $sonstigemieteust;
         return $this;
     }
 
-    /**
-     * @param float $value Setter for value
-     * @return Sonstigemietenetto
-     */
-    public function setValue(?float $value)
+    public function getValue(): ?float
+    {
+        return $this->value;
+    }
+
+    public function setValue(?float $value): Sonstigemietenetto
     {
         $this->value = $value;
         return $this;
+    }
+
+    public function __construct(float $sonstigemieteust = null, float $value = null)
+    {
+        $this->sonstigemieteust = $sonstigemieteust;
+        $this->value = $value;
     }
 }

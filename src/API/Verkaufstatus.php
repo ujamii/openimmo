@@ -9,56 +9,35 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Verkaufstatus
  * Anzeige ob z.B schon verkauft, Optionen nicht kombinierbar
- *
  * @XmlRoot("verkaufstatus")
  */
 class Verkaufstatus
 {
-    /**
-     */
     public const STAND_OFFEN = 'OFFEN';
-
-    /**
-     */
     public const STAND_RESERVIERT = 'RESERVIERT';
-
-    /**
-     */
     public const STAND_VERKAUFT = 'VERKAUFT';
 
     /**
-     * optional
-     *
      * @Type("string")
      * @XmlAttribute
+     * optional
      * @see STAND_* constants
-     * @var string
      */
-    protected $stand;
+    protected ?string $stand;
 
-    /**
-     * @param string $stand Shortcut setter for stand
-     */
-    public function __construct(string $stand = null)
-    {
-        $this->stand = $stand;
-    }
-
-    /**
-     * @return string
-     */
-    public function getStand(): ?string
+    public function getStand(): string
     {
         return $this->stand;
     }
 
-    /**
-     * @param string $stand Setter for stand
-     * @return Verkaufstatus
-     */
-    public function setStand(?string $stand)
+    public function setStand(string $stand): Verkaufstatus
     {
         $this->stand = $stand;
         return $this;
+    }
+
+    public function __construct(string $stand = null)
+    {
+        $this->stand = $stand;
     }
 }

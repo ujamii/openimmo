@@ -9,100 +9,46 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Wohnung
  * Objektart / Typ f. Wohnungen
- *
  * @XmlRoot("wohnung")
  */
 class Wohnung
 {
-    /**
-     */
-    public const WOHNUNGTYP_APARTMENT = 'APARTMENT';
-
-    /**
-     */
-    public const WOHNUNGTYP_ATTIKAWOHNUNG = 'ATTIKAWOHNUNG';
-
-    /**
-     */
     public const WOHNUNGTYP_DACHGESCHOSS = 'DACHGESCHOSS';
-
-    /**
-     */
-    public const WOHNUNGTYP_ERDGESCHOSS = 'ERDGESCHOSS';
-
-    /**
-     */
+    public const WOHNUNGTYP_MAISONETTE = 'MAISONETTE';
+    public const WOHNUNGTYP_LOFT_STUDIO_ATELIER = 'LOFT-STUDIO-ATELIER';
+    public const WOHNUNGTYP_PENTHOUSE = 'PENTHOUSE';
+    public const WOHNUNGTYP_TERRASSEN = 'TERRASSEN';
     public const WOHNUNGTYP_ETAGE = 'ETAGE';
-
-    /**
-     */
+    public const WOHNUNGTYP_ERDGESCHOSS = 'ERDGESCHOSS';
+    public const WOHNUNGTYP_SOUTERRAIN = 'SOUTERRAIN';
+    public const WOHNUNGTYP_APARTMENT = 'APARTMENT';
     public const WOHNUNGTYP_FERIENWOHNUNG = 'FERIENWOHNUNG';
-
-    /**
-     */
     public const WOHNUNGTYP_GALERIE = 'GALERIE';
-
-    /**
-     */
+    public const WOHNUNGTYP_ROHDACHBODEN = 'ROHDACHBODEN';
+    public const WOHNUNGTYP_ATTIKAWOHNUNG = 'ATTIKAWOHNUNG';
     public const WOHNUNGTYP_KEINE_ANGABE = 'KEINE_ANGABE';
 
     /**
-     */
-    public const WOHNUNGTYP_LOFT_STUDIO_ATELIER = 'LOFT-STUDIO-ATELIER';
-
-    /**
-     */
-    public const WOHNUNGTYP_MAISONETTE = 'MAISONETTE';
-
-    /**
-     */
-    public const WOHNUNGTYP_PENTHOUSE = 'PENTHOUSE';
-
-    /**
-     */
-    public const WOHNUNGTYP_ROHDACHBODEN = 'ROHDACHBODEN';
-
-    /**
-     */
-    public const WOHNUNGTYP_SOUTERRAIN = 'SOUTERRAIN';
-
-    /**
-     */
-    public const WOHNUNGTYP_TERRASSEN = 'TERRASSEN';
-
-    /**
-     * optional
-     *
      * @Type("string")
      * @XmlAttribute
+     * optional
      * @see WOHNUNGTYP_* constants
-     * @var string
      */
-    protected $wohnungtyp;
+    protected ?string $wohnungtyp;
 
-    /**
-     * @param string $wohnungtyp Shortcut setter for wohnungtyp
-     */
-    public function __construct(string $wohnungtyp = null)
-    {
-        $this->wohnungtyp = $wohnungtyp;
-    }
-
-    /**
-     * @return string
-     */
-    public function getWohnungtyp(): ?string
+    public function getWohnungtyp(): string
     {
         return $this->wohnungtyp;
     }
 
-    /**
-     * @param string $wohnungtyp Setter for wohnungtyp
-     * @return Wohnung
-     */
-    public function setWohnungtyp(?string $wohnungtyp)
+    public function setWohnungtyp(string $wohnungtyp): Wohnung
     {
         $this->wohnungtyp = $wohnungtyp;
         return $this;
+    }
+
+    public function __construct(string $wohnungtyp = null)
+    {
+        $this->wohnungtyp = $wohnungtyp;
     }
 }

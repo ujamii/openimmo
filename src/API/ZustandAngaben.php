@@ -14,350 +14,244 @@ use JMS\Serializer\Annotation\XmlRoot;
 class ZustandAngaben
 {
     /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $baujahr = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $letztemodernisierung = null;
+
+    /**
+     * @Type("Ujamii\OpenImmo\API\Zustand")
+     * @var ?\Ujamii\OpenImmo\API\Zustand
+     */
+    protected ?Zustand $zustand = null;
+
+    /**
      * @Type("Ujamii\OpenImmo\API\Alter")
-     * @var Alter
+     * @var ?\Ujamii\OpenImmo\API\Alter
      */
-    protected $alter;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $altlasten;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $baujahr;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $bauzone;
+    protected ?Alter $alter = null;
 
     /**
      * @Type("Ujamii\OpenImmo\API\BebaubarNach")
-     * @var BebaubarNach
+     * @var ?\Ujamii\OpenImmo\API\BebaubarNach
      */
-    protected $bebaubarNach;
+    protected ?BebaubarNach $bebaubarNach = null;
+
+    /**
+     * @Type("Ujamii\OpenImmo\API\Erschliessung")
+     * @var ?\Ujamii\OpenImmo\API\Erschliessung
+     */
+    protected ?Erschliessung $erschliessung = null;
+
+    /**
+     * @Type("Ujamii\OpenImmo\API\ErschliessungUmfang")
+     * @var ?\Ujamii\OpenImmo\API\ErschliessungUmfang
+     */
+    protected ?ErschliessungUmfang $erschliessungUmfang = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $bauzone = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $altlasten = null;
 
     /**
      * @XmlList(inline = true, entry = "energiepass")
      * @Type("array<Ujamii\OpenImmo\API\Energiepass>")
-     * @var Energiepass[]
+     * @var ?\Ujamii\OpenImmo\API\Energiepass[]
      */
-    protected $energiepass;
+    protected ?array $energiepass = [];
 
     /**
-     * @Type("Ujamii\OpenImmo\API\Erschliessung")
-     * @var Erschliessung
+     * @Type("Ujamii\OpenImmo\API\Verkaufstatus")
+     * @var ?\Ujamii\OpenImmo\API\Verkaufstatus
      */
-    protected $erschliessung;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\ErschliessungUmfang")
-     * @var ErschliessungUmfang
-     */
-    protected $erschliessungUmfang;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $letztemodernisierung;
-
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @var UserDefinedAnyfield[]
-     */
-    protected $userDefinedAnyfield;
-
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @var UserDefinedExtend[]
-     */
-    protected $userDefinedExtend;
+    protected ?Verkaufstatus $verkaufstatus = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @var UserDefinedSimplefield[]
+     * @var ?\Ujamii\OpenImmo\API\UserDefinedSimplefield[]
      */
-    protected $userDefinedSimplefield;
+    protected ?array $userDefinedSimplefield = [];
 
     /**
-     * @Type("Ujamii\OpenImmo\API\Verkaufstatus")
-     * @var Verkaufstatus
+     * @XmlList(inline = true, entry = "user_defined_anyfield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
+     * @var ?\Ujamii\OpenImmo\API\UserDefinedAnyfield[]
      */
-    protected $verkaufstatus;
+    protected ?array $userDefinedAnyfield = [];
 
     /**
-     * @Type("Ujamii\OpenImmo\API\Zustand")
-     * @var Zustand
+     * @XmlList(inline = true, entry = "user_defined_extend")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
+     * @var ?\Ujamii\OpenImmo\API\UserDefinedExtend[]
      */
-    protected $zustand;
+    protected ?array $userDefinedExtend = [];
 
-    /**
-     * @return Alter
-     */
-    public function getAlter(): ?Alter
-    {
-        return $this->alter;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAltlasten(): ?string
-    {
-        return $this->altlasten;
-    }
-
-    /**
-     * @return string
-     */
     public function getBaujahr(): ?string
     {
         return $this->baujahr;
     }
 
-    /**
-     * @return string
-     */
-    public function getBauzone(): ?string
-    {
-        return $this->bauzone;
-    }
-
-    /**
-     * @return BebaubarNach
-     */
-    public function getBebaubarNach(): ?BebaubarNach
-    {
-        return $this->bebaubarNach;
-    }
-
-    /**
-     * Returns array of Energiepass
-     *
-     * @return array
-     */
-    public function getEnergiepass(): array
-    {
-        return $this->energiepass ?? [];
-    }
-
-    /**
-     * @return Erschliessung
-     */
-    public function getErschliessung(): ?Erschliessung
-    {
-        return $this->erschliessung;
-    }
-
-    /**
-     * @return ErschliessungUmfang
-     */
-    public function getErschliessungUmfang(): ?ErschliessungUmfang
-    {
-        return $this->erschliessungUmfang;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLetztemodernisierung(): ?string
-    {
-        return $this->letztemodernisierung;
-    }
-
-    /**
-     * Returns array of UserDefinedAnyfield
-     *
-     * @return array
-     */
-    public function getUserDefinedAnyfield(): array
-    {
-        return $this->userDefinedAnyfield ?? [];
-    }
-
-    /**
-     * Returns array of UserDefinedExtend
-     *
-     * @return array
-     */
-    public function getUserDefinedExtend(): array
-    {
-        return $this->userDefinedExtend ?? [];
-    }
-
-    /**
-     * Returns array of UserDefinedSimplefield
-     *
-     * @return array
-     */
-    public function getUserDefinedSimplefield(): array
-    {
-        return $this->userDefinedSimplefield ?? [];
-    }
-
-    /**
-     * @return Verkaufstatus
-     */
-    public function getVerkaufstatus(): ?Verkaufstatus
-    {
-        return $this->verkaufstatus;
-    }
-
-    /**
-     * @return Zustand
-     */
-    public function getZustand(): ?Zustand
-    {
-        return $this->zustand;
-    }
-
-    /**
-     * @param Alter $alter Setter for alter
-     * @return ZustandAngaben
-     */
-    public function setAlter(?Alter $alter)
-    {
-        $this->alter = $alter;
-        return $this;
-    }
-
-    /**
-     * @param string $altlasten Setter for altlasten
-     * @return ZustandAngaben
-     */
-    public function setAltlasten(?string $altlasten)
-    {
-        $this->altlasten = $altlasten;
-        return $this;
-    }
-
-    /**
-     * @param string $baujahr Setter for baujahr
-     * @return ZustandAngaben
-     */
-    public function setBaujahr(?string $baujahr)
+    public function setBaujahr(?string $baujahr): ZustandAngaben
     {
         $this->baujahr = $baujahr;
         return $this;
     }
 
-    /**
-     * @param string $bauzone Setter for bauzone
-     * @return ZustandAngaben
-     */
-    public function setBauzone(?string $bauzone)
+    public function getLetztemodernisierung(): ?string
     {
-        $this->bauzone = $bauzone;
-        return $this;
+        return $this->letztemodernisierung;
     }
 
-    /**
-     * @param BebaubarNach $bebaubarNach Setter for bebaubarNach
-     * @return ZustandAngaben
-     */
-    public function setBebaubarNach(?BebaubarNach $bebaubarNach)
-    {
-        $this->bebaubarNach = $bebaubarNach;
-        return $this;
-    }
-
-    /**
-     * @param array $energiepass Setter for energiepass
-     * @return ZustandAngaben
-     */
-    public function setEnergiepass(array $energiepass)
-    {
-        $this->energiepass = $energiepass;
-        return $this;
-    }
-
-    /**
-     * @param Erschliessung $erschliessung Setter for erschliessung
-     * @return ZustandAngaben
-     */
-    public function setErschliessung(?Erschliessung $erschliessung)
-    {
-        $this->erschliessung = $erschliessung;
-        return $this;
-    }
-
-    /**
-     * @param ErschliessungUmfang $erschliessungUmfang Setter for erschliessungUmfang
-     * @return ZustandAngaben
-     */
-    public function setErschliessungUmfang(?ErschliessungUmfang $erschliessungUmfang)
-    {
-        $this->erschliessungUmfang = $erschliessungUmfang;
-        return $this;
-    }
-
-    /**
-     * @param string $letztemodernisierung Setter for letztemodernisierung
-     * @return ZustandAngaben
-     */
-    public function setLetztemodernisierung(?string $letztemodernisierung)
+    public function setLetztemodernisierung(?string $letztemodernisierung): ZustandAngaben
     {
         $this->letztemodernisierung = $letztemodernisierung;
         return $this;
     }
 
-    /**
-     * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
-     * @return ZustandAngaben
-     */
-    public function setUserDefinedAnyfield(array $userDefinedAnyfield)
+    public function getZustand(): ?Zustand
     {
-        $this->userDefinedAnyfield = $userDefinedAnyfield;
+        return $this->zustand;
+    }
+
+    public function setZustand(?Zustand $zustand): ZustandAngaben
+    {
+        $this->zustand = $zustand;
         return $this;
     }
 
-    /**
-     * @param array $userDefinedExtend Setter for userDefinedExtend
-     * @return ZustandAngaben
-     */
-    public function setUserDefinedExtend(array $userDefinedExtend)
+    public function getAlter(): ?Alter
     {
-        $this->userDefinedExtend = $userDefinedExtend;
+        return $this->alter;
+    }
+
+    public function setAlter(?Alter $alter): ZustandAngaben
+    {
+        $this->alter = $alter;
         return $this;
     }
 
-    /**
-     * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
-     * @return ZustandAngaben
-     */
-    public function setUserDefinedSimplefield(array $userDefinedSimplefield)
+    public function getBebaubarNach(): ?BebaubarNach
     {
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        return $this->bebaubarNach;
+    }
+
+    public function setBebaubarNach(?BebaubarNach $bebaubarNach): ZustandAngaben
+    {
+        $this->bebaubarNach = $bebaubarNach;
         return $this;
     }
 
-    /**
-     * @param Verkaufstatus $verkaufstatus Setter for verkaufstatus
-     * @return ZustandAngaben
-     */
-    public function setVerkaufstatus(?Verkaufstatus $verkaufstatus)
+    public function getErschliessung(): ?Erschliessung
+    {
+        return $this->erschliessung;
+    }
+
+    public function setErschliessung(?Erschliessung $erschliessung): ZustandAngaben
+    {
+        $this->erschliessung = $erschliessung;
+        return $this;
+    }
+
+    public function getErschliessungUmfang(): ?ErschliessungUmfang
+    {
+        return $this->erschliessungUmfang;
+    }
+
+    public function setErschliessungUmfang(?ErschliessungUmfang $erschliessungUmfang): ZustandAngaben
+    {
+        $this->erschliessungUmfang = $erschliessungUmfang;
+        return $this;
+    }
+
+    public function getBauzone(): ?string
+    {
+        return $this->bauzone;
+    }
+
+    public function setBauzone(?string $bauzone): ZustandAngaben
+    {
+        $this->bauzone = $bauzone;
+        return $this;
+    }
+
+    public function getAltlasten(): ?string
+    {
+        return $this->altlasten;
+    }
+
+    public function setAltlasten(?string $altlasten): ZustandAngaben
+    {
+        $this->altlasten = $altlasten;
+        return $this;
+    }
+
+    public function getEnergiepass(): ?array
+    {
+        return $this->energiepass;
+    }
+
+    public function setEnergiepass(?array $energiepass): ZustandAngaben
+    {
+        $this->energiepass = $energiepass;
+        return $this;
+    }
+
+    public function getVerkaufstatus(): ?Verkaufstatus
+    {
+        return $this->verkaufstatus;
+    }
+
+    public function setVerkaufstatus(?Verkaufstatus $verkaufstatus): ZustandAngaben
     {
         $this->verkaufstatus = $verkaufstatus;
         return $this;
     }
 
-    /**
-     * @param Zustand $zustand Setter for zustand
-     * @return ZustandAngaben
-     */
-    public function setZustand(?Zustand $zustand)
+    public function getUserDefinedSimplefield(): ?array
     {
-        $this->zustand = $zustand;
+        return $this->userDefinedSimplefield;
+    }
+
+    public function setUserDefinedSimplefield(?array $userDefinedSimplefield): ZustandAngaben
+    {
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        return $this;
+    }
+
+    public function getUserDefinedAnyfield(): ?array
+    {
+        return $this->userDefinedAnyfield;
+    }
+
+    public function setUserDefinedAnyfield(?array $userDefinedAnyfield): ZustandAngaben
+    {
+        $this->userDefinedAnyfield = $userDefinedAnyfield;
+        return $this;
+    }
+
+    public function getUserDefinedExtend(): ?array
+    {
+        return $this->userDefinedExtend;
+    }
+
+    public function setUserDefinedExtend(?array $userDefinedExtend): ZustandAngaben
+    {
+        $this->userDefinedExtend = $userDefinedExtend;
         return $this;
     }
 }

@@ -13,70 +13,48 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Das Eltern Objekte hat in "gruppen_kennung" die gleiche ID wie "master". Anwendung z.b. in Neubau Projekten.
  * Damit die Anzeige des Master Objektes gesteuert werden kann, wird im Master ein Flag
  *  visible eingesetzt. Das Attribut ist dann zwingend anzugeben
- *
  * @XmlRoot("master")
  */
 class Master
 {
     /**
-     * @Inline
-     * @Type("string")
-     * @var string
-     */
-    protected $value;
-
-    /**
-     * required
-     *
      * @Type("bool")
      * @XmlAttribute
-     * @var bool
+     * required
      */
-    protected $visible;
+    protected ?bool $visible;
 
     /**
-     * @param bool $visible Shortcut setter for visible
-     * @param string $value Shortcut setter for value
+     * @Inline
+     * @Type("string")
      */
-    public function __construct(bool $visible = null, string $value = null)
-    {
-        $this->visible = $visible;
-        $this->value = $value;
-    }
+    protected ?string $value;
 
-    /**
-     * @return string
-     */
-    public function getValue(): ?string
-    {
-        return $this->value;
-    }
-
-    /**
-     * @return bool
-     */
     public function getVisible(): bool
     {
         return $this->visible;
     }
 
-    /**
-     * @param string $value Setter for value
-     * @return Master
-     */
-    public function setValue(?string $value)
+    public function setVisible(bool $visible): Master
+    {
+        $this->visible = $visible;
+        return $this;
+    }
+
+    public function getValue(): ?string
+    {
+        return $this->value;
+    }
+
+    public function setValue(?string $value): Master
     {
         $this->value = $value;
         return $this;
     }
 
-    /**
-     * @param bool $visible Setter for visible
-     * @return Master
-     */
-    public function setVisible(bool $visible)
+    public function __construct(bool $visible = null, string $value = null)
     {
         $this->visible = $visible;
-        return $this;
+        $this->value = $value;
     }
 }

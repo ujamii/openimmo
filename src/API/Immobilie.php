@@ -9,476 +9,334 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Immobilie
  * Angaben einer einzelnen Immobile
- *
  * @XmlRoot("immobilie")
  */
 class Immobilie
 {
     /**
-     * @Type("Ujamii\OpenImmo\API\Anhaenge")
-     * @var Anhaenge
+     * @Type("Ujamii\OpenImmo\API\Objektkategorie")
+     * @var ?\Ujamii\OpenImmo\API\Objektkategorie
      */
-    protected $anhaenge;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Ausstattung")
-     * @var Ausstattung
-     */
-    protected $ausstattung;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Bewertung")
-     * @var Bewertung
-     */
-    protected $bewertung;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Bieterverfahren")
-     * @var Bieterverfahren
-     */
-    protected $bieterverfahren;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Flaechen")
-     * @var Flaechen
-     */
-    protected $flaechen;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Freitexte")
-     * @var Freitexte
-     */
-    protected $freitexte;
+    protected ?Objektkategorie $objektkategorie = null;
 
     /**
      * @Type("Ujamii\OpenImmo\API\Geo")
-     * @var Geo
+     * @var ?\Ujamii\OpenImmo\API\Geo
      */
-    protected $geo;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Infrastruktur")
-     * @var Infrastruktur
-     */
-    protected $infrastruktur;
+    protected ?Geo $geo = null;
 
     /**
      * @Type("Ujamii\OpenImmo\API\Kontaktperson")
-     * @var Kontaktperson
+     * @var ?\Ujamii\OpenImmo\API\Kontaktperson
      */
-    protected $kontaktperson;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Objektkategorie")
-     * @var Objektkategorie
-     */
-    protected $objektkategorie;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Preise")
-     * @var Preise
-     */
-    protected $preise;
-
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @var UserDefinedAnyfield[]
-     */
-    protected $userDefinedAnyfield;
-
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @var UserDefinedExtend[]
-     */
-    protected $userDefinedExtend;
-
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @var UserDefinedSimplefield[]
-     */
-    protected $userDefinedSimplefield;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Versteigerung")
-     * @var Versteigerung
-     */
-    protected $versteigerung;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\VerwaltungObjekt")
-     * @var VerwaltungObjekt
-     */
-    protected $verwaltungObjekt;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\VerwaltungTechn")
-     * @var VerwaltungTechn
-     */
-    protected $verwaltungTechn;
+    protected ?Kontaktperson $kontaktperson = null;
 
     /**
      * @XmlList(inline = true, entry = "weitere_adresse")
      * @Type("array<Ujamii\OpenImmo\API\WeitereAdresse>")
-     * @var WeitereAdresse[]
+     * @var ?\Ujamii\OpenImmo\API\WeitereAdresse[]
      */
-    protected $weitereAdresse;
+    protected ?array $weitereAdresse = [];
+
+    /**
+     * @Type("Ujamii\OpenImmo\API\Preise")
+     * @var ?\Ujamii\OpenImmo\API\Preise
+     */
+    protected ?Preise $preise = null;
+
+    /**
+     * @Type("Ujamii\OpenImmo\API\Bieterverfahren")
+     * @var ?\Ujamii\OpenImmo\API\Bieterverfahren
+     */
+    protected ?Bieterverfahren $bieterverfahren = null;
+
+    /**
+     * @Type("Ujamii\OpenImmo\API\Versteigerung")
+     * @var ?\Ujamii\OpenImmo\API\Versteigerung
+     */
+    protected ?Versteigerung $versteigerung = null;
+
+    /**
+     * @Type("Ujamii\OpenImmo\API\Flaechen")
+     * @var ?\Ujamii\OpenImmo\API\Flaechen
+     */
+    protected ?Flaechen $flaechen = null;
+
+    /**
+     * @Type("Ujamii\OpenImmo\API\Ausstattung")
+     * @var ?\Ujamii\OpenImmo\API\Ausstattung
+     */
+    protected ?Ausstattung $ausstattung = null;
 
     /**
      * @Type("Ujamii\OpenImmo\API\ZustandAngaben")
-     * @var ZustandAngaben
+     * @var ?\Ujamii\OpenImmo\API\ZustandAngaben
      */
-    protected $zustandAngaben;
+    protected ?ZustandAngaben $zustandAngaben = null;
 
     /**
-     * @return Anhaenge
+     * @Type("Ujamii\OpenImmo\API\Bewertung")
+     * @var ?\Ujamii\OpenImmo\API\Bewertung
      */
-    public function getAnhaenge(): ?Anhaenge
-    {
-        return $this->anhaenge;
-    }
+    protected ?Bewertung $bewertung = null;
 
     /**
-     * @return Ausstattung
+     * @Type("Ujamii\OpenImmo\API\Infrastruktur")
+     * @var ?\Ujamii\OpenImmo\API\Infrastruktur
      */
-    public function getAusstattung(): ?Ausstattung
-    {
-        return $this->ausstattung;
-    }
+    protected ?Infrastruktur $infrastruktur = null;
 
     /**
-     * @return Bewertung
+     * @Type("Ujamii\OpenImmo\API\Freitexte")
+     * @var ?\Ujamii\OpenImmo\API\Freitexte
      */
-    public function getBewertung(): ?Bewertung
-    {
-        return $this->bewertung;
-    }
+    protected ?Freitexte $freitexte = null;
 
     /**
-     * @return Bieterverfahren
+     * @Type("Ujamii\OpenImmo\API\Anhaenge")
+     * @var ?\Ujamii\OpenImmo\API\Anhaenge
      */
-    public function getBieterverfahren(): ?Bieterverfahren
-    {
-        return $this->bieterverfahren;
-    }
+    protected ?Anhaenge $anhaenge = null;
 
     /**
-     * @return Flaechen
+     * @Type("Ujamii\OpenImmo\API\VerwaltungObjekt")
+     * @var ?\Ujamii\OpenImmo\API\VerwaltungObjekt
      */
-    public function getFlaechen(): ?Flaechen
-    {
-        return $this->flaechen;
-    }
+    protected ?VerwaltungObjekt $verwaltungObjekt = null;
 
     /**
-     * @return Freitexte
+     * @Type("Ujamii\OpenImmo\API\VerwaltungTechn")
+     * @var ?\Ujamii\OpenImmo\API\VerwaltungTechn
      */
-    public function getFreitexte(): ?Freitexte
-    {
-        return $this->freitexte;
-    }
+    protected ?VerwaltungTechn $verwaltungTechn = null;
 
     /**
-     * @return Geo
+     * @XmlList(inline = true, entry = "user_defined_simplefield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
+     * @var ?\Ujamii\OpenImmo\API\UserDefinedSimplefield[]
      */
-    public function getGeo(): ?Geo
-    {
-        return $this->geo;
-    }
+    protected ?array $userDefinedSimplefield = [];
 
     /**
-     * @return Infrastruktur
+     * @XmlList(inline = true, entry = "user_defined_anyfield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
+     * @var ?\Ujamii\OpenImmo\API\UserDefinedAnyfield[]
      */
-    public function getInfrastruktur(): ?Infrastruktur
-    {
-        return $this->infrastruktur;
-    }
+    protected ?array $userDefinedAnyfield = [];
 
     /**
-     * @return Kontaktperson
+     * @XmlList(inline = true, entry = "user_defined_extend")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
+     * @var ?\Ujamii\OpenImmo\API\UserDefinedExtend[]
      */
-    public function getKontaktperson(): ?Kontaktperson
-    {
-        return $this->kontaktperson;
-    }
+    protected ?array $userDefinedExtend = [];
 
-    /**
-     * @return Objektkategorie
-     */
     public function getObjektkategorie(): ?Objektkategorie
     {
         return $this->objektkategorie;
     }
 
-    /**
-     * @return Preise
-     */
-    public function getPreise(): ?Preise
-    {
-        return $this->preise;
-    }
-
-    /**
-     * Returns array of UserDefinedAnyfield
-     *
-     * @return array
-     */
-    public function getUserDefinedAnyfield(): array
-    {
-        return $this->userDefinedAnyfield ?? [];
-    }
-
-    /**
-     * Returns array of UserDefinedExtend
-     *
-     * @return array
-     */
-    public function getUserDefinedExtend(): array
-    {
-        return $this->userDefinedExtend ?? [];
-    }
-
-    /**
-     * Returns array of UserDefinedSimplefield
-     *
-     * @return array
-     */
-    public function getUserDefinedSimplefield(): array
-    {
-        return $this->userDefinedSimplefield ?? [];
-    }
-
-    /**
-     * @return Versteigerung
-     */
-    public function getVersteigerung(): ?Versteigerung
-    {
-        return $this->versteigerung;
-    }
-
-    /**
-     * @return VerwaltungObjekt
-     */
-    public function getVerwaltungObjekt(): ?VerwaltungObjekt
-    {
-        return $this->verwaltungObjekt;
-    }
-
-    /**
-     * @return VerwaltungTechn
-     */
-    public function getVerwaltungTechn(): ?VerwaltungTechn
-    {
-        return $this->verwaltungTechn;
-    }
-
-    /**
-     * Returns array of WeitereAdresse
-     *
-     * @return array
-     */
-    public function getWeitereAdresse(): array
-    {
-        return $this->weitereAdresse ?? [];
-    }
-
-    /**
-     * @return ZustandAngaben
-     */
-    public function getZustandAngaben(): ?ZustandAngaben
-    {
-        return $this->zustandAngaben;
-    }
-
-    /**
-     * @param Anhaenge $anhaenge Setter for anhaenge
-     * @return Immobilie
-     */
-    public function setAnhaenge(?Anhaenge $anhaenge)
-    {
-        $this->anhaenge = $anhaenge;
-        return $this;
-    }
-
-    /**
-     * @param Ausstattung $ausstattung Setter for ausstattung
-     * @return Immobilie
-     */
-    public function setAusstattung(?Ausstattung $ausstattung)
-    {
-        $this->ausstattung = $ausstattung;
-        return $this;
-    }
-
-    /**
-     * @param Bewertung $bewertung Setter for bewertung
-     * @return Immobilie
-     */
-    public function setBewertung(?Bewertung $bewertung)
-    {
-        $this->bewertung = $bewertung;
-        return $this;
-    }
-
-    /**
-     * @param Bieterverfahren $bieterverfahren Setter for bieterverfahren
-     * @return Immobilie
-     */
-    public function setBieterverfahren(?Bieterverfahren $bieterverfahren)
-    {
-        $this->bieterverfahren = $bieterverfahren;
-        return $this;
-    }
-
-    /**
-     * @param Flaechen $flaechen Setter for flaechen
-     * @return Immobilie
-     */
-    public function setFlaechen(?Flaechen $flaechen)
-    {
-        $this->flaechen = $flaechen;
-        return $this;
-    }
-
-    /**
-     * @param Freitexte $freitexte Setter for freitexte
-     * @return Immobilie
-     */
-    public function setFreitexte(?Freitexte $freitexte)
-    {
-        $this->freitexte = $freitexte;
-        return $this;
-    }
-
-    /**
-     * @param Geo $geo Setter for geo
-     * @return Immobilie
-     */
-    public function setGeo(?Geo $geo)
-    {
-        $this->geo = $geo;
-        return $this;
-    }
-
-    /**
-     * @param Infrastruktur $infrastruktur Setter for infrastruktur
-     * @return Immobilie
-     */
-    public function setInfrastruktur(?Infrastruktur $infrastruktur)
-    {
-        $this->infrastruktur = $infrastruktur;
-        return $this;
-    }
-
-    /**
-     * @param Kontaktperson $kontaktperson Setter for kontaktperson
-     * @return Immobilie
-     */
-    public function setKontaktperson(?Kontaktperson $kontaktperson)
-    {
-        $this->kontaktperson = $kontaktperson;
-        return $this;
-    }
-
-    /**
-     * @param Objektkategorie $objektkategorie Setter for objektkategorie
-     * @return Immobilie
-     */
-    public function setObjektkategorie(?Objektkategorie $objektkategorie)
+    public function setObjektkategorie(?Objektkategorie $objektkategorie): Immobilie
     {
         $this->objektkategorie = $objektkategorie;
         return $this;
     }
 
-    /**
-     * @param Preise $preise Setter for preise
-     * @return Immobilie
-     */
-    public function setPreise(?Preise $preise)
+    public function getGeo(): ?Geo
     {
-        $this->preise = $preise;
+        return $this->geo;
+    }
+
+    public function setGeo(?Geo $geo): Immobilie
+    {
+        $this->geo = $geo;
         return $this;
     }
 
-    /**
-     * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
-     * @return Immobilie
-     */
-    public function setUserDefinedAnyfield(array $userDefinedAnyfield)
+    public function getKontaktperson(): ?Kontaktperson
     {
-        $this->userDefinedAnyfield = $userDefinedAnyfield;
+        return $this->kontaktperson;
+    }
+
+    public function setKontaktperson(?Kontaktperson $kontaktperson): Immobilie
+    {
+        $this->kontaktperson = $kontaktperson;
         return $this;
     }
 
-    /**
-     * @param array $userDefinedExtend Setter for userDefinedExtend
-     * @return Immobilie
-     */
-    public function setUserDefinedExtend(array $userDefinedExtend)
+    public function getWeitereAdresse(): ?array
     {
-        $this->userDefinedExtend = $userDefinedExtend;
-        return $this;
+        return $this->weitereAdresse;
     }
 
-    /**
-     * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
-     * @return Immobilie
-     */
-    public function setUserDefinedSimplefield(array $userDefinedSimplefield)
-    {
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
-        return $this;
-    }
-
-    /**
-     * @param Versteigerung $versteigerung Setter for versteigerung
-     * @return Immobilie
-     */
-    public function setVersteigerung(?Versteigerung $versteigerung)
-    {
-        $this->versteigerung = $versteigerung;
-        return $this;
-    }
-
-    /**
-     * @param VerwaltungObjekt $verwaltungObjekt Setter for verwaltungObjekt
-     * @return Immobilie
-     */
-    public function setVerwaltungObjekt(?VerwaltungObjekt $verwaltungObjekt)
-    {
-        $this->verwaltungObjekt = $verwaltungObjekt;
-        return $this;
-    }
-
-    /**
-     * @param VerwaltungTechn $verwaltungTechn Setter for verwaltungTechn
-     * @return Immobilie
-     */
-    public function setVerwaltungTechn(?VerwaltungTechn $verwaltungTechn)
-    {
-        $this->verwaltungTechn = $verwaltungTechn;
-        return $this;
-    }
-
-    /**
-     * @param array $weitereAdresse Setter for weitereAdresse
-     * @return Immobilie
-     */
-    public function setWeitereAdresse(array $weitereAdresse)
+    public function setWeitereAdresse(?array $weitereAdresse): Immobilie
     {
         $this->weitereAdresse = $weitereAdresse;
         return $this;
     }
 
-    /**
-     * @param ZustandAngaben $zustandAngaben Setter for zustandAngaben
-     * @return Immobilie
-     */
-    public function setZustandAngaben(?ZustandAngaben $zustandAngaben)
+    public function getPreise(): ?Preise
+    {
+        return $this->preise;
+    }
+
+    public function setPreise(?Preise $preise): Immobilie
+    {
+        $this->preise = $preise;
+        return $this;
+    }
+
+    public function getBieterverfahren(): ?Bieterverfahren
+    {
+        return $this->bieterverfahren;
+    }
+
+    public function setBieterverfahren(?Bieterverfahren $bieterverfahren): Immobilie
+    {
+        $this->bieterverfahren = $bieterverfahren;
+        return $this;
+    }
+
+    public function getVersteigerung(): ?Versteigerung
+    {
+        return $this->versteigerung;
+    }
+
+    public function setVersteigerung(?Versteigerung $versteigerung): Immobilie
+    {
+        $this->versteigerung = $versteigerung;
+        return $this;
+    }
+
+    public function getFlaechen(): ?Flaechen
+    {
+        return $this->flaechen;
+    }
+
+    public function setFlaechen(?Flaechen $flaechen): Immobilie
+    {
+        $this->flaechen = $flaechen;
+        return $this;
+    }
+
+    public function getAusstattung(): ?Ausstattung
+    {
+        return $this->ausstattung;
+    }
+
+    public function setAusstattung(?Ausstattung $ausstattung): Immobilie
+    {
+        $this->ausstattung = $ausstattung;
+        return $this;
+    }
+
+    public function getZustandAngaben(): ?ZustandAngaben
+    {
+        return $this->zustandAngaben;
+    }
+
+    public function setZustandAngaben(?ZustandAngaben $zustandAngaben): Immobilie
     {
         $this->zustandAngaben = $zustandAngaben;
+        return $this;
+    }
+
+    public function getBewertung(): ?Bewertung
+    {
+        return $this->bewertung;
+    }
+
+    public function setBewertung(?Bewertung $bewertung): Immobilie
+    {
+        $this->bewertung = $bewertung;
+        return $this;
+    }
+
+    public function getInfrastruktur(): ?Infrastruktur
+    {
+        return $this->infrastruktur;
+    }
+
+    public function setInfrastruktur(?Infrastruktur $infrastruktur): Immobilie
+    {
+        $this->infrastruktur = $infrastruktur;
+        return $this;
+    }
+
+    public function getFreitexte(): ?Freitexte
+    {
+        return $this->freitexte;
+    }
+
+    public function setFreitexte(?Freitexte $freitexte): Immobilie
+    {
+        $this->freitexte = $freitexte;
+        return $this;
+    }
+
+    public function getAnhaenge(): ?Anhaenge
+    {
+        return $this->anhaenge;
+    }
+
+    public function setAnhaenge(?Anhaenge $anhaenge): Immobilie
+    {
+        $this->anhaenge = $anhaenge;
+        return $this;
+    }
+
+    public function getVerwaltungObjekt(): ?VerwaltungObjekt
+    {
+        return $this->verwaltungObjekt;
+    }
+
+    public function setVerwaltungObjekt(?VerwaltungObjekt $verwaltungObjekt): Immobilie
+    {
+        $this->verwaltungObjekt = $verwaltungObjekt;
+        return $this;
+    }
+
+    public function getVerwaltungTechn(): ?VerwaltungTechn
+    {
+        return $this->verwaltungTechn;
+    }
+
+    public function setVerwaltungTechn(?VerwaltungTechn $verwaltungTechn): Immobilie
+    {
+        $this->verwaltungTechn = $verwaltungTechn;
+        return $this;
+    }
+
+    public function getUserDefinedSimplefield(): ?array
+    {
+        return $this->userDefinedSimplefield;
+    }
+
+    public function setUserDefinedSimplefield(?array $userDefinedSimplefield): Immobilie
+    {
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        return $this;
+    }
+
+    public function getUserDefinedAnyfield(): ?array
+    {
+        return $this->userDefinedAnyfield;
+    }
+
+    public function setUserDefinedAnyfield(?array $userDefinedAnyfield): Immobilie
+    {
+        $this->userDefinedAnyfield = $userDefinedAnyfield;
+        return $this;
+    }
+
+    public function getUserDefinedExtend(): ?array
+    {
+        return $this->userDefinedExtend;
+    }
+
+    public function setUserDefinedExtend(?array $userDefinedExtend): Immobilie
+    {
+        $this->userDefinedExtend = $userDefinedExtend;
         return $this;
     }
 }

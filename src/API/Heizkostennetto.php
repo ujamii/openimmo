@@ -10,70 +10,48 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Heizkostennetto
  * Die Heizkosten einer Einheit als Nettowert. Die Umsatzsteuer optional im Attribut
- *
  * @XmlRoot("heizkostennetto")
  */
 class Heizkostennetto
 {
     /**
-     * optional
-     *
      * @Type("float")
      * @XmlAttribute
-     * @var float
+     * optional
      */
-    protected $heizkostenust;
+    protected ?float $heizkostenust;
 
     /**
      * @Inline
      * @Type("float")
-     * @var float
      */
-    protected $value;
+    protected ?float $value;
 
-    /**
-     * @param float $heizkostenust Shortcut setter for heizkostenust
-     * @param float $value Shortcut setter for value
-     */
-    public function __construct(float $heizkostenust = null, float $value = null)
-    {
-        $this->heizkostenust = $heizkostenust;
-        $this->value = $value;
-    }
-
-    /**
-     * @return float
-     */
     public function getHeizkostenust(): ?float
     {
         return $this->heizkostenust;
     }
 
-    /**
-     * @return float
-     */
-    public function getValue(): ?float
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param float $heizkostenust Setter for heizkostenust
-     * @return Heizkostennetto
-     */
-    public function setHeizkostenust(?float $heizkostenust)
+    public function setHeizkostenust(?float $heizkostenust): Heizkostennetto
     {
         $this->heizkostenust = $heizkostenust;
         return $this;
     }
 
-    /**
-     * @param float $value Setter for value
-     * @return Heizkostennetto
-     */
-    public function setValue(?float $value)
+    public function getValue(): ?float
+    {
+        return $this->value;
+    }
+
+    public function setValue(?float $value): Heizkostennetto
     {
         $this->value = $value;
         return $this;
+    }
+
+    public function __construct(float $heizkostenust = null, float $value = null)
+    {
+        $this->heizkostenust = $heizkostenust;
+        $this->value = $value;
     }
 }

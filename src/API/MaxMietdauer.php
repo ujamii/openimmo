@@ -10,87 +10,54 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class MaxMietdauer
  * Maximalzeitraum für den die Immobilie gemietet werdenkann, Optionen nicht kombinierbar, vorrangig bei WaZ
- *
  * @XmlRoot("max_mietdauer")
  */
 class MaxMietdauer
 {
-    /**
-     */
+    public const MAX_DAUER_TAG = 'TAG';
+    public const MAX_DAUER_WOCHE = 'WOCHE';
+    public const MAX_DAUER_MONAT = 'MONAT';
     public const MAX_DAUER_JAHR = 'JAHR';
 
     /**
-     */
-    public const MAX_DAUER_MONAT = 'MONAT';
-
-    /**
-     */
-    public const MAX_DAUER_TAG = 'TAG';
-
-    /**
-     */
-    public const MAX_DAUER_WOCHE = 'WOCHE';
-
-    /**
-     * optional
-     *
      * @Type("string")
      * @XmlAttribute
+     * optional
      * @see MAX_DAUER_* constants
-     * @var string
      */
-    protected $maxDauer;
+    protected ?string $maxDauer;
 
     /**
      * @Inline
      * @Type("string")
-     * @var string
      */
-    protected $value;
+    protected ?string $value;
 
-    /**
-     * @param string $maxDauer Shortcut setter for maxDauer
-     * @param string $value Shortcut setter for value
-     */
-    public function __construct(string $maxDauer = null, string $value = null)
-    {
-        $this->maxDauer = $maxDauer;
-        $this->value = $value;
-    }
-
-    /**
-     * @return string
-     */
     public function getMaxDauer(): ?string
     {
         return $this->maxDauer;
     }
 
-    /**
-     * @return string
-     */
-    public function getValue(): ?string
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param string $maxDauer Setter for maxDauer
-     * @return MaxMietdauer
-     */
-    public function setMaxDauer(?string $maxDauer)
+    public function setMaxDauer(?string $maxDauer): MaxMietdauer
     {
         $this->maxDauer = $maxDauer;
         return $this;
     }
 
-    /**
-     * @param string $value Setter for value
-     * @return MaxMietdauer
-     */
-    public function setValue(?string $value)
+    public function getValue(): ?string
+    {
+        return $this->value;
+    }
+
+    public function setValue(?string $value): MaxMietdauer
     {
         $this->value = $value;
         return $this;
+    }
+
+    public function __construct(string $maxDauer = null, string $value = null)
+    {
+        $this->maxDauer = $maxDauer;
+        $this->value = $value;
     }
 }

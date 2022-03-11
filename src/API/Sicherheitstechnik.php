@@ -10,104 +10,71 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Sicherheitstechnik
  * Welche Sicherheitstechnik ist geboten, Optionen kombinierbar
- *
  * @XmlRoot("sicherheitstechnik")
  */
 class Sicherheitstechnik
 {
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("ALARMANLAGE")
-     * @var bool
+     * optional
      */
-    protected $alarmanlage;
+    protected ?bool $alarmanlage;
 
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("KAMERA")
-     * @var bool
+     * optional
      */
-    protected $kamera;
+    protected ?bool $kamera;
 
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("POLIZEIRUF")
-     * @var bool
+     * optional
      */
-    protected $polizeiruf;
+    protected ?bool $polizeiruf;
 
-    /**
-     * @param bool $alarmanlage Shortcut setter for alarmanlage
-     * @param bool $kamera Shortcut setter for kamera
-     * @param bool $polizeiruf Shortcut setter for polizeiruf
-     */
-    public function __construct(bool $alarmanlage = null, bool $kamera = null, bool $polizeiruf = null)
-    {
-        $this->alarmanlage = $alarmanlage;
-        $this->kamera = $kamera;
-        $this->polizeiruf = $polizeiruf;
-    }
-
-    /**
-     * @return bool
-     */
     public function getAlarmanlage(): ?bool
     {
         return $this->alarmanlage;
     }
 
-    /**
-     * @return bool
-     */
-    public function getKamera(): ?bool
-    {
-        return $this->kamera;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getPolizeiruf(): ?bool
-    {
-        return $this->polizeiruf;
-    }
-
-    /**
-     * @param bool $alarmanlage Setter for alarmanlage
-     * @return Sicherheitstechnik
-     */
-    public function setAlarmanlage(?bool $alarmanlage)
+    public function setAlarmanlage(?bool $alarmanlage): Sicherheitstechnik
     {
         $this->alarmanlage = $alarmanlage;
         return $this;
     }
 
-    /**
-     * @param bool $kamera Setter for kamera
-     * @return Sicherheitstechnik
-     */
-    public function setKamera(?bool $kamera)
+    public function getKamera(): ?bool
+    {
+        return $this->kamera;
+    }
+
+    public function setKamera(?bool $kamera): Sicherheitstechnik
     {
         $this->kamera = $kamera;
         return $this;
     }
 
-    /**
-     * @param bool $polizeiruf Setter for polizeiruf
-     * @return Sicherheitstechnik
-     */
-    public function setPolizeiruf(?bool $polizeiruf)
+    public function getPolizeiruf(): ?bool
+    {
+        return $this->polizeiruf;
+    }
+
+    public function setPolizeiruf(?bool $polizeiruf): Sicherheitstechnik
     {
         $this->polizeiruf = $polizeiruf;
         return $this;
+    }
+
+    public function __construct(bool $alarmanlage = null, bool $kamera = null, bool $polizeiruf = null)
+    {
+        $this->alarmanlage = $alarmanlage;
+        $this->kamera = $kamera;
+        $this->polizeiruf = $polizeiruf;
     }
 }

@@ -15,120 +15,82 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Feld
 {
     /**
-     * @XmlList(inline = true, entry = "modus")
-     * @Type("array<string>")
-     * @var string[]
+     * @Type("string")
+     * @var string
+     * @SkipWhenEmpty
      */
-    protected $modus;
+    protected string $name = '';
 
     /**
      * @Type("string")
-     * @SkipWhenEmpty
      * @var string
+     * @SkipWhenEmpty
      */
-    protected $name = '';
+    protected string $wert = '';
 
     /**
      * @XmlList(inline = true, entry = "typ")
      * @Type("array<string>")
-     * @var string[]
+     * @var ?\Ujamii\OpenImmo\API\string[]
      */
-    protected $typ;
+    protected ?array $typ = [];
 
     /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     * @var string
+     * @XmlList(inline = true, entry = "modus")
+     * @Type("array<string>")
+     * @var ?\Ujamii\OpenImmo\API\string[]
      */
-    protected $wert = '';
+    protected ?array $modus = [];
 
-    /**
-     * @param string $name Shortcut setter for name
-     * @param string $wert Shortcut setter for wert
-     * @param array $typ Shortcut setter for typ
-     * @param array $modus Shortcut setter for modus
-     */
-    public function __construct(string $name = '', string $wert = '', array $typ = [], array $modus = [])
-    {
-        $this->name = $name;
-        $this->wert = $wert;
-        $this->typ = $typ;
-        $this->modus = $modus;
-    }
-
-    /**
-     * Returns array of string
-     *
-     * @return array
-     */
-    public function getModus(): array
-    {
-        return $this->modus ?? [];
-    }
-
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * Returns array of string
-     *
-     * @return array
-     */
-    public function getTyp(): array
-    {
-        return $this->typ ?? [];
-    }
-
-    /**
-     * @return string
-     */
-    public function getWert(): string
-    {
-        return $this->wert;
-    }
-
-    /**
-     * @param array $modus Setter for modus
-     * @return Feld
-     */
-    public function setModus(array $modus)
-    {
-        $this->modus = $modus;
-        return $this;
-    }
-
-    /**
-     * @param string $name Setter for name
-     * @return Feld
-     */
-    public function setName(string $name)
+    public function setName(string $name): Feld
     {
         $this->name = $name;
         return $this;
     }
 
-    /**
-     * @param array $typ Setter for typ
-     * @return Feld
-     */
-    public function setTyp(array $typ)
+    public function getWert(): string
+    {
+        return $this->wert;
+    }
+
+    public function setWert(string $wert): Feld
+    {
+        $this->wert = $wert;
+        return $this;
+    }
+
+    public function getTyp(): ?array
+    {
+        return $this->typ;
+    }
+
+    public function setTyp(?array $typ): Feld
     {
         $this->typ = $typ;
         return $this;
     }
 
-    /**
-     * @param string $wert Setter for wert
-     * @return Feld
-     */
-    public function setWert(string $wert)
+    public function getModus(): ?array
     {
-        $this->wert = $wert;
+        return $this->modus;
+    }
+
+    public function setModus(?array $modus): Feld
+    {
+        $this->modus = $modus;
         return $this;
+    }
+
+    public function __construct(string $name = null, string $wert = null, array $typ = null, array $modus = null)
+    {
+        $this->name = $name;
+        $this->wert = $wert;
+        $this->typ = $typ;
+        $this->modus = $modus;
     }
 }

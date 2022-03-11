@@ -14,587 +14,414 @@ use JMS\Serializer\Annotation\XmlRoot;
 class VerwaltungObjekt
 {
     /**
-     * @Type("DateTime<'Y-m-d'>")
-     * @var \DateTime
-     */
-    protected $abdatum;
-
-    /**
      * @Type("bool")
-     * @var bool
+     * @var ?bool
      */
-    protected $alsFerien;
-
-    /**
-     * @Type("DateTime<'Y-m-d'>")
-     * @var \DateTime
-     */
-    protected $bisdatum;
+    protected ?bool $objektadresseFreigeben = null;
 
     /**
      * @Type("string")
-     * @var string
+     * @var ?string
      */
-    protected $branchen;
+    protected ?string $verfuegbarAb = null;
 
     /**
-     * @Type("bool")
-     * @var bool
+     * @Type("DateTime<'Y-m-d'>")
+     * @var ?\DateTime
      */
-    protected $denkmalgeschuetzt;
+    protected ?\DateTime $abdatum = null;
 
     /**
-     * @Type("Ujamii\OpenImmo\API\Geschlecht")
-     * @var Geschlecht
+     * @Type("DateTime<'Y-m-d'>")
+     * @var ?\DateTime
      */
-    protected $geschlecht;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $gewerblicheNutzung;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $gruppennummer;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $haustiere;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $hochhaus;
-
-    /**
-     * @Type("float")
-     * @var float
-     */
-    protected $laufzeit;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\MaxMietdauer")
-     * @var MaxMietdauer
-     */
-    protected $maxMietdauer;
-
-    /**
-     * @Type("int")
-     * @var int Minimum value (inclusive): 1
-     */
-    protected $maxPersonen;
+    protected ?\DateTime $bisdatum = null;
 
     /**
      * @Type("Ujamii\OpenImmo\API\MinMietdauer")
-     * @var MinMietdauer
+     * @var ?\Ujamii\OpenImmo\API\MinMietdauer
      */
-    protected $minMietdauer;
+    protected ?MinMietdauer $minMietdauer = null;
+
+    /**
+     * @Type("Ujamii\OpenImmo\API\MaxMietdauer")
+     * @var ?\Ujamii\OpenImmo\API\MaxMietdauer
+     */
+    protected ?MaxMietdauer $maxMietdauer = null;
+
+    /**
+     * @Type("DateTime<'Y-m-d'>")
+     * @var ?\DateTime
+     */
+    protected ?\DateTime $versteigerungstermin = null;
 
     /**
      * @Type("bool")
-     * @var bool
+     * @var ?bool
      */
-    protected $nichtraucher;
+    protected ?bool $wbsSozialwohnung = null;
 
     /**
      * @Type("bool")
-     * @var bool
+     * @var ?bool
      */
-    protected $objektadresseFreigeben;
+    protected ?bool $vermietet = null;
 
     /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @var UserDefinedAnyfield[]
+     * @Type("string")
+     * @var ?string
      */
-    protected $userDefinedAnyfield;
+    protected ?string $gruppennummer = null;
 
     /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @var UserDefinedExtend[]
+     * @Type("string")
+     * @var ?string
      */
-    protected $userDefinedExtend;
+    protected ?string $zugang = null;
+
+    /**
+     * @Type("float")
+     * @var ?float
+     */
+    protected ?float $laufzeit = null;
+
+    /**
+     * @Type("int")
+     * @var ?int
+     * Minimum value (inclusive): 1
+     */
+    protected ?int $maxPersonen = null;
+
+    /**
+     * @Type("bool")
+     * @var ?bool
+     */
+    protected ?bool $nichtraucher = null;
+
+    /**
+     * @Type("bool")
+     * @var ?bool
+     */
+    protected ?bool $haustiere = null;
+
+    /**
+     * @Type("Ujamii\OpenImmo\API\Geschlecht")
+     * @var ?\Ujamii\OpenImmo\API\Geschlecht
+     */
+    protected ?Geschlecht $geschlecht = null;
+
+    /**
+     * @Type("bool")
+     * @var ?bool
+     */
+    protected ?bool $denkmalgeschuetzt = null;
+
+    /**
+     * @Type("bool")
+     * @var ?bool
+     */
+    protected ?bool $alsFerien = null;
+
+    /**
+     * @Type("bool")
+     * @var ?bool
+     */
+    protected ?bool $gewerblicheNutzung = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $branchen = null;
+
+    /**
+     * @Type("bool")
+     * @var ?bool
+     */
+    protected ?bool $hochhaus = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @var UserDefinedSimplefield[]
+     * @var ?\Ujamii\OpenImmo\API\UserDefinedSimplefield[]
      */
-    protected $userDefinedSimplefield;
+    protected ?array $userDefinedSimplefield = [];
 
     /**
-     * @Type("string")
-     * @var string
+     * @XmlList(inline = true, entry = "user_defined_anyfield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
+     * @var ?\Ujamii\OpenImmo\API\UserDefinedAnyfield[]
      */
-    protected $verfuegbarAb;
+    protected ?array $userDefinedAnyfield = [];
 
     /**
-     * @Type("bool")
-     * @var bool
+     * @XmlList(inline = true, entry = "user_defined_extend")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
+     * @var ?\Ujamii\OpenImmo\API\UserDefinedExtend[]
      */
-    protected $vermietet;
+    protected ?array $userDefinedExtend = [];
 
-    /**
-     * @Type("DateTime<'Y-m-d'>")
-     * @var \DateTime
-     */
-    protected $versteigerungstermin;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $wbsSozialwohnung;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $zugang;
-
-    /**
-     * @return \DateTime
-     */
-    public function getAbdatum(): ?\DateTime
-    {
-        return $this->abdatum;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getAlsFerien(): ?bool
-    {
-        return $this->alsFerien;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getBisdatum(): ?\DateTime
-    {
-        return $this->bisdatum;
-    }
-
-    /**
-     * @return string
-     */
-    public function getBranchen(): ?string
-    {
-        return $this->branchen;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getDenkmalgeschuetzt(): ?bool
-    {
-        return $this->denkmalgeschuetzt;
-    }
-
-    /**
-     * @return Geschlecht
-     */
-    public function getGeschlecht(): ?Geschlecht
-    {
-        return $this->geschlecht;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getGewerblicheNutzung(): ?bool
-    {
-        return $this->gewerblicheNutzung;
-    }
-
-    /**
-     * @return string
-     */
-    public function getGruppennummer(): ?string
-    {
-        return $this->gruppennummer;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getHaustiere(): ?bool
-    {
-        return $this->haustiere;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getHochhaus(): ?bool
-    {
-        return $this->hochhaus;
-    }
-
-    /**
-     * @return float
-     */
-    public function getLaufzeit(): ?float
-    {
-        return $this->laufzeit;
-    }
-
-    /**
-     * @return MaxMietdauer
-     */
-    public function getMaxMietdauer(): ?MaxMietdauer
-    {
-        return $this->maxMietdauer;
-    }
-
-    /**
-     * @return int
-     */
-    public function getMaxPersonen(): ?int
-    {
-        return $this->maxPersonen;
-    }
-
-    /**
-     * @return MinMietdauer
-     */
-    public function getMinMietdauer(): ?MinMietdauer
-    {
-        return $this->minMietdauer;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getNichtraucher(): ?bool
-    {
-        return $this->nichtraucher;
-    }
-
-    /**
-     * @return bool
-     */
     public function getObjektadresseFreigeben(): ?bool
     {
         return $this->objektadresseFreigeben;
     }
 
-    /**
-     * Returns array of UserDefinedAnyfield
-     *
-     * @return array
-     */
-    public function getUserDefinedAnyfield(): array
-    {
-        return $this->userDefinedAnyfield ?? [];
-    }
-
-    /**
-     * Returns array of UserDefinedExtend
-     *
-     * @return array
-     */
-    public function getUserDefinedExtend(): array
-    {
-        return $this->userDefinedExtend ?? [];
-    }
-
-    /**
-     * Returns array of UserDefinedSimplefield
-     *
-     * @return array
-     */
-    public function getUserDefinedSimplefield(): array
-    {
-        return $this->userDefinedSimplefield ?? [];
-    }
-
-    /**
-     * @return string
-     */
-    public function getVerfuegbarAb(): ?string
-    {
-        return $this->verfuegbarAb;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getVermietet(): ?bool
-    {
-        return $this->vermietet;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getVersteigerungstermin(): ?\DateTime
-    {
-        return $this->versteigerungstermin;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getWbsSozialwohnung(): ?bool
-    {
-        return $this->wbsSozialwohnung;
-    }
-
-    /**
-     * @return string
-     */
-    public function getZugang(): ?string
-    {
-        return $this->zugang;
-    }
-
-    /**
-     * @param \DateTime $abdatum Setter for abdatum
-     * @return VerwaltungObjekt
-     */
-    public function setAbdatum(?\DateTime $abdatum)
-    {
-        $this->abdatum = $abdatum;
-        return $this;
-    }
-
-    /**
-     * @param bool $alsFerien Setter for alsFerien
-     * @return VerwaltungObjekt
-     */
-    public function setAlsFerien(?bool $alsFerien)
-    {
-        $this->alsFerien = $alsFerien;
-        return $this;
-    }
-
-    /**
-     * @param \DateTime $bisdatum Setter for bisdatum
-     * @return VerwaltungObjekt
-     */
-    public function setBisdatum(?\DateTime $bisdatum)
-    {
-        $this->bisdatum = $bisdatum;
-        return $this;
-    }
-
-    /**
-     * @param string $branchen Setter for branchen
-     * @return VerwaltungObjekt
-     */
-    public function setBranchen(?string $branchen)
-    {
-        $this->branchen = $branchen;
-        return $this;
-    }
-
-    /**
-     * @param bool $denkmalgeschuetzt Setter for denkmalgeschuetzt
-     * @return VerwaltungObjekt
-     */
-    public function setDenkmalgeschuetzt(?bool $denkmalgeschuetzt)
-    {
-        $this->denkmalgeschuetzt = $denkmalgeschuetzt;
-        return $this;
-    }
-
-    /**
-     * @param Geschlecht $geschlecht Setter for geschlecht
-     * @return VerwaltungObjekt
-     */
-    public function setGeschlecht(?Geschlecht $geschlecht)
-    {
-        $this->geschlecht = $geschlecht;
-        return $this;
-    }
-
-    /**
-     * @param bool $gewerblicheNutzung Setter for gewerblicheNutzung
-     * @return VerwaltungObjekt
-     */
-    public function setGewerblicheNutzung(?bool $gewerblicheNutzung)
-    {
-        $this->gewerblicheNutzung = $gewerblicheNutzung;
-        return $this;
-    }
-
-    /**
-     * @param string $gruppennummer Setter for gruppennummer
-     * @return VerwaltungObjekt
-     */
-    public function setGruppennummer(?string $gruppennummer)
-    {
-        $this->gruppennummer = $gruppennummer;
-        return $this;
-    }
-
-    /**
-     * @param bool $haustiere Setter for haustiere
-     * @return VerwaltungObjekt
-     */
-    public function setHaustiere(?bool $haustiere)
-    {
-        $this->haustiere = $haustiere;
-        return $this;
-    }
-
-    /**
-     * @param bool $hochhaus Setter for hochhaus
-     * @return VerwaltungObjekt
-     */
-    public function setHochhaus(?bool $hochhaus)
-    {
-        $this->hochhaus = $hochhaus;
-        return $this;
-    }
-
-    /**
-     * @param float $laufzeit Setter for laufzeit
-     * @return VerwaltungObjekt
-     */
-    public function setLaufzeit(?float $laufzeit)
-    {
-        $this->laufzeit = $laufzeit;
-        return $this;
-    }
-
-    /**
-     * @param MaxMietdauer $maxMietdauer Setter for maxMietdauer
-     * @return VerwaltungObjekt
-     */
-    public function setMaxMietdauer(?MaxMietdauer $maxMietdauer)
-    {
-        $this->maxMietdauer = $maxMietdauer;
-        return $this;
-    }
-
-    /**
-     * @param int $maxPersonen Setter for maxPersonen
-     * @return VerwaltungObjekt
-     */
-    public function setMaxPersonen(?int $maxPersonen)
-    {
-        $this->maxPersonen = $maxPersonen;
-        return $this;
-    }
-
-    /**
-     * @param MinMietdauer $minMietdauer Setter for minMietdauer
-     * @return VerwaltungObjekt
-     */
-    public function setMinMietdauer(?MinMietdauer $minMietdauer)
-    {
-        $this->minMietdauer = $minMietdauer;
-        return $this;
-    }
-
-    /**
-     * @param bool $nichtraucher Setter for nichtraucher
-     * @return VerwaltungObjekt
-     */
-    public function setNichtraucher(?bool $nichtraucher)
-    {
-        $this->nichtraucher = $nichtraucher;
-        return $this;
-    }
-
-    /**
-     * @param bool $objektadresseFreigeben Setter for objektadresseFreigeben
-     * @return VerwaltungObjekt
-     */
-    public function setObjektadresseFreigeben(?bool $objektadresseFreigeben)
+    public function setObjektadresseFreigeben(?bool $objektadresseFreigeben): VerwaltungObjekt
     {
         $this->objektadresseFreigeben = $objektadresseFreigeben;
         return $this;
     }
 
-    /**
-     * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
-     * @return VerwaltungObjekt
-     */
-    public function setUserDefinedAnyfield(array $userDefinedAnyfield)
+    public function getVerfuegbarAb(): ?string
     {
-        $this->userDefinedAnyfield = $userDefinedAnyfield;
-        return $this;
+        return $this->verfuegbarAb;
     }
 
-    /**
-     * @param array $userDefinedExtend Setter for userDefinedExtend
-     * @return VerwaltungObjekt
-     */
-    public function setUserDefinedExtend(array $userDefinedExtend)
-    {
-        $this->userDefinedExtend = $userDefinedExtend;
-        return $this;
-    }
-
-    /**
-     * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
-     * @return VerwaltungObjekt
-     */
-    public function setUserDefinedSimplefield(array $userDefinedSimplefield)
-    {
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
-        return $this;
-    }
-
-    /**
-     * @param string $verfuegbarAb Setter for verfuegbarAb
-     * @return VerwaltungObjekt
-     */
-    public function setVerfuegbarAb(?string $verfuegbarAb)
+    public function setVerfuegbarAb(?string $verfuegbarAb): VerwaltungObjekt
     {
         $this->verfuegbarAb = $verfuegbarAb;
         return $this;
     }
 
-    /**
-     * @param bool $vermietet Setter for vermietet
-     * @return VerwaltungObjekt
-     */
-    public function setVermietet(?bool $vermietet)
+    public function getAbdatum(): ?\DateTime
     {
-        $this->vermietet = $vermietet;
+        return $this->abdatum;
+    }
+
+    public function setAbdatum(?\DateTime $abdatum): VerwaltungObjekt
+    {
+        $this->abdatum = $abdatum;
         return $this;
     }
 
-    /**
-     * @param \DateTime $versteigerungstermin Setter for versteigerungstermin
-     * @return VerwaltungObjekt
-     */
-    public function setVersteigerungstermin(?\DateTime $versteigerungstermin)
+    public function getBisdatum(): ?\DateTime
+    {
+        return $this->bisdatum;
+    }
+
+    public function setBisdatum(?\DateTime $bisdatum): VerwaltungObjekt
+    {
+        $this->bisdatum = $bisdatum;
+        return $this;
+    }
+
+    public function getMinMietdauer(): ?MinMietdauer
+    {
+        return $this->minMietdauer;
+    }
+
+    public function setMinMietdauer(?MinMietdauer $minMietdauer): VerwaltungObjekt
+    {
+        $this->minMietdauer = $minMietdauer;
+        return $this;
+    }
+
+    public function getMaxMietdauer(): ?MaxMietdauer
+    {
+        return $this->maxMietdauer;
+    }
+
+    public function setMaxMietdauer(?MaxMietdauer $maxMietdauer): VerwaltungObjekt
+    {
+        $this->maxMietdauer = $maxMietdauer;
+        return $this;
+    }
+
+    public function getVersteigerungstermin(): ?\DateTime
+    {
+        return $this->versteigerungstermin;
+    }
+
+    public function setVersteigerungstermin(?\DateTime $versteigerungstermin): VerwaltungObjekt
     {
         $this->versteigerungstermin = $versteigerungstermin;
         return $this;
     }
 
-    /**
-     * @param bool $wbsSozialwohnung Setter for wbsSozialwohnung
-     * @return VerwaltungObjekt
-     */
-    public function setWbsSozialwohnung(?bool $wbsSozialwohnung)
+    public function getWbsSozialwohnung(): ?bool
+    {
+        return $this->wbsSozialwohnung;
+    }
+
+    public function setWbsSozialwohnung(?bool $wbsSozialwohnung): VerwaltungObjekt
     {
         $this->wbsSozialwohnung = $wbsSozialwohnung;
         return $this;
     }
 
-    /**
-     * @param string $zugang Setter for zugang
-     * @return VerwaltungObjekt
-     */
-    public function setZugang(?string $zugang)
+    public function getVermietet(): ?bool
+    {
+        return $this->vermietet;
+    }
+
+    public function setVermietet(?bool $vermietet): VerwaltungObjekt
+    {
+        $this->vermietet = $vermietet;
+        return $this;
+    }
+
+    public function getGruppennummer(): ?string
+    {
+        return $this->gruppennummer;
+    }
+
+    public function setGruppennummer(?string $gruppennummer): VerwaltungObjekt
+    {
+        $this->gruppennummer = $gruppennummer;
+        return $this;
+    }
+
+    public function getZugang(): ?string
+    {
+        return $this->zugang;
+    }
+
+    public function setZugang(?string $zugang): VerwaltungObjekt
     {
         $this->zugang = $zugang;
+        return $this;
+    }
+
+    public function getLaufzeit(): ?float
+    {
+        return $this->laufzeit;
+    }
+
+    public function setLaufzeit(?float $laufzeit): VerwaltungObjekt
+    {
+        $this->laufzeit = $laufzeit;
+        return $this;
+    }
+
+    public function getMaxPersonen(): ?int
+    {
+        return $this->maxPersonen;
+    }
+
+    public function setMaxPersonen(?int $maxPersonen): VerwaltungObjekt
+    {
+        $this->maxPersonen = $maxPersonen;
+        return $this;
+    }
+
+    public function getNichtraucher(): ?bool
+    {
+        return $this->nichtraucher;
+    }
+
+    public function setNichtraucher(?bool $nichtraucher): VerwaltungObjekt
+    {
+        $this->nichtraucher = $nichtraucher;
+        return $this;
+    }
+
+    public function getHaustiere(): ?bool
+    {
+        return $this->haustiere;
+    }
+
+    public function setHaustiere(?bool $haustiere): VerwaltungObjekt
+    {
+        $this->haustiere = $haustiere;
+        return $this;
+    }
+
+    public function getGeschlecht(): ?Geschlecht
+    {
+        return $this->geschlecht;
+    }
+
+    public function setGeschlecht(?Geschlecht $geschlecht): VerwaltungObjekt
+    {
+        $this->geschlecht = $geschlecht;
+        return $this;
+    }
+
+    public function getDenkmalgeschuetzt(): ?bool
+    {
+        return $this->denkmalgeschuetzt;
+    }
+
+    public function setDenkmalgeschuetzt(?bool $denkmalgeschuetzt): VerwaltungObjekt
+    {
+        $this->denkmalgeschuetzt = $denkmalgeschuetzt;
+        return $this;
+    }
+
+    public function getAlsFerien(): ?bool
+    {
+        return $this->alsFerien;
+    }
+
+    public function setAlsFerien(?bool $alsFerien): VerwaltungObjekt
+    {
+        $this->alsFerien = $alsFerien;
+        return $this;
+    }
+
+    public function getGewerblicheNutzung(): ?bool
+    {
+        return $this->gewerblicheNutzung;
+    }
+
+    public function setGewerblicheNutzung(?bool $gewerblicheNutzung): VerwaltungObjekt
+    {
+        $this->gewerblicheNutzung = $gewerblicheNutzung;
+        return $this;
+    }
+
+    public function getBranchen(): ?string
+    {
+        return $this->branchen;
+    }
+
+    public function setBranchen(?string $branchen): VerwaltungObjekt
+    {
+        $this->branchen = $branchen;
+        return $this;
+    }
+
+    public function getHochhaus(): ?bool
+    {
+        return $this->hochhaus;
+    }
+
+    public function setHochhaus(?bool $hochhaus): VerwaltungObjekt
+    {
+        $this->hochhaus = $hochhaus;
+        return $this;
+    }
+
+    public function getUserDefinedSimplefield(): ?array
+    {
+        return $this->userDefinedSimplefield;
+    }
+
+    public function setUserDefinedSimplefield(?array $userDefinedSimplefield): VerwaltungObjekt
+    {
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        return $this;
+    }
+
+    public function getUserDefinedAnyfield(): ?array
+    {
+        return $this->userDefinedAnyfield;
+    }
+
+    public function setUserDefinedAnyfield(?array $userDefinedAnyfield): VerwaltungObjekt
+    {
+        $this->userDefinedAnyfield = $userDefinedAnyfield;
+        return $this;
+    }
+
+    public function getUserDefinedExtend(): ?array
+    {
+        return $this->userDefinedExtend;
+    }
+
+    public function setUserDefinedExtend(?array $userDefinedExtend): VerwaltungObjekt
+    {
+        $this->userDefinedExtend = $userDefinedExtend;
         return $this;
     }
 }

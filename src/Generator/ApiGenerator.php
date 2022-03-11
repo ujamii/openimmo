@@ -12,12 +12,12 @@ use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexTypeSimpleContent;
 use GoetasWebservices\XML\XSDReader\Schema\Type\SimpleType;
 use GoetasWebservices\XML\XSDReader\SchemaReader;
-use gossi\codegen\generator\CodeFileGenerator;
-use gossi\codegen\model\PhpClass;
-use gossi\codegen\model\PhpMethod;
-use gossi\codegen\model\PhpParameter;
-use gossi\codegen\model\PhpProperty;
-use gossi\docblock\tags\TagFactory;
+use Nette\PhpGenerator\ClassLike;
+use Nette\PhpGenerator\ClassType;
+use Nette\PhpGenerator\PhpFile;
+use Nette\PhpGenerator\PhpNamespace;
+use Nette\PhpGenerator\Property;
+use Nette\PhpGenerator\PsrPrinter;
 use Ujamii\OpenImmo\XSDReader\Schema\Type\ComplexTypeMixed;
 
 /**
@@ -36,15 +36,6 @@ class ApiGenerator
      * @var string
      */
     protected string $targetFolder = './src/API/';
-
-    /**
-     * @var array<bool>
-     */
-    protected array $generatorConfig = [
-        'generateScalarTypeHints' => true,
-        'generateNullableTypes'   => true,
-        'generateReturnTypeHints' => true,
-    ];
 
     /**
      * Additional elements may be referenced inside of MixedComplexTypes.
@@ -91,16 +82,14 @@ class ApiGenerator
     {
         $className = TypeUtil::camelize($element->getName());
 
-        $class = new PhpClass();
+        $namespace = new PhpNamespace('Ujamii\\OpenImmo\\API');
+        $namespace
+            ->addUse('JMS\Serializer\Annotation\XmlRoot', 'XmlRoot')
+            ->addUse('JMS\Serializer\Annotation\Type', 'Type');
+        $class = $namespace->addClass($className);
         $class
-            ->setQualifiedName('Ujamii\\OpenImmo\\API\\' . $className)
-            ->setUseStatements([
-                'XmlRoot' => 'JMS\Serializer\Annotation\XmlRoot',
-                'Type'    => 'JMS\Serializer\Annotation\Type'
-            ])
-            ->setDescription('Class ' . $className . PHP_EOL . $element->getDoc())
-            ->getDocblock()
-            ->appendTag(TagFactory::create('XmlRoot("' . $element->getName() . '")'));
+            ->addComment('Class ' . $className . PHP_EOL . $element->getDoc())
+            ->addComment('@XmlRoot("' . $element->getName() . '")');
 
         /* @var $attributeFromXsd Attribute */
         foreach ($element->getType()->getAttributes() as $attributeFromXsd) {
@@ -108,38 +97,40 @@ class ApiGenerator
         }
 
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
-            $this->addSimpleValue($element->getType()->getExtension(), $class);
+            $this->addSimpleValue($element->getType()->getExtension(), $class, $namespace);
         } elseif ($element->getType() instanceof ComplexTypeMixed) {
             // @see https://github.com/ujamii/openimmo/issues/3
-            $this->addSimpleValue(null, $class);
+            $this->addSimpleValue(null, $class, $namespace);
         } else {
             /* @var ComplexType $complexType */
             foreach ($element->getType()->getElements() as $property) {
-                $this->parseProperty($property, $class);
+                $this->parseProperty($property, $class, $namespace);
             }
         }
 
         if (count($element->getType()->getAttributes()) > 0) {
-            $class->addUseStatement('JMS\Serializer\Annotation\XmlAttribute');
+            $namespace->addUse('JMS\Serializer\Annotation\XmlAttribute');
         }
 
-        $classPropertyCount = $class->getPropertyNames()->size();
+        $classPropertyCount = count($class->getProperties());
         $hasConstructor     = $class->hasMethod('__construct');
         if (! $hasConstructor && $classPropertyCount > 0 && $classPropertyCount <= self::MAX_PROPERTIES_IN_CONSTRUCTOR) {
             $this->generateConstructor($class);
         }
 
-        $this->createPhpFile($class);
+        $this->createPhpFile($namespace, $class);
     }
 
     /**
      * @param Extension|null $extension
-     * @param PhpClass $class
+     * @param ClassType $class
+     * @param PhpNamespace $namespace
      */
-    private function addSimpleValue(?Extension $extension, PhpClass $class): void
+    private function addSimpleValue(?Extension $extension, ClassType $class, PhpNamespace $namespace): void
     {
         $propertyName  = 'value';
-        $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
+        $classProperty = $class->addProperty($propertyName)
+                               ->setVisibility(ClassLike::VisibilityProtected);
 
         if (is_null($extension)) {
             $xsdType = 'string';
@@ -148,89 +139,95 @@ class ApiGenerator
         }
 
         $propertyType = TypeUtil::getValidPhpType($xsdType);
-        $classProperty->setType($propertyType);
-        $classProperty->getDocblock()->appendTag(TagFactory::create('Inline'));
-        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")'));
-        $class->addUseStatement('JMS\Serializer\Annotation\Type');
-
-        $class->addUseStatement('JMS\Serializer\Annotation\Inline');
-        $class->setProperty($classProperty);
-        CodeGenUtil::generateGetterAndSetter($classProperty, $class);
+        $classProperty->setType($propertyType)
+                      ->setNullable(true)
+                      ->addComment('@Inline')
+                      ->addComment('@Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")');
+        $namespace
+            ->addUse('JMS\Serializer\Annotation\Type')
+            ->addUse('JMS\Serializer\Annotation\Inline');
+        CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, ! TypeUtil::isConstantsBasedProperty($classProperty));
     }
 
     /**
-     * @param PhpClass $class
+     * @param ClassType $class
      *
      * @return void
      */
-    private function generateConstructor(PhpClass $class): void
+    private function generateConstructor(ClassType $class): void
     {
-        $constructor = PhpMethod::create('__construct');
+        $constructor = $class->addMethod('__construct');
 
         $constructorCode = [];
-        foreach ($class->getPropertyNames() as $classPropertyName) {
-            $type        = $class->getProperty($classPropertyName)->getType();
+        foreach ($class->getProperties() as $classPropertyName => $property) {
+            $type        = TypeUtil::getTypeFromProperty($property);
             $typeIsArray = substr($type, -2) === '[]';
             $type        = TypeUtil::getValidPhpType($type);
-            $phpParam    = PhpParameter::create($classPropertyName)
-                                       ->setType($typeIsArray ? 'array' : $type)
-                                       ->setDescription('Shortcut setter for ' . $classPropertyName);
-            if ($typeIsArray) {
-                $phpParam->setExpression('[]');
-            } else {
-                if ($class->getProperty($classPropertyName)->getNullable()) {
-                    $phpParam->setValue(null);
-                } else {
-                    $phpParam->setValue($class->getProperty($classPropertyName)->getValue());
-                }
-            }
-            $constructor->addParameter($phpParam);
+            $phpParam    = $constructor->addParameter($classPropertyName)
+                                       ->setType($typeIsArray ? 'array' : $type);
+            $phpParam->setDefaultValue(TypeUtil::getDefaultValueForType($type, true));
+
             $constructorCode[] = '$this->' . $classPropertyName . ' = $' . $classPropertyName . ';';
         }
 
         $constructor->setBody(implode(PHP_EOL, $constructorCode));
-        $class->setMethod($constructor);
     }
 
     /**
      * @param ElementItem $property
-     * @param PhpClass $class
+     * @param ClassType $class
+     * @param PhpNamespace $namespace
      */
-    private function parseProperty(ElementItem $property, PhpClass $class): void
+    private function parseProperty(ElementItem $property, ClassType $class, PhpNamespace $namespace): void
     {
-        $propertyName  = TypeUtil::camelize($property->getName(), true);
-        $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
-        $xsdType  = $this->getPhpPropertyTypeFromXsdElement($property);
+        $propertyName = TypeUtil::camelize($property->getName(), true);
+        if (array_key_exists($propertyName, $class->getProperties())) {
+            return;
+        }
+        $classProperty = $class->addProperty($propertyName)
+                               ->setVisibility(ClassLike::VisibilityProtected);
+        $xsdType       = $this->getPhpPropertyTypeFromXsdElement($property);
 
         // take min/max into account, as this may be an array instead
-        if ($property->getMax() == -1) {
-            $classProperty->getDocblock()->appendTag(TagFactory::create('XmlList(inline = true, entry = "' . $property->getName() . '")'));
-            $class->addUseStatement('JMS\Serializer\Annotation\XmlList');
+        if ($property->getMax() === -1) {
+            $classProperty->addComment('@XmlList(inline = true, entry = "' . $property->getName() . '")');
+            $namespace->addUse('JMS\Serializer\Annotation\XmlList');
         }
 
         $phpType = TypeUtil::getValidPhpType($xsdType);
-        $classProperty->setType($phpType);
 
         $serializerType = TypeUtil::getTypeForSerializer($xsdType);
 
-        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . $serializerType . '")'));
-        $class->addUseStatement('JMS\Serializer\Annotation\Type');
+        $classProperty->addComment('@Type("' . $serializerType . '")');
+        $namespace->addUse('JMS\Serializer\Annotation\Type');
 
-        $nullable = $property->getMin() === 0;
+        $isConstantBasedproperty = TypeUtil::isConstantsBasedProperty($classProperty);
+        $nullable                = $property->getMin() === 0;
         // if the property type is an object, it should be nullable
-        if (strpos($serializerType, 'Ujamii\\OpenImmo\\API\\') === 0 || '\DateTime' === $phpType) {
+        if (strpos($serializerType, TypeUtil::OPENIMMO_NAMESPACE) === 0 || '\DateTime' === $phpType) {
             $nullable = true;
         }
-        if (!$nullable) {
-            $defaultValue = TypeUtil::getDefaultValueForType($phpType);
-            if ('[]' === substr($phpType, -2)) {
-                $classProperty->setExpression($defaultValue);
-            } else {
+        if ($propertyName === 'format') {
+            var_dump($property->getMin());
+        }
+        $classProperty->setNullable($nullable);
+        $defaultValue = TypeUtil::getDefaultValueForType($phpType, $nullable);
+        if ('[]' === substr($phpType, -2)) {
+            $classProperty->setValue([])
+                          ->setType('array');
+        } else {
+            if (! $isConstantBasedproperty) {
                 $classProperty->setValue($defaultValue);
             }
+            $classProperty->setType($phpType);
+        }
 
-            $classProperty->getDocblock()->appendTag(TagFactory::create('SkipWhenEmpty'));
-            $class->addUseStatement('JMS\Serializer\Annotation\SkipWhenEmpty');
+        if ($nullable) {
+            $classProperty->addComment("@var ?{$phpType}");
+        } else {
+            $classProperty->addComment("@var {$phpType}")
+                          ->addComment('@SkipWhenEmpty');
+            $namespace->addUse('JMS\Serializer\Annotation\SkipWhenEmpty');
         }
 
         if ($property->getType()->getRestriction()) {
@@ -242,8 +239,7 @@ class ApiGenerator
             );
         }
 
-        $class->setProperty($classProperty);
-        CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable);
+        CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable && ! $isConstantBasedproperty);
     }
 
     /**
@@ -277,30 +273,31 @@ class ApiGenerator
 
     /**
      * @param Attribute $attribute
-     * @param PhpClass $class
+     * @param ClassType $class
      */
-    private function parseAttribute(Attribute $attribute, PhpClass $class): void
+    private function parseAttribute(Attribute $attribute, ClassType $class): void
     {
         $propertyName  = TypeUtil::camelize(strtolower($attribute->getName()), true);
-        $classProperty = PhpProperty::create($propertyName)->setVisibility(PhpProperty::VISIBILITY_PROTECTED);
+        $classProperty = $class->addProperty($propertyName)->setVisibility(ClassLike::VisibilityProtected);
         $xsdType       = TypeUtil::extractTypeForPhp($attribute->getType());
         $phpType       = TypeUtil::getValidPhpType($xsdType);
-        $classProperty->getDocblock()->appendTag(TagFactory::create('Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")'));
-        $class->addUseStatement('JMS\Serializer\Annotation\Type');
+        $classProperty->addComment('@Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")');
+        $class->getNamespace()->addUse('JMS\Serializer\Annotation\Type');
         $nullable = true;
 
-        $classProperty->setType($phpType);
-        $classProperty->getDocblock()->appendTag(TagFactory::create('XmlAttribute'));
+        $classProperty->setType($phpType)
+                      ->setNullable(true)
+                      ->addComment('@XmlAttribute');
 
         // as the openimmo guys like to switch randomly between lowercase and uppercase, serialized names may differ from property names
-        if (strtolower($attribute->getName()) != $attribute->getName()) {
-            $classProperty->getDocblock()->appendTag(TagFactory::create('SerializedName("' . $attribute->getName() . '")'));
-            $class->addUseStatement('JMS\Serializer\Annotation\SerializedName');
+        if (strtolower($attribute->getName()) !== $attribute->getName()) {
+            $classProperty->addComment('@SerializedName("' . $attribute->getName() . '")');
+            $class->getNamespace()->addUse('JMS\Serializer\Annotation\SerializedName');
         }
 
         // on some very few places, there are comments in the xsd file
-        if ($attribute->getUse() != '') {
-            $classProperty->setDescription($attribute->getUse());
+        if ($attribute->getUse() !== '') {
+            $classProperty->addComment($attribute->getUse());
             if ($attribute->getUse() === 'required') {
                 $nullable = false;
             }
@@ -313,18 +310,16 @@ class ApiGenerator
             $classProperty
         );
 
-        $class->setProperty($classProperty);
-
-        CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable);
+        CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable && ! TypeUtil::isConstantsBasedProperty($classProperty));
     }
 
     /**
      * @param Restriction $restriction
      * @param string $nameInXsd
-     * @param PhpClass $class
-     * @param PhpProperty $classProperty
+     * @param ClassType $class
+     * @param Property $classProperty
      */
-    private function parseRestriction(Restriction $restriction, string $nameInXsd, PhpClass $class, PhpProperty $classProperty): void
+    private function parseRestriction(Restriction $restriction, string $nameInXsd, ClassType $class, Property $classProperty): void
     {
         foreach ($restriction->getChecks() as $type => $options) {
             switch ($type) {
@@ -333,9 +328,11 @@ class ApiGenerator
                     $constantPrefix = strtoupper($nameInXsd . '_');
                     foreach ($options as $possibleValue) {
                         $constantName = strtoupper($constantPrefix . str_replace([' ', '-'], '_', $possibleValue['value']));
-                        $class->setConstant($constantName, $possibleValue['value']);
+                        if (! array_key_exists($constantName, $class->getConstants())) {
+                            $class->addConstant($constantName, $possibleValue['value']);
+                        }
                     }
-                    $classProperty->getDocblock()->appendTag(TagFactory::create('see', $constantPrefix . '* constants'));
+                    $classProperty->addComment("@see {$constantPrefix}* constants");
                     break;
 
                 case 'whiteSpace':
@@ -374,30 +371,16 @@ class ApiGenerator
     }
 
     /**
-     * @return array<bool>
-     */
-    public function getGeneratorConfig(): array
-    {
-        return $this->generatorConfig;
-    }
-
-    /**
-     * @param array<bool> $generatorConfig
-     */
-    public function setGeneratorConfig(array $generatorConfig): void
-    {
-        $this->generatorConfig = $generatorConfig;
-    }
-
-    /**
-     * @param PhpClass $class
+     * @param PhpNamespace $namespace
+     * @param ClassType $class
      *
      * @return bool|int
      */
-    private function createPhpFile(PhpClass $class)
+    private function createPhpFile(PhpNamespace $namespace, ClassType $class)
     {
-        $generator = new CodeFileGenerator($this->getGeneratorConfig());
-        $code      = $generator->generate($class);
+        $file = new PhpFile();
+        $file->addNamespace($namespace);
+        $code = (new PsrPrinter())->printFile($file);
 
         return file_put_contents($this->getTargetFolder() . $class->getName() . '.php', $code);
     }

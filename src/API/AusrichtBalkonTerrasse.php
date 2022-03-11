@@ -10,232 +10,159 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class AusrichtBalkonTerrasse
  * Ausrichtung der Balkone bzw. der Terrassen, Optionen kombinierbar
- *
  * @XmlRoot("ausricht_balkon_terrasse")
  */
 class AusrichtBalkonTerrasse
 {
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("NORD")
-     * @var bool
+     * optional
      */
-    protected $nord;
+    protected ?bool $nord;
 
     /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("NORDOST")
-     * @var bool
-     */
-    protected $nordost;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("NORDWEST")
-     * @var bool
-     */
-    protected $nordwest;
-
-    /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("OST")
-     * @var bool
+     * optional
      */
-    protected $ost;
+    protected ?bool $ost;
 
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("SUED")
-     * @var bool
+     * optional
      */
-    protected $sued;
+    protected ?bool $sued;
 
     /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("SUEDOST")
-     * @var bool
-     */
-    protected $suedost;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("SUEDWEST")
-     * @var bool
-     */
-    protected $suedwest;
-
-    /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("WEST")
-     * @var bool
+     * optional
      */
-    protected $west;
+    protected ?bool $west;
 
     /**
-     * @return bool
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("NORDOST")
+     * optional
      */
+    protected ?bool $nordost;
+
+    /**
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("NORDWEST")
+     * optional
+     */
+    protected ?bool $nordwest;
+
+    /**
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("SUEDOST")
+     * optional
+     */
+    protected ?bool $suedost;
+
+    /**
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("SUEDWEST")
+     * optional
+     */
+    protected ?bool $suedwest;
+
     public function getNord(): ?bool
     {
         return $this->nord;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNordost(): ?bool
-    {
-        return $this->nordost;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getNordwest(): ?bool
-    {
-        return $this->nordwest;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getOst(): ?bool
-    {
-        return $this->ost;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getSued(): ?bool
-    {
-        return $this->sued;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getSuedost(): ?bool
-    {
-        return $this->suedost;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getSuedwest(): ?bool
-    {
-        return $this->suedwest;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getWest(): ?bool
-    {
-        return $this->west;
-    }
-
-    /**
-     * @param bool $nord Setter for nord
-     * @return AusrichtBalkonTerrasse
-     */
-    public function setNord(?bool $nord)
+    public function setNord(?bool $nord): AusrichtBalkonTerrasse
     {
         $this->nord = $nord;
         return $this;
     }
 
-    /**
-     * @param bool $nordost Setter for nordost
-     * @return AusrichtBalkonTerrasse
-     */
-    public function setNordost(?bool $nordost)
+    public function getOst(): ?bool
     {
-        $this->nordost = $nordost;
-        return $this;
+        return $this->ost;
     }
 
-    /**
-     * @param bool $nordwest Setter for nordwest
-     * @return AusrichtBalkonTerrasse
-     */
-    public function setNordwest(?bool $nordwest)
-    {
-        $this->nordwest = $nordwest;
-        return $this;
-    }
-
-    /**
-     * @param bool $ost Setter for ost
-     * @return AusrichtBalkonTerrasse
-     */
-    public function setOst(?bool $ost)
+    public function setOst(?bool $ost): AusrichtBalkonTerrasse
     {
         $this->ost = $ost;
         return $this;
     }
 
-    /**
-     * @param bool $sued Setter for sued
-     * @return AusrichtBalkonTerrasse
-     */
-    public function setSued(?bool $sued)
+    public function getSued(): ?bool
+    {
+        return $this->sued;
+    }
+
+    public function setSued(?bool $sued): AusrichtBalkonTerrasse
     {
         $this->sued = $sued;
         return $this;
     }
 
-    /**
-     * @param bool $suedost Setter for suedost
-     * @return AusrichtBalkonTerrasse
-     */
-    public function setSuedost(?bool $suedost)
+    public function getWest(): ?bool
+    {
+        return $this->west;
+    }
+
+    public function setWest(?bool $west): AusrichtBalkonTerrasse
+    {
+        $this->west = $west;
+        return $this;
+    }
+
+    public function getNordost(): ?bool
+    {
+        return $this->nordost;
+    }
+
+    public function setNordost(?bool $nordost): AusrichtBalkonTerrasse
+    {
+        $this->nordost = $nordost;
+        return $this;
+    }
+
+    public function getNordwest(): ?bool
+    {
+        return $this->nordwest;
+    }
+
+    public function setNordwest(?bool $nordwest): AusrichtBalkonTerrasse
+    {
+        $this->nordwest = $nordwest;
+        return $this;
+    }
+
+    public function getSuedost(): ?bool
+    {
+        return $this->suedost;
+    }
+
+    public function setSuedost(?bool $suedost): AusrichtBalkonTerrasse
     {
         $this->suedost = $suedost;
         return $this;
     }
 
-    /**
-     * @param bool $suedwest Setter for suedwest
-     * @return AusrichtBalkonTerrasse
-     */
-    public function setSuedwest(?bool $suedwest)
+    public function getSuedwest(): ?bool
     {
-        $this->suedwest = $suedwest;
-        return $this;
+        return $this->suedwest;
     }
 
-    /**
-     * @param bool $west Setter for west
-     * @return AusrichtBalkonTerrasse
-     */
-    public function setWest(?bool $west)
+    public function setSuedwest(?bool $suedwest): AusrichtBalkonTerrasse
     {
-        $this->west = $west;
+        $this->suedwest = $suedwest;
         return $this;
     }
 }

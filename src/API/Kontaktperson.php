@@ -15,906 +15,646 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Kontaktperson
 {
     /**
-     * @Type("bool")
-     * @var bool
+     * @Type("string")
+     * @var ?string
+     * Minimum length: 1
      */
-    protected $adressfreigabe;
+    protected ?string $emailZentrale = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     * Minimum length: 1
+     */
+    protected ?string $emailDirekt = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     * Minimum length: 1
+     */
+    protected ?string $telZentrale = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     * Minimum length: 1
+     */
+    protected ?string $telDurchw = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     * Minimum length: 1
+     */
+    protected ?string $telFax = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     * Minimum length: 1
+     */
+    protected ?string $telHandy = null;
 
     /**
      * @Type("string")
      * @var string
+     * @SkipWhenEmpty
      */
-    protected $anrede;
+    protected string $name = '';
 
     /**
      * @Type("string")
-     * @var string
+     * @var ?string
      */
-    protected $anredeBrief;
+    protected ?string $vorname = null;
 
     /**
      * @Type("string")
-     * @var string Minimum length: 1
+     * @var ?string
      */
-    protected $emailDirekt;
+    protected ?string $titel = null;
 
     /**
      * @Type("string")
-     * @var string Minimum length: 1
+     * @var ?string
      */
-    protected $emailFeedback;
+    protected ?string $anrede = null;
 
     /**
      * @Type("string")
-     * @var string Minimum length: 1
+     * @var ?string
      */
-    protected $emailPrivat;
+    protected ?string $position = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $anredeBrief = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $firma = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $zusatzfeld = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $strasse = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $hausnummer = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $plz = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $ort = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $postfach = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $postfPlz = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $postfOrt = null;
+
+    /**
+     * @Type("Ujamii\OpenImmo\API\Land")
+     * @var ?\Ujamii\OpenImmo\API\Land
+     */
+    protected ?Land $land = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     * Minimum length: 1
+     */
+    protected ?string $emailPrivat = null;
 
     /**
      * @XmlList(inline = true, entry = "email_sonstige")
      * @Type("array<Ujamii\OpenImmo\API\EmailSonstige>")
-     * @var EmailSonstige[]
+     * @var ?\Ujamii\OpenImmo\API\EmailSonstige[]
      */
-    protected $emailSonstige;
+    protected ?array $emailSonstige = [];
 
     /**
      * @Type("string")
-     * @var string Minimum length: 1
+     * @var ?string
+     * Minimum length: 1
      */
-    protected $emailZentrale;
+    protected ?string $emailFeedback = null;
 
     /**
      * @Type("string")
-     * @var string
+     * @var ?string
+     * Minimum length: 1
      */
-    protected $firma;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Foto")
-     * @var Foto
-     */
-    protected $foto;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $freitextfeld;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $hausnummer;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $immobilientreuhaenderid;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Land")
-     * @var Land
-     */
-    protected $land;
-
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     * @var string
-     */
-    protected $name = '';
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $ort;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $personennummer;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $plz;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $position;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $postfach;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $postfOrt;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $postfPlz;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $referenzId;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $strasse;
-
-    /**
-     * @Type("string")
-     * @var string Minimum length: 1
-     */
-    protected $telDurchw;
-
-    /**
-     * @Type("string")
-     * @var string Minimum length: 1
-     */
-    protected $telFax;
-
-    /**
-     * @Type("string")
-     * @var string Minimum length: 1
-     */
-    protected $telHandy;
-
-    /**
-     * @Type("string")
-     * @var string Minimum length: 1
-     */
-    protected $telPrivat;
+    protected ?string $telPrivat = null;
 
     /**
      * @XmlList(inline = true, entry = "tel_sonstige")
      * @Type("array<Ujamii\OpenImmo\API\TelSonstige>")
-     * @var TelSonstige[]
+     * @var ?\Ujamii\OpenImmo\API\TelSonstige[]
      */
-    protected $telSonstige;
+    protected ?array $telSonstige = [];
 
     /**
      * @Type("string")
-     * @var string Minimum length: 1
+     * @var ?string
      */
-    protected $telZentrale;
+    protected ?string $url = null;
+
+    /**
+     * @Type("bool")
+     * @var ?bool
+     */
+    protected ?bool $adressfreigabe = null;
 
     /**
      * @Type("string")
-     * @var string
+     * @var ?string
      */
-    protected $titel;
+    protected ?string $personennummer = null;
 
     /**
      * @Type("string")
-     * @var string
+     * @var ?string
      */
-    protected $url;
+    protected ?string $immobilientreuhaenderid = null;
 
     /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @var UserDefinedAnyfield[]
+     * @Type("Ujamii\OpenImmo\API\Foto")
+     * @var ?\Ujamii\OpenImmo\API\Foto
      */
-    protected $userDefinedAnyfield;
+    protected ?Foto $foto = null;
 
     /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @var UserDefinedExtend[]
+     * @Type("string")
+     * @var ?string
      */
-    protected $userDefinedExtend;
+    protected ?string $referenzId = null;
+
+    /**
+     * @Type("string")
+     * @var ?string
+     */
+    protected ?string $freitextfeld = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @var UserDefinedSimplefield[]
+     * @var ?\Ujamii\OpenImmo\API\UserDefinedSimplefield[]
      */
-    protected $userDefinedSimplefield;
+    protected ?array $userDefinedSimplefield = [];
 
     /**
-     * @Type("string")
-     * @var string
+     * @XmlList(inline = true, entry = "user_defined_anyfield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
+     * @var ?\Ujamii\OpenImmo\API\UserDefinedAnyfield[]
      */
-    protected $vorname;
+    protected ?array $userDefinedAnyfield = [];
 
     /**
-     * @Type("string")
-     * @var string
+     * @XmlList(inline = true, entry = "user_defined_extend")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
+     * @var ?\Ujamii\OpenImmo\API\UserDefinedExtend[]
      */
-    protected $zusatzfeld;
+    protected ?array $userDefinedExtend = [];
 
-    /**
-     * @return bool
-     */
-    public function getAdressfreigabe(): ?bool
-    {
-        return $this->adressfreigabe;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAnrede(): ?string
-    {
-        return $this->anrede;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAnredeBrief(): ?string
-    {
-        return $this->anredeBrief;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmailDirekt(): ?string
-    {
-        return $this->emailDirekt;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmailFeedback(): ?string
-    {
-        return $this->emailFeedback;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmailPrivat(): ?string
-    {
-        return $this->emailPrivat;
-    }
-
-    /**
-     * Returns array of EmailSonstige
-     *
-     * @return array
-     */
-    public function getEmailSonstige(): array
-    {
-        return $this->emailSonstige ?? [];
-    }
-
-    /**
-     * @return string
-     */
     public function getEmailZentrale(): ?string
     {
         return $this->emailZentrale;
     }
 
-    /**
-     * @return string
-     */
-    public function getFirma(): ?string
-    {
-        return $this->firma;
-    }
-
-    /**
-     * @return Foto
-     */
-    public function getFoto(): ?Foto
-    {
-        return $this->foto;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFreitextfeld(): ?string
-    {
-        return $this->freitextfeld;
-    }
-
-    /**
-     * @return string
-     */
-    public function getHausnummer(): ?string
-    {
-        return $this->hausnummer;
-    }
-
-    /**
-     * @return string
-     */
-    public function getImmobilientreuhaenderid(): ?string
-    {
-        return $this->immobilientreuhaenderid;
-    }
-
-    /**
-     * @return Land
-     */
-    public function getLand(): ?Land
-    {
-        return $this->land;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * @return string
-     */
-    public function getOrt(): ?string
-    {
-        return $this->ort;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPersonennummer(): ?string
-    {
-        return $this->personennummer;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPlz(): ?string
-    {
-        return $this->plz;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPosition(): ?string
-    {
-        return $this->position;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPostfach(): ?string
-    {
-        return $this->postfach;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPostfOrt(): ?string
-    {
-        return $this->postfOrt;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPostfPlz(): ?string
-    {
-        return $this->postfPlz;
-    }
-
-    /**
-     * @return string
-     */
-    public function getReferenzId(): ?string
-    {
-        return $this->referenzId;
-    }
-
-    /**
-     * @return string
-     */
-    public function getStrasse(): ?string
-    {
-        return $this->strasse;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTelDurchw(): ?string
-    {
-        return $this->telDurchw;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTelFax(): ?string
-    {
-        return $this->telFax;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTelHandy(): ?string
-    {
-        return $this->telHandy;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTelPrivat(): ?string
-    {
-        return $this->telPrivat;
-    }
-
-    /**
-     * Returns array of TelSonstige
-     *
-     * @return array
-     */
-    public function getTelSonstige(): array
-    {
-        return $this->telSonstige ?? [];
-    }
-
-    /**
-     * @return string
-     */
-    public function getTelZentrale(): ?string
-    {
-        return $this->telZentrale;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTitel(): ?string
-    {
-        return $this->titel;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUrl(): ?string
-    {
-        return $this->url;
-    }
-
-    /**
-     * Returns array of UserDefinedAnyfield
-     *
-     * @return array
-     */
-    public function getUserDefinedAnyfield(): array
-    {
-        return $this->userDefinedAnyfield ?? [];
-    }
-
-    /**
-     * Returns array of UserDefinedExtend
-     *
-     * @return array
-     */
-    public function getUserDefinedExtend(): array
-    {
-        return $this->userDefinedExtend ?? [];
-    }
-
-    /**
-     * Returns array of UserDefinedSimplefield
-     *
-     * @return array
-     */
-    public function getUserDefinedSimplefield(): array
-    {
-        return $this->userDefinedSimplefield ?? [];
-    }
-
-    /**
-     * @return string
-     */
-    public function getVorname(): ?string
-    {
-        return $this->vorname;
-    }
-
-    /**
-     * @return string
-     */
-    public function getZusatzfeld(): ?string
-    {
-        return $this->zusatzfeld;
-    }
-
-    /**
-     * @param bool $adressfreigabe Setter for adressfreigabe
-     * @return Kontaktperson
-     */
-    public function setAdressfreigabe(?bool $adressfreigabe)
-    {
-        $this->adressfreigabe = $adressfreigabe;
-        return $this;
-    }
-
-    /**
-     * @param string $anrede Setter for anrede
-     * @return Kontaktperson
-     */
-    public function setAnrede(?string $anrede)
-    {
-        $this->anrede = $anrede;
-        return $this;
-    }
-
-    /**
-     * @param string $anredeBrief Setter for anredeBrief
-     * @return Kontaktperson
-     */
-    public function setAnredeBrief(?string $anredeBrief)
-    {
-        $this->anredeBrief = $anredeBrief;
-        return $this;
-    }
-
-    /**
-     * @param string $emailDirekt Setter for emailDirekt
-     * @return Kontaktperson
-     */
-    public function setEmailDirekt(?string $emailDirekt)
-    {
-        $this->emailDirekt = $emailDirekt;
-        return $this;
-    }
-
-    /**
-     * @param string $emailFeedback Setter for emailFeedback
-     * @return Kontaktperson
-     */
-    public function setEmailFeedback(?string $emailFeedback)
-    {
-        $this->emailFeedback = $emailFeedback;
-        return $this;
-    }
-
-    /**
-     * @param string $emailPrivat Setter for emailPrivat
-     * @return Kontaktperson
-     */
-    public function setEmailPrivat(?string $emailPrivat)
-    {
-        $this->emailPrivat = $emailPrivat;
-        return $this;
-    }
-
-    /**
-     * @param array $emailSonstige Setter for emailSonstige
-     * @return Kontaktperson
-     */
-    public function setEmailSonstige(array $emailSonstige)
-    {
-        $this->emailSonstige = $emailSonstige;
-        return $this;
-    }
-
-    /**
-     * @param string $emailZentrale Setter for emailZentrale
-     * @return Kontaktperson
-     */
-    public function setEmailZentrale(?string $emailZentrale)
+    public function setEmailZentrale(?string $emailZentrale): Kontaktperson
     {
         $this->emailZentrale = $emailZentrale;
         return $this;
     }
 
-    /**
-     * @param string $firma Setter for firma
-     * @return Kontaktperson
-     */
-    public function setFirma(?string $firma)
+    public function getEmailDirekt(): ?string
     {
-        $this->firma = $firma;
+        return $this->emailDirekt;
+    }
+
+    public function setEmailDirekt(?string $emailDirekt): Kontaktperson
+    {
+        $this->emailDirekt = $emailDirekt;
         return $this;
     }
 
-    /**
-     * @param Foto $foto Setter for foto
-     * @return Kontaktperson
-     */
-    public function setFoto(?Foto $foto)
+    public function getTelZentrale(): ?string
     {
-        $this->foto = $foto;
-        return $this;
+        return $this->telZentrale;
     }
 
-    /**
-     * @param string $freitextfeld Setter for freitextfeld
-     * @return Kontaktperson
-     */
-    public function setFreitextfeld(?string $freitextfeld)
-    {
-        $this->freitextfeld = $freitextfeld;
-        return $this;
-    }
-
-    /**
-     * @param string $hausnummer Setter for hausnummer
-     * @return Kontaktperson
-     */
-    public function setHausnummer(?string $hausnummer)
-    {
-        $this->hausnummer = $hausnummer;
-        return $this;
-    }
-
-    /**
-     * @param string $immobilientreuhaenderid Setter for immobilientreuhaenderid
-     * @return Kontaktperson
-     */
-    public function setImmobilientreuhaenderid(?string $immobilientreuhaenderid)
-    {
-        $this->immobilientreuhaenderid = $immobilientreuhaenderid;
-        return $this;
-    }
-
-    /**
-     * @param Land $land Setter for land
-     * @return Kontaktperson
-     */
-    public function setLand(?Land $land)
-    {
-        $this->land = $land;
-        return $this;
-    }
-
-    /**
-     * @param string $name Setter for name
-     * @return Kontaktperson
-     */
-    public function setName(string $name)
-    {
-        $this->name = $name;
-        return $this;
-    }
-
-    /**
-     * @param string $ort Setter for ort
-     * @return Kontaktperson
-     */
-    public function setOrt(?string $ort)
-    {
-        $this->ort = $ort;
-        return $this;
-    }
-
-    /**
-     * @param string $personennummer Setter for personennummer
-     * @return Kontaktperson
-     */
-    public function setPersonennummer(?string $personennummer)
-    {
-        $this->personennummer = $personennummer;
-        return $this;
-    }
-
-    /**
-     * @param string $plz Setter for plz
-     * @return Kontaktperson
-     */
-    public function setPlz(?string $plz)
-    {
-        $this->plz = $plz;
-        return $this;
-    }
-
-    /**
-     * @param string $position Setter for position
-     * @return Kontaktperson
-     */
-    public function setPosition(?string $position)
-    {
-        $this->position = $position;
-        return $this;
-    }
-
-    /**
-     * @param string $postfach Setter for postfach
-     * @return Kontaktperson
-     */
-    public function setPostfach(?string $postfach)
-    {
-        $this->postfach = $postfach;
-        return $this;
-    }
-
-    /**
-     * @param string $postfOrt Setter for postfOrt
-     * @return Kontaktperson
-     */
-    public function setPostfOrt(?string $postfOrt)
-    {
-        $this->postfOrt = $postfOrt;
-        return $this;
-    }
-
-    /**
-     * @param string $postfPlz Setter for postfPlz
-     * @return Kontaktperson
-     */
-    public function setPostfPlz(?string $postfPlz)
-    {
-        $this->postfPlz = $postfPlz;
-        return $this;
-    }
-
-    /**
-     * @param string $referenzId Setter for referenzId
-     * @return Kontaktperson
-     */
-    public function setReferenzId(?string $referenzId)
-    {
-        $this->referenzId = $referenzId;
-        return $this;
-    }
-
-    /**
-     * @param string $strasse Setter for strasse
-     * @return Kontaktperson
-     */
-    public function setStrasse(?string $strasse)
-    {
-        $this->strasse = $strasse;
-        return $this;
-    }
-
-    /**
-     * @param string $telDurchw Setter for telDurchw
-     * @return Kontaktperson
-     */
-    public function setTelDurchw(?string $telDurchw)
-    {
-        $this->telDurchw = $telDurchw;
-        return $this;
-    }
-
-    /**
-     * @param string $telFax Setter for telFax
-     * @return Kontaktperson
-     */
-    public function setTelFax(?string $telFax)
-    {
-        $this->telFax = $telFax;
-        return $this;
-    }
-
-    /**
-     * @param string $telHandy Setter for telHandy
-     * @return Kontaktperson
-     */
-    public function setTelHandy(?string $telHandy)
-    {
-        $this->telHandy = $telHandy;
-        return $this;
-    }
-
-    /**
-     * @param string $telPrivat Setter for telPrivat
-     * @return Kontaktperson
-     */
-    public function setTelPrivat(?string $telPrivat)
-    {
-        $this->telPrivat = $telPrivat;
-        return $this;
-    }
-
-    /**
-     * @param array $telSonstige Setter for telSonstige
-     * @return Kontaktperson
-     */
-    public function setTelSonstige(array $telSonstige)
-    {
-        $this->telSonstige = $telSonstige;
-        return $this;
-    }
-
-    /**
-     * @param string $telZentrale Setter for telZentrale
-     * @return Kontaktperson
-     */
-    public function setTelZentrale(?string $telZentrale)
+    public function setTelZentrale(?string $telZentrale): Kontaktperson
     {
         $this->telZentrale = $telZentrale;
         return $this;
     }
 
-    /**
-     * @param string $titel Setter for titel
-     * @return Kontaktperson
-     */
-    public function setTitel(?string $titel)
+    public function getTelDurchw(): ?string
     {
-        $this->titel = $titel;
+        return $this->telDurchw;
+    }
+
+    public function setTelDurchw(?string $telDurchw): Kontaktperson
+    {
+        $this->telDurchw = $telDurchw;
         return $this;
     }
 
-    /**
-     * @param string $url Setter for url
-     * @return Kontaktperson
-     */
-    public function setUrl(?string $url)
+    public function getTelFax(): ?string
     {
-        $this->url = $url;
+        return $this->telFax;
+    }
+
+    public function setTelFax(?string $telFax): Kontaktperson
+    {
+        $this->telFax = $telFax;
         return $this;
     }
 
-    /**
-     * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
-     * @return Kontaktperson
-     */
-    public function setUserDefinedAnyfield(array $userDefinedAnyfield)
+    public function getTelHandy(): ?string
     {
-        $this->userDefinedAnyfield = $userDefinedAnyfield;
+        return $this->telHandy;
+    }
+
+    public function setTelHandy(?string $telHandy): Kontaktperson
+    {
+        $this->telHandy = $telHandy;
         return $this;
     }
 
-    /**
-     * @param array $userDefinedExtend Setter for userDefinedExtend
-     * @return Kontaktperson
-     */
-    public function setUserDefinedExtend(array $userDefinedExtend)
+    public function getName(): string
     {
-        $this->userDefinedExtend = $userDefinedExtend;
+        return $this->name;
+    }
+
+    public function setName(string $name): Kontaktperson
+    {
+        $this->name = $name;
         return $this;
     }
 
-    /**
-     * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
-     * @return Kontaktperson
-     */
-    public function setUserDefinedSimplefield(array $userDefinedSimplefield)
+    public function getVorname(): ?string
     {
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
-        return $this;
+        return $this->vorname;
     }
 
-    /**
-     * @param string $vorname Setter for vorname
-     * @return Kontaktperson
-     */
-    public function setVorname(?string $vorname)
+    public function setVorname(?string $vorname): Kontaktperson
     {
         $this->vorname = $vorname;
         return $this;
     }
 
-    /**
-     * @param string $zusatzfeld Setter for zusatzfeld
-     * @return Kontaktperson
-     */
-    public function setZusatzfeld(?string $zusatzfeld)
+    public function getTitel(): ?string
+    {
+        return $this->titel;
+    }
+
+    public function setTitel(?string $titel): Kontaktperson
+    {
+        $this->titel = $titel;
+        return $this;
+    }
+
+    public function getAnrede(): ?string
+    {
+        return $this->anrede;
+    }
+
+    public function setAnrede(?string $anrede): Kontaktperson
+    {
+        $this->anrede = $anrede;
+        return $this;
+    }
+
+    public function getPosition(): ?string
+    {
+        return $this->position;
+    }
+
+    public function setPosition(?string $position): Kontaktperson
+    {
+        $this->position = $position;
+        return $this;
+    }
+
+    public function getAnredeBrief(): ?string
+    {
+        return $this->anredeBrief;
+    }
+
+    public function setAnredeBrief(?string $anredeBrief): Kontaktperson
+    {
+        $this->anredeBrief = $anredeBrief;
+        return $this;
+    }
+
+    public function getFirma(): ?string
+    {
+        return $this->firma;
+    }
+
+    public function setFirma(?string $firma): Kontaktperson
+    {
+        $this->firma = $firma;
+        return $this;
+    }
+
+    public function getZusatzfeld(): ?string
+    {
+        return $this->zusatzfeld;
+    }
+
+    public function setZusatzfeld(?string $zusatzfeld): Kontaktperson
     {
         $this->zusatzfeld = $zusatzfeld;
+        return $this;
+    }
+
+    public function getStrasse(): ?string
+    {
+        return $this->strasse;
+    }
+
+    public function setStrasse(?string $strasse): Kontaktperson
+    {
+        $this->strasse = $strasse;
+        return $this;
+    }
+
+    public function getHausnummer(): ?string
+    {
+        return $this->hausnummer;
+    }
+
+    public function setHausnummer(?string $hausnummer): Kontaktperson
+    {
+        $this->hausnummer = $hausnummer;
+        return $this;
+    }
+
+    public function getPlz(): ?string
+    {
+        return $this->plz;
+    }
+
+    public function setPlz(?string $plz): Kontaktperson
+    {
+        $this->plz = $plz;
+        return $this;
+    }
+
+    public function getOrt(): ?string
+    {
+        return $this->ort;
+    }
+
+    public function setOrt(?string $ort): Kontaktperson
+    {
+        $this->ort = $ort;
+        return $this;
+    }
+
+    public function getPostfach(): ?string
+    {
+        return $this->postfach;
+    }
+
+    public function setPostfach(?string $postfach): Kontaktperson
+    {
+        $this->postfach = $postfach;
+        return $this;
+    }
+
+    public function getPostfPlz(): ?string
+    {
+        return $this->postfPlz;
+    }
+
+    public function setPostfPlz(?string $postfPlz): Kontaktperson
+    {
+        $this->postfPlz = $postfPlz;
+        return $this;
+    }
+
+    public function getPostfOrt(): ?string
+    {
+        return $this->postfOrt;
+    }
+
+    public function setPostfOrt(?string $postfOrt): Kontaktperson
+    {
+        $this->postfOrt = $postfOrt;
+        return $this;
+    }
+
+    public function getLand(): ?Land
+    {
+        return $this->land;
+    }
+
+    public function setLand(?Land $land): Kontaktperson
+    {
+        $this->land = $land;
+        return $this;
+    }
+
+    public function getEmailPrivat(): ?string
+    {
+        return $this->emailPrivat;
+    }
+
+    public function setEmailPrivat(?string $emailPrivat): Kontaktperson
+    {
+        $this->emailPrivat = $emailPrivat;
+        return $this;
+    }
+
+    public function getEmailSonstige(): ?array
+    {
+        return $this->emailSonstige;
+    }
+
+    public function setEmailSonstige(?array $emailSonstige): Kontaktperson
+    {
+        $this->emailSonstige = $emailSonstige;
+        return $this;
+    }
+
+    public function getEmailFeedback(): ?string
+    {
+        return $this->emailFeedback;
+    }
+
+    public function setEmailFeedback(?string $emailFeedback): Kontaktperson
+    {
+        $this->emailFeedback = $emailFeedback;
+        return $this;
+    }
+
+    public function getTelPrivat(): ?string
+    {
+        return $this->telPrivat;
+    }
+
+    public function setTelPrivat(?string $telPrivat): Kontaktperson
+    {
+        $this->telPrivat = $telPrivat;
+        return $this;
+    }
+
+    public function getTelSonstige(): ?array
+    {
+        return $this->telSonstige;
+    }
+
+    public function setTelSonstige(?array $telSonstige): Kontaktperson
+    {
+        $this->telSonstige = $telSonstige;
+        return $this;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
+    }
+
+    public function setUrl(?string $url): Kontaktperson
+    {
+        $this->url = $url;
+        return $this;
+    }
+
+    public function getAdressfreigabe(): ?bool
+    {
+        return $this->adressfreigabe;
+    }
+
+    public function setAdressfreigabe(?bool $adressfreigabe): Kontaktperson
+    {
+        $this->adressfreigabe = $adressfreigabe;
+        return $this;
+    }
+
+    public function getPersonennummer(): ?string
+    {
+        return $this->personennummer;
+    }
+
+    public function setPersonennummer(?string $personennummer): Kontaktperson
+    {
+        $this->personennummer = $personennummer;
+        return $this;
+    }
+
+    public function getImmobilientreuhaenderid(): ?string
+    {
+        return $this->immobilientreuhaenderid;
+    }
+
+    public function setImmobilientreuhaenderid(?string $immobilientreuhaenderid): Kontaktperson
+    {
+        $this->immobilientreuhaenderid = $immobilientreuhaenderid;
+        return $this;
+    }
+
+    public function getFoto(): ?Foto
+    {
+        return $this->foto;
+    }
+
+    public function setFoto(?Foto $foto): Kontaktperson
+    {
+        $this->foto = $foto;
+        return $this;
+    }
+
+    public function getReferenzId(): ?string
+    {
+        return $this->referenzId;
+    }
+
+    public function setReferenzId(?string $referenzId): Kontaktperson
+    {
+        $this->referenzId = $referenzId;
+        return $this;
+    }
+
+    public function getFreitextfeld(): ?string
+    {
+        return $this->freitextfeld;
+    }
+
+    public function setFreitextfeld(?string $freitextfeld): Kontaktperson
+    {
+        $this->freitextfeld = $freitextfeld;
+        return $this;
+    }
+
+    public function getUserDefinedSimplefield(): ?array
+    {
+        return $this->userDefinedSimplefield;
+    }
+
+    public function setUserDefinedSimplefield(?array $userDefinedSimplefield): Kontaktperson
+    {
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        return $this;
+    }
+
+    public function getUserDefinedAnyfield(): ?array
+    {
+        return $this->userDefinedAnyfield;
+    }
+
+    public function setUserDefinedAnyfield(?array $userDefinedAnyfield): Kontaktperson
+    {
+        $this->userDefinedAnyfield = $userDefinedAnyfield;
+        return $this;
+    }
+
+    public function getUserDefinedExtend(): ?array
+    {
+        return $this->userDefinedExtend;
+    }
+
+    public function setUserDefinedExtend(?array $userDefinedExtend): Kontaktperson
+    {
+        $this->userDefinedExtend = $userDefinedExtend;
         return $this;
     }
 }

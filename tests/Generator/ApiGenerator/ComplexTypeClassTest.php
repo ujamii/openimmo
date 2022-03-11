@@ -20,7 +20,7 @@ class ComplexTypeClassTest extends FileGeneratingTest
     public function testArrayGetterDoesNotReturnNullForNewClass()
     {
         $generatedClass = $this->getGeneratedClassFromFile('user_defined_extend');
-        $className = $generatedClass->getQualifiedName();
+        $className = $generatedClass->getNamespace()->getName() . '\\' . $generatedClass->getName();
 
         $instance = new $className();
         $this->assertEquals([], $instance->getFeld());

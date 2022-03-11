@@ -5,9 +5,12 @@ namespace Ujamii\OpenImmo\Generator;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexTypeSimpleContent;
 use GoetasWebservices\XML\XSDReader\Schema\Type\Type;
+use Nette\PhpGenerator\Property;
 
 class TypeUtil
 {
+    public const OPENIMMO_NAMESPACE = 'Ujamii\\OpenImmo\\API\\';
+
     /**
      * @param string $type
      *
@@ -54,7 +57,7 @@ class TypeUtil
                 break;
 
             default:
-                $ns   = 'Ujamii\\OpenImmo\\API\\';
+                $ns   = self::OPENIMMO_NAMESPACE;
                 $type = $ns . $singular;
                 break;
 
@@ -77,6 +80,7 @@ class TypeUtil
         switch ($propertyType) {
 
             case 'decimal':
+            case 'float':
                 $propertyType = 'float';
                 break;
 
@@ -84,6 +88,7 @@ class TypeUtil
                 $propertyType = 'bool';
                 break;
 
+            case 'int':
             case 'positiveInteger':
                 $propertyType = 'int';
                 break;
@@ -93,10 +98,14 @@ class TypeUtil
                 $propertyType = '\\' . \DateTime::class;
                 break;
 
+            case 'string':
             case 'kontakt':
             case 'base64Binary':
                 $propertyType = 'string';
                 break;
+
+            default:
+                $propertyType = '\\' . self::OPENIMMO_NAMESPACE . $propertyType;
         }
 
         return $propertyType;
@@ -107,8 +116,12 @@ class TypeUtil
      *
      * @return false|float|int|string|null
      */
-    public static function getDefaultValueForType(string $propertyType)
+    public static function getDefaultValueForType(string $propertyType, bool $nullable)
     {
+        if ($nullable) {
+            return null;
+        }
+
         switch ($propertyType) {
 
             case 'float':
@@ -184,5 +197,19 @@ class TypeUtil
         }
 
         return $camel;
+    }
+
+    public static function getTypeFromProperty(Property $property): string
+    {
+        if (null === $property->getType()) {
+            return CodeGenUtil::getAnnotationFromProperty($property, 'var');
+        }
+
+        return $property->getType();
+    }
+
+    public static function isConstantsBasedProperty(Property $property): bool
+    {
+        return strtoupper($property->getName()) . '_* constants' === CodeGenUtil::getAnnotationFromProperty($property, 'see');
     }
 }

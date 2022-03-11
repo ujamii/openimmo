@@ -10,104 +10,71 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Kueche
  * Welche Eigenschaften besitzt die Küche, Optionen kombinierbar
- *
  * @XmlRoot("kueche")
  */
 class Kueche
 {
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("EBK")
-     * @var bool
+     * optional
      */
-    protected $ebk;
+    protected ?bool $ebk;
 
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("OFFEN")
-     * @var bool
+     * optional
      */
-    protected $offen;
+    protected ?bool $offen;
 
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("PANTRY")
-     * @var bool
+     * optional
      */
-    protected $pantry;
+    protected ?bool $pantry;
 
-    /**
-     * @param bool $ebk Shortcut setter for ebk
-     * @param bool $offen Shortcut setter for offen
-     * @param bool $pantry Shortcut setter for pantry
-     */
-    public function __construct(bool $ebk = null, bool $offen = null, bool $pantry = null)
-    {
-        $this->ebk = $ebk;
-        $this->offen = $offen;
-        $this->pantry = $pantry;
-    }
-
-    /**
-     * @return bool
-     */
     public function getEbk(): ?bool
     {
         return $this->ebk;
     }
 
-    /**
-     * @return bool
-     */
-    public function getOffen(): ?bool
-    {
-        return $this->offen;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getPantry(): ?bool
-    {
-        return $this->pantry;
-    }
-
-    /**
-     * @param bool $ebk Setter for ebk
-     * @return Kueche
-     */
-    public function setEbk(?bool $ebk)
+    public function setEbk(?bool $ebk): Kueche
     {
         $this->ebk = $ebk;
         return $this;
     }
 
-    /**
-     * @param bool $offen Setter for offen
-     * @return Kueche
-     */
-    public function setOffen(?bool $offen)
+    public function getOffen(): ?bool
+    {
+        return $this->offen;
+    }
+
+    public function setOffen(?bool $offen): Kueche
     {
         $this->offen = $offen;
         return $this;
     }
 
-    /**
-     * @param bool $pantry Setter for pantry
-     * @return Kueche
-     */
-    public function setPantry(?bool $pantry)
+    public function getPantry(): ?bool
+    {
+        return $this->pantry;
+    }
+
+    public function setPantry(?bool $pantry): Kueche
     {
         $this->pantry = $pantry;
         return $this;
+    }
+
+    public function __construct(bool $ebk = null, bool $offen = null, bool $pantry = null)
+    {
+        $this->ebk = $ebk;
+        $this->offen = $offen;
+        $this->pantry = $pantry;
     }
 }

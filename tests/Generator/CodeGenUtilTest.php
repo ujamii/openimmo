@@ -2,7 +2,7 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator;
 
-use gossi\codegen\model\PhpProperty;
+use Nette\PhpGenerator\Property;
 use PHPUnit\Framework\TestCase;
 use Ujamii\OpenImmo\Generator\CodeGenUtil;
 
@@ -10,28 +10,28 @@ class CodeGenUtilTest extends TestCase
 {
     public function testAddDescriptionPart()
     {
-        $property = new PhpProperty('foo');
-        $property->setTypeDescription('foobar makes the world go round');
+        $property = new Property('foo');
+        $property->setComment('foobar makes the world go round');
 
         CodeGenUtil::addDescriptionPart($property, 'really!');
-        $this->assertEquals('foobar makes the world go round, really!', $property->getTypeDescription());
+        $this->assertEquals('foobar makes the world go round, really!', $property->getComment());
     }
 
     public function testEmptyExistingDescription()
     {
-        $property = new PhpProperty('foo');
-        $property->setTypeDescription('   ');
+        $property = new Property('foo');
+        $property->setComment('   ');
 
         CodeGenUtil::addDescriptionPart($property, 'foobar');
-        $this->assertEquals('foobar', $property->getTypeDescription());
+        $this->assertEquals('foobar', $property->getComment());
     }
 
     public function testAddEmptyDescription()
     {
-        $property = new PhpProperty('foo');
-        $property->setTypeDescription('foo bar');
+        $property = new Property('foo');
+        $property->setComment('foo bar');
 
         CodeGenUtil::addDescriptionPart($property, '   ');
-        $this->assertEquals('foo bar', $property->getTypeDescription());
+        $this->assertEquals('foo bar', $property->getComment());
     }
 }

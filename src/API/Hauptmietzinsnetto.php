@@ -15,64 +15,43 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Hauptmietzinsnetto
 {
     /**
-     * optional
-     *
      * @Type("float")
      * @XmlAttribute
-     * @var float
+     * optional
      */
-    protected $hauptmietzinsust;
+    protected ?float $hauptmietzinsust;
 
     /**
      * @Inline
      * @Type("float")
-     * @var float
      */
-    protected $value;
+    protected ?float $value;
 
-    /**
-     * @param float $hauptmietzinsust Shortcut setter for hauptmietzinsust
-     * @param float $value Shortcut setter for value
-     */
-    public function __construct(float $hauptmietzinsust = null, float $value = null)
-    {
-        $this->hauptmietzinsust = $hauptmietzinsust;
-        $this->value = $value;
-    }
-
-    /**
-     * @return float
-     */
     public function getHauptmietzinsust(): ?float
     {
         return $this->hauptmietzinsust;
     }
 
-    /**
-     * @return float
-     */
-    public function getValue(): ?float
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param float $hauptmietzinsust Setter for hauptmietzinsust
-     * @return Hauptmietzinsnetto
-     */
-    public function setHauptmietzinsust(?float $hauptmietzinsust)
+    public function setHauptmietzinsust(?float $hauptmietzinsust): Hauptmietzinsnetto
     {
         $this->hauptmietzinsust = $hauptmietzinsust;
         return $this;
     }
 
-    /**
-     * @param float $value Setter for value
-     * @return Hauptmietzinsnetto
-     */
-    public function setValue(?float $value)
+    public function getValue(): ?float
+    {
+        return $this->value;
+    }
+
+    public function setValue(?float $value): Hauptmietzinsnetto
     {
         $this->value = $value;
         return $this;
+    }
+
+    public function __construct(float $hauptmietzinsust = null, float $value = null)
+    {
+        $this->hauptmietzinsust = $hauptmietzinsust;
+        $this->value = $value;
     }
 }

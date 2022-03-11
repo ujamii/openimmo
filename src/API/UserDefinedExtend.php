@@ -16,35 +16,23 @@ class UserDefinedExtend
     /**
      * @XmlList(inline = true, entry = "feld")
      * @Type("array<Ujamii\OpenImmo\API\Feld>")
-     * @var Feld[]
+     * @var ?\Ujamii\OpenImmo\API\Feld[]
      */
-    protected $feld;
+    protected ?array $feld = [];
 
-    /**
-     * @param array $feld Shortcut setter for feld
-     */
-    public function __construct(array $feld = [])
+    public function getFeld(): ?array
     {
-        $this->feld = $feld;
+        return $this->feld;
     }
 
-    /**
-     * Returns array of Feld
-     *
-     * @return array
-     */
-    public function getFeld(): array
-    {
-        return $this->feld ?? [];
-    }
-
-    /**
-     * @param array $feld Setter for feld
-     * @return UserDefinedExtend
-     */
-    public function setFeld(array $feld)
+    public function setFeld(?array $feld): UserDefinedExtend
     {
         $this->feld = $feld;
         return $this;
+    }
+
+    public function __construct(array $feld = null)
+    {
+        $this->feld = $feld;
     }
 }

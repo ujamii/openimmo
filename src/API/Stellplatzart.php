@@ -10,194 +10,137 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Stellplatzart
  * Welche Stellplatzarten sind vorhanden, Optionen kombinierbar, als einfache Alternative zu den stp...Elementen
- *
  * @XmlRoot("stellplatzart")
  */
 class Stellplatzart
 {
     /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("CARPORT")
-     * @var bool
-     */
-    protected $carport;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("DUPLEX")
-     * @var bool
-     */
-    protected $duplex;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("FREIPLATZ")
-     * @var bool
-     */
-    protected $freiplatz;
-
-    /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("GARAGE")
-     * @var bool
+     * optional
      */
-    protected $garage;
+    protected ?bool $garage;
 
     /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("PARKHAUS")
-     * @var bool
-     */
-    protected $parkhaus;
-
-    /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("TIEFGARAGE")
-     * @var bool
+     * optional
      */
-    protected $tiefgarage;
+    protected ?bool $tiefgarage;
 
     /**
-     * @param bool $garage Shortcut setter for garage
-     * @param bool $tiefgarage Shortcut setter for tiefgarage
-     * @param bool $carport Shortcut setter for carport
-     * @param bool $freiplatz Shortcut setter for freiplatz
-     * @param bool $parkhaus Shortcut setter for parkhaus
-     * @param bool $duplex Shortcut setter for duplex
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("CARPORT")
+     * optional
      */
-    public function __construct(bool $garage = null, bool $tiefgarage = null, bool $carport = null, bool $freiplatz = null, bool $parkhaus = null, bool $duplex = null)
-    {
-        $this->garage = $garage;
-        $this->tiefgarage = $tiefgarage;
-        $this->carport = $carport;
-        $this->freiplatz = $freiplatz;
-        $this->parkhaus = $parkhaus;
-        $this->duplex = $duplex;
-    }
+    protected ?bool $carport;
 
     /**
-     * @return bool
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("FREIPLATZ")
+     * optional
      */
-    public function getCarport(): ?bool
-    {
-        return $this->carport;
-    }
+    protected ?bool $freiplatz;
 
     /**
-     * @return bool
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("PARKHAUS")
+     * optional
      */
-    public function getDuplex(): ?bool
-    {
-        return $this->duplex;
-    }
+    protected ?bool $parkhaus;
 
     /**
-     * @return bool
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("DUPLEX")
+     * optional
      */
-    public function getFreiplatz(): ?bool
-    {
-        return $this->freiplatz;
-    }
+    protected ?bool $duplex;
 
-    /**
-     * @return bool
-     */
     public function getGarage(): ?bool
     {
         return $this->garage;
     }
 
-    /**
-     * @return bool
-     */
-    public function getParkhaus(): ?bool
-    {
-        return $this->parkhaus;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getTiefgarage(): ?bool
-    {
-        return $this->tiefgarage;
-    }
-
-    /**
-     * @param bool $carport Setter for carport
-     * @return Stellplatzart
-     */
-    public function setCarport(?bool $carport)
-    {
-        $this->carport = $carport;
-        return $this;
-    }
-
-    /**
-     * @param bool $duplex Setter for duplex
-     * @return Stellplatzart
-     */
-    public function setDuplex(?bool $duplex)
-    {
-        $this->duplex = $duplex;
-        return $this;
-    }
-
-    /**
-     * @param bool $freiplatz Setter for freiplatz
-     * @return Stellplatzart
-     */
-    public function setFreiplatz(?bool $freiplatz)
-    {
-        $this->freiplatz = $freiplatz;
-        return $this;
-    }
-
-    /**
-     * @param bool $garage Setter for garage
-     * @return Stellplatzart
-     */
-    public function setGarage(?bool $garage)
+    public function setGarage(?bool $garage): Stellplatzart
     {
         $this->garage = $garage;
         return $this;
     }
 
-    /**
-     * @param bool $parkhaus Setter for parkhaus
-     * @return Stellplatzart
-     */
-    public function setParkhaus(?bool $parkhaus)
+    public function getTiefgarage(): ?bool
+    {
+        return $this->tiefgarage;
+    }
+
+    public function setTiefgarage(?bool $tiefgarage): Stellplatzart
+    {
+        $this->tiefgarage = $tiefgarage;
+        return $this;
+    }
+
+    public function getCarport(): ?bool
+    {
+        return $this->carport;
+    }
+
+    public function setCarport(?bool $carport): Stellplatzart
+    {
+        $this->carport = $carport;
+        return $this;
+    }
+
+    public function getFreiplatz(): ?bool
+    {
+        return $this->freiplatz;
+    }
+
+    public function setFreiplatz(?bool $freiplatz): Stellplatzart
+    {
+        $this->freiplatz = $freiplatz;
+        return $this;
+    }
+
+    public function getParkhaus(): ?bool
+    {
+        return $this->parkhaus;
+    }
+
+    public function setParkhaus(?bool $parkhaus): Stellplatzart
     {
         $this->parkhaus = $parkhaus;
         return $this;
     }
 
-    /**
-     * @param bool $tiefgarage Setter for tiefgarage
-     * @return Stellplatzart
-     */
-    public function setTiefgarage(?bool $tiefgarage)
+    public function getDuplex(): ?bool
     {
-        $this->tiefgarage = $tiefgarage;
+        return $this->duplex;
+    }
+
+    public function setDuplex(?bool $duplex): Stellplatzart
+    {
+        $this->duplex = $duplex;
         return $this;
+    }
+
+    public function __construct(
+        bool $garage = null,
+        bool $tiefgarage = null,
+        bool $carport = null,
+        bool $freiplatz = null,
+        bool $parkhaus = null,
+        bool $duplex = null
+    ) {
+        $this->garage = $garage;
+        $this->tiefgarage = $tiefgarage;
+        $this->carport = $carport;
+        $this->freiplatz = $freiplatz;
+        $this->parkhaus = $parkhaus;
+        $this->duplex = $duplex;
     }
 }

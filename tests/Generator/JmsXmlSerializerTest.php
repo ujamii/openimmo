@@ -54,7 +54,7 @@ class JmsXmlSerializerTest extends TestCase
 
         $xmlContent = $this->serializer->serialize($data, 'xml');
         // as soon as https://github.com/schmittjoh/serializer/pull/883 is merged, the <name/> can be removed
-        $this->assertXmlStringEqualsXmlString('<immobilie><kontaktperson><anrede>Herr</anrede><name/></kontaktperson></immobilie>', $xmlContent);
+        $this->assertXmlStringEqualsXmlString('<immobilie><kontaktperson><name/><anrede>Herr</anrede></kontaktperson></immobilie>', $xmlContent);
     }
 
     public function testWriteUebertragungXml()
@@ -118,10 +118,10 @@ class JmsXmlSerializerTest extends TestCase
     public function testWriteInfrastrukturXmlAsUsedInReadme()
     {
         $xmlString    = '<infrastruktur>
+            <zulieferung>false</zulieferung>
             <ausblick blick="BERGE" />
             <distanzen distanz_zu="HAUPTSCHULE">22.0</distanzen>
             <distanzen_sport distanz_zu_sport="SEE">15.0</distanzen_sport>
-            <zulieferung>false</zulieferung>
           </infrastruktur>';
         $infrastrktur = new Infrastruktur();
         $infrastrktur
@@ -159,11 +159,11 @@ class JmsXmlSerializerTest extends TestCase
     {
         $xmlString = '<objektkategorie>
         <nutzungsart WOHNEN="true" GEWERBE="false" />
-        <objektart>
-          <objektart_zusatz>Dachgeschoss</objektart_zusatz>
-          <wohnung wohnungtyp="MAISONETTE" />
-        </objektart>
         <vermarktungsart KAUF="false" MIETE_PACHT="true" />
+        <objektart>
+          <wohnung wohnungtyp="MAISONETTE" />
+          <objektart_zusatz>Dachgeschoss</objektart_zusatz>
+        </objektart>
       </objektkategorie>';
 
         $category = new Objektkategorie();
@@ -190,10 +190,10 @@ class JmsXmlSerializerTest extends TestCase
     {
         $xmlString = '<bewertung>
             <feld>
-              <modus>kauf</modus>
               <name>abc</name>
-              <typ>int</typ>
               <wert>100</wert>
+              <typ>int</typ>
+              <modus>kauf</modus>
             </feld>
           </bewertung>';
         $subject = new Bewertung();

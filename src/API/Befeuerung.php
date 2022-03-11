@@ -10,400 +10,273 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Befeuerung
  * Welche Befeuerungsarten sind vorhanden, Optionen kombinierbar
- *
  * @XmlRoot("befeuerung")
  */
 class Befeuerung
 {
     /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("ALTERNATIV")
-     * @var bool
-     */
-    protected $alternativ;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("BLOCK")
-     * @var bool
-     */
-    protected $block;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("ELEKTRO")
-     * @var bool
-     */
-    protected $elektro;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("ERDWAERME")
-     * @var bool
-     */
-    protected $erdwaerme;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("FERN")
-     * @var bool
-     */
-    protected $fern;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("FLUESSIGGAS")
-     * @var bool
-     */
-    protected $fluessiggas;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("GAS")
-     * @var bool
-     */
-    protected $gas;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("HOLZ")
-     * @var bool
-     */
-    protected $holz;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("KOHLE")
-     * @var bool
-     */
-    protected $kohle;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("LUFTWP")
-     * @var bool
-     */
-    protected $luftwp;
-
-    /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("OEL")
-     * @var bool
+     * optional
      */
-    protected $oel;
+    protected ?bool $oel;
 
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
-     * @SerializedName("PELLET")
-     * @var bool
+     * @SerializedName("GAS")
+     * optional
      */
-    protected $pellet;
+    protected ?bool $gas;
 
     /**
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("ELEKTRO")
      * optional
-     *
+     */
+    protected ?bool $elektro;
+
+    /**
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("ALTERNATIV")
+     * optional
+     */
+    protected ?bool $alternativ;
+
+    /**
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("SOLAR")
-     * @var bool
+     * optional
      */
-    protected $solar;
+    protected ?bool $solar;
 
     /**
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("ERDWAERME")
      * optional
-     *
+     */
+    protected ?bool $erdwaerme;
+
+    /**
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("LUFTWP")
+     * optional
+     */
+    protected ?bool $luftwp;
+
+    /**
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("FERN")
+     * optional
+     */
+    protected ?bool $fern;
+
+    /**
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("BLOCK")
+     * optional
+     */
+    protected ?bool $block;
+
+    /**
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("WASSER-ELEKTRO")
-     * @var bool
+     * optional
      */
-    protected $wasserElektro;
+    protected ?bool $wasserElektro;
 
     /**
-     * @return bool
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("PELLET")
+     * optional
      */
-    public function getAlternativ(): ?bool
-    {
-        return $this->alternativ;
-    }
+    protected ?bool $pellet;
 
     /**
-     * @return bool
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("KOHLE")
+     * optional
      */
-    public function getBlock(): ?bool
-    {
-        return $this->block;
-    }
+    protected ?bool $kohle;
 
     /**
-     * @return bool
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("HOLZ")
+     * optional
      */
-    public function getElektro(): ?bool
-    {
-        return $this->elektro;
-    }
+    protected ?bool $holz;
 
     /**
-     * @return bool
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("FLUESSIGGAS")
+     * optional
      */
-    public function getErdwaerme(): ?bool
-    {
-        return $this->erdwaerme;
-    }
+    protected ?bool $fluessiggas;
 
-    /**
-     * @return bool
-     */
-    public function getFern(): ?bool
-    {
-        return $this->fern;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getFluessiggas(): ?bool
-    {
-        return $this->fluessiggas;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getGas(): ?bool
-    {
-        return $this->gas;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getHolz(): ?bool
-    {
-        return $this->holz;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getKohle(): ?bool
-    {
-        return $this->kohle;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getLuftwp(): ?bool
-    {
-        return $this->luftwp;
-    }
-
-    /**
-     * @return bool
-     */
     public function getOel(): ?bool
     {
         return $this->oel;
     }
 
-    /**
-     * @return bool
-     */
-    public function getPellet(): ?bool
-    {
-        return $this->pellet;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getSolar(): ?bool
-    {
-        return $this->solar;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getWasserElektro(): ?bool
-    {
-        return $this->wasserElektro;
-    }
-
-    /**
-     * @param bool $alternativ Setter for alternativ
-     * @return Befeuerung
-     */
-    public function setAlternativ(?bool $alternativ)
-    {
-        $this->alternativ = $alternativ;
-        return $this;
-    }
-
-    /**
-     * @param bool $block Setter for block
-     * @return Befeuerung
-     */
-    public function setBlock(?bool $block)
-    {
-        $this->block = $block;
-        return $this;
-    }
-
-    /**
-     * @param bool $elektro Setter for elektro
-     * @return Befeuerung
-     */
-    public function setElektro(?bool $elektro)
-    {
-        $this->elektro = $elektro;
-        return $this;
-    }
-
-    /**
-     * @param bool $erdwaerme Setter for erdwaerme
-     * @return Befeuerung
-     */
-    public function setErdwaerme(?bool $erdwaerme)
-    {
-        $this->erdwaerme = $erdwaerme;
-        return $this;
-    }
-
-    /**
-     * @param bool $fern Setter for fern
-     * @return Befeuerung
-     */
-    public function setFern(?bool $fern)
-    {
-        $this->fern = $fern;
-        return $this;
-    }
-
-    /**
-     * @param bool $fluessiggas Setter for fluessiggas
-     * @return Befeuerung
-     */
-    public function setFluessiggas(?bool $fluessiggas)
-    {
-        $this->fluessiggas = $fluessiggas;
-        return $this;
-    }
-
-    /**
-     * @param bool $gas Setter for gas
-     * @return Befeuerung
-     */
-    public function setGas(?bool $gas)
-    {
-        $this->gas = $gas;
-        return $this;
-    }
-
-    /**
-     * @param bool $holz Setter for holz
-     * @return Befeuerung
-     */
-    public function setHolz(?bool $holz)
-    {
-        $this->holz = $holz;
-        return $this;
-    }
-
-    /**
-     * @param bool $kohle Setter for kohle
-     * @return Befeuerung
-     */
-    public function setKohle(?bool $kohle)
-    {
-        $this->kohle = $kohle;
-        return $this;
-    }
-
-    /**
-     * @param bool $luftwp Setter for luftwp
-     * @return Befeuerung
-     */
-    public function setLuftwp(?bool $luftwp)
-    {
-        $this->luftwp = $luftwp;
-        return $this;
-    }
-
-    /**
-     * @param bool $oel Setter for oel
-     * @return Befeuerung
-     */
-    public function setOel(?bool $oel)
+    public function setOel(?bool $oel): Befeuerung
     {
         $this->oel = $oel;
         return $this;
     }
 
-    /**
-     * @param bool $pellet Setter for pellet
-     * @return Befeuerung
-     */
-    public function setPellet(?bool $pellet)
+    public function getGas(): ?bool
     {
-        $this->pellet = $pellet;
+        return $this->gas;
+    }
+
+    public function setGas(?bool $gas): Befeuerung
+    {
+        $this->gas = $gas;
         return $this;
     }
 
-    /**
-     * @param bool $solar Setter for solar
-     * @return Befeuerung
-     */
-    public function setSolar(?bool $solar)
+    public function getElektro(): ?bool
+    {
+        return $this->elektro;
+    }
+
+    public function setElektro(?bool $elektro): Befeuerung
+    {
+        $this->elektro = $elektro;
+        return $this;
+    }
+
+    public function getAlternativ(): ?bool
+    {
+        return $this->alternativ;
+    }
+
+    public function setAlternativ(?bool $alternativ): Befeuerung
+    {
+        $this->alternativ = $alternativ;
+        return $this;
+    }
+
+    public function getSolar(): ?bool
+    {
+        return $this->solar;
+    }
+
+    public function setSolar(?bool $solar): Befeuerung
     {
         $this->solar = $solar;
         return $this;
     }
 
-    /**
-     * @param bool $wasserElektro Setter for wasserElektro
-     * @return Befeuerung
-     */
-    public function setWasserElektro(?bool $wasserElektro)
+    public function getErdwaerme(): ?bool
+    {
+        return $this->erdwaerme;
+    }
+
+    public function setErdwaerme(?bool $erdwaerme): Befeuerung
+    {
+        $this->erdwaerme = $erdwaerme;
+        return $this;
+    }
+
+    public function getLuftwp(): ?bool
+    {
+        return $this->luftwp;
+    }
+
+    public function setLuftwp(?bool $luftwp): Befeuerung
+    {
+        $this->luftwp = $luftwp;
+        return $this;
+    }
+
+    public function getFern(): ?bool
+    {
+        return $this->fern;
+    }
+
+    public function setFern(?bool $fern): Befeuerung
+    {
+        $this->fern = $fern;
+        return $this;
+    }
+
+    public function getBlock(): ?bool
+    {
+        return $this->block;
+    }
+
+    public function setBlock(?bool $block): Befeuerung
+    {
+        $this->block = $block;
+        return $this;
+    }
+
+    public function getWasserElektro(): ?bool
+    {
+        return $this->wasserElektro;
+    }
+
+    public function setWasserElektro(?bool $wasserElektro): Befeuerung
     {
         $this->wasserElektro = $wasserElektro;
+        return $this;
+    }
+
+    public function getPellet(): ?bool
+    {
+        return $this->pellet;
+    }
+
+    public function setPellet(?bool $pellet): Befeuerung
+    {
+        $this->pellet = $pellet;
+        return $this;
+    }
+
+    public function getKohle(): ?bool
+    {
+        return $this->kohle;
+    }
+
+    public function setKohle(?bool $kohle): Befeuerung
+    {
+        $this->kohle = $kohle;
+        return $this;
+    }
+
+    public function getHolz(): ?bool
+    {
+        return $this->holz;
+    }
+
+    public function setHolz(?bool $holz): Befeuerung
+    {
+        $this->holz = $holz;
+        return $this;
+    }
+
+    public function getFluessiggas(): ?bool
+    {
+        return $this->fluessiggas;
+    }
+
+    public function setFluessiggas(?bool $fluessiggas): Befeuerung
+    {
+        $this->fluessiggas = $fluessiggas;
         return $this;
     }
 }

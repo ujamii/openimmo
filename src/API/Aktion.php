@@ -10,57 +10,36 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Class Aktion
  * Aktion für Objekt. Wenn nicht vorhanden, dann "ADD", als neu.
  *  Change= Update der Objektdaten, Delete = Löschen des Objektes
- *  Referenz= Die Möglichkeit Objekte in Portalen als Verkauft oder Archiv zu definieren.
- *
+ *  Referenz= Die Möglichkeit Objekte in Portalen als Verkauft oder Archiv zu definieren.
  * @XmlRoot("aktion")
  */
 class Aktion
 {
-    /**
-     */
     public const AKTIONART_CHANGE = 'CHANGE';
-
-    /**
-     */
     public const AKTIONART_DELETE = 'DELETE';
-
-    /**
-     */
     public const AKTIONART_REFERENZ = 'REFERENZ';
 
     /**
-     * optional
-     *
      * @Type("string")
      * @XmlAttribute
+     * optional
      * @see AKTIONART_* constants
-     * @var string
      */
-    protected $aktionart;
+    protected ?string $aktionart;
 
-    /**
-     * @param string $aktionart Shortcut setter for aktionart
-     */
-    public function __construct(string $aktionart = null)
-    {
-        $this->aktionart = $aktionart;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAktionart(): ?string
+    public function getAktionart(): string
     {
         return $this->aktionart;
     }
 
-    /**
-     * @param string $aktionart Setter for aktionart
-     * @return Aktion
-     */
-    public function setAktionart(?string $aktionart)
+    public function setAktionart(string $aktionart): Aktion
     {
         $this->aktionart = $aktionart;
         return $this;
+    }
+
+    public function __construct(string $aktionart = null)
+    {
+        $this->aktionart = $aktionart;
     }
 }
