@@ -84,12 +84,14 @@ class TypeUtil
                 $propertyType = 'float';
                 break;
 
+            case 'bool':
             case 'boolean':
                 $propertyType = 'bool';
                 break;
 
             case 'int':
             case 'positiveInteger':
+            case 'PositiveIntegerType':
                 $propertyType = 'int';
                 break;
 
@@ -105,7 +107,10 @@ class TypeUtil
                 break;
 
             default:
-                $propertyType = '\\' . self::OPENIMMO_NAMESPACE . $propertyType;
+                $className = '\\' . self::OPENIMMO_NAMESPACE . $propertyType;
+                if (class_exists($className)) {
+                    $propertyType = $className;
+                }
         }
 
         return $propertyType;

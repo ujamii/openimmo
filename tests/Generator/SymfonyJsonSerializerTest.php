@@ -60,62 +60,34 @@ class SymfonyJsonSerializerTest extends TestCase
     public function testWriteImmobilieJson()
     {
         $jsonString = '{
-            "geo": {
-                "userDefinedAnyfield": [],
-                "userDefinedExtend": [],
-                "userDefinedSimplefield": []
-            },
+            "geo": {},
             "kontaktperson": {
                 "anrede": "Herr",
-                "emailSonstige": [],
-                "name": "John Doe",
-                "telSonstige": [],
-                "userDefinedAnyfield": [],
-                "userDefinedExtend": [],
-                "userDefinedSimplefield": []
+                "name": "John Doe"
             },
             "objektkategorie": {
                 "nutzungsart": {
+                    "anlage": false,
                     "gewerbe": false,
+                    "waz": false,
                     "wohnen": false
                 },
-                "objektart": {
-                    "bueroPraxen": [],
-                    "einzelhandel": [],
-                    "freizeitimmobilieGewerblich": [],
-                    "gastgewerbe": [],
-                    "grundstueck": [],
-                    "hallenLagerProd": [],
-                    "haus": [],
-                    "landUndForstwirtschaft": [],
-                    "objektartZusatz": [],
-                    "parken": [],
-                    "sonstige": [],
-                    "wohnung": [],
-                    "zimmer": [],
-                    "zinshausRenditeobjekt": []
-                },
-                "userDefinedAnyfield": [],
-                "userDefinedExtend": [],
-                "userDefinedSimplefield": [],
+                "objektart": {},
                 "vermarktungsart": {
+                    "erbpacht": false,
                     "kauf": true,
+                    "leasing": false,
                     "mietePacht": false
                 }
             },
-            "userDefinedAnyfield": [],
-            "userDefinedExtend": [],
-            "userDefinedSimplefield": [],
             "verwaltungTechn": {
-                "aktion": {},
+                "aktion": {
+                    "aktionart": "CHANGE"
+                },
                 "objektnrExtern": "456",
                 "openimmoObid": "123",
-                "standVom": "2021-06-30T09:54:33+00:00",
-                "userDefinedAnyfield": [],
-                "userDefinedExtend": [],
-                "userDefinedSimplefield": []
-            },
-            "weitereAdresse": []
+                "standVom": "2021-06-30T09:54:33+00:00"
+            }
         }';
 
         $data = new Immobilie();
@@ -129,7 +101,7 @@ class SymfonyJsonSerializerTest extends TestCase
         );
         $data->setVerwaltungTechn(
             (new VerwaltungTechn())
-                ->setAktion(new Aktion())
+                ->setAktion(new Aktion(Aktion::AKTIONART_CHANGE))
                 ->setObjektnrExtern('456')
                 ->setOpenimmoObid('123')
                 ->setStandVom(new \DateTime('@1625046873'))
@@ -174,6 +146,7 @@ class SymfonyJsonSerializerTest extends TestCase
         $jsonString = '{
             "art": "OFFLINE",
             "modus": "CHANGE",
+            "regiId": "",
             "sendersoftware": "OOF",
             "senderversion": "$Rev: 85202 $",
             "technEmail": "xxx@xxx.de",
@@ -243,10 +216,7 @@ class SymfonyJsonSerializerTest extends TestCase
                     "value": 15
                 }
             ],
-            "zulieferung": false,
-            "userDefinedAnyfield": [],
-            "userDefinedExtend": [],
-            "userDefinedSimplefield": []
+            "zulieferung": false
         }';
         $infrastruktur = new Infrastruktur();
         $infrastruktur
@@ -269,26 +239,21 @@ class SymfonyJsonSerializerTest extends TestCase
             "anbieter": [
                 {
                     "firma": "MusterMannFrau Immobilien",
-                    "immobilie": [],
                     "lizenzkennung": "ABCD13",
-                    "openimmoAnid": "MUSTER",
-                    "userDefinedAnyfield": [],
-                    "userDefinedExtend": [],
-                    "userDefinedSimplefield": []
+                    "openimmoAnid": "MUSTER"
                 }
             ],
             "uebertragung": {
                 "art": "OFFLINE",
                 "modus": "CHANGE",
+                "regiId": "",
                 "sendersoftware": "OOF",
                 "senderversion": "$Rev: 85202 $",
                 "technEmail": "xxx@xxx.de",
                 "timestamp": "2019-09-30T12:42:27+00:00",
                 "umfang": "TEIL",
                 "version": "1.2.7"
-            },
-            "userDefinedAnyfield": [],
-            "userDefinedSimplefield": []
+            }
         }';
 
         $openImmo = new Openimmo();
@@ -319,36 +284,25 @@ class SymfonyJsonSerializerTest extends TestCase
     {
         $jsonString = '{
             "nutzungsart": {
+                "anlage": false,
                 "gewerbe": false,
+                "waz": false,
                 "wohnen": true
             },
             "objektart": {
-                "bueroPraxen": [],
-                "einzelhandel": [],
-                "freizeitimmobilieGewerblich": [],
-                "gastgewerbe": [],
-                "grundstueck": [],
-                "hallenLagerProd": [],
-                "haus": [],
-                "landUndForstwirtschaft": [],
                 "objektartZusatz": [
                     "Dachgeschoss"
                 ],
-                "parken": [],
-                "sonstige": [],
                 "wohnung": [
                     {
                         "wohnungtyp": "MAISONETTE"
                     }
-                ],
-                "zimmer": [],
-                "zinshausRenditeobjekt": []
+                ]
             },
-            "userDefinedAnyfield": [],
-            "userDefinedExtend": [],
-            "userDefinedSimplefield": [],
             "vermarktungsart": {
+                "erbpacht": false,
                 "kauf": false,
+                "leasing": false,
                 "mietePacht": true
             }
         }';
@@ -368,8 +322,8 @@ class SymfonyJsonSerializerTest extends TestCase
 
     public function testWriteComplexTypeMixed()
     {
-        $jsonString = '{"value": "k.A."}';
-        $subject    = new AussenCourtage(null, 'k.A.');
+        $jsonString = '{"mitMwst": false, "value": "k.A."}';
+        $subject    = new AussenCourtage(false, 'k.A.');
 
         $jsonContent = $this->serializer->serialize($subject, JsonEncoder::FORMAT, $this->serializerContext);
         $this->assertJsonStringEqualsJsonString($jsonString, $jsonContent);

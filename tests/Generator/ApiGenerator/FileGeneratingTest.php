@@ -87,7 +87,7 @@ abstract class FileGeneratingTest extends TestCase
     {
         foreach ($constants as $constantName => $constantValue) {
             $this->assertArrayHasKey($constantName, $generatedClass->getConstants(), "Constant {$constantName} does not exist");
-            $this->assertEquals($constantValue, $generatedClass->getConstants()[$constantName]->getValue());
+            $this->assertEquals($constantValue, $generatedClass->getConstants()[$constantName]->getValue()->__toString());
         }
         $this->assertCount(count($constants), $generatedClass->getConstants());
     }
@@ -114,10 +114,10 @@ abstract class FileGeneratingTest extends TestCase
         $property = $class->getProperty($propertyName);
 
         // TODO property type may be Feld[] instead of array<Feld>
-        $propertyType = TypeUtil::getValidPhpType(null !== $xsdType ? $xsdType : $type);
+        $propertyType = TypeUtil::getValidPhpType($xsdType ?? $type);
         $this->assertEquals($propertyType, $property->getType());
 
-        $serializerType = TypeUtil::getTypeForSerializer(null !== $xsdType ? $xsdType : $type);
+        $serializerType = TypeUtil::getTypeForSerializer($xsdType ?? $type);
         $this->assertStringContainsString('@Type("' . $serializerType . '")', $property->getComment());
 
         foreach ($docTags as $tagName => $tagValue) {
@@ -136,14 +136,14 @@ abstract class FileGeneratingTest extends TestCase
             $getter  = $class->getMethod('get' . ucfirst($propertyName));
             $this->assertEquals('public', $getter->getVisibility());
             $this->assertEquals($phpType, $getter->getReturnType(), "Return type of {$getter->getName()}");
-            //$this->assertTrue($getter->getNullable());
+            //$this->assertTrue($getter->isReturnNullable());
 
             $setter = $class->getMethod('set' . ucfirst($propertyName));
             $this->assertEquals('public', $setter->getVisibility());
-            $this->assertEquals($class->getName(), $setter->getReturnType());
+            $this->assertEquals('\\' . TypeUtil::OPENIMMO_NAMESPACE . $class->getName(), $setter->getReturnType());
             $this->assertArrayHasKey($propertyName, $setter->getParameters());
             $this->assertEquals($phpType, $setter->$setter->getParameters()[$propertyName]->getType());
-            //$this->assertTrue($setter->getParameter($propertyName)->getNullable());
+            //$this->assertTrue($setter->getParameters()[$propertyName]->isNullable());
         }
     }
 
@@ -155,13 +155,13 @@ abstract class FileGeneratingTest extends TestCase
         $constructor = $class->getMethod('__construct');
         foreach ($properties as $propertyConfig) {
             list($propertyName, $type, $hasGetterAndSetter, $docTags, $xsdType) = $propertyConfig;
-            $constructorParam = $constructor->getParameter($propertyName);
+            $constructorParam = $constructor->getParameters()[$propertyName];
             $this->assertEquals($type, $constructorParam->getType());
             if ($constructorParam->getType() === 'array') {
-                $this->assertEquals('[]', $constructorParam->getExpression());
+                $this->assertEquals('[]', $constructorParam->getDefaultValue());
             } else {
-                if ($constructorParam->getNullable()) {
-                    $this->assertNull($constructorParam->getValue());
+                if ($constructorParam->isNullable()) {
+                    $this->assertNull($constructorParam->getDefaultValue());
                 }
             }
 //        $this->assertFalse($constructor->getParameter($propertyName)->getNullable());

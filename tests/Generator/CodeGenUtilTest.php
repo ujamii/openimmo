@@ -14,7 +14,7 @@ class CodeGenUtilTest extends TestCase
         $property->setComment('foobar makes the world go round');
 
         CodeGenUtil::addDescriptionPart($property, 'really!');
-        $this->assertEquals('foobar makes the world go round, really!', $property->getComment());
+        $this->assertEquals('foobar makes the world go round' . CodeGenUtil::DESCRIPTION_PART_DELIMTER . 'really!', $property->getComment());
     }
 
     public function testEmptyExistingDescription()

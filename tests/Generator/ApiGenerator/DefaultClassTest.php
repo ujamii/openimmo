@@ -12,10 +12,10 @@ class DefaultClassTest extends FileGeneratingTest
         );
 
         $this->assertClassHasConstants($generatedClass, [
-            'BLICK_BERGE' => 'BERGE',
-            'BLICK_IN_DIE_FERNE' => 'IN DIE FERNE',
-            'BLICK_MEER'  => 'MEER',
-            'BLICK_SEE'   => 'SEE',
+            'BLICK_BERGE' => "'BERGE'",
+            'BLICK_IN_DIE_FERNE' => "'IN DIE FERNE'",
+            'BLICK_MEER'  => "'MEER'",
+            'BLICK_SEE'   => "'SEE'",
         ]);
 
         $properties = [
@@ -24,6 +24,6 @@ class DefaultClassTest extends FileGeneratingTest
         $this->assertClassHasProperties($generatedClass, $properties);
 
         $property = $generatedClass->getProperty('blick');
-        $this->assertStringContainsString('see BLICK_* constants', $property->getDocblock()->getTags('see')->toArray()[0]->__toString());
+        $this->assertStringContainsString('@see BLICK_* constants', $property->getComment());
     }
 }

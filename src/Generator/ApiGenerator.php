@@ -12,6 +12,13 @@ use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexTypeSimpleContent;
 use GoetasWebservices\XML\XSDReader\Schema\Type\SimpleType;
 use GoetasWebservices\XML\XSDReader\SchemaReader;
+use JMS\Serializer\Annotation\Inline;
+use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\SkipWhenEmpty;
+use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlAttribute;
+use JMS\Serializer\Annotation\XmlList;
+use JMS\Serializer\Annotation\XmlRoot;
 use Nette\PhpGenerator\ClassLike;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PhpFile;
@@ -84,8 +91,8 @@ class ApiGenerator
 
         $namespace = new PhpNamespace('Ujamii\\OpenImmo\\API');
         $namespace
-            ->addUse('JMS\Serializer\Annotation\XmlRoot', 'XmlRoot')
-            ->addUse('JMS\Serializer\Annotation\Type', 'Type');
+            ->addUse(XmlRoot::class, 'XmlRoot')
+            ->addUse(Type::class, 'Type');
         $class = $namespace->addClass($className);
         $class
             ->addComment('Class ' . $className . PHP_EOL . $element->getDoc())
@@ -93,7 +100,7 @@ class ApiGenerator
 
         /* @var $attributeFromXsd Attribute */
         foreach ($element->getType()->getAttributes() as $attributeFromXsd) {
-            $this->parseAttribute($attributeFromXsd, $class);
+            $this->parseAttribute($attributeFromXsd, $class, $namespace);
         }
 
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
@@ -109,7 +116,7 @@ class ApiGenerator
         }
 
         if (count($element->getType()->getAttributes()) > 0) {
-            $namespace->addUse('JMS\Serializer\Annotation\XmlAttribute');
+            $namespace->addUse(XmlAttribute::class);
         }
 
         $classPropertyCount = count($class->getProperties());
@@ -141,11 +148,12 @@ class ApiGenerator
         $propertyType = TypeUtil::getValidPhpType($xsdType);
         $classProperty->setType($propertyType)
                       ->setNullable(true)
+                      ->setValue(null)
                       ->addComment('@Inline')
                       ->addComment('@Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")');
         $namespace
-            ->addUse('JMS\Serializer\Annotation\Type')
-            ->addUse('JMS\Serializer\Annotation\Inline');
+            ->addUse(Type::class)
+            ->addUse(Inline::class);
         CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, ! TypeUtil::isConstantsBasedProperty($classProperty));
     }
 
@@ -165,7 +173,7 @@ class ApiGenerator
             $type        = TypeUtil::getValidPhpType($type);
             $phpParam    = $constructor->addParameter($classPropertyName)
                                        ->setType($typeIsArray ? 'array' : $type);
-            $phpParam->setDefaultValue(TypeUtil::getDefaultValueForType($type, true));
+            $phpParam->setDefaultValue($property->getValue());
 
             $constructorCode[] = '$this->' . $classPropertyName . ' = $' . $classPropertyName . ';';
         }
@@ -191,15 +199,14 @@ class ApiGenerator
         // take min/max into account, as this may be an array instead
         if ($property->getMax() === -1) {
             $classProperty->addComment('@XmlList(inline = true, entry = "' . $property->getName() . '")');
-            $namespace->addUse('JMS\Serializer\Annotation\XmlList');
+            $namespace->addUse(XmlList::class);
         }
 
         $phpType = TypeUtil::getValidPhpType($xsdType);
-
         $serializerType = TypeUtil::getTypeForSerializer($xsdType);
 
         $classProperty->addComment('@Type("' . $serializerType . '")');
-        $namespace->addUse('JMS\Serializer\Annotation\Type');
+        $namespace->addUse(Type::class);
 
         $isConstantBasedproperty = TypeUtil::isConstantsBasedProperty($classProperty);
         $nullable                = $property->getMin() === 0;
@@ -207,9 +214,7 @@ class ApiGenerator
         if (strpos($serializerType, TypeUtil::OPENIMMO_NAMESPACE) === 0 || '\DateTime' === $phpType) {
             $nullable = true;
         }
-        if ($propertyName === 'format') {
-            var_dump($property->getMin());
-        }
+
         $classProperty->setNullable($nullable);
         $defaultValue = TypeUtil::getDefaultValueForType($phpType, $nullable);
         if ('[]' === substr($phpType, -2)) {
@@ -223,11 +228,12 @@ class ApiGenerator
         }
 
         if ($nullable) {
-            $classProperty->addComment("@var ?{$phpType}");
+            $classProperty->addComment("@var ?{$phpType}")
+            ->setValue(null);
         } else {
             $classProperty->addComment("@var {$phpType}")
                           ->addComment('@SkipWhenEmpty');
-            $namespace->addUse('JMS\Serializer\Annotation\SkipWhenEmpty');
+            $namespace->addUse(SkipWhenEmpty::class);
         }
 
         if ($property->getType()->getRestriction()) {
@@ -274,25 +280,27 @@ class ApiGenerator
     /**
      * @param Attribute $attribute
      * @param ClassType $class
+     * @param PhpNamespace $namespace
      */
-    private function parseAttribute(Attribute $attribute, ClassType $class): void
+    private function parseAttribute(Attribute $attribute, ClassType $class, PhpNamespace $namespace): void
     {
         $propertyName  = TypeUtil::camelize(strtolower($attribute->getName()), true);
         $classProperty = $class->addProperty($propertyName)->setVisibility(ClassLike::VisibilityProtected);
         $xsdType       = TypeUtil::extractTypeForPhp($attribute->getType());
         $phpType       = TypeUtil::getValidPhpType($xsdType);
         $classProperty->addComment('@Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")');
-        $class->getNamespace()->addUse('JMS\Serializer\Annotation\Type');
+        $namespace->addUse(Type::class);
         $nullable = true;
 
         $classProperty->setType($phpType)
-                      ->setNullable(true)
+                      ->setNullable($nullable)
+                      ->setValue(TypeUtil::getDefaultValueForType($phpType, false))
                       ->addComment('@XmlAttribute');
 
         // as the openimmo guys like to switch randomly between lowercase and uppercase, serialized names may differ from property names
         if (strtolower($attribute->getName()) !== $attribute->getName()) {
             $classProperty->addComment('@SerializedName("' . $attribute->getName() . '")');
-            $class->getNamespace()->addUse('JMS\Serializer\Annotation\SerializedName');
+            $namespace->addUse(SerializedName::class);
         }
 
         // on some very few places, there are comments in the xsd file

@@ -7,6 +7,8 @@ use Nette\PhpGenerator\Property;
 
 class CodeGenUtil
 {
+    public const DESCRIPTION_PART_DELIMTER = PHP_EOL;
+
     /**
      * Adds a new description part to the given class property.
      *
@@ -16,7 +18,7 @@ class CodeGenUtil
      *
      * @return void
      */
-    public static function addDescriptionPart(Property $classProperty, string $descriptionPart, string $separator = PHP_EOL): void
+    public static function addDescriptionPart(Property $classProperty, string $descriptionPart, string $separator = self::DESCRIPTION_PART_DELIMTER): void
     {
         if ('' === trim($descriptionPart)) {
             return;
@@ -24,7 +26,7 @@ class CodeGenUtil
         if ('' === trim($classProperty->getComment())) {
             $currentDescriptionParts = [];
         } else {
-            $currentDescriptionParts = explode($separator ?: PHP_EOL, $classProperty->getComment());
+            $currentDescriptionParts = explode($separator ?: self::DESCRIPTION_PART_DELIMTER, $classProperty->getComment());
         }
         $currentDescriptionParts[] = $descriptionPart;
         $classProperty->setComment(implode($separator, $currentDescriptionParts));
@@ -92,7 +94,7 @@ class CodeGenUtil
 
     public static function getAnnotationFromProperty(Property $property, string $annotation): ?string
     {
-        $commentLines = explode(PHP_EOL, $property->getComment());
+        $commentLines = explode(self::DESCRIPTION_PART_DELIMTER, $property->getComment());
         foreach ($commentLines as $commentLine) {
             if (strpos($commentLine, "@{$annotation}") === 0) {
                 return str_replace("@{$annotation} ", '', $commentLine);

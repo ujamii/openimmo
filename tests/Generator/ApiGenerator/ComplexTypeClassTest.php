@@ -14,7 +14,7 @@ class ComplexTypeClassTest extends FileGeneratingTest
         $this->assertClassHasProperties($generatedClass, $properties);
 
         $getter = $generatedClass->getMethod('getFeld');
-        $this->assertStringContainsString('Returns array of Feld', $getter->getDocblock()->__toString());
+        $this->assertStringContainsString('Returns array of Feld', $getter->getComment());
     }
 
     public function testArrayGetterDoesNotReturnNullForNewClass()
