@@ -10,48 +10,70 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Monatlichekostennetto
  * Summe der Monatlichen Kosten einer Wohnung als Information für einen Käufer (Netto), Umst im Attribut.
+ *
  * @XmlRoot("monatlichekostennetto")
  */
 class Monatlichekostennetto
 {
     /**
+     * optional
+     *
      * @Type("float")
      * @XmlAttribute
-     * optional
+     * @var float
      */
-    protected ?float $monatlichekostenust;
+    protected $monatlichekostenust;
 
     /**
      * @Inline
      * @Type("float")
+     * @var float
      */
-    protected ?float $value;
+    protected $value;
 
+    /**
+     * @param float $monatlichekostenust Shortcut setter for monatlichekostenust
+     * @param float $value Shortcut setter for value
+     */
+    public function __construct(float $monatlichekostenust = null, float $value = null)
+    {
+        $this->monatlichekostenust = $monatlichekostenust;
+        $this->value = $value;
+    }
+
+    /**
+     * @return float
+     */
     public function getMonatlichekostenust(): ?float
     {
         return $this->monatlichekostenust;
     }
 
-    public function setMonatlichekostenust(?float $monatlichekostenust): Monatlichekostennetto
-    {
-        $this->monatlichekostenust = $monatlichekostenust;
-        return $this;
-    }
-
+    /**
+     * @return float
+     */
     public function getValue(): ?float
     {
         return $this->value;
     }
 
-    public function setValue(?float $value): Monatlichekostennetto
+    /**
+     * @param float $monatlichekostenust Setter for monatlichekostenust
+     * @return Monatlichekostennetto
+     */
+    public function setMonatlichekostenust(?float $monatlichekostenust)
     {
-        $this->value = $value;
+        $this->monatlichekostenust = $monatlichekostenust;
         return $this;
     }
 
-    public function __construct(float $monatlichekostenust = null, float $value = null)
+    /**
+     * @param float $value Setter for value
+     * @return Monatlichekostennetto
+     */
+    public function setValue(?float $value)
     {
-        $this->monatlichekostenust = $monatlichekostenust;
         $this->value = $value;
+        return $this;
     }
 }

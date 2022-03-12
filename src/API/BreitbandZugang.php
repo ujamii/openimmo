@@ -9,49 +9,72 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class BreitbandZugang
  * Informationen über die Breitbandmöglichkeiten.
+ *
  * @XmlRoot("breitband_zugang")
  */
 class BreitbandZugang
 {
     /**
+     * optional
+     *
      * @Type("string")
      * @XmlAttribute
-     * optional
+     * @var string
      */
-    protected ?string $art;
+    protected $art;
 
     /**
+     * optional
+     *
      * @Type("float")
      * @XmlAttribute
-     * optional
+     * @var float
      */
-    protected ?float $speed;
+    protected $speed;
 
+    /**
+     * @param string $art Shortcut setter for art
+     * @param float $speed Shortcut setter for speed
+     */
+    public function __construct(string $art = null, float $speed = null)
+    {
+        $this->art = $art;
+        $this->speed = $speed;
+    }
+
+    /**
+     * @return string
+     */
     public function getArt(): ?string
     {
         return $this->art;
     }
 
-    public function setArt(?string $art): BreitbandZugang
-    {
-        $this->art = $art;
-        return $this;
-    }
-
+    /**
+     * @return float
+     */
     public function getSpeed(): ?float
     {
         return $this->speed;
     }
 
-    public function setSpeed(?float $speed): BreitbandZugang
+    /**
+     * @param string $art Setter for art
+     * @return BreitbandZugang
+     */
+    public function setArt(?string $art)
     {
-        $this->speed = $speed;
+        $this->art = $art;
         return $this;
     }
 
-    public function __construct(string $art = null, float $speed = null)
+    /**
+     * @param float $speed Setter for speed
+     * @return BreitbandZugang
+     */
+    public function setSpeed(?float $speed)
     {
-        $this->art = $art;
         $this->speed = $speed;
+        return $this;
     }
 }

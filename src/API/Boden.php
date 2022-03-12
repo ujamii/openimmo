@@ -10,273 +10,400 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Boden
  * Welche Eigenschaft besitzt der Bodenbelag, Optionen kombinierbar
+ *
  * @XmlRoot("boden")
  */
 class Boden
 {
     /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("FLIESEN")
      * optional
-     */
-    protected ?bool $fliesen;
-
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("STEIN")
-     * optional
-     */
-    protected ?bool $stein;
-
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("TEPPICH")
-     * optional
-     */
-    protected ?bool $teppich;
-
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("PARKETT")
-     * optional
-     */
-    protected ?bool $parkett;
-
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("FERTIGPARKETT")
-     * optional
-     */
-    protected ?bool $fertigparkett;
-
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("LAMINAT")
-     * optional
-     */
-    protected ?bool $laminat;
-
-    /**
+     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("DIELEN")
-     * optional
+     * @var bool
      */
-    protected ?bool $dielen;
+    protected $dielen;
 
     /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("KUNSTSTOFF")
      * optional
-     */
-    protected ?bool $kunststoff;
-
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("ESTRICH")
-     * optional
-     */
-    protected ?bool $estrich;
-
-    /**
+     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("DOPPELBODEN")
-     * optional
+     * @var bool
      */
-    protected ?bool $doppelboden;
+    protected $doppelboden;
 
     /**
+     * optional
+     *
      * @Type("bool")
      * @XmlAttribute
-     * @SerializedName("LINOLEUM")
-     * optional
+     * @SerializedName("ESTRICH")
+     * @var bool
      */
-    protected ?bool $linoleum;
+    protected $estrich;
 
     /**
+     * optional
+     *
      * @Type("bool")
      * @XmlAttribute
-     * @SerializedName("MARMOR")
-     * optional
+     * @SerializedName("FERTIGPARKETT")
+     * @var bool
      */
-    protected ?bool $marmor;
+    protected $fertigparkett;
 
     /**
+     * optional
+     *
      * @Type("bool")
      * @XmlAttribute
-     * @SerializedName("TERRAKOTTA")
-     * optional
+     * @SerializedName("FLIESEN")
+     * @var bool
      */
-    protected ?bool $terrakotta;
+    protected $fliesen;
 
     /**
+     * optional
+     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("GRANIT")
-     * optional
+     * @var bool
      */
-    protected ?bool $granit;
+    protected $granit;
 
-    public function getFliesen(): ?bool
-    {
-        return $this->fliesen;
-    }
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("KUNSTSTOFF")
+     * @var bool
+     */
+    protected $kunststoff;
 
-    public function setFliesen(?bool $fliesen): Boden
-    {
-        $this->fliesen = $fliesen;
-        return $this;
-    }
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("LAMINAT")
+     * @var bool
+     */
+    protected $laminat;
 
-    public function getStein(): ?bool
-    {
-        return $this->stein;
-    }
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("LINOLEUM")
+     * @var bool
+     */
+    protected $linoleum;
 
-    public function setStein(?bool $stein): Boden
-    {
-        $this->stein = $stein;
-        return $this;
-    }
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("MARMOR")
+     * @var bool
+     */
+    protected $marmor;
 
-    public function getTeppich(): ?bool
-    {
-        return $this->teppich;
-    }
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("PARKETT")
+     * @var bool
+     */
+    protected $parkett;
 
-    public function setTeppich(?bool $teppich): Boden
-    {
-        $this->teppich = $teppich;
-        return $this;
-    }
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("STEIN")
+     * @var bool
+     */
+    protected $stein;
 
-    public function getParkett(): ?bool
-    {
-        return $this->parkett;
-    }
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("TEPPICH")
+     * @var bool
+     */
+    protected $teppich;
 
-    public function setParkett(?bool $parkett): Boden
-    {
-        $this->parkett = $parkett;
-        return $this;
-    }
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("TERRAKOTTA")
+     * @var bool
+     */
+    protected $terrakotta;
 
-    public function getFertigparkett(): ?bool
-    {
-        return $this->fertigparkett;
-    }
-
-    public function setFertigparkett(?bool $fertigparkett): Boden
-    {
-        $this->fertigparkett = $fertigparkett;
-        return $this;
-    }
-
-    public function getLaminat(): ?bool
-    {
-        return $this->laminat;
-    }
-
-    public function setLaminat(?bool $laminat): Boden
-    {
-        $this->laminat = $laminat;
-        return $this;
-    }
-
+    /**
+     * @return bool
+     */
     public function getDielen(): ?bool
     {
         return $this->dielen;
     }
 
-    public function setDielen(?bool $dielen): Boden
-    {
-        $this->dielen = $dielen;
-        return $this;
-    }
-
-    public function getKunststoff(): ?bool
-    {
-        return $this->kunststoff;
-    }
-
-    public function setKunststoff(?bool $kunststoff): Boden
-    {
-        $this->kunststoff = $kunststoff;
-        return $this;
-    }
-
-    public function getEstrich(): ?bool
-    {
-        return $this->estrich;
-    }
-
-    public function setEstrich(?bool $estrich): Boden
-    {
-        $this->estrich = $estrich;
-        return $this;
-    }
-
+    /**
+     * @return bool
+     */
     public function getDoppelboden(): ?bool
     {
         return $this->doppelboden;
     }
 
-    public function setDoppelboden(?bool $doppelboden): Boden
+    /**
+     * @return bool
+     */
+    public function getEstrich(): ?bool
     {
-        $this->doppelboden = $doppelboden;
-        return $this;
+        return $this->estrich;
     }
 
-    public function getLinoleum(): ?bool
+    /**
+     * @return bool
+     */
+    public function getFertigparkett(): ?bool
     {
-        return $this->linoleum;
+        return $this->fertigparkett;
     }
 
-    public function setLinoleum(?bool $linoleum): Boden
+    /**
+     * @return bool
+     */
+    public function getFliesen(): ?bool
     {
-        $this->linoleum = $linoleum;
-        return $this;
+        return $this->fliesen;
     }
 
-    public function getMarmor(): ?bool
-    {
-        return $this->marmor;
-    }
-
-    public function setMarmor(?bool $marmor): Boden
-    {
-        $this->marmor = $marmor;
-        return $this;
-    }
-
-    public function getTerrakotta(): ?bool
-    {
-        return $this->terrakotta;
-    }
-
-    public function setTerrakotta(?bool $terrakotta): Boden
-    {
-        $this->terrakotta = $terrakotta;
-        return $this;
-    }
-
+    /**
+     * @return bool
+     */
     public function getGranit(): ?bool
     {
         return $this->granit;
     }
 
-    public function setGranit(?bool $granit): Boden
+    /**
+     * @return bool
+     */
+    public function getKunststoff(): ?bool
+    {
+        return $this->kunststoff;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getLaminat(): ?bool
+    {
+        return $this->laminat;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getLinoleum(): ?bool
+    {
+        return $this->linoleum;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getMarmor(): ?bool
+    {
+        return $this->marmor;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getParkett(): ?bool
+    {
+        return $this->parkett;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getStein(): ?bool
+    {
+        return $this->stein;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getTeppich(): ?bool
+    {
+        return $this->teppich;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getTerrakotta(): ?bool
+    {
+        return $this->terrakotta;
+    }
+
+    /**
+     * @param bool $dielen Setter for dielen
+     * @return Boden
+     */
+    public function setDielen(?bool $dielen)
+    {
+        $this->dielen = $dielen;
+        return $this;
+    }
+
+    /**
+     * @param bool $doppelboden Setter for doppelboden
+     * @return Boden
+     */
+    public function setDoppelboden(?bool $doppelboden)
+    {
+        $this->doppelboden = $doppelboden;
+        return $this;
+    }
+
+    /**
+     * @param bool $estrich Setter for estrich
+     * @return Boden
+     */
+    public function setEstrich(?bool $estrich)
+    {
+        $this->estrich = $estrich;
+        return $this;
+    }
+
+    /**
+     * @param bool $fertigparkett Setter for fertigparkett
+     * @return Boden
+     */
+    public function setFertigparkett(?bool $fertigparkett)
+    {
+        $this->fertigparkett = $fertigparkett;
+        return $this;
+    }
+
+    /**
+     * @param bool $fliesen Setter for fliesen
+     * @return Boden
+     */
+    public function setFliesen(?bool $fliesen)
+    {
+        $this->fliesen = $fliesen;
+        return $this;
+    }
+
+    /**
+     * @param bool $granit Setter for granit
+     * @return Boden
+     */
+    public function setGranit(?bool $granit)
     {
         $this->granit = $granit;
+        return $this;
+    }
+
+    /**
+     * @param bool $kunststoff Setter for kunststoff
+     * @return Boden
+     */
+    public function setKunststoff(?bool $kunststoff)
+    {
+        $this->kunststoff = $kunststoff;
+        return $this;
+    }
+
+    /**
+     * @param bool $laminat Setter for laminat
+     * @return Boden
+     */
+    public function setLaminat(?bool $laminat)
+    {
+        $this->laminat = $laminat;
+        return $this;
+    }
+
+    /**
+     * @param bool $linoleum Setter for linoleum
+     * @return Boden
+     */
+    public function setLinoleum(?bool $linoleum)
+    {
+        $this->linoleum = $linoleum;
+        return $this;
+    }
+
+    /**
+     * @param bool $marmor Setter for marmor
+     * @return Boden
+     */
+    public function setMarmor(?bool $marmor)
+    {
+        $this->marmor = $marmor;
+        return $this;
+    }
+
+    /**
+     * @param bool $parkett Setter for parkett
+     * @return Boden
+     */
+    public function setParkett(?bool $parkett)
+    {
+        $this->parkett = $parkett;
+        return $this;
+    }
+
+    /**
+     * @param bool $stein Setter for stein
+     * @return Boden
+     */
+    public function setStein(?bool $stein)
+    {
+        $this->stein = $stein;
+        return $this;
+    }
+
+    /**
+     * @param bool $teppich Setter for teppich
+     * @return Boden
+     */
+    public function setTeppich(?bool $teppich)
+    {
+        $this->teppich = $teppich;
+        return $this;
+    }
+
+    /**
+     * @param bool $terrakotta Setter for terrakotta
+     * @return Boden
+     */
+    public function setTerrakotta(?bool $terrakotta)
+    {
+        $this->terrakotta = $terrakotta;
         return $this;
     }
 }

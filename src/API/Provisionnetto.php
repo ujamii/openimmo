@@ -10,48 +10,70 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Provisionnetto
  * Wenn unterschiedliche Provisionen anfallen, dann hier Netto und UmSt. einzeln
+ *
  * @XmlRoot("provisionnetto")
  */
 class Provisionnetto
 {
     /**
+     * optional
+     *
      * @Type("float")
      * @XmlAttribute
-     * optional
+     * @var float
      */
-    protected ?float $provisionust;
+    protected $provisionust;
 
     /**
      * @Inline
      * @Type("float")
+     * @var float
      */
-    protected ?float $value;
+    protected $value;
 
+    /**
+     * @param float $provisionust Shortcut setter for provisionust
+     * @param float $value Shortcut setter for value
+     */
+    public function __construct(float $provisionust = null, float $value = null)
+    {
+        $this->provisionust = $provisionust;
+        $this->value = $value;
+    }
+
+    /**
+     * @return float
+     */
     public function getProvisionust(): ?float
     {
         return $this->provisionust;
     }
 
-    public function setProvisionust(?float $provisionust): Provisionnetto
-    {
-        $this->provisionust = $provisionust;
-        return $this;
-    }
-
+    /**
+     * @return float
+     */
     public function getValue(): ?float
     {
         return $this->value;
     }
 
-    public function setValue(?float $value): Provisionnetto
+    /**
+     * @param float $provisionust Setter for provisionust
+     * @return Provisionnetto
+     */
+    public function setProvisionust(?float $provisionust)
     {
-        $this->value = $value;
+        $this->provisionust = $provisionust;
         return $this;
     }
 
-    public function __construct(float $provisionust = null, float $value = null)
+    /**
+     * @param float $value Setter for value
+     * @return Provisionnetto
+     */
+    public function setValue(?float $value)
     {
-        $this->provisionust = $provisionust;
         $this->value = $value;
+        return $this;
     }
 }

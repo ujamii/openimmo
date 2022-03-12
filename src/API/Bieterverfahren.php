@@ -9,180 +9,257 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Bieterverfahren
  * Angaben zum Bieterverfahren
+ *
  * @XmlRoot("bieterverfahren")
  */
 class Bieterverfahren
 {
     /**
      * @Type("DateTime<'Y-m-d'>")
-     * @var ?\DateTime
+     * @var \DateTime
      */
-    protected ?\DateTime $beginnAngebotsphase = null;
-
-    /**
-     * @Type("DateTime<'Y-m-d'>")
-     * @var ?\DateTime
-     */
-    protected ?\DateTime $besichtigungstermin = null;
-
-    /**
-     * @Type("DateTime<'Y-m-d'>")
-     * @var ?\DateTime
-     */
-    protected ?\DateTime $besichtigungstermin2 = null;
+    protected $beginnAngebotsphase;
 
     /**
      * @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>")
-     * @var ?\DateTime
+     * @var \DateTime
      */
-    protected ?\DateTime $beginnBietzeit = null;
+    protected $beginnBietzeit;
 
     /**
      * @Type("DateTime<'Y-m-d'>")
-     * @var ?\DateTime
+     * @var \DateTime
      */
-    protected ?\DateTime $endeBietzeit = null;
+    protected $besichtigungstermin;
+
+    /**
+     * @Type("DateTime<'Y-m-d'>")
+     * @var \DateTime
+     */
+    protected $besichtigungstermin2;
+
+    /**
+     * @Type("DateTime<'Y-m-d'>")
+     * @var \DateTime
+     */
+    protected $endeBietzeit;
 
     /**
      * @Type("bool")
-     * @var ?bool
+     * @var bool
      */
-    protected ?bool $hoechstgebotZeigen = null;
+    protected $hoechstgebotZeigen;
 
     /**
      * @Type("float")
-     * @var ?float
+     * @var float
      */
-    protected ?float $mindestpreis = null;
-
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedSimplefield[]
-     */
-    protected ?array $userDefinedSimplefield = [];
+    protected $mindestpreis;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedAnyfield[]
+     * @var UserDefinedAnyfield[]
      */
-    protected ?array $userDefinedAnyfield = [];
+    protected $userDefinedAnyfield;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedExtend[]
+     * @var UserDefinedExtend[]
      */
-    protected ?array $userDefinedExtend = [];
+    protected $userDefinedExtend;
 
+    /**
+     * @XmlList(inline = true, entry = "user_defined_simplefield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
+     * @var UserDefinedSimplefield[]
+     */
+    protected $userDefinedSimplefield;
+
+    /**
+     * @return \DateTime
+     */
     public function getBeginnAngebotsphase(): ?\DateTime
     {
         return $this->beginnAngebotsphase;
     }
 
-    public function setBeginnAngebotsphase(?\DateTime $beginnAngebotsphase): Bieterverfahren
-    {
-        $this->beginnAngebotsphase = $beginnAngebotsphase;
-        return $this;
-    }
-
-    public function getBesichtigungstermin(): ?\DateTime
-    {
-        return $this->besichtigungstermin;
-    }
-
-    public function setBesichtigungstermin(?\DateTime $besichtigungstermin): Bieterverfahren
-    {
-        $this->besichtigungstermin = $besichtigungstermin;
-        return $this;
-    }
-
-    public function getBesichtigungstermin2(): ?\DateTime
-    {
-        return $this->besichtigungstermin2;
-    }
-
-    public function setBesichtigungstermin2(?\DateTime $besichtigungstermin2): Bieterverfahren
-    {
-        $this->besichtigungstermin2 = $besichtigungstermin2;
-        return $this;
-    }
-
+    /**
+     * @return \DateTime
+     */
     public function getBeginnBietzeit(): ?\DateTime
     {
         return $this->beginnBietzeit;
     }
 
-    public function setBeginnBietzeit(?\DateTime $beginnBietzeit): Bieterverfahren
+    /**
+     * @return \DateTime
+     */
+    public function getBesichtigungstermin(): ?\DateTime
     {
-        $this->beginnBietzeit = $beginnBietzeit;
-        return $this;
+        return $this->besichtigungstermin;
     }
 
+    /**
+     * @return \DateTime
+     */
+    public function getBesichtigungstermin2(): ?\DateTime
+    {
+        return $this->besichtigungstermin2;
+    }
+
+    /**
+     * @return \DateTime
+     */
     public function getEndeBietzeit(): ?\DateTime
     {
         return $this->endeBietzeit;
     }
 
-    public function setEndeBietzeit(?\DateTime $endeBietzeit): Bieterverfahren
-    {
-        $this->endeBietzeit = $endeBietzeit;
-        return $this;
-    }
-
+    /**
+     * @return bool
+     */
     public function getHoechstgebotZeigen(): ?bool
     {
         return $this->hoechstgebotZeigen;
     }
 
-    public function setHoechstgebotZeigen(?bool $hoechstgebotZeigen): Bieterverfahren
-    {
-        $this->hoechstgebotZeigen = $hoechstgebotZeigen;
-        return $this;
-    }
-
+    /**
+     * @return float
+     */
     public function getMindestpreis(): ?float
     {
         return $this->mindestpreis;
     }
 
-    public function setMindestpreis(?float $mindestpreis): Bieterverfahren
+    /**
+     * Returns array of UserDefinedAnyfield
+     *
+     * @return array
+     */
+    public function getUserDefinedAnyfield(): array
+    {
+        return $this->userDefinedAnyfield ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedExtend
+     *
+     * @return array
+     */
+    public function getUserDefinedExtend(): array
+    {
+        return $this->userDefinedExtend ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedSimplefield
+     *
+     * @return array
+     */
+    public function getUserDefinedSimplefield(): array
+    {
+        return $this->userDefinedSimplefield ?? [];
+    }
+
+    /**
+     * @param \DateTime $beginnAngebotsphase Setter for beginnAngebotsphase
+     * @return Bieterverfahren
+     */
+    public function setBeginnAngebotsphase(?\DateTime $beginnAngebotsphase)
+    {
+        $this->beginnAngebotsphase = $beginnAngebotsphase;
+        return $this;
+    }
+
+    /**
+     * @param \DateTime $beginnBietzeit Setter for beginnBietzeit
+     * @return Bieterverfahren
+     */
+    public function setBeginnBietzeit(?\DateTime $beginnBietzeit)
+    {
+        $this->beginnBietzeit = $beginnBietzeit;
+        return $this;
+    }
+
+    /**
+     * @param \DateTime $besichtigungstermin Setter for besichtigungstermin
+     * @return Bieterverfahren
+     */
+    public function setBesichtigungstermin(?\DateTime $besichtigungstermin)
+    {
+        $this->besichtigungstermin = $besichtigungstermin;
+        return $this;
+    }
+
+    /**
+     * @param \DateTime $besichtigungstermin2 Setter for besichtigungstermin2
+     * @return Bieterverfahren
+     */
+    public function setBesichtigungstermin2(?\DateTime $besichtigungstermin2)
+    {
+        $this->besichtigungstermin2 = $besichtigungstermin2;
+        return $this;
+    }
+
+    /**
+     * @param \DateTime $endeBietzeit Setter for endeBietzeit
+     * @return Bieterverfahren
+     */
+    public function setEndeBietzeit(?\DateTime $endeBietzeit)
+    {
+        $this->endeBietzeit = $endeBietzeit;
+        return $this;
+    }
+
+    /**
+     * @param bool $hoechstgebotZeigen Setter for hoechstgebotZeigen
+     * @return Bieterverfahren
+     */
+    public function setHoechstgebotZeigen(?bool $hoechstgebotZeigen)
+    {
+        $this->hoechstgebotZeigen = $hoechstgebotZeigen;
+        return $this;
+    }
+
+    /**
+     * @param float $mindestpreis Setter for mindestpreis
+     * @return Bieterverfahren
+     */
+    public function setMindestpreis(?float $mindestpreis)
     {
         $this->mindestpreis = $mindestpreis;
         return $this;
     }
 
-    public function getUserDefinedSimplefield(): ?array
-    {
-        return $this->userDefinedSimplefield;
-    }
-
-    public function setUserDefinedSimplefield(?array $userDefinedSimplefield): Bieterverfahren
-    {
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
-        return $this;
-    }
-
-    public function getUserDefinedAnyfield(): ?array
-    {
-        return $this->userDefinedAnyfield;
-    }
-
-    public function setUserDefinedAnyfield(?array $userDefinedAnyfield): Bieterverfahren
+    /**
+     * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+     * @return Bieterverfahren
+     */
+    public function setUserDefinedAnyfield(array $userDefinedAnyfield)
     {
         $this->userDefinedAnyfield = $userDefinedAnyfield;
         return $this;
     }
 
-    public function getUserDefinedExtend(): ?array
-    {
-        return $this->userDefinedExtend;
-    }
-
-    public function setUserDefinedExtend(?array $userDefinedExtend): Bieterverfahren
+    /**
+     * @param array $userDefinedExtend Setter for userDefinedExtend
+     * @return Bieterverfahren
+     */
+    public function setUserDefinedExtend(array $userDefinedExtend)
     {
         $this->userDefinedExtend = $userDefinedExtend;
+        return $this;
+    }
+
+    /**
+     * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+     * @return Bieterverfahren
+     */
+    public function setUserDefinedSimplefield(array $userDefinedSimplefield)
+    {
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
         return $this;
     }
 }

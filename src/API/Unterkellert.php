@@ -9,35 +9,56 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Unterkellert
  * Ist das Objekt unterkellert? Optionen nicht kombinierbar
+ *
  * @XmlRoot("unterkellert")
  */
 class Unterkellert
 {
+    /**
+     */
     public const KELLER_JA = 'JA';
+
+    /**
+     */
     public const KELLER_NEIN = 'NEIN';
+
+    /**
+     */
     public const KELLER_TEIL = 'TEIL';
 
     /**
+     * optional
+     *
      * @Type("string")
      * @XmlAttribute
-     * optional
      * @see KELLER_* constants
+     * @var string
      */
-    protected ?string $keller;
+    protected $keller;
 
-    public function getKeller(): string
+    /**
+     * @param string $keller Shortcut setter for keller
+     */
+    public function __construct(string $keller = null)
+    {
+        $this->keller = $keller;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKeller(): ?string
     {
         return $this->keller;
     }
 
-    public function setKeller(string $keller): Unterkellert
+    /**
+     * @param string $keller Setter for keller
+     * @return Unterkellert
+     */
+    public function setKeller(?string $keller)
     {
         $this->keller = $keller;
         return $this;
-    }
-
-    public function __construct(string $keller = null)
-    {
-        $this->keller = $keller;
     }
 }

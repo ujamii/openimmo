@@ -16,22 +16,33 @@ class UserDefinedAnyfield
     /**
      * @Inline
      * @Type("string")
+     * @var string
      */
-    protected ?string $value;
+    protected $value;
 
+    /**
+     * @param string $value Shortcut setter for value
+     */
+    public function __construct(string $value = null)
+    {
+        $this->value = $value;
+    }
+
+    /**
+     * @return string
+     */
     public function getValue(): ?string
     {
         return $this->value;
     }
 
-    public function setValue(?string $value): UserDefinedAnyfield
+    /**
+     * @param string $value Setter for value
+     * @return UserDefinedAnyfield
+     */
+    public function setValue(?string $value)
     {
         $this->value = $value;
         return $this;
-    }
-
-    public function __construct(string $value = null)
-    {
-        $this->value = $value;
     }
 }

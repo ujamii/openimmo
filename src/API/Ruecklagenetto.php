@@ -10,48 +10,70 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Ruecklagenetto
  * Vorhanden Rücklagen bei einem Kauf Objekt, UmSt. im Attribut.
+ *
  * @XmlRoot("ruecklagenetto")
  */
 class Ruecklagenetto
 {
     /**
+     * optional
+     *
      * @Type("float")
      * @XmlAttribute
-     * optional
+     * @var float
      */
-    protected ?float $ruecklageust;
+    protected $ruecklageust;
 
     /**
      * @Inline
      * @Type("float")
+     * @var float
      */
-    protected ?float $value;
+    protected $value;
 
+    /**
+     * @param float $ruecklageust Shortcut setter for ruecklageust
+     * @param float $value Shortcut setter for value
+     */
+    public function __construct(float $ruecklageust = null, float $value = null)
+    {
+        $this->ruecklageust = $ruecklageust;
+        $this->value = $value;
+    }
+
+    /**
+     * @return float
+     */
     public function getRuecklageust(): ?float
     {
         return $this->ruecklageust;
     }
 
-    public function setRuecklageust(?float $ruecklageust): Ruecklagenetto
-    {
-        $this->ruecklageust = $ruecklageust;
-        return $this;
-    }
-
+    /**
+     * @return float
+     */
     public function getValue(): ?float
     {
         return $this->value;
     }
 
-    public function setValue(?float $value): Ruecklagenetto
+    /**
+     * @param float $ruecklageust Setter for ruecklageust
+     * @return Ruecklagenetto
+     */
+    public function setRuecklageust(?float $ruecklageust)
     {
-        $this->value = $value;
+        $this->ruecklageust = $ruecklageust;
         return $this;
     }
 
-    public function __construct(float $ruecklageust = null, float $value = null)
+    /**
+     * @param float $value Setter for value
+     * @return Ruecklagenetto
+     */
+    public function setValue(?float $value)
     {
-        $this->ruecklageust = $ruecklageust;
         $this->value = $value;
+        return $this;
     }
 }

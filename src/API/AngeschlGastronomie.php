@@ -10,51 +10,74 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class AngeschlGastronomie
  * Welcher Art ist die angeschlossene Gastronomie, Optionen kombinierbar
+ *
  * @XmlRoot("angeschl_gastronomie")
  */
 class AngeschlGastronomie
 {
     /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("HOTELRESTAURANT")
      * optional
-     */
-    protected ?bool $hotelrestaurant;
-
-    /**
+     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("BAR")
-     * optional
+     * @var bool
      */
-    protected ?bool $bar;
+    protected $bar;
 
-    public function getHotelrestaurant(): ?bool
-    {
-        return $this->hotelrestaurant;
-    }
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("HOTELRESTAURANT")
+     * @var bool
+     */
+    protected $hotelrestaurant;
 
-    public function setHotelrestaurant(?bool $hotelrestaurant): AngeschlGastronomie
+    /**
+     * @param bool $hotelrestaurant Shortcut setter for hotelrestaurant
+     * @param bool $bar Shortcut setter for bar
+     */
+    public function __construct(bool $hotelrestaurant = null, bool $bar = null)
     {
         $this->hotelrestaurant = $hotelrestaurant;
-        return $this;
+        $this->bar = $bar;
     }
 
+    /**
+     * @return bool
+     */
     public function getBar(): ?bool
     {
         return $this->bar;
     }
 
-    public function setBar(?bool $bar): AngeschlGastronomie
+    /**
+     * @return bool
+     */
+    public function getHotelrestaurant(): ?bool
+    {
+        return $this->hotelrestaurant;
+    }
+
+    /**
+     * @param bool $bar Setter for bar
+     * @return AngeschlGastronomie
+     */
+    public function setBar(?bool $bar)
     {
         $this->bar = $bar;
         return $this;
     }
 
-    public function __construct(bool $hotelrestaurant = null, bool $bar = null)
+    /**
+     * @param bool $hotelrestaurant Setter for hotelrestaurant
+     * @return AngeschlGastronomie
+     */
+    public function setHotelrestaurant(?bool $hotelrestaurant)
     {
         $this->hotelrestaurant = $hotelrestaurant;
-        $this->bar = $bar;
+        return $this;
     }
 }

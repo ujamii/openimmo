@@ -11,74 +11,105 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Class Foto
  * Foto bei der Kontaktperson. Datentyp ähnlich "Anhang"
  * foto from the kontakt person of the sender
+ *
  * @XmlRoot("foto")
  */
 class Foto
 {
+    /**
+     */
     public const LOCATION_EXTERN = 'EXTERN';
+
+    /**
+     */
     public const LOCATION_REMOTE = 'REMOTE';
 
     /**
+     * @Type("Ujamii\OpenImmo\API\Daten")
+     * @var Daten
+     */
+    protected $daten;
+
+    /**
+     * @Type("string")
+     * @SkipWhenEmpty
+     * @var string
+     */
+    protected $format = '';
+
+    /**
+     * required
+     *
      * @Type("string")
      * @XmlAttribute
-     * required
      * @see LOCATION_* constants
-     */
-    protected ?string $location;
-
-    /**
-     * @Type("string")
      * @var string
-     * @SkipWhenEmpty
      */
-    protected string $format = '';
+    protected $location;
 
     /**
-     * @Type("Ujamii\OpenImmo\API\Daten")
-     * @var ?\Ujamii\OpenImmo\API\Daten
+     * @param string $location Shortcut setter for location
+     * @param string $format Shortcut setter for format
+     * @param Daten $daten Shortcut setter for daten
      */
-    protected ?Daten $daten = null;
-
-    public function getLocation(): string
-    {
-        return $this->location;
-    }
-
-    public function setLocation(string $location): Foto
+    public function __construct(string $location = null, string $format = '', Daten $daten = null)
     {
         $this->location = $location;
-        return $this;
-    }
-
-    public function getFormat(): string
-    {
-        return $this->format;
-    }
-
-    public function setFormat(string $format): Foto
-    {
         $this->format = $format;
-        return $this;
+        $this->daten = $daten;
     }
 
+    /**
+     * @return Daten
+     */
     public function getDaten(): ?Daten
     {
         return $this->daten;
     }
 
-    public function setDaten(?Daten $daten): Foto
+    /**
+     * @return string
+     */
+    public function getFormat(): string
+    {
+        return $this->format;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLocation(): string
+    {
+        return $this->location;
+    }
+
+    /**
+     * @param Daten $daten Setter for daten
+     * @return Foto
+     */
+    public function setDaten(?Daten $daten)
     {
         $this->daten = $daten;
         return $this;
     }
 
-    public function __construct(
-        string $location = null,
-        string $format = null,
-        \Ujamii\OpenImmo\API\Daten $daten = null
-    ) {
-        $this->location = $location;
+    /**
+     * @param string $format Setter for format
+     * @return Foto
+     */
+    public function setFormat(string $format)
+    {
         $this->format = $format;
-        $this->daten = $daten;
+        return $this;
+    }
+
+    /**
+     * @param string $location Setter for location
+     * @return Foto
+     */
+    public function setLocation(string $location)
+    {
+        $this->location = $location;
+        return $this;
     }
 }

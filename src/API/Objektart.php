@@ -9,259 +9,386 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Objektart
  * Objektarten
+ *
  * @XmlRoot("objektart")
  */
 class Objektart
 {
     /**
-     * @XmlList(inline = true, entry = "zimmer")
-     * @Type("array<Ujamii\OpenImmo\API\Zimmer>")
-     * @var ?\Ujamii\OpenImmo\API\Zimmer[]
-     */
-    protected ?array $zimmer = [];
-
-    /**
-     * @XmlList(inline = true, entry = "wohnung")
-     * @Type("array<Ujamii\OpenImmo\API\Wohnung>")
-     * @var ?\Ujamii\OpenImmo\API\Wohnung[]
-     */
-    protected ?array $wohnung = [];
-
-    /**
-     * @XmlList(inline = true, entry = "haus")
-     * @Type("array<Ujamii\OpenImmo\API\Haus>")
-     * @var ?\Ujamii\OpenImmo\API\Haus[]
-     */
-    protected ?array $haus = [];
-
-    /**
-     * @XmlList(inline = true, entry = "grundstueck")
-     * @Type("array<Ujamii\OpenImmo\API\Grundstueck>")
-     * @var ?\Ujamii\OpenImmo\API\Grundstueck[]
-     */
-    protected ?array $grundstueck = [];
-
-    /**
      * @XmlList(inline = true, entry = "buero_praxen")
      * @Type("array<Ujamii\OpenImmo\API\BueroPraxen>")
-     * @var ?\Ujamii\OpenImmo\API\BueroPraxen[]
+     * @var BueroPraxen[]
      */
-    protected ?array $bueroPraxen = [];
+    protected $bueroPraxen;
 
     /**
      * @XmlList(inline = true, entry = "einzelhandel")
      * @Type("array<Ujamii\OpenImmo\API\Einzelhandel>")
-     * @var ?\Ujamii\OpenImmo\API\Einzelhandel[]
+     * @var Einzelhandel[]
      */
-    protected ?array $einzelhandel = [];
-
-    /**
-     * @XmlList(inline = true, entry = "gastgewerbe")
-     * @Type("array<Ujamii\OpenImmo\API\Gastgewerbe>")
-     * @var ?\Ujamii\OpenImmo\API\Gastgewerbe[]
-     */
-    protected ?array $gastgewerbe = [];
-
-    /**
-     * @XmlList(inline = true, entry = "hallen_lager_prod")
-     * @Type("array<Ujamii\OpenImmo\API\HallenLagerProd>")
-     * @var ?\Ujamii\OpenImmo\API\HallenLagerProd[]
-     */
-    protected ?array $hallenLagerProd = [];
-
-    /**
-     * @XmlList(inline = true, entry = "land_und_forstwirtschaft")
-     * @Type("array<Ujamii\OpenImmo\API\LandUndForstwirtschaft>")
-     * @var ?\Ujamii\OpenImmo\API\LandUndForstwirtschaft[]
-     */
-    protected ?array $landUndForstwirtschaft = [];
-
-    /**
-     * @XmlList(inline = true, entry = "parken")
-     * @Type("array<Ujamii\OpenImmo\API\Parken>")
-     * @var ?\Ujamii\OpenImmo\API\Parken[]
-     */
-    protected ?array $parken = [];
-
-    /**
-     * @XmlList(inline = true, entry = "sonstige")
-     * @Type("array<Ujamii\OpenImmo\API\Sonstige>")
-     * @var ?\Ujamii\OpenImmo\API\Sonstige[]
-     */
-    protected ?array $sonstige = [];
+    protected $einzelhandel;
 
     /**
      * @XmlList(inline = true, entry = "freizeitimmobilie_gewerblich")
      * @Type("array<Ujamii\OpenImmo\API\FreizeitimmobilieGewerblich>")
-     * @var ?\Ujamii\OpenImmo\API\FreizeitimmobilieGewerblich[]
+     * @var FreizeitimmobilieGewerblich[]
      */
-    protected ?array $freizeitimmobilieGewerblich = [];
+    protected $freizeitimmobilieGewerblich;
 
     /**
-     * @XmlList(inline = true, entry = "zinshaus_renditeobjekt")
-     * @Type("array<Ujamii\OpenImmo\API\ZinshausRenditeobjekt>")
-     * @var ?\Ujamii\OpenImmo\API\ZinshausRenditeobjekt[]
+     * @XmlList(inline = true, entry = "gastgewerbe")
+     * @Type("array<Ujamii\OpenImmo\API\Gastgewerbe>")
+     * @var Gastgewerbe[]
      */
-    protected ?array $zinshausRenditeobjekt = [];
+    protected $gastgewerbe;
+
+    /**
+     * @XmlList(inline = true, entry = "grundstueck")
+     * @Type("array<Ujamii\OpenImmo\API\Grundstueck>")
+     * @var Grundstueck[]
+     */
+    protected $grundstueck;
+
+    /**
+     * @XmlList(inline = true, entry = "hallen_lager_prod")
+     * @Type("array<Ujamii\OpenImmo\API\HallenLagerProd>")
+     * @var HallenLagerProd[]
+     */
+    protected $hallenLagerProd;
+
+    /**
+     * @XmlList(inline = true, entry = "haus")
+     * @Type("array<Ujamii\OpenImmo\API\Haus>")
+     * @var Haus[]
+     */
+    protected $haus;
+
+    /**
+     * @XmlList(inline = true, entry = "land_und_forstwirtschaft")
+     * @Type("array<Ujamii\OpenImmo\API\LandUndForstwirtschaft>")
+     * @var LandUndForstwirtschaft[]
+     */
+    protected $landUndForstwirtschaft;
 
     /**
      * @XmlList(inline = true, entry = "objektart_zusatz")
      * @Type("array<string>")
-     * @var ?\Ujamii\OpenImmo\API\string[]
+     * @var string[]
      */
-    protected ?array $objektartZusatz = [];
+    protected $objektartZusatz;
 
-    public function getZimmer(): ?array
+    /**
+     * @XmlList(inline = true, entry = "parken")
+     * @Type("array<Ujamii\OpenImmo\API\Parken>")
+     * @var Parken[]
+     */
+    protected $parken;
+
+    /**
+     * @XmlList(inline = true, entry = "sonstige")
+     * @Type("array<Ujamii\OpenImmo\API\Sonstige>")
+     * @var Sonstige[]
+     */
+    protected $sonstige;
+
+    /**
+     * @XmlList(inline = true, entry = "wohnung")
+     * @Type("array<Ujamii\OpenImmo\API\Wohnung>")
+     * @var Wohnung[]
+     */
+    protected $wohnung;
+
+    /**
+     * @XmlList(inline = true, entry = "zimmer")
+     * @Type("array<Ujamii\OpenImmo\API\Zimmer>")
+     * @var Zimmer[]
+     */
+    protected $zimmer;
+
+    /**
+     * @XmlList(inline = true, entry = "zinshaus_renditeobjekt")
+     * @Type("array<Ujamii\OpenImmo\API\ZinshausRenditeobjekt>")
+     * @var ZinshausRenditeobjekt[]
+     */
+    protected $zinshausRenditeobjekt;
+
+    /**
+     * Returns array of BueroPraxen
+     *
+     * @return array
+     */
+    public function getBueroPraxen(): array
     {
-        return $this->zimmer;
+        return $this->bueroPraxen ?? [];
     }
 
-    public function setZimmer(?array $zimmer): Objektart
+    /**
+     * Returns array of Einzelhandel
+     *
+     * @return array
+     */
+    public function getEinzelhandel(): array
     {
-        $this->zimmer = $zimmer;
-        return $this;
+        return $this->einzelhandel ?? [];
     }
 
-    public function getWohnung(): ?array
+    /**
+     * Returns array of FreizeitimmobilieGewerblich
+     *
+     * @return array
+     */
+    public function getFreizeitimmobilieGewerblich(): array
     {
-        return $this->wohnung;
+        return $this->freizeitimmobilieGewerblich ?? [];
     }
 
-    public function setWohnung(?array $wohnung): Objektart
+    /**
+     * Returns array of Gastgewerbe
+     *
+     * @return array
+     */
+    public function getGastgewerbe(): array
     {
-        $this->wohnung = $wohnung;
-        return $this;
+        return $this->gastgewerbe ?? [];
     }
 
-    public function getHaus(): ?array
+    /**
+     * Returns array of Grundstueck
+     *
+     * @return array
+     */
+    public function getGrundstueck(): array
     {
-        return $this->haus;
+        return $this->grundstueck ?? [];
     }
 
-    public function setHaus(?array $haus): Objektart
+    /**
+     * Returns array of HallenLagerProd
+     *
+     * @return array
+     */
+    public function getHallenLagerProd(): array
     {
-        $this->haus = $haus;
-        return $this;
+        return $this->hallenLagerProd ?? [];
     }
 
-    public function getGrundstueck(): ?array
+    /**
+     * Returns array of Haus
+     *
+     * @return array
+     */
+    public function getHaus(): array
     {
-        return $this->grundstueck;
+        return $this->haus ?? [];
     }
 
-    public function setGrundstueck(?array $grundstueck): Objektart
+    /**
+     * Returns array of LandUndForstwirtschaft
+     *
+     * @return array
+     */
+    public function getLandUndForstwirtschaft(): array
     {
-        $this->grundstueck = $grundstueck;
-        return $this;
+        return $this->landUndForstwirtschaft ?? [];
     }
 
-    public function getBueroPraxen(): ?array
+    /**
+     * Returns array of string
+     *
+     * @return array
+     */
+    public function getObjektartZusatz(): array
     {
-        return $this->bueroPraxen;
+        return $this->objektartZusatz ?? [];
     }
 
-    public function setBueroPraxen(?array $bueroPraxen): Objektart
+    /**
+     * Returns array of Parken
+     *
+     * @return array
+     */
+    public function getParken(): array
+    {
+        return $this->parken ?? [];
+    }
+
+    /**
+     * Returns array of Sonstige
+     *
+     * @return array
+     */
+    public function getSonstige(): array
+    {
+        return $this->sonstige ?? [];
+    }
+
+    /**
+     * Returns array of Wohnung
+     *
+     * @return array
+     */
+    public function getWohnung(): array
+    {
+        return $this->wohnung ?? [];
+    }
+
+    /**
+     * Returns array of Zimmer
+     *
+     * @return array
+     */
+    public function getZimmer(): array
+    {
+        return $this->zimmer ?? [];
+    }
+
+    /**
+     * Returns array of ZinshausRenditeobjekt
+     *
+     * @return array
+     */
+    public function getZinshausRenditeobjekt(): array
+    {
+        return $this->zinshausRenditeobjekt ?? [];
+    }
+
+    /**
+     * @param array $bueroPraxen Setter for bueroPraxen
+     * @return Objektart
+     */
+    public function setBueroPraxen(array $bueroPraxen)
     {
         $this->bueroPraxen = $bueroPraxen;
         return $this;
     }
 
-    public function getEinzelhandel(): ?array
-    {
-        return $this->einzelhandel;
-    }
-
-    public function setEinzelhandel(?array $einzelhandel): Objektart
+    /**
+     * @param array $einzelhandel Setter for einzelhandel
+     * @return Objektart
+     */
+    public function setEinzelhandel(array $einzelhandel)
     {
         $this->einzelhandel = $einzelhandel;
         return $this;
     }
 
-    public function getGastgewerbe(): ?array
-    {
-        return $this->gastgewerbe;
-    }
-
-    public function setGastgewerbe(?array $gastgewerbe): Objektart
-    {
-        $this->gastgewerbe = $gastgewerbe;
-        return $this;
-    }
-
-    public function getHallenLagerProd(): ?array
-    {
-        return $this->hallenLagerProd;
-    }
-
-    public function setHallenLagerProd(?array $hallenLagerProd): Objektart
-    {
-        $this->hallenLagerProd = $hallenLagerProd;
-        return $this;
-    }
-
-    public function getLandUndForstwirtschaft(): ?array
-    {
-        return $this->landUndForstwirtschaft;
-    }
-
-    public function setLandUndForstwirtschaft(?array $landUndForstwirtschaft): Objektart
-    {
-        $this->landUndForstwirtschaft = $landUndForstwirtschaft;
-        return $this;
-    }
-
-    public function getParken(): ?array
-    {
-        return $this->parken;
-    }
-
-    public function setParken(?array $parken): Objektart
-    {
-        $this->parken = $parken;
-        return $this;
-    }
-
-    public function getSonstige(): ?array
-    {
-        return $this->sonstige;
-    }
-
-    public function setSonstige(?array $sonstige): Objektart
-    {
-        $this->sonstige = $sonstige;
-        return $this;
-    }
-
-    public function getFreizeitimmobilieGewerblich(): ?array
-    {
-        return $this->freizeitimmobilieGewerblich;
-    }
-
-    public function setFreizeitimmobilieGewerblich(?array $freizeitimmobilieGewerblich): Objektart
+    /**
+     * @param array $freizeitimmobilieGewerblich Setter for freizeitimmobilieGewerblich
+     * @return Objektart
+     */
+    public function setFreizeitimmobilieGewerblich(array $freizeitimmobilieGewerblich)
     {
         $this->freizeitimmobilieGewerblich = $freizeitimmobilieGewerblich;
         return $this;
     }
 
-    public function getZinshausRenditeobjekt(): ?array
+    /**
+     * @param array $gastgewerbe Setter for gastgewerbe
+     * @return Objektart
+     */
+    public function setGastgewerbe(array $gastgewerbe)
     {
-        return $this->zinshausRenditeobjekt;
-    }
-
-    public function setZinshausRenditeobjekt(?array $zinshausRenditeobjekt): Objektart
-    {
-        $this->zinshausRenditeobjekt = $zinshausRenditeobjekt;
+        $this->gastgewerbe = $gastgewerbe;
         return $this;
     }
 
-    public function getObjektartZusatz(): ?array
+    /**
+     * @param array $grundstueck Setter for grundstueck
+     * @return Objektart
+     */
+    public function setGrundstueck(array $grundstueck)
     {
-        return $this->objektartZusatz;
+        $this->grundstueck = $grundstueck;
+        return $this;
     }
 
-    public function setObjektartZusatz(?array $objektartZusatz): Objektart
+    /**
+     * @param array $hallenLagerProd Setter for hallenLagerProd
+     * @return Objektart
+     */
+    public function setHallenLagerProd(array $hallenLagerProd)
+    {
+        $this->hallenLagerProd = $hallenLagerProd;
+        return $this;
+    }
+
+    /**
+     * @param array $haus Setter for haus
+     * @return Objektart
+     */
+    public function setHaus(array $haus)
+    {
+        $this->haus = $haus;
+        return $this;
+    }
+
+    /**
+     * @param array $landUndForstwirtschaft Setter for landUndForstwirtschaft
+     * @return Objektart
+     */
+    public function setLandUndForstwirtschaft(array $landUndForstwirtschaft)
+    {
+        $this->landUndForstwirtschaft = $landUndForstwirtschaft;
+        return $this;
+    }
+
+    /**
+     * @param array $objektartZusatz Setter for objektartZusatz
+     * @return Objektart
+     */
+    public function setObjektartZusatz(array $objektartZusatz)
     {
         $this->objektartZusatz = $objektartZusatz;
+        return $this;
+    }
+
+    /**
+     * @param array $parken Setter for parken
+     * @return Objektart
+     */
+    public function setParken(array $parken)
+    {
+        $this->parken = $parken;
+        return $this;
+    }
+
+    /**
+     * @param array $sonstige Setter for sonstige
+     * @return Objektart
+     */
+    public function setSonstige(array $sonstige)
+    {
+        $this->sonstige = $sonstige;
+        return $this;
+    }
+
+    /**
+     * @param array $wohnung Setter for wohnung
+     * @return Objektart
+     */
+    public function setWohnung(array $wohnung)
+    {
+        $this->wohnung = $wohnung;
+        return $this;
+    }
+
+    /**
+     * @param array $zimmer Setter for zimmer
+     * @return Objektart
+     */
+    public function setZimmer(array $zimmer)
+    {
+        $this->zimmer = $zimmer;
+        return $this;
+    }
+
+    /**
+     * @param array $zinshausRenditeobjekt Setter for zinshausRenditeobjekt
+     * @return Objektart
+     */
+    public function setZinshausRenditeobjekt(array $zinshausRenditeobjekt)
+    {
+        $this->zinshausRenditeobjekt = $zinshausRenditeobjekt;
         return $this;
     }
 }

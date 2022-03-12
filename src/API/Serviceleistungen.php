@@ -10,116 +10,164 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Serviceleistungen
  * Welche Serviceleistungen werden angeboten? Optionen kombinierbar
+ *
  * @XmlRoot("serviceleistungen")
  */
 class Serviceleistungen
 {
     /**
+     * optional
+     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("BETREUTES_WOHNEN")
-     * optional
+     * @var bool
      */
-    protected ?bool $betreutesWohnen;
+    protected $betreutesWohnen;
 
     /**
+     * optional
+     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("CATERING")
-     * optional
+     * @var bool
      */
-    protected ?bool $catering;
+    protected $catering;
 
     /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("REINIGUNG")
      * optional
-     */
-    protected ?bool $reinigung;
-
-    /**
+     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("EINKAUF")
-     * optional
+     * @var bool
      */
-    protected ?bool $einkauf;
+    protected $einkauf;
 
     /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("REINIGUNG")
+     * @var bool
+     */
+    protected $reinigung;
+
+    /**
+     * optional
+     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("WACHDIENST")
-     * optional
+     * @var bool
      */
-    protected ?bool $wachdienst;
+    protected $wachdienst;
 
+    /**
+     * @param bool $betreutesWohnen Shortcut setter for betreutesWohnen
+     * @param bool $catering Shortcut setter for catering
+     * @param bool $reinigung Shortcut setter for reinigung
+     * @param bool $einkauf Shortcut setter for einkauf
+     * @param bool $wachdienst Shortcut setter for wachdienst
+     */
+    public function __construct(bool $betreutesWohnen = null, bool $catering = null, bool $reinigung = null, bool $einkauf = null, bool $wachdienst = null)
+    {
+        $this->betreutesWohnen = $betreutesWohnen;
+        $this->catering = $catering;
+        $this->reinigung = $reinigung;
+        $this->einkauf = $einkauf;
+        $this->wachdienst = $wachdienst;
+    }
+
+    /**
+     * @return bool
+     */
     public function getBetreutesWohnen(): ?bool
     {
         return $this->betreutesWohnen;
     }
 
-    public function setBetreutesWohnen(?bool $betreutesWohnen): Serviceleistungen
-    {
-        $this->betreutesWohnen = $betreutesWohnen;
-        return $this;
-    }
-
+    /**
+     * @return bool
+     */
     public function getCatering(): ?bool
     {
         return $this->catering;
     }
 
-    public function setCatering(?bool $catering): Serviceleistungen
-    {
-        $this->catering = $catering;
-        return $this;
-    }
-
-    public function getReinigung(): ?bool
-    {
-        return $this->reinigung;
-    }
-
-    public function setReinigung(?bool $reinigung): Serviceleistungen
-    {
-        $this->reinigung = $reinigung;
-        return $this;
-    }
-
+    /**
+     * @return bool
+     */
     public function getEinkauf(): ?bool
     {
         return $this->einkauf;
     }
 
-    public function setEinkauf(?bool $einkauf): Serviceleistungen
+    /**
+     * @return bool
+     */
+    public function getReinigung(): ?bool
     {
-        $this->einkauf = $einkauf;
-        return $this;
+        return $this->reinigung;
     }
 
+    /**
+     * @return bool
+     */
     public function getWachdienst(): ?bool
     {
         return $this->wachdienst;
     }
 
-    public function setWachdienst(?bool $wachdienst): Serviceleistungen
+    /**
+     * @param bool $betreutesWohnen Setter for betreutesWohnen
+     * @return Serviceleistungen
+     */
+    public function setBetreutesWohnen(?bool $betreutesWohnen)
     {
-        $this->wachdienst = $wachdienst;
+        $this->betreutesWohnen = $betreutesWohnen;
         return $this;
     }
 
-    public function __construct(
-        bool $betreutesWohnen = null,
-        bool $catering = null,
-        bool $reinigung = null,
-        bool $einkauf = null,
-        bool $wachdienst = null
-    ) {
-        $this->betreutesWohnen = $betreutesWohnen;
+    /**
+     * @param bool $catering Setter for catering
+     * @return Serviceleistungen
+     */
+    public function setCatering(?bool $catering)
+    {
         $this->catering = $catering;
-        $this->reinigung = $reinigung;
+        return $this;
+    }
+
+    /**
+     * @param bool $einkauf Setter for einkauf
+     * @return Serviceleistungen
+     */
+    public function setEinkauf(?bool $einkauf)
+    {
         $this->einkauf = $einkauf;
+        return $this;
+    }
+
+    /**
+     * @param bool $reinigung Setter for reinigung
+     * @return Serviceleistungen
+     */
+    public function setReinigung(?bool $reinigung)
+    {
+        $this->reinigung = $reinigung;
+        return $this;
+    }
+
+    /**
+     * @param bool $wachdienst Setter for wachdienst
+     * @return Serviceleistungen
+     */
+    public function setWachdienst(?bool $wachdienst)
+    {
         $this->wachdienst = $wachdienst;
+        return $this;
     }
 }

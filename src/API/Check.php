@@ -10,53 +10,83 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Check
  * Angabe von Daten für die Prüfung auf ein Update
+ *
  * @XmlRoot("check")
  */
 class Check
 {
-    public const CTYPE_MD5 = 'MD5';
+    /**
+     */
     public const CTYPE_DATETIME = 'DATETIME';
+
+    /**
+     */
     public const CTYPE_ETAG = 'ETAG';
 
     /**
+     */
+    public const CTYPE_MD5 = 'MD5';
+
+    /**
+     * required
+     *
      * @Type("string")
      * @XmlAttribute
-     * required
      * @see CTYPE_* constants
+     * @var string
      */
-    protected ?string $ctype;
+    protected $ctype;
 
     /**
      * @Inline
      * @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>")
+     * @var \DateTime
      */
-    protected ?\DateTime $value;
+    protected $value;
 
+    /**
+     * @param string $ctype Shortcut setter for ctype
+     * @param \DateTime $value Shortcut setter for value
+     */
+    public function __construct(string $ctype = null, \DateTime $value = null)
+    {
+        $this->ctype = $ctype;
+        $this->value = $value;
+    }
+
+    /**
+     * @return string
+     */
     public function getCtype(): string
     {
         return $this->ctype;
     }
 
-    public function setCtype(string $ctype): Check
-    {
-        $this->ctype = $ctype;
-        return $this;
-    }
-
+    /**
+     * @return \DateTime
+     */
     public function getValue(): ?\DateTime
     {
         return $this->value;
     }
 
-    public function setValue(?\DateTime $value): Check
+    /**
+     * @param string $ctype Setter for ctype
+     * @return Check
+     */
+    public function setCtype(string $ctype)
     {
-        $this->value = $value;
+        $this->ctype = $ctype;
         return $this;
     }
 
-    public function __construct(string $ctype = null, \DateTime $value = null)
+    /**
+     * @param \DateTime $value Setter for value
+     * @return Check
+     */
+    public function setValue(?\DateTime $value)
     {
-        $this->ctype = $ctype;
         $this->value = $value;
+        return $this;
     }
 }

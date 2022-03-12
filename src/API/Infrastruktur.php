@@ -14,126 +14,185 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Infrastruktur
 {
     /**
-     * @Type("bool")
-     * @var ?bool
-     */
-    protected ?bool $zulieferung = null;
-
-    /**
      * @Type("Ujamii\OpenImmo\API\Ausblick")
-     * @var ?\Ujamii\OpenImmo\API\Ausblick
+     * @var Ausblick
      */
-    protected ?Ausblick $ausblick = null;
+    protected $ausblick;
 
     /**
      * @XmlList(inline = true, entry = "distanzen")
      * @Type("array<Ujamii\OpenImmo\API\Distanzen>")
-     * @var ?\Ujamii\OpenImmo\API\Distanzen[]
+     * @var Distanzen[]
      */
-    protected ?array $distanzen = [];
+    protected $distanzen;
 
     /**
      * @XmlList(inline = true, entry = "distanzen_sport")
      * @Type("array<Ujamii\OpenImmo\API\DistanzenSport>")
-     * @var ?\Ujamii\OpenImmo\API\DistanzenSport[]
+     * @var DistanzenSport[]
      */
-    protected ?array $distanzenSport = [];
-
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedSimplefield[]
-     */
-    protected ?array $userDefinedSimplefield = [];
+    protected $distanzenSport;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedAnyfield[]
+     * @var UserDefinedAnyfield[]
      */
-    protected ?array $userDefinedAnyfield = [];
+    protected $userDefinedAnyfield;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedExtend[]
+     * @var UserDefinedExtend[]
      */
-    protected ?array $userDefinedExtend = [];
+    protected $userDefinedExtend;
 
-    public function getZulieferung(): ?bool
-    {
-        return $this->zulieferung;
-    }
+    /**
+     * @XmlList(inline = true, entry = "user_defined_simplefield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
+     * @var UserDefinedSimplefield[]
+     */
+    protected $userDefinedSimplefield;
 
-    public function setZulieferung(?bool $zulieferung): Infrastruktur
-    {
-        $this->zulieferung = $zulieferung;
-        return $this;
-    }
+    /**
+     * @Type("bool")
+     * @var bool
+     */
+    protected $zulieferung;
 
+    /**
+     * @return Ausblick
+     */
     public function getAusblick(): ?Ausblick
     {
         return $this->ausblick;
     }
 
-    public function setAusblick(?Ausblick $ausblick): Infrastruktur
+    /**
+     * Returns array of Distanzen
+     *
+     * @return array
+     */
+    public function getDistanzen(): array
+    {
+        return $this->distanzen ?? [];
+    }
+
+    /**
+     * Returns array of DistanzenSport
+     *
+     * @return array
+     */
+    public function getDistanzenSport(): array
+    {
+        return $this->distanzenSport ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedAnyfield
+     *
+     * @return array
+     */
+    public function getUserDefinedAnyfield(): array
+    {
+        return $this->userDefinedAnyfield ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedExtend
+     *
+     * @return array
+     */
+    public function getUserDefinedExtend(): array
+    {
+        return $this->userDefinedExtend ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedSimplefield
+     *
+     * @return array
+     */
+    public function getUserDefinedSimplefield(): array
+    {
+        return $this->userDefinedSimplefield ?? [];
+    }
+
+    /**
+     * @return bool
+     */
+    public function getZulieferung(): ?bool
+    {
+        return $this->zulieferung;
+    }
+
+    /**
+     * @param Ausblick $ausblick Setter for ausblick
+     * @return Infrastruktur
+     */
+    public function setAusblick(?Ausblick $ausblick)
     {
         $this->ausblick = $ausblick;
         return $this;
     }
 
-    public function getDistanzen(): ?array
-    {
-        return $this->distanzen;
-    }
-
-    public function setDistanzen(?array $distanzen): Infrastruktur
+    /**
+     * @param array $distanzen Setter for distanzen
+     * @return Infrastruktur
+     */
+    public function setDistanzen(array $distanzen)
     {
         $this->distanzen = $distanzen;
         return $this;
     }
 
-    public function getDistanzenSport(): ?array
-    {
-        return $this->distanzenSport;
-    }
-
-    public function setDistanzenSport(?array $distanzenSport): Infrastruktur
+    /**
+     * @param array $distanzenSport Setter for distanzenSport
+     * @return Infrastruktur
+     */
+    public function setDistanzenSport(array $distanzenSport)
     {
         $this->distanzenSport = $distanzenSport;
         return $this;
     }
 
-    public function getUserDefinedSimplefield(): ?array
-    {
-        return $this->userDefinedSimplefield;
-    }
-
-    public function setUserDefinedSimplefield(?array $userDefinedSimplefield): Infrastruktur
-    {
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
-        return $this;
-    }
-
-    public function getUserDefinedAnyfield(): ?array
-    {
-        return $this->userDefinedAnyfield;
-    }
-
-    public function setUserDefinedAnyfield(?array $userDefinedAnyfield): Infrastruktur
+    /**
+     * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+     * @return Infrastruktur
+     */
+    public function setUserDefinedAnyfield(array $userDefinedAnyfield)
     {
         $this->userDefinedAnyfield = $userDefinedAnyfield;
         return $this;
     }
 
-    public function getUserDefinedExtend(): ?array
-    {
-        return $this->userDefinedExtend;
-    }
-
-    public function setUserDefinedExtend(?array $userDefinedExtend): Infrastruktur
+    /**
+     * @param array $userDefinedExtend Setter for userDefinedExtend
+     * @return Infrastruktur
+     */
+    public function setUserDefinedExtend(array $userDefinedExtend)
     {
         $this->userDefinedExtend = $userDefinedExtend;
+        return $this;
+    }
+
+    /**
+     * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+     * @return Infrastruktur
+     */
+    public function setUserDefinedSimplefield(array $userDefinedSimplefield)
+    {
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        return $this;
+    }
+
+    /**
+     * @param bool $zulieferung Setter for zulieferung
+     * @return Infrastruktur
+     */
+    public function setZulieferung(?bool $zulieferung)
+    {
+        $this->zulieferung = $zulieferung;
         return $this;
     }
 }

@@ -15,174 +15,250 @@ class Freitexte
 {
     /**
      * @Type("string")
-     * @var ?string
+     * @var string
      */
-    protected ?string $objekttitel = null;
+    protected $ausstattBeschr;
 
     /**
      * @Type("string")
-     * @var ?string
+     * @var string
      */
-    protected ?string $dreizeiler = null;
+    protected $dreizeiler;
 
     /**
      * @Type("string")
-     * @var ?string
+     * @var string
      */
-    protected ?string $lage = null;
+    protected $lage;
 
     /**
      * @Type("string")
-     * @var ?string
+     * @var string
      */
-    protected ?string $ausstattBeschr = null;
-
-    /**
-     * @Type("string")
-     * @var ?string
-     */
-    protected ?string $objektbeschreibung = null;
-
-    /**
-     * @Type("string")
-     * @var ?string
-     */
-    protected ?string $sonstigeAngaben = null;
+    protected $objektbeschreibung;
 
     /**
      * @Type("Ujamii\OpenImmo\API\ObjektText")
-     * @var ?\Ujamii\OpenImmo\API\ObjektText
+     * @var ObjektText
      */
-    protected ?ObjektText $objektText = null;
+    protected $objektText;
 
     /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedSimplefield[]
+     * @Type("string")
+     * @var string
      */
-    protected ?array $userDefinedSimplefield = [];
+    protected $objekttitel;
+
+    /**
+     * @Type("string")
+     * @var string
+     */
+    protected $sonstigeAngaben;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedAnyfield[]
+     * @var UserDefinedAnyfield[]
      */
-    protected ?array $userDefinedAnyfield = [];
+    protected $userDefinedAnyfield;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedExtend[]
+     * @var UserDefinedExtend[]
      */
-    protected ?array $userDefinedExtend = [];
+    protected $userDefinedExtend;
 
-    public function getObjekttitel(): ?string
-    {
-        return $this->objekttitel;
-    }
+    /**
+     * @XmlList(inline = true, entry = "user_defined_simplefield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
+     * @var UserDefinedSimplefield[]
+     */
+    protected $userDefinedSimplefield;
 
-    public function setObjekttitel(?string $objekttitel): Freitexte
-    {
-        $this->objekttitel = $objekttitel;
-        return $this;
-    }
-
-    public function getDreizeiler(): ?string
-    {
-        return $this->dreizeiler;
-    }
-
-    public function setDreizeiler(?string $dreizeiler): Freitexte
-    {
-        $this->dreizeiler = $dreizeiler;
-        return $this;
-    }
-
-    public function getLage(): ?string
-    {
-        return $this->lage;
-    }
-
-    public function setLage(?string $lage): Freitexte
-    {
-        $this->lage = $lage;
-        return $this;
-    }
-
+    /**
+     * @return string
+     */
     public function getAusstattBeschr(): ?string
     {
         return $this->ausstattBeschr;
     }
 
-    public function setAusstattBeschr(?string $ausstattBeschr): Freitexte
+    /**
+     * @return string
+     */
+    public function getDreizeiler(): ?string
     {
-        $this->ausstattBeschr = $ausstattBeschr;
-        return $this;
+        return $this->dreizeiler;
     }
 
+    /**
+     * @return string
+     */
+    public function getLage(): ?string
+    {
+        return $this->lage;
+    }
+
+    /**
+     * @return string
+     */
     public function getObjektbeschreibung(): ?string
     {
         return $this->objektbeschreibung;
     }
 
-    public function setObjektbeschreibung(?string $objektbeschreibung): Freitexte
-    {
-        $this->objektbeschreibung = $objektbeschreibung;
-        return $this;
-    }
-
-    public function getSonstigeAngaben(): ?string
-    {
-        return $this->sonstigeAngaben;
-    }
-
-    public function setSonstigeAngaben(?string $sonstigeAngaben): Freitexte
-    {
-        $this->sonstigeAngaben = $sonstigeAngaben;
-        return $this;
-    }
-
+    /**
+     * @return ObjektText
+     */
     public function getObjektText(): ?ObjektText
     {
         return $this->objektText;
     }
 
-    public function setObjektText(?ObjektText $objektText): Freitexte
+    /**
+     * @return string
+     */
+    public function getObjekttitel(): ?string
+    {
+        return $this->objekttitel;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSonstigeAngaben(): ?string
+    {
+        return $this->sonstigeAngaben;
+    }
+
+    /**
+     * Returns array of UserDefinedAnyfield
+     *
+     * @return array
+     */
+    public function getUserDefinedAnyfield(): array
+    {
+        return $this->userDefinedAnyfield ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedExtend
+     *
+     * @return array
+     */
+    public function getUserDefinedExtend(): array
+    {
+        return $this->userDefinedExtend ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedSimplefield
+     *
+     * @return array
+     */
+    public function getUserDefinedSimplefield(): array
+    {
+        return $this->userDefinedSimplefield ?? [];
+    }
+
+    /**
+     * @param string $ausstattBeschr Setter for ausstattBeschr
+     * @return Freitexte
+     */
+    public function setAusstattBeschr(?string $ausstattBeschr)
+    {
+        $this->ausstattBeschr = $ausstattBeschr;
+        return $this;
+    }
+
+    /**
+     * @param string $dreizeiler Setter for dreizeiler
+     * @return Freitexte
+     */
+    public function setDreizeiler(?string $dreizeiler)
+    {
+        $this->dreizeiler = $dreizeiler;
+        return $this;
+    }
+
+    /**
+     * @param string $lage Setter for lage
+     * @return Freitexte
+     */
+    public function setLage(?string $lage)
+    {
+        $this->lage = $lage;
+        return $this;
+    }
+
+    /**
+     * @param string $objektbeschreibung Setter for objektbeschreibung
+     * @return Freitexte
+     */
+    public function setObjektbeschreibung(?string $objektbeschreibung)
+    {
+        $this->objektbeschreibung = $objektbeschreibung;
+        return $this;
+    }
+
+    /**
+     * @param ObjektText $objektText Setter for objektText
+     * @return Freitexte
+     */
+    public function setObjektText(?ObjektText $objektText)
     {
         $this->objektText = $objektText;
         return $this;
     }
 
-    public function getUserDefinedSimplefield(): ?array
+    /**
+     * @param string $objekttitel Setter for objekttitel
+     * @return Freitexte
+     */
+    public function setObjekttitel(?string $objekttitel)
     {
-        return $this->userDefinedSimplefield;
-    }
-
-    public function setUserDefinedSimplefield(?array $userDefinedSimplefield): Freitexte
-    {
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        $this->objekttitel = $objekttitel;
         return $this;
     }
 
-    public function getUserDefinedAnyfield(): ?array
+    /**
+     * @param string $sonstigeAngaben Setter for sonstigeAngaben
+     * @return Freitexte
+     */
+    public function setSonstigeAngaben(?string $sonstigeAngaben)
     {
-        return $this->userDefinedAnyfield;
+        $this->sonstigeAngaben = $sonstigeAngaben;
+        return $this;
     }
 
-    public function setUserDefinedAnyfield(?array $userDefinedAnyfield): Freitexte
+    /**
+     * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+     * @return Freitexte
+     */
+    public function setUserDefinedAnyfield(array $userDefinedAnyfield)
     {
         $this->userDefinedAnyfield = $userDefinedAnyfield;
         return $this;
     }
 
-    public function getUserDefinedExtend(): ?array
-    {
-        return $this->userDefinedExtend;
-    }
-
-    public function setUserDefinedExtend(?array $userDefinedExtend): Freitexte
+    /**
+     * @param array $userDefinedExtend Setter for userDefinedExtend
+     * @return Freitexte
+     */
+    public function setUserDefinedExtend(array $userDefinedExtend)
     {
         $this->userDefinedExtend = $userDefinedExtend;
+        return $this;
+    }
+
+    /**
+     * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+     * @return Freitexte
+     */
+    public function setUserDefinedSimplefield(array $userDefinedSimplefield)
+    {
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
         return $this;
     }
 }

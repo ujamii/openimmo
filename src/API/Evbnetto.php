@@ -10,48 +10,70 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Evbnetto
  * Erhaltungs- und Verbesserungsbeitrag. Ähnlich Instanthaltungsrücklage, UmSt. im Attribut.
+ *
  * @XmlRoot("evbnetto")
  */
 class Evbnetto
 {
     /**
+     * optional
+     *
      * @Type("float")
      * @XmlAttribute
-     * optional
+     * @var float
      */
-    protected ?float $evbust;
+    protected $evbust;
 
     /**
      * @Inline
      * @Type("float")
+     * @var float
      */
-    protected ?float $value;
+    protected $value;
 
+    /**
+     * @param float $evbust Shortcut setter for evbust
+     * @param float $value Shortcut setter for value
+     */
+    public function __construct(float $evbust = null, float $value = null)
+    {
+        $this->evbust = $evbust;
+        $this->value = $value;
+    }
+
+    /**
+     * @return float
+     */
     public function getEvbust(): ?float
     {
         return $this->evbust;
     }
 
-    public function setEvbust(?float $evbust): Evbnetto
-    {
-        $this->evbust = $evbust;
-        return $this;
-    }
-
+    /**
+     * @return float
+     */
     public function getValue(): ?float
     {
         return $this->value;
     }
 
-    public function setValue(?float $value): Evbnetto
+    /**
+     * @param float $evbust Setter for evbust
+     * @return Evbnetto
+     */
+    public function setEvbust(?float $evbust)
     {
-        $this->value = $value;
+        $this->evbust = $evbust;
         return $this;
     }
 
-    public function __construct(float $evbust = null, float $value = null)
+    /**
+     * @param float $value Setter for value
+     * @return Evbnetto
+     */
+    public function setValue(?float $value)
     {
-        $this->evbust = $evbust;
         $this->value = $value;
+        return $this;
     }
 }

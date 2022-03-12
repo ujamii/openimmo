@@ -10,51 +10,74 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Fahrstuhl
  * Welche Art von Fahrstuhl, Aufzug, Lift - Mehrfachnennung möglich
+ *
  * @XmlRoot("fahrstuhl")
  */
 class Fahrstuhl
 {
     /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("PERSONEN")
      * optional
-     */
-    protected ?bool $personen;
-
-    /**
+     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("LASTEN")
-     * optional
+     * @var bool
      */
-    protected ?bool $lasten;
+    protected $lasten;
 
-    public function getPersonen(): ?bool
-    {
-        return $this->personen;
-    }
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("PERSONEN")
+     * @var bool
+     */
+    protected $personen;
 
-    public function setPersonen(?bool $personen): Fahrstuhl
+    /**
+     * @param bool $personen Shortcut setter for personen
+     * @param bool $lasten Shortcut setter for lasten
+     */
+    public function __construct(bool $personen = null, bool $lasten = null)
     {
         $this->personen = $personen;
-        return $this;
+        $this->lasten = $lasten;
     }
 
+    /**
+     * @return bool
+     */
     public function getLasten(): ?bool
     {
         return $this->lasten;
     }
 
-    public function setLasten(?bool $lasten): Fahrstuhl
+    /**
+     * @return bool
+     */
+    public function getPersonen(): ?bool
+    {
+        return $this->personen;
+    }
+
+    /**
+     * @param bool $lasten Setter for lasten
+     * @return Fahrstuhl
+     */
+    public function setLasten(?bool $lasten)
     {
         $this->lasten = $lasten;
         return $this;
     }
 
-    public function __construct(bool $personen = null, bool $lasten = null)
+    /**
+     * @param bool $personen Setter for personen
+     * @return Fahrstuhl
+     */
+    public function setPersonen(?bool $personen)
     {
         $this->personen = $personen;
-        $this->lasten = $lasten;
+        return $this;
     }
 }

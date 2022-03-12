@@ -10,48 +10,70 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class AussenCourtage
  * Courtage, die der Kunde zu zahlen hat, als Betrag in ? / % / MM, daher Textfeld
+ *
  * @XmlRoot("aussen_courtage")
  */
 class AussenCourtage
 {
     /**
+     * optional
+     *
      * @Type("bool")
      * @XmlAttribute
-     * optional
+     * @var bool
      */
-    protected ?bool $mitMwst;
+    protected $mitMwst;
 
     /**
      * @Inline
      * @Type("string")
+     * @var string
      */
-    protected ?string $value;
+    protected $value;
 
+    /**
+     * @param bool $mitMwst Shortcut setter for mitMwst
+     * @param string $value Shortcut setter for value
+     */
+    public function __construct(bool $mitMwst = null, string $value = null)
+    {
+        $this->mitMwst = $mitMwst;
+        $this->value = $value;
+    }
+
+    /**
+     * @return bool
+     */
     public function getMitMwst(): ?bool
     {
         return $this->mitMwst;
     }
 
-    public function setMitMwst(?bool $mitMwst): AussenCourtage
-    {
-        $this->mitMwst = $mitMwst;
-        return $this;
-    }
-
+    /**
+     * @return string
+     */
     public function getValue(): ?string
     {
         return $this->value;
     }
 
-    public function setValue(?string $value): AussenCourtage
+    /**
+     * @param bool $mitMwst Setter for mitMwst
+     * @return AussenCourtage
+     */
+    public function setMitMwst(?bool $mitMwst)
     {
-        $this->value = $value;
+        $this->mitMwst = $mitMwst;
         return $this;
     }
 
-    public function __construct(bool $mitMwst = null, string $value = null)
+    /**
+     * @param string $value Setter for value
+     * @return AussenCourtage
+     */
+    public function setValue(?string $value)
     {
-        $this->mitMwst = $mitMwst;
         $this->value = $value;
+        return $this;
     }
 }

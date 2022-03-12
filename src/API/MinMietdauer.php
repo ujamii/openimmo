@@ -10,54 +10,87 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class MinMietdauer
  * Mindestzeitraum für den die Immobilie gemietet werden muss, Optionen nicht kombinierbar, vorrangig bei WaZ
+ *
  * @XmlRoot("min_mietdauer")
  */
 class MinMietdauer
 {
-    public const MIN_DAUER_TAG = 'TAG';
-    public const MIN_DAUER_WOCHE = 'WOCHE';
-    public const MIN_DAUER_MONAT = 'MONAT';
+    /**
+     */
     public const MIN_DAUER_JAHR = 'JAHR';
 
     /**
+     */
+    public const MIN_DAUER_MONAT = 'MONAT';
+
+    /**
+     */
+    public const MIN_DAUER_TAG = 'TAG';
+
+    /**
+     */
+    public const MIN_DAUER_WOCHE = 'WOCHE';
+
+    /**
+     * optional
+     *
      * @Type("string")
      * @XmlAttribute
-     * optional
      * @see MIN_DAUER_* constants
+     * @var string
      */
-    protected ?string $minDauer;
+    protected $minDauer;
 
     /**
      * @Inline
      * @Type("string")
+     * @var string
      */
-    protected ?string $value;
+    protected $value;
 
+    /**
+     * @param string $minDauer Shortcut setter for minDauer
+     * @param string $value Shortcut setter for value
+     */
+    public function __construct(string $minDauer = null, string $value = null)
+    {
+        $this->minDauer = $minDauer;
+        $this->value = $value;
+    }
+
+    /**
+     * @return string
+     */
     public function getMinDauer(): ?string
     {
         return $this->minDauer;
     }
 
-    public function setMinDauer(?string $minDauer): MinMietdauer
-    {
-        $this->minDauer = $minDauer;
-        return $this;
-    }
-
+    /**
+     * @return string
+     */
     public function getValue(): ?string
     {
         return $this->value;
     }
 
-    public function setValue(?string $value): MinMietdauer
+    /**
+     * @param string $minDauer Setter for minDauer
+     * @return MinMietdauer
+     */
+    public function setMinDauer(?string $minDauer)
     {
-        $this->value = $value;
+        $this->minDauer = $minDauer;
         return $this;
     }
 
-    public function __construct(string $minDauer = null, string $value = null)
+    /**
+     * @param string $value Setter for value
+     * @return MinMietdauer
+     */
+    public function setValue(?string $value)
     {
-        $this->minDauer = $minDauer;
         $this->value = $value;
+        return $this;
     }
 }

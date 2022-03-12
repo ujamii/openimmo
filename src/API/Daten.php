@@ -8,47 +8,66 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Daten
  * Anhangdaten
+ *
  * @XmlRoot("daten")
  */
 class Daten
 {
     /**
      * @Type("string")
-     * @var ?string
+     * @var string
      */
-    protected ?string $pfad = null;
+    protected $anhanginhalt;
 
     /**
      * @Type("string")
-     * @var ?string
+     * @var string
      */
-    protected ?string $anhanginhalt = null;
+    protected $pfad;
 
-    public function getPfad(): ?string
-    {
-        return $this->pfad;
-    }
-
-    public function setPfad(?string $pfad): Daten
+    /**
+     * @param string $pfad Shortcut setter for pfad
+     * @param string $anhanginhalt Shortcut setter for anhanginhalt
+     */
+    public function __construct(string $pfad = null, string $anhanginhalt = null)
     {
         $this->pfad = $pfad;
-        return $this;
+        $this->anhanginhalt = $anhanginhalt;
     }
 
+    /**
+     * @return string
+     */
     public function getAnhanginhalt(): ?string
     {
         return $this->anhanginhalt;
     }
 
-    public function setAnhanginhalt(?string $anhanginhalt): Daten
+    /**
+     * @return string
+     */
+    public function getPfad(): ?string
+    {
+        return $this->pfad;
+    }
+
+    /**
+     * @param string $anhanginhalt Setter for anhanginhalt
+     * @return Daten
+     */
+    public function setAnhanginhalt(?string $anhanginhalt)
     {
         $this->anhanginhalt = $anhanginhalt;
         return $this;
     }
 
-    public function __construct(string $pfad = null, string $anhanginhalt = null)
+    /**
+     * @param string $pfad Setter for pfad
+     * @return Daten
+     */
+    public function setPfad(?string $pfad)
     {
         $this->pfad = $pfad;
-        $this->anhanginhalt = $anhanginhalt;
+        return $this;
     }
 }

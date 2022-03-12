@@ -10,48 +10,70 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Sonstigekostennetto
  * Anganen bei Miet-Objekten, UmSt. im Attribut.
+ *
  * @XmlRoot("sonstigekostennetto")
  */
 class Sonstigekostennetto
 {
     /**
+     * optional
+     *
      * @Type("float")
      * @XmlAttribute
-     * optional
+     * @var float
      */
-    protected ?float $sonstigekostenust;
+    protected $sonstigekostenust;
 
     /**
      * @Inline
      * @Type("float")
+     * @var float
      */
-    protected ?float $value;
+    protected $value;
 
+    /**
+     * @param float $sonstigekostenust Shortcut setter for sonstigekostenust
+     * @param float $value Shortcut setter for value
+     */
+    public function __construct(float $sonstigekostenust = null, float $value = null)
+    {
+        $this->sonstigekostenust = $sonstigekostenust;
+        $this->value = $value;
+    }
+
+    /**
+     * @return float
+     */
     public function getSonstigekostenust(): ?float
     {
         return $this->sonstigekostenust;
     }
 
-    public function setSonstigekostenust(?float $sonstigekostenust): Sonstigekostennetto
-    {
-        $this->sonstigekostenust = $sonstigekostenust;
-        return $this;
-    }
-
+    /**
+     * @return float
+     */
     public function getValue(): ?float
     {
         return $this->value;
     }
 
-    public function setValue(?float $value): Sonstigekostennetto
+    /**
+     * @param float $sonstigekostenust Setter for sonstigekostenust
+     * @return Sonstigekostennetto
+     */
+    public function setSonstigekostenust(?float $sonstigekostenust)
     {
-        $this->value = $value;
+        $this->sonstigekostenust = $sonstigekostenust;
         return $this;
     }
 
-    public function __construct(float $sonstigekostenust = null, float $value = null)
+    /**
+     * @param float $value Setter for value
+     * @return Sonstigekostennetto
+     */
+    public function setValue(?float $value)
     {
-        $this->sonstigekostenust = $sonstigekostenust;
         $this->value = $value;
+        return $this;
     }
 }

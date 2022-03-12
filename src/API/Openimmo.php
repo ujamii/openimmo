@@ -11,91 +11,128 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Class Openimmo
  * Dokument Element
  * Root Element
+ *
  * @XmlRoot("openimmo")
  */
 class Openimmo
 {
     /**
-     * @Type("Ujamii\OpenImmo\API\Uebertragung")
-     * @var ?\Ujamii\OpenImmo\API\Uebertragung
-     */
-    protected ?Uebertragung $uebertragung = null;
-
-    /**
      * @XmlList(inline = true, entry = "anbieter")
      * @Type("array<Ujamii\OpenImmo\API\Anbieter>")
-     * @var \Ujamii\OpenImmo\API\Anbieter[]
      * @SkipWhenEmpty
+     * @var Anbieter[]
      */
-    protected array $anbieter = [];
+    protected $anbieter = [];
 
     /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedSimplefield[]
+     * @Type("Ujamii\OpenImmo\API\Uebertragung")
+     * @var Uebertragung
      */
-    protected ?array $userDefinedSimplefield = [];
+    protected $uebertragung;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedAnyfield[]
+     * @var UserDefinedAnyfield[]
      */
-    protected ?array $userDefinedAnyfield = [];
+    protected $userDefinedAnyfield;
 
+    /**
+     * @XmlList(inline = true, entry = "user_defined_simplefield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
+     * @var UserDefinedSimplefield[]
+     */
+    protected $userDefinedSimplefield;
+
+    /**
+     * @param Uebertragung $uebertragung Shortcut setter for uebertragung
+     * @param array $anbieter Shortcut setter for anbieter
+     * @param array $userDefinedSimplefield Shortcut setter for userDefinedSimplefield
+     * @param array $userDefinedAnyfield Shortcut setter for userDefinedAnyfield
+     */
+    public function __construct(Uebertragung $uebertragung = null, array $anbieter = [], array $userDefinedSimplefield = [], array $userDefinedAnyfield = [])
+    {
+        $this->uebertragung = $uebertragung;
+        $this->anbieter = $anbieter;
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        $this->userDefinedAnyfield = $userDefinedAnyfield;
+    }
+
+    /**
+     * Returns array of Anbieter
+     *
+     * @return array
+     */
+    public function getAnbieter(): array
+    {
+        return $this->anbieter ?? [];
+    }
+
+    /**
+     * @return Uebertragung
+     */
     public function getUebertragung(): ?Uebertragung
     {
         return $this->uebertragung;
     }
 
-    public function setUebertragung(?Uebertragung $uebertragung): Openimmo
+    /**
+     * Returns array of UserDefinedAnyfield
+     *
+     * @return array
+     */
+    public function getUserDefinedAnyfield(): array
     {
-        $this->uebertragung = $uebertragung;
-        return $this;
+        return $this->userDefinedAnyfield ?? [];
     }
 
-    public function getAnbieter(): array
+    /**
+     * Returns array of UserDefinedSimplefield
+     *
+     * @return array
+     */
+    public function getUserDefinedSimplefield(): array
     {
-        return $this->anbieter;
+        return $this->userDefinedSimplefield ?? [];
     }
 
-    public function setAnbieter(array $anbieter): Openimmo
+    /**
+     * @param array $anbieter Setter for anbieter
+     * @return Openimmo
+     */
+    public function setAnbieter(array $anbieter)
     {
         $this->anbieter = $anbieter;
         return $this;
     }
 
-    public function getUserDefinedSimplefield(): ?array
+    /**
+     * @param Uebertragung $uebertragung Setter for uebertragung
+     * @return Openimmo
+     */
+    public function setUebertragung(?Uebertragung $uebertragung)
     {
-        return $this->userDefinedSimplefield;
-    }
-
-    public function setUserDefinedSimplefield(?array $userDefinedSimplefield): Openimmo
-    {
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
-        return $this;
-    }
-
-    public function getUserDefinedAnyfield(): ?array
-    {
-        return $this->userDefinedAnyfield;
-    }
-
-    public function setUserDefinedAnyfield(?array $userDefinedAnyfield): Openimmo
-    {
-        $this->userDefinedAnyfield = $userDefinedAnyfield;
-        return $this;
-    }
-
-    public function __construct(
-        \Ujamii\OpenImmo\API\Uebertragung $uebertragung = null,
-        array $anbieter = null,
-        array $userDefinedSimplefield = null,
-        array $userDefinedAnyfield = null
-    ) {
         $this->uebertragung = $uebertragung;
-        $this->anbieter = $anbieter;
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        return $this;
+    }
+
+    /**
+     * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+     * @return Openimmo
+     */
+    public function setUserDefinedAnyfield(array $userDefinedAnyfield)
+    {
         $this->userDefinedAnyfield = $userDefinedAnyfield;
+        return $this;
+    }
+
+    /**
+     * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+     * @return Openimmo
+     */
+    public function setUserDefinedSimplefield(array $userDefinedSimplefield)
+    {
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        return $this;
     }
 }

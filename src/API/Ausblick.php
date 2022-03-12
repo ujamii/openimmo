@@ -9,36 +9,60 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Ausblick
  * Welcher Ausblick ist vorhanden, Optionen nicht kombinierbar
+ *
  * @XmlRoot("ausblick")
  */
 class Ausblick
 {
-    public const BLICK_FERNE = 'FERNE';
-    public const BLICK_SEE = 'SEE';
+    /**
+     */
     public const BLICK_BERGE = 'BERGE';
+
+    /**
+     */
+    public const BLICK_FERNE = 'FERNE';
+
+    /**
+     */
     public const BLICK_MEER = 'MEER';
 
     /**
+     */
+    public const BLICK_SEE = 'SEE';
+
+    /**
+     * optional
+     *
      * @Type("string")
      * @XmlAttribute
-     * optional
      * @see BLICK_* constants
+     * @var string
      */
-    protected ?string $blick;
+    protected $blick;
 
-    public function getBlick(): string
+    /**
+     * @param string $blick Shortcut setter for blick
+     */
+    public function __construct(string $blick = null)
+    {
+        $this->blick = $blick;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBlick(): ?string
     {
         return $this->blick;
     }
 
-    public function setBlick(string $blick): Ausblick
+    /**
+     * @param string $blick Setter for blick
+     * @return Ausblick
+     */
+    public function setBlick(?string $blick)
     {
         $this->blick = $blick;
         return $this;
-    }
-
-    public function __construct(string $blick = null)
-    {
-        $this->blick = $blick;
     }
 }

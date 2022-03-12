@@ -10,48 +10,70 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Gesamtbelastungnetto
  * Die Summe alle Nebenkosten und Mietzinse bei Miete, UmSt. im Attribut.
+ *
  * @XmlRoot("gesamtbelastungnetto")
  */
 class Gesamtbelastungnetto
 {
     /**
+     * optional
+     *
      * @Type("float")
      * @XmlAttribute
-     * optional
+     * @var float
      */
-    protected ?float $gesamtbelastungust;
+    protected $gesamtbelastungust;
 
     /**
      * @Inline
      * @Type("float")
+     * @var float
      */
-    protected ?float $value;
+    protected $value;
 
+    /**
+     * @param float $gesamtbelastungust Shortcut setter for gesamtbelastungust
+     * @param float $value Shortcut setter for value
+     */
+    public function __construct(float $gesamtbelastungust = null, float $value = null)
+    {
+        $this->gesamtbelastungust = $gesamtbelastungust;
+        $this->value = $value;
+    }
+
+    /**
+     * @return float
+     */
     public function getGesamtbelastungust(): ?float
     {
         return $this->gesamtbelastungust;
     }
 
-    public function setGesamtbelastungust(?float $gesamtbelastungust): Gesamtbelastungnetto
-    {
-        $this->gesamtbelastungust = $gesamtbelastungust;
-        return $this;
-    }
-
+    /**
+     * @return float
+     */
     public function getValue(): ?float
     {
         return $this->value;
     }
 
-    public function setValue(?float $value): Gesamtbelastungnetto
+    /**
+     * @param float $gesamtbelastungust Setter for gesamtbelastungust
+     * @return Gesamtbelastungnetto
+     */
+    public function setGesamtbelastungust(?float $gesamtbelastungust)
     {
-        $this->value = $value;
+        $this->gesamtbelastungust = $gesamtbelastungust;
         return $this;
     }
 
-    public function __construct(float $gesamtbelastungust = null, float $value = null)
+    /**
+     * @param float $value Setter for value
+     * @return Gesamtbelastungnetto
+     */
+    public function setValue(?float $value)
     {
-        $this->gesamtbelastungust = $gesamtbelastungust;
         $this->value = $value;
+        return $this;
     }
 }

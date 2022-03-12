@@ -14,417 +14,587 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Geo
 {
     /**
-     * @Type("string")
-     * @var ?string
+     * @Type("int")
+     * @var int Minimum value (inclusive): -2147483648, Maximum value (inclusive): 2147483647
      */
-    protected ?string $plz = null;
+    protected $anzahlEtagen;
 
     /**
      * @Type("string")
-     * @var ?string
+     * @var string
      */
-    protected ?string $ort = null;
+    protected $bundesland;
+
+    /**
+     * @Type("int")
+     * @var int Minimum value (inclusive): -2147483648, Maximum value (inclusive): 2147483647
+     */
+    protected $etage;
+
+    /**
+     * @Type("string")
+     * @var string
+     */
+    protected $flur;
+
+    /**
+     * @Type("string")
+     * @var string
+     */
+    protected $flurstueck;
+
+    /**
+     * @Type("string")
+     * @var string
+     */
+    protected $gemarkung;
+
+    /**
+     * @Type("string")
+     * @var string
+     */
+    protected $gemeindecode;
 
     /**
      * @Type("Ujamii\OpenImmo\API\Geokoordinaten")
-     * @var ?\Ujamii\OpenImmo\API\Geokoordinaten
+     * @var Geokoordinaten
      */
-    protected ?Geokoordinaten $geokoordinaten = null;
+    protected $geokoordinaten;
 
     /**
      * @Type("string")
-     * @var ?string
+     * @var string
      */
-    protected ?string $strasse = null;
+    protected $hausnummer;
 
     /**
-     * @Type("string")
-     * @var ?string
+     * @Type("bool")
+     * @var bool
      */
-    protected ?string $hausnummer = null;
+    protected $kartenMakro;
 
     /**
-     * @Type("string")
-     * @var ?string
+     * @Type("bool")
+     * @var bool
      */
-    protected ?string $bundesland = null;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Land")
-     * @var ?\Ujamii\OpenImmo\API\Land
-     */
-    protected ?Land $land = null;
-
-    /**
-     * @Type("string")
-     * @var ?string
-     */
-    protected ?string $gemeindecode = null;
-
-    /**
-     * @Type("string")
-     * @var ?string
-     */
-    protected ?string $flur = null;
-
-    /**
-     * @Type("string")
-     * @var ?string
-     */
-    protected ?string $flurstueck = null;
-
-    /**
-     * @Type("string")
-     * @var ?string
-     */
-    protected ?string $gemarkung = null;
-
-    /**
-     * @Type("int")
-     * @var ?int
-     * Minimum value (inclusive): -2147483648
-     * Maximum value (inclusive): 2147483647
-     */
-    protected ?int $etage = null;
-
-    /**
-     * @Type("int")
-     * @var ?int
-     * Minimum value (inclusive): -2147483648
-     * Maximum value (inclusive): 2147483647
-     */
-    protected ?int $anzahlEtagen = null;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\LageImBau")
-     * @var ?\Ujamii\OpenImmo\API\LageImBau
-     */
-    protected ?LageImBau $lageImBau = null;
-
-    /**
-     * @Type("string")
-     * @var ?string
-     */
-    protected ?string $wohnungsnr = null;
+    protected $kartenMikro;
 
     /**
      * @Type("Ujamii\OpenImmo\API\LageGebiet")
-     * @var ?\Ujamii\OpenImmo\API\LageGebiet
+     * @var LageGebiet
      */
-    protected ?LageGebiet $lageGebiet = null;
+    protected $lageGebiet;
+
+    /**
+     * @Type("Ujamii\OpenImmo\API\LageImBau")
+     * @var LageImBau
+     */
+    protected $lageImBau;
+
+    /**
+     * @Type("Ujamii\OpenImmo\API\Land")
+     * @var Land
+     */
+    protected $land;
+
+    /**
+     * @Type("bool")
+     * @var bool
+     */
+    protected $luftbildern;
 
     /**
      * @Type("string")
-     * @var ?string
+     * @var string
      */
-    protected ?string $regionalerZusatz = null;
+    protected $ort;
 
     /**
-     * @Type("bool")
-     * @var ?bool
+     * @Type("string")
+     * @var string
      */
-    protected ?bool $kartenMakro = null;
+    protected $plz;
 
     /**
-     * @Type("bool")
-     * @var ?bool
+     * @Type("string")
+     * @var string
      */
-    protected ?bool $kartenMikro = null;
+    protected $regionalerZusatz;
 
     /**
-     * @Type("bool")
-     * @var ?bool
+     * @Type("string")
+     * @var string
      */
-    protected ?bool $virtuelletour = null;
-
-    /**
-     * @Type("bool")
-     * @var ?bool
-     */
-    protected ?bool $luftbildern = null;
-
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedSimplefield[]
-     */
-    protected ?array $userDefinedSimplefield = [];
+    protected $strasse;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedAnyfield[]
+     * @var UserDefinedAnyfield[]
      */
-    protected ?array $userDefinedAnyfield = [];
+    protected $userDefinedAnyfield;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedExtend[]
+     * @var UserDefinedExtend[]
      */
-    protected ?array $userDefinedExtend = [];
+    protected $userDefinedExtend;
 
-    public function getPlz(): ?string
-    {
-        return $this->plz;
-    }
+    /**
+     * @XmlList(inline = true, entry = "user_defined_simplefield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
+     * @var UserDefinedSimplefield[]
+     */
+    protected $userDefinedSimplefield;
 
-    public function setPlz(?string $plz): Geo
-    {
-        $this->plz = $plz;
-        return $this;
-    }
+    /**
+     * @Type("bool")
+     * @var bool
+     */
+    protected $virtuelletour;
 
-    public function getOrt(): ?string
-    {
-        return $this->ort;
-    }
+    /**
+     * @Type("string")
+     * @var string
+     */
+    protected $wohnungsnr;
 
-    public function setOrt(?string $ort): Geo
-    {
-        $this->ort = $ort;
-        return $this;
-    }
-
-    public function getGeokoordinaten(): ?Geokoordinaten
-    {
-        return $this->geokoordinaten;
-    }
-
-    public function setGeokoordinaten(?Geokoordinaten $geokoordinaten): Geo
-    {
-        $this->geokoordinaten = $geokoordinaten;
-        return $this;
-    }
-
-    public function getStrasse(): ?string
-    {
-        return $this->strasse;
-    }
-
-    public function setStrasse(?string $strasse): Geo
-    {
-        $this->strasse = $strasse;
-        return $this;
-    }
-
-    public function getHausnummer(): ?string
-    {
-        return $this->hausnummer;
-    }
-
-    public function setHausnummer(?string $hausnummer): Geo
-    {
-        $this->hausnummer = $hausnummer;
-        return $this;
-    }
-
-    public function getBundesland(): ?string
-    {
-        return $this->bundesland;
-    }
-
-    public function setBundesland(?string $bundesland): Geo
-    {
-        $this->bundesland = $bundesland;
-        return $this;
-    }
-
-    public function getLand(): ?Land
-    {
-        return $this->land;
-    }
-
-    public function setLand(?Land $land): Geo
-    {
-        $this->land = $land;
-        return $this;
-    }
-
-    public function getGemeindecode(): ?string
-    {
-        return $this->gemeindecode;
-    }
-
-    public function setGemeindecode(?string $gemeindecode): Geo
-    {
-        $this->gemeindecode = $gemeindecode;
-        return $this;
-    }
-
-    public function getFlur(): ?string
-    {
-        return $this->flur;
-    }
-
-    public function setFlur(?string $flur): Geo
-    {
-        $this->flur = $flur;
-        return $this;
-    }
-
-    public function getFlurstueck(): ?string
-    {
-        return $this->flurstueck;
-    }
-
-    public function setFlurstueck(?string $flurstueck): Geo
-    {
-        $this->flurstueck = $flurstueck;
-        return $this;
-    }
-
-    public function getGemarkung(): ?string
-    {
-        return $this->gemarkung;
-    }
-
-    public function setGemarkung(?string $gemarkung): Geo
-    {
-        $this->gemarkung = $gemarkung;
-        return $this;
-    }
-
-    public function getEtage(): ?int
-    {
-        return $this->etage;
-    }
-
-    public function setEtage(?int $etage): Geo
-    {
-        $this->etage = $etage;
-        return $this;
-    }
-
+    /**
+     * @return int
+     */
     public function getAnzahlEtagen(): ?int
     {
         return $this->anzahlEtagen;
     }
 
-    public function setAnzahlEtagen(?int $anzahlEtagen): Geo
+    /**
+     * @return string
+     */
+    public function getBundesland(): ?string
     {
-        $this->anzahlEtagen = $anzahlEtagen;
-        return $this;
+        return $this->bundesland;
     }
 
-    public function getLageImBau(): ?LageImBau
+    /**
+     * @return int
+     */
+    public function getEtage(): ?int
     {
-        return $this->lageImBau;
+        return $this->etage;
     }
 
-    public function setLageImBau(?LageImBau $lageImBau): Geo
+    /**
+     * @return string
+     */
+    public function getFlur(): ?string
     {
-        $this->lageImBau = $lageImBau;
-        return $this;
+        return $this->flur;
     }
 
-    public function getWohnungsnr(): ?string
+    /**
+     * @return string
+     */
+    public function getFlurstueck(): ?string
     {
-        return $this->wohnungsnr;
+        return $this->flurstueck;
     }
 
-    public function setWohnungsnr(?string $wohnungsnr): Geo
+    /**
+     * @return string
+     */
+    public function getGemarkung(): ?string
     {
-        $this->wohnungsnr = $wohnungsnr;
-        return $this;
+        return $this->gemarkung;
     }
 
-    public function getLageGebiet(): ?LageGebiet
+    /**
+     * @return string
+     */
+    public function getGemeindecode(): ?string
     {
-        return $this->lageGebiet;
+        return $this->gemeindecode;
     }
 
-    public function setLageGebiet(?LageGebiet $lageGebiet): Geo
+    /**
+     * @return Geokoordinaten
+     */
+    public function getGeokoordinaten(): ?Geokoordinaten
     {
-        $this->lageGebiet = $lageGebiet;
-        return $this;
+        return $this->geokoordinaten;
     }
 
-    public function getRegionalerZusatz(): ?string
+    /**
+     * @return string
+     */
+    public function getHausnummer(): ?string
     {
-        return $this->regionalerZusatz;
+        return $this->hausnummer;
     }
 
-    public function setRegionalerZusatz(?string $regionalerZusatz): Geo
-    {
-        $this->regionalerZusatz = $regionalerZusatz;
-        return $this;
-    }
-
+    /**
+     * @return bool
+     */
     public function getKartenMakro(): ?bool
     {
         return $this->kartenMakro;
     }
 
-    public function setKartenMakro(?bool $kartenMakro): Geo
-    {
-        $this->kartenMakro = $kartenMakro;
-        return $this;
-    }
-
+    /**
+     * @return bool
+     */
     public function getKartenMikro(): ?bool
     {
         return $this->kartenMikro;
     }
 
-    public function setKartenMikro(?bool $kartenMikro): Geo
+    /**
+     * @return LageGebiet
+     */
+    public function getLageGebiet(): ?LageGebiet
     {
-        $this->kartenMikro = $kartenMikro;
-        return $this;
+        return $this->lageGebiet;
     }
 
-    public function getVirtuelletour(): ?bool
+    /**
+     * @return LageImBau
+     */
+    public function getLageImBau(): ?LageImBau
     {
-        return $this->virtuelletour;
+        return $this->lageImBau;
     }
 
-    public function setVirtuelletour(?bool $virtuelletour): Geo
+    /**
+     * @return Land
+     */
+    public function getLand(): ?Land
     {
-        $this->virtuelletour = $virtuelletour;
-        return $this;
+        return $this->land;
     }
 
+    /**
+     * @return bool
+     */
     public function getLuftbildern(): ?bool
     {
         return $this->luftbildern;
     }
 
-    public function setLuftbildern(?bool $luftbildern): Geo
+    /**
+     * @return string
+     */
+    public function getOrt(): ?string
+    {
+        return $this->ort;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlz(): ?string
+    {
+        return $this->plz;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRegionalerZusatz(): ?string
+    {
+        return $this->regionalerZusatz;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStrasse(): ?string
+    {
+        return $this->strasse;
+    }
+
+    /**
+     * Returns array of UserDefinedAnyfield
+     *
+     * @return array
+     */
+    public function getUserDefinedAnyfield(): array
+    {
+        return $this->userDefinedAnyfield ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedExtend
+     *
+     * @return array
+     */
+    public function getUserDefinedExtend(): array
+    {
+        return $this->userDefinedExtend ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedSimplefield
+     *
+     * @return array
+     */
+    public function getUserDefinedSimplefield(): array
+    {
+        return $this->userDefinedSimplefield ?? [];
+    }
+
+    /**
+     * @return bool
+     */
+    public function getVirtuelletour(): ?bool
+    {
+        return $this->virtuelletour;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWohnungsnr(): ?string
+    {
+        return $this->wohnungsnr;
+    }
+
+    /**
+     * @param int $anzahlEtagen Setter for anzahlEtagen
+     * @return Geo
+     */
+    public function setAnzahlEtagen(?int $anzahlEtagen)
+    {
+        $this->anzahlEtagen = $anzahlEtagen;
+        return $this;
+    }
+
+    /**
+     * @param string $bundesland Setter for bundesland
+     * @return Geo
+     */
+    public function setBundesland(?string $bundesland)
+    {
+        $this->bundesland = $bundesland;
+        return $this;
+    }
+
+    /**
+     * @param int $etage Setter for etage
+     * @return Geo
+     */
+    public function setEtage(?int $etage)
+    {
+        $this->etage = $etage;
+        return $this;
+    }
+
+    /**
+     * @param string $flur Setter for flur
+     * @return Geo
+     */
+    public function setFlur(?string $flur)
+    {
+        $this->flur = $flur;
+        return $this;
+    }
+
+    /**
+     * @param string $flurstueck Setter for flurstueck
+     * @return Geo
+     */
+    public function setFlurstueck(?string $flurstueck)
+    {
+        $this->flurstueck = $flurstueck;
+        return $this;
+    }
+
+    /**
+     * @param string $gemarkung Setter for gemarkung
+     * @return Geo
+     */
+    public function setGemarkung(?string $gemarkung)
+    {
+        $this->gemarkung = $gemarkung;
+        return $this;
+    }
+
+    /**
+     * @param string $gemeindecode Setter for gemeindecode
+     * @return Geo
+     */
+    public function setGemeindecode(?string $gemeindecode)
+    {
+        $this->gemeindecode = $gemeindecode;
+        return $this;
+    }
+
+    /**
+     * @param Geokoordinaten $geokoordinaten Setter for geokoordinaten
+     * @return Geo
+     */
+    public function setGeokoordinaten(?Geokoordinaten $geokoordinaten)
+    {
+        $this->geokoordinaten = $geokoordinaten;
+        return $this;
+    }
+
+    /**
+     * @param string $hausnummer Setter for hausnummer
+     * @return Geo
+     */
+    public function setHausnummer(?string $hausnummer)
+    {
+        $this->hausnummer = $hausnummer;
+        return $this;
+    }
+
+    /**
+     * @param bool $kartenMakro Setter for kartenMakro
+     * @return Geo
+     */
+    public function setKartenMakro(?bool $kartenMakro)
+    {
+        $this->kartenMakro = $kartenMakro;
+        return $this;
+    }
+
+    /**
+     * @param bool $kartenMikro Setter for kartenMikro
+     * @return Geo
+     */
+    public function setKartenMikro(?bool $kartenMikro)
+    {
+        $this->kartenMikro = $kartenMikro;
+        return $this;
+    }
+
+    /**
+     * @param LageGebiet $lageGebiet Setter for lageGebiet
+     * @return Geo
+     */
+    public function setLageGebiet(?LageGebiet $lageGebiet)
+    {
+        $this->lageGebiet = $lageGebiet;
+        return $this;
+    }
+
+    /**
+     * @param LageImBau $lageImBau Setter for lageImBau
+     * @return Geo
+     */
+    public function setLageImBau(?LageImBau $lageImBau)
+    {
+        $this->lageImBau = $lageImBau;
+        return $this;
+    }
+
+    /**
+     * @param Land $land Setter for land
+     * @return Geo
+     */
+    public function setLand(?Land $land)
+    {
+        $this->land = $land;
+        return $this;
+    }
+
+    /**
+     * @param bool $luftbildern Setter for luftbildern
+     * @return Geo
+     */
+    public function setLuftbildern(?bool $luftbildern)
     {
         $this->luftbildern = $luftbildern;
         return $this;
     }
 
-    public function getUserDefinedSimplefield(): ?array
+    /**
+     * @param string $ort Setter for ort
+     * @return Geo
+     */
+    public function setOrt(?string $ort)
     {
-        return $this->userDefinedSimplefield;
-    }
-
-    public function setUserDefinedSimplefield(?array $userDefinedSimplefield): Geo
-    {
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        $this->ort = $ort;
         return $this;
     }
 
-    public function getUserDefinedAnyfield(): ?array
+    /**
+     * @param string $plz Setter for plz
+     * @return Geo
+     */
+    public function setPlz(?string $plz)
     {
-        return $this->userDefinedAnyfield;
+        $this->plz = $plz;
+        return $this;
     }
 
-    public function setUserDefinedAnyfield(?array $userDefinedAnyfield): Geo
+    /**
+     * @param string $regionalerZusatz Setter for regionalerZusatz
+     * @return Geo
+     */
+    public function setRegionalerZusatz(?string $regionalerZusatz)
+    {
+        $this->regionalerZusatz = $regionalerZusatz;
+        return $this;
+    }
+
+    /**
+     * @param string $strasse Setter for strasse
+     * @return Geo
+     */
+    public function setStrasse(?string $strasse)
+    {
+        $this->strasse = $strasse;
+        return $this;
+    }
+
+    /**
+     * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+     * @return Geo
+     */
+    public function setUserDefinedAnyfield(array $userDefinedAnyfield)
     {
         $this->userDefinedAnyfield = $userDefinedAnyfield;
         return $this;
     }
 
-    public function getUserDefinedExtend(): ?array
-    {
-        return $this->userDefinedExtend;
-    }
-
-    public function setUserDefinedExtend(?array $userDefinedExtend): Geo
+    /**
+     * @param array $userDefinedExtend Setter for userDefinedExtend
+     * @return Geo
+     */
+    public function setUserDefinedExtend(array $userDefinedExtend)
     {
         $this->userDefinedExtend = $userDefinedExtend;
+        return $this;
+    }
+
+    /**
+     * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+     * @return Geo
+     */
+    public function setUserDefinedSimplefield(array $userDefinedSimplefield)
+    {
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        return $this;
+    }
+
+    /**
+     * @param bool $virtuelletour Setter for virtuelletour
+     * @return Geo
+     */
+    public function setVirtuelletour(?bool $virtuelletour)
+    {
+        $this->virtuelletour = $virtuelletour;
+        return $this;
+    }
+
+    /**
+     * @param string $wohnungsnr Setter for wohnungsnr
+     * @return Geo
+     */
+    public function setWohnungsnr(?string $wohnungsnr)
+    {
+        $this->wohnungsnr = $wohnungsnr;
         return $this;
     }
 }

@@ -15,135 +15,198 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Dachform
 {
     /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("KRUEPPELWALMDACH")
      * optional
-     */
-    protected ?bool $krueppelwalmdach;
-
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("MANSARDDACH")
-     * optional
-     */
-    protected ?bool $mansarddach;
-
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("PULTDACH")
-     * optional
-     */
-    protected ?bool $pultdach;
-
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("SATTELDACH")
-     * optional
-     */
-    protected ?bool $satteldach;
-
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("WALMDACH")
-     * optional
-     */
-    protected ?bool $walmdach;
-
-    /**
+     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("FLACHDACH")
-     * optional
+     * @var bool
      */
-    protected ?bool $flachdach;
+    protected $flachdach;
 
     /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("KRUEPPELWALMDACH")
+     * @var bool
+     */
+    protected $krueppelwalmdach;
+
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("MANSARDDACH")
+     * @var bool
+     */
+    protected $mansarddach;
+
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("PULTDACH")
+     * @var bool
+     */
+    protected $pultdach;
+
+    /**
+     * optional
+     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("PYRAMIDENDACH")
-     * optional
+     * @var bool
      */
-    protected ?bool $pyramidendach;
+    protected $pyramidendach;
 
-    public function getKrueppelwalmdach(): ?bool
-    {
-        return $this->krueppelwalmdach;
-    }
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("SATTELDACH")
+     * @var bool
+     */
+    protected $satteldach;
 
-    public function setKrueppelwalmdach(?bool $krueppelwalmdach): Dachform
-    {
-        $this->krueppelwalmdach = $krueppelwalmdach;
-        return $this;
-    }
+    /**
+     * optional
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("WALMDACH")
+     * @var bool
+     */
+    protected $walmdach;
 
-    public function getMansarddach(): ?bool
-    {
-        return $this->mansarddach;
-    }
-
-    public function setMansarddach(?bool $mansarddach): Dachform
-    {
-        $this->mansarddach = $mansarddach;
-        return $this;
-    }
-
-    public function getPultdach(): ?bool
-    {
-        return $this->pultdach;
-    }
-
-    public function setPultdach(?bool $pultdach): Dachform
-    {
-        $this->pultdach = $pultdach;
-        return $this;
-    }
-
-    public function getSatteldach(): ?bool
-    {
-        return $this->satteldach;
-    }
-
-    public function setSatteldach(?bool $satteldach): Dachform
-    {
-        $this->satteldach = $satteldach;
-        return $this;
-    }
-
-    public function getWalmdach(): ?bool
-    {
-        return $this->walmdach;
-    }
-
-    public function setWalmdach(?bool $walmdach): Dachform
-    {
-        $this->walmdach = $walmdach;
-        return $this;
-    }
-
+    /**
+     * @return bool
+     */
     public function getFlachdach(): ?bool
     {
         return $this->flachdach;
     }
 
-    public function setFlachdach(?bool $flachdach): Dachform
+    /**
+     * @return bool
+     */
+    public function getKrueppelwalmdach(): ?bool
     {
-        $this->flachdach = $flachdach;
-        return $this;
+        return $this->krueppelwalmdach;
     }
 
+    /**
+     * @return bool
+     */
+    public function getMansarddach(): ?bool
+    {
+        return $this->mansarddach;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getPultdach(): ?bool
+    {
+        return $this->pultdach;
+    }
+
+    /**
+     * @return bool
+     */
     public function getPyramidendach(): ?bool
     {
         return $this->pyramidendach;
     }
 
-    public function setPyramidendach(?bool $pyramidendach): Dachform
+    /**
+     * @return bool
+     */
+    public function getSatteldach(): ?bool
+    {
+        return $this->satteldach;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getWalmdach(): ?bool
+    {
+        return $this->walmdach;
+    }
+
+    /**
+     * @param bool $flachdach Setter for flachdach
+     * @return Dachform
+     */
+    public function setFlachdach(?bool $flachdach)
+    {
+        $this->flachdach = $flachdach;
+        return $this;
+    }
+
+    /**
+     * @param bool $krueppelwalmdach Setter for krueppelwalmdach
+     * @return Dachform
+     */
+    public function setKrueppelwalmdach(?bool $krueppelwalmdach)
+    {
+        $this->krueppelwalmdach = $krueppelwalmdach;
+        return $this;
+    }
+
+    /**
+     * @param bool $mansarddach Setter for mansarddach
+     * @return Dachform
+     */
+    public function setMansarddach(?bool $mansarddach)
+    {
+        $this->mansarddach = $mansarddach;
+        return $this;
+    }
+
+    /**
+     * @param bool $pultdach Setter for pultdach
+     * @return Dachform
+     */
+    public function setPultdach(?bool $pultdach)
+    {
+        $this->pultdach = $pultdach;
+        return $this;
+    }
+
+    /**
+     * @param bool $pyramidendach Setter for pyramidendach
+     * @return Dachform
+     */
+    public function setPyramidendach(?bool $pyramidendach)
     {
         $this->pyramidendach = $pyramidendach;
+        return $this;
+    }
+
+    /**
+     * @param bool $satteldach Setter for satteldach
+     * @return Dachform
+     */
+    public function setSatteldach(?bool $satteldach)
+    {
+        $this->satteldach = $satteldach;
+        return $this;
+    }
+
+    /**
+     * @param bool $walmdach Setter for walmdach
+     * @return Dachform
+     */
+    public function setWalmdach(?bool $walmdach)
+    {
+        $this->walmdach = $walmdach;
         return $this;
     }
 }

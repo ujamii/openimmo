@@ -16,84 +16,122 @@ class Anhaenge
     /**
      * @XmlList(inline = true, entry = "anhang")
      * @Type("array<Ujamii\OpenImmo\API\Anhang>")
-     * @var ?\Ujamii\OpenImmo\API\Anhang[]
+     * @var Anhang[]
      */
-    protected ?array $anhang = [];
-
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedSimplefield[]
-     */
-    protected ?array $userDefinedSimplefield = [];
+    protected $anhang;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedAnyfield[]
+     * @var UserDefinedAnyfield[]
      */
-    protected ?array $userDefinedAnyfield = [];
+    protected $userDefinedAnyfield;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedExtend[]
+     * @var UserDefinedExtend[]
      */
-    protected ?array $userDefinedExtend = [];
+    protected $userDefinedExtend;
 
-    public function getAnhang(): ?array
+    /**
+     * @XmlList(inline = true, entry = "user_defined_simplefield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
+     * @var UserDefinedSimplefield[]
+     */
+    protected $userDefinedSimplefield;
+
+    /**
+     * @param array $anhang Shortcut setter for anhang
+     * @param array $userDefinedSimplefield Shortcut setter for userDefinedSimplefield
+     * @param array $userDefinedAnyfield Shortcut setter for userDefinedAnyfield
+     * @param array $userDefinedExtend Shortcut setter for userDefinedExtend
+     */
+    public function __construct(array $anhang = [], array $userDefinedSimplefield = [], array $userDefinedAnyfield = [], array $userDefinedExtend = [])
     {
-        return $this->anhang;
+        $this->anhang = $anhang;
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        $this->userDefinedAnyfield = $userDefinedAnyfield;
+        $this->userDefinedExtend = $userDefinedExtend;
     }
 
-    public function setAnhang(?array $anhang): Anhaenge
+    /**
+     * Returns array of Anhang
+     *
+     * @return array
+     */
+    public function getAnhang(): array
+    {
+        return $this->anhang ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedAnyfield
+     *
+     * @return array
+     */
+    public function getUserDefinedAnyfield(): array
+    {
+        return $this->userDefinedAnyfield ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedExtend
+     *
+     * @return array
+     */
+    public function getUserDefinedExtend(): array
+    {
+        return $this->userDefinedExtend ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedSimplefield
+     *
+     * @return array
+     */
+    public function getUserDefinedSimplefield(): array
+    {
+        return $this->userDefinedSimplefield ?? [];
+    }
+
+    /**
+     * @param array $anhang Setter for anhang
+     * @return Anhaenge
+     */
+    public function setAnhang(array $anhang)
     {
         $this->anhang = $anhang;
         return $this;
     }
 
-    public function getUserDefinedSimplefield(): ?array
-    {
-        return $this->userDefinedSimplefield;
-    }
-
-    public function setUserDefinedSimplefield(?array $userDefinedSimplefield): Anhaenge
-    {
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
-        return $this;
-    }
-
-    public function getUserDefinedAnyfield(): ?array
-    {
-        return $this->userDefinedAnyfield;
-    }
-
-    public function setUserDefinedAnyfield(?array $userDefinedAnyfield): Anhaenge
+    /**
+     * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+     * @return Anhaenge
+     */
+    public function setUserDefinedAnyfield(array $userDefinedAnyfield)
     {
         $this->userDefinedAnyfield = $userDefinedAnyfield;
         return $this;
     }
 
-    public function getUserDefinedExtend(): ?array
-    {
-        return $this->userDefinedExtend;
-    }
-
-    public function setUserDefinedExtend(?array $userDefinedExtend): Anhaenge
+    /**
+     * @param array $userDefinedExtend Setter for userDefinedExtend
+     * @return Anhaenge
+     */
+    public function setUserDefinedExtend(array $userDefinedExtend)
     {
         $this->userDefinedExtend = $userDefinedExtend;
         return $this;
     }
 
-    public function __construct(
-        array $anhang = null,
-        array $userDefinedSimplefield = null,
-        array $userDefinedAnyfield = null,
-        array $userDefinedExtend = null
-    ) {
-        $this->anhang = $anhang;
+    /**
+     * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+     * @return Anhaenge
+     */
+    public function setUserDefinedSimplefield(array $userDefinedSimplefield)
+    {
         $this->userDefinedSimplefield = $userDefinedSimplefield;
-        $this->userDefinedAnyfield = $userDefinedAnyfield;
-        $this->userDefinedExtend = $userDefinedExtend;
+        return $this;
     }
 }

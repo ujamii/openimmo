@@ -13,54 +13,96 @@ use JMS\Serializer\Annotation\XmlRoot;
  */
 class StpSonstige
 {
-    public const PLATZART_FREIPLATZ = 'FREIPLATZ';
-    public const PLATZART_GARAGE = 'GARAGE';
-    public const PLATZART_TIEFGARAGE = 'TIEFGARAGE';
+    /**
+     */
     public const PLATZART_CARPORT = 'CARPORT';
+
+    /**
+     */
     public const PLATZART_DUPLEX = 'DUPLEX';
+
+    /**
+     */
+    public const PLATZART_FREIPLATZ = 'FREIPLATZ';
+
+    /**
+     */
+    public const PLATZART_GARAGE = 'GARAGE';
+
+    /**
+     */
     public const PLATZART_PARKHAUS = 'PARKHAUS';
+
+    /**
+     */
     public const PLATZART_SONSTIGES = 'SONSTIGES';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
-     * optional
-     * @see PLATZART_* constants
      */
-    protected ?string $platzart;
+    public const PLATZART_TIEFGARAGE = 'TIEFGARAGE';
 
     /**
+     * optional
+     *
      * @Type("string")
      * @XmlAttribute
-     * optional
+     * @var string
      */
-    protected ?string $bemerkung;
+    protected $bemerkung;
 
-    public function getPlatzart(): string
-    {
-        return $this->platzart;
-    }
+    /**
+     * optional
+     *
+     * @Type("string")
+     * @XmlAttribute
+     * @see PLATZART_* constants
+     * @var string
+     */
+    protected $platzart;
 
-    public function setPlatzart(string $platzart): StpSonstige
+    /**
+     * @param string $platzart Shortcut setter for platzart
+     * @param string $bemerkung Shortcut setter for bemerkung
+     */
+    public function __construct(string $platzart = null, string $bemerkung = null)
     {
         $this->platzart = $platzart;
-        return $this;
+        $this->bemerkung = $bemerkung;
     }
 
+    /**
+     * @return string
+     */
     public function getBemerkung(): ?string
     {
         return $this->bemerkung;
     }
 
-    public function setBemerkung(?string $bemerkung): StpSonstige
+    /**
+     * @return string
+     */
+    public function getPlatzart(): ?string
+    {
+        return $this->platzart;
+    }
+
+    /**
+     * @param string $bemerkung Setter for bemerkung
+     * @return StpSonstige
+     */
+    public function setBemerkung(?string $bemerkung)
     {
         $this->bemerkung = $bemerkung;
         return $this;
     }
 
-    public function __construct(string $platzart = null, string $bemerkung = null)
+    /**
+     * @param string $platzart Setter for platzart
+     * @return StpSonstige
+     */
+    public function setPlatzart(?string $platzart)
     {
         $this->platzart = $platzart;
-        $this->bemerkung = $bemerkung;
+        return $this;
     }
 }

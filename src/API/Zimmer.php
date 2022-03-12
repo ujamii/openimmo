@@ -9,33 +9,48 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Zimmer
  * Objekart / Typ f. Zimmer
+ *
  * @XmlRoot("zimmer")
  */
 class Zimmer
 {
+    /**
+     */
     public const ZIMMERTYP_ZIMMER = 'ZIMMER';
 
     /**
+     * optional
+     *
      * @Type("string")
      * @XmlAttribute
-     * optional
      * @see ZIMMERTYP_* constants
+     * @var string
      */
-    protected ?string $zimmertyp;
+    protected $zimmertyp;
 
-    public function getZimmertyp(): string
+    /**
+     * @param string $zimmertyp Shortcut setter for zimmertyp
+     */
+    public function __construct(string $zimmertyp = null)
+    {
+        $this->zimmertyp = $zimmertyp;
+    }
+
+    /**
+     * @return string
+     */
+    public function getZimmertyp(): ?string
     {
         return $this->zimmertyp;
     }
 
-    public function setZimmertyp(string $zimmertyp): Zimmer
+    /**
+     * @param string $zimmertyp Setter for zimmertyp
+     * @return Zimmer
+     */
+    public function setZimmertyp(?string $zimmertyp)
     {
         $this->zimmertyp = $zimmertyp;
         return $this;
-    }
-
-    public function __construct(string $zimmertyp = null)
-    {
-        $this->zimmertyp = $zimmertyp;
     }
 }

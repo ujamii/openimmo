@@ -13,48 +13,70 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Das Eltern Objekte hat in "gruppen_kennung" die gleiche ID wie "master". Anwendung z.b. in Neubau Projekten.
  * Damit die Anzeige des Master Objektes gesteuert werden kann, wird im Master ein Flag
  *  visible eingesetzt. Das Attribut ist dann zwingend anzugeben
+ *
  * @XmlRoot("master")
  */
 class Master
 {
     /**
-     * @Type("bool")
-     * @XmlAttribute
-     * required
-     */
-    protected ?bool $visible;
-
-    /**
      * @Inline
      * @Type("string")
+     * @var string
      */
-    protected ?string $value;
+    protected $value;
 
-    public function getVisible(): bool
-    {
-        return $this->visible;
-    }
+    /**
+     * required
+     *
+     * @Type("bool")
+     * @XmlAttribute
+     * @var bool
+     */
+    protected $visible;
 
-    public function setVisible(bool $visible): Master
+    /**
+     * @param bool $visible Shortcut setter for visible
+     * @param string $value Shortcut setter for value
+     */
+    public function __construct(bool $visible = null, string $value = null)
     {
         $this->visible = $visible;
-        return $this;
+        $this->value = $value;
     }
 
+    /**
+     * @return string
+     */
     public function getValue(): ?string
     {
         return $this->value;
     }
 
-    public function setValue(?string $value): Master
+    /**
+     * @return bool
+     */
+    public function getVisible(): bool
+    {
+        return $this->visible;
+    }
+
+    /**
+     * @param string $value Setter for value
+     * @return Master
+     */
+    public function setValue(?string $value)
     {
         $this->value = $value;
         return $this;
     }
 
-    public function __construct(bool $visible = null, string $value = null)
+    /**
+     * @param bool $visible Setter for visible
+     * @return Master
+     */
+    public function setVisible(bool $visible)
     {
         $this->visible = $visible;
-        $this->value = $value;
+        return $this;
     }
 }

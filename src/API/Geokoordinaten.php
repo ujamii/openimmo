@@ -9,49 +9,72 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Geokoordinaten
  * Geokoordinaten der Immobilie, Pflichtfeld, alternativ mit Ort, PLZ
+ *
  * @XmlRoot("geokoordinaten")
  */
 class Geokoordinaten
 {
     /**
+     * required
+     *
      * @Type("float")
      * @XmlAttribute
-     * required
+     * @var float
      */
-    protected ?float $breitengrad;
+    protected $breitengrad;
 
     /**
+     * required
+     *
      * @Type("float")
      * @XmlAttribute
-     * required
+     * @var float
      */
-    protected ?float $laengengrad;
+    protected $laengengrad;
 
+    /**
+     * @param float $breitengrad Shortcut setter for breitengrad
+     * @param float $laengengrad Shortcut setter for laengengrad
+     */
+    public function __construct(float $breitengrad = null, float $laengengrad = null)
+    {
+        $this->breitengrad = $breitengrad;
+        $this->laengengrad = $laengengrad;
+    }
+
+    /**
+     * @return float
+     */
     public function getBreitengrad(): float
     {
         return $this->breitengrad;
     }
 
-    public function setBreitengrad(float $breitengrad): Geokoordinaten
-    {
-        $this->breitengrad = $breitengrad;
-        return $this;
-    }
-
+    /**
+     * @return float
+     */
     public function getLaengengrad(): float
     {
         return $this->laengengrad;
     }
 
-    public function setLaengengrad(float $laengengrad): Geokoordinaten
+    /**
+     * @param float $breitengrad Setter for breitengrad
+     * @return Geokoordinaten
+     */
+    public function setBreitengrad(float $breitengrad)
     {
-        $this->laengengrad = $laengengrad;
+        $this->breitengrad = $breitengrad;
         return $this;
     }
 
-    public function __construct(float $breitengrad = null, float $laengengrad = null)
+    /**
+     * @param float $laengengrad Setter for laengengrad
+     * @return Geokoordinaten
+     */
+    public function setLaengengrad(float $laengengrad)
     {
-        $this->breitengrad = $breitengrad;
         $this->laengengrad = $laengengrad;
+        return $this;
     }
 }

@@ -15,296 +15,421 @@ use JMS\Serializer\Annotation\XmlRoot;
 class VerwaltungTechn
 {
     /**
-     * @Type("string")
-     * @var ?string
-     */
-    protected ?string $objektnrIntern = null;
-
-    /**
-     * @Type("string")
-     * @var string
-     * @SkipWhenEmpty
-     */
-    protected string $objektnrExtern = '';
-
-    /**
      * @Type("Ujamii\OpenImmo\API\Aktion")
-     * @var ?\Ujamii\OpenImmo\API\Aktion
+     * @var Aktion
      */
-    protected ?Aktion $aktion = null;
+    protected $aktion;
 
     /**
      * @Type("DateTime<'Y-m-d'>")
-     * @var ?\DateTime
+     * @var \DateTime
      */
-    protected ?\DateTime $aktivVon = null;
+    protected $aktivBis;
 
     /**
      * @Type("DateTime<'Y-m-d'>")
-     * @var ?\DateTime
+     * @var \DateTime
      */
-    protected ?\DateTime $aktivBis = null;
+    protected $aktivVon;
 
     /**
      * @Type("string")
      * @var string
-     * @SkipWhenEmpty
      */
-    protected string $openimmoObid = '';
+    protected $gruppenKennung;
 
     /**
      * @Type("string")
-     * @var ?string
+     * @var string
      */
-    protected ?string $kennungUrsprung = null;
-
-    /**
-     * @Type("DateTime<'Y-m-d'>")
-     * @var ?\DateTime
-     */
-    protected ?\DateTime $standVom = null;
-
-    /**
-     * @Type("bool")
-     * @var ?bool
-     */
-    protected ?bool $weitergabeGenerell = null;
-
-    /**
-     * @Type("string")
-     * @var ?string
-     */
-    protected ?string $weitergabePositiv = null;
-
-    /**
-     * @Type("string")
-     * @var ?string
-     */
-    protected ?string $weitergabeNegativ = null;
-
-    /**
-     * @Type("string")
-     * @var ?string
-     */
-    protected ?string $gruppenKennung = null;
+    protected $kennungUrsprung;
 
     /**
      * @Type("Ujamii\OpenImmo\API\Master")
-     * @var ?\Ujamii\OpenImmo\API\Master
+     * @var Master
      */
-    protected ?Master $master = null;
+    protected $master;
 
     /**
      * @Type("string")
-     * @var ?string
+     * @SkipWhenEmpty
+     * @var string
      */
-    protected ?string $sprache = null;
+    protected $objektnrExtern = '';
 
     /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedSimplefield[]
+     * @Type("string")
+     * @var string
      */
-    protected ?array $userDefinedSimplefield = [];
+    protected $objektnrIntern;
+
+    /**
+     * @Type("string")
+     * @SkipWhenEmpty
+     * @var string
+     */
+    protected $openimmoObid = '';
+
+    /**
+     * @Type("string")
+     * @var string
+     */
+    protected $sprache;
+
+    /**
+     * @Type("DateTime<'Y-m-d'>")
+     * @var \DateTime
+     */
+    protected $standVom;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedAnyfield[]
+     * @var UserDefinedAnyfield[]
      */
-    protected ?array $userDefinedAnyfield = [];
+    protected $userDefinedAnyfield;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @var ?\Ujamii\OpenImmo\API\UserDefinedExtend[]
+     * @var UserDefinedExtend[]
      */
-    protected ?array $userDefinedExtend = [];
+    protected $userDefinedExtend;
 
-    public function getObjektnrIntern(): ?string
-    {
-        return $this->objektnrIntern;
-    }
+    /**
+     * @XmlList(inline = true, entry = "user_defined_simplefield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
+     * @var UserDefinedSimplefield[]
+     */
+    protected $userDefinedSimplefield;
 
-    public function setObjektnrIntern(?string $objektnrIntern): VerwaltungTechn
-    {
-        $this->objektnrIntern = $objektnrIntern;
-        return $this;
-    }
+    /**
+     * @Type("bool")
+     * @var bool
+     */
+    protected $weitergabeGenerell;
 
-    public function getObjektnrExtern(): string
-    {
-        return $this->objektnrExtern;
-    }
+    /**
+     * @Type("string")
+     * @var string
+     */
+    protected $weitergabeNegativ;
 
-    public function setObjektnrExtern(string $objektnrExtern): VerwaltungTechn
-    {
-        $this->objektnrExtern = $objektnrExtern;
-        return $this;
-    }
+    /**
+     * @Type("string")
+     * @var string
+     */
+    protected $weitergabePositiv;
 
+    /**
+     * @return Aktion
+     */
     public function getAktion(): ?Aktion
     {
         return $this->aktion;
     }
 
-    public function setAktion(?Aktion $aktion): VerwaltungTechn
-    {
-        $this->aktion = $aktion;
-        return $this;
-    }
-
-    public function getAktivVon(): ?\DateTime
-    {
-        return $this->aktivVon;
-    }
-
-    public function setAktivVon(?\DateTime $aktivVon): VerwaltungTechn
-    {
-        $this->aktivVon = $aktivVon;
-        return $this;
-    }
-
+    /**
+     * @return \DateTime
+     */
     public function getAktivBis(): ?\DateTime
     {
         return $this->aktivBis;
     }
 
-    public function setAktivBis(?\DateTime $aktivBis): VerwaltungTechn
+    /**
+     * @return \DateTime
+     */
+    public function getAktivVon(): ?\DateTime
     {
-        $this->aktivBis = $aktivBis;
-        return $this;
+        return $this->aktivVon;
     }
 
-    public function getOpenimmoObid(): string
-    {
-        return $this->openimmoObid;
-    }
-
-    public function setOpenimmoObid(string $openimmoObid): VerwaltungTechn
-    {
-        $this->openimmoObid = $openimmoObid;
-        return $this;
-    }
-
-    public function getKennungUrsprung(): ?string
-    {
-        return $this->kennungUrsprung;
-    }
-
-    public function setKennungUrsprung(?string $kennungUrsprung): VerwaltungTechn
-    {
-        $this->kennungUrsprung = $kennungUrsprung;
-        return $this;
-    }
-
-    public function getStandVom(): ?\DateTime
-    {
-        return $this->standVom;
-    }
-
-    public function setStandVom(?\DateTime $standVom): VerwaltungTechn
-    {
-        $this->standVom = $standVom;
-        return $this;
-    }
-
-    public function getWeitergabeGenerell(): ?bool
-    {
-        return $this->weitergabeGenerell;
-    }
-
-    public function setWeitergabeGenerell(?bool $weitergabeGenerell): VerwaltungTechn
-    {
-        $this->weitergabeGenerell = $weitergabeGenerell;
-        return $this;
-    }
-
-    public function getWeitergabePositiv(): ?string
-    {
-        return $this->weitergabePositiv;
-    }
-
-    public function setWeitergabePositiv(?string $weitergabePositiv): VerwaltungTechn
-    {
-        $this->weitergabePositiv = $weitergabePositiv;
-        return $this;
-    }
-
-    public function getWeitergabeNegativ(): ?string
-    {
-        return $this->weitergabeNegativ;
-    }
-
-    public function setWeitergabeNegativ(?string $weitergabeNegativ): VerwaltungTechn
-    {
-        $this->weitergabeNegativ = $weitergabeNegativ;
-        return $this;
-    }
-
+    /**
+     * @return string
+     */
     public function getGruppenKennung(): ?string
     {
         return $this->gruppenKennung;
     }
 
-    public function setGruppenKennung(?string $gruppenKennung): VerwaltungTechn
+    /**
+     * @return string
+     */
+    public function getKennungUrsprung(): ?string
     {
-        $this->gruppenKennung = $gruppenKennung;
-        return $this;
+        return $this->kennungUrsprung;
     }
 
+    /**
+     * @return Master
+     */
     public function getMaster(): ?Master
     {
         return $this->master;
     }
 
-    public function setMaster(?Master $master): VerwaltungTechn
+    /**
+     * @return string
+     */
+    public function getObjektnrExtern(): string
     {
-        $this->master = $master;
-        return $this;
+        return $this->objektnrExtern;
     }
 
+    /**
+     * @return string
+     */
+    public function getObjektnrIntern(): ?string
+    {
+        return $this->objektnrIntern;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOpenimmoObid(): string
+    {
+        return $this->openimmoObid;
+    }
+
+    /**
+     * @return string
+     */
     public function getSprache(): ?string
     {
         return $this->sprache;
     }
 
-    public function setSprache(?string $sprache): VerwaltungTechn
+    /**
+     * @return \DateTime
+     */
+    public function getStandVom(): ?\DateTime
+    {
+        return $this->standVom;
+    }
+
+    /**
+     * Returns array of UserDefinedAnyfield
+     *
+     * @return array
+     */
+    public function getUserDefinedAnyfield(): array
+    {
+        return $this->userDefinedAnyfield ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedExtend
+     *
+     * @return array
+     */
+    public function getUserDefinedExtend(): array
+    {
+        return $this->userDefinedExtend ?? [];
+    }
+
+    /**
+     * Returns array of UserDefinedSimplefield
+     *
+     * @return array
+     */
+    public function getUserDefinedSimplefield(): array
+    {
+        return $this->userDefinedSimplefield ?? [];
+    }
+
+    /**
+     * @return bool
+     */
+    public function getWeitergabeGenerell(): ?bool
+    {
+        return $this->weitergabeGenerell;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWeitergabeNegativ(): ?string
+    {
+        return $this->weitergabeNegativ;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWeitergabePositiv(): ?string
+    {
+        return $this->weitergabePositiv;
+    }
+
+    /**
+     * @param Aktion $aktion Setter for aktion
+     * @return VerwaltungTechn
+     */
+    public function setAktion(?Aktion $aktion)
+    {
+        $this->aktion = $aktion;
+        return $this;
+    }
+
+    /**
+     * @param \DateTime $aktivBis Setter for aktivBis
+     * @return VerwaltungTechn
+     */
+    public function setAktivBis(?\DateTime $aktivBis)
+    {
+        $this->aktivBis = $aktivBis;
+        return $this;
+    }
+
+    /**
+     * @param \DateTime $aktivVon Setter for aktivVon
+     * @return VerwaltungTechn
+     */
+    public function setAktivVon(?\DateTime $aktivVon)
+    {
+        $this->aktivVon = $aktivVon;
+        return $this;
+    }
+
+    /**
+     * @param string $gruppenKennung Setter for gruppenKennung
+     * @return VerwaltungTechn
+     */
+    public function setGruppenKennung(?string $gruppenKennung)
+    {
+        $this->gruppenKennung = $gruppenKennung;
+        return $this;
+    }
+
+    /**
+     * @param string $kennungUrsprung Setter for kennungUrsprung
+     * @return VerwaltungTechn
+     */
+    public function setKennungUrsprung(?string $kennungUrsprung)
+    {
+        $this->kennungUrsprung = $kennungUrsprung;
+        return $this;
+    }
+
+    /**
+     * @param Master $master Setter for master
+     * @return VerwaltungTechn
+     */
+    public function setMaster(?Master $master)
+    {
+        $this->master = $master;
+        return $this;
+    }
+
+    /**
+     * @param string $objektnrExtern Setter for objektnrExtern
+     * @return VerwaltungTechn
+     */
+    public function setObjektnrExtern(string $objektnrExtern)
+    {
+        $this->objektnrExtern = $objektnrExtern;
+        return $this;
+    }
+
+    /**
+     * @param string $objektnrIntern Setter for objektnrIntern
+     * @return VerwaltungTechn
+     */
+    public function setObjektnrIntern(?string $objektnrIntern)
+    {
+        $this->objektnrIntern = $objektnrIntern;
+        return $this;
+    }
+
+    /**
+     * @param string $openimmoObid Setter for openimmoObid
+     * @return VerwaltungTechn
+     */
+    public function setOpenimmoObid(string $openimmoObid)
+    {
+        $this->openimmoObid = $openimmoObid;
+        return $this;
+    }
+
+    /**
+     * @param string $sprache Setter for sprache
+     * @return VerwaltungTechn
+     */
+    public function setSprache(?string $sprache)
     {
         $this->sprache = $sprache;
         return $this;
     }
 
-    public function getUserDefinedSimplefield(): ?array
+    /**
+     * @param \DateTime $standVom Setter for standVom
+     * @return VerwaltungTechn
+     */
+    public function setStandVom(?\DateTime $standVom)
     {
-        return $this->userDefinedSimplefield;
-    }
-
-    public function setUserDefinedSimplefield(?array $userDefinedSimplefield): VerwaltungTechn
-    {
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        $this->standVom = $standVom;
         return $this;
     }
 
-    public function getUserDefinedAnyfield(): ?array
-    {
-        return $this->userDefinedAnyfield;
-    }
-
-    public function setUserDefinedAnyfield(?array $userDefinedAnyfield): VerwaltungTechn
+    /**
+     * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+     * @return VerwaltungTechn
+     */
+    public function setUserDefinedAnyfield(array $userDefinedAnyfield)
     {
         $this->userDefinedAnyfield = $userDefinedAnyfield;
         return $this;
     }
 
-    public function getUserDefinedExtend(): ?array
-    {
-        return $this->userDefinedExtend;
-    }
-
-    public function setUserDefinedExtend(?array $userDefinedExtend): VerwaltungTechn
+    /**
+     * @param array $userDefinedExtend Setter for userDefinedExtend
+     * @return VerwaltungTechn
+     */
+    public function setUserDefinedExtend(array $userDefinedExtend)
     {
         $this->userDefinedExtend = $userDefinedExtend;
+        return $this;
+    }
+
+    /**
+     * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+     * @return VerwaltungTechn
+     */
+    public function setUserDefinedSimplefield(array $userDefinedSimplefield)
+    {
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        return $this;
+    }
+
+    /**
+     * @param bool $weitergabeGenerell Setter for weitergabeGenerell
+     * @return VerwaltungTechn
+     */
+    public function setWeitergabeGenerell(?bool $weitergabeGenerell)
+    {
+        $this->weitergabeGenerell = $weitergabeGenerell;
+        return $this;
+    }
+
+    /**
+     * @param string $weitergabeNegativ Setter for weitergabeNegativ
+     * @return VerwaltungTechn
+     */
+    public function setWeitergabeNegativ(?string $weitergabeNegativ)
+    {
+        $this->weitergabeNegativ = $weitergabeNegativ;
+        return $this;
+    }
+
+    /**
+     * @param string $weitergabePositiv Setter for weitergabePositiv
+     * @return VerwaltungTechn
+     */
+    public function setWeitergabePositiv(?string $weitergabePositiv)
+    {
+        $this->weitergabePositiv = $weitergabePositiv;
         return $this;
     }
 }
