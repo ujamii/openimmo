@@ -2,6 +2,7 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator;
 
+use Nette\PhpGenerator\Property;
 use PHPUnit\Framework\TestCase;
 use Ujamii\OpenImmo\Generator\TypeUtil;
 
@@ -145,6 +146,38 @@ class TypeUtilTest extends TestCase
 
             ['Feld[]', false, []],
             ['Feld[]', true, null],
+        ];
+    }
+
+    /**
+     * @dataProvider getConstantsBasedPropertyDataProvider
+     */
+    public function testIsConstantsBasedProperty(Property $property, bool $expectedResult): void
+    {
+        $this->assertSame($expectedResult, TypeUtil::isConstantsBasedProperty($property));
+    }
+
+    public function getConstantsBasedPropertyDataProvider(): \Generator
+    {
+        $property = new Property('foobar');
+        $property->setComment('Hallo Welt!');
+        yield [
+            $property,
+            false
+        ];
+
+        $property2 = new Property('foobar');
+        $property2->addComment('@see foobar_* constants');
+        yield [
+            $property2,
+            false
+        ];
+
+        $property3 = new Property('foobar');
+        $property3->setComment('@see FOOBAR_* constants');
+        yield [
+            $property3,
+            true
         ];
     }
 }
