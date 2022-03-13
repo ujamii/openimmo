@@ -11,21 +11,6 @@ parameters:
 			path: ../../src/Generator/ApiGenerator.php
 
 		-
-			message: "#^Call to an undefined method GoetasWebservices\\\\XML\\\\XSDReader\\\\Schema\\\\Element\\\\ElementItem\\:\\:getMax\\(\\)\\.$#"
-			count: 1
-			path: ../../src/Generator/ApiGenerator.php
-
-		-
-			message: "#^Call to an undefined method GoetasWebservices\\\\XML\\\\XSDReader\\\\Schema\\\\Element\\\\ElementItem\\:\\:getType\\(\\)\\.$#"
-			count: 2
-			path: ../../src/Generator/ApiGenerator.php
-
-		-
-			message: "#^Call to an undefined method GoetasWebservices\\\\XML\\\\XSDReader\\\\Schema\\\\Element\\\\ElementItem\\:\\:getMin\\(\\)\\.$#"
-			count: 1
-			path: ../../src/Generator/ApiGenerator.php
-
-		-
 			message: "#^Call to an undefined method GoetasWebservices\\\\XML\\\\XSDReader\\\\Schema\\\\Element\\\\ElementItem\\|GoetasWebservices\\\\XML\\\\XSDReader\\\\Schema\\\\Item\\:\\:getMax\\(\\)\\.$#"
 			count: 1
 			path: ../../src/Generator/ApiGenerator.php

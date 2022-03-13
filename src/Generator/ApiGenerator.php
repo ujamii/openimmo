@@ -316,8 +316,7 @@ class ApiGenerator
             $class,
             $classProperty
         );
-        $nullable &= ! TypeUtil::isConstantsBasedProperty($classProperty);
-
+        $nullable = $nullable && ! TypeUtil::isConstantsBasedProperty($classProperty);
         $classProperty->setNullable($nullable)
                       ->setValue(TypeUtil::getDefaultValueForType($phpType, $nullable));
 
