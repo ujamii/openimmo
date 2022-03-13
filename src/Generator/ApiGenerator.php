@@ -21,7 +21,6 @@ use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
-use Nette\PhpGenerator\ClassLike;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PhpFile;
 use Nette\PhpGenerator\PhpNamespace;
@@ -139,7 +138,7 @@ class ApiGenerator
     {
         $propertyName  = 'value';
         $classProperty = $class->addProperty($propertyName)
-                               ->setVisibility(ClassLike::VisibilityProtected);
+                               ->setVisibility(ClassType::VisibilityProtected);
 
         if (is_null($extension)) {
             $xsdType = 'string';
@@ -196,7 +195,7 @@ class ApiGenerator
             return;
         }
         $classProperty = $class->addProperty($propertyName)
-                               ->setVisibility(ClassLike::VisibilityProtected);
+                               ->setVisibility(ClassType::VisibilityProtected);
         $xsdType       = $this->getPhpPropertyTypeFromXsdElement($property);
 
         // take min/max into account, as this may be an array instead
@@ -282,7 +281,7 @@ class ApiGenerator
     {
         $propertyName  = TypeUtil::camelize(strtolower($attribute->getName()), true);
         $classProperty = $class->addProperty($propertyName)
-                               ->setVisibility(ClassLike::VisibilityProtected);
+                               ->setVisibility(ClassType::VisibilityProtected);
         $xsdType       = TypeUtil::extractTypeForPhp($attribute->getType());
         $phpType       = TypeUtil::getValidPhpType($xsdType);
         $classProperty->addComment('@Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")');
