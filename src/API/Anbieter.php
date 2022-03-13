@@ -10,286 +10,195 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Anbieter
  * Anbieterangaben
- *
  * @XmlRoot("anbieter")
  */
 class Anbieter
 {
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $anbieternr;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Anhang")
-     * @var Anhang
-     */
-    protected $anhang;
+    /** @Type("string") */
+    protected ?string $anbieternr = null;
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
-     * @var string
      */
-    protected $firma = '';
+    protected string $firma = '';
+
+    /**
+     * @Type("string")
+     * @SkipWhenEmpty
+     */
+    protected string $openimmoAnid = '';
+
+    /** @Type("string") */
+    protected ?string $lizenzkennung = null;
+
+    /** @Type("Ujamii\OpenImmo\API\Anhang") */
+    protected ?Anhang $anhang = null;
 
     /**
      * @XmlList(inline = true, entry = "immobilie")
      * @Type("array<Ujamii\OpenImmo\API\Immobilie>")
-     * @var Immobilie[]
-     */
-    protected $immobilie;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $impressum;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\ImpressumStrukt")
-     * @var ImpressumStrukt
-     */
-    protected $impressumStrukt;
-
-    /**
-     * @Type("string")
-     * @var string
-     */
-    protected $lizenzkennung;
-
-    /**
-     * @Type("string")
      * @SkipWhenEmpty
-     * @var string
      */
-    protected $openimmoAnid = '';
+    protected array $immobilie = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @var UserDefinedAnyfield[]
-     */
-    protected $userDefinedAnyfield;
+    /** @Type("string") */
+    protected ?string $impressum = null;
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @var UserDefinedExtend[]
-     */
-    protected $userDefinedExtend;
+    /** @Type("Ujamii\OpenImmo\API\ImpressumStrukt") */
+    protected ?ImpressumStrukt $impressumStrukt = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @var UserDefinedSimplefield[]
+     * @SkipWhenEmpty
      */
-    protected $userDefinedSimplefield;
+    protected array $userDefinedSimplefield = [];
 
     /**
-     * @return string
+     * @XmlList(inline = true, entry = "user_defined_anyfield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
+     * @SkipWhenEmpty
      */
+    protected array $userDefinedAnyfield = [];
+
+    /**
+     * @XmlList(inline = true, entry = "user_defined_extend")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
+     * @SkipWhenEmpty
+     */
+    protected array $userDefinedExtend = [];
+
     public function getAnbieternr(): ?string
     {
         return $this->anbieternr;
     }
 
-    /**
-     * @return Anhang
-     */
-    public function getAnhang(): ?Anhang
-    {
-        return $this->anhang;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFirma(): string
-    {
-        return $this->firma;
-    }
-
-    /**
-     * Returns array of Immobilie
-     *
-     * @return array
-     */
-    public function getImmobilie(): array
-    {
-        return $this->immobilie ?? [];
-    }
-
-    /**
-     * @return string
-     */
-    public function getImpressum(): ?string
-    {
-        return $this->impressum;
-    }
-
-    /**
-     * @return ImpressumStrukt
-     */
-    public function getImpressumStrukt(): ?ImpressumStrukt
-    {
-        return $this->impressumStrukt;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLizenzkennung(): ?string
-    {
-        return $this->lizenzkennung;
-    }
-
-    /**
-     * @return string
-     */
-    public function getOpenimmoAnid(): string
-    {
-        return $this->openimmoAnid;
-    }
-
-    /**
-     * Returns array of UserDefinedAnyfield
-     *
-     * @return array
-     */
-    public function getUserDefinedAnyfield(): array
-    {
-        return $this->userDefinedAnyfield ?? [];
-    }
-
-    /**
-     * Returns array of UserDefinedExtend
-     *
-     * @return array
-     */
-    public function getUserDefinedExtend(): array
-    {
-        return $this->userDefinedExtend ?? [];
-    }
-
-    /**
-     * Returns array of UserDefinedSimplefield
-     *
-     * @return array
-     */
-    public function getUserDefinedSimplefield(): array
-    {
-        return $this->userDefinedSimplefield ?? [];
-    }
-
-    /**
-     * @param string $anbieternr Setter for anbieternr
-     * @return Anbieter
-     */
-    public function setAnbieternr(?string $anbieternr)
+    public function setAnbieternr(?string $anbieternr): Anbieter
     {
         $this->anbieternr = $anbieternr;
         return $this;
     }
 
-    /**
-     * @param Anhang $anhang Setter for anhang
-     * @return Anbieter
-     */
-    public function setAnhang(?Anhang $anhang)
+    public function getFirma(): string
+    {
+        return $this->firma;
+    }
+
+    public function setFirma(string $firma): Anbieter
+    {
+        $this->firma = $firma;
+        return $this;
+    }
+
+    public function getOpenimmoAnid(): string
+    {
+        return $this->openimmoAnid;
+    }
+
+    public function setOpenimmoAnid(string $openimmoAnid): Anbieter
+    {
+        $this->openimmoAnid = $openimmoAnid;
+        return $this;
+    }
+
+    public function getLizenzkennung(): ?string
+    {
+        return $this->lizenzkennung;
+    }
+
+    public function setLizenzkennung(?string $lizenzkennung): Anbieter
+    {
+        $this->lizenzkennung = $lizenzkennung;
+        return $this;
+    }
+
+    public function getAnhang(): ?Anhang
+    {
+        return $this->anhang;
+    }
+
+    public function setAnhang(?Anhang $anhang): Anbieter
     {
         $this->anhang = $anhang;
         return $this;
     }
 
     /**
-     * @param string $firma Setter for firma
-     * @return Anbieter
+     * Returns array of array
      */
-    public function setFirma(string $firma)
+    public function getImmobilie(): array
     {
-        $this->firma = $firma;
-        return $this;
+        return $this->immobilie ?? [];
     }
 
-    /**
-     * @param array $immobilie Setter for immobilie
-     * @return Anbieter
-     */
-    public function setImmobilie(array $immobilie)
+    public function setImmobilie(array $immobilie): Anbieter
     {
         $this->immobilie = $immobilie;
         return $this;
     }
 
-    /**
-     * @param string $impressum Setter for impressum
-     * @return Anbieter
-     */
-    public function setImpressum(?string $impressum)
+    public function getImpressum(): ?string
+    {
+        return $this->impressum;
+    }
+
+    public function setImpressum(?string $impressum): Anbieter
     {
         $this->impressum = $impressum;
         return $this;
     }
 
-    /**
-     * @param ImpressumStrukt $impressumStrukt Setter for impressumStrukt
-     * @return Anbieter
-     */
-    public function setImpressumStrukt(?ImpressumStrukt $impressumStrukt)
+    public function getImpressumStrukt(): ?ImpressumStrukt
+    {
+        return $this->impressumStrukt;
+    }
+
+    public function setImpressumStrukt(?ImpressumStrukt $impressumStrukt): Anbieter
     {
         $this->impressumStrukt = $impressumStrukt;
         return $this;
     }
 
     /**
-     * @param string $lizenzkennung Setter for lizenzkennung
-     * @return Anbieter
+     * Returns array of array
      */
-    public function setLizenzkennung(?string $lizenzkennung)
+    public function getUserDefinedSimplefield(): array
     {
-        $this->lizenzkennung = $lizenzkennung;
+        return $this->userDefinedSimplefield ?? [];
+    }
+
+    public function setUserDefinedSimplefield(array $userDefinedSimplefield): Anbieter
+    {
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
         return $this;
     }
 
     /**
-     * @param string $openimmoAnid Setter for openimmoAnid
-     * @return Anbieter
+     * Returns array of array
      */
-    public function setOpenimmoAnid(string $openimmoAnid)
+    public function getUserDefinedAnyfield(): array
     {
-        $this->openimmoAnid = $openimmoAnid;
-        return $this;
+        return $this->userDefinedAnyfield ?? [];
     }
 
-    /**
-     * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
-     * @return Anbieter
-     */
-    public function setUserDefinedAnyfield(array $userDefinedAnyfield)
+    public function setUserDefinedAnyfield(array $userDefinedAnyfield): Anbieter
     {
         $this->userDefinedAnyfield = $userDefinedAnyfield;
         return $this;
     }
 
     /**
-     * @param array $userDefinedExtend Setter for userDefinedExtend
-     * @return Anbieter
+     * Returns array of array
      */
-    public function setUserDefinedExtend(array $userDefinedExtend)
+    public function getUserDefinedExtend(): array
     {
-        $this->userDefinedExtend = $userDefinedExtend;
-        return $this;
+        return $this->userDefinedExtend ?? [];
     }
 
-    /**
-     * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
-     * @return Anbieter
-     */
-    public function setUserDefinedSimplefield(array $userDefinedSimplefield)
+    public function setUserDefinedExtend(array $userDefinedExtend): Anbieter
     {
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        $this->userDefinedExtend = $userDefinedExtend;
         return $this;
     }
 }

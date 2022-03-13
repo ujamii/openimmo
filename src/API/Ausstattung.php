@@ -2,6 +2,7 @@
 
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SkipWhenEmpty;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -13,1399 +14,843 @@ use JMS\Serializer\Annotation\XmlRoot;
  */
 class Ausstattung
 {
-    /**
-     */
-    public const AUSSTATT_KATEGORIE_GEHOBEN = 'GEHOBEN';
-
-    /**
-     */
-    public const AUSSTATT_KATEGORIE_LUXUS = 'LUXUS';
-
-    /**
-     */
     public const AUSSTATT_KATEGORIE_STANDARD = 'STANDARD';
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $abstellraum;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\AngeschlGastronomie")
-     * @var AngeschlGastronomie
-     */
-    protected $angeschlGastronomie;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Ausbaustufe")
-     * @var Ausbaustufe
-     */
-    protected $ausbaustufe;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\AusrichtBalkonTerrasse")
-     * @var AusrichtBalkonTerrasse
-     */
-    protected $ausrichtBalkonTerrasse;
+    public const AUSSTATT_KATEGORIE_GEHOBEN = 'GEHOBEN';
+    public const AUSSTATT_KATEGORIE_LUXUS = 'LUXUS';
 
     /**
      * @Type("string")
      * @see AUSSTATT_KATEGORIE_* constants
-     * @var string
      */
-    protected $ausstattKategorie;
+    protected string $ausstattKategorie = '';
 
-    /**
-     * @Type("Ujamii\OpenImmo\API\Bad")
-     * @var Bad
-     */
-    protected $bad;
+    /** @Type("bool") */
+    protected ?bool $wgGeeignet = null;
 
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $barrierefrei;
+    /** @Type("bool") */
+    protected ?bool $raeumeVeraenderbar = null;
 
-    /**
-     * @Type("Ujamii\OpenImmo\API\Bauweise")
-     * @var Bauweise
-     */
-    protected $bauweise;
+    /** @Type("Ujamii\OpenImmo\API\Bad") */
+    protected ?Bad $bad = null;
 
-    /**
-     * @Type("Ujamii\OpenImmo\API\Befeuerung")
-     * @var Befeuerung
-     */
-    protected $befeuerung;
+    /** @Type("Ujamii\OpenImmo\API\Kueche") */
+    protected ?Kueche $kueche = null;
 
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $bibliothek;
+    /** @Type("Ujamii\OpenImmo\API\Boden") */
+    protected ?Boden $boden = null;
 
-    /**
-     * @Type("Ujamii\OpenImmo\API\Boden")
-     * @var Boden
-     */
-    protected $boden;
+    /** @Type("bool") */
+    protected ?bool $kamin = null;
 
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $brauereibindung;
+    /** @Type("Ujamii\OpenImmo\API\Heizungsart") */
+    protected ?Heizungsart $heizungsart = null;
 
-    /**
-     * @Type("Ujamii\OpenImmo\API\BreitbandZugang")
-     * @var BreitbandZugang
-     */
-    protected $breitbandZugang;
+    /** @Type("Ujamii\OpenImmo\API\Befeuerung") */
+    protected ?Befeuerung $befeuerung = null;
 
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $dachboden;
+    /** @Type("bool") */
+    protected ?bool $klimatisiert = null;
 
-    /**
-     * @Type("Ujamii\OpenImmo\API\Dachform")
-     * @var Dachform
-     */
-    protected $dachform;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $dvbt;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $dvVerkabelung;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Energietyp")
-     * @var Energietyp
-     */
-    protected $energietyp;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $fahrradraum;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Fahrstuhl")
-     * @var Fahrstuhl
-     */
-    protected $fahrstuhl;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $gaestewc;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $gartennutzung;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $gastterrasse;
-
-    /**
-     * @Type("float")
-     * @var float
-     */
-    protected $hallenhoehe;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $hebebuehne;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Heizungsart")
-     * @var Heizungsart
-     */
-    protected $heizungsart;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $kabelkanaele;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $kabelSatTv;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $kamin;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $kantineCafeteria;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $klimatisiert;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $kran;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Kueche")
-     * @var Kueche
-     */
-    protected $kueche;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Moebliert")
-     * @var Moebliert
-     */
-    protected $moebliert;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $raeumeVeraenderbar;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $rampe;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $rolladen;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $rollstuhlgerecht;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $sauna;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $seniorengerecht;
-
-    /**
-     * @XmlList(inline = true, entry = "serviceleistungen")
-     * @Type("array<Ujamii\OpenImmo\API\Serviceleistungen>")
-     * @var Serviceleistungen[]
-     */
-    protected $serviceleistungen;
-
-    /**
-     * @Type("Ujamii\OpenImmo\API\Sicherheitstechnik")
-     * @var Sicherheitstechnik
-     */
-    protected $sicherheitstechnik;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $sporteinrichtungen;
+    /** @Type("Ujamii\OpenImmo\API\Fahrstuhl") */
+    protected ?Fahrstuhl $fahrstuhl = null;
 
     /**
      * @XmlList(inline = true, entry = "stellplatzart")
      * @Type("array<Ujamii\OpenImmo\API\Stellplatzart>")
-     * @var Stellplatzart[]
+     * @SkipWhenEmpty
      */
-    protected $stellplatzart;
+    protected array $stellplatzart = [];
+
+    /** @Type("bool") */
+    protected ?bool $gartennutzung = null;
+
+    /** @Type("Ujamii\OpenImmo\API\AusrichtBalkonTerrasse") */
+    protected ?AusrichtBalkonTerrasse $ausrichtBalkonTerrasse = null;
+
+    /** @Type("Ujamii\OpenImmo\API\Moebliert") */
+    protected ?Moebliert $moebliert = null;
+
+    /** @Type("bool") */
+    protected ?bool $rollstuhlgerecht = null;
+
+    /** @Type("bool") */
+    protected ?bool $kabelSatTv = null;
+
+    /** @Type("bool") */
+    protected ?bool $dvbt = null;
+
+    /** @Type("bool") */
+    protected ?bool $barrierefrei = null;
+
+    /** @Type("bool") */
+    protected ?bool $sauna = null;
+
+    /** @Type("bool") */
+    protected ?bool $swimmingpool = null;
+
+    /** @Type("bool") */
+    protected ?bool $waschTrockenraum = null;
+
+    /** @Type("bool") */
+    protected ?bool $wintergarten = null;
+
+    /** @Type("bool") */
+    protected ?bool $dvVerkabelung = null;
+
+    /** @Type("bool") */
+    protected ?bool $rampe = null;
+
+    /** @Type("bool") */
+    protected ?bool $hebebuehne = null;
+
+    /** @Type("bool") */
+    protected ?bool $kran = null;
+
+    /** @Type("bool") */
+    protected ?bool $gastterrasse = null;
+
+    /** @Type("string") */
+    protected ?string $stromanschlusswert = null;
+
+    /** @Type("bool") */
+    protected ?bool $kantineCafeteria = null;
+
+    /** @Type("bool") */
+    protected ?bool $teekueche = null;
+
+    /** @Type("float") */
+    protected ?float $hallenhoehe = null;
+
+    /** @Type("Ujamii\OpenImmo\API\AngeschlGastronomie") */
+    protected ?AngeschlGastronomie $angeschlGastronomie = null;
+
+    /** @Type("bool") */
+    protected ?bool $brauereibindung = null;
+
+    /** @Type("bool") */
+    protected ?bool $sporteinrichtungen = null;
+
+    /** @Type("bool") */
+    protected ?bool $wellnessbereich = null;
 
     /**
-     * @Type("string")
-     * @var string
+     * @XmlList(inline = true, entry = "serviceleistungen")
+     * @Type("array<Ujamii\OpenImmo\API\Serviceleistungen>")
+     * @SkipWhenEmpty
      */
-    protected $stromanschlusswert;
+    protected array $serviceleistungen = [];
 
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $swimmingpool;
+    /** @Type("bool") */
+    protected ?bool $telefonFerienimmobilie = null;
 
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $teekueche;
+    /** @Type("Ujamii\OpenImmo\API\BreitbandZugang") */
+    protected ?BreitbandZugang $breitbandZugang = null;
 
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $telefonFerienimmobilie;
+    /** @Type("bool") */
+    protected ?bool $umtsEmpfang = null;
 
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $umtsEmpfang;
+    /** @Type("Ujamii\OpenImmo\API\Sicherheitstechnik") */
+    protected ?Sicherheitstechnik $sicherheitstechnik = null;
 
-    /**
-     * @Type("Ujamii\OpenImmo\API\Unterkellert")
-     * @var Unterkellert
-     */
-    protected $unterkellert;
+    /** @Type("Ujamii\OpenImmo\API\Unterkellert") */
+    protected ?Unterkellert $unterkellert = null;
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @var UserDefinedAnyfield[]
-     */
-    protected $userDefinedAnyfield;
+    /** @Type("bool") */
+    protected ?bool $abstellraum = null;
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @var UserDefinedExtend[]
-     */
-    protected $userDefinedExtend;
+    /** @Type("bool") */
+    protected ?bool $fahrradraum = null;
+
+    /** @Type("bool") */
+    protected ?bool $rolladen = null;
+
+    /** @Type("Ujamii\OpenImmo\API\Dachform") */
+    protected ?Dachform $dachform = null;
+
+    /** @Type("Ujamii\OpenImmo\API\Bauweise") */
+    protected ?Bauweise $bauweise = null;
+
+    /** @Type("Ujamii\OpenImmo\API\Ausbaustufe") */
+    protected ?Ausbaustufe $ausbaustufe = null;
+
+    /** @Type("Ujamii\OpenImmo\API\Energietyp") */
+    protected ?Energietyp $energietyp = null;
+
+    /** @Type("bool") */
+    protected ?bool $bibliothek = null;
+
+    /** @Type("bool") */
+    protected ?bool $dachboden = null;
+
+    /** @Type("bool") */
+    protected ?bool $gaestewc = null;
+
+    /** @Type("bool") */
+    protected ?bool $kabelkanaele = null;
+
+    /** @Type("bool") */
+    protected ?bool $seniorengerecht = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @var UserDefinedSimplefield[]
+     * @SkipWhenEmpty
      */
-    protected $userDefinedSimplefield;
+    protected array $userDefinedSimplefield = [];
 
     /**
-     * @Type("bool")
-     * @var bool
+     * @XmlList(inline = true, entry = "user_defined_anyfield")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
+     * @SkipWhenEmpty
      */
-    protected $waschTrockenraum;
+    protected array $userDefinedAnyfield = [];
 
     /**
-     * @Type("bool")
-     * @var bool
+     * @XmlList(inline = true, entry = "user_defined_extend")
+     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
+     * @SkipWhenEmpty
      */
-    protected $wellnessbereich;
+    protected array $userDefinedExtend = [];
 
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $wgGeeignet;
-
-    /**
-     * @Type("bool")
-     * @var bool
-     */
-    protected $wintergarten;
-
-    /**
-     * @return bool
-     */
-    public function getAbstellraum(): ?bool
-    {
-        return $this->abstellraum;
-    }
-
-    /**
-     * @return AngeschlGastronomie
-     */
-    public function getAngeschlGastronomie(): ?AngeschlGastronomie
-    {
-        return $this->angeschlGastronomie;
-    }
-
-    /**
-     * @return Ausbaustufe
-     */
-    public function getAusbaustufe(): ?Ausbaustufe
-    {
-        return $this->ausbaustufe;
-    }
-
-    /**
-     * @return AusrichtBalkonTerrasse
-     */
-    public function getAusrichtBalkonTerrasse(): ?AusrichtBalkonTerrasse
-    {
-        return $this->ausrichtBalkonTerrasse;
-    }
-
-    /**
-     * @return string
-     */
     public function getAusstattKategorie(): ?string
     {
         return $this->ausstattKategorie;
     }
 
-    /**
-     * @return Bad
-     */
-    public function getBad(): ?Bad
-    {
-        return $this->bad;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getBarrierefrei(): ?bool
-    {
-        return $this->barrierefrei;
-    }
-
-    /**
-     * @return Bauweise
-     */
-    public function getBauweise(): ?Bauweise
-    {
-        return $this->bauweise;
-    }
-
-    /**
-     * @return Befeuerung
-     */
-    public function getBefeuerung(): ?Befeuerung
-    {
-        return $this->befeuerung;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getBibliothek(): ?bool
-    {
-        return $this->bibliothek;
-    }
-
-    /**
-     * @return Boden
-     */
-    public function getBoden(): ?Boden
-    {
-        return $this->boden;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getBrauereibindung(): ?bool
-    {
-        return $this->brauereibindung;
-    }
-
-    /**
-     * @return BreitbandZugang
-     */
-    public function getBreitbandZugang(): ?BreitbandZugang
-    {
-        return $this->breitbandZugang;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getDachboden(): ?bool
-    {
-        return $this->dachboden;
-    }
-
-    /**
-     * @return Dachform
-     */
-    public function getDachform(): ?Dachform
-    {
-        return $this->dachform;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getDvbt(): ?bool
-    {
-        return $this->dvbt;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getDvVerkabelung(): ?bool
-    {
-        return $this->dvVerkabelung;
-    }
-
-    /**
-     * @return Energietyp
-     */
-    public function getEnergietyp(): ?Energietyp
-    {
-        return $this->energietyp;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getFahrradraum(): ?bool
-    {
-        return $this->fahrradraum;
-    }
-
-    /**
-     * @return Fahrstuhl
-     */
-    public function getFahrstuhl(): ?Fahrstuhl
-    {
-        return $this->fahrstuhl;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getGaestewc(): ?bool
-    {
-        return $this->gaestewc;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getGartennutzung(): ?bool
-    {
-        return $this->gartennutzung;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getGastterrasse(): ?bool
-    {
-        return $this->gastterrasse;
-    }
-
-    /**
-     * @return float
-     */
-    public function getHallenhoehe(): ?float
-    {
-        return $this->hallenhoehe;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getHebebuehne(): ?bool
-    {
-        return $this->hebebuehne;
-    }
-
-    /**
-     * @return Heizungsart
-     */
-    public function getHeizungsart(): ?Heizungsart
-    {
-        return $this->heizungsart;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getKabelkanaele(): ?bool
-    {
-        return $this->kabelkanaele;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getKabelSatTv(): ?bool
-    {
-        return $this->kabelSatTv;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getKamin(): ?bool
-    {
-        return $this->kamin;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getKantineCafeteria(): ?bool
-    {
-        return $this->kantineCafeteria;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getKlimatisiert(): ?bool
-    {
-        return $this->klimatisiert;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getKran(): ?bool
-    {
-        return $this->kran;
-    }
-
-    /**
-     * @return Kueche
-     */
-    public function getKueche(): ?Kueche
-    {
-        return $this->kueche;
-    }
-
-    /**
-     * @return Moebliert
-     */
-    public function getMoebliert(): ?Moebliert
-    {
-        return $this->moebliert;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getRaeumeVeraenderbar(): ?bool
-    {
-        return $this->raeumeVeraenderbar;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getRampe(): ?bool
-    {
-        return $this->rampe;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getRolladen(): ?bool
-    {
-        return $this->rolladen;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getRollstuhlgerecht(): ?bool
-    {
-        return $this->rollstuhlgerecht;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getSauna(): ?bool
-    {
-        return $this->sauna;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getSeniorengerecht(): ?bool
-    {
-        return $this->seniorengerecht;
-    }
-
-    /**
-     * Returns array of Serviceleistungen
-     *
-     * @return array
-     */
-    public function getServiceleistungen(): array
-    {
-        return $this->serviceleistungen ?? [];
-    }
-
-    /**
-     * @return Sicherheitstechnik
-     */
-    public function getSicherheitstechnik(): ?Sicherheitstechnik
-    {
-        return $this->sicherheitstechnik;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getSporteinrichtungen(): ?bool
-    {
-        return $this->sporteinrichtungen;
-    }
-
-    /**
-     * Returns array of Stellplatzart
-     *
-     * @return array
-     */
-    public function getStellplatzart(): array
-    {
-        return $this->stellplatzart ?? [];
-    }
-
-    /**
-     * @return string
-     */
-    public function getStromanschlusswert(): ?string
-    {
-        return $this->stromanschlusswert;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getSwimmingpool(): ?bool
-    {
-        return $this->swimmingpool;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getTeekueche(): ?bool
-    {
-        return $this->teekueche;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getTelefonFerienimmobilie(): ?bool
-    {
-        return $this->telefonFerienimmobilie;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getUmtsEmpfang(): ?bool
-    {
-        return $this->umtsEmpfang;
-    }
-
-    /**
-     * @return Unterkellert
-     */
-    public function getUnterkellert(): ?Unterkellert
-    {
-        return $this->unterkellert;
-    }
-
-    /**
-     * Returns array of UserDefinedAnyfield
-     *
-     * @return array
-     */
-    public function getUserDefinedAnyfield(): array
-    {
-        return $this->userDefinedAnyfield ?? [];
-    }
-
-    /**
-     * Returns array of UserDefinedExtend
-     *
-     * @return array
-     */
-    public function getUserDefinedExtend(): array
-    {
-        return $this->userDefinedExtend ?? [];
-    }
-
-    /**
-     * Returns array of UserDefinedSimplefield
-     *
-     * @return array
-     */
-    public function getUserDefinedSimplefield(): array
-    {
-        return $this->userDefinedSimplefield ?? [];
-    }
-
-    /**
-     * @return bool
-     */
-    public function getWaschTrockenraum(): ?bool
-    {
-        return $this->waschTrockenraum;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getWellnessbereich(): ?bool
-    {
-        return $this->wellnessbereich;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getWgGeeignet(): ?bool
-    {
-        return $this->wgGeeignet;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getWintergarten(): ?bool
-    {
-        return $this->wintergarten;
-    }
-
-    /**
-     * @param bool $abstellraum Setter for abstellraum
-     * @return Ausstattung
-     */
-    public function setAbstellraum(?bool $abstellraum)
-    {
-        $this->abstellraum = $abstellraum;
-        return $this;
-    }
-
-    /**
-     * @param AngeschlGastronomie $angeschlGastronomie Setter for angeschlGastronomie
-     * @return Ausstattung
-     */
-    public function setAngeschlGastronomie(?AngeschlGastronomie $angeschlGastronomie)
-    {
-        $this->angeschlGastronomie = $angeschlGastronomie;
-        return $this;
-    }
-
-    /**
-     * @param Ausbaustufe $ausbaustufe Setter for ausbaustufe
-     * @return Ausstattung
-     */
-    public function setAusbaustufe(?Ausbaustufe $ausbaustufe)
-    {
-        $this->ausbaustufe = $ausbaustufe;
-        return $this;
-    }
-
-    /**
-     * @param AusrichtBalkonTerrasse $ausrichtBalkonTerrasse Setter for ausrichtBalkonTerrasse
-     * @return Ausstattung
-     */
-    public function setAusrichtBalkonTerrasse(?AusrichtBalkonTerrasse $ausrichtBalkonTerrasse)
-    {
-        $this->ausrichtBalkonTerrasse = $ausrichtBalkonTerrasse;
-        return $this;
-    }
-
-    /**
-     * @param string $ausstattKategorie Setter for ausstattKategorie
-     * @return Ausstattung
-     */
-    public function setAusstattKategorie(?string $ausstattKategorie)
+    public function setAusstattKategorie(?string $ausstattKategorie): Ausstattung
     {
         $this->ausstattKategorie = $ausstattKategorie;
         return $this;
     }
 
-    /**
-     * @param Bad $bad Setter for bad
-     * @return Ausstattung
-     */
-    public function setBad(?Bad $bad)
+    public function getWgGeeignet(): ?bool
+    {
+        return $this->wgGeeignet;
+    }
+
+    public function setWgGeeignet(?bool $wgGeeignet): Ausstattung
+    {
+        $this->wgGeeignet = $wgGeeignet;
+        return $this;
+    }
+
+    public function getRaeumeVeraenderbar(): ?bool
+    {
+        return $this->raeumeVeraenderbar;
+    }
+
+    public function setRaeumeVeraenderbar(?bool $raeumeVeraenderbar): Ausstattung
+    {
+        $this->raeumeVeraenderbar = $raeumeVeraenderbar;
+        return $this;
+    }
+
+    public function getBad(): ?Bad
+    {
+        return $this->bad;
+    }
+
+    public function setBad(?Bad $bad): Ausstattung
     {
         $this->bad = $bad;
         return $this;
     }
 
-    /**
-     * @param bool $barrierefrei Setter for barrierefrei
-     * @return Ausstattung
-     */
-    public function setBarrierefrei(?bool $barrierefrei)
+    public function getKueche(): ?Kueche
     {
-        $this->barrierefrei = $barrierefrei;
+        return $this->kueche;
+    }
+
+    public function setKueche(?Kueche $kueche): Ausstattung
+    {
+        $this->kueche = $kueche;
         return $this;
     }
 
-    /**
-     * @param Bauweise $bauweise Setter for bauweise
-     * @return Ausstattung
-     */
-    public function setBauweise(?Bauweise $bauweise)
+    public function getBoden(): ?Boden
     {
-        $this->bauweise = $bauweise;
-        return $this;
+        return $this->boden;
     }
 
-    /**
-     * @param Befeuerung $befeuerung Setter for befeuerung
-     * @return Ausstattung
-     */
-    public function setBefeuerung(?Befeuerung $befeuerung)
-    {
-        $this->befeuerung = $befeuerung;
-        return $this;
-    }
-
-    /**
-     * @param bool $bibliothek Setter for bibliothek
-     * @return Ausstattung
-     */
-    public function setBibliothek(?bool $bibliothek)
-    {
-        $this->bibliothek = $bibliothek;
-        return $this;
-    }
-
-    /**
-     * @param Boden $boden Setter for boden
-     * @return Ausstattung
-     */
-    public function setBoden(?Boden $boden)
+    public function setBoden(?Boden $boden): Ausstattung
     {
         $this->boden = $boden;
         return $this;
     }
 
-    /**
-     * @param bool $brauereibindung Setter for brauereibindung
-     * @return Ausstattung
-     */
-    public function setBrauereibindung(?bool $brauereibindung)
+    public function getKamin(): ?bool
     {
-        $this->brauereibindung = $brauereibindung;
+        return $this->kamin;
+    }
+
+    public function setKamin(?bool $kamin): Ausstattung
+    {
+        $this->kamin = $kamin;
         return $this;
     }
 
-    /**
-     * @param BreitbandZugang $breitbandZugang Setter for breitbandZugang
-     * @return Ausstattung
-     */
-    public function setBreitbandZugang(?BreitbandZugang $breitbandZugang)
+    public function getHeizungsart(): ?Heizungsart
     {
-        $this->breitbandZugang = $breitbandZugang;
+        return $this->heizungsart;
+    }
+
+    public function setHeizungsart(?Heizungsart $heizungsart): Ausstattung
+    {
+        $this->heizungsart = $heizungsart;
         return $this;
     }
 
-    /**
-     * @param bool $dachboden Setter for dachboden
-     * @return Ausstattung
-     */
-    public function setDachboden(?bool $dachboden)
+    public function getBefeuerung(): ?Befeuerung
     {
-        $this->dachboden = $dachboden;
+        return $this->befeuerung;
+    }
+
+    public function setBefeuerung(?Befeuerung $befeuerung): Ausstattung
+    {
+        $this->befeuerung = $befeuerung;
         return $this;
     }
 
-    /**
-     * @param Dachform $dachform Setter for dachform
-     * @return Ausstattung
-     */
-    public function setDachform(?Dachform $dachform)
+    public function getKlimatisiert(): ?bool
     {
-        $this->dachform = $dachform;
+        return $this->klimatisiert;
+    }
+
+    public function setKlimatisiert(?bool $klimatisiert): Ausstattung
+    {
+        $this->klimatisiert = $klimatisiert;
         return $this;
     }
 
-    /**
-     * @param bool $dvbt Setter for dvbt
-     * @return Ausstattung
-     */
-    public function setDvbt(?bool $dvbt)
+    public function getFahrstuhl(): ?Fahrstuhl
     {
-        $this->dvbt = $dvbt;
-        return $this;
+        return $this->fahrstuhl;
     }
 
-    /**
-     * @param bool $dvVerkabelung Setter for dvVerkabelung
-     * @return Ausstattung
-     */
-    public function setDvVerkabelung(?bool $dvVerkabelung)
-    {
-        $this->dvVerkabelung = $dvVerkabelung;
-        return $this;
-    }
-
-    /**
-     * @param Energietyp $energietyp Setter for energietyp
-     * @return Ausstattung
-     */
-    public function setEnergietyp(?Energietyp $energietyp)
-    {
-        $this->energietyp = $energietyp;
-        return $this;
-    }
-
-    /**
-     * @param bool $fahrradraum Setter for fahrradraum
-     * @return Ausstattung
-     */
-    public function setFahrradraum(?bool $fahrradraum)
-    {
-        $this->fahrradraum = $fahrradraum;
-        return $this;
-    }
-
-    /**
-     * @param Fahrstuhl $fahrstuhl Setter for fahrstuhl
-     * @return Ausstattung
-     */
-    public function setFahrstuhl(?Fahrstuhl $fahrstuhl)
+    public function setFahrstuhl(?Fahrstuhl $fahrstuhl): Ausstattung
     {
         $this->fahrstuhl = $fahrstuhl;
         return $this;
     }
 
     /**
-     * @param bool $gaestewc Setter for gaestewc
-     * @return Ausstattung
+     * Returns array of array
      */
-    public function setGaestewc(?bool $gaestewc)
+    public function getStellplatzart(): array
     {
-        $this->gaestewc = $gaestewc;
-        return $this;
+        return $this->stellplatzart ?? [];
     }
 
-    /**
-     * @param bool $gartennutzung Setter for gartennutzung
-     * @return Ausstattung
-     */
-    public function setGartennutzung(?bool $gartennutzung)
-    {
-        $this->gartennutzung = $gartennutzung;
-        return $this;
-    }
-
-    /**
-     * @param bool $gastterrasse Setter for gastterrasse
-     * @return Ausstattung
-     */
-    public function setGastterrasse(?bool $gastterrasse)
-    {
-        $this->gastterrasse = $gastterrasse;
-        return $this;
-    }
-
-    /**
-     * @param float $hallenhoehe Setter for hallenhoehe
-     * @return Ausstattung
-     */
-    public function setHallenhoehe(?float $hallenhoehe)
-    {
-        $this->hallenhoehe = $hallenhoehe;
-        return $this;
-    }
-
-    /**
-     * @param bool $hebebuehne Setter for hebebuehne
-     * @return Ausstattung
-     */
-    public function setHebebuehne(?bool $hebebuehne)
-    {
-        $this->hebebuehne = $hebebuehne;
-        return $this;
-    }
-
-    /**
-     * @param Heizungsart $heizungsart Setter for heizungsart
-     * @return Ausstattung
-     */
-    public function setHeizungsart(?Heizungsart $heizungsart)
-    {
-        $this->heizungsart = $heizungsart;
-        return $this;
-    }
-
-    /**
-     * @param bool $kabelkanaele Setter for kabelkanaele
-     * @return Ausstattung
-     */
-    public function setKabelkanaele(?bool $kabelkanaele)
-    {
-        $this->kabelkanaele = $kabelkanaele;
-        return $this;
-    }
-
-    /**
-     * @param bool $kabelSatTv Setter for kabelSatTv
-     * @return Ausstattung
-     */
-    public function setKabelSatTv(?bool $kabelSatTv)
-    {
-        $this->kabelSatTv = $kabelSatTv;
-        return $this;
-    }
-
-    /**
-     * @param bool $kamin Setter for kamin
-     * @return Ausstattung
-     */
-    public function setKamin(?bool $kamin)
-    {
-        $this->kamin = $kamin;
-        return $this;
-    }
-
-    /**
-     * @param bool $kantineCafeteria Setter for kantineCafeteria
-     * @return Ausstattung
-     */
-    public function setKantineCafeteria(?bool $kantineCafeteria)
-    {
-        $this->kantineCafeteria = $kantineCafeteria;
-        return $this;
-    }
-
-    /**
-     * @param bool $klimatisiert Setter for klimatisiert
-     * @return Ausstattung
-     */
-    public function setKlimatisiert(?bool $klimatisiert)
-    {
-        $this->klimatisiert = $klimatisiert;
-        return $this;
-    }
-
-    /**
-     * @param bool $kran Setter for kran
-     * @return Ausstattung
-     */
-    public function setKran(?bool $kran)
-    {
-        $this->kran = $kran;
-        return $this;
-    }
-
-    /**
-     * @param Kueche $kueche Setter for kueche
-     * @return Ausstattung
-     */
-    public function setKueche(?Kueche $kueche)
-    {
-        $this->kueche = $kueche;
-        return $this;
-    }
-
-    /**
-     * @param Moebliert $moebliert Setter for moebliert
-     * @return Ausstattung
-     */
-    public function setMoebliert(?Moebliert $moebliert)
-    {
-        $this->moebliert = $moebliert;
-        return $this;
-    }
-
-    /**
-     * @param bool $raeumeVeraenderbar Setter for raeumeVeraenderbar
-     * @return Ausstattung
-     */
-    public function setRaeumeVeraenderbar(?bool $raeumeVeraenderbar)
-    {
-        $this->raeumeVeraenderbar = $raeumeVeraenderbar;
-        return $this;
-    }
-
-    /**
-     * @param bool $rampe Setter for rampe
-     * @return Ausstattung
-     */
-    public function setRampe(?bool $rampe)
-    {
-        $this->rampe = $rampe;
-        return $this;
-    }
-
-    /**
-     * @param bool $rolladen Setter for rolladen
-     * @return Ausstattung
-     */
-    public function setRolladen(?bool $rolladen)
-    {
-        $this->rolladen = $rolladen;
-        return $this;
-    }
-
-    /**
-     * @param bool $rollstuhlgerecht Setter for rollstuhlgerecht
-     * @return Ausstattung
-     */
-    public function setRollstuhlgerecht(?bool $rollstuhlgerecht)
-    {
-        $this->rollstuhlgerecht = $rollstuhlgerecht;
-        return $this;
-    }
-
-    /**
-     * @param bool $sauna Setter for sauna
-     * @return Ausstattung
-     */
-    public function setSauna(?bool $sauna)
-    {
-        $this->sauna = $sauna;
-        return $this;
-    }
-
-    /**
-     * @param bool $seniorengerecht Setter for seniorengerecht
-     * @return Ausstattung
-     */
-    public function setSeniorengerecht(?bool $seniorengerecht)
-    {
-        $this->seniorengerecht = $seniorengerecht;
-        return $this;
-    }
-
-    /**
-     * @param array $serviceleistungen Setter for serviceleistungen
-     * @return Ausstattung
-     */
-    public function setServiceleistungen(array $serviceleistungen)
-    {
-        $this->serviceleistungen = $serviceleistungen;
-        return $this;
-    }
-
-    /**
-     * @param Sicherheitstechnik $sicherheitstechnik Setter for sicherheitstechnik
-     * @return Ausstattung
-     */
-    public function setSicherheitstechnik(?Sicherheitstechnik $sicherheitstechnik)
-    {
-        $this->sicherheitstechnik = $sicherheitstechnik;
-        return $this;
-    }
-
-    /**
-     * @param bool $sporteinrichtungen Setter for sporteinrichtungen
-     * @return Ausstattung
-     */
-    public function setSporteinrichtungen(?bool $sporteinrichtungen)
-    {
-        $this->sporteinrichtungen = $sporteinrichtungen;
-        return $this;
-    }
-
-    /**
-     * @param array $stellplatzart Setter for stellplatzart
-     * @return Ausstattung
-     */
-    public function setStellplatzart(array $stellplatzart)
+    public function setStellplatzart(array $stellplatzart): Ausstattung
     {
         $this->stellplatzart = $stellplatzart;
         return $this;
     }
 
-    /**
-     * @param string $stromanschlusswert Setter for stromanschlusswert
-     * @return Ausstattung
-     */
-    public function setStromanschlusswert(?string $stromanschlusswert)
+    public function getGartennutzung(): ?bool
     {
-        $this->stromanschlusswert = $stromanschlusswert;
+        return $this->gartennutzung;
+    }
+
+    public function setGartennutzung(?bool $gartennutzung): Ausstattung
+    {
+        $this->gartennutzung = $gartennutzung;
         return $this;
     }
 
-    /**
-     * @param bool $swimmingpool Setter for swimmingpool
-     * @return Ausstattung
-     */
-    public function setSwimmingpool(?bool $swimmingpool)
+    public function getAusrichtBalkonTerrasse(): ?AusrichtBalkonTerrasse
+    {
+        return $this->ausrichtBalkonTerrasse;
+    }
+
+    public function setAusrichtBalkonTerrasse(?AusrichtBalkonTerrasse $ausrichtBalkonTerrasse): Ausstattung
+    {
+        $this->ausrichtBalkonTerrasse = $ausrichtBalkonTerrasse;
+        return $this;
+    }
+
+    public function getMoebliert(): ?Moebliert
+    {
+        return $this->moebliert;
+    }
+
+    public function setMoebliert(?Moebliert $moebliert): Ausstattung
+    {
+        $this->moebliert = $moebliert;
+        return $this;
+    }
+
+    public function getRollstuhlgerecht(): ?bool
+    {
+        return $this->rollstuhlgerecht;
+    }
+
+    public function setRollstuhlgerecht(?bool $rollstuhlgerecht): Ausstattung
+    {
+        $this->rollstuhlgerecht = $rollstuhlgerecht;
+        return $this;
+    }
+
+    public function getKabelSatTv(): ?bool
+    {
+        return $this->kabelSatTv;
+    }
+
+    public function setKabelSatTv(?bool $kabelSatTv): Ausstattung
+    {
+        $this->kabelSatTv = $kabelSatTv;
+        return $this;
+    }
+
+    public function getDvbt(): ?bool
+    {
+        return $this->dvbt;
+    }
+
+    public function setDvbt(?bool $dvbt): Ausstattung
+    {
+        $this->dvbt = $dvbt;
+        return $this;
+    }
+
+    public function getBarrierefrei(): ?bool
+    {
+        return $this->barrierefrei;
+    }
+
+    public function setBarrierefrei(?bool $barrierefrei): Ausstattung
+    {
+        $this->barrierefrei = $barrierefrei;
+        return $this;
+    }
+
+    public function getSauna(): ?bool
+    {
+        return $this->sauna;
+    }
+
+    public function setSauna(?bool $sauna): Ausstattung
+    {
+        $this->sauna = $sauna;
+        return $this;
+    }
+
+    public function getSwimmingpool(): ?bool
+    {
+        return $this->swimmingpool;
+    }
+
+    public function setSwimmingpool(?bool $swimmingpool): Ausstattung
     {
         $this->swimmingpool = $swimmingpool;
         return $this;
     }
 
-    /**
-     * @param bool $teekueche Setter for teekueche
-     * @return Ausstattung
-     */
-    public function setTeekueche(?bool $teekueche)
+    public function getWaschTrockenraum(): ?bool
     {
-        $this->teekueche = $teekueche;
-        return $this;
+        return $this->waschTrockenraum;
     }
 
-    /**
-     * @param bool $telefonFerienimmobilie Setter for telefonFerienimmobilie
-     * @return Ausstattung
-     */
-    public function setTelefonFerienimmobilie(?bool $telefonFerienimmobilie)
-    {
-        $this->telefonFerienimmobilie = $telefonFerienimmobilie;
-        return $this;
-    }
-
-    /**
-     * @param bool $umtsEmpfang Setter for umtsEmpfang
-     * @return Ausstattung
-     */
-    public function setUmtsEmpfang(?bool $umtsEmpfang)
-    {
-        $this->umtsEmpfang = $umtsEmpfang;
-        return $this;
-    }
-
-    /**
-     * @param Unterkellert $unterkellert Setter for unterkellert
-     * @return Ausstattung
-     */
-    public function setUnterkellert(?Unterkellert $unterkellert)
-    {
-        $this->unterkellert = $unterkellert;
-        return $this;
-    }
-
-    /**
-     * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
-     * @return Ausstattung
-     */
-    public function setUserDefinedAnyfield(array $userDefinedAnyfield)
-    {
-        $this->userDefinedAnyfield = $userDefinedAnyfield;
-        return $this;
-    }
-
-    /**
-     * @param array $userDefinedExtend Setter for userDefinedExtend
-     * @return Ausstattung
-     */
-    public function setUserDefinedExtend(array $userDefinedExtend)
-    {
-        $this->userDefinedExtend = $userDefinedExtend;
-        return $this;
-    }
-
-    /**
-     * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
-     * @return Ausstattung
-     */
-    public function setUserDefinedSimplefield(array $userDefinedSimplefield)
-    {
-        $this->userDefinedSimplefield = $userDefinedSimplefield;
-        return $this;
-    }
-
-    /**
-     * @param bool $waschTrockenraum Setter for waschTrockenraum
-     * @return Ausstattung
-     */
-    public function setWaschTrockenraum(?bool $waschTrockenraum)
+    public function setWaschTrockenraum(?bool $waschTrockenraum): Ausstattung
     {
         $this->waschTrockenraum = $waschTrockenraum;
         return $this;
     }
 
-    /**
-     * @param bool $wellnessbereich Setter for wellnessbereich
-     * @return Ausstattung
-     */
-    public function setWellnessbereich(?bool $wellnessbereich)
+    public function getWintergarten(): ?bool
+    {
+        return $this->wintergarten;
+    }
+
+    public function setWintergarten(?bool $wintergarten): Ausstattung
+    {
+        $this->wintergarten = $wintergarten;
+        return $this;
+    }
+
+    public function getDvVerkabelung(): ?bool
+    {
+        return $this->dvVerkabelung;
+    }
+
+    public function setDvVerkabelung(?bool $dvVerkabelung): Ausstattung
+    {
+        $this->dvVerkabelung = $dvVerkabelung;
+        return $this;
+    }
+
+    public function getRampe(): ?bool
+    {
+        return $this->rampe;
+    }
+
+    public function setRampe(?bool $rampe): Ausstattung
+    {
+        $this->rampe = $rampe;
+        return $this;
+    }
+
+    public function getHebebuehne(): ?bool
+    {
+        return $this->hebebuehne;
+    }
+
+    public function setHebebuehne(?bool $hebebuehne): Ausstattung
+    {
+        $this->hebebuehne = $hebebuehne;
+        return $this;
+    }
+
+    public function getKran(): ?bool
+    {
+        return $this->kran;
+    }
+
+    public function setKran(?bool $kran): Ausstattung
+    {
+        $this->kran = $kran;
+        return $this;
+    }
+
+    public function getGastterrasse(): ?bool
+    {
+        return $this->gastterrasse;
+    }
+
+    public function setGastterrasse(?bool $gastterrasse): Ausstattung
+    {
+        $this->gastterrasse = $gastterrasse;
+        return $this;
+    }
+
+    public function getStromanschlusswert(): ?string
+    {
+        return $this->stromanschlusswert;
+    }
+
+    public function setStromanschlusswert(?string $stromanschlusswert): Ausstattung
+    {
+        $this->stromanschlusswert = $stromanschlusswert;
+        return $this;
+    }
+
+    public function getKantineCafeteria(): ?bool
+    {
+        return $this->kantineCafeteria;
+    }
+
+    public function setKantineCafeteria(?bool $kantineCafeteria): Ausstattung
+    {
+        $this->kantineCafeteria = $kantineCafeteria;
+        return $this;
+    }
+
+    public function getTeekueche(): ?bool
+    {
+        return $this->teekueche;
+    }
+
+    public function setTeekueche(?bool $teekueche): Ausstattung
+    {
+        $this->teekueche = $teekueche;
+        return $this;
+    }
+
+    public function getHallenhoehe(): ?float
+    {
+        return $this->hallenhoehe;
+    }
+
+    public function setHallenhoehe(?float $hallenhoehe): Ausstattung
+    {
+        $this->hallenhoehe = $hallenhoehe;
+        return $this;
+    }
+
+    public function getAngeschlGastronomie(): ?AngeschlGastronomie
+    {
+        return $this->angeschlGastronomie;
+    }
+
+    public function setAngeschlGastronomie(?AngeschlGastronomie $angeschlGastronomie): Ausstattung
+    {
+        $this->angeschlGastronomie = $angeschlGastronomie;
+        return $this;
+    }
+
+    public function getBrauereibindung(): ?bool
+    {
+        return $this->brauereibindung;
+    }
+
+    public function setBrauereibindung(?bool $brauereibindung): Ausstattung
+    {
+        $this->brauereibindung = $brauereibindung;
+        return $this;
+    }
+
+    public function getSporteinrichtungen(): ?bool
+    {
+        return $this->sporteinrichtungen;
+    }
+
+    public function setSporteinrichtungen(?bool $sporteinrichtungen): Ausstattung
+    {
+        $this->sporteinrichtungen = $sporteinrichtungen;
+        return $this;
+    }
+
+    public function getWellnessbereich(): ?bool
+    {
+        return $this->wellnessbereich;
+    }
+
+    public function setWellnessbereich(?bool $wellnessbereich): Ausstattung
     {
         $this->wellnessbereich = $wellnessbereich;
         return $this;
     }
 
     /**
-     * @param bool $wgGeeignet Setter for wgGeeignet
-     * @return Ausstattung
+     * Returns array of array
      */
-    public function setWgGeeignet(?bool $wgGeeignet)
+    public function getServiceleistungen(): array
     {
-        $this->wgGeeignet = $wgGeeignet;
+        return $this->serviceleistungen ?? [];
+    }
+
+    public function setServiceleistungen(array $serviceleistungen): Ausstattung
+    {
+        $this->serviceleistungen = $serviceleistungen;
+        return $this;
+    }
+
+    public function getTelefonFerienimmobilie(): ?bool
+    {
+        return $this->telefonFerienimmobilie;
+    }
+
+    public function setTelefonFerienimmobilie(?bool $telefonFerienimmobilie): Ausstattung
+    {
+        $this->telefonFerienimmobilie = $telefonFerienimmobilie;
+        return $this;
+    }
+
+    public function getBreitbandZugang(): ?BreitbandZugang
+    {
+        return $this->breitbandZugang;
+    }
+
+    public function setBreitbandZugang(?BreitbandZugang $breitbandZugang): Ausstattung
+    {
+        $this->breitbandZugang = $breitbandZugang;
+        return $this;
+    }
+
+    public function getUmtsEmpfang(): ?bool
+    {
+        return $this->umtsEmpfang;
+    }
+
+    public function setUmtsEmpfang(?bool $umtsEmpfang): Ausstattung
+    {
+        $this->umtsEmpfang = $umtsEmpfang;
+        return $this;
+    }
+
+    public function getSicherheitstechnik(): ?Sicherheitstechnik
+    {
+        return $this->sicherheitstechnik;
+    }
+
+    public function setSicherheitstechnik(?Sicherheitstechnik $sicherheitstechnik): Ausstattung
+    {
+        $this->sicherheitstechnik = $sicherheitstechnik;
+        return $this;
+    }
+
+    public function getUnterkellert(): ?Unterkellert
+    {
+        return $this->unterkellert;
+    }
+
+    public function setUnterkellert(?Unterkellert $unterkellert): Ausstattung
+    {
+        $this->unterkellert = $unterkellert;
+        return $this;
+    }
+
+    public function getAbstellraum(): ?bool
+    {
+        return $this->abstellraum;
+    }
+
+    public function setAbstellraum(?bool $abstellraum): Ausstattung
+    {
+        $this->abstellraum = $abstellraum;
+        return $this;
+    }
+
+    public function getFahrradraum(): ?bool
+    {
+        return $this->fahrradraum;
+    }
+
+    public function setFahrradraum(?bool $fahrradraum): Ausstattung
+    {
+        $this->fahrradraum = $fahrradraum;
+        return $this;
+    }
+
+    public function getRolladen(): ?bool
+    {
+        return $this->rolladen;
+    }
+
+    public function setRolladen(?bool $rolladen): Ausstattung
+    {
+        $this->rolladen = $rolladen;
+        return $this;
+    }
+
+    public function getDachform(): ?Dachform
+    {
+        return $this->dachform;
+    }
+
+    public function setDachform(?Dachform $dachform): Ausstattung
+    {
+        $this->dachform = $dachform;
+        return $this;
+    }
+
+    public function getBauweise(): ?Bauweise
+    {
+        return $this->bauweise;
+    }
+
+    public function setBauweise(?Bauweise $bauweise): Ausstattung
+    {
+        $this->bauweise = $bauweise;
+        return $this;
+    }
+
+    public function getAusbaustufe(): ?Ausbaustufe
+    {
+        return $this->ausbaustufe;
+    }
+
+    public function setAusbaustufe(?Ausbaustufe $ausbaustufe): Ausstattung
+    {
+        $this->ausbaustufe = $ausbaustufe;
+        return $this;
+    }
+
+    public function getEnergietyp(): ?Energietyp
+    {
+        return $this->energietyp;
+    }
+
+    public function setEnergietyp(?Energietyp $energietyp): Ausstattung
+    {
+        $this->energietyp = $energietyp;
+        return $this;
+    }
+
+    public function getBibliothek(): ?bool
+    {
+        return $this->bibliothek;
+    }
+
+    public function setBibliothek(?bool $bibliothek): Ausstattung
+    {
+        $this->bibliothek = $bibliothek;
+        return $this;
+    }
+
+    public function getDachboden(): ?bool
+    {
+        return $this->dachboden;
+    }
+
+    public function setDachboden(?bool $dachboden): Ausstattung
+    {
+        $this->dachboden = $dachboden;
+        return $this;
+    }
+
+    public function getGaestewc(): ?bool
+    {
+        return $this->gaestewc;
+    }
+
+    public function setGaestewc(?bool $gaestewc): Ausstattung
+    {
+        $this->gaestewc = $gaestewc;
+        return $this;
+    }
+
+    public function getKabelkanaele(): ?bool
+    {
+        return $this->kabelkanaele;
+    }
+
+    public function setKabelkanaele(?bool $kabelkanaele): Ausstattung
+    {
+        $this->kabelkanaele = $kabelkanaele;
+        return $this;
+    }
+
+    public function getSeniorengerecht(): ?bool
+    {
+        return $this->seniorengerecht;
+    }
+
+    public function setSeniorengerecht(?bool $seniorengerecht): Ausstattung
+    {
+        $this->seniorengerecht = $seniorengerecht;
         return $this;
     }
 
     /**
-     * @param bool $wintergarten Setter for wintergarten
-     * @return Ausstattung
+     * Returns array of array
      */
-    public function setWintergarten(?bool $wintergarten)
+    public function getUserDefinedSimplefield(): array
     {
-        $this->wintergarten = $wintergarten;
+        return $this->userDefinedSimplefield ?? [];
+    }
+
+    public function setUserDefinedSimplefield(array $userDefinedSimplefield): Ausstattung
+    {
+        $this->userDefinedSimplefield = $userDefinedSimplefield;
+        return $this;
+    }
+
+    /**
+     * Returns array of array
+     */
+    public function getUserDefinedAnyfield(): array
+    {
+        return $this->userDefinedAnyfield ?? [];
+    }
+
+    public function setUserDefinedAnyfield(array $userDefinedAnyfield): Ausstattung
+    {
+        $this->userDefinedAnyfield = $userDefinedAnyfield;
+        return $this;
+    }
+
+    /**
+     * Returns array of array
+     */
+    public function getUserDefinedExtend(): array
+    {
+        return $this->userDefinedExtend ?? [];
+    }
+
+    public function setUserDefinedExtend(array $userDefinedExtend): Ausstattung
+    {
+        $this->userDefinedExtend = $userDefinedExtend;
         return $this;
     }
 }

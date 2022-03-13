@@ -10,70 +10,48 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Nettomieteprom2von
  * Angaben bei Gewerbe Miete, UmSt. im Attribut.
- *
  * @XmlRoot("nettomieteprom2von")
  */
 class Nettomieteprom2von
 {
     /**
-     * optional
-     *
      * @Type("float")
      * @XmlAttribute
-     * @var float
+     * optional
      */
-    protected $nettomieteprom2bis;
+    protected ?float $nettomieteprom2bis = null;
 
     /**
      * @Inline
      * @Type("float")
-     * @var float
      */
-    protected $value;
+    protected ?float $value = null;
 
-    /**
-     * @param float $nettomieteprom2bis Shortcut setter for nettomieteprom2bis
-     * @param float $value Shortcut setter for value
-     */
-    public function __construct(float $nettomieteprom2bis = null, float $value = null)
-    {
-        $this->nettomieteprom2bis = $nettomieteprom2bis;
-        $this->value = $value;
-    }
-
-    /**
-     * @return float
-     */
     public function getNettomieteprom2bis(): ?float
     {
         return $this->nettomieteprom2bis;
     }
 
-    /**
-     * @return float
-     */
-    public function getValue(): ?float
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param float $nettomieteprom2bis Setter for nettomieteprom2bis
-     * @return Nettomieteprom2von
-     */
-    public function setNettomieteprom2bis(?float $nettomieteprom2bis)
+    public function setNettomieteprom2bis(?float $nettomieteprom2bis): Nettomieteprom2von
     {
         $this->nettomieteprom2bis = $nettomieteprom2bis;
         return $this;
     }
 
-    /**
-     * @param float $value Setter for value
-     * @return Nettomieteprom2von
-     */
-    public function setValue(?float $value)
+    public function getValue(): ?float
+    {
+        return $this->value;
+    }
+
+    public function setValue(?float $value): Nettomieteprom2von
     {
         $this->value = $value;
         return $this;
+    }
+
+    public function __construct(?float $nettomieteprom2bis = null, ?float $value = null)
+    {
+        $this->nettomieteprom2bis = $nettomieteprom2bis;
+        $this->value = $value;
     }
 }

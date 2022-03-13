@@ -14,95 +14,65 @@ use JMS\Serializer\Annotation\XmlRoot;
 class StpTiefgarage
 {
     /**
+     * @Type("float")
+     * @XmlAttribute
      * optional
-     *
+     */
+    protected ?float $stellplatzmiete = null;
+
+    /**
+     * @Type("float")
+     * @XmlAttribute
+     * optional
+     */
+    protected ?float $stellplatzkaufpreis = null;
+
+    /**
      * @Type("int")
      * @XmlAttribute
-     * @var int Minimum value (inclusive): -2147483648, Maximum value (inclusive): 2147483647
-     */
-    protected $anzahl;
-
-    /**
      * optional
-     *
-     * @Type("float")
-     * @XmlAttribute
-     * @var float
+     * Minimum value (inclusive): -2147483648
+     * Maximum value (inclusive): 2147483647
      */
-    protected $stellplatzkaufpreis;
+    protected ?int $anzahl = null;
 
-    /**
-     * optional
-     *
-     * @Type("float")
-     * @XmlAttribute
-     * @var float
-     */
-    protected $stellplatzmiete;
-
-    /**
-     * @param float $stellplatzmiete Shortcut setter for stellplatzmiete
-     * @param float $stellplatzkaufpreis Shortcut setter for stellplatzkaufpreis
-     * @param int $anzahl Shortcut setter for anzahl
-     */
-    public function __construct(float $stellplatzmiete = null, float $stellplatzkaufpreis = null, int $anzahl = null)
-    {
-        $this->stellplatzmiete = $stellplatzmiete;
-        $this->stellplatzkaufpreis = $stellplatzkaufpreis;
-        $this->anzahl = $anzahl;
-    }
-
-    /**
-     * @return int
-     */
-    public function getAnzahl(): ?int
-    {
-        return $this->anzahl;
-    }
-
-    /**
-     * @return float
-     */
-    public function getStellplatzkaufpreis(): ?float
-    {
-        return $this->stellplatzkaufpreis;
-    }
-
-    /**
-     * @return float
-     */
     public function getStellplatzmiete(): ?float
     {
         return $this->stellplatzmiete;
     }
 
-    /**
-     * @param int $anzahl Setter for anzahl
-     * @return StpTiefgarage
-     */
-    public function setAnzahl(?int $anzahl)
+    public function setStellplatzmiete(?float $stellplatzmiete): StpTiefgarage
     {
-        $this->anzahl = $anzahl;
+        $this->stellplatzmiete = $stellplatzmiete;
         return $this;
     }
 
-    /**
-     * @param float $stellplatzkaufpreis Setter for stellplatzkaufpreis
-     * @return StpTiefgarage
-     */
-    public function setStellplatzkaufpreis(?float $stellplatzkaufpreis)
+    public function getStellplatzkaufpreis(): ?float
+    {
+        return $this->stellplatzkaufpreis;
+    }
+
+    public function setStellplatzkaufpreis(?float $stellplatzkaufpreis): StpTiefgarage
     {
         $this->stellplatzkaufpreis = $stellplatzkaufpreis;
         return $this;
     }
 
-    /**
-     * @param float $stellplatzmiete Setter for stellplatzmiete
-     * @return StpTiefgarage
-     */
-    public function setStellplatzmiete(?float $stellplatzmiete)
+    public function getAnzahl(): ?int
+    {
+        return $this->anzahl;
+    }
+
+    public function setAnzahl(?int $anzahl): StpTiefgarage
+    {
+        $this->anzahl = $anzahl;
+        return $this;
+    }
+
+    public function __construct(?float $stellplatzmiete = null, ?float $stellplatzkaufpreis = null, ?int $anzahl = null)
     {
         $this->stellplatzmiete = $stellplatzmiete;
-        return $this;
+        $this->stellplatzkaufpreis = $stellplatzkaufpreis;
+        $this->anzahl = $anzahl;
     }
 }

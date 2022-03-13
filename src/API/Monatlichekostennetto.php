@@ -10,70 +10,48 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Monatlichekostennetto
  * Summe der Monatlichen Kosten einer Wohnung als Information für einen Käufer (Netto), Umst im Attribut.
- *
  * @XmlRoot("monatlichekostennetto")
  */
 class Monatlichekostennetto
 {
     /**
-     * optional
-     *
      * @Type("float")
      * @XmlAttribute
-     * @var float
+     * optional
      */
-    protected $monatlichekostenust;
+    protected ?float $monatlichekostenust = null;
 
     /**
      * @Inline
      * @Type("float")
-     * @var float
      */
-    protected $value;
+    protected ?float $value = null;
 
-    /**
-     * @param float $monatlichekostenust Shortcut setter for monatlichekostenust
-     * @param float $value Shortcut setter for value
-     */
-    public function __construct(float $monatlichekostenust = null, float $value = null)
-    {
-        $this->monatlichekostenust = $monatlichekostenust;
-        $this->value = $value;
-    }
-
-    /**
-     * @return float
-     */
     public function getMonatlichekostenust(): ?float
     {
         return $this->monatlichekostenust;
     }
 
-    /**
-     * @return float
-     */
-    public function getValue(): ?float
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param float $monatlichekostenust Setter for monatlichekostenust
-     * @return Monatlichekostennetto
-     */
-    public function setMonatlichekostenust(?float $monatlichekostenust)
+    public function setMonatlichekostenust(?float $monatlichekostenust): Monatlichekostennetto
     {
         $this->monatlichekostenust = $monatlichekostenust;
         return $this;
     }
 
-    /**
-     * @param float $value Setter for value
-     * @return Monatlichekostennetto
-     */
-    public function setValue(?float $value)
+    public function getValue(): ?float
+    {
+        return $this->value;
+    }
+
+    public function setValue(?float $value): Monatlichekostennetto
     {
         $this->value = $value;
         return $this;
+    }
+
+    public function __construct(?float $monatlichekostenust = null, ?float $value = null)
+    {
+        $this->monatlichekostenust = $monatlichekostenust;
+        $this->value = $value;
     }
 }

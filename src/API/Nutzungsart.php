@@ -10,134 +10,91 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Nutzungsart
  * nutzungsart
- *
  * @XmlRoot("nutzungsart")
  */
 class Nutzungsart
 {
     /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("ANLAGE")
-     * @var bool
-     */
-    protected $anlage;
-
-    /**
-     * required
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("GEWERBE")
-     * @var bool
-     */
-    protected $gewerbe;
-
-    /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("WAZ")
-     * @var bool
-     */
-    protected $waz;
-
-    /**
-     * required
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("WOHNEN")
-     * @var bool
+     * required
      */
-    protected $wohnen;
+    protected ?bool $wohnen = null;
 
     /**
-     * @param bool $wohnen Shortcut setter for wohnen
-     * @param bool $gewerbe Shortcut setter for gewerbe
-     * @param bool $anlage Shortcut setter for anlage
-     * @param bool $waz Shortcut setter for waz
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("GEWERBE")
+     * required
      */
-    public function __construct(bool $wohnen = null, bool $gewerbe = null, bool $anlage = null, bool $waz = null)
-    {
-        $this->wohnen = $wohnen;
-        $this->gewerbe = $gewerbe;
-        $this->anlage = $anlage;
-        $this->waz = $waz;
-    }
+    protected ?bool $gewerbe = null;
 
     /**
-     * @return bool
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("ANLAGE")
+     * optional
      */
-    public function getAnlage(): ?bool
-    {
-        return $this->anlage;
-    }
+    protected ?bool $anlage = null;
 
     /**
-     * @return bool
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("WAZ")
+     * optional
      */
-    public function getGewerbe(): bool
-    {
-        return $this->gewerbe;
-    }
+    protected ?bool $waz = null;
 
-    /**
-     * @return bool
-     */
-    public function getWaz(): ?bool
-    {
-        return $this->waz;
-    }
-
-    /**
-     * @return bool
-     */
     public function getWohnen(): bool
     {
         return $this->wohnen;
     }
 
-    /**
-     * @param bool $anlage Setter for anlage
-     * @return Nutzungsart
-     */
-    public function setAnlage(?bool $anlage)
+    public function setWohnen(bool $wohnen): Nutzungsart
     {
-        $this->anlage = $anlage;
+        $this->wohnen = $wohnen;
         return $this;
     }
 
-    /**
-     * @param bool $gewerbe Setter for gewerbe
-     * @return Nutzungsart
-     */
-    public function setGewerbe(bool $gewerbe)
+    public function getGewerbe(): bool
+    {
+        return $this->gewerbe;
+    }
+
+    public function setGewerbe(bool $gewerbe): Nutzungsart
     {
         $this->gewerbe = $gewerbe;
         return $this;
     }
 
-    /**
-     * @param bool $waz Setter for waz
-     * @return Nutzungsart
-     */
-    public function setWaz(?bool $waz)
+    public function getAnlage(): ?bool
+    {
+        return $this->anlage;
+    }
+
+    public function setAnlage(?bool $anlage): Nutzungsart
+    {
+        $this->anlage = $anlage;
+        return $this;
+    }
+
+    public function getWaz(): ?bool
+    {
+        return $this->waz;
+    }
+
+    public function setWaz(?bool $waz): Nutzungsart
     {
         $this->waz = $waz;
         return $this;
     }
 
-    /**
-     * @param bool $wohnen Setter for wohnen
-     * @return Nutzungsart
-     */
-    public function setWohnen(bool $wohnen)
+    public function __construct(?bool $wohnen = null, ?bool $gewerbe = null, ?bool $anlage = null, ?bool $waz = null)
     {
         $this->wohnen = $wohnen;
-        return $this;
+        $this->gewerbe = $gewerbe;
+        $this->anlage = $anlage;
+        $this->waz = $waz;
     }
 }

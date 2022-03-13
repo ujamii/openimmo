@@ -10,70 +10,48 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Sonstigekostennetto
  * Anganen bei Miet-Objekten, UmSt. im Attribut.
- *
  * @XmlRoot("sonstigekostennetto")
  */
 class Sonstigekostennetto
 {
     /**
-     * optional
-     *
      * @Type("float")
      * @XmlAttribute
-     * @var float
+     * optional
      */
-    protected $sonstigekostenust;
+    protected ?float $sonstigekostenust = null;
 
     /**
      * @Inline
      * @Type("float")
-     * @var float
      */
-    protected $value;
+    protected ?float $value = null;
 
-    /**
-     * @param float $sonstigekostenust Shortcut setter for sonstigekostenust
-     * @param float $value Shortcut setter for value
-     */
-    public function __construct(float $sonstigekostenust = null, float $value = null)
-    {
-        $this->sonstigekostenust = $sonstigekostenust;
-        $this->value = $value;
-    }
-
-    /**
-     * @return float
-     */
     public function getSonstigekostenust(): ?float
     {
         return $this->sonstigekostenust;
     }
 
-    /**
-     * @return float
-     */
-    public function getValue(): ?float
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param float $sonstigekostenust Setter for sonstigekostenust
-     * @return Sonstigekostennetto
-     */
-    public function setSonstigekostenust(?float $sonstigekostenust)
+    public function setSonstigekostenust(?float $sonstigekostenust): Sonstigekostennetto
     {
         $this->sonstigekostenust = $sonstigekostenust;
         return $this;
     }
 
-    /**
-     * @param float $value Setter for value
-     * @return Sonstigekostennetto
-     */
-    public function setValue(?float $value)
+    public function getValue(): ?float
+    {
+        return $this->value;
+    }
+
+    public function setValue(?float $value): Sonstigekostennetto
     {
         $this->value = $value;
         return $this;
+    }
+
+    public function __construct(?float $sonstigekostenust = null, ?float $value = null)
+    {
+        $this->sonstigekostenust = $sonstigekostenust;
+        $this->value = $value;
     }
 }

@@ -10,70 +10,48 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Kaufpreis
  * Gesamt- (Angebots-)Kaufpreis der Immobilie. Wenn "Auf Anfrage" dann Wert = 0 und Attribut auf TRUE
- *
  * @XmlRoot("kaufpreis")
  */
 class Kaufpreis
 {
     /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
-     * @var bool
+     * optional
      */
-    protected $aufAnfrage;
+    protected ?bool $aufAnfrage = null;
 
     /**
      * @Inline
      * @Type("float")
-     * @var float
      */
-    protected $value;
+    protected ?float $value = null;
 
-    /**
-     * @param bool $aufAnfrage Shortcut setter for aufAnfrage
-     * @param float $value Shortcut setter for value
-     */
-    public function __construct(bool $aufAnfrage = null, float $value = null)
-    {
-        $this->aufAnfrage = $aufAnfrage;
-        $this->value = $value;
-    }
-
-    /**
-     * @return bool
-     */
     public function getAufAnfrage(): ?bool
     {
         return $this->aufAnfrage;
     }
 
-    /**
-     * @return float
-     */
-    public function getValue(): ?float
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param bool $aufAnfrage Setter for aufAnfrage
-     * @return Kaufpreis
-     */
-    public function setAufAnfrage(?bool $aufAnfrage)
+    public function setAufAnfrage(?bool $aufAnfrage): Kaufpreis
     {
         $this->aufAnfrage = $aufAnfrage;
         return $this;
     }
 
-    /**
-     * @param float $value Setter for value
-     * @return Kaufpreis
-     */
-    public function setValue(?float $value)
+    public function getValue(): ?float
+    {
+        return $this->value;
+    }
+
+    public function setValue(?float $value): Kaufpreis
     {
         $this->value = $value;
         return $this;
+    }
+
+    public function __construct(?bool $aufAnfrage = null, ?float $value = null)
+    {
+        $this->aufAnfrage = $aufAnfrage;
+        $this->value = $value;
     }
 }

@@ -10,74 +10,51 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class AngeschlGastronomie
  * Welcher Art ist die angeschlossene Gastronomie, Optionen kombinierbar
- *
  * @XmlRoot("angeschl_gastronomie")
  */
 class AngeschlGastronomie
 {
     /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("BAR")
-     * @var bool
-     */
-    protected $bar;
-
-    /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("HOTELRESTAURANT")
-     * @var bool
+     * optional
      */
-    protected $hotelrestaurant;
+    protected ?bool $hotelrestaurant = null;
 
     /**
-     * @param bool $hotelrestaurant Shortcut setter for hotelrestaurant
-     * @param bool $bar Shortcut setter for bar
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("BAR")
+     * optional
      */
-    public function __construct(bool $hotelrestaurant = null, bool $bar = null)
-    {
-        $this->hotelrestaurant = $hotelrestaurant;
-        $this->bar = $bar;
-    }
+    protected ?bool $bar = null;
 
-    /**
-     * @return bool
-     */
-    public function getBar(): ?bool
-    {
-        return $this->bar;
-    }
-
-    /**
-     * @return bool
-     */
     public function getHotelrestaurant(): ?bool
     {
         return $this->hotelrestaurant;
     }
 
-    /**
-     * @param bool $bar Setter for bar
-     * @return AngeschlGastronomie
-     */
-    public function setBar(?bool $bar)
+    public function setHotelrestaurant(?bool $hotelrestaurant): AngeschlGastronomie
+    {
+        $this->hotelrestaurant = $hotelrestaurant;
+        return $this;
+    }
+
+    public function getBar(): ?bool
+    {
+        return $this->bar;
+    }
+
+    public function setBar(?bool $bar): AngeschlGastronomie
     {
         $this->bar = $bar;
         return $this;
     }
 
-    /**
-     * @param bool $hotelrestaurant Setter for hotelrestaurant
-     * @return AngeschlGastronomie
-     */
-    public function setHotelrestaurant(?bool $hotelrestaurant)
+    public function __construct(?bool $hotelrestaurant = null, ?bool $bar = null)
     {
         $this->hotelrestaurant = $hotelrestaurant;
-        return $this;
+        $this->bar = $bar;
     }
 }

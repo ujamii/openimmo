@@ -173,9 +173,9 @@ class ApiGenerator
             $type        = $property->getType();
             $typeIsArray = $type === 'array';
             //$type        = TypeUtil::getValidPhpType($type);
-            $phpParam    = $constructor->addParameter($classPropertyName)
-                                       ->setNullable($property->isNullable())
-                                       ->setType($typeIsArray ? 'array' : $type);
+            $phpParam = $constructor->addParameter($classPropertyName)
+                                    ->setNullable($property->isNullable())
+                                    ->setType($typeIsArray ? 'array' : $type);
             $phpParam->setDefaultValue(TypeUtil::getDefaultValueForType($type, $property->isNullable()));
 
             $constructorCode[] = '$this->' . $classPropertyName . ' = $' . $classPropertyName . ';';
@@ -211,8 +211,8 @@ class ApiGenerator
         $classProperty->addComment('@Type("' . $serializerType . '")');
         $namespace->addUse(Type::class);
 
-        $isArray = 'array' === $phpType;
-        $nullable = !$isArray && $property->getMin() === 0;
+        $isArray  = 'array' === $phpType;
+        $nullable = ! $isArray && $property->getMin() === 0;
 
         // if the property type is an object, it should be nullable
         if (strpos($serializerType, TypeUtil::OPENIMMO_NAMESPACE) === 0 || '\DateTime' === $phpType) {
@@ -221,7 +221,7 @@ class ApiGenerator
 
 
         $classProperty->setType($phpType)
-                          ->setNullable($nullable);
+                      ->setNullable($nullable);
 
         if ($nullable) {
             $classProperty->setValue(null);
@@ -239,9 +239,6 @@ class ApiGenerator
                 $class,
                 $classProperty
             );
-            $nullable = $nullable && ! TypeUtil::isConstantsBasedProperty($classProperty);
-            $classProperty->setNullable($nullable)
-                          ->setValue(TypeUtil::getDefaultValueForType($phpType, $nullable));
         }
 
         CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable);
@@ -284,14 +281,17 @@ class ApiGenerator
     private function parseAttribute(Attribute $attribute, ClassType $class, PhpNamespace $namespace): void
     {
         $propertyName  = TypeUtil::camelize(strtolower($attribute->getName()), true);
-        $classProperty = $class->addProperty($propertyName)->setVisibility(ClassLike::VisibilityProtected);
+        $classProperty = $class->addProperty($propertyName)
+                               ->setVisibility(ClassLike::VisibilityProtected);
         $xsdType       = TypeUtil::extractTypeForPhp($attribute->getType());
         $phpType       = TypeUtil::getValidPhpType($xsdType);
         $classProperty->addComment('@Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")');
         $namespace->addUse(Type::class);
         $nullable = true;
 
-        $classProperty->setType($phpType)
+        $classProperty->setNullable($nullable)
+                      ->setValue(TypeUtil::getDefaultValueForType($phpType, $nullable))
+                      ->setType($phpType)
                       ->addComment('@XmlAttribute');
 
         // as the openimmo guys like to switch randomly between lowercase and uppercase, serialized names may differ from property names
@@ -314,9 +314,6 @@ class ApiGenerator
             $class,
             $classProperty
         );
-        $nullable = $nullable && ! TypeUtil::isConstantsBasedProperty($classProperty);
-        $classProperty->setNullable($nullable)
-                      ->setValue(TypeUtil::getDefaultValueForType($phpType, $nullable));
 
         CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable);
     }
@@ -340,7 +337,9 @@ class ApiGenerator
                             $class->addConstant($constantName, $possibleValue['value']);
                         }
                     }
-                    $classProperty->addComment("@see {$constantPrefix}* constants");
+                    $classProperty->addComment("@see {$constantPrefix}* constants")
+                                  ->setValue(TypeUtil::getDefaultValueForType($classProperty->getType(), false))
+                                  ->setNullable(false);
                     break;
 
                 case 'whiteSpace':
