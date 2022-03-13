@@ -60,30 +60,64 @@ class SymfonyJsonSerializerTest extends TestCase
     public function testWriteImmobilieJson()
     {
         $jsonString = '{
-            "geo": {},
+            "geo": {
+                "userDefinedAnyfield": [],
+                "userDefinedExtend": [],
+                "userDefinedSimplefield": []
+            },
             "kontaktperson": {
                 "anrede": "Herr",
-                "name": "John Doe"
+                "emailSonstige": [],
+                "name": "John Doe",
+                "telSonstige": [],
+                "userDefinedAnyfield": [],
+                "userDefinedExtend": [],
+                "userDefinedSimplefield": []
             },
             "objektkategorie": {
                 "nutzungsart": {
                     "gewerbe": false,
                     "wohnen": false
                 },
-                "objektart": {},
+                "objektart": {
+                    "bueroPraxen": [],
+                    "einzelhandel": [],
+                    "freizeitimmobilieGewerblich": [],
+                    "gastgewerbe": [],
+                    "grundstueck": [],
+                    "hallenLagerProd": [],
+                    "haus": [],
+                    "landUndForstwirtschaft": [],
+                   "objektartZusatz": [],
+                    "parken": [],
+                    "sonstige": [],
+                    "wohnung": [],
+                    "zimmer": [],
+                    "zinshausRenditeobjekt": []
+                },
+                "userDefinedAnyfield": [],
+                "userDefinedExtend": [],
+                "userDefinedSimplefield": [],
                 "vermarktungsart": {
                     "kauf": true,
                     "mietePacht": false
                 }
             },
+            "userDefinedAnyfield": [],
+            "userDefinedExtend": [],
+            "userDefinedSimplefield": [],
             "verwaltungTechn": {
                 "aktion": {
                     "aktionart": "CHANGE"
                 },
                 "objektnrExtern": "456",
                 "openimmoObid": "123",
-                "standVom": "2021-06-30T09:54:33+00:00"
-            }
+                "standVom": "2021-06-30T09:54:33+00:00",
+                "userDefinedAnyfield": [],
+                "userDefinedExtend": [],
+                "userDefinedSimplefield": []
+            },
+            "weitereAdresse": []
         }';
 
         $data = new Immobilie();
@@ -211,6 +245,9 @@ class SymfonyJsonSerializerTest extends TestCase
                     "value": 15
                 }
             ],
+            "userDefinedAnyfield": [],
+            "userDefinedExtend": [],
+            "userDefinedSimplefield": [],
             "zulieferung": false
         }';
         $infrastruktur = new Infrastruktur();
@@ -234,8 +271,12 @@ class SymfonyJsonSerializerTest extends TestCase
             "anbieter": [
                 {
                     "firma": "MusterMannFrau Immobilien",
+                    "immobilie": [],
                     "lizenzkennung": "ABCD13",
-                    "openimmoAnid": "MUSTER"
+                    "openimmoAnid": "MUSTER",
+                    "userDefinedAnyfield": [],
+                    "userDefinedExtend": [],
+                    "userDefinedSimplefield": []
                 }
             ],
             "uebertragung": {
@@ -247,7 +288,9 @@ class SymfonyJsonSerializerTest extends TestCase
                 "timestamp": "2019-09-30T12:42:27+00:00",
                 "umfang": "TEIL",
                 "version": "1.2.7"
-            }
+            },
+            "userDefinedAnyfield": [],
+            "userDefinedSimplefield": []
         }';
 
         $openImmo = new Openimmo();
@@ -282,15 +325,30 @@ class SymfonyJsonSerializerTest extends TestCase
                 "wohnen": true
             },
             "objektart": {
+                "bueroPraxen": [],
+                "einzelhandel": [],
+                "freizeitimmobilieGewerblich": [],
+                "gastgewerbe": [],
+                "grundstueck": [],
+                "hallenLagerProd": [],
+                "haus": [],
+                "landUndForstwirtschaft": [],
                 "objektartZusatz": [
                     "Dachgeschoss"
                 ],
+                "parken": [],
+                "sonstige": [],
                 "wohnung": [
                     {
                         "wohnungtyp": "MAISONETTE"
                     }
-                ]
+                ],
+                "zimmer": [],
+                "zinshausRenditeobjekt": []
             },
+            "userDefinedAnyfield": [],
+            "userDefinedExtend": [],
+            "userDefinedSimplefield": [],
             "vermarktungsart": {
                 "kauf": false,
                 "mietePacht": true

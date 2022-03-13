@@ -2,6 +2,8 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
+use Ujamii\OpenImmo\Generator\TypeUtil;
+
 class ComplexTypeClassTest extends FileGeneratingTest
 {
     public function testGenerateApiClassComplexType(): void
@@ -12,5 +14,14 @@ class ComplexTypeClassTest extends FileGeneratingTest
         ];
 
         $this->assertClassHasProperties($generatedClass, $properties);
+    }
+
+    public function testArrayGetterDoesNotReturnNullForNewClass()
+    {
+        $generatedClass = $this->getGeneratedClassFromFile('user_defined_extend');
+        $className = TypeUtil::OPENIMMO_NAMESPACE . $generatedClass->getName();
+
+        $instance = new $className();
+        $this->assertEquals([], $instance->getFeld());
     }
 }

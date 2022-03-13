@@ -170,9 +170,9 @@ class ApiGenerator
 
         $constructorCode = [];
         foreach ($class->getProperties() as $classPropertyName => $property) {
-            $type        = TypeUtil::getTypeFromProperty($property);
-            $typeIsArray = substr($type, -2) === '[]';
-            $type        = TypeUtil::getValidPhpType($type);
+            $type        = $property->getType();
+            $typeIsArray = $type === 'array';
+            //$type        = TypeUtil::getValidPhpType($type);
             $phpParam    = $constructor->addParameter($classPropertyName)
                                        ->setNullable($property->isNullable())
                                        ->setType($typeIsArray ? 'array' : $type);
@@ -211,28 +211,23 @@ class ApiGenerator
         $classProperty->addComment('@Type("' . $serializerType . '")');
         $namespace->addUse(Type::class);
 
-        $nullable = $property->getMin() === 0;
+        $isArray = 'array' === $phpType;
+        $nullable = !$isArray && $property->getMin() === 0;
 
         // if the property type is an object, it should be nullable
         if (strpos($serializerType, TypeUtil::OPENIMMO_NAMESPACE) === 0 || '\DateTime' === $phpType) {
             $nullable = true;
         }
 
-        $classProperty->setNullable($nullable);
-        if ('[]' === substr($phpType, -2)) {
-            $classProperty->setValue([])
-                          ->setType('array');
-        } else {
-            $classProperty->setType($phpType);
-        }
+
+        $classProperty->setType($phpType)
+                          ->setNullable($nullable);
 
         if ($nullable) {
-            $classProperty->addComment("@var ?{$phpType}")
-                          ->setValue(null);
+            $classProperty->setValue(null);
         } else {
             $classProperty
                 ->setValue(TypeUtil::getDefaultValueForType($phpType, $nullable))
-                ->addComment("@var {$phpType}")
                 ->addComment('@SkipWhenEmpty');
             $namespace->addUse(SkipWhenEmpty::class);
         }
@@ -244,6 +239,9 @@ class ApiGenerator
                 $class,
                 $classProperty
             );
+            $nullable = $nullable && ! TypeUtil::isConstantsBasedProperty($classProperty);
+            $classProperty->setNullable($nullable)
+                          ->setValue(TypeUtil::getDefaultValueForType($phpType, $nullable));
         }
 
         CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable);

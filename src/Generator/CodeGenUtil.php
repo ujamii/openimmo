@@ -51,8 +51,8 @@ class CodeGenUtil
      */
     public static function generateGetter(Property $property, ClassType $class, bool $nullable): void
     {
-        $propertyType = TypeUtil::getTypeFromProperty($property);
-        $returnsArray = substr($propertyType, -2) === '[]';
+        $propertyType = $property->getType();
+        $returnsArray = $propertyType === 'array';
         $getter       = $class->addMethod('get' . ucfirst($property->getName()));
         if ($returnsArray) {
             $getterCode = 'return $this->' . $property->getName() . ' ?? [];';
@@ -77,8 +77,8 @@ class CodeGenUtil
     public static function generateSetter(Property $property, ClassType $class, bool $fluentApi, bool $nullable): void
     {
         $setter   = $class->addMethod('set' . ucfirst($property->getName()));
-        $propertyType = TypeUtil::getTypeFromProperty($property);
-        $isPlural = substr($propertyType, -2) === '[]';
+        $propertyType = $property->getType();
+        $isPlural = $propertyType === 'array';
 
         $setter->addParameter($property->getName())
                                  ->setType($isPlural ? 'array' : $propertyType)

@@ -17,10 +17,10 @@ class TypeUtilTest extends TestCase
     public function testCamelize(string $nameInXsd, string $expectedPhpName, ?bool $lcFirst = false): void
     {
         $generatedName = TypeUtil::camelize($nameInXsd, $lcFirst);
-        $this->assertEquals($expectedPhpName, $generatedName);
+        $this->assertSame($expectedPhpName, $generatedName);
 
         // test lcFirst is false by default
-        $this->assertEquals('FooBar', TypeUtil::camelize('foo_bar'));
+        $this->assertSame('FooBar', TypeUtil::camelize('foo_bar'));
     }
 
     public function camelizeDataProvider(): array
@@ -44,7 +44,7 @@ class TypeUtilTest extends TestCase
     public function testGetTypeForSerializer(string $xsdType, string $serializerType): void
     {
         $generatedType = TypeUtil::getTypeForSerializer($xsdType);
-        $this->assertEquals($serializerType, $generatedType);
+        $this->assertSame($serializerType, $generatedType);
     }
 
     public function getTypeForSerializerDataProvider(): array
@@ -68,6 +68,83 @@ class TypeUtilTest extends TestCase
 
             ['FooBarClassName', 'Ujamii\\OpenImmo\\API\\FooBarClassName'],
             ['FooBarClassName[]', 'array<Ujamii\\OpenImmo\\API\\FooBarClassName>'],
+        ];
+    }
+
+    /**
+     * @param string $xsdType
+     * @param string $phpType
+     *
+     * @dataProvider getValidPhpTypeDataProvider
+     */
+    public function testGetValidPhpType(string $xsdType, string $phpType): void
+    {
+        $generatedType = TypeUtil::getValidPhpType($xsdType);
+        $this->assertSame($phpType, $generatedType);
+    }
+
+    public function getValidPhpTypeDataProvider(): array
+    {
+        return [
+            ['decimal', 'float'],
+            ['float', 'float'],
+
+            ['boolean', 'bool'],
+            ['bool', 'bool'],
+
+            ['int', 'int'],
+            ['positiveInteger', 'int'],
+            ['PositiveIntegerType', 'int'],
+
+            ['date', '\\' . \DateTime::class],
+            ['dateTime', '\\' . \DateTime::class],
+
+            ['string', 'string'],
+            ['kontakt', 'string'],
+            ['base64Binary', 'string'],
+
+            ['array', 'array'],
+
+            ['FooBarClassName', '\\Ujamii\\OpenImmo\\API\\FooBarClassName'],
+        ];
+    }
+
+    /**
+     * @param string $propertyType
+     * @param bool $nullable
+     * @param mixed $defaultValue
+     *
+     * @dataProvider getDefaultValueForTypeDataProvider
+     */
+    public function testGetDefaultValueForType(string $propertyType, bool $nullable, $defaultValue): void
+    {
+        $generatedValue = TypeUtil::getDefaultValueForType($propertyType, $nullable);
+        $this->assertSame($defaultValue, $generatedValue);
+    }
+
+    public function getDefaultValueForTypeDataProvider(): array
+    {
+        return [
+            ['float', false, 0.0],
+            ['float', true, null],
+
+            ['bool', false, false],
+            ['bool', true, null],
+
+            ['int', false, 0],
+            ['int', true, null],
+
+            ['string', false, ''],
+            ['string', true, null],
+
+            ['array', false, []],
+            ['array', true, null],
+
+            ['Foobar', false, null],
+            ['Foobar', true, null],
+
+            ['Feld[]', false, []],
+            ['Feld[]', true, null],
         ];
     }
 }

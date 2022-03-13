@@ -213,15 +213,6 @@ class TypeUtil
         return $camel;
     }
 
-    public static function getTypeFromProperty(Property $property): string
-    {
-        if (null === $property->getType()) {
-            return CodeGenUtil::getAnnotationFromProperty($property, 'var');
-        }
-
-        return $property->getType();
-    }
-
     public static function isConstantsBasedProperty(Property $property): bool
     {
         return strtoupper($property->getName()) . '_* constants' === CodeGenUtil::getAnnotationFromProperty($property, 'see');
