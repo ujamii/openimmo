@@ -77,6 +77,11 @@ class TypeUtil
      */
     public static function getValidPhpType(string $propertyType): string
     {
+        $isPlural = substr($propertyType, -2) === '[]';
+        if ($isPlural) {
+            return 'array';
+        }
+
         switch ($propertyType) {
 
             case 'decimal':
@@ -97,6 +102,7 @@ class TypeUtil
 
             case 'date':
             case 'dateTime':
+            case '\\' . \DateTime::class:
                 $propertyType = '\\' . \DateTime::class;
                 break;
 
@@ -106,11 +112,13 @@ class TypeUtil
                 $propertyType = 'string';
                 break;
 
+            case 'array':
+                $propertyType = 'array';
+                break;
+
             default:
                 $className = '\\' . self::OPENIMMO_NAMESPACE . $propertyType;
-                if (class_exists($className)) {
-                    $propertyType = $className;
-                }
+                $propertyType = $className;
         }
 
         return $propertyType;
@@ -118,15 +126,12 @@ class TypeUtil
 
     /**
      * @param string $propertyType
+     * @param bool $nullable
      *
      * @return false|float|int|string|null
      */
     public static function getDefaultValueForType(string $propertyType, bool $nullable)
     {
-        if ($nullable) {
-            return null;
-        }
-
         switch ($propertyType) {
 
             case 'float':
@@ -145,15 +150,19 @@ class TypeUtil
                 $defaultValue = '';
                 break;
 
+            case 'array':
+                $defaultValue = [];
+                break;
+
             default:
                 if ('[]' === substr($propertyType, -2)) {
-                    $defaultValue = '[]';
+                    $defaultValue = [];
                 } else {
                     $defaultValue = null;
                 }
         }
 
-        return $defaultValue;
+        return $nullable ? null : $defaultValue;
     }
 
     /**

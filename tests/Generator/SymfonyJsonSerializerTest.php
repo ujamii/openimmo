@@ -67,16 +67,12 @@ class SymfonyJsonSerializerTest extends TestCase
             },
             "objektkategorie": {
                 "nutzungsart": {
-                    "anlage": false,
                     "gewerbe": false,
-                    "waz": false,
                     "wohnen": false
                 },
                 "objektart": {},
                 "vermarktungsart": {
-                    "erbpacht": false,
                     "kauf": true,
-                    "leasing": false,
                     "mietePacht": false
                 }
             },
@@ -146,7 +142,6 @@ class SymfonyJsonSerializerTest extends TestCase
         $jsonString = '{
             "art": "OFFLINE",
             "modus": "CHANGE",
-            "regiId": "",
             "sendersoftware": "OOF",
             "senderversion": "$Rev: 85202 $",
             "technEmail": "xxx@xxx.de",
@@ -246,7 +241,6 @@ class SymfonyJsonSerializerTest extends TestCase
             "uebertragung": {
                 "art": "OFFLINE",
                 "modus": "CHANGE",
-                "regiId": "",
                 "sendersoftware": "OOF",
                 "senderversion": "$Rev: 85202 $",
                 "technEmail": "xxx@xxx.de",
@@ -284,9 +278,7 @@ class SymfonyJsonSerializerTest extends TestCase
     {
         $jsonString = '{
             "nutzungsart": {
-                "anlage": false,
                 "gewerbe": false,
-                "waz": false,
                 "wohnen": true
             },
             "objektart": {
@@ -300,9 +292,7 @@ class SymfonyJsonSerializerTest extends TestCase
                 ]
             },
             "vermarktungsart": {
-                "erbpacht": false,
                 "kauf": false,
-                "leasing": false,
                 "mietePacht": true
             }
         }';

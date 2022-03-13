@@ -94,7 +94,7 @@ class CodeGenUtil
 
     public static function getAnnotationFromProperty(Property $property, string $annotation): ?string
     {
-        $commentLines = explode(self::DESCRIPTION_PART_DELIMTER, $property->getComment());
+        $commentLines = explode(self::DESCRIPTION_PART_DELIMTER, $property->getComment() ?? '');
         foreach ($commentLines as $commentLine) {
             if (strpos($commentLine, "@{$annotation}") === 0) {
                 return str_replace("@{$annotation} ", '', $commentLine);

@@ -12,17 +12,5 @@ class ComplexTypeClassTest extends FileGeneratingTest
         ];
 
         $this->assertClassHasProperties($generatedClass, $properties);
-
-        $getter = $generatedClass->getMethod('getFeld');
-        $this->assertStringContainsString('Returns array of Feld', $getter->getComment());
-    }
-
-    public function testArrayGetterDoesNotReturnNullForNewClass()
-    {
-        $generatedClass = $this->getGeneratedClassFromFile('user_defined_extend');
-        $className = $generatedClass->getNamespace()->getName() . '\\' . $generatedClass->getName();
-
-        $instance = new $className();
-        $this->assertEquals([], $instance->getFeld());
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
+use GoetasWebservices\XML\XSDReader\Exception\IOException;
 use Nette\PhpGenerator\ClassType;
 use PHPUnit\Framework\TestCase;
 use Ujamii\OpenImmo\Generator\ApiGenerator;
@@ -39,7 +40,7 @@ abstract class FileGeneratingTest extends TestCase
      * @param string $docBlockComment
      *
      * @return ClassType
-     * @throws \GoetasWebservices\XML\XSDReader\Exception\IOException
+     * @throws IOException
      */
     public function getGeneratedClassFromFile(string $nameInXsd, string $docBlockComment = ''): ClassType
     {
@@ -70,7 +71,7 @@ abstract class FileGeneratingTest extends TestCase
      * @return \ReflectionClass
      * @throws \ReflectionException
      */
-    public function getReflectionClassFromgeneratedClass(ClassType $generatedClass): \ReflectionClass
+    public function getReflectionClassFromGeneratedClass(ClassType $generatedClass): \ReflectionClass
     {
         $classFileName = "{$this->tmpDir}{$generatedClass->getName()}.php";
         require_once($classFileName);
@@ -142,7 +143,7 @@ abstract class FileGeneratingTest extends TestCase
             $this->assertEquals('public', $setter->getVisibility());
             $this->assertEquals('\\' . TypeUtil::OPENIMMO_NAMESPACE . $class->getName(), $setter->getReturnType());
             $this->assertArrayHasKey($propertyName, $setter->getParameters());
-            $this->assertEquals($phpType, $setter->$setter->getParameters()[$propertyName]->getType());
+            $this->assertEquals($phpType, $setter->getParameters()[$propertyName]->getType());
             //$this->assertTrue($setter->getParameters()[$propertyName]->isNullable());
         }
     }
@@ -157,11 +158,12 @@ abstract class FileGeneratingTest extends TestCase
             list($propertyName, $type, $hasGetterAndSetter, $docTags, $xsdType) = $propertyConfig;
             $constructorParam = $constructor->getParameters()[$propertyName];
             $this->assertEquals($type, $constructorParam->getType());
-            if ($constructorParam->getType() === 'array') {
-                $this->assertEquals('[]', $constructorParam->getDefaultValue());
+
+            if ($constructorParam->isNullable()) {
+                $this->assertSame('null', (string) $constructorParam->getDefaultValue());
             } else {
-                if ($constructorParam->isNullable()) {
-                    $this->assertNull($constructorParam->getDefaultValue());
+                if ($constructorParam->getType() === 'array') {
+                    $this->assertEquals('[]', $constructorParam->getDefaultValue());
                 }
             }
 //        $this->assertFalse($constructor->getParameter($propertyName)->getNullable());

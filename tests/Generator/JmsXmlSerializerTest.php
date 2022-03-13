@@ -78,7 +78,7 @@ class JmsXmlSerializerTest extends TestCase
 
     public function testWriteUebertragungXmlRealWorld()
     {
-        $xmlString = '<uebertragung art="OFFLINE" modus="CHANGE" regi_id="" sendersoftware="OOF" senderversion="$Rev: 85202 $" techn_email="xxx@xxx.de" timestamp="2019-09-30T12:42:27" umfang="TEIL" version="1.2.7"/>';
+        $xmlString = '<uebertragung art="OFFLINE" modus="CHANGE" sendersoftware="OOF" senderversion="$Rev: 85202 $" techn_email="xxx@xxx.de" timestamp="2019-09-30T12:42:27" umfang="TEIL" version="1.2.7"/>';
 
         $uebertragung = new Uebertragung();
         $uebertragung
@@ -158,8 +158,8 @@ class JmsXmlSerializerTest extends TestCase
     public function testWriteObjektKategorieXml()
     {
         $xmlString = '<objektkategorie>
-        <nutzungsart ANLAGE="false" GEWERBE="false" WAZ="false" WOHNEN="true"/>
-        <vermarktungsart ERBPACHT="false" KAUF="false" LEASING="false" MIETE_PACHT="true"/>
+        <nutzungsart GEWERBE="false" WOHNEN="true"/>
+        <vermarktungsart KAUF="false" MIETE_PACHT="true"/>
         <objektart>
           <wohnung wohnungtyp="MAISONETTE" />
           <objektart_zusatz>Dachgeschoss</objektart_zusatz>

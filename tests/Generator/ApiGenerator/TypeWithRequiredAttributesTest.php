@@ -16,12 +16,12 @@ class TypeWithRequiredAttributesTest extends FileGeneratingTest
         $this->assertClassHasProperties($generatedClass, $properties);
 
         $wohnenProperty = $generatedClass->getProperty('wohnen');
-        $this->assertStringContainsString('required', $wohnenProperty->getDocblock()->getShortDescription());
+        $this->assertStringContainsString('required', $wohnenProperty->getComment());
 
         $anlageProperty = $generatedClass->getProperty('anlage');
-        $this->assertStringContainsString('optional', $anlageProperty->getDocblock()->getShortDescription());
+        $this->assertStringContainsString('optional', $anlageProperty->getComment());
 
-        $reflectionClass = $this->getReflectionClassFromgeneratedClass($generatedClass);
+        $reflectionClass = $this->getReflectionClassFromGeneratedClass($generatedClass);
         $wohnenGetter = $reflectionClass->getMethod('getWohnen');
         $this->assertFalse($wohnenGetter->getReturnType()->allowsNull());
 

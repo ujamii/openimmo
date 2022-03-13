@@ -3,6 +3,8 @@
 namespace Ujamii\OpenImmo\Generator;
 
 use GoetasWebservices\XML\XSDReader\Schema\Attribute\Attribute;
+use GoetasWebservices\XML\XSDReader\Schema\Element\Element;
+use GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementItem;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementRef;
 use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Extension;
@@ -172,8 +174,9 @@ class ApiGenerator
             $typeIsArray = substr($type, -2) === '[]';
             $type        = TypeUtil::getValidPhpType($type);
             $phpParam    = $constructor->addParameter($classPropertyName)
+                                       ->setNullable($property->isNullable())
                                        ->setType($typeIsArray ? 'array' : $type);
-            $phpParam->setDefaultValue($property->getValue());
+            $phpParam->setDefaultValue(TypeUtil::getDefaultValueForType($type, $property->isNullable()));
 
             $constructorCode[] = '$this->' . $classPropertyName . ' = $' . $classPropertyName . ';';
         }
@@ -182,7 +185,7 @@ class ApiGenerator
     }
 
     /**
-     * @param ElementItem $property
+     * @param Element|ElementRef|ElementDef $property
      * @param ClassType $class
      * @param PhpNamespace $namespace
      */
@@ -202,37 +205,35 @@ class ApiGenerator
             $namespace->addUse(XmlList::class);
         }
 
-        $phpType = TypeUtil::getValidPhpType($xsdType);
+        $phpType        = TypeUtil::getValidPhpType($xsdType);
         $serializerType = TypeUtil::getTypeForSerializer($xsdType);
 
         $classProperty->addComment('@Type("' . $serializerType . '")');
         $namespace->addUse(Type::class);
 
-        $isConstantBasedproperty = TypeUtil::isConstantsBasedProperty($classProperty);
-        $nullable                = $property->getMin() === 0;
+        $nullable = $property->getMin() === 0;
+
         // if the property type is an object, it should be nullable
         if (strpos($serializerType, TypeUtil::OPENIMMO_NAMESPACE) === 0 || '\DateTime' === $phpType) {
             $nullable = true;
         }
 
         $classProperty->setNullable($nullable);
-        $defaultValue = TypeUtil::getDefaultValueForType($phpType, $nullable);
         if ('[]' === substr($phpType, -2)) {
             $classProperty->setValue([])
                           ->setType('array');
         } else {
-            if (! $isConstantBasedproperty) {
-                $classProperty->setValue($defaultValue);
-            }
             $classProperty->setType($phpType);
         }
 
         if ($nullable) {
             $classProperty->addComment("@var ?{$phpType}")
-            ->setValue(null);
+                          ->setValue(null);
         } else {
-            $classProperty->addComment("@var {$phpType}")
-                          ->addComment('@SkipWhenEmpty');
+            $classProperty
+                ->setValue(TypeUtil::getDefaultValueForType($phpType, $nullable))
+                ->addComment("@var {$phpType}")
+                ->addComment('@SkipWhenEmpty');
             $namespace->addUse(SkipWhenEmpty::class);
         }
 
@@ -245,11 +246,11 @@ class ApiGenerator
             );
         }
 
-        CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable && ! $isConstantBasedproperty);
+        CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable);
     }
 
     /**
-     * @param Item|ElementItem $property
+     * @param Item|Element|ElementRef|ElementDef|ElementItem $property
      *
      * @return string
      */
@@ -293,8 +294,6 @@ class ApiGenerator
         $nullable = true;
 
         $classProperty->setType($phpType)
-                      ->setNullable($nullable)
-                      ->setValue(TypeUtil::getDefaultValueForType($phpType, false))
                       ->addComment('@XmlAttribute');
 
         // as the openimmo guys like to switch randomly between lowercase and uppercase, serialized names may differ from property names
@@ -317,8 +316,12 @@ class ApiGenerator
             $class,
             $classProperty
         );
+        $nullable &= ! TypeUtil::isConstantsBasedProperty($classProperty);
 
-        CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable && ! TypeUtil::isConstantsBasedProperty($classProperty));
+        $classProperty->setNullable($nullable)
+                      ->setValue(TypeUtil::getDefaultValueForType($phpType, $nullable));
+
+        CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable);
     }
 
     /**
