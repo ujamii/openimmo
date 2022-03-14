@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Ujamii\OpenImmo\Tests\API;
 
-use gossi\codegen\model\PhpClass;
+use Nette\PhpGenerator\ClassType;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\Finder;
+use Ujamii\OpenImmo\Generator\TypeUtil;
 
 class ApiClassTest extends TestCase
 {
@@ -20,7 +21,8 @@ class ApiClassTest extends TestCase
         $finder->files()->name('*.php')->in('src/API/');
 
         foreach ($finder as $file) {
-            $phpClass = PhpClass::fromFile($file->getRealPath());
+            /** @var ClassType $phpClass */
+            $phpClass = ClassType::fromCode(file_get_contents($file->getRealPath()));
             foreach ($phpClass->getProperties() as $property) {
                 $this->automateTestClassProperties($phpClass->getName(), $property->getName(), $property->getType());
             }
@@ -37,7 +39,7 @@ class ApiClassTest extends TestCase
      */
     protected function automateTestClassProperties(string $className, string $propertyName, string $type)
     {
-        $typeWithNs = "Ujamii\\OpenImmo\\API\\{$className}";
+        $typeWithNs = TypeUtil::OPENIMMO_NAMESPACE . $className;
         $subject = new $typeWithNs();
         $testValue = $this->getExampleData($type);
         $return = $subject->{'set' . ucfirst($propertyName)}($testValue);
@@ -52,7 +54,7 @@ class ApiClassTest extends TestCase
      */
     protected function getExampleData(string $type)
     {
-        $isPlural = substr($type, -2) == '[]';
+        $isPlural = substr($type, -2) === '[]';
         $singular = str_replace('[]', '', $type);
         switch ($singular) {
             case 'string':
@@ -64,11 +66,15 @@ class ApiClassTest extends TestCase
                 break;
 
             case 'int':
-                $value = mt_rand(0, 10000);
+                $value = random_int(0, 10000);
                 break;
 
             case 'bool':
-                $value = (bool) mt_rand(0, 2);
+                $value = (bool) random_int(0, 2);
+                break;
+
+            case 'array':
+                $value = [42];
                 break;
 
             case '\\DateTime':
@@ -76,8 +82,7 @@ class ApiClassTest extends TestCase
                 break;
 
             default:
-                $typeWithNs = "Ujamii\\OpenImmo\\API\\{$singular}";
-                $value = new $typeWithNs();
+                $value = new $singular();
         }
 
         if ($isPlural) {

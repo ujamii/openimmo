@@ -88,7 +88,7 @@ class SymfonyJsonSerializerTest extends TestCase
                     "hallenLagerProd": [],
                     "haus": [],
                     "landUndForstwirtschaft": [],
-                    "objektartZusatz": [],
+                   "objektartZusatz": [],
                     "parken": [],
                     "sonstige": [],
                     "wohnung": [],
@@ -107,7 +107,9 @@ class SymfonyJsonSerializerTest extends TestCase
             "userDefinedExtend": [],
             "userDefinedSimplefield": [],
             "verwaltungTechn": {
-                "aktion": {},
+                "aktion": {
+                    "aktionart": "CHANGE"
+                },
                 "objektnrExtern": "456",
                 "openimmoObid": "123",
                 "standVom": "2021-06-30T09:54:33+00:00",
@@ -129,7 +131,7 @@ class SymfonyJsonSerializerTest extends TestCase
         );
         $data->setVerwaltungTechn(
             (new VerwaltungTechn())
-                ->setAktion(new Aktion())
+                ->setAktion(new Aktion(Aktion::AKTIONART_CHANGE))
                 ->setObjektnrExtern('456')
                 ->setOpenimmoObid('123')
                 ->setStandVom(new \DateTime('@1625046873'))
@@ -243,10 +245,10 @@ class SymfonyJsonSerializerTest extends TestCase
                     "value": 15
                 }
             ],
-            "zulieferung": false,
             "userDefinedAnyfield": [],
             "userDefinedExtend": [],
-            "userDefinedSimplefield": []
+            "userDefinedSimplefield": [],
+            "zulieferung": false
         }';
         $infrastruktur = new Infrastruktur();
         $infrastruktur
@@ -368,8 +370,8 @@ class SymfonyJsonSerializerTest extends TestCase
 
     public function testWriteComplexTypeMixed()
     {
-        $jsonString = '{"value": "k.A."}';
-        $subject    = new AussenCourtage(null, 'k.A.');
+        $jsonString = '{"mitMwst": false, "value": "k.A."}';
+        $subject    = new AussenCourtage(false, 'k.A.');
 
         $jsonContent = $this->serializer->serialize($subject, JsonEncoder::FORMAT, $this->serializerContext);
         $this->assertJsonStringEqualsJsonString($jsonString, $jsonContent);

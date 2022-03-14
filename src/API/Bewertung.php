@@ -2,6 +2,7 @@
 
 namespace Ujamii\OpenImmo\API;
 
+use JMS\Serializer\Annotation\SkipWhenEmpty;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -9,7 +10,6 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Bewertung
  * Container für detailierte Bewertungs Parmater
- *
  * @XmlRoot("bewertung")
  */
 class Bewertung
@@ -17,35 +17,26 @@ class Bewertung
     /**
      * @XmlList(inline = true, entry = "feld")
      * @Type("array<Ujamii\OpenImmo\API\Feld>")
-     * @var Feld[]
+     * @SkipWhenEmpty
      */
-    protected $feld;
+    protected array $feld = [];
 
     /**
-     * @param array $feld Shortcut setter for feld
-     */
-    public function __construct(array $feld = [])
-    {
-        $this->feld = $feld;
-    }
-
-    /**
-     * Returns array of Feld
-     *
-     * @return array
+     * Returns array of array
      */
     public function getFeld(): array
     {
         return $this->feld ?? [];
     }
 
-    /**
-     * @param array $feld Setter for feld
-     * @return Bewertung
-     */
-    public function setFeld(array $feld)
+    public function setFeld(array $feld): Bewertung
     {
         $this->feld = $feld;
         return $this;
+    }
+
+    public function __construct(array $feld = [])
+    {
+        $this->feld = $feld;
     }
 }

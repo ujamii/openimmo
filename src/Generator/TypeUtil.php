@@ -5,9 +5,12 @@ namespace Ujamii\OpenImmo\Generator;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexType;
 use GoetasWebservices\XML\XSDReader\Schema\Type\ComplexTypeSimpleContent;
 use GoetasWebservices\XML\XSDReader\Schema\Type\Type;
+use Nette\PhpGenerator\Property;
 
 class TypeUtil
 {
+    public const OPENIMMO_NAMESPACE = 'Ujamii\\OpenImmo\\API\\';
+
     /**
      * @param string $type
      *
@@ -54,7 +57,7 @@ class TypeUtil
                 break;
 
             default:
-                $ns   = 'Ujamii\\OpenImmo\\API\\';
+                $ns   = self::OPENIMMO_NAMESPACE;
                 $type = $ns . $singular;
                 break;
 
@@ -74,29 +77,48 @@ class TypeUtil
      */
     public static function getValidPhpType(string $propertyType): string
     {
+        $isPlural = substr($propertyType, -2) === '[]';
+        if ($isPlural) {
+            return 'array';
+        }
+
         switch ($propertyType) {
 
             case 'decimal':
+            case 'float':
                 $propertyType = 'float';
                 break;
 
+            case 'bool':
             case 'boolean':
                 $propertyType = 'bool';
                 break;
 
+            case 'int':
             case 'positiveInteger':
+            case 'PositiveIntegerType':
                 $propertyType = 'int';
                 break;
 
             case 'date':
             case 'dateTime':
+            case '\\' . \DateTime::class:
                 $propertyType = '\\' . \DateTime::class;
                 break;
 
+            case 'string':
             case 'kontakt':
             case 'base64Binary':
                 $propertyType = 'string';
                 break;
+
+            case 'array':
+                $propertyType = 'array';
+                break;
+
+            default:
+                $className = '\\' . self::OPENIMMO_NAMESPACE . $propertyType;
+                $propertyType = $className;
         }
 
         return $propertyType;
@@ -104,10 +126,11 @@ class TypeUtil
 
     /**
      * @param string $propertyType
+     * @param bool $nullable
      *
      * @return false|float|int|string|null
      */
-    public static function getDefaultValueForType(string $propertyType)
+    public static function getDefaultValueForType(string $propertyType, bool $nullable)
     {
         switch ($propertyType) {
 
@@ -127,15 +150,19 @@ class TypeUtil
                 $defaultValue = '';
                 break;
 
+            case 'array':
+                $defaultValue = [];
+                break;
+
             default:
                 if ('[]' === substr($propertyType, -2)) {
-                    $defaultValue = '[]';
+                    $defaultValue = [];
                 } else {
                     $defaultValue = null;
                 }
         }
 
-        return $defaultValue;
+        return $nullable ? null : $defaultValue;
     }
 
     /**
@@ -184,5 +211,10 @@ class TypeUtil
         }
 
         return $camel;
+    }
+
+    public static function isConstantsBasedProperty(Property $property): bool
+    {
+        return strtoupper($property->getName()) . '_* constants' === CodeGenUtil::getAnnotationFromProperty($property, 'see');
     }
 }

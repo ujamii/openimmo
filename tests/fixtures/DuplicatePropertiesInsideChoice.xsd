@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xsd:element name="duplicate_properties_inside_choice">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:choice>
+					<xsd:sequence>
+						<xsd:element ref="plz"/>
+						<xsd:element ref="ort" minOccurs="0"/>
+					</xsd:sequence>
+					<xsd:sequence>
+						<xsd:element ref="ort"/>
+					</xsd:sequence>
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="plz" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>PLZ, Pflichtfeld, alternativ mit Ort, Geokoordinaten</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="ort" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>Ort, Pflichtfeld, alternativ mit PLZ, Geokoordinaten</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

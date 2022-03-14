@@ -10,70 +10,48 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class UserDefinedSimplefield
  * Benutzerdefinierte Angaben
- *
  * @XmlRoot("user_defined_simplefield")
  */
 class UserDefinedSimplefield
 {
     /**
-     * required
-     *
      * @Type("string")
      * @XmlAttribute
-     * @var string
+     * required
      */
-    protected $feldname;
+    protected string $feldname = '';
 
     /**
      * @Inline
      * @Type("string")
-     * @var string
      */
-    protected $value;
+    protected ?string $value = null;
 
-    /**
-     * @param string $feldname Shortcut setter for feldname
-     * @param string $value Shortcut setter for value
-     */
-    public function __construct(string $feldname = null, string $value = null)
-    {
-        $this->feldname = $feldname;
-        $this->value = $value;
-    }
-
-    /**
-     * @return string
-     */
     public function getFeldname(): string
     {
         return $this->feldname;
     }
 
-    /**
-     * @return string
-     */
-    public function getValue(): ?string
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param string $feldname Setter for feldname
-     * @return UserDefinedSimplefield
-     */
-    public function setFeldname(string $feldname)
+    public function setFeldname(string $feldname): UserDefinedSimplefield
     {
         $this->feldname = $feldname;
         return $this;
     }
 
-    /**
-     * @param string $value Setter for value
-     * @return UserDefinedSimplefield
-     */
-    public function setValue(?string $value)
+    public function getValue(): ?string
+    {
+        return $this->value;
+    }
+
+    public function setValue(?string $value): UserDefinedSimplefield
     {
         $this->value = $value;
         return $this;
+    }
+
+    public function __construct(string $feldname = '', ?string $value = null)
+    {
+        $this->feldname = $feldname;
+        $this->value = $value;
     }
 }

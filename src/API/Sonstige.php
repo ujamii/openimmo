@@ -13,60 +13,36 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Objekte befinden sich jetzt unter Element parken.
  * Aus kompatibilitätegründen bleiben die Attribute NOCH! erhalten.
  * In nachfolgenden Versionen wird die Unterstützung an dieser Stelle eingestellt.
- *
  * @XmlRoot("sonstige")
  */
 class Sonstige
 {
-    /**
-     */
-    public const SONSTIGE_TYP_KRANKENHAUS = 'KRANKENHAUS';
-
-    /**
-     */
     public const SONSTIGE_TYP_PARKHAUS = 'PARKHAUS';
-
-    /**
-     */
+    public const SONSTIGE_TYP_TANKSTELLE = 'TANKSTELLE';
+    public const SONSTIGE_TYP_KRANKENHAUS = 'KRANKENHAUS';
     public const SONSTIGE_TYP_SONSTIGE = 'SONSTIGE';
 
     /**
-     */
-    public const SONSTIGE_TYP_TANKSTELLE = 'TANKSTELLE';
-
-    /**
-     * optional
-     *
      * @Type("string")
      * @XmlAttribute
+     * optional
      * @see SONSTIGE_TYP_* constants
-     * @var string
      */
-    protected $sonstigeTyp;
+    protected string $sonstigeTyp = '';
 
-    /**
-     * @param string $sonstigeTyp Shortcut setter for sonstigeTyp
-     */
-    public function __construct(string $sonstigeTyp = null)
-    {
-        $this->sonstigeTyp = $sonstigeTyp;
-    }
-
-    /**
-     * @return string
-     */
     public function getSonstigeTyp(): ?string
     {
         return $this->sonstigeTyp;
     }
 
-    /**
-     * @param string $sonstigeTyp Setter for sonstigeTyp
-     * @return Sonstige
-     */
-    public function setSonstigeTyp(?string $sonstigeTyp)
+    public function setSonstigeTyp(?string $sonstigeTyp): Sonstige
     {
         $this->sonstigeTyp = $sonstigeTyp;
         return $this;
+    }
+
+    public function __construct(string $sonstigeTyp = '')
+    {
+        $this->sonstigeTyp = $sonstigeTyp;
     }
 }

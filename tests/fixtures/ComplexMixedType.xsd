@@ -3,7 +3,6 @@
 	<xsd:element name="complex_mixed_type">
 		<xsd:annotation>
 			<xsd:documentation>Courtage, die der Kunde zu zahlen hat, als Betrag in ? / % / MM, daher Textfeld</xsd:documentation>
-			<xsd:documentation xml:lang="en"></xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
 			<xsd:attribute name="mit_Pommes" type="xsd:boolean"/>

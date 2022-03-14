@@ -6,9 +6,7 @@ class TypeWithExtensionClassTest extends FileGeneratingTest
 {
     public function testGenerateApiClassTypeWithExtension(): void
     {
-        $generatedClass = $this->getGeneratedClassFromFile(
-            'type_with_extension'
-        );
+        $generatedClass = $this->getGeneratedClassFromFile('type_with_extension');
 
         $properties = [
             self::getPropertyConfig('foobar', 'float', true, ['XmlAttribute' => '']),

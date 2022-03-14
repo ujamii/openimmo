@@ -2,95 +2,106 @@
 
 namespace Ujamii\OpenImmo\Generator;
 
-use gossi\codegen\model\PhpClass;
-use gossi\codegen\model\PhpMethod;
-use gossi\codegen\model\PhpParameter;
-use gossi\codegen\model\PhpProperty;
-use gossi\docblock\tags\TagFactory;
+use Nette\PhpGenerator\ClassType;
+use Nette\PhpGenerator\Property;
 
 class CodeGenUtil
 {
+    public const DESCRIPTION_PART_DELIMTER = PHP_EOL;
+
     /**
      * Adds a new description part to the given class property.
      *
-     * @param PhpProperty $classProperty
+     * @param Property $classProperty
      * @param string $descriptionPart
      * @param string $separator
      *
      * @return void
      */
-    public static function addDescriptionPart(PhpProperty $classProperty, string $descriptionPart, string $separator = ', '): void
+    public static function addDescriptionPart(Property $classProperty, string $descriptionPart, string $separator = self::DESCRIPTION_PART_DELIMTER): void
     {
         if ('' === trim($descriptionPart)) {
             return;
         }
-        if ('' === trim($classProperty->getTypeDescription())) {
+        $comment = $classProperty->getComment() ?? '';
+        if ('' === trim($comment)) {
             $currentDescriptionParts = [];
         } else {
-            $currentDescriptionParts = explode($separator ?: ',', $classProperty->getTypeDescription());
+            $currentDescriptionParts = explode($separator ?: self::DESCRIPTION_PART_DELIMTER, $comment);
         }
         $currentDescriptionParts[] = $descriptionPart;
-        $classProperty->setTypeDescription(implode($separator, $currentDescriptionParts));
+        $classProperty->setComment(implode($separator, $currentDescriptionParts));
     }
 
     /**
-     * @param PhpProperty $property
-     * @param PhpClass $class
+     * @param Property $property
+     * @param ClassType $class
      * @param bool $fluentApi
      * @param bool $nullable
      */
-    public static function generateGetterAndSetter(PhpProperty $property, PhpClass $class, bool $fluentApi = true, bool $nullable = true): void
+    public static function generateGetterAndSetter(Property $property, ClassType $class, bool $fluentApi = true, bool $nullable = false): void
     {
-        self::generateSetter($property, $class, $fluentApi, $nullable);
         self::generateGetter($property, $class, $nullable);
+        self::generateSetter($property, $class, $fluentApi, $nullable);
     }
 
     /**
-     * @param PhpProperty $property
-     * @param PhpClass $class
+     * @param Property $property
+     * @param ClassType $class
      * @param bool $nullable
      */
-    public static function generateGetter(PhpProperty $property, PhpClass $class, bool $nullable): void
+    public static function generateGetter(Property $property, ClassType $class, bool $nullable): void
     {
-        $returnsArray = substr($property->getType(), -2) === '[]';
-        $getter       = PhpMethod::create('get' . ucfirst($property->getName()));
+        $propertyType = $property->getType();
+        $returnsArray = $propertyType === 'array';
+        $getter       = $class->addMethod('get' . ucfirst($property->getName()));
         if ($returnsArray) {
             $getterCode = 'return $this->' . $property->getName() . ' ?? [];';
-            $getter->setBody($getterCode);
-            $getter->setType('array');
-            $getter->setDescription('Returns array of ' . str_replace('[]', '', $property->getType()));
-            $getter->setNullable(false);
+            $getter->setBody($getterCode)
+                   ->setReturnType('array')
+                   ->addComment('Returns array of ' . str_replace('[]', '', $propertyType))
+                   ->setReturnNullable(false);
         } else {
             $getterCode = 'return $this->' . $property->getName() . ';';
-            $getter->setBody($getterCode);
-            $getter->setType($property->getType());
-            $getter->setNullable($nullable);
+            $getter->setBody($getterCode)
+                   ->setReturnType($propertyType)
+                   ->setReturnNullable($nullable);
         }
-        $class->setMethod($getter);
     }
 
     /**
-     * @param PhpProperty $property
-     * @param PhpClass $class
+     * @param Property $property
+     * @param ClassType $class
      * @param bool $fluentApi
      * @param bool $nullable
      */
-    public static function generateSetter(PhpProperty $property, PhpClass $class, bool $fluentApi, bool $nullable): void
+    public static function generateSetter(Property $property, ClassType $class, bool $fluentApi, bool $nullable): void
     {
-        $setter   = PhpMethod::create('set' . ucfirst($property->getName()));
-        $isPlural = substr($property->getType(), -2) === '[]';
+        $setter   = $class->addMethod('set' . ucfirst($property->getName()));
+        $propertyType = $property->getType();
+        $isPlural = $propertyType === 'array';
 
-        $parameter = PhpParameter::create($property->getName())
-                                 ->setType($isPlural ? 'array' : $property->getType())
-                                 ->setNullable($isPlural ? false : $nullable)
-                                 ->setDescription('Setter for ' . $property->getName());
-        $setter->addParameter($parameter);
+        $setter->addParameter($property->getName())
+                                 ->setType($isPlural ? 'array' : $propertyType)
+                                 ->setNullable($isPlural ? false : $nullable);
+
         $setterCode = '$this->' . $property->getName() . ' = $' . $property->getName() . ';';
         if ($fluentApi) {
+            $setter->setReturnType('\\' . TypeUtil::OPENIMMO_NAMESPACE . $class->getName());
             $setterCode .= PHP_EOL . 'return $this;';
-            $setter->getDocblock()->appendTag(TagFactory::create('return', $class->getName()));
         }
         $setter->setBody($setterCode);
-        $class->setMethod($setter);
+    }
+
+    public static function getAnnotationFromProperty(Property $property, string $annotation): ?string
+    {
+        $commentLines = explode(self::DESCRIPTION_PART_DELIMTER, $property->getComment() ?? '');
+        foreach ($commentLines as $commentLine) {
+            if (strpos($commentLine, "@{$annotation}") === 0) {
+                return str_replace("@{$annotation} ", '', $commentLine);
+            }
+        }
+
+        return null;
     }
 }

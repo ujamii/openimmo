@@ -10,74 +10,51 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Fahrstuhl
  * Welche Art von Fahrstuhl, Aufzug, Lift - Mehrfachnennung möglich
- *
  * @XmlRoot("fahrstuhl")
  */
 class Fahrstuhl
 {
     /**
-     * optional
-     *
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("LASTEN")
-     * @var bool
-     */
-    protected $lasten;
-
-    /**
-     * optional
-     *
      * @Type("bool")
      * @XmlAttribute
      * @SerializedName("PERSONEN")
-     * @var bool
+     * optional
      */
-    protected $personen;
+    protected ?bool $personen = null;
 
     /**
-     * @param bool $personen Shortcut setter for personen
-     * @param bool $lasten Shortcut setter for lasten
+     * @Type("bool")
+     * @XmlAttribute
+     * @SerializedName("LASTEN")
+     * optional
      */
-    public function __construct(bool $personen = null, bool $lasten = null)
-    {
-        $this->personen = $personen;
-        $this->lasten = $lasten;
-    }
+    protected ?bool $lasten = null;
 
-    /**
-     * @return bool
-     */
-    public function getLasten(): ?bool
-    {
-        return $this->lasten;
-    }
-
-    /**
-     * @return bool
-     */
     public function getPersonen(): ?bool
     {
         return $this->personen;
     }
 
-    /**
-     * @param bool $lasten Setter for lasten
-     * @return Fahrstuhl
-     */
-    public function setLasten(?bool $lasten)
+    public function setPersonen(?bool $personen): Fahrstuhl
+    {
+        $this->personen = $personen;
+        return $this;
+    }
+
+    public function getLasten(): ?bool
+    {
+        return $this->lasten;
+    }
+
+    public function setLasten(?bool $lasten): Fahrstuhl
     {
         $this->lasten = $lasten;
         return $this;
     }
 
-    /**
-     * @param bool $personen Setter for personen
-     * @return Fahrstuhl
-     */
-    public function setPersonen(?bool $personen)
+    public function __construct(?bool $personen = null, ?bool $lasten = null)
     {
         $this->personen = $personen;
-        return $this;
+        $this->lasten = $lasten;
     }
 }

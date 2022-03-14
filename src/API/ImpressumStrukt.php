@@ -9,7 +9,6 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class ImpressumStrukt
  * Ergänzung ($V120)
- *
  * @XmlRoot("impressum_strukt")
  */
 class ImpressumStrukt
@@ -17,248 +16,168 @@ class ImpressumStrukt
     /**
      * @Type("string")
      * @SkipWhenEmpty
-     * @var string
      */
-    protected $berufsaufsichtsbehoerde = '';
+    protected string $firmenname = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
-     * @var string
      */
-    protected $firmenanschrift = '';
+    protected string $firmenanschrift = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
-     * @var string
      */
-    protected $firmenname = '';
+    protected string $telefon = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
-     * @var string
      */
-    protected $handelsregister = '';
+    protected string $vertretungsberechtigter = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
-     * @var string
      */
-    protected $handelsregisterNr = '';
+    protected string $berufsaufsichtsbehoerde = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
-     * @var string
      */
-    protected $steuernummer = '';
+    protected string $handelsregister = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
-     * @var string
      */
-    protected $telefon = '';
+    protected string $handelsregisterNr = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
-     * @var string
      */
-    protected $umsstId = '';
+    protected string $umsstId = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
-     * @var string
      */
-    protected $vertretungsberechtigter = '';
+    protected string $steuernummer = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
-     * @var string
      */
-    protected $weiteres = '';
+    protected string $weiteres = '';
 
-    /**
-     * @return string
-     */
-    public function getBerufsaufsichtsbehoerde(): string
-    {
-        return $this->berufsaufsichtsbehoerde;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFirmenanschrift(): string
-    {
-        return $this->firmenanschrift;
-    }
-
-    /**
-     * @return string
-     */
     public function getFirmenname(): string
     {
         return $this->firmenname;
     }
 
-    /**
-     * @return string
-     */
-    public function getHandelsregister(): string
-    {
-        return $this->handelsregister;
-    }
-
-    /**
-     * @return string
-     */
-    public function getHandelsregisterNr(): string
-    {
-        return $this->handelsregisterNr;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSteuernummer(): string
-    {
-        return $this->steuernummer;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTelefon(): string
-    {
-        return $this->telefon;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUmsstId(): string
-    {
-        return $this->umsstId;
-    }
-
-    /**
-     * @return string
-     */
-    public function getVertretungsberechtigter(): string
-    {
-        return $this->vertretungsberechtigter;
-    }
-
-    /**
-     * @return string
-     */
-    public function getWeiteres(): string
-    {
-        return $this->weiteres;
-    }
-
-    /**
-     * @param string $berufsaufsichtsbehoerde Setter for berufsaufsichtsbehoerde
-     * @return ImpressumStrukt
-     */
-    public function setBerufsaufsichtsbehoerde(string $berufsaufsichtsbehoerde)
-    {
-        $this->berufsaufsichtsbehoerde = $berufsaufsichtsbehoerde;
-        return $this;
-    }
-
-    /**
-     * @param string $firmenanschrift Setter for firmenanschrift
-     * @return ImpressumStrukt
-     */
-    public function setFirmenanschrift(string $firmenanschrift)
-    {
-        $this->firmenanschrift = $firmenanschrift;
-        return $this;
-    }
-
-    /**
-     * @param string $firmenname Setter for firmenname
-     * @return ImpressumStrukt
-     */
-    public function setFirmenname(string $firmenname)
+    public function setFirmenname(string $firmenname): ImpressumStrukt
     {
         $this->firmenname = $firmenname;
         return $this;
     }
 
-    /**
-     * @param string $handelsregister Setter for handelsregister
-     * @return ImpressumStrukt
-     */
-    public function setHandelsregister(string $handelsregister)
+    public function getFirmenanschrift(): string
     {
-        $this->handelsregister = $handelsregister;
+        return $this->firmenanschrift;
+    }
+
+    public function setFirmenanschrift(string $firmenanschrift): ImpressumStrukt
+    {
+        $this->firmenanschrift = $firmenanschrift;
         return $this;
     }
 
-    /**
-     * @param string $handelsregisterNr Setter for handelsregisterNr
-     * @return ImpressumStrukt
-     */
-    public function setHandelsregisterNr(string $handelsregisterNr)
+    public function getTelefon(): string
     {
-        $this->handelsregisterNr = $handelsregisterNr;
-        return $this;
+        return $this->telefon;
     }
 
-    /**
-     * @param string $steuernummer Setter for steuernummer
-     * @return ImpressumStrukt
-     */
-    public function setSteuernummer(string $steuernummer)
-    {
-        $this->steuernummer = $steuernummer;
-        return $this;
-    }
-
-    /**
-     * @param string $telefon Setter for telefon
-     * @return ImpressumStrukt
-     */
-    public function setTelefon(string $telefon)
+    public function setTelefon(string $telefon): ImpressumStrukt
     {
         $this->telefon = $telefon;
         return $this;
     }
 
-    /**
-     * @param string $umsstId Setter for umsstId
-     * @return ImpressumStrukt
-     */
-    public function setUmsstId(string $umsstId)
+    public function getVertretungsberechtigter(): string
     {
-        $this->umsstId = $umsstId;
-        return $this;
+        return $this->vertretungsberechtigter;
     }
 
-    /**
-     * @param string $vertretungsberechtigter Setter for vertretungsberechtigter
-     * @return ImpressumStrukt
-     */
-    public function setVertretungsberechtigter(string $vertretungsberechtigter)
+    public function setVertretungsberechtigter(string $vertretungsberechtigter): ImpressumStrukt
     {
         $this->vertretungsberechtigter = $vertretungsberechtigter;
         return $this;
     }
 
-    /**
-     * @param string $weiteres Setter for weiteres
-     * @return ImpressumStrukt
-     */
-    public function setWeiteres(string $weiteres)
+    public function getBerufsaufsichtsbehoerde(): string
+    {
+        return $this->berufsaufsichtsbehoerde;
+    }
+
+    public function setBerufsaufsichtsbehoerde(string $berufsaufsichtsbehoerde): ImpressumStrukt
+    {
+        $this->berufsaufsichtsbehoerde = $berufsaufsichtsbehoerde;
+        return $this;
+    }
+
+    public function getHandelsregister(): string
+    {
+        return $this->handelsregister;
+    }
+
+    public function setHandelsregister(string $handelsregister): ImpressumStrukt
+    {
+        $this->handelsregister = $handelsregister;
+        return $this;
+    }
+
+    public function getHandelsregisterNr(): string
+    {
+        return $this->handelsregisterNr;
+    }
+
+    public function setHandelsregisterNr(string $handelsregisterNr): ImpressumStrukt
+    {
+        $this->handelsregisterNr = $handelsregisterNr;
+        return $this;
+    }
+
+    public function getUmsstId(): string
+    {
+        return $this->umsstId;
+    }
+
+    public function setUmsstId(string $umsstId): ImpressumStrukt
+    {
+        $this->umsstId = $umsstId;
+        return $this;
+    }
+
+    public function getSteuernummer(): string
+    {
+        return $this->steuernummer;
+    }
+
+    public function setSteuernummer(string $steuernummer): ImpressumStrukt
+    {
+        $this->steuernummer = $steuernummer;
+        return $this;
+    }
+
+    public function getWeiteres(): string
+    {
+        return $this->weiteres;
+    }
+
+    public function setWeiteres(string $weiteres): ImpressumStrukt
     {
         $this->weiteres = $weiteres;
         return $this;

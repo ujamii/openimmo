@@ -10,70 +10,48 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Gesamtbelastungnetto
  * Die Summe alle Nebenkosten und Mietzinse bei Miete, UmSt. im Attribut.
- *
  * @XmlRoot("gesamtbelastungnetto")
  */
 class Gesamtbelastungnetto
 {
     /**
-     * optional
-     *
      * @Type("float")
      * @XmlAttribute
-     * @var float
+     * optional
      */
-    protected $gesamtbelastungust;
+    protected ?float $gesamtbelastungust = null;
 
     /**
      * @Inline
      * @Type("float")
-     * @var float
      */
-    protected $value;
+    protected ?float $value = null;
 
-    /**
-     * @param float $gesamtbelastungust Shortcut setter for gesamtbelastungust
-     * @param float $value Shortcut setter for value
-     */
-    public function __construct(float $gesamtbelastungust = null, float $value = null)
-    {
-        $this->gesamtbelastungust = $gesamtbelastungust;
-        $this->value = $value;
-    }
-
-    /**
-     * @return float
-     */
     public function getGesamtbelastungust(): ?float
     {
         return $this->gesamtbelastungust;
     }
 
-    /**
-     * @return float
-     */
-    public function getValue(): ?float
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param float $gesamtbelastungust Setter for gesamtbelastungust
-     * @return Gesamtbelastungnetto
-     */
-    public function setGesamtbelastungust(?float $gesamtbelastungust)
+    public function setGesamtbelastungust(?float $gesamtbelastungust): Gesamtbelastungnetto
     {
         $this->gesamtbelastungust = $gesamtbelastungust;
         return $this;
     }
 
-    /**
-     * @param float $value Setter for value
-     * @return Gesamtbelastungnetto
-     */
-    public function setValue(?float $value)
+    public function getValue(): ?float
+    {
+        return $this->value;
+    }
+
+    public function setValue(?float $value): Gesamtbelastungnetto
     {
         $this->value = $value;
         return $this;
+    }
+
+    public function __construct(?float $gesamtbelastungust = null, ?float $value = null)
+    {
+        $this->gesamtbelastungust = $gesamtbelastungust;
+        $this->value = $value;
     }
 }

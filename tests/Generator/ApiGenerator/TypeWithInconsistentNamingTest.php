@@ -2,6 +2,8 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
+use JMS\Serializer\Annotation\SerializedName;
+
 class TypeWithInconsistentNamingTest extends FileGeneratingTest
 {
     public function testGenerateApiClassWithDateTypes(): void
@@ -15,6 +17,6 @@ class TypeWithInconsistentNamingTest extends FileGeneratingTest
         ];
 
         $this->assertClassHasProperties($generatedClass, $properties);
-        $this->assertTrue($generatedClass->hasUseStatement('JMS\\Serializer\\Annotation\\SerializedName'));
+        $this->assertContains(SerializedName::class, $generatedClass->getNamespace()->getUses());
     }
 }

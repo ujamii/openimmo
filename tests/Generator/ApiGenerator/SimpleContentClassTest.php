@@ -2,6 +2,8 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
+use JMS\Serializer\Annotation\Type;
+
 class SimpleContentClassTest extends FileGeneratingTest
 {
     public function testGenerateApiClassSimpleContent(): void
@@ -17,6 +19,6 @@ class SimpleContentClassTest extends FileGeneratingTest
         ];
 
         $this->assertClassHasProperties($generatedClass, $properties);
-        $this->assertTrue($generatedClass->hasUseStatement('JMS\\Serializer\\Annotation\\Type'));
+        $this->assertContains(Type::class, $generatedClass->getNamespace()->getUses());
     }
 }

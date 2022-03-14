@@ -2,8 +2,8 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
-use gossi\codegen\model\PhpClass;
-use gossi\docblock\tags\AbstractTag;
+use GoetasWebservices\XML\XSDReader\Exception\IOException;
+use Nette\PhpGenerator\ClassType;
 use PHPUnit\Framework\TestCase;
 use Ujamii\OpenImmo\Generator\ApiGenerator;
 use Ujamii\OpenImmo\Generator\TypeUtil;
@@ -39,10 +39,10 @@ abstract class FileGeneratingTest extends TestCase
      * @param string $nameInXsd
      * @param string $docBlockComment
      *
-     * @return PhpClass
-     * @throws \GoetasWebservices\XML\XSDReader\Exception\IOException
+     * @return ClassType
+     * @throws IOException
      */
-    public function getGeneratedClassFromFile(string $nameInXsd, string $docBlockComment = ''): PhpClass
+    public function getGeneratedClassFromFile(string $nameInXsd, string $docBlockComment = ''): ClassType
     {
         $className   = TypeUtil::camelize($nameInXsd);
         $fixtureFile = "./tests/fixtures/{$className}.xsd";
@@ -50,47 +50,47 @@ abstract class FileGeneratingTest extends TestCase
 
         $classFileName = "{$this->tmpDir}{$className}.php";
         $this->assertFileExists($classFileName);
-        $generatedClass = PhpClass::fromFile($classFileName);
+        /** @var ClassType $generatedClass */
+        $generatedClass = ClassType::fromCode(file_get_contents($classFileName));
 
         if ('' !== $docBlockComment) {
             $this->assertStringContainsString(
                 $docBlockComment,
-                $generatedClass->getDocblock()->getShortDescription()
+                $generatedClass->getComment()
             );
         }
 
-        $this->assertCount(1, $generatedClass->getDocblock()->getTags('XmlRoot'));
-        $this->assertEquals('("' . $nameInXsd . '")', $generatedClass->getDocblock()->getTags('XmlRoot')->get(0)->getDescription());
+        $this->assertStringContainsString('@XmlRoot("' . $nameInXsd . '")', $generatedClass->getComment());
 
         return $generatedClass;
     }
 
     /**
-     * @param PhpClass $generatedClass
+     * @param ClassType $generatedClass
      *
      * @return \ReflectionClass
      * @throws \ReflectionException
      */
-    public function getReflectionClassFromgeneratedClass(PhpClass $generatedClass): \ReflectionClass
+    public function getReflectionClassFromGeneratedClass(ClassType $generatedClass): \ReflectionClass
     {
         $classFileName = "{$this->tmpDir}{$generatedClass->getName()}.php";
         require_once($classFileName);
-        $subjectClassName = $generatedClass->getQualifiedName();
+        $subjectClassName = $generatedClass->getNamespace()->getName() . '\\' . $generatedClass->getName();
 
         return new \ReflectionClass(new $subjectClassName());
     }
 
     /**
-     * @param PhpClass $generatedClass
+     * @param ClassType $generatedClass
      * @param array $constants
      */
-    public function assertClassHasConstants(PhpClass $generatedClass, array $constants): void
+    public function assertClassHasConstants(ClassType $generatedClass, array $constants): void
     {
         foreach ($constants as $constantName => $constantValue) {
-            $this->assertTrue($generatedClass->hasConstant($constantName), "Constant {$constantName} does not exist");
-            $this->assertEquals($constantValue, $generatedClass->getConstant($constantName)->getValue());
+            $this->assertArrayHasKey($constantName, $generatedClass->getConstants(), "Constant {$constantName} does not exist");
+            $this->assertEquals($constantValue, $generatedClass->getConstants()[$constantName]->getValue()->__toString());
         }
-        $this->assertCount(count($constants), $generatedClass->getConstantNames());
+        $this->assertCount(count($constants), $generatedClass->getConstants());
     }
 
     public static function getPropertyConfig(
@@ -104,7 +104,7 @@ abstract class FileGeneratingTest extends TestCase
     }
 
     public function assertClassHasProperty(
-        PhpClass $class,
+        ClassType $class,
         string $propertyName,
         string $type = 'string',
         bool $hasGetterAndSetter = true,
@@ -115,19 +115,17 @@ abstract class FileGeneratingTest extends TestCase
         $property = $class->getProperty($propertyName);
 
         // TODO property type may be Feld[] instead of array<Feld>
-        $propertyType = TypeUtil::getValidPhpType(null !== $xsdType ? $xsdType : $type);
+        $propertyType = TypeUtil::getValidPhpType($xsdType ?? $type);
         $this->assertEquals($propertyType, $property->getType());
-        $this->assertTrue($property->getDocblock()->hasTag('Type'));
 
-        $serializerType = TypeUtil::getTypeForSerializer(null !== $xsdType ? $xsdType : $type);
-        $this->assertEquals('("' . $serializerType . '")', trim($property->getDocblock()->getTags('Type')->get(0)->getDescription()));
+        $serializerType = TypeUtil::getTypeForSerializer($xsdType ?? $type);
+        $this->assertStringContainsString('@Type("' . $serializerType . '")', $property->getComment());
 
         foreach ($docTags as $tagName => $tagValue) {
-            $this->assertTrue($property->getDocblock()->hasTag($tagName), $tagName . ' not found in DocBlock');
-            if (! empty($tagValue)) {
-                /* @var AbstractTag $docTag */
-                $docTag = $property->getDocblock()->getTags($tagName)->get(0);
-                $this->assertEquals($tagValue, trim($docTag->getDescription()));
+            if (empty($tagValue)) {
+                $this->assertStringContainsString('@' . $tagName, $property->getComment(), $tagName . ' not found in DocBlock');
+            } else {
+                $this->assertStringContainsString('@' . $tagName . $tagValue, $property->getComment(), $tagName . ' not found in DocBlock');
             }
         }
 
@@ -138,19 +136,19 @@ abstract class FileGeneratingTest extends TestCase
             $phpType = TypeUtil::getValidPhpType($type);
             $getter  = $class->getMethod('get' . ucfirst($propertyName));
             $this->assertEquals('public', $getter->getVisibility());
-            $this->assertEquals($phpType, $getter->getType(), "Return type of {$getter->getName()}");
-            //$this->assertTrue($getter->getNullable());
+            $this->assertEquals($phpType, $getter->getReturnType(), "Return type of {$getter->getName()}");
+            //$this->assertTrue($getter->isReturnNullable());
 
             $setter = $class->getMethod('set' . ucfirst($propertyName));
             $this->assertEquals('public', $setter->getVisibility());
-            $this->assertEquals($class->getName(), $setter->getType());
-            $this->assertTrue($setter->hasParameter($propertyName));
-            $this->assertEquals($phpType, $setter->getParameter($propertyName)->getType());
-            //$this->assertTrue($setter->getParameter($propertyName)->getNullable());
+            $this->assertEquals('\\' . TypeUtil::OPENIMMO_NAMESPACE . $class->getName(), $setter->getReturnType());
+            $this->assertArrayHasKey($propertyName, $setter->getParameters());
+            $this->assertEquals($phpType, $setter->getParameters()[$propertyName]->getType());
+            //$this->assertTrue($setter->getParameters()[$propertyName]->isNullable());
         }
     }
 
-    public function assertClassHasConstructor(PhpClass $class, array $properties): void
+    public function assertClassHasConstructor(ClassType $class, array $properties): void
     {
         $this->assertTrue($class->hasMethod('__construct'));
         $this->assertCount(count($properties), $class->getMethod('__construct')->getParameters());
@@ -158,20 +156,33 @@ abstract class FileGeneratingTest extends TestCase
         $constructor = $class->getMethod('__construct');
         foreach ($properties as $propertyConfig) {
             list($propertyName, $type, $hasGetterAndSetter, $docTags, $xsdType) = $propertyConfig;
-            $constructorParam = $constructor->getParameter($propertyName);
+            $constructorParam = $constructor->getParameters()[$propertyName];
             $this->assertEquals($type, $constructorParam->getType());
-            if ($constructorParam->getType() == 'array') {
-                $this->assertEquals('[]', $constructorParam->getExpression());
+
+            if ($constructorParam->isNullable()) {
+                $this->assertSame('null', (string) $constructorParam->getDefaultValue());
             } else {
-                if ($constructorParam->getNullable()) {
-                    $this->assertNull($constructorParam->getValue());
+                if ($constructorParam->getType() === 'array') {
+                    $this->assertSame('[]', (string) $constructorParam->getDefaultValue());
+                }
+                if ($constructorParam->getType() === 'bool') {
+                    $this->assertSame('false', (string) $constructorParam->getDefaultValue());
+                }
+                if ($constructorParam->getType() === 'float') {
+                    $this->assertSame('0.0', (string) $constructorParam->getDefaultValue());
+                }
+                if ($constructorParam->getType() === 'int') {
+                    $this->assertSame('0', (string) $constructorParam->getDefaultValue());
+                }
+                if ($constructorParam->getType() === 'string') {
+                    $this->assertSame("''", (string) $constructorParam->getDefaultValue());
                 }
             }
 //        $this->assertFalse($constructor->getParameter($propertyName)->getNullable());
         }
     }
 
-    public function assertClassHasProperties(PhpClass $class, array $properties): void
+    public function assertClassHasProperties(ClassType $class, array $properties): void
     {
         foreach ($properties as $propertyConfig) {
             $this->assertClassHasProperty($class, ...$propertyConfig);

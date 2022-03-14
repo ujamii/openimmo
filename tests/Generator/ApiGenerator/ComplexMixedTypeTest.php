@@ -2,6 +2,10 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
+use JMS\Serializer\Annotation\Inline;
+use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlAttribute;
+
 class ComplexMixedTypeTest extends FileGeneratingTest
 {
     public function testGenerateApiClassComplexMixedType(): void
@@ -17,8 +21,8 @@ class ComplexMixedTypeTest extends FileGeneratingTest
         ];
 
         $this->assertClassHasProperties($generatedClass, $properties);
-        $this->assertTrue($generatedClass->hasUseStatement('JMS\\Serializer\\Annotation\\Type'));
-        $this->assertTrue($generatedClass->hasUseStatement('JMS\\Serializer\\Annotation\\Inline'));
-        $this->assertTrue($generatedClass->hasUseStatement('JMS\\Serializer\\Annotation\\XmlAttribute'));
+        $this->assertContains(Type::class, $generatedClass->getNamespace()->getUses());
+        $this->assertContains(Inline::class, $generatedClass->getNamespace()->getUses());
+        $this->assertContains(XmlAttribute::class, $generatedClass->getNamespace()->getUses());
     }
 }
