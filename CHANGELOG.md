@@ -1,3 +1,44 @@
+## 1.0.0 (March 14, 2022)
+  - Merge pull request #46 from ujamii/feature/nette-code-generator
+  - [DOC] raised min php version to 7.4 
+  - [TASK] lowered required MSI
+  - [TASK] added some more checks for the default constructor values
+  - [TASK] raised scrutinizer score by fixing some type issues
+  - [TASK] raised versions of phpstan and rector, closes #36
+  - [BUGFIX] use lower MSI for 7.4 compat
+  - [BUGFIX] use correct nette class for visibility constants
+  - [WIP][FEATURE] switch from gossi/php-code-generator to nette/php-generator as the package does not seem to be developed anymore
+  - Merge pull request #44 from ujamii/dependabot/github_actions/actions/checkout-3
+  - Bump actions/checkout from 2.4.0 to 3
+  - Merge pull request #43 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.17.1
+  - Merge pull request #45 from ujamii/task/drop-php-73
+  - [TASK] drop PHP 7.3 support, closes #25
+  - Bump shivammathur/setup-php from 2.16.0 to 2.17.1
+  - Merge pull request #40 from andypost/24-php81
+  - Merge pull request #38 from ujamii/dependabot/github_actions/actions/cache-2.1.7
+  - Merge pull request #39 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.16.0
+  - Add PHP 8.1 to CI
+  - Bump shivammathur/setup-php from 2.15.0 to 2.16.0
+  - Bump actions/cache from 2.1.6 to 2.1.7
+  - Merge pull request #37 from ujamii/dependabot/github_actions/actions/checkout-2.4.0
+  - Bump actions/checkout from 2.3.4 to 2.4.0
+  - Merge pull request #34 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.15.0
+  - Bump shivammathur/setup-php from 2.14.0 to 2.15.0
+  - Merge pull request #33 from ujamii/dependabot/github_actions/codecov/codecov-action-2.1.0
+  - Bump codecov/codecov-action from 2.0.3 to 2.1.0
+  - Merge pull request #32 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.14.0
+  - Bump shivammathur/setup-php from 2.13.0 to 2.14.0
+  - Merge pull request #30 from ujamii/dependabot/github_actions/codecov/codecov-action-2.0.3
+  - Bump codecov/codecov-action from 2.0.2 to 2.0.3
+  - Merge pull request #29 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.13.0
+  - Bump shivammathur/setup-php from 2.12.0 to 2.13.0
+  - Merge pull request #26 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.12.0
+  - Merge pull request #28 from ujamii/dependabot/github_actions/codecov/codecov-action-2.0.2
+  - Bump codecov/codecov-action from 2.0.1 to 2.0.2
+  - Merge pull request #27 from ujamii/dependabot/github_actions/codecov/codecov-action-2.0.1
+  - Bump codecov/codecov-action from 1.5.2 to 2.0.1
+  - Bump shivammathur/setup-php from 2.11.0 to 2.12.0
+
 ## 0.10.0 (July 01, 2021)
   - [DOC] added description and example of howto create json output
   - [TEST] renamed tests cases to prepare for Symfony serializer usage
