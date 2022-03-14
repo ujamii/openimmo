@@ -1,7 +1,7 @@
 # OpenImmo PHP library
 
 [![Packagist](https://img.shields.io/packagist/v/ujamii/openimmo.svg?colorB=green&style=flat)](https://packagist.org/packages/ujamii/openimmo)
-[![Minimum PHP Version](https://img.shields.io/badge/php-7.3%2B-8892BF.svg?style=flat)](https://php.net/)
+[![Minimum PHP Version](https://img.shields.io/badge/php-7.4%2B-8892BF.svg?style=flat)](https://php.net/)
 [![Continuous Integration](https://github.com/ujamii/openimmo/actions/workflows/php.yml/badge.svg)](https://github.com/ujamii/openimmo/actions)
 [![codecov](https://codecov.io/gh/ujamii/openimmo/branch/master/graph/badge.svg?token=97D799UX1B)](https://codecov.io/gh/ujamii/openimmo)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fujamii%2Fopenimmo%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/ujamii/openimmo/master)
