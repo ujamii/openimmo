@@ -19,7 +19,7 @@ class UserDefinedSimplefield
      * @XmlAttribute
      * required
      */
-    protected ?string $feldname = null;
+    protected string $feldname = '';
 
     /**
      * @Inline
@@ -49,7 +49,7 @@ class UserDefinedSimplefield
         return $this;
     }
 
-    public function __construct(?string $feldname = null, ?string $value = null)
+    public function __construct(string $feldname = '', ?string $value = null)
     {
         $this->feldname = $feldname;
         $this->value = $value;

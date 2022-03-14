@@ -20,7 +20,7 @@ class Vermarktungsart
      * @SerializedName("KAUF")
      * required
      */
-    protected ?bool $kauf = null;
+    protected bool $kauf = false;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Vermarktungsart
      * @SerializedName("MIETE_PACHT")
      * required
      */
-    protected ?bool $mietePacht = null;
+    protected bool $mietePacht = false;
 
     /**
      * @Type("bool")
@@ -91,8 +91,8 @@ class Vermarktungsart
     }
 
     public function __construct(
-        ?bool $kauf = null,
-        ?bool $mietePacht = null,
+        bool $kauf = false,
+        bool $mietePacht = false,
         ?bool $erbpacht = null,
         ?bool $leasing = null
     ) {

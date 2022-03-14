@@ -288,9 +288,7 @@ class ApiGenerator
         $namespace->addUse(Type::class);
         $nullable = true;
 
-        $classProperty->setNullable($nullable)
-                      ->setValue(TypeUtil::getDefaultValueForType($phpType, $nullable))
-                      ->setType($phpType)
+        $classProperty->setType($phpType)
                       ->addComment('@XmlAttribute');
 
         // as the openimmo guys like to switch randomly between lowercase and uppercase, serialized names may differ from property names
@@ -306,6 +304,10 @@ class ApiGenerator
                 $nullable = false;
             }
         }
+
+        $classProperty->setNullable($nullable)
+                      ->setValue(TypeUtil::getDefaultValueForType($phpType, $nullable));
+
 
         $this->parseRestriction(
             $attribute->getType()->getRestriction(),

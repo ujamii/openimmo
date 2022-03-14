@@ -20,7 +20,7 @@ class ObjektText
      * @XmlAttribute
      * required
      */
-    protected ?string $lang = null;
+    protected string $lang = '';
 
     /**
      * @Inline
@@ -50,7 +50,7 @@ class ObjektText
         return $this;
     }
 
-    public function __construct(?string $lang = null, ?string $value = null)
+    public function __construct(string $lang = '', ?string $value = null)
     {
         $this->lang = $lang;
         $this->value = $value;

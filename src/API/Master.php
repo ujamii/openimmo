@@ -22,7 +22,7 @@ class Master
      * @XmlAttribute
      * required
      */
-    protected ?bool $visible = null;
+    protected bool $visible = false;
 
     /**
      * @Inline
@@ -52,7 +52,7 @@ class Master
         return $this;
     }
 
-    public function __construct(?bool $visible = null, ?string $value = null)
+    public function __construct(bool $visible = false, ?string $value = null)
     {
         $this->visible = $visible;
         $this->value = $value;

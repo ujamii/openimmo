@@ -50,21 +50,21 @@ class Uebertragung
      * @XmlAttribute
      * required
      */
-    protected ?string $version = null;
+    protected string $version = '';
 
     /**
      * @Type("string")
      * @XmlAttribute
      * required
      */
-    protected ?string $sendersoftware = null;
+    protected string $sendersoftware = '';
 
     /**
      * @Type("string")
      * @XmlAttribute
      * required
      */
-    protected ?string $senderversion = null;
+    protected string $senderversion = '';
 
     /**
      * @Type("string")

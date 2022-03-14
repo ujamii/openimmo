@@ -20,7 +20,7 @@ class Nutzungsart
      * @SerializedName("WOHNEN")
      * required
      */
-    protected ?bool $wohnen = null;
+    protected bool $wohnen = false;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Nutzungsart
      * @SerializedName("GEWERBE")
      * required
      */
-    protected ?bool $gewerbe = null;
+    protected bool $gewerbe = false;
 
     /**
      * @Type("bool")
@@ -90,7 +90,7 @@ class Nutzungsart
         return $this;
     }
 
-    public function __construct(?bool $wohnen = null, ?bool $gewerbe = null, ?bool $anlage = null, ?bool $waz = null)
+    public function __construct(bool $wohnen = false, bool $gewerbe = false, ?bool $anlage = null, ?bool $waz = null)
     {
         $this->wohnen = $wohnen;
         $this->gewerbe = $gewerbe;

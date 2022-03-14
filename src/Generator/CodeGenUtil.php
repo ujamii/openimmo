@@ -23,10 +23,11 @@ class CodeGenUtil
         if ('' === trim($descriptionPart)) {
             return;
         }
-        if ('' === trim($classProperty->getComment())) {
+        $comment = $classProperty->getComment() ?? '';
+        if ('' === trim($comment)) {
             $currentDescriptionParts = [];
         } else {
-            $currentDescriptionParts = explode($separator ?: self::DESCRIPTION_PART_DELIMTER, $classProperty->getComment());
+            $currentDescriptionParts = explode($separator ?: self::DESCRIPTION_PART_DELIMTER, $comment);
         }
         $currentDescriptionParts[] = $descriptionPart;
         $classProperty->setComment(implode($separator, $currentDescriptionParts));
@@ -86,7 +87,7 @@ class CodeGenUtil
 
         $setterCode = '$this->' . $property->getName() . ' = $' . $property->getName() . ';';
         if ($fluentApi) {
-            $setter->setReturnType("{$class->getNamespace()->getName()}\\{$class->getName()}");
+            $setter->setReturnType('\\' . TypeUtil::OPENIMMO_NAMESPACE . $class->getName());
             $setterCode .= PHP_EOL . 'return $this;';
         }
         $setter->setBody($setterCode);

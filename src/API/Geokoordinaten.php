@@ -18,14 +18,14 @@ class Geokoordinaten
      * @XmlAttribute
      * required
      */
-    protected ?float $breitengrad = null;
+    protected float $breitengrad = 0.0;
 
     /**
      * @Type("float")
      * @XmlAttribute
      * required
      */
-    protected ?float $laengengrad = null;
+    protected float $laengengrad = 0.0;
 
     public function getBreitengrad(): float
     {
@@ -49,7 +49,7 @@ class Geokoordinaten
         return $this;
     }
 
-    public function __construct(?float $breitengrad = null, ?float $laengengrad = null)
+    public function __construct(float $breitengrad = 0.0, float $laengengrad = 0.0)
     {
         $this->breitengrad = $breitengrad;
         $this->laengengrad = $laengengrad;

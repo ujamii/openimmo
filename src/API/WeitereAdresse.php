@@ -20,7 +20,7 @@ class WeitereAdresse
      * @XmlAttribute
      * required
      */
-    protected ?string $adressart = null;
+    protected string $adressart = '';
 
     /** @Type("string") */
     protected ?string $vorname = null;
