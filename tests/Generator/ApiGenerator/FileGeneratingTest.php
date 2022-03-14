@@ -163,7 +163,19 @@ abstract class FileGeneratingTest extends TestCase
                 $this->assertSame('null', (string) $constructorParam->getDefaultValue());
             } else {
                 if ($constructorParam->getType() === 'array') {
-                    $this->assertEquals('[]', $constructorParam->getDefaultValue());
+                    $this->assertSame('[]', (string) $constructorParam->getDefaultValue());
+                }
+                if ($constructorParam->getType() === 'bool') {
+                    $this->assertSame('false', (string) $constructorParam->getDefaultValue());
+                }
+                if ($constructorParam->getType() === 'float') {
+                    $this->assertSame('0.0', (string) $constructorParam->getDefaultValue());
+                }
+                if ($constructorParam->getType() === 'int') {
+                    $this->assertSame('0', (string) $constructorParam->getDefaultValue());
+                }
+                if ($constructorParam->getType() === 'string') {
+                    $this->assertSame("''", (string) $constructorParam->getDefaultValue());
                 }
             }
 //        $this->assertFalse($constructor->getParameter($propertyName)->getNullable());
