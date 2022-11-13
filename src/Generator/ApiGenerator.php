@@ -138,7 +138,7 @@ class ApiGenerator
     {
         $propertyName  = 'value';
         $classProperty = $class->addProperty($propertyName)
-                               ->setVisibility(ClassType::VisibilityProtected);
+                               ->setVisibility(ClassType::VisibilityPublic);
 
         if (is_null($extension)) {
             $xsdType = 'string';
@@ -195,7 +195,7 @@ class ApiGenerator
             return;
         }
         $classProperty = $class->addProperty($propertyName)
-                               ->setVisibility(ClassType::VisibilityProtected);
+                               ->setVisibility(ClassType::VisibilityPublic);
         $xsdType       = $this->getPhpPropertyTypeFromXsdElement($property);
 
         // take min/max into account, as this may be an array instead
@@ -281,7 +281,7 @@ class ApiGenerator
     {
         $propertyName  = TypeUtil::camelize(strtolower($attribute->getName()), true);
         $classProperty = $class->addProperty($propertyName)
-                               ->setVisibility(ClassType::VisibilityProtected);
+                               ->setVisibility(ClassType::VisibilityPublic);
         $xsdType       = TypeUtil::extractTypeForPhp($attribute->getType());
         $phpType       = TypeUtil::getValidPhpType($xsdType);
         $classProperty->addComment('@Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")');
@@ -329,7 +329,6 @@ class ApiGenerator
     {
         foreach ($restriction->getChecks() as $type => $options) {
             switch ($type) {
-
                 case 'enumeration':
                     $constantPrefix = strtoupper($nameInXsd . '_');
                     foreach ($options as $possibleValue) {
@@ -365,7 +364,6 @@ class ApiGenerator
 
                 default:
                     throw new \InvalidArgumentException(vsprintf('Type "%s" is not handled in %s->parseAttribute', [$type, __CLASS__]));
-
             }
         }
     }
