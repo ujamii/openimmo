@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Fahrstuhl
- * Welche Art von Fahrstuhl, Aufzug, Lift - Mehrfachnennung möglich
+ * Welche Art von Fahrstuhl, Aufzug, Lift - Mehrfachnennung mÃ¶glich
  * @XmlRoot("fahrstuhl")
  */
 class Fahrstuhl
@@ -20,7 +20,7 @@ class Fahrstuhl
      * @SerializedName("PERSONEN")
      * optional
      */
-    protected ?bool $personen = null;
+    public ?bool $personen = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Fahrstuhl
      * @SerializedName("LASTEN")
      * optional
      */
-    protected ?bool $lasten = null;
+    public ?bool $lasten = null;
 
     public function getPersonen(): ?bool
     {

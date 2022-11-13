@@ -20,7 +20,7 @@ class Energietyp
      * @SerializedName("PASSIVHAUS")
      * optional
      */
-    protected ?bool $passivhaus = null;
+    public ?bool $passivhaus = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Energietyp
      * @SerializedName("NIEDRIGENERGIE")
      * optional
      */
-    protected ?bool $niedrigenergie = null;
+    public ?bool $niedrigenergie = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Energietyp
      * @SerializedName("NEUBAUSTANDARD")
      * optional
      */
-    protected ?bool $neubaustandard = null;
+    public ?bool $neubaustandard = null;
 
     /**
      * @Type("bool")
@@ -44,7 +44,7 @@ class Energietyp
      * @SerializedName("KFW40")
      * optional
      */
-    protected ?bool $kfw40 = null;
+    public ?bool $kfw40 = null;
 
     /**
      * @Type("bool")
@@ -52,7 +52,7 @@ class Energietyp
      * @SerializedName("KFW60")
      * optional
      */
-    protected ?bool $kfw60 = null;
+    public ?bool $kfw60 = null;
 
     /**
      * @Type("bool")
@@ -60,7 +60,7 @@ class Energietyp
      * @SerializedName("KFW55")
      * optional
      */
-    protected ?bool $kfw55 = null;
+    public ?bool $kfw55 = null;
 
     /**
      * @Type("bool")
@@ -68,7 +68,7 @@ class Energietyp
      * @SerializedName("KFW70")
      * optional
      */
-    protected ?bool $kfw70 = null;
+    public ?bool $kfw70 = null;
 
     /**
      * @Type("bool")
@@ -76,7 +76,7 @@ class Energietyp
      * @SerializedName("MINERGIEBAUWEISE")
      * optional
      */
-    protected ?bool $minergiebauweise = null;
+    public ?bool $minergiebauweise = null;
 
     /**
      * @Type("bool")
@@ -84,7 +84,7 @@ class Energietyp
      * @SerializedName("MINERGIE_ZERTIFIZIERT")
      * optional
      */
-    protected ?bool $minergieZertifiziert = null;
+    public ?bool $minergieZertifiziert = null;
 
     public function getPassivhaus(): ?bool
     {

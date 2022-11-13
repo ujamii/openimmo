@@ -19,13 +19,13 @@ class Summemietenetto
      * @XmlAttribute
      * optional
      */
-    protected ?float $summemieteust = null;
+    public ?float $summemieteust = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getSummemieteust(): ?float
     {

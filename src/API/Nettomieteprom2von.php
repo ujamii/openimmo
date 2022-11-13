@@ -19,13 +19,13 @@ class Nettomieteprom2von
      * @XmlAttribute
      * optional
      */
-    protected ?float $nettomieteprom2bis = null;
+    public ?float $nettomieteprom2bis = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getNettomieteprom2bis(): ?float
     {

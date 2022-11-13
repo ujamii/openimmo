@@ -15,166 +15,166 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Flaechen
 {
     /** @Type("float") */
-    protected ?float $wohnflaeche = null;
+    public ?float $wohnflaeche = null;
 
     /** @Type("float") */
-    protected ?float $nutzflaeche = null;
+    public ?float $nutzflaeche = null;
 
     /** @Type("float") */
-    protected ?float $gesamtflaeche = null;
+    public ?float $gesamtflaeche = null;
 
     /** @Type("float") */
-    protected ?float $ladenflaeche = null;
+    public ?float $ladenflaeche = null;
 
     /** @Type("float") */
-    protected ?float $lagerflaeche = null;
+    public ?float $lagerflaeche = null;
 
     /** @Type("float") */
-    protected ?float $verkaufsflaeche = null;
+    public ?float $verkaufsflaeche = null;
 
     /** @Type("float") */
-    protected ?float $freiflaeche = null;
+    public ?float $freiflaeche = null;
 
     /** @Type("float") */
-    protected ?float $bueroflaeche = null;
+    public ?float $bueroflaeche = null;
 
     /** @Type("float") */
-    protected ?float $bueroteilflaeche = null;
+    public ?float $bueroteilflaeche = null;
 
     /** @Type("float") */
-    protected ?float $fensterfront = null;
+    public ?float $fensterfront = null;
 
     /** @Type("float") */
-    protected ?float $verwaltungsflaeche = null;
+    public ?float $verwaltungsflaeche = null;
 
     /** @Type("float") */
-    protected ?float $gastroflaeche = null;
+    public ?float $gastroflaeche = null;
 
     /** @Type("string") */
-    protected ?string $grz = null;
+    public ?string $grz = null;
 
     /** @Type("string") */
-    protected ?string $gfz = null;
+    public ?string $gfz = null;
 
     /** @Type("string") */
-    protected ?string $bmz = null;
+    public ?string $bmz = null;
 
     /** @Type("string") */
-    protected ?string $bgf = null;
+    public ?string $bgf = null;
 
     /** @Type("float") */
-    protected ?float $grundstuecksflaeche = null;
+    public ?float $grundstuecksflaeche = null;
 
     /** @Type("float") */
-    protected ?float $sonstflaeche = null;
+    public ?float $sonstflaeche = null;
 
     /** @Type("float") */
-    protected ?float $anzahlZimmer = null;
+    public ?float $anzahlZimmer = null;
 
     /** @Type("float") */
-    protected ?float $anzahlSchlafzimmer = null;
+    public ?float $anzahlSchlafzimmer = null;
 
     /** @Type("float") */
-    protected ?float $anzahlBadezimmer = null;
+    public ?float $anzahlBadezimmer = null;
 
     /** @Type("float") */
-    protected ?float $anzahlSepWc = null;
+    public ?float $anzahlSepWc = null;
 
     /** @Type("float") */
-    protected ?float $anzahlBalkone = null;
+    public ?float $anzahlBalkone = null;
 
     /** @Type("float") */
-    protected ?float $anzahlTerrassen = null;
+    public ?float $anzahlTerrassen = null;
 
     /** @Type("float") */
-    protected ?float $anzahlLogia = null;
+    public ?float $anzahlLogia = null;
 
     /** @Type("float") */
-    protected ?float $balkonTerrasseFlaeche = null;
+    public ?float $balkonTerrasseFlaeche = null;
 
     /** @Type("float") */
-    protected ?float $anzahlWohnSchlafzimmer = null;
+    public ?float $anzahlWohnSchlafzimmer = null;
 
     /** @Type("float") */
-    protected ?float $gartenflaeche = null;
+    public ?float $gartenflaeche = null;
 
     /** @Type("float") */
-    protected ?float $kellerflaeche = null;
+    public ?float $kellerflaeche = null;
 
     /** @Type("float") */
-    protected ?float $fensterfrontQm = null;
+    public ?float $fensterfrontQm = null;
 
     /** @Type("float") */
-    protected ?float $grundstuecksfront = null;
+    public ?float $grundstuecksfront = null;
 
     /** @Type("float") */
-    protected ?float $dachbodenflaeche = null;
+    public ?float $dachbodenflaeche = null;
 
     /** @Type("float") */
-    protected ?float $teilbarAb = null;
+    public ?float $teilbarAb = null;
 
     /** @Type("float") */
-    protected ?float $beheizbareFlaeche = null;
+    public ?float $beheizbareFlaeche = null;
 
     /**
      * @Type("int")
      * Minimum value (inclusive): 1
      */
-    protected ?int $anzahlStellplaetze = null;
+    public ?int $anzahlStellplaetze = null;
 
     /** @Type("float") */
-    protected ?float $plaetzeGastraum = null;
+    public ?float $plaetzeGastraum = null;
 
     /** @Type("float") */
-    protected ?float $anzahlBetten = null;
+    public ?float $anzahlBetten = null;
 
     /** @Type("float") */
-    protected ?float $anzahlTagungsraeume = null;
+    public ?float $anzahlTagungsraeume = null;
 
     /** @Type("float") */
-    protected ?float $vermietbareFlaeche = null;
+    public ?float $vermietbareFlaeche = null;
 
     /** @Type("float") */
-    protected ?float $anzahlWohneinheiten = null;
+    public ?float $anzahlWohneinheiten = null;
 
     /** @Type("float") */
-    protected ?float $anzahlGewerbeeinheiten = null;
+    public ?float $anzahlGewerbeeinheiten = null;
 
     /** @Type("bool") */
-    protected ?bool $einliegerwohnung = null;
+    public ?bool $einliegerwohnung = null;
 
     /** @Type("float") */
-    protected ?float $kubatur = null;
+    public ?float $kubatur = null;
 
     /** @Type("float") */
-    protected ?float $ausnuetzungsziffer = null;
+    public ?float $ausnuetzungsziffer = null;
 
     /** @Type("float") */
-    protected ?float $flaechevon = null;
+    public ?float $flaechevon = null;
 
     /** @Type("float") */
-    protected ?float $flaechebis = null;
+    public ?float $flaechebis = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedSimplefield = [];
+    public array $userDefinedSimplefield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedAnyfield = [];
+    public array $userDefinedAnyfield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedExtend = [];
+    public array $userDefinedExtend = [];
 
     public function getWohnflaeche(): ?float
     {

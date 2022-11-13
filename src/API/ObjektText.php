@@ -20,13 +20,13 @@ class ObjektText
      * @XmlAttribute
      * required
      */
-    protected string $lang = '';
+    public string $lang = '';
 
     /**
      * @Inline
      * @Type("string")
      */
-    protected ?string $value = null;
+    public ?string $value = null;
 
     public function getLang(): string
     {

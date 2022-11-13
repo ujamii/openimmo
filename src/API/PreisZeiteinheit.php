@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class PreisZeiteinheit
- * Zeiteinheit für die der Preis gilt, vorrangig bei Ferienobjekten
+ * Zeiteinheit fÃ¼r die der Preis gilt, vorrangig bei Ferienobjekten
  * @XmlRoot("preis_zeiteinheit")
  */
 class PreisZeiteinheit
@@ -24,7 +24,7 @@ class PreisZeiteinheit
      * optional
      * @see ZEITEINHEIT_* constants
      */
-    protected string $zeiteinheit = '';
+    public string $zeiteinheit = '';
 
     public function getZeiteinheit(): ?string
     {

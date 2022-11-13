@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Moebliert
- * Wie ist die Möblierung: Voll, Teil oder keine Aussage
+ * Wie ist die MÃ¶blierung: Voll, Teil oder keine Aussage
  * @XmlRoot("moebliert")
  */
 class Moebliert
@@ -22,7 +22,7 @@ class Moebliert
      * optional
      * @see MOEB_* constants
      */
-    protected string $moeb = '';
+    public string $moeb = '';
 
     public function getMoeb(): ?string
     {

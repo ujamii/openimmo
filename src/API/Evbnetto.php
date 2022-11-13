@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Evbnetto
- * Erhaltungs- und Verbesserungsbeitrag. Ähnlich Instanthaltungsrücklage, UmSt. im Attribut.
+ * Erhaltungs- und Verbesserungsbeitrag. Ãhnlich InstanthaltungsrÃ¼cklage, UmSt. im Attribut.
  * @XmlRoot("evbnetto")
  */
 class Evbnetto
@@ -19,13 +19,13 @@ class Evbnetto
      * @XmlAttribute
      * optional
      */
-    protected ?float $evbust = null;
+    public ?float $evbust = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getEvbust(): ?float
     {

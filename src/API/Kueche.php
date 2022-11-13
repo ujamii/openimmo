@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Kueche
- * Welche Eigenschaften besitzt die Küche, Optionen kombinierbar
+ * Welche Eigenschaften besitzt die KÃ¼che, Optionen kombinierbar
  * @XmlRoot("kueche")
  */
 class Kueche
@@ -20,7 +20,7 @@ class Kueche
      * @SerializedName("EBK")
      * optional
      */
-    protected ?bool $ebk = null;
+    public ?bool $ebk = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Kueche
      * @SerializedName("OFFEN")
      * optional
      */
-    protected ?bool $offen = null;
+    public ?bool $offen = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Kueche
      * @SerializedName("PANTRY")
      * optional
      */
-    protected ?bool $pantry = null;
+    public ?bool $pantry = null;
 
     public function getEbk(): ?bool
     {

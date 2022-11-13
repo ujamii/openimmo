@@ -21,7 +21,7 @@ class Zimmer
      * optional
      * @see ZIMMERTYP_* constants
      */
-    protected string $zimmertyp = '';
+    public string $zimmertyp = '';
 
     public function getZimmertyp(): ?string
     {

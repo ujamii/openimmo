@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class BueroPraxen
- * Objektart / Typ f. Büro/Praxen
+ * Objektart / Typ f. BÃ¼ro/Praxen
  * @XmlRoot("buero_praxen")
  */
 class BueroPraxen
@@ -30,7 +30,7 @@ class BueroPraxen
      * optional
      * @see BUERO_TYP_* constants
      */
-    protected string $bueroTyp = '';
+    public string $bueroTyp = '';
 
     public function getBueroTyp(): ?string
     {

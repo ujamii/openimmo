@@ -20,7 +20,7 @@ class Serviceleistungen
      * @SerializedName("BETREUTES_WOHNEN")
      * optional
      */
-    protected ?bool $betreutesWohnen = null;
+    public ?bool $betreutesWohnen = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Serviceleistungen
      * @SerializedName("CATERING")
      * optional
      */
-    protected ?bool $catering = null;
+    public ?bool $catering = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Serviceleistungen
      * @SerializedName("REINIGUNG")
      * optional
      */
-    protected ?bool $reinigung = null;
+    public ?bool $reinigung = null;
 
     /**
      * @Type("bool")
@@ -44,7 +44,7 @@ class Serviceleistungen
      * @SerializedName("EINKAUF")
      * optional
      */
-    protected ?bool $einkauf = null;
+    public ?bool $einkauf = null;
 
     /**
      * @Type("bool")
@@ -52,7 +52,7 @@ class Serviceleistungen
      * @SerializedName("WACHDIENST")
      * optional
      */
-    protected ?bool $wachdienst = null;
+    public ?bool $wachdienst = null;
 
     public function getBetreutesWohnen(): ?bool
     {
@@ -114,7 +114,7 @@ class Serviceleistungen
         ?bool $catering = null,
         ?bool $reinigung = null,
         ?bool $einkauf = null,
-        ?bool $wachdienst = null
+        ?bool $wachdienst = null,
     ) {
         $this->betreutesWohnen = $betreutesWohnen;
         $this->catering = $catering;

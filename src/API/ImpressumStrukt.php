@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class ImpressumStrukt
- * Ergänzung ($V120)
+ * ErgÃ¤nzung ($V120)
  * @XmlRoot("impressum_strukt")
  */
 class ImpressumStrukt
@@ -17,61 +17,61 @@ class ImpressumStrukt
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $firmenname = '';
+    public string $firmenname = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $firmenanschrift = '';
+    public string $firmenanschrift = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $telefon = '';
+    public string $telefon = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $vertretungsberechtigter = '';
+    public string $vertretungsberechtigter = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $berufsaufsichtsbehoerde = '';
+    public string $berufsaufsichtsbehoerde = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $handelsregister = '';
+    public string $handelsregister = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $handelsregisterNr = '';
+    public string $handelsregisterNr = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $umsstId = '';
+    public string $umsstId = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $steuernummer = '';
+    public string $steuernummer = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $weiteres = '';
+    public string $weiteres = '';
 
     public function getFirmenname(): string
     {

@@ -20,147 +20,147 @@ class WeitereAdresse
      * @XmlAttribute
      * required
      */
-    protected string $adressart = '';
+    public string $adressart = '';
 
     /** @Type("string") */
-    protected ?string $vorname = null;
+    public ?string $vorname = null;
 
     /** @Type("string") */
-    protected ?string $name = null;
+    public ?string $name = null;
 
     /** @Type("string") */
-    protected ?string $titel = null;
+    public ?string $titel = null;
 
     /** @Type("string") */
-    protected ?string $anrede = null;
+    public ?string $anrede = null;
 
     /** @Type("string") */
-    protected ?string $anredeBrief = null;
+    public ?string $anredeBrief = null;
 
     /** @Type("string") */
-    protected ?string $firma = null;
+    public ?string $firma = null;
 
     /** @Type("string") */
-    protected ?string $zusatzfeld = null;
+    public ?string $zusatzfeld = null;
 
     /** @Type("string") */
-    protected ?string $strasse = null;
+    public ?string $strasse = null;
 
     /** @Type("string") */
-    protected ?string $hausnummer = null;
+    public ?string $hausnummer = null;
 
     /** @Type("string") */
-    protected ?string $plz = null;
+    public ?string $plz = null;
 
     /** @Type("string") */
-    protected ?string $ort = null;
+    public ?string $ort = null;
 
     /** @Type("string") */
-    protected ?string $postfach = null;
+    public ?string $postfach = null;
 
     /** @Type("string") */
-    protected ?string $postfPlz = null;
+    public ?string $postfPlz = null;
 
     /** @Type("string") */
-    protected ?string $postfOrt = null;
+    public ?string $postfOrt = null;
 
     /** @Type("Ujamii\OpenImmo\API\Land") */
-    protected ?Land $land = null;
+    public ?Land $land = null;
 
     /**
      * @Type("string")
      * Minimum length: 1
      */
-    protected ?string $emailZentrale = null;
+    public ?string $emailZentrale = null;
 
     /**
      * @Type("string")
      * Minimum length: 1
      */
-    protected ?string $emailDirekt = null;
+    public ?string $emailDirekt = null;
 
     /**
      * @Type("string")
      * Minimum length: 1
      */
-    protected ?string $emailPrivat = null;
+    public ?string $emailPrivat = null;
 
     /**
      * @XmlList(inline = true, entry = "email_sonstige")
      * @Type("array<Ujamii\OpenImmo\API\EmailSonstige>")
      * @SkipWhenEmpty
      */
-    protected array $emailSonstige = [];
+    public array $emailSonstige = [];
 
     /**
      * @Type("string")
      * Minimum length: 1
      */
-    protected ?string $telDurchw = null;
+    public ?string $telDurchw = null;
 
     /**
      * @Type("string")
      * Minimum length: 1
      */
-    protected ?string $telZentrale = null;
+    public ?string $telZentrale = null;
 
     /**
      * @Type("string")
      * Minimum length: 1
      */
-    protected ?string $telHandy = null;
+    public ?string $telHandy = null;
 
     /**
      * @Type("string")
      * Minimum length: 1
      */
-    protected ?string $telFax = null;
+    public ?string $telFax = null;
 
     /**
      * @Type("string")
      * Minimum length: 1
      */
-    protected ?string $telPrivat = null;
+    public ?string $telPrivat = null;
 
     /**
      * @XmlList(inline = true, entry = "tel_sonstige")
      * @Type("array<Ujamii\OpenImmo\API\TelSonstige>")
      * @SkipWhenEmpty
      */
-    protected array $telSonstige = [];
+    public array $telSonstige = [];
 
     /** @Type("string") */
-    protected ?string $url = null;
+    public ?string $url = null;
 
     /** @Type("bool") */
-    protected ?bool $adressfreigabe = null;
+    public ?bool $adressfreigabe = null;
 
     /** @Type("string") */
-    protected ?string $personennummer = null;
+    public ?string $personennummer = null;
 
     /** @Type("string") */
-    protected ?string $freitextfeld = null;
+    public ?string $freitextfeld = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedSimplefield = [];
+    public array $userDefinedSimplefield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedAnyfield = [];
+    public array $userDefinedAnyfield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedExtend = [];
+    public array $userDefinedExtend = [];
 
     public function getAdressart(): string
     {

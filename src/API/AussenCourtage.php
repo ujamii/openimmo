@@ -19,13 +19,13 @@ class AussenCourtage
      * @XmlAttribute
      * optional
      */
-    protected ?bool $mitMwst = null;
+    public ?bool $mitMwst = null;
 
     /**
      * @Inline
      * @Type("string")
      */
-    protected ?string $value = null;
+    public ?string $value = null;
 
     public function getMitMwst(): ?bool
     {

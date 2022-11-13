@@ -20,7 +20,7 @@ class Heizungsart
      * @SerializedName("OFEN")
      * optional
      */
-    protected ?bool $ofen = null;
+    public ?bool $ofen = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Heizungsart
      * @SerializedName("ETAGE")
      * optional
      */
-    protected ?bool $etage = null;
+    public ?bool $etage = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Heizungsart
      * @SerializedName("ZENTRAL")
      * optional
      */
-    protected ?bool $zentral = null;
+    public ?bool $zentral = null;
 
     /**
      * @Type("bool")
@@ -44,7 +44,7 @@ class Heizungsart
      * @SerializedName("FERN")
      * optional
      */
-    protected ?bool $fern = null;
+    public ?bool $fern = null;
 
     /**
      * @Type("bool")
@@ -52,7 +52,7 @@ class Heizungsart
      * @SerializedName("FUSSBODEN")
      * optional
      */
-    protected ?bool $fussboden = null;
+    public ?bool $fussboden = null;
 
     public function getOfen(): ?bool
     {
@@ -114,7 +114,7 @@ class Heizungsart
         ?bool $etage = null,
         ?bool $zentral = null,
         ?bool $fern = null,
-        ?bool $fussboden = null
+        ?bool $fussboden = null,
     ) {
         $this->ofen = $ofen;
         $this->etage = $etage;

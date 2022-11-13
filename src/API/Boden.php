@@ -20,7 +20,7 @@ class Boden
      * @SerializedName("FLIESEN")
      * optional
      */
-    protected ?bool $fliesen = null;
+    public ?bool $fliesen = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Boden
      * @SerializedName("STEIN")
      * optional
      */
-    protected ?bool $stein = null;
+    public ?bool $stein = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Boden
      * @SerializedName("TEPPICH")
      * optional
      */
-    protected ?bool $teppich = null;
+    public ?bool $teppich = null;
 
     /**
      * @Type("bool")
@@ -44,7 +44,7 @@ class Boden
      * @SerializedName("PARKETT")
      * optional
      */
-    protected ?bool $parkett = null;
+    public ?bool $parkett = null;
 
     /**
      * @Type("bool")
@@ -52,7 +52,7 @@ class Boden
      * @SerializedName("FERTIGPARKETT")
      * optional
      */
-    protected ?bool $fertigparkett = null;
+    public ?bool $fertigparkett = null;
 
     /**
      * @Type("bool")
@@ -60,7 +60,7 @@ class Boden
      * @SerializedName("LAMINAT")
      * optional
      */
-    protected ?bool $laminat = null;
+    public ?bool $laminat = null;
 
     /**
      * @Type("bool")
@@ -68,7 +68,7 @@ class Boden
      * @SerializedName("DIELEN")
      * optional
      */
-    protected ?bool $dielen = null;
+    public ?bool $dielen = null;
 
     /**
      * @Type("bool")
@@ -76,7 +76,7 @@ class Boden
      * @SerializedName("KUNSTSTOFF")
      * optional
      */
-    protected ?bool $kunststoff = null;
+    public ?bool $kunststoff = null;
 
     /**
      * @Type("bool")
@@ -84,7 +84,7 @@ class Boden
      * @SerializedName("ESTRICH")
      * optional
      */
-    protected ?bool $estrich = null;
+    public ?bool $estrich = null;
 
     /**
      * @Type("bool")
@@ -92,7 +92,7 @@ class Boden
      * @SerializedName("DOPPELBODEN")
      * optional
      */
-    protected ?bool $doppelboden = null;
+    public ?bool $doppelboden = null;
 
     /**
      * @Type("bool")
@@ -100,7 +100,7 @@ class Boden
      * @SerializedName("LINOLEUM")
      * optional
      */
-    protected ?bool $linoleum = null;
+    public ?bool $linoleum = null;
 
     /**
      * @Type("bool")
@@ -108,7 +108,7 @@ class Boden
      * @SerializedName("MARMOR")
      * optional
      */
-    protected ?bool $marmor = null;
+    public ?bool $marmor = null;
 
     /**
      * @Type("bool")
@@ -116,7 +116,7 @@ class Boden
      * @SerializedName("TERRAKOTTA")
      * optional
      */
-    protected ?bool $terrakotta = null;
+    public ?bool $terrakotta = null;
 
     /**
      * @Type("bool")
@@ -124,7 +124,7 @@ class Boden
      * @SerializedName("GRANIT")
      * optional
      */
-    protected ?bool $granit = null;
+    public ?bool $granit = null;
 
     public function getFliesen(): ?bool
     {

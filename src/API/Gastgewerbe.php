@@ -31,7 +31,7 @@ class Gastgewerbe
      * optional
      * @see GASTGEW_TYP_* constants
      */
-    protected string $gastgewTyp = '';
+    public string $gastgewTyp = '';
 
     public function getGastgewTyp(): ?string
     {

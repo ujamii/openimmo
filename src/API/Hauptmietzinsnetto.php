@@ -19,13 +19,13 @@ class Hauptmietzinsnetto
      * @XmlAttribute
      * optional
      */
-    protected ?float $hauptmietzinsust = null;
+    public ?float $hauptmietzinsust = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getHauptmietzinsust(): ?float
     {

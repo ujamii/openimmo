@@ -18,14 +18,14 @@ class Geokoordinaten
      * @XmlAttribute
      * required
      */
-    protected float $breitengrad = 0.0;
+    public float $breitengrad = 0.0;
 
     /**
      * @Type("float")
      * @XmlAttribute
      * required
      */
-    protected float $laengengrad = 0.0;
+    public float $laengengrad = 0.0;
 
     public function getBreitengrad(): float
     {

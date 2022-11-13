@@ -18,27 +18,27 @@ class Feld
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $name = '';
+    public string $name = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $wert = '';
+    public string $wert = '';
 
     /**
      * @XmlList(inline = true, entry = "typ")
      * @Type("array<string>")
      * @SkipWhenEmpty
      */
-    protected array $typ = [];
+    public array $typ = [];
 
     /**
      * @XmlList(inline = true, entry = "modus")
      * @Type("array<string>")
      * @SkipWhenEmpty
      */
-    protected array $modus = [];
+    public array $modus = [];
 
     public function getName(): string
     {

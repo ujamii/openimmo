@@ -19,13 +19,13 @@ class Provisionnetto
      * @XmlAttribute
      * optional
      */
-    protected ?float $provisionust = null;
+    public ?float $provisionust = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getProvisionust(): ?float
     {

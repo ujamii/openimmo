@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Distanzen
- * Welche Distanz zu dem ausgewählten Ziel besteht (Angabe in km),
+ * Welche Distanz zu dem ausgewÃ¤hlten Ziel besteht (Angabe in km),
  *  Optionen nicht kombinierbar, Distanzelement ist mehrfach erfassbar
  * @XmlRoot("distanzen")
  */
@@ -36,13 +36,13 @@ class Distanzen
      * required
      * @see DISTANZ_ZU_* constants
      */
-    protected string $distanzZu = '';
+    public string $distanzZu = '';
 
     /**
      * @Inline
      * @Type("string")
      */
-    protected ?string $value = null;
+    public ?string $value = null;
 
     public function getDistanzZu(): string
     {

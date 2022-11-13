@@ -20,7 +20,7 @@ class Stellplatzart
      * @SerializedName("GARAGE")
      * optional
      */
-    protected ?bool $garage = null;
+    public ?bool $garage = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Stellplatzart
      * @SerializedName("TIEFGARAGE")
      * optional
      */
-    protected ?bool $tiefgarage = null;
+    public ?bool $tiefgarage = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Stellplatzart
      * @SerializedName("CARPORT")
      * optional
      */
-    protected ?bool $carport = null;
+    public ?bool $carport = null;
 
     /**
      * @Type("bool")
@@ -44,7 +44,7 @@ class Stellplatzart
      * @SerializedName("FREIPLATZ")
      * optional
      */
-    protected ?bool $freiplatz = null;
+    public ?bool $freiplatz = null;
 
     /**
      * @Type("bool")
@@ -52,7 +52,7 @@ class Stellplatzart
      * @SerializedName("PARKHAUS")
      * optional
      */
-    protected ?bool $parkhaus = null;
+    public ?bool $parkhaus = null;
 
     /**
      * @Type("bool")
@@ -60,7 +60,7 @@ class Stellplatzart
      * @SerializedName("DUPLEX")
      * optional
      */
-    protected ?bool $duplex = null;
+    public ?bool $duplex = null;
 
     public function getGarage(): ?bool
     {
@@ -134,7 +134,7 @@ class Stellplatzart
         ?bool $carport = null,
         ?bool $freiplatz = null,
         ?bool $parkhaus = null,
-        ?bool $duplex = null
+        ?bool $duplex = null,
     ) {
         $this->garage = $garage;
         $this->tiefgarage = $tiefgarage;

@@ -15,45 +15,45 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Infrastruktur
 {
     /** @Type("bool") */
-    protected ?bool $zulieferung = null;
+    public ?bool $zulieferung = null;
 
     /** @Type("Ujamii\OpenImmo\API\Ausblick") */
-    protected ?Ausblick $ausblick = null;
+    public ?Ausblick $ausblick = null;
 
     /**
      * @XmlList(inline = true, entry = "distanzen")
      * @Type("array<Ujamii\OpenImmo\API\Distanzen>")
      * @SkipWhenEmpty
      */
-    protected array $distanzen = [];
+    public array $distanzen = [];
 
     /**
      * @XmlList(inline = true, entry = "distanzen_sport")
      * @Type("array<Ujamii\OpenImmo\API\DistanzenSport>")
      * @SkipWhenEmpty
      */
-    protected array $distanzenSport = [];
+    public array $distanzenSport = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedSimplefield = [];
+    public array $userDefinedSimplefield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedAnyfield = [];
+    public array $userDefinedAnyfield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedExtend = [];
+    public array $userDefinedExtend = [];
 
     public function getZulieferung(): ?bool
     {

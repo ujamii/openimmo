@@ -22,195 +22,195 @@ class Ausstattung
      * @Type("string")
      * @see AUSSTATT_KATEGORIE_* constants
      */
-    protected string $ausstattKategorie = '';
+    public string $ausstattKategorie = '';
 
     /** @Type("bool") */
-    protected ?bool $wgGeeignet = null;
+    public ?bool $wgGeeignet = null;
 
     /** @Type("bool") */
-    protected ?bool $raeumeVeraenderbar = null;
+    public ?bool $raeumeVeraenderbar = null;
 
     /** @Type("Ujamii\OpenImmo\API\Bad") */
-    protected ?Bad $bad = null;
+    public ?Bad $bad = null;
 
     /** @Type("Ujamii\OpenImmo\API\Kueche") */
-    protected ?Kueche $kueche = null;
+    public ?Kueche $kueche = null;
 
     /** @Type("Ujamii\OpenImmo\API\Boden") */
-    protected ?Boden $boden = null;
+    public ?Boden $boden = null;
 
     /** @Type("bool") */
-    protected ?bool $kamin = null;
+    public ?bool $kamin = null;
 
     /** @Type("Ujamii\OpenImmo\API\Heizungsart") */
-    protected ?Heizungsart $heizungsart = null;
+    public ?Heizungsart $heizungsart = null;
 
     /** @Type("Ujamii\OpenImmo\API\Befeuerung") */
-    protected ?Befeuerung $befeuerung = null;
+    public ?Befeuerung $befeuerung = null;
 
     /** @Type("bool") */
-    protected ?bool $klimatisiert = null;
+    public ?bool $klimatisiert = null;
 
     /** @Type("Ujamii\OpenImmo\API\Fahrstuhl") */
-    protected ?Fahrstuhl $fahrstuhl = null;
+    public ?Fahrstuhl $fahrstuhl = null;
 
     /**
      * @XmlList(inline = true, entry = "stellplatzart")
      * @Type("array<Ujamii\OpenImmo\API\Stellplatzart>")
      * @SkipWhenEmpty
      */
-    protected array $stellplatzart = [];
+    public array $stellplatzart = [];
 
     /** @Type("bool") */
-    protected ?bool $gartennutzung = null;
+    public ?bool $gartennutzung = null;
 
     /** @Type("Ujamii\OpenImmo\API\AusrichtBalkonTerrasse") */
-    protected ?AusrichtBalkonTerrasse $ausrichtBalkonTerrasse = null;
+    public ?AusrichtBalkonTerrasse $ausrichtBalkonTerrasse = null;
 
     /** @Type("Ujamii\OpenImmo\API\Moebliert") */
-    protected ?Moebliert $moebliert = null;
+    public ?Moebliert $moebliert = null;
 
     /** @Type("bool") */
-    protected ?bool $rollstuhlgerecht = null;
+    public ?bool $rollstuhlgerecht = null;
 
     /** @Type("bool") */
-    protected ?bool $kabelSatTv = null;
+    public ?bool $kabelSatTv = null;
 
     /** @Type("bool") */
-    protected ?bool $dvbt = null;
+    public ?bool $dvbt = null;
 
     /** @Type("bool") */
-    protected ?bool $barrierefrei = null;
+    public ?bool $barrierefrei = null;
 
     /** @Type("bool") */
-    protected ?bool $sauna = null;
+    public ?bool $sauna = null;
 
     /** @Type("bool") */
-    protected ?bool $swimmingpool = null;
+    public ?bool $swimmingpool = null;
 
     /** @Type("bool") */
-    protected ?bool $waschTrockenraum = null;
+    public ?bool $waschTrockenraum = null;
 
     /** @Type("bool") */
-    protected ?bool $wintergarten = null;
+    public ?bool $wintergarten = null;
 
     /** @Type("bool") */
-    protected ?bool $dvVerkabelung = null;
+    public ?bool $dvVerkabelung = null;
 
     /** @Type("bool") */
-    protected ?bool $rampe = null;
+    public ?bool $rampe = null;
 
     /** @Type("bool") */
-    protected ?bool $hebebuehne = null;
+    public ?bool $hebebuehne = null;
 
     /** @Type("bool") */
-    protected ?bool $kran = null;
+    public ?bool $kran = null;
 
     /** @Type("bool") */
-    protected ?bool $gastterrasse = null;
+    public ?bool $gastterrasse = null;
 
     /** @Type("string") */
-    protected ?string $stromanschlusswert = null;
+    public ?string $stromanschlusswert = null;
 
     /** @Type("bool") */
-    protected ?bool $kantineCafeteria = null;
+    public ?bool $kantineCafeteria = null;
 
     /** @Type("bool") */
-    protected ?bool $teekueche = null;
+    public ?bool $teekueche = null;
 
     /** @Type("float") */
-    protected ?float $hallenhoehe = null;
+    public ?float $hallenhoehe = null;
 
     /** @Type("Ujamii\OpenImmo\API\AngeschlGastronomie") */
-    protected ?AngeschlGastronomie $angeschlGastronomie = null;
+    public ?AngeschlGastronomie $angeschlGastronomie = null;
 
     /** @Type("bool") */
-    protected ?bool $brauereibindung = null;
+    public ?bool $brauereibindung = null;
 
     /** @Type("bool") */
-    protected ?bool $sporteinrichtungen = null;
+    public ?bool $sporteinrichtungen = null;
 
     /** @Type("bool") */
-    protected ?bool $wellnessbereich = null;
+    public ?bool $wellnessbereich = null;
 
     /**
      * @XmlList(inline = true, entry = "serviceleistungen")
      * @Type("array<Ujamii\OpenImmo\API\Serviceleistungen>")
      * @SkipWhenEmpty
      */
-    protected array $serviceleistungen = [];
+    public array $serviceleistungen = [];
 
     /** @Type("bool") */
-    protected ?bool $telefonFerienimmobilie = null;
+    public ?bool $telefonFerienimmobilie = null;
 
     /** @Type("Ujamii\OpenImmo\API\BreitbandZugang") */
-    protected ?BreitbandZugang $breitbandZugang = null;
+    public ?BreitbandZugang $breitbandZugang = null;
 
     /** @Type("bool") */
-    protected ?bool $umtsEmpfang = null;
+    public ?bool $umtsEmpfang = null;
 
     /** @Type("Ujamii\OpenImmo\API\Sicherheitstechnik") */
-    protected ?Sicherheitstechnik $sicherheitstechnik = null;
+    public ?Sicherheitstechnik $sicherheitstechnik = null;
 
     /** @Type("Ujamii\OpenImmo\API\Unterkellert") */
-    protected ?Unterkellert $unterkellert = null;
+    public ?Unterkellert $unterkellert = null;
 
     /** @Type("bool") */
-    protected ?bool $abstellraum = null;
+    public ?bool $abstellraum = null;
 
     /** @Type("bool") */
-    protected ?bool $fahrradraum = null;
+    public ?bool $fahrradraum = null;
 
     /** @Type("bool") */
-    protected ?bool $rolladen = null;
+    public ?bool $rolladen = null;
 
     /** @Type("Ujamii\OpenImmo\API\Dachform") */
-    protected ?Dachform $dachform = null;
+    public ?Dachform $dachform = null;
 
     /** @Type("Ujamii\OpenImmo\API\Bauweise") */
-    protected ?Bauweise $bauweise = null;
+    public ?Bauweise $bauweise = null;
 
     /** @Type("Ujamii\OpenImmo\API\Ausbaustufe") */
-    protected ?Ausbaustufe $ausbaustufe = null;
+    public ?Ausbaustufe $ausbaustufe = null;
 
     /** @Type("Ujamii\OpenImmo\API\Energietyp") */
-    protected ?Energietyp $energietyp = null;
+    public ?Energietyp $energietyp = null;
 
     /** @Type("bool") */
-    protected ?bool $bibliothek = null;
+    public ?bool $bibliothek = null;
 
     /** @Type("bool") */
-    protected ?bool $dachboden = null;
+    public ?bool $dachboden = null;
 
     /** @Type("bool") */
-    protected ?bool $gaestewc = null;
+    public ?bool $gaestewc = null;
 
     /** @Type("bool") */
-    protected ?bool $kabelkanaele = null;
+    public ?bool $kabelkanaele = null;
 
     /** @Type("bool") */
-    protected ?bool $seniorengerecht = null;
+    public ?bool $seniorengerecht = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedSimplefield = [];
+    public array $userDefinedSimplefield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedAnyfield = [];
+    public array $userDefinedAnyfield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedExtend = [];
+    public array $userDefinedExtend = [];
 
     public function getAusstattKategorie(): ?string
     {

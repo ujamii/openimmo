@@ -19,13 +19,13 @@ class Betriebskostennetto
      * @XmlAttribute
      * optional
      */
-    protected ?float $betriebskostenust = null;
+    public ?float $betriebskostenust = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getBetriebskostenust(): ?float
     {

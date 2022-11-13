@@ -29,7 +29,7 @@ class Einzelhandel
      * optional
      * @see HANDEL_TYP_* constants
      */
-    protected string $handelTyp = '';
+    public string $handelTyp = '';
 
     public function getHandelTyp(): ?string
     {

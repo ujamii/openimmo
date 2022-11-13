@@ -27,14 +27,14 @@ class StpSonstige
      * optional
      * @see PLATZART_* constants
      */
-    protected string $platzart = '';
+    public string $platzart = '';
 
     /**
      * @Type("string")
      * @XmlAttribute
      * optional
      */
-    protected ?string $bemerkung = null;
+    public ?string $bemerkung = null;
 
     public function getPlatzart(): ?string
     {

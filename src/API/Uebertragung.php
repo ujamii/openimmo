@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Uebertragung
- * Übertragungsangaben
+ * Ãbertragungsangaben
  * @XmlRoot("uebertragung")
  */
 class Uebertragung
@@ -27,7 +27,7 @@ class Uebertragung
      * required
      * @see ART_* constants
      */
-    protected string $art = '';
+    public string $art = '';
 
     /**
      * @Type("string")
@@ -35,7 +35,7 @@ class Uebertragung
      * required
      * @see UMFANG_* constants
      */
-    protected string $umfang = '';
+    public string $umfang = '';
 
     /**
      * @Type("string")
@@ -43,49 +43,49 @@ class Uebertragung
      * optional
      * @see MODUS_* constants
      */
-    protected string $modus = '';
+    public string $modus = '';
 
     /**
      * @Type("string")
      * @XmlAttribute
      * required
      */
-    protected string $version = '';
+    public string $version = '';
 
     /**
      * @Type("string")
      * @XmlAttribute
      * required
      */
-    protected string $sendersoftware = '';
+    public string $sendersoftware = '';
 
     /**
      * @Type("string")
      * @XmlAttribute
      * required
      */
-    protected string $senderversion = '';
+    public string $senderversion = '';
 
     /**
      * @Type("string")
      * @XmlAttribute
      * optional
      */
-    protected ?string $technEmail = null;
+    public ?string $technEmail = null;
 
     /**
      * @Type("string")
      * @XmlAttribute
      * optional
      */
-    protected ?string $regiId = null;
+    public ?string $regiId = null;
 
     /**
      * @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>")
      * @XmlAttribute
      * optional
      */
-    protected ?\DateTime $timestamp = null;
+    public ?\DateTime $timestamp = null;
 
     public function getArt(): string
     {

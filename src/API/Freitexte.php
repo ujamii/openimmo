@@ -15,46 +15,46 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Freitexte
 {
     /** @Type("string") */
-    protected ?string $objekttitel = null;
+    public ?string $objekttitel = null;
 
     /** @Type("string") */
-    protected ?string $dreizeiler = null;
+    public ?string $dreizeiler = null;
 
     /** @Type("string") */
-    protected ?string $lage = null;
+    public ?string $lage = null;
 
     /** @Type("string") */
-    protected ?string $ausstattBeschr = null;
+    public ?string $ausstattBeschr = null;
 
     /** @Type("string") */
-    protected ?string $objektbeschreibung = null;
+    public ?string $objektbeschreibung = null;
 
     /** @Type("string") */
-    protected ?string $sonstigeAngaben = null;
+    public ?string $sonstigeAngaben = null;
 
     /** @Type("Ujamii\OpenImmo\API\ObjektText") */
-    protected ?ObjektText $objektText = null;
+    public ?ObjektText $objektText = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedSimplefield = [];
+    public array $userDefinedSimplefield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedAnyfield = [];
+    public array $userDefinedAnyfield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedExtend = [];
+    public array $userDefinedExtend = [];
 
     public function getObjekttitel(): ?string
     {

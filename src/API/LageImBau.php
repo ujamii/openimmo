@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class LageImBau
- * Angabe über die Lage der Immobilie im Gesamtgebäude, Optionen kombinierbar
+ * Angabe Ã¼ber die Lage der Immobilie im GesamtgebÃ¤ude, Optionen kombinierbar
  * @XmlRoot("lage_im_bau")
  */
 class LageImBau
@@ -20,7 +20,7 @@ class LageImBau
      * @SerializedName("LINKS")
      * optional
      */
-    protected ?bool $links = null;
+    public ?bool $links = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class LageImBau
      * @SerializedName("RECHTS")
      * optional
      */
-    protected ?bool $rechts = null;
+    public ?bool $rechts = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class LageImBau
      * @SerializedName("VORNE")
      * optional
      */
-    protected ?bool $vorne = null;
+    public ?bool $vorne = null;
 
     /**
      * @Type("bool")
@@ -44,7 +44,7 @@ class LageImBau
      * @SerializedName("HINTEN")
      * optional
      */
-    protected ?bool $hinten = null;
+    public ?bool $hinten = null;
 
     public function getLinks(): ?bool
     {

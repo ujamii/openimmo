@@ -34,7 +34,7 @@ class Wohnung
      * optional
      * @see WOHNUNGTYP_* constants
      */
-    protected string $wohnungtyp = '';
+    public string $wohnungtyp = '';
 
     public function getWohnungtyp(): ?string
     {

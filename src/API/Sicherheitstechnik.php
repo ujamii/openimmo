@@ -20,7 +20,7 @@ class Sicherheitstechnik
      * @SerializedName("ALARMANLAGE")
      * optional
      */
-    protected ?bool $alarmanlage = null;
+    public ?bool $alarmanlage = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Sicherheitstechnik
      * @SerializedName("KAMERA")
      * optional
      */
-    protected ?bool $kamera = null;
+    public ?bool $kamera = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Sicherheitstechnik
      * @SerializedName("POLIZEIRUF")
      * optional
      */
-    protected ?bool $polizeiruf = null;
+    public ?bool $polizeiruf = null;
 
     public function getAlarmanlage(): ?bool
     {

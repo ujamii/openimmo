@@ -47,7 +47,7 @@ class Haus
      * optional
      * @see HAUSTYP_* constants
      */
-    protected string $haustyp = '';
+    public string $haustyp = '';
 
     public function getHaustyp(): ?string
     {

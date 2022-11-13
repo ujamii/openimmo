@@ -20,7 +20,7 @@ class Nutzungsart
      * @SerializedName("WOHNEN")
      * required
      */
-    protected bool $wohnen = false;
+    public bool $wohnen = false;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Nutzungsart
      * @SerializedName("GEWERBE")
      * required
      */
-    protected bool $gewerbe = false;
+    public bool $gewerbe = false;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Nutzungsart
      * @SerializedName("ANLAGE")
      * optional
      */
-    protected ?bool $anlage = null;
+    public ?bool $anlage = null;
 
     /**
      * @Type("bool")
@@ -44,7 +44,7 @@ class Nutzungsart
      * @SerializedName("WAZ")
      * optional
      */
-    protected ?bool $waz = null;
+    public ?bool $waz = null;
 
     public function getWohnen(): bool
     {

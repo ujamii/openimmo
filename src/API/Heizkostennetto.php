@@ -19,13 +19,13 @@ class Heizkostennetto
      * @XmlAttribute
      * optional
      */
-    protected ?float $heizkostenust = null;
+    public ?float $heizkostenust = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getHeizkostenust(): ?float
     {

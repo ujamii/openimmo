@@ -23,7 +23,7 @@ class Unterkellert
      * optional
      * @see KELLER_* constants
      */
-    protected string $keller = '';
+    public string $keller = '';
 
     public function getKeller(): ?string
     {

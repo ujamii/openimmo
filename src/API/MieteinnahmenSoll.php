@@ -25,13 +25,13 @@ class MieteinnahmenSoll
      * optional
      * @see PERIODE_* constants
      */
-    protected string $periode = '';
+    public string $periode = '';
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getPeriode(): ?string
     {

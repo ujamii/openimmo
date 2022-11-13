@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Ruecklagenetto
- * Vorhanden Rücklagen bei einem Kauf Objekt, UmSt. im Attribut.
+ * Vorhanden RÃ¼cklagen bei einem Kauf Objekt, UmSt. im Attribut.
  * @XmlRoot("ruecklagenetto")
  */
 class Ruecklagenetto
@@ -19,13 +19,13 @@ class Ruecklagenetto
      * @XmlAttribute
      * optional
      */
-    protected ?float $ruecklageust = null;
+    public ?float $ruecklageust = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getRuecklageust(): ?float
     {

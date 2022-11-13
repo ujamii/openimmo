@@ -27,20 +27,20 @@ class TelSonstige
      * optional
      * @see TELEFONART_* constants
      */
-    protected string $telefonart = '';
+    public string $telefonart = '';
 
     /**
      * @Type("string")
      * @XmlAttribute
      * optional
      */
-    protected ?string $bemerkung = null;
+    public ?string $bemerkung = null;
 
     /**
      * @Inline
      * @Type("string")
      */
-    protected ?string $value = null;
+    public ?string $value = null;
 
     public function getTelefonart(): ?string
     {

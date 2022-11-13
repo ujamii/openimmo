@@ -16,28 +16,28 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Openimmo
 {
     /** @Type("Ujamii\OpenImmo\API\Uebertragung") */
-    protected ?Uebertragung $uebertragung = null;
+    public ?Uebertragung $uebertragung = null;
 
     /**
      * @XmlList(inline = true, entry = "anbieter")
      * @Type("array<Ujamii\OpenImmo\API\Anbieter>")
      * @SkipWhenEmpty
      */
-    protected array $anbieter = [];
+    public array $anbieter = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedSimplefield = [];
+    public array $userDefinedSimplefield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedAnyfield = [];
+    public array $userDefinedAnyfield = [];
 
     public function getUebertragung(): ?Uebertragung
     {
@@ -96,7 +96,7 @@ class Openimmo
         ?Uebertragung $uebertragung = null,
         array $anbieter = [],
         array $userDefinedSimplefield = [],
-        array $userDefinedAnyfield = []
+        array $userDefinedAnyfield = [],
     ) {
         $this->uebertragung = $uebertragung;
         $this->anbieter = $anbieter;

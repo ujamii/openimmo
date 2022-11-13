@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Parken
- * Objektart für diverse Parkplatz Angaben
+ * Objektart fÃ¼r diverse Parkplatz Angaben
  * @XmlRoot("parken")
  */
 class Parken
@@ -30,7 +30,7 @@ class Parken
      * optional
      * @see PARKEN_TYP_* constants
      */
-    protected string $parkenTyp = '';
+    public string $parkenTyp = '';
 
     public function getParkenTyp(): ?string
     {

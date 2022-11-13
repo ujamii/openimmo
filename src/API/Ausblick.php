@@ -24,7 +24,7 @@ class Ausblick
      * optional
      * @see BLICK_* constants
      */
-    protected string $blick = '';
+    public string $blick = '';
 
     public function getBlick(): ?string
     {

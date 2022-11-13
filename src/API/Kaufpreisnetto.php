@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Kaufpreisnetto
- * Ausgewiesene Kaufpreis Netto, Optional mit Umst im Attribut. Speziell für Gewerbe
+ * Ausgewiesene Kaufpreis Netto, Optional mit Umst im Attribut. Speziell fÃ¼r Gewerbe
  * @XmlRoot("kaufpreisnetto")
  */
 class Kaufpreisnetto
@@ -19,13 +19,13 @@ class Kaufpreisnetto
      * @XmlAttribute
      * optional
      */
-    protected ?float $kaufpreisust = null;
+    public ?float $kaufpreisust = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getKaufpreisust(): ?float
     {

@@ -15,34 +15,34 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Objektkategorie
 {
     /** @Type("Ujamii\OpenImmo\API\Nutzungsart") */
-    protected ?Nutzungsart $nutzungsart = null;
+    public ?Nutzungsart $nutzungsart = null;
 
     /** @Type("Ujamii\OpenImmo\API\Vermarktungsart") */
-    protected ?Vermarktungsart $vermarktungsart = null;
+    public ?Vermarktungsart $vermarktungsart = null;
 
     /** @Type("Ujamii\OpenImmo\API\Objektart") */
-    protected ?Objektart $objektart = null;
+    public ?Objektart $objektart = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedSimplefield = [];
+    public array $userDefinedSimplefield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedAnyfield = [];
+    public array $userDefinedAnyfield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedExtend = [];
+    public array $userDefinedExtend = [];
 
     public function getNutzungsart(): ?Nutzungsart
     {
@@ -125,7 +125,7 @@ class Objektkategorie
         ?Objektart $objektart = null,
         array $userDefinedSimplefield = [],
         array $userDefinedAnyfield = [],
-        array $userDefinedExtend = []
+        array $userDefinedExtend = [],
     ) {
         $this->nutzungsart = $nutzungsart;
         $this->vermarktungsart = $vermarktungsart;

@@ -252,7 +252,7 @@ class Land
      * optional
      * @see ISO_LAND_* constants
      */
-    protected string $isoLand = '';
+    public string $isoLand = '';
 
     public function getIsoLand(): ?string
     {

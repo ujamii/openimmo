@@ -13,22 +13,22 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Versteigerung
 {
     /** @Type("bool") */
-    protected ?bool $zwangsversteigerung = null;
+    public ?bool $zwangsversteigerung = null;
 
     /** @Type("string") */
-    protected ?string $aktenzeichen = null;
+    public ?string $aktenzeichen = null;
 
     /** @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>") */
-    protected ?\DateTime $zvtermin = null;
+    public ?\DateTime $zvtermin = null;
 
     /** @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>") */
-    protected ?\DateTime $zusatztermin = null;
+    public ?\DateTime $zusatztermin = null;
 
     /** @Type("string") */
-    protected ?string $amtsgericht = null;
+    public ?string $amtsgericht = null;
 
     /** @Type("float") */
-    protected ?float $verkehrswert = null;
+    public ?float $verkehrswert = null;
 
     public function getZwangsversteigerung(): ?bool
     {
@@ -102,7 +102,7 @@ class Versteigerung
         ?\DateTime $zvtermin = null,
         ?\DateTime $zusatztermin = null,
         ?string $amtsgericht = null,
-        ?float $verkehrswert = null
+        ?float $verkehrswert = null,
     ) {
         $this->zwangsversteigerung = $zwangsversteigerung;
         $this->aktenzeichen = $aktenzeichen;

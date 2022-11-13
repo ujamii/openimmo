@@ -33,7 +33,7 @@ class LageGebiet
      * optional
      * @see GEBIETE_* constants
      */
-    protected string $gebiete = '';
+    public string $gebiete = '';
 
     public function getGebiete(): ?string
     {

@@ -17,7 +17,7 @@ class UserDefinedAnyfield
      * @Inline
      * @Type("string")
      */
-    protected ?string $value = null;
+    public ?string $value = null;
 
     public function getValue(): ?string
     {

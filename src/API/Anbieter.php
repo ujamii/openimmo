@@ -15,59 +15,59 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Anbieter
 {
     /** @Type("string") */
-    protected ?string $anbieternr = null;
+    public ?string $anbieternr = null;
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $firma = '';
+    public string $firma = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $openimmoAnid = '';
+    public string $openimmoAnid = '';
 
     /** @Type("string") */
-    protected ?string $lizenzkennung = null;
+    public ?string $lizenzkennung = null;
 
     /** @Type("Ujamii\OpenImmo\API\Anhang") */
-    protected ?Anhang $anhang = null;
+    public ?Anhang $anhang = null;
 
     /**
      * @XmlList(inline = true, entry = "immobilie")
      * @Type("array<Ujamii\OpenImmo\API\Immobilie>")
      * @SkipWhenEmpty
      */
-    protected array $immobilie = [];
+    public array $immobilie = [];
 
     /** @Type("string") */
-    protected ?string $impressum = null;
+    public ?string $impressum = null;
 
     /** @Type("Ujamii\OpenImmo\API\ImpressumStrukt") */
-    protected ?ImpressumStrukt $impressumStrukt = null;
+    public ?ImpressumStrukt $impressumStrukt = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedSimplefield = [];
+    public array $userDefinedSimplefield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedAnyfield = [];
+    public array $userDefinedAnyfield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedExtend = [];
+    public array $userDefinedExtend = [];
 
     public function getAnbieternr(): ?string
     {

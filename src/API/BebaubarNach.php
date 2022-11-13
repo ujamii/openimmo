@@ -27,7 +27,7 @@ class BebaubarNach
      * optional
      * @see BEBAUBAR_ATTR_* constants
      */
-    protected string $bebaubarAttr = '';
+    public string $bebaubarAttr = '';
 
     public function getBebaubarAttr(): ?string
     {

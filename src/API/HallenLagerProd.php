@@ -32,7 +32,7 @@ class HallenLagerProd
      * optional
      * @see HALLEN_TYP_* constants
      */
-    protected string $hallenTyp = '';
+    public string $hallenTyp = '';
 
     public function getHallenTyp(): ?string
     {

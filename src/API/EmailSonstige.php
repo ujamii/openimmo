@@ -25,20 +25,20 @@ class EmailSonstige
      * optional
      * @see EMAILART_* constants
      */
-    protected string $emailart = '';
+    public string $emailart = '';
 
     /**
      * @Type("string")
      * @XmlAttribute
      * optional
      */
-    protected ?string $bemerkung = null;
+    public ?string $bemerkung = null;
 
     /**
      * @Inline
      * @Type("string")
      */
-    protected ?string $value = null;
+    public ?string $value = null;
 
     public function getEmailart(): ?string
     {

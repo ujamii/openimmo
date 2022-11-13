@@ -20,7 +20,7 @@ class AusrichtBalkonTerrasse
      * @SerializedName("NORD")
      * optional
      */
-    protected ?bool $nord = null;
+    public ?bool $nord = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class AusrichtBalkonTerrasse
      * @SerializedName("OST")
      * optional
      */
-    protected ?bool $ost = null;
+    public ?bool $ost = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class AusrichtBalkonTerrasse
      * @SerializedName("SUED")
      * optional
      */
-    protected ?bool $sued = null;
+    public ?bool $sued = null;
 
     /**
      * @Type("bool")
@@ -44,7 +44,7 @@ class AusrichtBalkonTerrasse
      * @SerializedName("WEST")
      * optional
      */
-    protected ?bool $west = null;
+    public ?bool $west = null;
 
     /**
      * @Type("bool")
@@ -52,7 +52,7 @@ class AusrichtBalkonTerrasse
      * @SerializedName("NORDOST")
      * optional
      */
-    protected ?bool $nordost = null;
+    public ?bool $nordost = null;
 
     /**
      * @Type("bool")
@@ -60,7 +60,7 @@ class AusrichtBalkonTerrasse
      * @SerializedName("NORDWEST")
      * optional
      */
-    protected ?bool $nordwest = null;
+    public ?bool $nordwest = null;
 
     /**
      * @Type("bool")
@@ -68,7 +68,7 @@ class AusrichtBalkonTerrasse
      * @SerializedName("SUEDOST")
      * optional
      */
-    protected ?bool $suedost = null;
+    public ?bool $suedost = null;
 
     /**
      * @Type("bool")
@@ -76,7 +76,7 @@ class AusrichtBalkonTerrasse
      * @SerializedName("SUEDWEST")
      * optional
      */
-    protected ?bool $suedwest = null;
+    public ?bool $suedwest = null;
 
     public function getNord(): ?bool
     {

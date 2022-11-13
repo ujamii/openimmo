@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Geschlecht
- * Soll das Objekt nur an Frauen bzw. nur an Männer vermietet werden,
+ * Soll das Objekt nur an Frauen bzw. nur an MÃ¤nner vermietet werden,
  *  fehlende Angabe wird als 'Ja' interpretiert
  * @XmlRoot("geschlecht")
  */
@@ -24,7 +24,7 @@ class Geschlecht
      * optional
      * @see GESCHL_ATTR_* constants
      */
-    protected string $geschlAttr = '';
+    public string $geschlAttr = '';
 
     public function getGeschlAttr(): ?string
     {

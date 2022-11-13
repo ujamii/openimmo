@@ -20,7 +20,7 @@ class Ausbaustufe
      * @SerializedName("BAUSATZHAUS")
      * optional
      */
-    protected ?bool $bausatzhaus = null;
+    public ?bool $bausatzhaus = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Ausbaustufe
      * @SerializedName("AUSBAUHAUS")
      * optional
      */
-    protected ?bool $ausbauhaus = null;
+    public ?bool $ausbauhaus = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Ausbaustufe
      * @SerializedName("SCHLUESSELFERTIGMITKELLER")
      * optional
      */
-    protected ?bool $schluesselfertigmitkeller = null;
+    public ?bool $schluesselfertigmitkeller = null;
 
     /**
      * @Type("bool")
@@ -44,7 +44,7 @@ class Ausbaustufe
      * @SerializedName("SCHLUESSELFERTIGOHNEBODENPLATTE")
      * optional
      */
-    protected ?bool $schluesselfertigohnebodenplatte = null;
+    public ?bool $schluesselfertigohnebodenplatte = null;
 
     /**
      * @Type("bool")
@@ -52,7 +52,7 @@ class Ausbaustufe
      * @SerializedName("SCHLUESSELFERTIGMITBODENPLATTE")
      * optional
      */
-    protected ?bool $schluesselfertigmitbodenplatte = null;
+    public ?bool $schluesselfertigmitbodenplatte = null;
 
     public function getBausatzhaus(): ?bool
     {
@@ -114,7 +114,7 @@ class Ausbaustufe
         ?bool $ausbauhaus = null,
         ?bool $schluesselfertigmitkeller = null,
         ?bool $schluesselfertigohnebodenplatte = null,
-        ?bool $schluesselfertigmitbodenplatte = null
+        ?bool $schluesselfertigmitbodenplatte = null,
     ) {
         $this->bausatzhaus = $bausatzhaus;
         $this->ausbauhaus = $ausbauhaus;

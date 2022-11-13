@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Waehrung
- * Währung
+ * WÃ¤hrung
  * @XmlRoot("waehrung")
  */
 class Waehrung
@@ -202,7 +202,7 @@ class Waehrung
      * optional
      * @see ISO_WAEHRUNG_* constants
      */
-    protected string $isoWaehrung = '';
+    public string $isoWaehrung = '';
 
     public function getIsoWaehrung(): ?string
     {

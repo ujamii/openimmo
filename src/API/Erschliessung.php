@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Erschliessung
- * Stand der Erschließung, Optionen nicht kombinierbar
+ * Stand der ErschlieÃung, Optionen nicht kombinierbar
  * @XmlRoot("erschliessung")
  */
 class Erschliessung
@@ -24,7 +24,7 @@ class Erschliessung
      * optional
      * @see ERSCHL_ATTR_* constants
      */
-    protected string $erschlAttr = '';
+    public string $erschlAttr = '';
 
     public function getErschlAttr(): ?string
     {

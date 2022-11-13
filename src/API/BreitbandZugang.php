@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class BreitbandZugang
- * Informationen über die Breitbandmöglichkeiten.
+ * Informationen Ã¼ber die BreitbandmÃ¶glichkeiten.
  * @XmlRoot("breitband_zugang")
  */
 class BreitbandZugang
@@ -18,14 +18,14 @@ class BreitbandZugang
      * @XmlAttribute
      * optional
      */
-    protected ?string $art = null;
+    public ?string $art = null;
 
     /**
      * @Type("float")
      * @XmlAttribute
      * optional
      */
-    protected ?float $speed = null;
+    public ?float $speed = null;
 
     public function getArt(): ?string
     {

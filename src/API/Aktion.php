@@ -8,9 +8,9 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Aktion
- * Aktion für Objekt. Wenn nicht vorhanden, dann "ADD", als neu.
- *  Change= Update der Objektdaten, Delete = Löschen des Objektes
- *  Referenz= Die Möglichkeit Objekte in Portalen als Verkauft oder Archiv zu definieren.
+ * Aktion fÃ¼r Objekt. Wenn nicht vorhanden, dann "ADD", als neu.
+ *  Change= Update der Objektdaten, Delete = LÃ¶schen des Objektes
+ *  Referenz= Die MÃ¶glichkeit Objekte in Portalen als ÂVerkauftÂ oder ÂArchivÂ zu definieren.
  * @XmlRoot("aktion")
  */
 class Aktion
@@ -25,7 +25,7 @@ class Aktion
      * optional
      * @see AKTIONART_* constants
      */
-    protected string $aktionart = '';
+    public string $aktionart = '';
 
     public function getAktionart(): ?string
     {

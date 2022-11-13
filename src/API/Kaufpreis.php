@@ -19,13 +19,13 @@ class Kaufpreis
      * @XmlAttribute
      * optional
      */
-    protected ?bool $aufAnfrage = null;
+    public ?bool $aufAnfrage = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getAufAnfrage(): ?bool
     {

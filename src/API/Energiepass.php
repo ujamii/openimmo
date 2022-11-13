@@ -26,67 +26,67 @@ class Energiepass
      * @Type("string")
      * @see EPART_* constants
      */
-    protected string $epart = '';
+    public string $epart = '';
 
     /** @Type("string") */
-    protected ?string $gueltigBis = null;
+    public ?string $gueltigBis = null;
 
     /** @Type("string") */
-    protected ?string $energieverbrauchkennwert = null;
+    public ?string $energieverbrauchkennwert = null;
 
     /** @Type("bool") */
-    protected ?bool $mitwarmwasser = null;
+    public ?bool $mitwarmwasser = null;
 
     /** @Type("string") */
-    protected ?string $endenergiebedarf = null;
+    public ?string $endenergiebedarf = null;
 
     /** @Type("string") */
-    protected ?string $primaerenergietraeger = null;
+    public ?string $primaerenergietraeger = null;
 
     /** @Type("string") */
-    protected ?string $stromwert = null;
+    public ?string $stromwert = null;
 
     /** @Type("string") */
-    protected ?string $waermewert = null;
+    public ?string $waermewert = null;
 
     /** @Type("string") */
-    protected ?string $wertklasse = null;
+    public ?string $wertklasse = null;
 
     /** @Type("string") */
-    protected ?string $baujahr = null;
+    public ?string $baujahr = null;
 
     /** @Type("DateTime<'Y-m-d'>") */
-    protected ?\DateTime $ausstelldatum = null;
+    public ?\DateTime $ausstelldatum = null;
 
     /**
      * @Type("string")
      * @see JAHRGANG_* constants
      */
-    protected string $jahrgang = '';
+    public string $jahrgang = '';
 
     /**
      * @Type("string")
      * @see GEBAEUDEART_* constants
      */
-    protected string $gebaeudeart = '';
+    public string $gebaeudeart = '';
 
     /** @Type("string") */
-    protected ?string $epasstext = null;
+    public ?string $epasstext = null;
 
     /** @Type("string") */
-    protected ?string $geg2018 = null;
+    public ?string $geg2018 = null;
 
     /** @Type("string") */
-    protected ?string $hwbwert = null;
+    public ?string $hwbwert = null;
 
     /** @Type("string") */
-    protected ?string $hwbklasse = null;
+    public ?string $hwbklasse = null;
 
     /** @Type("string") */
-    protected ?string $fgeewert = null;
+    public ?string $fgeewert = null;
 
     /** @Type("string") */
-    protected ?string $fgeeklasse = null;
+    public ?string $fgeeklasse = null;
 
     public function getEpart(): ?string
     {

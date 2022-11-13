@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Check
- * Angabe von Daten für die Prüfung auf ein Update
+ * Angabe von Daten fÃ¼r die PrÃ¼fung auf ein Update
  * @XmlRoot("check")
  */
 class Check
@@ -24,13 +24,13 @@ class Check
      * required
      * @see CTYPE_* constants
      */
-    protected string $ctype = '';
+    public string $ctype = '';
 
     /**
      * @Inline
      * @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>")
      */
-    protected ?\DateTime $value = null;
+    public ?\DateTime $value = null;
 
     public function getCtype(): string
     {

@@ -20,7 +20,7 @@ class Dachform
      * @SerializedName("KRUEPPELWALMDACH")
      * optional
      */
-    protected ?bool $krueppelwalmdach = null;
+    public ?bool $krueppelwalmdach = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Dachform
      * @SerializedName("MANSARDDACH")
      * optional
      */
-    protected ?bool $mansarddach = null;
+    public ?bool $mansarddach = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Dachform
      * @SerializedName("PULTDACH")
      * optional
      */
-    protected ?bool $pultdach = null;
+    public ?bool $pultdach = null;
 
     /**
      * @Type("bool")
@@ -44,7 +44,7 @@ class Dachform
      * @SerializedName("SATTELDACH")
      * optional
      */
-    protected ?bool $satteldach = null;
+    public ?bool $satteldach = null;
 
     /**
      * @Type("bool")
@@ -52,7 +52,7 @@ class Dachform
      * @SerializedName("WALMDACH")
      * optional
      */
-    protected ?bool $walmdach = null;
+    public ?bool $walmdach = null;
 
     /**
      * @Type("bool")
@@ -60,7 +60,7 @@ class Dachform
      * @SerializedName("FLACHDACH")
      * optional
      */
-    protected ?bool $flachdach = null;
+    public ?bool $flachdach = null;
 
     /**
      * @Type("bool")
@@ -68,7 +68,7 @@ class Dachform
      * @SerializedName("PYRAMIDENDACH")
      * optional
      */
-    protected ?bool $pyramidendach = null;
+    public ?bool $pyramidendach = null;
 
     public function getKrueppelwalmdach(): ?bool
     {

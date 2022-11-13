@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class DistanzenSport
- * Welche Distanz zu dem ausgewählen Sport-/Freizeitziel besteht(Angabe in km),
+ * Welche Distanz zu dem ausgewÃ¤hlen Sport-/Freizeitziel besteht(Angabe in km),
  *  Optionen nicht kombinierbar, Distanzelement ist mehrfach erfassbar
  * @XmlRoot("distanzen_sport")
  */
@@ -29,13 +29,13 @@ class DistanzenSport
      * required
      * @see DISTANZ_ZU_SPORT_* constants
      */
-    protected string $distanzZuSport = '';
+    public string $distanzZuSport = '';
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getDistanzZuSport(): string
     {

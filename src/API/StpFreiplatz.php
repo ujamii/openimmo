@@ -18,14 +18,14 @@ class StpFreiplatz
      * @XmlAttribute
      * optional
      */
-    protected ?float $stellplatzmiete = null;
+    public ?float $stellplatzmiete = null;
 
     /**
      * @Type("float")
      * @XmlAttribute
      * optional
      */
-    protected ?float $stellplatzkaufpreis = null;
+    public ?float $stellplatzkaufpreis = null;
 
     /**
      * @Type("int")
@@ -34,7 +34,7 @@ class StpFreiplatz
      * Minimum value (inclusive): -2147483648
      * Maximum value (inclusive): 2147483647
      */
-    protected ?int $anzahl = null;
+    public ?int $anzahl = null;
 
     public function getStellplatzmiete(): ?float
     {

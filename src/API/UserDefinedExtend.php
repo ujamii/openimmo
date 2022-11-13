@@ -19,7 +19,7 @@ class UserDefinedExtend
      * @Type("array<Ujamii\OpenImmo\API\Feld>")
      * @SkipWhenEmpty
      */
-    protected array $feld = [];
+    public array $feld = [];
 
     /**
      * Returns array of array

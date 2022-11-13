@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Bewertung
- * Container für detailierte Bewertungs Parmater
+ * Container fÃ¼r detailierte Bewertungs Parmater
  * @XmlRoot("bewertung")
  */
 class Bewertung
@@ -19,7 +19,7 @@ class Bewertung
      * @Type("array<Ujamii\OpenImmo\API\Feld>")
      * @SkipWhenEmpty
      */
-    protected array $feld = [];
+    public array $feld = [];
 
     /**
      * Returns array of array

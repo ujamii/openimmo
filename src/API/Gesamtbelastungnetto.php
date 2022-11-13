@@ -19,13 +19,13 @@ class Gesamtbelastungnetto
      * @XmlAttribute
      * optional
      */
-    protected ?float $gesamtbelastungust = null;
+    public ?float $gesamtbelastungust = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getGesamtbelastungust(): ?float
     {

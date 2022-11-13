@@ -19,13 +19,13 @@ class Sonstigekostennetto
      * @XmlAttribute
      * optional
      */
-    protected ?float $sonstigekostenust = null;
+    public ?float $sonstigekostenust = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getSonstigekostenust(): ?float
     {

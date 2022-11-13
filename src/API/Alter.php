@@ -22,7 +22,7 @@ class Alter
      * optional
      * @see ALTER_ATTR_* constants
      */
-    protected string $alterAttr = '';
+    public string $alterAttr = '';
 
     public function getAlterAttr(): ?string
     {

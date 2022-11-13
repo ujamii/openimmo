@@ -19,13 +19,13 @@ class UserDefinedSimplefield
      * @XmlAttribute
      * required
      */
-    protected string $feldname = '';
+    public string $feldname = '';
 
     /**
      * @Inline
      * @Type("string")
      */
-    protected ?string $value = null;
+    public ?string $value = null;
 
     public function getFeldname(): string
     {

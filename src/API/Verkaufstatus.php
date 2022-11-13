@@ -23,7 +23,7 @@ class Verkaufstatus
      * optional
      * @see STAND_* constants
      */
-    protected string $stand = '';
+    public string $stand = '';
 
     public function getStand(): ?string
     {

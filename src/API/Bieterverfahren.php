@@ -15,46 +15,46 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Bieterverfahren
 {
     /** @Type("DateTime<'Y-m-d'>") */
-    protected ?\DateTime $beginnAngebotsphase = null;
+    public ?\DateTime $beginnAngebotsphase = null;
 
     /** @Type("DateTime<'Y-m-d'>") */
-    protected ?\DateTime $besichtigungstermin = null;
+    public ?\DateTime $besichtigungstermin = null;
 
     /** @Type("DateTime<'Y-m-d'>") */
-    protected ?\DateTime $besichtigungstermin2 = null;
+    public ?\DateTime $besichtigungstermin2 = null;
 
     /** @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>") */
-    protected ?\DateTime $beginnBietzeit = null;
+    public ?\DateTime $beginnBietzeit = null;
 
     /** @Type("DateTime<'Y-m-d'>") */
-    protected ?\DateTime $endeBietzeit = null;
+    public ?\DateTime $endeBietzeit = null;
 
     /** @Type("bool") */
-    protected ?bool $hoechstgebotZeigen = null;
+    public ?bool $hoechstgebotZeigen = null;
 
     /** @Type("float") */
-    protected ?float $mindestpreis = null;
+    public ?float $mindestpreis = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedSimplefield = [];
+    public array $userDefinedSimplefield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedAnyfield = [];
+    public array $userDefinedAnyfield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedExtend = [];
+    public array $userDefinedExtend = [];
 
     public function getBeginnAngebotsphase(): ?\DateTime
     {

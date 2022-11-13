@@ -19,13 +19,13 @@ class Gesamtmietenetto
      * @XmlAttribute
      * optional
      */
-    protected ?float $gesamtmieteust = null;
+    public ?float $gesamtmieteust = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getGesamtmieteust(): ?float
     {

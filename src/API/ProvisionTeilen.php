@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class ProvisionTeilen
- * Aufteilen der provision bei Partnergeschäften. Auch "A Meta" Geschäft. Attribut zeigt, wie der Wert angegeben wird: fester wert, prozent, oder Text Information
+ * Aufteilen der provision bei PartnergeschÃ¤ften. Auch "A Meta" GeschÃ¤ft. Attribut zeigt, wie der Wert angegeben wird: fester wert, prozent, oder Text Information
  * @XmlRoot("provision_teilen")
  */
 class ProvisionTeilen
@@ -24,13 +24,13 @@ class ProvisionTeilen
      * optional
      * @see WERT_* constants
      */
-    protected string $wert = '';
+    public string $wert = '';
 
     /**
      * @Inline
      * @Type("string")
      */
-    protected ?string $value = null;
+    public ?string $value = null;
 
     public function getWert(): ?string
     {

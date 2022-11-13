@@ -15,62 +15,62 @@ use JMS\Serializer\Annotation\XmlRoot;
 class ZustandAngaben
 {
     /** @Type("string") */
-    protected ?string $baujahr = null;
+    public ?string $baujahr = null;
 
     /** @Type("string") */
-    protected ?string $letztemodernisierung = null;
+    public ?string $letztemodernisierung = null;
 
     /** @Type("Ujamii\OpenImmo\API\Zustand") */
-    protected ?Zustand $zustand = null;
+    public ?Zustand $zustand = null;
 
     /** @Type("Ujamii\OpenImmo\API\Alter") */
-    protected ?Alter $alter = null;
+    public ?Alter $alter = null;
 
     /** @Type("Ujamii\OpenImmo\API\BebaubarNach") */
-    protected ?BebaubarNach $bebaubarNach = null;
+    public ?BebaubarNach $bebaubarNach = null;
 
     /** @Type("Ujamii\OpenImmo\API\Erschliessung") */
-    protected ?Erschliessung $erschliessung = null;
+    public ?Erschliessung $erschliessung = null;
 
     /** @Type("Ujamii\OpenImmo\API\ErschliessungUmfang") */
-    protected ?ErschliessungUmfang $erschliessungUmfang = null;
+    public ?ErschliessungUmfang $erschliessungUmfang = null;
 
     /** @Type("string") */
-    protected ?string $bauzone = null;
+    public ?string $bauzone = null;
 
     /** @Type("string") */
-    protected ?string $altlasten = null;
+    public ?string $altlasten = null;
 
     /**
      * @XmlList(inline = true, entry = "energiepass")
      * @Type("array<Ujamii\OpenImmo\API\Energiepass>")
      * @SkipWhenEmpty
      */
-    protected array $energiepass = [];
+    public array $energiepass = [];
 
     /** @Type("Ujamii\OpenImmo\API\Verkaufstatus") */
-    protected ?Verkaufstatus $verkaufstatus = null;
+    public ?Verkaufstatus $verkaufstatus = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedSimplefield = [];
+    public array $userDefinedSimplefield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedAnyfield = [];
+    public array $userDefinedAnyfield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedExtend = [];
+    public array $userDefinedExtend = [];
 
     public function getBaujahr(): ?string
     {

@@ -23,7 +23,7 @@ class FreizeitimmobilieGewerblich
      * optional
      * @see FREIZEIT_TYP_* constants
      */
-    protected string $freizeitTyp = '';
+    public string $freizeitTyp = '';
 
     public function getFreizeitTyp(): ?string
     {

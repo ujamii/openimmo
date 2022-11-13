@@ -19,98 +19,98 @@ class Objektart
      * @Type("array<Ujamii\OpenImmo\API\Zimmer>")
      * @SkipWhenEmpty
      */
-    protected array $zimmer = [];
+    public array $zimmer = [];
 
     /**
      * @XmlList(inline = true, entry = "wohnung")
      * @Type("array<Ujamii\OpenImmo\API\Wohnung>")
      * @SkipWhenEmpty
      */
-    protected array $wohnung = [];
+    public array $wohnung = [];
 
     /**
      * @XmlList(inline = true, entry = "haus")
      * @Type("array<Ujamii\OpenImmo\API\Haus>")
      * @SkipWhenEmpty
      */
-    protected array $haus = [];
+    public array $haus = [];
 
     /**
      * @XmlList(inline = true, entry = "grundstueck")
      * @Type("array<Ujamii\OpenImmo\API\Grundstueck>")
      * @SkipWhenEmpty
      */
-    protected array $grundstueck = [];
+    public array $grundstueck = [];
 
     /**
      * @XmlList(inline = true, entry = "buero_praxen")
      * @Type("array<Ujamii\OpenImmo\API\BueroPraxen>")
      * @SkipWhenEmpty
      */
-    protected array $bueroPraxen = [];
+    public array $bueroPraxen = [];
 
     /**
      * @XmlList(inline = true, entry = "einzelhandel")
      * @Type("array<Ujamii\OpenImmo\API\Einzelhandel>")
      * @SkipWhenEmpty
      */
-    protected array $einzelhandel = [];
+    public array $einzelhandel = [];
 
     /**
      * @XmlList(inline = true, entry = "gastgewerbe")
      * @Type("array<Ujamii\OpenImmo\API\Gastgewerbe>")
      * @SkipWhenEmpty
      */
-    protected array $gastgewerbe = [];
+    public array $gastgewerbe = [];
 
     /**
      * @XmlList(inline = true, entry = "hallen_lager_prod")
      * @Type("array<Ujamii\OpenImmo\API\HallenLagerProd>")
      * @SkipWhenEmpty
      */
-    protected array $hallenLagerProd = [];
+    public array $hallenLagerProd = [];
 
     /**
      * @XmlList(inline = true, entry = "land_und_forstwirtschaft")
      * @Type("array<Ujamii\OpenImmo\API\LandUndForstwirtschaft>")
      * @SkipWhenEmpty
      */
-    protected array $landUndForstwirtschaft = [];
+    public array $landUndForstwirtschaft = [];
 
     /**
      * @XmlList(inline = true, entry = "parken")
      * @Type("array<Ujamii\OpenImmo\API\Parken>")
      * @SkipWhenEmpty
      */
-    protected array $parken = [];
+    public array $parken = [];
 
     /**
      * @XmlList(inline = true, entry = "sonstige")
      * @Type("array<Ujamii\OpenImmo\API\Sonstige>")
      * @SkipWhenEmpty
      */
-    protected array $sonstige = [];
+    public array $sonstige = [];
 
     /**
      * @XmlList(inline = true, entry = "freizeitimmobilie_gewerblich")
      * @Type("array<Ujamii\OpenImmo\API\FreizeitimmobilieGewerblich>")
      * @SkipWhenEmpty
      */
-    protected array $freizeitimmobilieGewerblich = [];
+    public array $freizeitimmobilieGewerblich = [];
 
     /**
      * @XmlList(inline = true, entry = "zinshaus_renditeobjekt")
      * @Type("array<Ujamii\OpenImmo\API\ZinshausRenditeobjekt>")
      * @SkipWhenEmpty
      */
-    protected array $zinshausRenditeobjekt = [];
+    public array $zinshausRenditeobjekt = [];
 
     /**
      * @XmlList(inline = true, entry = "objektart_zusatz")
      * @Type("array<string>")
      * @SkipWhenEmpty
      */
-    protected array $objektartZusatz = [];
+    public array $objektartZusatz = [];
 
     /**
      * Returns array of array

@@ -36,7 +36,7 @@ class Zustand
      * optional
      * @see ZUSTAND_ART_* constants
      */
-    protected string $zustandArt = '';
+    public string $zustandArt = '';
 
     public function getZustandArt(): ?string
     {

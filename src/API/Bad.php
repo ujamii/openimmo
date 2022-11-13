@@ -20,7 +20,7 @@ class Bad
      * @SerializedName("DUSCHE")
      * optional
      */
-    protected ?bool $dusche = null;
+    public ?bool $dusche = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Bad
      * @SerializedName("WANNE")
      * optional
      */
-    protected ?bool $wanne = null;
+    public ?bool $wanne = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Bad
      * @SerializedName("FENSTER")
      * optional
      */
-    protected ?bool $fenster = null;
+    public ?bool $fenster = null;
 
     /**
      * @Type("bool")
@@ -44,7 +44,7 @@ class Bad
      * @SerializedName("BIDET")
      * optional
      */
-    protected ?bool $bidet = null;
+    public ?bool $bidet = null;
 
     /**
      * @Type("bool")
@@ -52,7 +52,7 @@ class Bad
      * @SerializedName("PISSOIR")
      * optional
      */
-    protected ?bool $pissoir = null;
+    public ?bool $pissoir = null;
 
     public function getDusche(): ?bool
     {
@@ -114,7 +114,7 @@ class Bad
         ?bool $wanne = null,
         ?bool $fenster = null,
         ?bool $bidet = null,
-        ?bool $pissoir = null
+        ?bool $pissoir = null,
     ) {
         $this->dusche = $dusche;
         $this->wanne = $wanne;

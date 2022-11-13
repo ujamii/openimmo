@@ -20,7 +20,7 @@ class AngeschlGastronomie
      * @SerializedName("HOTELRESTAURANT")
      * optional
      */
-    protected ?bool $hotelrestaurant = null;
+    public ?bool $hotelrestaurant = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class AngeschlGastronomie
      * @SerializedName("BAR")
      * optional
      */
-    protected ?bool $bar = null;
+    public ?bool $bar = null;
 
     public function getHotelrestaurant(): ?bool
     {

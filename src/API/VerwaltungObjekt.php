@@ -15,91 +15,91 @@ use JMS\Serializer\Annotation\XmlRoot;
 class VerwaltungObjekt
 {
     /** @Type("bool") */
-    protected ?bool $objektadresseFreigeben = null;
+    public ?bool $objektadresseFreigeben = null;
 
     /** @Type("string") */
-    protected ?string $verfuegbarAb = null;
+    public ?string $verfuegbarAb = null;
 
     /** @Type("DateTime<'Y-m-d'>") */
-    protected ?\DateTime $abdatum = null;
+    public ?\DateTime $abdatum = null;
 
     /** @Type("DateTime<'Y-m-d'>") */
-    protected ?\DateTime $bisdatum = null;
+    public ?\DateTime $bisdatum = null;
 
     /** @Type("Ujamii\OpenImmo\API\MinMietdauer") */
-    protected ?MinMietdauer $minMietdauer = null;
+    public ?MinMietdauer $minMietdauer = null;
 
     /** @Type("Ujamii\OpenImmo\API\MaxMietdauer") */
-    protected ?MaxMietdauer $maxMietdauer = null;
+    public ?MaxMietdauer $maxMietdauer = null;
 
     /** @Type("DateTime<'Y-m-d'>") */
-    protected ?\DateTime $versteigerungstermin = null;
+    public ?\DateTime $versteigerungstermin = null;
 
     /** @Type("bool") */
-    protected ?bool $wbsSozialwohnung = null;
+    public ?bool $wbsSozialwohnung = null;
 
     /** @Type("bool") */
-    protected ?bool $vermietet = null;
+    public ?bool $vermietet = null;
 
     /** @Type("string") */
-    protected ?string $gruppennummer = null;
+    public ?string $gruppennummer = null;
 
     /** @Type("string") */
-    protected ?string $zugang = null;
+    public ?string $zugang = null;
 
     /** @Type("float") */
-    protected ?float $laufzeit = null;
+    public ?float $laufzeit = null;
 
     /**
      * @Type("int")
      * Minimum value (inclusive): 1
      */
-    protected ?int $maxPersonen = null;
+    public ?int $maxPersonen = null;
 
     /** @Type("bool") */
-    protected ?bool $nichtraucher = null;
+    public ?bool $nichtraucher = null;
 
     /** @Type("bool") */
-    protected ?bool $haustiere = null;
+    public ?bool $haustiere = null;
 
     /** @Type("Ujamii\OpenImmo\API\Geschlecht") */
-    protected ?Geschlecht $geschlecht = null;
+    public ?Geschlecht $geschlecht = null;
 
     /** @Type("bool") */
-    protected ?bool $denkmalgeschuetzt = null;
+    public ?bool $denkmalgeschuetzt = null;
 
     /** @Type("bool") */
-    protected ?bool $alsFerien = null;
+    public ?bool $alsFerien = null;
 
     /** @Type("bool") */
-    protected ?bool $gewerblicheNutzung = null;
+    public ?bool $gewerblicheNutzung = null;
 
     /** @Type("string") */
-    protected ?string $branchen = null;
+    public ?string $branchen = null;
 
     /** @Type("bool") */
-    protected ?bool $hochhaus = null;
+    public ?bool $hochhaus = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedSimplefield = [];
+    public array $userDefinedSimplefield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedAnyfield = [];
+    public array $userDefinedAnyfield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedExtend = [];
+    public array $userDefinedExtend = [];
 
     public function getObjektadresseFreigeben(): ?bool
     {

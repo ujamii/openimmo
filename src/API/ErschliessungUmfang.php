@@ -24,7 +24,7 @@ class ErschliessungUmfang
      * optional
      * @see ERSCHL_ATTR_* constants
      */
-    protected string $erschlAttr = '';
+    public string $erschlAttr = '';
 
     public function getErschlAttr(): ?string
     {

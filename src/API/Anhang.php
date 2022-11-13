@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Anhang
- * Element für Anhänge
+ * Element fÃ¼r AnhÃ¤nge
  * @XmlRoot("anhang")
  */
 class Anhang
@@ -39,7 +39,7 @@ class Anhang
      * required
      * @see LOCATION_* constants
      */
-    protected string $location = '';
+    public string $location = '';
 
     /**
      * @Type("string")
@@ -47,22 +47,22 @@ class Anhang
      * optional
      * @see GRUPPE_* constants
      */
-    protected string $gruppe = '';
+    public string $gruppe = '';
 
     /** @Type("string") */
-    protected ?string $anhangtitel = null;
+    public ?string $anhangtitel = null;
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $format = '';
+    public string $format = '';
 
     /** @Type("Ujamii\OpenImmo\API\Check") */
-    protected ?Check $check = null;
+    public ?Check $check = null;
 
     /** @Type("Ujamii\OpenImmo\API\Daten") */
-    protected ?Daten $daten = null;
+    public ?Daten $daten = null;
 
     public function getLocation(): string
     {
@@ -136,7 +136,7 @@ class Anhang
         ?string $anhangtitel = null,
         string $format = '',
         ?Check $check = null,
-        ?Daten $daten = null
+        ?Daten $daten = null,
     ) {
         $this->location = $location;
         $this->gruppe = $gruppe;

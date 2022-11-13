@@ -19,13 +19,13 @@ class Nebenkostenprom2von
      * @XmlAttribute
      * optional
      */
-    protected ?float $nebenkostenprom2bis = null;
+    public ?float $nebenkostenprom2bis = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getNebenkostenprom2bis(): ?float
     {

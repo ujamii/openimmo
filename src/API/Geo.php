@@ -15,96 +15,96 @@ use JMS\Serializer\Annotation\XmlRoot;
 class Geo
 {
     /** @Type("string") */
-    protected ?string $plz = null;
+    public ?string $plz = null;
 
     /** @Type("string") */
-    protected ?string $ort = null;
+    public ?string $ort = null;
 
     /** @Type("Ujamii\OpenImmo\API\Geokoordinaten") */
-    protected ?Geokoordinaten $geokoordinaten = null;
+    public ?Geokoordinaten $geokoordinaten = null;
 
     /** @Type("string") */
-    protected ?string $strasse = null;
+    public ?string $strasse = null;
 
     /** @Type("string") */
-    protected ?string $hausnummer = null;
+    public ?string $hausnummer = null;
 
     /** @Type("string") */
-    protected ?string $bundesland = null;
+    public ?string $bundesland = null;
 
     /** @Type("Ujamii\OpenImmo\API\Land") */
-    protected ?Land $land = null;
+    public ?Land $land = null;
 
     /** @Type("string") */
-    protected ?string $gemeindecode = null;
+    public ?string $gemeindecode = null;
 
     /** @Type("string") */
-    protected ?string $flur = null;
+    public ?string $flur = null;
 
     /** @Type("string") */
-    protected ?string $flurstueck = null;
+    public ?string $flurstueck = null;
 
     /** @Type("string") */
-    protected ?string $gemarkung = null;
+    public ?string $gemarkung = null;
 
     /**
      * @Type("int")
      * Minimum value (inclusive): -2147483648
      * Maximum value (inclusive): 2147483647
      */
-    protected ?int $etage = null;
+    public ?int $etage = null;
 
     /**
      * @Type("int")
      * Minimum value (inclusive): -2147483648
      * Maximum value (inclusive): 2147483647
      */
-    protected ?int $anzahlEtagen = null;
+    public ?int $anzahlEtagen = null;
 
     /** @Type("Ujamii\OpenImmo\API\LageImBau") */
-    protected ?LageImBau $lageImBau = null;
+    public ?LageImBau $lageImBau = null;
 
     /** @Type("string") */
-    protected ?string $wohnungsnr = null;
+    public ?string $wohnungsnr = null;
 
     /** @Type("Ujamii\OpenImmo\API\LageGebiet") */
-    protected ?LageGebiet $lageGebiet = null;
+    public ?LageGebiet $lageGebiet = null;
 
     /** @Type("string") */
-    protected ?string $regionalerZusatz = null;
+    public ?string $regionalerZusatz = null;
 
     /** @Type("bool") */
-    protected ?bool $kartenMakro = null;
+    public ?bool $kartenMakro = null;
 
     /** @Type("bool") */
-    protected ?bool $kartenMikro = null;
+    public ?bool $kartenMikro = null;
 
     /** @Type("bool") */
-    protected ?bool $virtuelletour = null;
+    public ?bool $virtuelletour = null;
 
     /** @Type("bool") */
-    protected ?bool $luftbildern = null;
+    public ?bool $luftbildern = null;
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedSimplefield = [];
+    public array $userDefinedSimplefield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedAnyfield = [];
+    public array $userDefinedAnyfield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedExtend = [];
+    public array $userDefinedExtend = [];
 
     public function getPlz(): ?string
     {

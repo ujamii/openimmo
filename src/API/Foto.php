@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Foto
- * Foto bei der Kontaktperson. Datentyp ähnlich "Anhang"
+ * Foto bei der Kontaktperson. Datentyp Ã¤hnlich "Anhang"
  * foto from the kontakt person of the sender
  * @XmlRoot("foto")
  */
@@ -24,16 +24,16 @@ class Foto
      * required
      * @see LOCATION_* constants
      */
-    protected string $location = '';
+    public string $location = '';
 
     /**
      * @Type("string")
      * @SkipWhenEmpty
      */
-    protected string $format = '';
+    public string $format = '';
 
     /** @Type("Ujamii\OpenImmo\API\Daten") */
-    protected ?Daten $daten = null;
+    public ?Daten $daten = null;
 
     public function getLocation(): string
     {

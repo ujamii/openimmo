@@ -34,7 +34,7 @@ class LandUndForstwirtschaft
      * optional
      * @see LAND_TYP_* constants
      */
-    protected string $landTyp = '';
+    public string $landTyp = '';
 
     public function getLandTyp(): ?string
     {

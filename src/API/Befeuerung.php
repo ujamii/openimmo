@@ -20,7 +20,7 @@ class Befeuerung
      * @SerializedName("OEL")
      * optional
      */
-    protected ?bool $oel = null;
+    public ?bool $oel = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Befeuerung
      * @SerializedName("GAS")
      * optional
      */
-    protected ?bool $gas = null;
+    public ?bool $gas = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Befeuerung
      * @SerializedName("ELEKTRO")
      * optional
      */
-    protected ?bool $elektro = null;
+    public ?bool $elektro = null;
 
     /**
      * @Type("bool")
@@ -44,7 +44,7 @@ class Befeuerung
      * @SerializedName("ALTERNATIV")
      * optional
      */
-    protected ?bool $alternativ = null;
+    public ?bool $alternativ = null;
 
     /**
      * @Type("bool")
@@ -52,7 +52,7 @@ class Befeuerung
      * @SerializedName("SOLAR")
      * optional
      */
-    protected ?bool $solar = null;
+    public ?bool $solar = null;
 
     /**
      * @Type("bool")
@@ -60,7 +60,7 @@ class Befeuerung
      * @SerializedName("ERDWAERME")
      * optional
      */
-    protected ?bool $erdwaerme = null;
+    public ?bool $erdwaerme = null;
 
     /**
      * @Type("bool")
@@ -68,7 +68,7 @@ class Befeuerung
      * @SerializedName("LUFTWP")
      * optional
      */
-    protected ?bool $luftwp = null;
+    public ?bool $luftwp = null;
 
     /**
      * @Type("bool")
@@ -76,7 +76,7 @@ class Befeuerung
      * @SerializedName("FERN")
      * optional
      */
-    protected ?bool $fern = null;
+    public ?bool $fern = null;
 
     /**
      * @Type("bool")
@@ -84,7 +84,7 @@ class Befeuerung
      * @SerializedName("BLOCK")
      * optional
      */
-    protected ?bool $block = null;
+    public ?bool $block = null;
 
     /**
      * @Type("bool")
@@ -92,7 +92,7 @@ class Befeuerung
      * @SerializedName("WASSER-ELEKTRO")
      * optional
      */
-    protected ?bool $wasserElektro = null;
+    public ?bool $wasserElektro = null;
 
     /**
      * @Type("bool")
@@ -100,7 +100,7 @@ class Befeuerung
      * @SerializedName("PELLET")
      * optional
      */
-    protected ?bool $pellet = null;
+    public ?bool $pellet = null;
 
     /**
      * @Type("bool")
@@ -108,7 +108,7 @@ class Befeuerung
      * @SerializedName("KOHLE")
      * optional
      */
-    protected ?bool $kohle = null;
+    public ?bool $kohle = null;
 
     /**
      * @Type("bool")
@@ -116,7 +116,7 @@ class Befeuerung
      * @SerializedName("HOLZ")
      * optional
      */
-    protected ?bool $holz = null;
+    public ?bool $holz = null;
 
     /**
      * @Type("bool")
@@ -124,7 +124,7 @@ class Befeuerung
      * @SerializedName("FLUESSIGGAS")
      * optional
      */
-    protected ?bool $fluessiggas = null;
+    public ?bool $fluessiggas = null;
 
     public function getOel(): ?bool
     {

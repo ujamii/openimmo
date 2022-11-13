@@ -19,28 +19,28 @@ class Anhaenge
      * @Type("array<Ujamii\OpenImmo\API\Anhang>")
      * @SkipWhenEmpty
      */
-    protected array $anhang = [];
+    public array $anhang = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_simplefield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedSimplefield = [];
+    public array $userDefinedSimplefield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_anyfield")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedAnyfield = [];
+    public array $userDefinedAnyfield = [];
 
     /**
      * @XmlList(inline = true, entry = "user_defined_extend")
      * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
      * @SkipWhenEmpty
      */
-    protected array $userDefinedExtend = [];
+    public array $userDefinedExtend = [];
 
     /**
      * Returns array of array
@@ -102,7 +102,7 @@ class Anhaenge
         array $anhang = [],
         array $userDefinedSimplefield = [],
         array $userDefinedAnyfield = [],
-        array $userDefinedExtend = []
+        array $userDefinedExtend = [],
     ) {
         $this->anhang = $anhang;
         $this->userDefinedSimplefield = $userDefinedSimplefield;

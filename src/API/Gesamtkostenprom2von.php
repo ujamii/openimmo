@@ -19,13 +19,13 @@ class Gesamtkostenprom2von
      * @XmlAttribute
      * optional
      */
-    protected ?float $gesamtkostenprom2bis = null;
+    public ?float $gesamtkostenprom2bis = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getGesamtkostenprom2bis(): ?float
     {

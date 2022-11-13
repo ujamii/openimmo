@@ -20,7 +20,7 @@ class Vermarktungsart
      * @SerializedName("KAUF")
      * required
      */
-    protected bool $kauf = false;
+    public bool $kauf = false;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Vermarktungsart
      * @SerializedName("MIETE_PACHT")
      * required
      */
-    protected bool $mietePacht = false;
+    public bool $mietePacht = false;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Vermarktungsart
      * @SerializedName("ERBPACHT")
      * optional
      */
-    protected ?bool $erbpacht = null;
+    public ?bool $erbpacht = null;
 
     /**
      * @Type("bool")
@@ -44,7 +44,7 @@ class Vermarktungsart
      * @SerializedName("LEASING")
      * optional
      */
-    protected ?bool $leasing = null;
+    public ?bool $leasing = null;
 
     public function getKauf(): bool
     {
@@ -94,7 +94,7 @@ class Vermarktungsart
         bool $kauf = false,
         bool $mietePacht = false,
         ?bool $erbpacht = null,
-        ?bool $leasing = null
+        ?bool $leasing = null,
     ) {
         $this->kauf = $kauf;
         $this->mietePacht = $mietePacht;

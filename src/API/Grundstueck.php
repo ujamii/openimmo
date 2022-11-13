@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Grundstueck
- * Objektart / Typ f. Grundstücke
+ * Objektart / Typ f. GrundstÃ¼cke
  * @XmlRoot("grundstueck")
  */
 class Grundstueck
@@ -29,7 +29,7 @@ class Grundstueck
      * optional
      * @see GRUNDST_TYP_* constants
      */
-    protected string $grundstTyp = '';
+    public string $grundstTyp = '';
 
     public function getGrundstTyp(): ?string
     {

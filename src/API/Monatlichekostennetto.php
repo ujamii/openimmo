@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Monatlichekostennetto
- * Summe der Monatlichen Kosten einer Wohnung als Information für einen Käufer (Netto), Umst im Attribut.
+ * Summe der Monatlichen Kosten einer Wohnung als Information fÃ¼r einen KÃ¤ufer (Netto), Umst im Attribut.
  * @XmlRoot("monatlichekostennetto")
  */
 class Monatlichekostennetto
@@ -19,13 +19,13 @@ class Monatlichekostennetto
      * @XmlAttribute
      * optional
      */
-    protected ?float $monatlichekostenust = null;
+    public ?float $monatlichekostenust = null;
 
     /**
      * @Inline
      * @Type("float")
      */
-    protected ?float $value = null;
+    public ?float $value = null;
 
     public function getMonatlichekostenust(): ?float
     {

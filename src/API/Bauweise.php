@@ -20,7 +20,7 @@ class Bauweise
      * @SerializedName("MASSIV")
      * optional
      */
-    protected ?bool $massiv = null;
+    public ?bool $massiv = null;
 
     /**
      * @Type("bool")
@@ -28,7 +28,7 @@ class Bauweise
      * @SerializedName("FERTIGTEILE")
      * optional
      */
-    protected ?bool $fertigteile = null;
+    public ?bool $fertigteile = null;
 
     /**
      * @Type("bool")
@@ -36,7 +36,7 @@ class Bauweise
      * @SerializedName("HOLZ")
      * optional
      */
-    protected ?bool $holz = null;
+    public ?bool $holz = null;
 
     public function getMassiv(): ?bool
     {
