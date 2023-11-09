@@ -36,10 +36,7 @@ abstract class FileGeneratingTest extends TestCase
     }
 
     /**
-     * @param string $nameInXsd
-     * @param string $docBlockComment
      *
-     * @return ClassType
      * @throws IOException
      */
     public function getGeneratedClassFromFile(string $nameInXsd, string $docBlockComment = ''): ClassType
@@ -66,9 +63,6 @@ abstract class FileGeneratingTest extends TestCase
     }
 
     /**
-     * @param ClassType $generatedClass
-     *
-     * @return \ReflectionClass
      * @throws \ReflectionException
      */
     public function getReflectionClassFromGeneratedClass(ClassType $generatedClass): \ReflectionClass
@@ -80,10 +74,6 @@ abstract class FileGeneratingTest extends TestCase
         return new \ReflectionClass(new $subjectClassName());
     }
 
-    /**
-     * @param ClassType $generatedClass
-     * @param array $constants
-     */
     public function assertClassHasConstants(ClassType $generatedClass, array $constants): void
     {
         foreach ($constants as $constantName => $constantValue) {

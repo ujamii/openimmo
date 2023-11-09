@@ -41,14 +41,10 @@ class ApiGenerator
      */
     public const MAX_PROPERTIES_IN_CONSTRUCTOR = 6;
 
-    /**
-     * @var string
-     */
     protected string $targetFolder = './src/API/';
 
     /**
      * Additional elements may be referenced inside of MixedComplexTypes.
-     * @var array
      */
     protected array $referencedInlineElements = [];
 
@@ -56,8 +52,6 @@ class ApiGenerator
      * Generates the API classes.
      *
      * @param string $xsdFile file path
-     * @param bool $wipeTargetFolder
-     * @param ?string $targetFolder
      *
      * @throws \GoetasWebservices\XML\XSDReader\Exception\IOException
      * @throws \Exception
@@ -139,8 +133,6 @@ class ApiGenerator
 
     /**
      * @param Extension|null $extension
-     * @param ClassType $class
-     * @param PhpNamespace $namespace
      */
     private function addSimpleValue(?Extension $extension, ClassType $class, PhpNamespace $namespace): void
     {
@@ -166,11 +158,7 @@ class ApiGenerator
         CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, !TypeUtil::isConstantsBasedProperty($classProperty));
     }
 
-    /**
-     * @param ClassType $class
-     *
-     * @return void
-     */
+    
     private function generateConstructor(ClassType $class): void
     {
         $constructor = $class->addMethod('__construct');
@@ -193,8 +181,6 @@ class ApiGenerator
 
     /**
      * @param Element|ElementRef|ElementDef $property
-     * @param ClassType $class
-     * @param PhpNamespace $namespace
      */
     private function parseProperty(ElementItem $property, ClassType $class, PhpNamespace $namespace): void
     {
@@ -238,7 +224,7 @@ class ApiGenerator
             $namespace->addUse(SkipWhenEmpty::class);
         }
 
-        if ($property->getType()->getRestriction()) {
+        if ($property->getType()->getRestriction() !== null) {
             $this->parseRestriction(
                 $property->getType()->getRestriction(),
                 $property->getName(),
@@ -252,8 +238,6 @@ class ApiGenerator
 
     /**
      * @param Item|Element|ElementRef|ElementDef|ElementItem $property
-     *
-     * @return string
      */
     private function getPhpPropertyTypeFromXsdElement($property): string
     {
@@ -263,13 +247,11 @@ class ApiGenerator
             } else {
                 $propertyType = TypeUtil::camelize($property->getReferencedElement()->getName());
             }
+        } elseif ($property->getType() instanceof ComplexType) {
+            $this->referencedInlineElements[] = $property;
+            $propertyType                     = TypeUtil::extractTypeForPhp($property->getType(), TypeUtil::camelize($property->getName(), true));
         } else {
-            if ($property->getType() instanceof ComplexType) {
-                $this->referencedInlineElements[] = $property;
-                $propertyType                     = TypeUtil::extractTypeForPhp($property->getType(), TypeUtil::camelize($property->getName(), true));
-            } else {
-                $propertyType = TypeUtil::extractTypeForPhp($property->getType());
-            }
+            $propertyType = TypeUtil::extractTypeForPhp($property->getType());
         }
 
         if (!($property instanceof Attribute) && $property->getMax() == -1) {
@@ -279,11 +261,6 @@ class ApiGenerator
         return $propertyType;
     }
 
-    /**
-     * @param Attribute $attribute
-     * @param ClassType $class
-     * @param PhpNamespace $namespace
-     */
     private function parseAttribute(Attribute $attribute, ClassType $class, PhpNamespace $namespace): void
     {
         $propertyName  = TypeUtil::camelize(strtolower($attribute->getName()), true);
@@ -326,12 +303,6 @@ class ApiGenerator
         CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable);
     }
 
-    /**
-     * @param Restriction $restriction
-     * @param string $nameInXsd
-     * @param ClassType $class
-     * @param Property $classProperty
-     */
     private function parseRestriction(Restriction $restriction, string $nameInXsd, ClassType $class, Property $classProperty): void
     {
         foreach ($restriction->getChecks() as $type => $options) {
@@ -384,8 +355,6 @@ class ApiGenerator
     }
 
     /**
-     * @param PhpNamespace $namespace
-     * @param ClassType $class
      *
      * @return bool|int
      */
@@ -398,9 +367,6 @@ class ApiGenerator
         return file_put_contents($this->getTargetFolder() . $class->getName() . '.php', $code);
     }
 
-    /**
-     * @return string
-     */
     public function getTargetFolder(): string
     {
         return $this->targetFolder;

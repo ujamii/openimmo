@@ -2,20 +2,18 @@
 
 declare(strict_types=1);
 
-use Rector\Core\Configuration\Option;
-use Rector\DeadCode\Rector\ClassConst\RemoveUnusedPrivateClassConstantRector;
-use Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector;
-use Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector;
+use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\SetList;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(SetList::DEAD_CODE);
+return static function (RectorConfig $rectorConfig): void {
+    // register single rule
+    $rectorConfig->rule(TypedPropertyFromStrictConstructorRector::class);
 
-    $parameters = $containerConfigurator->parameters();
-    $parameters->set(Option::SKIP, [
-        RemoveUnusedPrivateClassConstantRector::class,
-        RemoveUselessParamTagRector::class,
-        RemoveUselessReturnTagRector::class
+    // here we can define, what sets of rules will be applied
+    // tip: use "SetList" class to autocomplete sets with your IDE
+    $rectorConfig->sets([
+        SetList::CODE_QUALITY,
+        SetList::DEAD_CODE
     ]);
 };

@@ -9,8 +9,6 @@ use Ujamii\OpenImmo\Generator\TypeUtil;
 class TypeUtilTest extends TestCase
 {
     /**
-     * @param string $nameInXsd
-     * @param string $expectedPhpName
      * @param bool|null $lcFirst
      *
      * @dataProvider camelizeDataProvider
@@ -37,8 +35,6 @@ class TypeUtilTest extends TestCase
     }
 
     /**
-     * @param string $xsdType
-     * @param string $serializerType
      *
      * @dataProvider getTypeForSerializerDataProvider
      */
@@ -73,8 +69,6 @@ class TypeUtilTest extends TestCase
     }
 
     /**
-     * @param string $xsdType
-     * @param string $phpType
      *
      * @dataProvider getValidPhpTypeDataProvider
      */
@@ -111,8 +105,6 @@ class TypeUtilTest extends TestCase
     }
 
     /**
-     * @param string $propertyType
-     * @param bool $nullable
      * @param mixed $defaultValue
      *
      * @dataProvider getDefaultValueForTypeDataProvider
