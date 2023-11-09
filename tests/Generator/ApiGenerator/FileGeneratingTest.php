@@ -88,7 +88,7 @@ abstract class FileGeneratingTest extends TestCase
     {
         foreach ($constants as $constantName => $constantValue) {
             $this->assertArrayHasKey($constantName, $generatedClass->getConstants(), "Constant {$constantName} does not exist");
-            $this->assertEquals($constantValue, $generatedClass->getConstants()[$constantName]->getValue()->__toString());
+            $this->assertEquals($constantValue, $generatedClass->getConstants()[$constantName]->getValue(), "Constant {$constantName} in class {$generatedClass->getName()} has wrong value");
         }
         $this->assertCount(count($constants), $generatedClass->getConstants());
     }
@@ -137,7 +137,6 @@ abstract class FileGeneratingTest extends TestCase
             $getter  = $class->getMethod('get' . ucfirst($propertyName));
             $this->assertEquals('public', $getter->getVisibility());
             $this->assertEquals($phpType, $getter->getReturnType(), "Return type of {$getter->getName()}");
-            //$this->assertTrue($getter->isReturnNullable());
 
             $setter = $class->getMethod('set' . ucfirst($propertyName));
             $this->assertEquals('public', $setter->getVisibility());
@@ -160,25 +159,24 @@ abstract class FileGeneratingTest extends TestCase
             $this->assertEquals($type, $constructorParam->getType());
 
             if ($constructorParam->isNullable()) {
-                $this->assertSame('null', (string) $constructorParam->getDefaultValue());
+                $this->assertNull($constructorParam->getDefaultValue(), 'Default value for nullable constructor param ' . $constructorParam->getName() . ' in class ' . $class->getName());
             } else {
                 if ($constructorParam->getType() === 'array') {
-                    $this->assertSame('[]', (string) $constructorParam->getDefaultValue());
+                    $this->assertSame([], $constructorParam->getDefaultValue());
                 }
                 if ($constructorParam->getType() === 'bool') {
-                    $this->assertSame('false', (string) $constructorParam->getDefaultValue());
+                    $this->assertFalse($constructorParam->getDefaultValue());
                 }
                 if ($constructorParam->getType() === 'float') {
-                    $this->assertSame('0.0', (string) $constructorParam->getDefaultValue());
+                    $this->assertSame(0.0, $constructorParam->getDefaultValue());
                 }
                 if ($constructorParam->getType() === 'int') {
-                    $this->assertSame('0', (string) $constructorParam->getDefaultValue());
+                    $this->assertSame(0, $constructorParam->getDefaultValue());
                 }
                 if ($constructorParam->getType() === 'string') {
-                    $this->assertSame("''", (string) $constructorParam->getDefaultValue());
+                    $this->assertSame('', $constructorParam->getDefaultValue());
                 }
             }
-//        $this->assertFalse($constructor->getParameter($propertyName)->getNullable());
         }
     }
 
