@@ -2,7 +2,6 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator;
 
-use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\Handler\HandlerRegistryInterface;
 use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
@@ -43,11 +42,9 @@ class JmsXmlSerializerTest extends TestCase
                 $registry->registerSubscribingHandler(new DateTimeHandler());
             });
         $this->serializer = $builder->build();
-        // @see https://stackoverflow.com/questions/14629137/jmsserializer-stand-alone-annotation-does-not-exist-or-cannot-be-auto-loaded
-        AnnotationRegistry::registerLoader('class_exists');
     }
 
-    public function testWriteImmobilieXml()
+    public function testWriteImmobilieXml(): void
     {
         $data = new Immobilie();
         $data->setKontaktperson((new Kontaktperson())->setAnrede('Herr'));
@@ -57,7 +54,7 @@ class JmsXmlSerializerTest extends TestCase
         $this->assertXmlStringEqualsXmlString('<immobilie><kontaktperson><name/><anrede>Herr</anrede></kontaktperson></immobilie>', $xmlContent);
     }
 
-    public function testWriteUebertragungXml()
+    public function testWriteUebertragungXml(): void
     {
         $xmlString = '<uebertragung art="ONLINE" umfang="VOLL" modus="NEW" version="1.2.7" sendersoftware="OIGEN" senderversion="0.9" techn_email="" timestamp="2014-06-01T10:00:00" regi_id="ABCD143" />';
 
@@ -76,7 +73,7 @@ class JmsXmlSerializerTest extends TestCase
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($uebertragung, 'xml'));
     }
 
-    public function testWriteUebertragungXmlRealWorld()
+    public function testWriteUebertragungXmlRealWorld(): void
     {
         $xmlString = '<uebertragung art="OFFLINE" modus="CHANGE" sendersoftware="OOF" senderversion="$Rev: 85202 $" techn_email="xxx@xxx.de" timestamp="2019-09-30T12:42:27" umfang="TEIL" version="1.2.7"/>';
 
@@ -94,7 +91,7 @@ class JmsXmlSerializerTest extends TestCase
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($uebertragung, 'xml'));
     }
 
-    public function testWriteNutzungsartXmlAsUsedInReadme()
+    public function testWriteNutzungsartXmlAsUsedInReadme(): void
     {
         $xmlString   = '<nutzungsart WOHNEN="true" GEWERBE="false" ANLAGE="false" WAZ="false" />';
         $nutzungsart = new Nutzungsart();
@@ -107,7 +104,7 @@ class JmsXmlSerializerTest extends TestCase
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($nutzungsart, 'xml'));
     }
 
-    public function testWriteDistanzenZuSportXml()
+    public function testWriteDistanzenZuSportXml(): void
     {
         $xmlString = '<distanzen_sport distanz_zu_sport="SEE">15.0</distanzen_sport>';
         $phpObj    = new DistanzenSport(DistanzenSport::DISTANZ_ZU_SPORT_SEE, 15);
@@ -115,7 +112,7 @@ class JmsXmlSerializerTest extends TestCase
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($phpObj, 'xml'));
     }
 
-    public function testWriteInfrastrukturXmlAsUsedInReadme()
+    public function testWriteInfrastrukturXmlAsUsedInReadme(): void
     {
         $xmlString    = '<infrastruktur>
             <zulieferung>false</zulieferung>
@@ -137,7 +134,7 @@ class JmsXmlSerializerTest extends TestCase
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($infrastrktur, 'xml'));
     }
 
-    public function testWriteAnbieterXml()
+    public function testWriteAnbieterXml(): void
     {
         // as soon as https://github.com/schmittjoh/serializer/pull/883 is merged, the <openimmo_anid/> can be removed
         $xmlString = '<openimmo>
@@ -155,7 +152,7 @@ class JmsXmlSerializerTest extends TestCase
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($openImmo, 'xml'));
     }
 
-    public function testWriteObjektKategorieXml()
+    public function testWriteObjektKategorieXml(): void
     {
         $xmlString = '<objektkategorie>
         <nutzungsart GEWERBE="false" WOHNEN="true"/>
@@ -178,7 +175,7 @@ class JmsXmlSerializerTest extends TestCase
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($category, 'xml'));
     }
 
-    public function testWriteComplexTypeMixed()
+    public function testWriteComplexTypeMixed(): void
     {
         $xmlString = '<aussen_courtage mit_mwst="false">k.A.</aussen_courtage>';
         $subject = new AussenCourtage(false, 'k.A.');
@@ -186,7 +183,7 @@ class JmsXmlSerializerTest extends TestCase
         $this->assertXmlStringEqualsXmlString($xmlString, $this->serializer->serialize($subject, 'xml'));
     }
 
-    public function testWriteComplexType()
+    public function testWriteComplexType(): void
     {
         $xmlString = '<bewertung>
             <feld>

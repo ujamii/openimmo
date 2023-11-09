@@ -94,7 +94,7 @@ class Vermarktungsart
         bool $kauf = false,
         bool $mietePacht = false,
         ?bool $erbpacht = null,
-        ?bool $leasing = null
+        ?bool $leasing = null,
     ) {
         $this->kauf = $kauf;
         $this->mietePacht = $mietePacht;

@@ -32,10 +32,6 @@ class ApiClassTest extends TestCase
     /**
      * This automation creates a new instance of the given class and tests the
      * setter and getter for the given property.
-     *
-     * @param string $className
-     * @param string $propertyName
-     * @param string $type
      */
     protected function automateTestClassProperties(string $className, string $propertyName, string $type)
     {
@@ -48,8 +44,6 @@ class ApiClassTest extends TestCase
     }
 
     /**
-     * @param string $type
-     *
      * @return array|bool|bool[]|\DateTime|\DateTime[]|float|float[]|int|int[]|object|object[]|string|string[]
      */
     protected function getExampleData(string $type)

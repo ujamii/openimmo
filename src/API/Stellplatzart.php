@@ -134,7 +134,7 @@ class Stellplatzart
         ?bool $carport = null,
         ?bool $freiplatz = null,
         ?bool $parkhaus = null,
-        ?bool $duplex = null
+        ?bool $duplex = null,
     ) {
         $this->garage = $garage;
         $this->tiefgarage = $tiefgarage;

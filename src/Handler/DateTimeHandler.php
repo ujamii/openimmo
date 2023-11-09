@@ -35,11 +35,7 @@ class DateTimeHandler implements SubscribingHandlerInterface
     }
 
     /**
-     * @param XmlSerializationVisitor $visitor
-     * @param \DateTime $date
      * @param array<string> $type
-     *
-     * @return \DOMText
      */
     public function serializeDateTimeToXml(XmlSerializationVisitor $visitor, \DateTime $date, array $type): \DOMText
     {
@@ -47,10 +43,6 @@ class DateTimeHandler implements SubscribingHandlerInterface
     }
 
     /**
-     * @param XmlDeserializationVisitor $visitor
-     * @param \SimpleXMLElement $dateAsString
-     *
-     * @return \DateTime
      * @throws \Exception
      */
     public function deserializeDateTimeToXml(XmlDeserializationVisitor $visitor, \SimpleXMLElement $dateAsString): \DateTime

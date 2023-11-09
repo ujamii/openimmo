@@ -136,7 +136,7 @@ class Anhang
         ?string $anhangtitel = null,
         string $format = '',
         ?Check $check = null,
-        ?Daten $daten = null
+        ?Daten $daten = null,
     ) {
         $this->location = $location;
         $this->gruppe = $gruppe;

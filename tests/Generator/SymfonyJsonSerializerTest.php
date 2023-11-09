@@ -57,7 +57,7 @@ class SymfonyJsonSerializerTest extends TestCase
         $this->serializer = new Serializer($normalizers, $encoders);
     }
 
-    public function testWriteImmobilieJson()
+    public function testWriteImmobilieJson(): void
     {
         $jsonString = '{
             "geo": {
@@ -141,7 +141,7 @@ class SymfonyJsonSerializerTest extends TestCase
         $this->assertJsonStringEqualsJsonString($jsonString, $jsonContent);
     }
 
-    public function testWriteUebertragungJson()
+    public function testWriteUebertragungJson(): void
     {
         $jsonString = '{
             "art": "ONLINE",
@@ -171,7 +171,7 @@ class SymfonyJsonSerializerTest extends TestCase
         $this->assertJsonStringEqualsJsonString($jsonString, $jsonContent);
     }
 
-    public function testWriteUebertragungJsonRealWorld()
+    public function testWriteUebertragungJsonRealWorld(): void
     {
         $jsonString = '{
             "art": "OFFLINE",
@@ -199,7 +199,7 @@ class SymfonyJsonSerializerTest extends TestCase
         $this->assertJsonStringEqualsJsonString($jsonString, $jsonContent);
     }
 
-    public function testWriteNutzungsartJsonAsUsedInReadme()
+    public function testWriteNutzungsartJsonAsUsedInReadme(): void
     {
         $jsonString  = '{
             "anlage": false,
@@ -218,7 +218,7 @@ class SymfonyJsonSerializerTest extends TestCase
         $this->assertJsonStringEqualsJsonString($jsonString, $jsonContent);
     }
 
-    public function testWriteDistanzenZuSportJson()
+    public function testWriteDistanzenZuSportJson(): void
     {
         $jsonString = '{"distanzZuSport": "SEE", "value": 15}';
         $phpObj     = new DistanzenSport(DistanzenSport::DISTANZ_ZU_SPORT_SEE, 15);
@@ -227,7 +227,7 @@ class SymfonyJsonSerializerTest extends TestCase
         $this->assertJsonStringEqualsJsonString($jsonString, $jsonContent);
     }
 
-    public function testWriteInfrastrukturJsonAsUsedInReadme()
+    public function testWriteInfrastrukturJsonAsUsedInReadme(): void
     {
         $jsonString    = '{
             "ausblick": {
@@ -265,7 +265,7 @@ class SymfonyJsonSerializerTest extends TestCase
         $this->assertJsonStringEqualsJsonString($jsonString, $jsonContent);
     }
 
-    public function testWriteAnbieterJson()
+    public function testWriteAnbieterJson(): void
     {
         $jsonString = '{
             "anbieter": [
@@ -317,7 +317,7 @@ class SymfonyJsonSerializerTest extends TestCase
         $this->assertJsonStringEqualsJsonString($jsonString, $jsonContent);
     }
 
-    public function testWriteObjektKategorieJson()
+    public function testWriteObjektKategorieJson(): void
     {
         $jsonString = '{
             "nutzungsart": {
@@ -368,7 +368,7 @@ class SymfonyJsonSerializerTest extends TestCase
         $this->assertJsonStringEqualsJsonString($jsonString, $jsonContent);
     }
 
-    public function testWriteComplexTypeMixed()
+    public function testWriteComplexTypeMixed(): void
     {
         $jsonString = '{"mitMwst": false, "value": "k.A."}';
         $subject    = new AussenCourtage(false, 'k.A.');
@@ -377,7 +377,7 @@ class SymfonyJsonSerializerTest extends TestCase
         $this->assertJsonStringEqualsJsonString($jsonString, $jsonContent);
     }
 
-    public function testWriteComplexType()
+    public function testWriteComplexType(): void
     {
         $jsonString = '{
             "feld": [

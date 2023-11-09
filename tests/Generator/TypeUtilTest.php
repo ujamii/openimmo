@@ -9,8 +9,6 @@ use Ujamii\OpenImmo\Generator\TypeUtil;
 class TypeUtilTest extends TestCase
 {
     /**
-     * @param string $nameInXsd
-     * @param string $expectedPhpName
      * @param bool|null $lcFirst
      *
      * @dataProvider camelizeDataProvider
@@ -24,7 +22,7 @@ class TypeUtilTest extends TestCase
         $this->assertSame('FooBar', TypeUtil::camelize('foo_bar'));
     }
 
-    public function camelizeDataProvider(): array
+    public static function camelizeDataProvider(): array
     {
         return [
             ['bebaubar_nach', 'BebaubarNach'],
@@ -37,9 +35,6 @@ class TypeUtilTest extends TestCase
     }
 
     /**
-     * @param string $xsdType
-     * @param string $serializerType
-     *
      * @dataProvider getTypeForSerializerDataProvider
      */
     public function testGetTypeForSerializer(string $xsdType, string $serializerType): void
@@ -48,7 +43,7 @@ class TypeUtilTest extends TestCase
         $this->assertSame($serializerType, $generatedType);
     }
 
-    public function getTypeForSerializerDataProvider(): array
+    public static function getTypeForSerializerDataProvider(): array
     {
         return [
             ['string', 'string'],
@@ -73,9 +68,6 @@ class TypeUtilTest extends TestCase
     }
 
     /**
-     * @param string $xsdType
-     * @param string $phpType
-     *
      * @dataProvider getValidPhpTypeDataProvider
      */
     public function testGetValidPhpType(string $xsdType, string $phpType): void
@@ -84,7 +76,7 @@ class TypeUtilTest extends TestCase
         $this->assertSame($phpType, $generatedType);
     }
 
-    public function getValidPhpTypeDataProvider(): array
+    public static function getValidPhpTypeDataProvider(): array
     {
         return [
             ['decimal', 'float'],
@@ -111,8 +103,6 @@ class TypeUtilTest extends TestCase
     }
 
     /**
-     * @param string $propertyType
-     * @param bool $nullable
      * @param mixed $defaultValue
      *
      * @dataProvider getDefaultValueForTypeDataProvider
@@ -123,7 +113,7 @@ class TypeUtilTest extends TestCase
         $this->assertSame($defaultValue, $generatedValue);
     }
 
-    public function getDefaultValueForTypeDataProvider(): array
+    public static function getDefaultValueForTypeDataProvider(): array
     {
         return [
             ['float', false, 0.0],
@@ -157,7 +147,7 @@ class TypeUtilTest extends TestCase
         $this->assertSame($expectedResult, TypeUtil::isConstantsBasedProperty($property));
     }
 
-    public function getConstantsBasedPropertyDataProvider(): \Generator
+    public static function getConstantsBasedPropertyDataProvider(): \Generator
     {
         $property = new Property('foobar');
         $property->setComment('Hallo Welt!');

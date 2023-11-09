@@ -8,7 +8,7 @@ use Ujamii\OpenImmo\Generator\CodeGenUtil;
 
 class CodeGenUtilTest extends TestCase
 {
-    public function testAddDescriptionPart()
+    public function testAddDescriptionPart(): void
     {
         $property = new Property('foo');
         $property->setComment('foobar makes the world go round');
@@ -17,7 +17,7 @@ class CodeGenUtilTest extends TestCase
         $this->assertEquals('foobar makes the world go round' . CodeGenUtil::DESCRIPTION_PART_DELIMTER . 'really!', $property->getComment());
     }
 
-    public function testEmptyExistingDescription()
+    public function testEmptyExistingDescription(): void
     {
         $property = new Property('foo');
         $property->setComment('   ');
@@ -26,7 +26,7 @@ class CodeGenUtilTest extends TestCase
         $this->assertEquals('foobar', $property->getComment());
     }
 
-    public function testAddEmptyDescription()
+    public function testAddEmptyDescription(): void
     {
         $property = new Property('foo');
         $property->setComment('foo bar');

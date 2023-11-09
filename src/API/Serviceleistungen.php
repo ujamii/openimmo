@@ -114,7 +114,7 @@ class Serviceleistungen
         ?bool $catering = null,
         ?bool $reinigung = null,
         ?bool $einkauf = null,
-        ?bool $wachdienst = null
+        ?bool $wachdienst = null,
     ) {
         $this->betreutesWohnen = $betreutesWohnen;
         $this->catering = $catering;

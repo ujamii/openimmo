@@ -102,7 +102,7 @@ class Anhaenge
         array $anhang = [],
         array $userDefinedSimplefield = [],
         array $userDefinedAnyfield = [],
-        array $userDefinedExtend = []
+        array $userDefinedExtend = [],
     ) {
         $this->anhang = $anhang;
         $this->userDefinedSimplefield = $userDefinedSimplefield;

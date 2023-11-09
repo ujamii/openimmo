@@ -114,7 +114,7 @@ class Ausbaustufe
         ?bool $ausbauhaus = null,
         ?bool $schluesselfertigmitkeller = null,
         ?bool $schluesselfertigohnebodenplatte = null,
-        ?bool $schluesselfertigmitbodenplatte = null
+        ?bool $schluesselfertigmitbodenplatte = null,
     ) {
         $this->bausatzhaus = $bausatzhaus;
         $this->ausbauhaus = $ausbauhaus;

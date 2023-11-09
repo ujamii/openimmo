@@ -125,7 +125,7 @@ class Objektkategorie
         ?Objektart $objektart = null,
         array $userDefinedSimplefield = [],
         array $userDefinedAnyfield = [],
-        array $userDefinedExtend = []
+        array $userDefinedExtend = [],
     ) {
         $this->nutzungsart = $nutzungsart;
         $this->vermarktungsart = $vermarktungsart;

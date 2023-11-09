@@ -12,12 +12,12 @@ jobs:
       fail-fast: false
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Setup PHP
-      uses: shivammathur/setup-php@2.19.1
+      uses: shivammathur/setup-php@2.27.1
       with:
-        php-version: '7.4'
+        php-version: '8.1'
         tools: composer
         extensions: dom, simplexml
 
@@ -42,13 +42,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.4', '8.0', '8.1']
+        php: ['8.1', '8.2', '8.3']
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Setup PHP
-      uses: shivammathur/setup-php@2.19.1
+      uses: shivammathur/setup-php@2.27.1
       with:
         php-version: ${{ matrix.php }}
         tools: composer
@@ -70,7 +70,7 @@ jobs:
     - name: Run test suite
       run: composer run phpunit
 
-    - uses: codecov/codecov-action@v3.1.1
+    - uses: codecov/codecov-action@v3.1.4
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./build/coverage/clover.xml
@@ -86,12 +86,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.19.1
+        uses: shivammathur/setup-php@2.27.1
         with:
-          php-version: '7.4'
+          php-version: '8.1'
           tools: composer
           coverage: none
 

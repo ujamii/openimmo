@@ -11,12 +11,6 @@ class CodeGenUtil
 
     /**
      * Adds a new description part to the given class property.
-     *
-     * @param Property $classProperty
-     * @param string $descriptionPart
-     * @param string $separator
-     *
-     * @return void
      */
     public static function addDescriptionPart(Property $classProperty, string $descriptionPart, string $separator = self::DESCRIPTION_PART_DELIMTER): void
     {
@@ -33,23 +27,12 @@ class CodeGenUtil
         $classProperty->setComment(implode($separator, $currentDescriptionParts));
     }
 
-    /**
-     * @param Property $property
-     * @param ClassType $class
-     * @param bool $fluentApi
-     * @param bool $nullable
-     */
     public static function generateGetterAndSetter(Property $property, ClassType $class, bool $fluentApi = true, bool $nullable = false): void
     {
         self::generateGetter($property, $class, $nullable);
         self::generateSetter($property, $class, $fluentApi, $nullable);
     }
 
-    /**
-     * @param Property $property
-     * @param ClassType $class
-     * @param bool $nullable
-     */
     public static function generateGetter(Property $property, ClassType $class, bool $nullable): void
     {
         $propertyType = $property->getType();
@@ -69,12 +52,6 @@ class CodeGenUtil
         }
     }
 
-    /**
-     * @param Property $property
-     * @param ClassType $class
-     * @param bool $fluentApi
-     * @param bool $nullable
-     */
     public static function generateSetter(Property $property, ClassType $class, bool $fluentApi, bool $nullable): void
     {
         $setter   = $class->addMethod('set' . ucfirst($property->getName()));

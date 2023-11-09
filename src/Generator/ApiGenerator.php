@@ -3,6 +3,7 @@
 namespace Ujamii\OpenImmo\Generator;
 
 use GoetasWebservices\XML\XSDReader\Schema\Attribute\Attribute;
+use GoetasWebservices\XML\XSDReader\Schema\Element\Choice;
 use GoetasWebservices\XML\XSDReader\Schema\Element\Element;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementItem;
@@ -40,14 +41,10 @@ class ApiGenerator
      */
     public const MAX_PROPERTIES_IN_CONSTRUCTOR = 6;
 
-    /**
-     * @var string
-     */
     protected string $targetFolder = './src/API/';
 
     /**
      * Additional elements may be referenced inside of MixedComplexTypes.
-     * @var array
      */
     protected array $referencedInlineElements = [];
 
@@ -55,8 +52,6 @@ class ApiGenerator
      * Generates the API classes.
      *
      * @param string $xsdFile file path
-     * @param bool $wipeTargetFolder
-     * @param ?string $targetFolder
      *
      * @throws \GoetasWebservices\XML\XSDReader\Exception\IOException
      * @throws \Exception
@@ -74,7 +69,7 @@ class ApiGenerator
         $this->referencedInlineElements = [];
 
         foreach ($schema->getElements() as $element) {
-            if (! ($element->getType() instanceof SimpleType)) {
+            if (!($element->getType() instanceof SimpleType)) {
                 $this->parseElementDef($element);
             }
         }
@@ -112,7 +107,14 @@ class ApiGenerator
         } else {
             /* @var ComplexType $complexType */
             foreach ($element->getType()->getElements() as $property) {
-                $this->parseProperty($property, $class, $namespace);
+                if ($property instanceof Choice) {
+                    /** @var ElementRef $choiceProperty */
+                    foreach ($property->getElements() as $choiceProperty) {
+                        $this->parseProperty($choiceProperty, $class, $namespace);
+                    }
+                } else {
+                    $this->parseProperty($property, $class, $namespace);
+                }
             }
         }
 
@@ -122,7 +124,7 @@ class ApiGenerator
 
         $classPropertyCount = count($class->getProperties());
         $hasConstructor     = $class->hasMethod('__construct');
-        if (! $hasConstructor && $classPropertyCount > 0 && $classPropertyCount <= self::MAX_PROPERTIES_IN_CONSTRUCTOR) {
+        if (!$hasConstructor && $classPropertyCount > 0 && $classPropertyCount <= self::MAX_PROPERTIES_IN_CONSTRUCTOR) {
             $this->generateConstructor($class);
         }
 
@@ -131,8 +133,6 @@ class ApiGenerator
 
     /**
      * @param Extension|null $extension
-     * @param ClassType $class
-     * @param PhpNamespace $namespace
      */
     private function addSimpleValue(?Extension $extension, ClassType $class, PhpNamespace $namespace): void
     {
@@ -155,14 +155,10 @@ class ApiGenerator
         $namespace
             ->addUse(Type::class)
             ->addUse(Inline::class);
-        CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, ! TypeUtil::isConstantsBasedProperty($classProperty));
+        CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, !TypeUtil::isConstantsBasedProperty($classProperty));
     }
 
-    /**
-     * @param ClassType $class
-     *
-     * @return void
-     */
+
     private function generateConstructor(ClassType $class): void
     {
         $constructor = $class->addMethod('__construct');
@@ -185,8 +181,6 @@ class ApiGenerator
 
     /**
      * @param Element|ElementRef|ElementDef $property
-     * @param ClassType $class
-     * @param PhpNamespace $namespace
      */
     private function parseProperty(ElementItem $property, ClassType $class, PhpNamespace $namespace): void
     {
@@ -211,13 +205,12 @@ class ApiGenerator
         $namespace->addUse(Type::class);
 
         $isArray  = 'array' === $phpType;
-        $nullable = ! $isArray && $property->getMin() === 0;
+        $nullable = !$isArray && $property->getMin() === 0;
 
         // if the property type is an object, it should be nullable
-        if (strpos($serializerType, TypeUtil::OPENIMMO_NAMESPACE) === 0 || '\DateTime' === $phpType) {
+        if ('\DateTime' === $phpType || str_starts_with($serializerType, TypeUtil::OPENIMMO_NAMESPACE)) {
             $nullable = true;
         }
-
 
         $classProperty->setType($phpType)
                       ->setNullable($nullable);
@@ -231,7 +224,7 @@ class ApiGenerator
             $namespace->addUse(SkipWhenEmpty::class);
         }
 
-        if ($property->getType()->getRestriction()) {
+        if ($property->getType()->getRestriction() !== null) {
             $this->parseRestriction(
                 $property->getType()->getRestriction(),
                 $property->getName(),
@@ -245,8 +238,6 @@ class ApiGenerator
 
     /**
      * @param Item|Element|ElementRef|ElementDef|ElementItem $property
-     *
-     * @return string
      */
     private function getPhpPropertyTypeFromXsdElement($property): string
     {
@@ -256,27 +247,20 @@ class ApiGenerator
             } else {
                 $propertyType = TypeUtil::camelize($property->getReferencedElement()->getName());
             }
+        } elseif ($property->getType() instanceof ComplexType) {
+            $this->referencedInlineElements[] = $property;
+            $propertyType                     = TypeUtil::extractTypeForPhp($property->getType(), TypeUtil::camelize($property->getName(), true));
         } else {
-            if ($property->getType() instanceof ComplexType) {
-                $this->referencedInlineElements[] = $property;
-                $propertyType                     = TypeUtil::extractTypeForPhp($property->getType(), TypeUtil::camelize($property->getName(), true));
-            } else {
-                $propertyType = TypeUtil::extractTypeForPhp($property->getType());
-            }
+            $propertyType = TypeUtil::extractTypeForPhp($property->getType());
         }
 
-        if (! ($property instanceof Attribute) && $property->getMax() == -1) {
+        if (!($property instanceof Attribute) && $property->getMax() == -1) {
             $propertyType .= '[]';
         }
 
         return $propertyType;
     }
 
-    /**
-     * @param Attribute $attribute
-     * @param ClassType $class
-     * @param PhpNamespace $namespace
-     */
     private function parseAttribute(Attribute $attribute, ClassType $class, PhpNamespace $namespace): void
     {
         $propertyName  = TypeUtil::camelize(strtolower($attribute->getName()), true);
@@ -319,22 +303,15 @@ class ApiGenerator
         CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, $nullable);
     }
 
-    /**
-     * @param Restriction $restriction
-     * @param string $nameInXsd
-     * @param ClassType $class
-     * @param Property $classProperty
-     */
     private function parseRestriction(Restriction $restriction, string $nameInXsd, ClassType $class, Property $classProperty): void
     {
         foreach ($restriction->getChecks() as $type => $options) {
             switch ($type) {
-
                 case 'enumeration':
                     $constantPrefix = strtoupper($nameInXsd . '_');
                     foreach ($options as $possibleValue) {
                         $constantName = strtoupper($constantPrefix . str_replace([' ', '-'], '_', $possibleValue['value']));
-                        if (! array_key_exists($constantName, $class->getConstants())) {
+                        if (!array_key_exists($constantName, $class->getConstants())) {
                             $class->addConstant($constantName, $possibleValue['value']);
                         }
                     }
@@ -365,7 +342,6 @@ class ApiGenerator
 
                 default:
                     throw new \InvalidArgumentException(vsprintf('Type "%s" is not handled in %s->parseAttribute', [$type, __CLASS__]));
-
             }
         }
     }
@@ -379,9 +355,6 @@ class ApiGenerator
     }
 
     /**
-     * @param PhpNamespace $namespace
-     * @param ClassType $class
-     *
      * @return bool|int
      */
     private function createPhpFile(PhpNamespace $namespace, ClassType $class)
@@ -393,9 +366,6 @@ class ApiGenerator
         return file_put_contents($this->getTargetFolder() . $class->getName() . '.php', $code);
     }
 
-    /**
-     * @return string
-     */
     public function getTargetFolder(): string
     {
         return $this->targetFolder;
@@ -408,8 +378,8 @@ class ApiGenerator
      */
     public function setTargetFolder(?string $targetFolder): void
     {
-        if (! is_null($targetFolder)) {
-            if (! (is_dir($targetFolder) && is_writable($targetFolder))) {
+        if (!is_null($targetFolder)) {
+            if (!(is_dir($targetFolder) && is_writable($targetFolder))) {
                 throw new \Exception("Directory {$targetFolder} does not exist or is not writeable!");
             }
             $this->targetFolder = $targetFolder;

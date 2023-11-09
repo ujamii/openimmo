@@ -114,7 +114,7 @@ class Bad
         ?bool $wanne = null,
         ?bool $fenster = null,
         ?bool $bidet = null,
-        ?bool $pissoir = null
+        ?bool $pissoir = null,
     ) {
         $this->dusche = $dusche;
         $this->wanne = $wanne;

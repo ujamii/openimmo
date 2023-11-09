@@ -1,7 +1,7 @@
 # OpenImmo PHP library
 
 [![Packagist](https://img.shields.io/packagist/v/ujamii/openimmo.svg?colorB=green&style=flat)](https://packagist.org/packages/ujamii/openimmo)
-[![Minimum PHP Version](https://img.shields.io/badge/php-7.4%2B-8892BF.svg?style=flat)](https://php.net/)
+[![Minimum PHP Version](https://img.shields.io/badge/php-8.1%2B-8892BF.svg?style=flat)](https://php.net/)
 [![Continuous Integration](https://github.com/ujamii/openimmo/actions/workflows/php.yml/badge.svg)](https://github.com/ujamii/openimmo/actions)
 [![codecov](https://codecov.io/gh/ujamii/openimmo/branch/master/graph/badge.svg?token=97D799UX1B)](https://codecov.io/gh/ujamii/openimmo)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fujamii%2Fopenimmo%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/ujamii/openimmo/master)
@@ -9,7 +9,8 @@
 OpenImmo and the OpenImmo logo are registered trademarks of the [OpenImmo e.V.](http://www.openimmo.de)
 Neither is this package an official distribution nor am I associated with this organisation!
 
-This library just wraps the OpenImmo XML format with some PHP7/8 classes.
+This library just wraps the OpenImmo XML format with some PHP8 classes.
+If you need support for PHP <= 8.1, see version 1.x of this package. Version 2 is for PHP >=8.2 only.
 
 There is an official library available at http://www.openimmo.de/go.php/p/22/support20.htm which costs 95 EUR excl. VAT and is PHP5 only. 
 To completely convince you, you will only be allowed to see the code **after** you have paid and they have a no-refund policy. 
@@ -118,7 +119,7 @@ foreach ($openImmo->getAnbieter() as $anbieter) {
 
 Although the OpenImmo standard just describes an XML version, there may be cases when you want to generate JSON from the given data.
 Sadly, there is [an issue](https://github.com/schmittjoh/serializer/issues/1251) with custom types, scalar values and JSON serialization in the JMS serializer.
-Nevertheless it is still possible to write JSON format with the [Symfony serializer component](https://symfony.com/doc/current/components/serializer.html).
+However, it is still possible to write JSON format with the [Symfony serializer component](https://symfony.com/doc/current/components/serializer.html).
 
 ```shell
 composer require symfony/serializer

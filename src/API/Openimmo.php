@@ -96,7 +96,7 @@ class Openimmo
         ?Uebertragung $uebertragung = null,
         array $anbieter = [],
         array $userDefinedSimplefield = [],
-        array $userDefinedAnyfield = []
+        array $userDefinedAnyfield = [],
     ) {
         $this->uebertragung = $uebertragung;
         $this->anbieter = $anbieter;
