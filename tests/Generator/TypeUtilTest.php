@@ -35,7 +35,6 @@ class TypeUtilTest extends TestCase
     }
 
     /**
-     *
      * @dataProvider getTypeForSerializerDataProvider
      */
     public function testGetTypeForSerializer(string $xsdType, string $serializerType): void
@@ -69,7 +68,6 @@ class TypeUtilTest extends TestCase
     }
 
     /**
-     *
      * @dataProvider getValidPhpTypeDataProvider
      */
     public function testGetValidPhpType(string $xsdType, string $phpType): void

@@ -36,7 +36,6 @@ abstract class FileGeneratingTest extends TestCase
     }
 
     /**
-     *
      * @throws IOException
      */
     public function getGeneratedClassFromFile(string $nameInXsd, string $docBlockComment = ''): ClassType

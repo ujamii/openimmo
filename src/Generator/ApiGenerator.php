@@ -158,7 +158,7 @@ class ApiGenerator
         CodeGenUtil::generateGetterAndSetter($classProperty, $class, true, !TypeUtil::isConstantsBasedProperty($classProperty));
     }
 
-    
+
     private function generateConstructor(ClassType $class): void
     {
         $constructor = $class->addMethod('__construct');
@@ -355,7 +355,6 @@ class ApiGenerator
     }
 
     /**
-     *
      * @return bool|int
      */
     private function createPhpFile(PhpNamespace $namespace, ClassType $class)

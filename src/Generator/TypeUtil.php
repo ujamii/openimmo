@@ -114,7 +114,6 @@ class TypeUtil
     }
 
     /**
-     *
      * @return false|float|int|string|null
      */
     public static function getDefaultValueForType(string $propertyType, bool $nullable)
@@ -149,7 +148,6 @@ class TypeUtil
 
     /**
      * @param string|null $propertyName
-     *
      */
     public static function extractTypeForPhp(Type $typeFromXsd, ?string $propertyName = null): ?string
     {
@@ -172,7 +170,6 @@ class TypeUtil
 
     /**
      * @param array<string> $separators
-     *
      */
     public static function camelize(string $input, bool $lcFirst = false, array $separators = ['-', '_']): string
     {

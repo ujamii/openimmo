@@ -57,7 +57,7 @@
             "@php-cs-fixer"
         ],
         "phpunit": "vendor/bin/phpunit -c build/config/phpunit.xml.dist",
-        "phpstan": "vendor/bin/phpstan analyse -c build/config/phpstan.neon",
+        "phpstan": "vendor/bin/phpstan --memory-limit=1G analyse -c build/config/phpstan.neon",
         "rector": "vendor/bin/rector process src tests -c build/config/rector.php --xdebug",
         "php-cs-fixer": "vendor/bin/php-cs-fixer fix --config build/config/cs.php",
         "infection": "vendor/bin/infection --only-covered --configuration=./build/config/infection.json.dist --threads=8 --min-msi=99",

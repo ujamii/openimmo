@@ -36,7 +36,6 @@ class DateTimeHandler implements SubscribingHandlerInterface
 
     /**
      * @param array<string> $type
-     *
      */
     public function serializeDateTimeToXml(XmlSerializationVisitor $visitor, \DateTime $date, array $type): \DOMText
     {
@@ -44,7 +43,6 @@ class DateTimeHandler implements SubscribingHandlerInterface
     }
 
     /**
-     *
      * @throws \Exception
      */
     public function deserializeDateTimeToXml(XmlDeserializationVisitor $visitor, \SimpleXMLElement $dateAsString): \DateTime

@@ -8,8 +8,8 @@
         "configDir": ".\/"
     },
     "logs": {
-        "text": "./build/coverage/infection-full.log",
-        "summary": "./build/coverage/infection-summary.log",
+        "text": "../coverage/infection-full.log",
+        "summary": "../coverage/infection-summary.log",
         "github": true,
         "stryker": {
 	        "badge": "master"
