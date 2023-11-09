@@ -1,3 +1,37 @@
+## 2.0.0 (November 09, 2023)
+  - Merge pull request #71 from ujamii/task/drop-old-php
+  - code style fixes 
+  - fixed log path of infection logs 
+  - raised memory limit for phpstan
+  - [DOC] adjusted php version info
+  - added php 8.3 to matrix test config
+  - updated package versions
+  - updated rector and executed it on the project files
+  - [TASK] dropped support for php 7.4 and 8.0, added 8.2
+  - updated minimum library versions
+  - excluded phpunit 10 as there are some breaking changes for data providers
+  - auto formatted code for >=8.1 looks a little different
+  - updated tests to match new php generation
+  - fixed changed ChoiceType handling in xsd parser
+  - some general cleanup
+  - Merge pull request #62 from ujamii/dependabot/github_actions/codecov/codecov-action-3.1.1
+  - Bump codecov/codecov-action from 3.1.0 to 3.1.1
+  - Merge pull request #55 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.19.1
+  - Bump shivammathur/setup-php from 2.19.0 to 2.19.1
+  - Merge pull request #54 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.19.0
+  - Bump shivammathur/setup-php from 2.18.1 to 2.19.0
+  - Merge pull request #53 from ujamii/dependabot/github_actions/codecov/codecov-action-3.1.0
+  - Bump codecov/codecov-action from 3.0.0 to 3.1.0
+  - Merge pull request #51 from ujamii/dependabot/github_actions/codecov/codecov-action-3.0.0
+  - Merge pull request #52 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.18.1
+  - Bump shivammathur/setup-php from 2.18.0 to 2.18.1
+  - Bump codecov/codecov-action from 2.1.0 to 3.0.0
+  - Merge pull request #48 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.18.0
+  - Merge pull request #47 from ujamii/dependabot/github_actions/actions/cache-3
+  - Bump shivammathur/setup-php from 2.17.1 to 2.18.0
+  - Bump actions/cache from 2.1.7 to 3
+  - [DOC] updated VERSION and Changelog
+
 ## 1.0.0 (March 14, 2022)
   - Merge pull request #46 from ujamii/feature/nette-code-generator
   - [DOC] raised min php version to 7.4 
