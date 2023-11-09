@@ -12,39 +12,32 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.1",
         "ext-dom": "*",
         "ext-simplexml": "*",
         "jms/serializer": "^2.1 || ^3.5",
         "cweagans/composer-patches": "^1.7 || ^2.0"
     },
     "extra": {
+        "platform": {
+            "php": "8.1"
+        },
         "patches": {
             "goetas-webservices/xsd-reader": {
                 "Fix https://github.com/goetas-webservices/xsd-reader/issues/50": "patches/SchemaReader-ComplexTypeMixed-Issue-3.patch"
             }
         }
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/bnf/php-code-generator.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/AlexAzartsev/php-code-formatter.git"
-        }
-    ],
     "require-dev": {
         "ext-json": "*",
-        "goetas-webservices/xsd-reader": "^0.3",
-        "phpunit/phpunit": ">=7.5",
+        "goetas-webservices/xsd-reader": "^0.4",
+        "phpunit/phpunit": ">=7.5 <10",
         "phpstan/phpstan": "^1.0",
         "infection/infection": ">=0.16",
-        "friendsofphp/php-cs-fixer": "^2.18 || ^3.0",
+        "friendsofphp/php-cs-fixer": "^3.0",
         "rector/rector": ">=0.9",
         "symfony/serializer": "^5.3",
-        "nette/php-generator": "^3.6 || ^4.0"
+        "nette/php-generator": "^4.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
