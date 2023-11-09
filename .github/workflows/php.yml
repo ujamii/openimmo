@@ -17,7 +17,7 @@ jobs:
     - name: Setup PHP
       uses: shivammathur/setup-php@2.19.1
       with:
-        php-version: '7.4'
+        php-version: '8.1'
         tools: composer
         extensions: dom, simplexml
 
@@ -42,7 +42,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.4', '8.0', '8.1']
+        php: ['8.1', '8.2']
 
     steps:
     - uses: actions/checkout@v3
@@ -91,7 +91,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@2.19.1
         with:
-          php-version: '7.4'
+          php-version: '8.1'
           tools: composer
           coverage: none
 
