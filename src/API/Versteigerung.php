@@ -102,7 +102,7 @@ class Versteigerung
         ?\DateTime $zvtermin = null,
         ?\DateTime $zusatztermin = null,
         ?string $amtsgericht = null,
-        ?float $verkehrswert = null
+        ?float $verkehrswert = null,
     ) {
         $this->zwangsversteigerung = $zwangsversteigerung;
         $this->aktenzeichen = $aktenzeichen;

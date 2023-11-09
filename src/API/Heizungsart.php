@@ -114,7 +114,7 @@ class Heizungsart
         ?bool $etage = null,
         ?bool $zentral = null,
         ?bool $fern = null,
-        ?bool $fussboden = null
+        ?bool $fussboden = null,
     ) {
         $this->ofen = $ofen;
         $this->etage = $etage;

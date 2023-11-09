@@ -69,8 +69,11 @@ class StpParkhaus
         return $this;
     }
 
-    public function __construct(?float $stellplatzmiete = null, ?float $stellplatzkaufpreis = null, ?int $anzahl = null)
-    {
+    public function __construct(
+        ?float $stellplatzmiete = null,
+        ?float $stellplatzkaufpreis = null,
+        ?int $anzahl = null,
+    ) {
         $this->stellplatzmiete = $stellplatzmiete;
         $this->stellplatzkaufpreis = $stellplatzkaufpreis;
         $this->anzahl = $anzahl;
