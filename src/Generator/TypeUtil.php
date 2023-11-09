@@ -21,7 +21,6 @@ class TypeUtil
         $isPlural = substr($type, -2) === '[]';
         $singular = str_replace('[]', '', $type);
         switch ($singular) {
-
             case 'string':
             case 'float':
             case 'int':
@@ -60,7 +59,6 @@ class TypeUtil
                 $ns   = self::OPENIMMO_NAMESPACE;
                 $type = $ns . $singular;
                 break;
-
         }
 
         if ($isPlural) {
@@ -83,7 +81,6 @@ class TypeUtil
         }
 
         switch ($propertyType) {
-
             case 'decimal':
             case 'float':
                 $propertyType = 'float';
@@ -133,7 +130,6 @@ class TypeUtil
     public static function getDefaultValueForType(string $propertyType, bool $nullable)
     {
         switch ($propertyType) {
-
             case 'float':
                 $defaultValue = 0.0;
                 break;

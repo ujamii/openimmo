@@ -2,7 +2,6 @@
 
 namespace Ujamii\OpenImmo\Tests\Generator;
 
-use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\Handler\HandlerRegistryInterface;
 use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
@@ -11,6 +10,7 @@ use Ujamii\OpenImmo\API\AussenCourtage;
 use Ujamii\OpenImmo\API\Bewertung;
 use Ujamii\OpenImmo\API\EmailSonstige;
 use Ujamii\OpenImmo\API\Foto;
+use Ujamii\OpenImmo\API\Geo;
 use Ujamii\OpenImmo\API\Objektkategorie;
 use Ujamii\OpenImmo\API\Openimmo;
 use Ujamii\OpenImmo\API\Uebertragung;
@@ -36,14 +36,12 @@ class JmsXmlDeSerializerTest extends TestCase
                 $registry->registerSubscribingHandler(new DateTimeHandler());
             });
         $this->serializer = $builder->build();
-        // @see https://stackoverflow.com/questions/14629137/jmsserializer-stand-alone-annotation-does-not-exist-or-cannot-be-auto-loaded
-        AnnotationRegistry::registerLoader('class_exists');
     }
 
-    public function testReadXml()
+    public function testReadXml(): void
     {
         $file = './example/openimmo-data_127.xml';
-        if (! is_file($file) || ! is_readable($file)) {
+        if (!is_file($file) || !is_readable($file)) {
             $this->markTestSkipped($file . ' is not part of the distribution package due to license restrictions. Please download yourself from http://www.openimmo.de/go.php/p/24/download.htm (it\'s free)');
         }
         $xmlString = file_get_contents($file);
@@ -99,10 +97,10 @@ class JmsXmlDeSerializerTest extends TestCase
         $this->assertEquals('en', $immobilie->getFreitexte()->getObjektText()->getLang());
     }
 
-    public function testReadRealDataXml()
+    public function testReadRealDataXml(): void
     {
         $file = './example/1548246253_0.xml';
-        if (! is_file($file) || ! is_readable($file)) {
+        if (!is_file($file) || !is_readable($file)) {
             $this->markTestSkipped('I am not allowed to include real world examples into this distribution package due to license restrictions.');
         }
         $xmlString = file_get_contents($file);
@@ -114,7 +112,7 @@ class JmsXmlDeSerializerTest extends TestCase
         $this->assertCount(17, $openImmo->getAnbieter()[0]->getImmobilie());
     }
 
-    public function testReadAnhangXml()
+    public function testReadAnhangXml(): void
     {
         $xmlString = '<anhang location="EXTERN" gruppe="BILD">
           <anhangtitel />
@@ -136,7 +134,7 @@ class JmsXmlDeSerializerTest extends TestCase
      * Note the difference in microsecond precision! As the default `precision` (in PHP.ini) is 14, the microsecond
      * part will only have 6 digits, while other tools may generate longer values!
      */
-    public function testDateTimeWithMicroseconds()
+    public function testDateTimeWithMicroseconds(): void
     {
         $xmlString = '<uebertragung art="ONLINE" umfang="VOLL" version="1.2.7" sendersoftware="IMEX" senderversion="1.56" timestamp="2020-08-07T11:56:39.1242974+02:00" />';
         /* @var Uebertragung $uebertragung */
@@ -150,7 +148,7 @@ class JmsXmlDeSerializerTest extends TestCase
         $this->assertEquals('2020-08-07T11:56:39.124297+02:00', $uebertragung->getTimestamp()->format('Y-m-d\TH:i:s.uP'));
     }
 
-    public function testReadAussenCourtageXml()
+    public function testReadAussenCourtageXml(): void
     {
         $xmlString = '<aussen_courtage mit_mwst="true">12354,12 €</aussen_courtage>';
 
@@ -161,7 +159,7 @@ class JmsXmlDeSerializerTest extends TestCase
         $this->assertEquals('12354,12 €', $aussenCourtage->getValue());
     }
 
-    public function testReadObjektKategorieXml()
+    public function testReadObjektKategorieXml(): void
     {
         $xmlString = '<objektkategorie>
             <nutzungsart WOHNEN="true" GEWERBE="false" />
@@ -185,7 +183,7 @@ class JmsXmlDeSerializerTest extends TestCase
         $this->assertEquals('Dachgeschoss', $category->getObjektart()->getObjektartZusatz()[0]);
     }
 
-    public function testReadComplexType()
+    public function testReadComplexType(): void
     {
         $xmlString = '<bewertung>
             <feld>
@@ -209,7 +207,7 @@ class JmsXmlDeSerializerTest extends TestCase
         $this->assertEquals(100, $feld->getWert());
     }
 
-    public function testReadComplexTypeWithArrays()
+    public function testReadComplexTypeWithArrays(): void
     {
         $xmlString = '<bewertung>
             <feld>
@@ -235,5 +233,37 @@ class JmsXmlDeSerializerTest extends TestCase
         $this->assertEquals(['int', 'float', 'string'], $feld->getTyp());
         $this->assertEquals('abc', $feld->getName());
         $this->assertEquals(100, $feld->getWert());
+    }
+
+    public function testReadGeoWithUserDefinedSimplefields(): void
+    {
+        $xmlString = '<geo>
+            <plz>01809</plz>
+            <ort>Heidenau</ort>
+            <strasse>Dr.-Otto-Nuschke-Straße</strasse>
+            <hausnummer>2</hausnummer>
+            <land iso_land="DEU"/>
+            <etage>0</etage>
+            <wohnungsnr>8.1.1</wohnungsnr>
+            <regionaler_zusatz>Mügeln</regionaler_zusatz>
+            <user_defined_simplefield feldname="ZONE">Mügeln</user_defined_simplefield>
+            <user_defined_simplefield feldname="regionaler_zusatz_gruppe"></user_defined_simplefield>
+        </geo>';
+
+        /* @var Geo $subject */
+        $subject = $this->serializer->deserialize($xmlString, Geo::class, 'xml');
+
+        $this->assertSame('01809', $subject->getPlz());
+        $this->assertSame('Heidenau', $subject->getOrt());
+        $this->assertSame('Dr.-Otto-Nuschke-Straße', $subject->getStrasse());
+        $this->assertSame('2', $subject->getHausnummer());
+        $this->assertSame('DEU', $subject->getLand()->getIsoLand());
+        $this->assertSame(0, $subject->getEtage());
+        $this->assertSame('8.1.1', $subject->getWohnungsnr());
+        $this->assertSame('Mügeln', $subject->getRegionalerZusatz());
+        $this->assertCount(2, $subject->getUserDefinedSimplefield());
+        $this->assertSame('Mügeln', $subject->getUserDefinedSimplefield()[0]->getValue());
+        $this->assertSame('ZONE', $subject->getUserDefinedSimplefield()[0]->getFeldname());
+        $this->assertSame('regionaler_zusatz_gruppe', $subject->getUserDefinedSimplefield()[1]->getFeldname());
     }
 }
