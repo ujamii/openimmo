@@ -27,7 +27,6 @@ use Nette\PhpGenerator\PhpFile;
 use Nette\PhpGenerator\PhpNamespace;
 use Nette\PhpGenerator\Property;
 use Nette\PhpGenerator\PsrPrinter;
-use Ujamii\OpenImmo\XSDReader\Schema\Type\ComplexTypeMixed;
 
 /**
  * Class ApiGenerator
@@ -101,19 +100,22 @@ class ApiGenerator
 
         if ($element->getType() instanceof ComplexTypeSimpleContent) {
             $this->addSimpleValue($element->getType()->getExtension(), $class, $namespace);
-        } elseif ($element->getType() instanceof ComplexTypeMixed) {
-            // @see https://github.com/ujamii/openimmo/issues/3
-            $this->addSimpleValue(null, $class, $namespace);
         } else {
-            /* @var ComplexType $complexType */
-            foreach ($element->getType()->getElements() as $property) {
-                if ($property instanceof Choice) {
-                    /** @var ElementRef $choiceProperty */
-                    foreach ($property->getElements() as $choiceProperty) {
-                        $this->parseProperty($choiceProperty, $class, $namespace);
+            /** @var ComplexType $complexType */
+            $complexType = $element->getType();
+            if ($complexType->isMixed()) {
+                // @see https://github.com/ujamii/openimmo/issues/3
+                $this->addSimpleValue(null, $class, $namespace);
+            } else {
+                foreach ($element->getType()->getElements() as $property) {
+                    if ($property instanceof Choice) {
+                        /** @var ElementRef $choiceProperty */
+                        foreach ($property->getElements() as $choiceProperty) {
+                            $this->parseProperty($choiceProperty, $class, $namespace);
+                        }
+                    } else {
+                        $this->parseProperty($property, $class, $namespace);
                     }
-                } else {
-                    $this->parseProperty($property, $class, $namespace);
                 }
             }
         }

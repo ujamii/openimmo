@@ -236,7 +236,7 @@ class SymfonyJsonSerializerTest extends TestCase
             "distanzen": [
                 {
                     "distanzZu": "HAUPTSCHULE",
-                    "value": "22.0"
+                    "value": 22
                 }
             ],
             "distanzenSport": [
@@ -258,7 +258,7 @@ class SymfonyJsonSerializerTest extends TestCase
                 new DistanzenSport(DistanzenSport::DISTANZ_ZU_SPORT_SEE, 15)
             ])
             ->setDistanzen([
-                new Distanzen(Distanzen::DISTANZ_ZU_HAUPTSCHULE, '22.0')
+                new Distanzen(Distanzen::DISTANZ_ZU_HAUPTSCHULE, 22.0)
             ]);
 
         $jsonContent = $this->serializer->serialize($infrastruktur, JsonEncoder::FORMAT, $this->serializerContext);

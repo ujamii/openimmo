@@ -40,9 +40,9 @@ class Distanzen
 
     /**
      * @Inline
-     * @Type("string")
+     * @Type("float")
      */
-    protected ?string $value = null;
+    protected ?float $value = null;
 
     public function getDistanzZu(): string
     {
@@ -55,18 +55,18 @@ class Distanzen
         return $this;
     }
 
-    public function getValue(): ?string
+    public function getValue(): ?float
     {
         return $this->value;
     }
 
-    public function setValue(?string $value): Distanzen
+    public function setValue(?float $value): Distanzen
     {
         $this->value = $value;
         return $this;
     }
 
-    public function __construct(string $distanzZu = '', ?string $value = null)
+    public function __construct(string $distanzZu = '', ?float $value = null)
     {
         $this->distanzZu = $distanzZu;
         $this->value = $value;
