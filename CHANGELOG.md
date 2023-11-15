@@ -1,3 +1,6 @@
+## 2.1.0 (November 15, 2023)
+  - [CLEANUP] get rid of patched library by using the 0.4.0 feature of ComplexType::isMixed instead
+
 ## 2.0.0 (November 09, 2023)
   - Merge pull request #71 from ujamii/task/drop-old-php
   - code style fixes 
