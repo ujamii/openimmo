@@ -8,6 +8,7 @@ use GoetasWebservices\XML\XSDReader\Schema\Element\Element;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementDef;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementItem;
 use GoetasWebservices\XML\XSDReader\Schema\Element\ElementRef;
+use GoetasWebservices\XML\XSDReader\Schema\Element\Sequence;
 use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Extension;
 use GoetasWebservices\XML\XSDReader\Schema\Inheritance\Restriction;
 use GoetasWebservices\XML\XSDReader\Schema\Item;
@@ -182,12 +183,18 @@ class ApiGenerator
     }
 
     /**
-     * @param Element|ElementRef|ElementDef $property
+     * @param Element|ElementRef|ElementDef|Sequence|ElementItem $property
      */
-    private function parseProperty(ElementItem $property, ClassType $class, PhpNamespace $namespace): void
+    private function parseProperty(Element|ElementRef|ElementDef|Sequence|ElementItem $property, ClassType $class, PhpNamespace $namespace): void
     {
         $propertyName = TypeUtil::camelize($property->getName(), true);
         if (array_key_exists($propertyName, $class->getProperties())) {
+            return;
+        }
+        if ($property instanceof Sequence) {
+            foreach ($property->getElements() as $sequenceProperty) {
+                $this->parseProperty($sequenceProperty, $class, $namespace);
+            }
             return;
         }
         $classProperty = $class->addProperty($propertyName)
