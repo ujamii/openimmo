@@ -12,14 +12,15 @@ Neither is this package an official distribution nor am I associated with this o
 This library just wraps the OpenImmo XML format with some PHP8 classes.
 If you need support for PHP <= 8.1, see version 1.x of this package. Version 2 is for PHP >=8.2 only.
 
-There is an official library available at http://www.openimmo.de/go.php/p/22/support20.htm which costs 95 EUR excl. VAT and is PHP5 only. 
+There is an official library available at http://www.openimmo.de/go.php/p/22/support20.htm which costs 95 EUR excl. VAT and is 
+"compatible with PHP5 and tested with PHP 8.1" (end quote).
 To completely convince you, you will only be allowed to see the code **after** you have paid and they have a no-refund policy. 
 
 **Important note**
 
-I am not allowed to include real world xml examples into this distribution package due to license restrictions. Thus, some tests are automatically
+I don't want to include real world xml examples into this distribution package due possible license and privacy issues. Thus, some tests are automatically
 skipped, if the xml files are not found in the examples directory!
-Do not be fooled by "Open" in OpenImmo ;-)
+The "Open" in OpenImmo has nothing to do with Open Source (I was told  ;-)
 
 ## TODOs
 
