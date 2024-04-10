@@ -146,9 +146,6 @@ class TypeUtil
         return $nullable ? null : $defaultValue;
     }
 
-    /**
-     * @param string|null $propertyName
-     */
     public static function extractTypeForPhp(Type $typeFromXsd, ?string $propertyName = null): ?string
     {
         $type = 'string';

@@ -134,9 +134,6 @@ class ApiGenerator
         $this->createPhpFile($namespace, $class);
     }
 
-    /**
-     * @param Extension|null $extension
-     */
     private function addSimpleValue(?Extension $extension, ClassType $class, PhpNamespace $namespace): void
     {
         $propertyName  = 'value';
@@ -182,9 +179,6 @@ class ApiGenerator
         $constructor->setBody(implode(PHP_EOL, $constructorCode));
     }
 
-    /**
-     * @param Element|ElementRef|ElementDef|Sequence|ElementItem $property
-     */
     private function parseProperty(Element|ElementRef|ElementDef|Sequence|ElementItem $property, ClassType $class, PhpNamespace $namespace): void
     {
         $propertyName = TypeUtil::camelize($property->getName(), true);
@@ -381,8 +375,6 @@ class ApiGenerator
     }
 
     /**
-     * @param string|null $targetFolder
-     *
      * @throws \Exception
      */
     public function setTargetFolder(?string $targetFolder): void

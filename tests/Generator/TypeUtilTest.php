@@ -9,8 +9,6 @@ use Ujamii\OpenImmo\Generator\TypeUtil;
 class TypeUtilTest extends TestCase
 {
     /**
-     * @param bool|null $lcFirst
-     *
      * @dataProvider camelizeDataProvider
      */
     public function testCamelize(string $nameInXsd, string $expectedPhpName, ?bool $lcFirst = false): void
