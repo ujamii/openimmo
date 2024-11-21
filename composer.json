@@ -22,7 +22,7 @@
         "ext-json": "*",
         "goetas-webservices/xsd-reader": "^0.4",
         "phpunit/phpunit": ">=7.5 <10",
-        "phpstan/phpstan": "^1.0",
+        "phpstan/phpstan": "^1.0 || ^2.0",
         "infection/infection": ">=0.16",
         "friendsofphp/php-cs-fixer": "^3.0",
         "rector/rector": ">=0.18",
