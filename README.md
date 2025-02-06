@@ -38,6 +38,7 @@ If you like to use this API as base for an integration into a CMS or Framework, 
 
 - Integration into TYPO3 CMS, [extension "openimmo"](https://github.com/ujamii/openimmo-typo3)
 - NEOS CMS, [package "Ujamii.OpenImmoNeos"](https://github.com/ujamii/openimmo-neos)
+- [Laravel-Package](https://github.com/Katalam/laravel-openimmo)
 
 ## Usage
 
