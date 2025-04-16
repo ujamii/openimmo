@@ -18,9 +18,9 @@ To completely convince you, you will only be allowed to see the code **after** y
 
 **Important note**
 
-I don't want to include real world xml examples into this distribution package due possible license and privacy issues. Thus, some tests are automatically
+I don't want to include real world xml examples into this distribution package due to possible license and privacy issues. Thus, some tests are automatically
 skipped, if the xml files are not found in the examples directory!
-The "Open" in OpenImmo has nothing to do with Open Source (I was told  ;-)
+The "Open" in OpenImmo has nothing to do with Open Source (I have been told  ;-)
 
 ## TODOs
 
