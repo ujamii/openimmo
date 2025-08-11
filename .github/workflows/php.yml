@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Setup PHP
-      uses: shivammathur/setup-php@2.33.0
+      uses: shivammathur/setup-php@2.35.3
       with:
         php-version: '8.2'
         tools: composer
@@ -48,7 +48,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Setup PHP
-      uses: shivammathur/setup-php@2.33.0
+      uses: shivammathur/setup-php@2.35.3
       with:
         php-version: ${{ matrix.php }}
         tools: composer
@@ -89,7 +89,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.33.0
+        uses: shivammathur/setup-php@2.35.3
         with:
           php-version: '8.2'
           tools: composer
