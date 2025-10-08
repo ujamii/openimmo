@@ -29,7 +29,7 @@ I decided to take the burden of using German names but I think it is worth it.
 
 1. Also, dealing with this kind of data is probably done in more complex and big projects than in small and very agile ones, I suppose. Hence I actively chose not to
 be **cutting edge** with all the fancy features new PHP versions provide. I will maintain the currently supported [PHP versions](https://www.php.net/supported-versions.php)
-because I assume those type of projects have some more compatibility constraints to match and I don's want to bring another tight requirement in with this library.
+because I assume those type of projects have some more compatibility constraints to match and I don't want to bring another tight requirement in with this library.
 I you deeply want to have all the modern things in here, feel free to fork and open a PR, so everyone can benefit from it. You're very welcome!
 
 ## TODOs
