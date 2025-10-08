@@ -125,7 +125,7 @@ class Immobilie
      */
     public function getWeitereAdresse(): array
     {
-        return $this->weitereAdresse ?? [];
+        return $this->weitereAdresse;
     }
 
     public function setWeitereAdresse(array $weitereAdresse): Immobilie
@@ -271,7 +271,7 @@ class Immobilie
      */
     public function getUserDefinedSimplefield(): array
     {
-        return $this->userDefinedSimplefield ?? [];
+        return $this->userDefinedSimplefield;
     }
 
     public function setUserDefinedSimplefield(array $userDefinedSimplefield): Immobilie
@@ -285,7 +285,7 @@ class Immobilie
      */
     public function getUserDefinedAnyfield(): array
     {
-        return $this->userDefinedAnyfield ?? [];
+        return $this->userDefinedAnyfield;
     }
 
     public function setUserDefinedAnyfield(array $userDefinedAnyfield): Immobilie
@@ -299,7 +299,7 @@ class Immobilie
      */
     public function getUserDefinedExtend(): array
     {
-        return $this->userDefinedExtend ?? [];
+        return $this->userDefinedExtend;
     }
 
     public function setUserDefinedExtend(array $userDefinedExtend): Immobilie

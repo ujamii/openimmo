@@ -433,7 +433,7 @@ class Kontaktperson
      */
     public function getEmailSonstige(): array
     {
-        return $this->emailSonstige ?? [];
+        return $this->emailSonstige;
     }
 
     public function setEmailSonstige(array $emailSonstige): Kontaktperson
@@ -469,7 +469,7 @@ class Kontaktperson
      */
     public function getTelSonstige(): array
     {
-        return $this->telSonstige ?? [];
+        return $this->telSonstige;
     }
 
     public function setTelSonstige(array $telSonstige): Kontaktperson
@@ -560,7 +560,7 @@ class Kontaktperson
      */
     public function getUserDefinedSimplefield(): array
     {
-        return $this->userDefinedSimplefield ?? [];
+        return $this->userDefinedSimplefield;
     }
 
     public function setUserDefinedSimplefield(array $userDefinedSimplefield): Kontaktperson
@@ -574,7 +574,7 @@ class Kontaktperson
      */
     public function getUserDefinedAnyfield(): array
     {
-        return $this->userDefinedAnyfield ?? [];
+        return $this->userDefinedAnyfield;
     }
 
     public function setUserDefinedAnyfield(array $userDefinedAnyfield): Kontaktperson
@@ -588,7 +588,7 @@ class Kontaktperson
      */
     public function getUserDefinedExtend(): array
     {
-        return $this->userDefinedExtend ?? [];
+        return $this->userDefinedExtend;
     }
 
     public function setUserDefinedExtend(array $userDefinedExtend): Kontaktperson

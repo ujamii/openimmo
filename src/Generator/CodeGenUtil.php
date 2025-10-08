@@ -39,7 +39,7 @@ class CodeGenUtil
         $returnsArray = $propertyType === 'array';
         $getter       = $class->addMethod('get' . ucfirst($property->getName()));
         if ($returnsArray) {
-            $getterCode = 'return $this->' . $property->getName() . ' ?? [];';
+            $getterCode = 'return $this->' . $property->getName() . ';';
             $getter->setBody($getterCode)
                    ->setReturnType('array')
                    ->addComment('Returns array of ' . str_replace('[]', '', $propertyType))

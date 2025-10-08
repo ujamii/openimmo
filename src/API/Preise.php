@@ -971,7 +971,7 @@ class Preise
      */
     public function getStpSonstige(): array
     {
-        return $this->stpSonstige ?? [];
+        return $this->stpSonstige;
     }
 
     public function setStpSonstige(array $stpSonstige): Preise
@@ -1007,7 +1007,7 @@ class Preise
      */
     public function getUserDefinedSimplefield(): array
     {
-        return $this->userDefinedSimplefield ?? [];
+        return $this->userDefinedSimplefield;
     }
 
     public function setUserDefinedSimplefield(array $userDefinedSimplefield): Preise
@@ -1021,7 +1021,7 @@ class Preise
      */
     public function getUserDefinedAnyfield(): array
     {
-        return $this->userDefinedAnyfield ?? [];
+        return $this->userDefinedAnyfield;
     }
 
     public function setUserDefinedAnyfield(array $userDefinedAnyfield): Preise
@@ -1035,7 +1035,7 @@ class Preise
      */
     public function getUserDefinedExtend(): array
     {
-        return $this->userDefinedExtend ?? [];
+        return $this->userDefinedExtend;
     }
 
     public function setUserDefinedExtend(array $userDefinedExtend): Preise

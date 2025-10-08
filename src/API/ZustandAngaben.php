@@ -176,7 +176,7 @@ class ZustandAngaben
      */
     public function getEnergiepass(): array
     {
-        return $this->energiepass ?? [];
+        return $this->energiepass;
     }
 
     public function setEnergiepass(array $energiepass): ZustandAngaben
@@ -201,7 +201,7 @@ class ZustandAngaben
      */
     public function getUserDefinedSimplefield(): array
     {
-        return $this->userDefinedSimplefield ?? [];
+        return $this->userDefinedSimplefield;
     }
 
     public function setUserDefinedSimplefield(array $userDefinedSimplefield): ZustandAngaben
@@ -215,7 +215,7 @@ class ZustandAngaben
      */
     public function getUserDefinedAnyfield(): array
     {
-        return $this->userDefinedAnyfield ?? [];
+        return $this->userDefinedAnyfield;
     }
 
     public function setUserDefinedAnyfield(array $userDefinedAnyfield): ZustandAngaben
@@ -229,7 +229,7 @@ class ZustandAngaben
      */
     public function getUserDefinedExtend(): array
     {
-        return $this->userDefinedExtend ?? [];
+        return $this->userDefinedExtend;
     }
 
     public function setUserDefinedExtend(array $userDefinedExtend): ZustandAngaben

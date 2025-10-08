@@ -117,7 +117,7 @@ class Objektart
      */
     public function getZimmer(): array
     {
-        return $this->zimmer ?? [];
+        return $this->zimmer;
     }
 
     public function setZimmer(array $zimmer): Objektart
@@ -131,7 +131,7 @@ class Objektart
      */
     public function getWohnung(): array
     {
-        return $this->wohnung ?? [];
+        return $this->wohnung;
     }
 
     public function setWohnung(array $wohnung): Objektart
@@ -145,7 +145,7 @@ class Objektart
      */
     public function getHaus(): array
     {
-        return $this->haus ?? [];
+        return $this->haus;
     }
 
     public function setHaus(array $haus): Objektart
@@ -159,7 +159,7 @@ class Objektart
      */
     public function getGrundstueck(): array
     {
-        return $this->grundstueck ?? [];
+        return $this->grundstueck;
     }
 
     public function setGrundstueck(array $grundstueck): Objektart
@@ -173,7 +173,7 @@ class Objektart
      */
     public function getBueroPraxen(): array
     {
-        return $this->bueroPraxen ?? [];
+        return $this->bueroPraxen;
     }
 
     public function setBueroPraxen(array $bueroPraxen): Objektart
@@ -187,7 +187,7 @@ class Objektart
      */
     public function getEinzelhandel(): array
     {
-        return $this->einzelhandel ?? [];
+        return $this->einzelhandel;
     }
 
     public function setEinzelhandel(array $einzelhandel): Objektart
@@ -201,7 +201,7 @@ class Objektart
      */
     public function getGastgewerbe(): array
     {
-        return $this->gastgewerbe ?? [];
+        return $this->gastgewerbe;
     }
 
     public function setGastgewerbe(array $gastgewerbe): Objektart
@@ -215,7 +215,7 @@ class Objektart
      */
     public function getHallenLagerProd(): array
     {
-        return $this->hallenLagerProd ?? [];
+        return $this->hallenLagerProd;
     }
 
     public function setHallenLagerProd(array $hallenLagerProd): Objektart
@@ -229,7 +229,7 @@ class Objektart
      */
     public function getLandUndForstwirtschaft(): array
     {
-        return $this->landUndForstwirtschaft ?? [];
+        return $this->landUndForstwirtschaft;
     }
 
     public function setLandUndForstwirtschaft(array $landUndForstwirtschaft): Objektart
@@ -243,7 +243,7 @@ class Objektart
      */
     public function getParken(): array
     {
-        return $this->parken ?? [];
+        return $this->parken;
     }
 
     public function setParken(array $parken): Objektart
@@ -257,7 +257,7 @@ class Objektart
      */
     public function getSonstige(): array
     {
-        return $this->sonstige ?? [];
+        return $this->sonstige;
     }
 
     public function setSonstige(array $sonstige): Objektart
@@ -271,7 +271,7 @@ class Objektart
      */
     public function getFreizeitimmobilieGewerblich(): array
     {
-        return $this->freizeitimmobilieGewerblich ?? [];
+        return $this->freizeitimmobilieGewerblich;
     }
 
     public function setFreizeitimmobilieGewerblich(array $freizeitimmobilieGewerblich): Objektart
@@ -285,7 +285,7 @@ class Objektart
      */
     public function getZinshausRenditeobjekt(): array
     {
-        return $this->zinshausRenditeobjekt ?? [];
+        return $this->zinshausRenditeobjekt;
     }
 
     public function setZinshausRenditeobjekt(array $zinshausRenditeobjekt): Objektart
@@ -299,7 +299,7 @@ class Objektart
      */
     public function getObjektartZusatz(): array
     {
-        return $this->objektartZusatz ?? [];
+        return $this->objektartZusatz;
     }
 
     public function setObjektartZusatz(array $objektartZusatz): Objektart

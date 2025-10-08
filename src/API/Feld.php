@@ -67,7 +67,7 @@ class Feld
      */
     public function getTyp(): array
     {
-        return $this->typ ?? [];
+        return $this->typ;
     }
 
     public function setTyp(array $typ): Feld
@@ -81,7 +81,7 @@ class Feld
      */
     public function getModus(): array
     {
-        return $this->modus ?? [];
+        return $this->modus;
     }
 
     public function setModus(array $modus): Feld

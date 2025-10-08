@@ -82,7 +82,7 @@ class Infrastruktur
      */
     public function getDistanzen(): array
     {
-        return $this->distanzen ?? [];
+        return $this->distanzen;
     }
 
     public function setDistanzen(array $distanzen): Infrastruktur
@@ -96,7 +96,7 @@ class Infrastruktur
      */
     public function getDistanzenSport(): array
     {
-        return $this->distanzenSport ?? [];
+        return $this->distanzenSport;
     }
 
     public function setDistanzenSport(array $distanzenSport): Infrastruktur
@@ -110,7 +110,7 @@ class Infrastruktur
      */
     public function getUserDefinedSimplefield(): array
     {
-        return $this->userDefinedSimplefield ?? [];
+        return $this->userDefinedSimplefield;
     }
 
     public function setUserDefinedSimplefield(array $userDefinedSimplefield): Infrastruktur
@@ -124,7 +124,7 @@ class Infrastruktur
      */
     public function getUserDefinedAnyfield(): array
     {
-        return $this->userDefinedAnyfield ?? [];
+        return $this->userDefinedAnyfield;
     }
 
     public function setUserDefinedAnyfield(array $userDefinedAnyfield): Infrastruktur
@@ -138,7 +138,7 @@ class Infrastruktur
      */
     public function getUserDefinedExtend(): array
     {
-        return $this->userDefinedExtend ?? [];
+        return $this->userDefinedExtend;
     }
 
     public function setUserDefinedExtend(array $userDefinedExtend): Infrastruktur

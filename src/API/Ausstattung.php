@@ -338,7 +338,7 @@ class Ausstattung
      */
     public function getStellplatzart(): array
     {
-        return $this->stellplatzart ?? [];
+        return $this->stellplatzart;
     }
 
     public function setStellplatzart(array $stellplatzart): Ausstattung
@@ -616,7 +616,7 @@ class Ausstattung
      */
     public function getServiceleistungen(): array
     {
-        return $this->serviceleistungen ?? [];
+        return $this->serviceleistungen;
     }
 
     public function setServiceleistungen(array $serviceleistungen): Ausstattung
@@ -817,7 +817,7 @@ class Ausstattung
      */
     public function getUserDefinedSimplefield(): array
     {
-        return $this->userDefinedSimplefield ?? [];
+        return $this->userDefinedSimplefield;
     }
 
     public function setUserDefinedSimplefield(array $userDefinedSimplefield): Ausstattung
@@ -831,7 +831,7 @@ class Ausstattung
      */
     public function getUserDefinedAnyfield(): array
     {
-        return $this->userDefinedAnyfield ?? [];
+        return $this->userDefinedAnyfield;
     }
 
     public function setUserDefinedAnyfield(array $userDefinedAnyfield): Ausstattung
@@ -845,7 +845,7 @@ class Ausstattung
      */
     public function getUserDefinedExtend(): array
     {
-        return $this->userDefinedExtend ?? [];
+        return $this->userDefinedExtend;
     }
 
     public function setUserDefinedExtend(array $userDefinedExtend): Ausstattung

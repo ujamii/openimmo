@@ -129,7 +129,7 @@ class Anbieter
      */
     public function getImmobilie(): array
     {
-        return $this->immobilie ?? [];
+        return $this->immobilie;
     }
 
     public function setImmobilie(array $immobilie): Anbieter
@@ -165,7 +165,7 @@ class Anbieter
      */
     public function getUserDefinedSimplefield(): array
     {
-        return $this->userDefinedSimplefield ?? [];
+        return $this->userDefinedSimplefield;
     }
 
     public function setUserDefinedSimplefield(array $userDefinedSimplefield): Anbieter
@@ -179,7 +179,7 @@ class Anbieter
      */
     public function getUserDefinedAnyfield(): array
     {
-        return $this->userDefinedAnyfield ?? [];
+        return $this->userDefinedAnyfield;
     }
 
     public function setUserDefinedAnyfield(array $userDefinedAnyfield): Anbieter
@@ -193,7 +193,7 @@ class Anbieter
      */
     public function getUserDefinedExtend(): array
     {
-        return $this->userDefinedExtend ?? [];
+        return $this->userDefinedExtend;
     }
 
     public function setUserDefinedExtend(array $userDefinedExtend): Anbieter

@@ -26,7 +26,7 @@ class UserDefinedExtend
      */
     public function getFeld(): array
     {
-        return $this->feld ?? [];
+        return $this->feld;
     }
 
     public function setFeld(array $feld): UserDefinedExtend

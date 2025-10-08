@@ -376,7 +376,7 @@ class WeitereAdresse
      */
     public function getEmailSonstige(): array
     {
-        return $this->emailSonstige ?? [];
+        return $this->emailSonstige;
     }
 
     public function setEmailSonstige(array $emailSonstige): WeitereAdresse
@@ -445,7 +445,7 @@ class WeitereAdresse
      */
     public function getTelSonstige(): array
     {
-        return $this->telSonstige ?? [];
+        return $this->telSonstige;
     }
 
     public function setTelSonstige(array $telSonstige): WeitereAdresse
@@ -503,7 +503,7 @@ class WeitereAdresse
      */
     public function getUserDefinedSimplefield(): array
     {
-        return $this->userDefinedSimplefield ?? [];
+        return $this->userDefinedSimplefield;
     }
 
     public function setUserDefinedSimplefield(array $userDefinedSimplefield): WeitereAdresse
@@ -517,7 +517,7 @@ class WeitereAdresse
      */
     public function getUserDefinedAnyfield(): array
     {
-        return $this->userDefinedAnyfield ?? [];
+        return $this->userDefinedAnyfield;
     }
 
     public function setUserDefinedAnyfield(array $userDefinedAnyfield): WeitereAdresse
@@ -531,7 +531,7 @@ class WeitereAdresse
      */
     public function getUserDefinedExtend(): array
     {
-        return $this->userDefinedExtend ?? [];
+        return $this->userDefinedExtend;
     }
 
     public function setUserDefinedExtend(array $userDefinedExtend): WeitereAdresse
