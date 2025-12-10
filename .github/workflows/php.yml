@@ -70,7 +70,7 @@ jobs:
     - name: Run test suite
       run: composer run phpunit
 
-    - uses: codecov/codecov-action@v5.5.1
+    - uses: codecov/codecov-action@v5.5.2
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./build/coverage/clover.xml
