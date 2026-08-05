@@ -1,11 +1,11 @@
 {
     "source": {
         "directories": [
-            "src"
+            "../../src"
         ]
     },
     "phpUnit": {
-        "configDir": ".\/"
+        "configDir": "./"
     },
     "logs": {
         "text": "../coverage/infection-full.log",
