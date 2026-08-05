@@ -32,6 +32,7 @@ return $config->setRules([
         'return_type_declaration' => ['space_before' => 'none'],
     ])
     ->setCacheFile(__DIR__ . '/../cache/.php_cs.cache')
+    ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
     ->setFinder(
         PhpCsFixer\Finder::create()
             ->in(__DIR__ . '/../../src/')
