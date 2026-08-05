@@ -21,7 +21,6 @@ class ApiClassTest extends TestCase
         $finder->files()->name('*.php')->in('src/API/');
 
         foreach ($finder as $file) {
-            /** @var ClassType $phpClass */
             $phpClass = ClassType::fromCode(file_get_contents($file->getRealPath()));
             foreach ($phpClass->getProperties() as $property) {
                 $this->automateTestClassProperties($phpClass->getName(), $property->getName(), $property->getType());

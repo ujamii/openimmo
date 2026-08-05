@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ujamii\OpenImmo\Tests\Generator\ApiGenerator;
 
 class PositiveIntegerTypeTest extends FileGeneratingTest

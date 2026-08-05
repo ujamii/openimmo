@@ -365,6 +365,7 @@ class ApiGenerator
     {
         $file = new PhpFile();
         $file->addNamespace($namespace);
+        $file->setStrictTypes(true);
         $code = (new PsrPrinter())->printFile($file);
 
         return file_put_contents($this->getTargetFolder() . $class->getName() . '.php', $code);
@@ -381,7 +382,7 @@ class ApiGenerator
     public function setTargetFolder(?string $targetFolder): void
     {
         if (!is_null($targetFolder)) {
-            if (!(is_dir($targetFolder) && is_writable($targetFolder))) {
+            if (!is_dir($targetFolder) || !is_writable($targetFolder)) {
                 throw new \Exception("Directory {$targetFolder} does not exist or is not writeable!");
             }
             $this->targetFolder = $targetFolder;

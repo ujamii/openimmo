@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ujamii\OpenImmo\API;
 
 use JMS\Serializer\Annotation\SerializedName;

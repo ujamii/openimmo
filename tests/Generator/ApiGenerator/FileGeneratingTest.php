@@ -46,7 +46,6 @@ abstract class FileGeneratingTest extends TestCase
 
         $classFileName = "{$this->tmpDir}{$className}.php";
         $this->assertFileExists($classFileName);
-        /** @var ClassType $generatedClass */
         $generatedClass = ClassType::fromCode(file_get_contents($classFileName));
 
         if ('' !== $docBlockComment) {
