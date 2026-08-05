@@ -12,10 +12,10 @@ jobs:
       fail-fast: false
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Setup PHP
-      uses: shivammathur/setup-php@2.33.0
+      uses: shivammathur/setup-php@2.36.0
       with:
         php-version: '8.2'
         tools: composer
@@ -25,7 +25,7 @@ jobs:
       run: composer validate
 
     - name: Cache Composer dependencies
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: /tmp/composer-cache
         key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
@@ -45,10 +45,10 @@ jobs:
         php: ['8.2', '8.3', '8.4', '8.5']
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Setup PHP
-      uses: shivammathur/setup-php@2.33.0
+      uses: shivammathur/setup-php@2.36.0
       with:
         php-version: ${{ matrix.php }}
         tools: composer
@@ -59,7 +59,7 @@ jobs:
       run: composer validate
 
     - name: Cache Composer dependencies
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: /tmp/composer-cache
         key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
@@ -70,7 +70,7 @@ jobs:
     - name: Run test suite
       run: composer run phpunit
 
-    - uses: codecov/codecov-action@v5.4.2
+    - uses: codecov/codecov-action@v5.5.2
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./build/coverage/clover.xml
@@ -86,10 +86,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.33.0
+        uses: shivammathur/setup-php@2.36.0
         with:
           php-version: '8.2'
           tools: composer
