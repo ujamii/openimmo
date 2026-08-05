@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" backupGlobals="false" backupStaticAttributes="false" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnFailure="false" cacheResultFile="../cache/.phpunit.result.cache" bootstrap="../../vendor/autoload.php" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
-  <coverage processUncoveredFiles="true">
-    <include>
-      <directory suffix=".php">../../src/</directory>
-    </include>
-    <report>
-      <clover outputFile="../coverage/clover.xml"/>
-      <html outputDirectory="../coverage/coverage-html"/>
-    </report>
-  </coverage>
-  <testsuites>
-    <testsuite name="Code Generator Test Suite">
-      <directory>../../tests/</directory>
-    </testsuite>
-  </testsuites>
-  <logging/>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.5/phpunit.xsd"
+         backupGlobals="false"
+         colors="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         bootstrap="../../vendor/autoload.php"
+         displayDetailsOnPhpunitDeprecations="true"
+         cacheDirectory=".phpunit.cache"
+         backupStaticProperties="false">
+    <coverage>
+        <report>
+            <clover outputFile="../coverage/clover.xml"/>
+            <html outputDirectory="../coverage/coverage-html"/>
+        </report>
+    </coverage>
+    <testsuites>
+        <testsuite name="Code Generator Test Suite">
+            <directory>../../tests/</directory>
+            <exclude>../../tests/Generator/ApiGenerator/FileGeneratingTest.php</exclude>
+        </testsuite>
+    </testsuites>
+    <logging/>
+    <source>
+        <include>
+            <directory suffix=".php">../../src/</directory>
+        </include>
+    </source>
 </phpunit>

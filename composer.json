@@ -21,7 +21,7 @@
     "require-dev": {
         "ext-json": "*",
         "goetas-webservices/xsd-reader": "^0.4",
-        "phpunit/phpunit": ">=7.5 <10",
+        "phpunit/phpunit": "^11.0",
         "phpstan/phpstan": "^1.0 || ^2.0",
         "infection/infection": ">=0.16",
         "friendsofphp/php-cs-fixer": "^3.0",
@@ -46,7 +46,7 @@
             "php -f ./generate-api.php",
             "@php-cs-fixer"
         ],
-        "phpunit": "vendor/bin/phpunit -c build/config/phpunit.xml.dist",
+        "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit -c build/config/phpunit.xml.dist",
         "phpstan": "vendor/bin/phpstan --memory-limit=1G analyse -c build/config/phpstan.neon",
         "phpstan-baseline": "vendor/bin/phpstan --memory-limit=1G analyse -c build/config/phpstan.neon -b build/config/phpstan-baseline.neon",
         "rector": "vendor/bin/rector process src tests -c build/config/rector.php --xdebug",

@@ -3,14 +3,13 @@
 namespace Ujamii\OpenImmo\Tests\Generator;
 
 use Nette\PhpGenerator\Property;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Ujamii\OpenImmo\Generator\TypeUtil;
 
 class TypeUtilTest extends TestCase
 {
-    /**
-     * @dataProvider camelizeDataProvider
-     */
+    #[DataProvider('camelizeDataProvider')]
     public function testCamelize(string $nameInXsd, string $expectedPhpName, ?bool $lcFirst = false): void
     {
         $generatedName = TypeUtil::camelize($nameInXsd, $lcFirst);
@@ -32,9 +31,7 @@ class TypeUtilTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider getTypeForSerializerDataProvider
-     */
+    #[DataProvider('getTypeForSerializerDataProvider')]
     public function testGetTypeForSerializer(string $xsdType, string $serializerType): void
     {
         $generatedType = TypeUtil::getTypeForSerializer($xsdType);
@@ -65,9 +62,7 @@ class TypeUtilTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider getValidPhpTypeDataProvider
-     */
+    #[DataProvider('getValidPhpTypeDataProvider')]
     public function testGetValidPhpType(string $xsdType, string $phpType): void
     {
         $generatedType = TypeUtil::getValidPhpType($xsdType);
@@ -100,11 +95,7 @@ class TypeUtilTest extends TestCase
         ];
     }
 
-    /**
-     * @param mixed $defaultValue
-     *
-     * @dataProvider getDefaultValueForTypeDataProvider
-     */
+    #[DataProvider('getDefaultValueForTypeDataProvider')]
     public function testGetDefaultValueForType(string $propertyType, bool $nullable, $defaultValue): void
     {
         $generatedValue = TypeUtil::getDefaultValueForType($propertyType, $nullable);
@@ -137,9 +128,7 @@ class TypeUtilTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider getConstantsBasedPropertyDataProvider
-     */
+    #[DataProvider('getConstantsBasedPropertyDataProvider')]
     public function testIsConstantsBasedProperty(Property $property, bool $expectedResult): void
     {
         $this->assertSame($expectedResult, TypeUtil::isConstantsBasedProperty($property));
