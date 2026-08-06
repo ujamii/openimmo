@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class LageGebiet
  * Lage Gebiet, Optionen nicht kombinierbar
- * @XmlRoot("lage_gebiet")
  */
+#[XmlRoot(name: 'lage_gebiet')]
 class LageGebiet
 {
     public const GEBIETE_WOHN = 'WOHN';
@@ -30,11 +30,11 @@ class LageGebiet
     public const GEBIETE_1B = '1B';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see GEBIETE_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $gebiete = '';
 
     public function getGebiete(): ?string

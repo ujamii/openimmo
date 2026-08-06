@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Ausblick
  * Welcher Ausblick ist vorhanden, Optionen nicht kombinierbar
- * @XmlRoot("ausblick")
  */
+#[XmlRoot(name: 'ausblick')]
 class Ausblick
 {
     public const BLICK_FERNE = 'FERNE';
@@ -21,11 +21,11 @@ class Ausblick
     public const BLICK_MEER = 'MEER';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see BLICK_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $blick = '';
 
     public function getBlick(): ?string

@@ -11,18 +11,18 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Zimmer
  * Objekart / Typ f. Zimmer
- * @XmlRoot("zimmer")
  */
+#[XmlRoot(name: 'zimmer')]
 class Zimmer
 {
     public const ZIMMERTYP_ZIMMER = 'ZIMMER';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see ZIMMERTYP_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $zimmertyp = '';
 
     public function getZimmertyp(): ?string

@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class ZinshausRenditeobjekt
  * Objektyp / Typ f. Zins und Renditehäuser
- * @XmlRoot("zinshaus_renditeobjekt")
  */
+#[XmlRoot(name: 'zinshaus_renditeobjekt')]
 class ZinshausRenditeobjekt
 {
     public const ZINS_TYP_MEHRFAMILIENHAUS = 'MEHRFAMILIENHAUS';
@@ -30,11 +30,11 @@ class ZinshausRenditeobjekt
     public const ZINS_TYP_BETREUTES_WOHNEN = 'BETREUTES-WOHNEN';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see ZINS_TYP_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $zinsTyp = '';
 
     public function getZinsTyp(): ?string

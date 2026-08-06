@@ -10,8 +10,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Energiepass
  * Energiepass/Ausweis ab 7/2008 vorgeschrieben
- * @XmlRoot("energiepass")
  */
+#[XmlRoot(name: 'energiepass')]
 class Energiepass
 {
     public const EPART_BEDARF = 'BEDARF';
@@ -24,70 +24,64 @@ class Energiepass
     public const GEBAEUDEART_WOHN = 'wohn';
     public const GEBAEUDEART_NICHTWOHN = 'nichtwohn';
 
-    /**
-     * @Type("string")
-     * @see EPART_* constants
-     */
+    /** @see EPART_* constants */
+    #[Type('string')]
     protected string $epart = '';
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $gueltigBis = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $energieverbrauchkennwert = null;
 
-    /** @Type("bool") */
+    #[Type('bool')]
     protected ?bool $mitwarmwasser = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $endenergiebedarf = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $primaerenergietraeger = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $stromwert = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $waermewert = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $wertklasse = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $baujahr = null;
 
-    /** @Type("DateTime<'Y-m-d'>") */
+    #[Type('DateTime<\'Y-m-d\'>')]
     protected ?\DateTime $ausstelldatum = null;
 
-    /**
-     * @Type("string")
-     * @see JAHRGANG_* constants
-     */
+    /** @see JAHRGANG_* constants */
+    #[Type('string')]
     protected string $jahrgang = '';
 
-    /**
-     * @Type("string")
-     * @see GEBAEUDEART_* constants
-     */
+    /** @see GEBAEUDEART_* constants */
+    #[Type('string')]
     protected string $gebaeudeart = '';
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $epasstext = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $geg2018 = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $hwbwert = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $hwbklasse = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $fgeewert = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $fgeeklasse = null;
 
     public function getEpart(): ?string

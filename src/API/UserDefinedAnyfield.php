@@ -10,15 +10,12 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class UserDefinedAnyfield
- *
- * @XmlRoot("user_defined_anyfield")
  */
+#[XmlRoot(name: 'user_defined_anyfield')]
 class UserDefinedAnyfield
 {
-    /**
-     * @Inline
-     * @Type("string")
-     */
+    #[Inline]
+    #[Type('string')]
     protected ?string $value = null;
 
     public function getValue(): ?string

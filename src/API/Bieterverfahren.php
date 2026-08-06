@@ -12,50 +12,44 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Bieterverfahren
  * Angaben zum Bieterverfahren
- * @XmlRoot("bieterverfahren")
  */
+#[XmlRoot(name: 'bieterverfahren')]
 class Bieterverfahren
 {
-    /** @Type("DateTime<'Y-m-d'>") */
+    #[Type('DateTime<\'Y-m-d\'>')]
     protected ?\DateTime $beginnAngebotsphase = null;
 
-    /** @Type("DateTime<'Y-m-d'>") */
+    #[Type('DateTime<\'Y-m-d\'>')]
     protected ?\DateTime $besichtigungstermin = null;
 
-    /** @Type("DateTime<'Y-m-d'>") */
+    #[Type('DateTime<\'Y-m-d\'>')]
     protected ?\DateTime $besichtigungstermin2 = null;
 
-    /** @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>") */
+    #[Type('DateTime<\'Y-m-d\TH:i:s\', null, [\'Y-m-d\TH:i:sP\', \'Y-m-d\TH:i:s\']>')]
     protected ?\DateTime $beginnBietzeit = null;
 
-    /** @Type("DateTime<'Y-m-d'>") */
+    #[Type('DateTime<\'Y-m-d\'>')]
     protected ?\DateTime $endeBietzeit = null;
 
-    /** @Type("bool") */
+    #[Type('bool')]
     protected ?bool $hoechstgebotZeigen = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $mindestpreis = null;
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_simplefield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedSimplefield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedSimplefield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_anyfield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedAnyfield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedAnyfield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_extend', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedExtend>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedExtend = [];
 
     public function getBeginnAngebotsphase(): ?\DateTime

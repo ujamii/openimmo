@@ -11,22 +11,17 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Hauptmietzinsnetto
- *
- * @XmlRoot("hauptmietzinsnetto")
  */
+#[XmlRoot(name: 'hauptmietzinsnetto')]
 class Hauptmietzinsnetto
 {
-    /**
-     * @Type("float")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('float')]
+    #[XmlAttribute]
     protected ?float $hauptmietzinsust = null;
 
-    /**
-     * @Inline
-     * @Type("float")
-     */
+    #[Inline]
+    #[Type('float')]
     protected ?float $value = null;
 
     public function getHauptmietzinsust(): ?float

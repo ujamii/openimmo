@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Unterkellert
  * Ist das Objekt unterkellert? Optionen nicht kombinierbar
- * @XmlRoot("unterkellert")
  */
+#[XmlRoot(name: 'unterkellert')]
 class Unterkellert
 {
     public const KELLER_JA = 'JA';
@@ -20,11 +20,11 @@ class Unterkellert
     public const KELLER_TEIL = 'TEIL';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see KELLER_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $keller = '';
 
     public function getKeller(): ?string

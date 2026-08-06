@@ -12,15 +12,13 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Bewertung
  * Container für detailierte Bewertungs Parmater
- * @XmlRoot("bewertung")
  */
+#[XmlRoot(name: 'bewertung')]
 class Bewertung
 {
-    /**
-     * @XmlList(inline = true, entry = "feld")
-     * @Type("array<Ujamii\OpenImmo\API\Feld>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'feld', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\Feld>')]
+    #[SkipWhenEmpty]
     protected array $feld = [];
 
     /**

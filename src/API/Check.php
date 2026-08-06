@@ -12,8 +12,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Check
  * Angabe von Daten für die Prüfung auf ein Update
- * @XmlRoot("check")
  */
+#[XmlRoot(name: 'check')]
 class Check
 {
     public const CTYPE_MD5 = 'MD5';
@@ -21,17 +21,15 @@ class Check
     public const CTYPE_ETAG = 'ETAG';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * required
      * @see CTYPE_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $ctype = '';
 
-    /**
-     * @Inline
-     * @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>")
-     */
+    #[Inline]
+    #[Type('DateTime<\'Y-m-d\TH:i:s\', null, [\'Y-m-d\TH:i:sP\', \'Y-m-d\TH:i:s\']>')]
     protected ?\DateTime $value = null;
 
     public function getCtype(): string

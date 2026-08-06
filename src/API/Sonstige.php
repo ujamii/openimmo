@@ -15,8 +15,8 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Objekte befinden sich jetzt unter Element parken.
  * Aus kompatibilitätegründen bleiben die Attribute NOCH! erhalten.
  * In nachfolgenden Versionen wird die Unterstützung an dieser Stelle eingestellt.
- * @XmlRoot("sonstige")
  */
+#[XmlRoot(name: 'sonstige')]
 class Sonstige
 {
     public const SONSTIGE_TYP_PARKHAUS = 'PARKHAUS';
@@ -25,11 +25,11 @@ class Sonstige
     public const SONSTIGE_TYP_SONSTIGE = 'SONSTIGE';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see SONSTIGE_TYP_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $sonstigeTyp = '';
 
     public function getSonstigeTyp(): ?string

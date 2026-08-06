@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Waehrung
  * Währung
- * @XmlRoot("waehrung")
  */
+#[XmlRoot(name: 'waehrung')]
 class Waehrung
 {
     public const ISO_WAEHRUNG_AED = 'AED';
@@ -199,11 +199,11 @@ class Waehrung
     public const ISO_WAEHRUNG_ZWD = 'ZWD';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see ISO_WAEHRUNG_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $isoWaehrung = '';
 
     public function getIsoWaehrung(): ?string

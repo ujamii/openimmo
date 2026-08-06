@@ -10,26 +10,26 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Versteigerung
  * Angaben zu einer Versteigerung. Wenn es ein Objekt in Zwangsverteigerung ist, dann muss das element "zwangsversteigerung" auf true/1 gesetzt werden.
- * @XmlRoot("versteigerung")
  */
+#[XmlRoot(name: 'versteigerung')]
 class Versteigerung
 {
-    /** @Type("bool") */
+    #[Type('bool')]
     protected ?bool $zwangsversteigerung = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $aktenzeichen = null;
 
-    /** @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>") */
+    #[Type('DateTime<\'Y-m-d\TH:i:s\', null, [\'Y-m-d\TH:i:sP\', \'Y-m-d\TH:i:s\']>')]
     protected ?\DateTime $zvtermin = null;
 
-    /** @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>") */
+    #[Type('DateTime<\'Y-m-d\TH:i:s\', null, [\'Y-m-d\TH:i:sP\', \'Y-m-d\TH:i:s\']>')]
     protected ?\DateTime $zusatztermin = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $amtsgericht = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $verkehrswert = null;
 
     public function getZwangsversteigerung(): ?bool

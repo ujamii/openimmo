@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Parken
  * Objektart für diverse Parkplatz Angaben
- * @XmlRoot("parken")
  */
+#[XmlRoot(name: 'parken')]
 class Parken
 {
     public const PARKEN_TYP_STELLPLATZ = 'STELLPLATZ';
@@ -27,11 +27,11 @@ class Parken
     public const PARKEN_TYP_PARKPLATZ_STROM = 'PARKPLATZ_STROM';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see PARKEN_TYP_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $parkenTyp = '';
 
     public function getParkenTyp(): ?string

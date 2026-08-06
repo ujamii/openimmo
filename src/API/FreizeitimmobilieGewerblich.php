@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class FreizeitimmobilieGewerblich
  * Objektart / Typ f. gew. Freizeitimmobilen
- * @XmlRoot("freizeitimmobilie_gewerblich")
  */
+#[XmlRoot(name: 'freizeitimmobilie_gewerblich')]
 class FreizeitimmobilieGewerblich
 {
     public const FREIZEIT_TYP_SPORTANLAGEN = 'SPORTANLAGEN';
@@ -20,11 +20,11 @@ class FreizeitimmobilieGewerblich
     public const FREIZEIT_TYP_FREIZEITANLAGE = 'FREIZEITANLAGE';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see FREIZEIT_TYP_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $freizeitTyp = '';
 
     public function getFreizeitTyp(): ?string

@@ -12,81 +12,73 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Immobilie
  * Angaben einer einzelnen Immobile
- * @XmlRoot("immobilie")
  */
+#[XmlRoot(name: 'immobilie')]
 class Immobilie
 {
-    /** @Type("Ujamii\OpenImmo\API\Objektkategorie") */
+    #[Type('Ujamii\OpenImmo\API\Objektkategorie')]
     protected ?Objektkategorie $objektkategorie = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Geo") */
+    #[Type('Ujamii\OpenImmo\API\Geo')]
     protected ?Geo $geo = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Kontaktperson") */
+    #[Type('Ujamii\OpenImmo\API\Kontaktperson')]
     protected ?Kontaktperson $kontaktperson = null;
 
-    /**
-     * @XmlList(inline = true, entry = "weitere_adresse")
-     * @Type("array<Ujamii\OpenImmo\API\WeitereAdresse>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'weitere_adresse', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\WeitereAdresse>')]
+    #[SkipWhenEmpty]
     protected array $weitereAdresse = [];
 
-    /** @Type("Ujamii\OpenImmo\API\Preise") */
+    #[Type('Ujamii\OpenImmo\API\Preise')]
     protected ?Preise $preise = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Bieterverfahren") */
+    #[Type('Ujamii\OpenImmo\API\Bieterverfahren')]
     protected ?Bieterverfahren $bieterverfahren = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Versteigerung") */
+    #[Type('Ujamii\OpenImmo\API\Versteigerung')]
     protected ?Versteigerung $versteigerung = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Flaechen") */
+    #[Type('Ujamii\OpenImmo\API\Flaechen')]
     protected ?Flaechen $flaechen = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Ausstattung") */
+    #[Type('Ujamii\OpenImmo\API\Ausstattung')]
     protected ?Ausstattung $ausstattung = null;
 
-    /** @Type("Ujamii\OpenImmo\API\ZustandAngaben") */
+    #[Type('Ujamii\OpenImmo\API\ZustandAngaben')]
     protected ?ZustandAngaben $zustandAngaben = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Bewertung") */
+    #[Type('Ujamii\OpenImmo\API\Bewertung')]
     protected ?Bewertung $bewertung = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Infrastruktur") */
+    #[Type('Ujamii\OpenImmo\API\Infrastruktur')]
     protected ?Infrastruktur $infrastruktur = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Freitexte") */
+    #[Type('Ujamii\OpenImmo\API\Freitexte')]
     protected ?Freitexte $freitexte = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Anhaenge") */
+    #[Type('Ujamii\OpenImmo\API\Anhaenge')]
     protected ?Anhaenge $anhaenge = null;
 
-    /** @Type("Ujamii\OpenImmo\API\VerwaltungObjekt") */
+    #[Type('Ujamii\OpenImmo\API\VerwaltungObjekt')]
     protected ?VerwaltungObjekt $verwaltungObjekt = null;
 
-    /** @Type("Ujamii\OpenImmo\API\VerwaltungTechn") */
+    #[Type('Ujamii\OpenImmo\API\VerwaltungTechn')]
     protected ?VerwaltungTechn $verwaltungTechn = null;
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_simplefield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedSimplefield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedSimplefield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_anyfield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedAnyfield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedAnyfield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_extend', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedExtend>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedExtend = [];
 
     public function getObjektkategorie(): ?Objektkategorie

@@ -12,21 +12,17 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Sonstigekostennetto
  * Anganen bei Miet-Objekten, UmSt. im Attribut.
- * @XmlRoot("sonstigekostennetto")
  */
+#[XmlRoot(name: 'sonstigekostennetto')]
 class Sonstigekostennetto
 {
-    /**
-     * @Type("float")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('float')]
+    #[XmlAttribute]
     protected ?float $sonstigekostenust = null;
 
-    /**
-     * @Inline
-     * @Type("float")
-     */
+    #[Inline]
+    #[Type('float')]
     protected ?float $value = null;
 
     public function getSonstigekostenust(): ?float

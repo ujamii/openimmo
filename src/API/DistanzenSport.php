@@ -13,8 +13,8 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Class DistanzenSport
  * Welche Distanz zu dem ausgewählen Sport-/Freizeitziel besteht(Angabe in km),
  *  Optionen nicht kombinierbar, Distanzelement ist mehrfach erfassbar
- * @XmlRoot("distanzen_sport")
  */
+#[XmlRoot(name: 'distanzen_sport')]
 class DistanzenSport
 {
     public const DISTANZ_ZU_SPORT_STRAND = 'STRAND';
@@ -26,17 +26,15 @@ class DistanzenSport
     public const DISTANZ_ZU_SPORT_NAHERHOLUNG = 'NAHERHOLUNG';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * required
      * @see DISTANZ_ZU_SPORT_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $distanzZuSport = '';
 
-    /**
-     * @Inline
-     * @Type("float")
-     */
+    #[Inline]
+    #[Type('float')]
     protected ?float $value = null;
 
     public function getDistanzZuSport(): string

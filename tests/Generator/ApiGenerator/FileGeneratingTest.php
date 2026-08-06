@@ -55,7 +55,14 @@ abstract class FileGeneratingTest extends TestCase
             );
         }
 
-        $this->assertStringContainsString('@XmlRoot("' . $nameInXsd . '")', $generatedClass->getComment());
+        $this->assertNotEmpty(
+            array_filter(
+                $generatedClass->getAttributes(),
+                fn ($attr) => $attr->getName() === \JMS\Serializer\Annotation\XmlRoot::class
+                    && ($attr->getArguments()['name'] ?? null) === $nameInXsd
+            ),
+            "Class should have #[XmlRoot(name: '{$nameInXsd}')] attribute"
+        );
 
         return $generatedClass;
     }
@@ -107,14 +114,28 @@ abstract class FileGeneratingTest extends TestCase
         $this->assertEquals($propertyType, $property->getType());
 
         $serializerType = TypeUtil::getTypeForSerializer($xsdType ?? $type);
-        $this->assertStringContainsString('@Type("' . $serializerType . '")', $property->getComment());
+        $typeAttrFound  = false;
+        foreach ($property->getAttributes() as $attr) {
+            if ($attr->getName() === \JMS\Serializer\Annotation\Type::class) {
+                $args = array_values($attr->getArguments());
+                if (isset($args[0]) && $args[0] === $serializerType) {
+                    $typeAttrFound = true;
+                    break;
+                }
+            }
+        }
+        $this->assertTrue($typeAttrFound, "Property '{$propertyName}' should have #[Type('{$serializerType}')] attribute");
 
         foreach ($docTags as $tagName => $tagValue) {
-            if (empty($tagValue)) {
-                $this->assertStringContainsString('@' . $tagName, $property->getComment(), $tagName . ' not found in DocBlock');
-            } else {
-                $this->assertStringContainsString('@' . $tagName . $tagValue, $property->getComment(), $tagName . ' not found in DocBlock');
+            $fqcn      = 'JMS\\Serializer\\Annotation\\' . $tagName;
+            $attrFound = false;
+            foreach ($property->getAttributes() as $attr) {
+                if ($attr->getName() === $fqcn) {
+                    $attrFound = true;
+                    break;
+                }
             }
+            $this->assertTrue($attrFound, "Property '{$propertyName}' should have #[{$tagName}] attribute");
         }
 
         if ($hasGetterAndSetter) {

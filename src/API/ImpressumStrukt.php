@@ -11,68 +11,48 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class ImpressumStrukt
  * Ergänzung ($V120)
- * @XmlRoot("impressum_strukt")
  */
+#[XmlRoot(name: 'impressum_strukt')]
 class ImpressumStrukt
 {
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $firmenname = '';
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $firmenanschrift = '';
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $telefon = '';
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $vertretungsberechtigter = '';
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $berufsaufsichtsbehoerde = '';
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $handelsregister = '';
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $handelsregisterNr = '';
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $umsstId = '';
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $steuernummer = '';
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $weiteres = '';
 
     public function getFirmenname(): string

@@ -11,81 +11,62 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Energietyp
- *
- * @XmlRoot("energietyp")
  */
+#[XmlRoot(name: 'energietyp')]
 class Energietyp
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("PASSIVHAUS")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'PASSIVHAUS')]
     protected ?bool $passivhaus = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("NIEDRIGENERGIE")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'NIEDRIGENERGIE')]
     protected ?bool $niedrigenergie = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("NEUBAUSTANDARD")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'NEUBAUSTANDARD')]
     protected ?bool $neubaustandard = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("KFW40")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'KFW40')]
     protected ?bool $kfw40 = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("KFW60")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'KFW60')]
     protected ?bool $kfw60 = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("KFW55")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'KFW55')]
     protected ?bool $kfw55 = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("KFW70")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'KFW70')]
     protected ?bool $kfw70 = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("MINERGIEBAUWEISE")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'MINERGIEBAUWEISE')]
     protected ?bool $minergiebauweise = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("MINERGIE_ZERTIFIZIERT")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'MINERGIE_ZERTIFIZIERT')]
     protected ?bool $minergieZertifiziert = null;
 
     public function getPassivhaus(): ?bool

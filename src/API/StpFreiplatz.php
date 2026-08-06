@@ -10,32 +10,27 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class StpFreiplatz
- *
- * @XmlRoot("stp_freiplatz")
  */
+#[XmlRoot(name: 'stp_freiplatz')]
 class StpFreiplatz
 {
-    /**
-     * @Type("float")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('float')]
+    #[XmlAttribute]
     protected ?float $stellplatzmiete = null;
 
-    /**
-     * @Type("float")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('float')]
+    #[XmlAttribute]
     protected ?float $stellplatzkaufpreis = null;
 
     /**
-     * @Type("int")
-     * @XmlAttribute
      * optional
      * Minimum value (inclusive): -2147483648
      * Maximum value (inclusive): 2147483647
      */
+    #[Type('int')]
+    #[XmlAttribute]
     protected ?int $anzahl = null;
 
     public function getStellplatzmiete(): ?float

@@ -11,246 +11,237 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Preise
- *
- * @XmlRoot("preise")
  */
+#[XmlRoot(name: 'preise')]
 class Preise
 {
-    /** @Type("Ujamii\OpenImmo\API\Kaufpreis") */
+    #[Type('Ujamii\OpenImmo\API\Kaufpreis')]
     protected ?Kaufpreis $kaufpreis = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Kaufpreisnetto") */
+    #[Type('Ujamii\OpenImmo\API\Kaufpreisnetto')]
     protected ?Kaufpreisnetto $kaufpreisnetto = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $kaufpreisbrutto = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $nettokaltmiete = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $kaltmiete = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $warmmiete = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $nebenkosten = null;
 
-    /** @Type("bool") */
+    #[Type('bool')]
     protected ?bool $heizkostenEnthalten = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $heizkosten = null;
 
-    /** @Type("bool") */
+    #[Type('bool')]
     protected ?bool $zzgMehrwertsteuer = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $mietzuschlaege = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Hauptmietzinsnetto") */
+    #[Type('Ujamii\OpenImmo\API\Hauptmietzinsnetto')]
     protected ?Hauptmietzinsnetto $hauptmietzinsnetto = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $pauschalmiete = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Betriebskostennetto") */
+    #[Type('Ujamii\OpenImmo\API\Betriebskostennetto')]
     protected ?Betriebskostennetto $betriebskostennetto = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Evbnetto") */
+    #[Type('Ujamii\OpenImmo\API\Evbnetto')]
     protected ?Evbnetto $evbnetto = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Gesamtmietenetto") */
+    #[Type('Ujamii\OpenImmo\API\Gesamtmietenetto')]
     protected ?Gesamtmietenetto $gesamtmietenetto = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $gesamtmietebrutto = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Gesamtbelastungnetto") */
+    #[Type('Ujamii\OpenImmo\API\Gesamtbelastungnetto')]
     protected ?Gesamtbelastungnetto $gesamtbelastungnetto = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $gesamtbelastungbrutto = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Gesamtkostenprom2von") */
+    #[Type('Ujamii\OpenImmo\API\Gesamtkostenprom2von')]
     protected ?Gesamtkostenprom2von $gesamtkostenprom2von = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Heizkostennetto") */
+    #[Type('Ujamii\OpenImmo\API\Heizkostennetto')]
     protected ?Heizkostennetto $heizkostennetto = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Monatlichekostennetto") */
+    #[Type('Ujamii\OpenImmo\API\Monatlichekostennetto')]
     protected ?Monatlichekostennetto $monatlichekostennetto = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $monatlichekostenbrutto = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Nebenkostenprom2von") */
+    #[Type('Ujamii\OpenImmo\API\Nebenkostenprom2von')]
     protected ?Nebenkostenprom2von $nebenkostenprom2von = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Ruecklagenetto") */
+    #[Type('Ujamii\OpenImmo\API\Ruecklagenetto')]
     protected ?Ruecklagenetto $ruecklagenetto = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Sonstigekostennetto") */
+    #[Type('Ujamii\OpenImmo\API\Sonstigekostennetto')]
     protected ?Sonstigekostennetto $sonstigekostennetto = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Sonstigemietenetto") */
+    #[Type('Ujamii\OpenImmo\API\Sonstigemietenetto')]
     protected ?Sonstigemietenetto $sonstigemietenetto = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Summemietenetto") */
+    #[Type('Ujamii\OpenImmo\API\Summemietenetto')]
     protected ?Summemietenetto $summemietenetto = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Nettomieteprom2von") */
+    #[Type('Ujamii\OpenImmo\API\Nettomieteprom2von')]
     protected ?Nettomieteprom2von $nettomieteprom2von = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $pacht = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $erbpacht = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $hausgeld = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $abstand = null;
 
-    /** @Type("DateTime<'Y-m-d'>") */
+    #[Type('DateTime<\'Y-m-d\'>')]
     protected ?\DateTime $preisZeitraumVon = null;
 
-    /** @Type("DateTime<'Y-m-d'>") */
+    #[Type('DateTime<\'Y-m-d\'>')]
     protected ?\DateTime $preisZeitraumBis = null;
 
-    /** @Type("Ujamii\OpenImmo\API\PreisZeiteinheit") */
+    #[Type('Ujamii\OpenImmo\API\PreisZeiteinheit')]
     protected ?PreisZeiteinheit $preisZeiteinheit = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $mietpreisProQm = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $kaufpreisProQm = null;
 
-    /** @Type("bool") */
+    #[Type('bool')]
     protected ?bool $provisionspflichtig = null;
 
-    /** @Type("Ujamii\OpenImmo\API\ProvisionTeilen") */
+    #[Type('Ujamii\OpenImmo\API\ProvisionTeilen')]
     protected ?ProvisionTeilen $provisionTeilen = null;
 
-    /** @Type("Ujamii\OpenImmo\API\InnenCourtage") */
+    #[Type('Ujamii\OpenImmo\API\InnenCourtage')]
     protected ?InnenCourtage $innenCourtage = null;
 
-    /** @Type("Ujamii\OpenImmo\API\AussenCourtage") */
+    #[Type('Ujamii\OpenImmo\API\AussenCourtage')]
     protected ?AussenCourtage $aussenCourtage = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $courtageHinweis = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Provisionnetto") */
+    #[Type('Ujamii\OpenImmo\API\Provisionnetto')]
     protected ?Provisionnetto $provisionnetto = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $provisionbrutto = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Waehrung") */
+    #[Type('Ujamii\OpenImmo\API\Waehrung')]
     protected ?Waehrung $waehrung = null;
 
     /**
-     * @Type("float")
      * Maximum precision: 2
      * Minimum value (inclusive): 0
      */
+    #[Type('float')]
     protected ?float $mwstSatz = null;
 
     /**
-     * @Type("float")
      * Maximum precision: 2
      * Minimum value (inclusive): 0
      */
+    #[Type('float')]
     protected ?float $mwstGesamt = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $freitextPreis = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $xFache = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $nettorendite = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $nettorenditeSoll = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $nettorenditeIst = null;
 
-    /** @Type("Ujamii\OpenImmo\API\MieteinnahmenIst") */
+    #[Type('Ujamii\OpenImmo\API\MieteinnahmenIst')]
     protected ?MieteinnahmenIst $mieteinnahmenIst = null;
 
-    /** @Type("Ujamii\OpenImmo\API\MieteinnahmenSoll") */
+    #[Type('Ujamii\OpenImmo\API\MieteinnahmenSoll')]
     protected ?MieteinnahmenSoll $mieteinnahmenSoll = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $erschliessungskosten = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $kaution = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $kautionText = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $geschaeftsguthaben = null;
 
-    /** @Type("Ujamii\OpenImmo\API\StpCarport") */
+    #[Type('Ujamii\OpenImmo\API\StpCarport')]
     protected ?StpCarport $stpCarport = null;
 
-    /** @Type("Ujamii\OpenImmo\API\StpDuplex") */
+    #[Type('Ujamii\OpenImmo\API\StpDuplex')]
     protected ?StpDuplex $stpDuplex = null;
 
-    /** @Type("Ujamii\OpenImmo\API\StpFreiplatz") */
+    #[Type('Ujamii\OpenImmo\API\StpFreiplatz')]
     protected ?StpFreiplatz $stpFreiplatz = null;
 
-    /** @Type("Ujamii\OpenImmo\API\StpGarage") */
+    #[Type('Ujamii\OpenImmo\API\StpGarage')]
     protected ?StpGarage $stpGarage = null;
 
-    /** @Type("Ujamii\OpenImmo\API\StpParkhaus") */
+    #[Type('Ujamii\OpenImmo\API\StpParkhaus')]
     protected ?StpParkhaus $stpParkhaus = null;
 
-    /** @Type("Ujamii\OpenImmo\API\StpTiefgarage") */
+    #[Type('Ujamii\OpenImmo\API\StpTiefgarage')]
     protected ?StpTiefgarage $stpTiefgarage = null;
 
-    /**
-     * @XmlList(inline = true, entry = "stp_sonstige")
-     * @Type("array<Ujamii\OpenImmo\API\StpSonstige>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'stp_sonstige', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\StpSonstige>')]
+    #[SkipWhenEmpty]
     protected array $stpSonstige = [];
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $richtpreis = null;
 
-    /** @Type("float") */
+    #[Type('float')]
     protected ?float $richtpreisprom2 = null;
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_simplefield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedSimplefield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedSimplefield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_anyfield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedAnyfield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedAnyfield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_extend', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedExtend>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedExtend = [];
 
     public function getKaufpreis(): ?Kaufpreis

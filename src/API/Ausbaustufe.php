@@ -11,49 +11,38 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Ausbaustufe
- *
- * @XmlRoot("ausbaustufe")
  */
+#[XmlRoot(name: 'ausbaustufe')]
 class Ausbaustufe
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("BAUSATZHAUS")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'BAUSATZHAUS')]
     protected ?bool $bausatzhaus = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("AUSBAUHAUS")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'AUSBAUHAUS')]
     protected ?bool $ausbauhaus = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("SCHLUESSELFERTIGMITKELLER")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'SCHLUESSELFERTIGMITKELLER')]
     protected ?bool $schluesselfertigmitkeller = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("SCHLUESSELFERTIGOHNEBODENPLATTE")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'SCHLUESSELFERTIGOHNEBODENPLATTE')]
     protected ?bool $schluesselfertigohnebodenplatte = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("SCHLUESSELFERTIGMITBODENPLATTE")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'SCHLUESSELFERTIGMITBODENPLATTE')]
     protected ?bool $schluesselfertigmitbodenplatte = null;
 
     public function getBausatzhaus(): ?bool

@@ -12,8 +12,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class MaxMietdauer
  * Maximalzeitraum für den die Immobilie gemietet werdenkann, Optionen nicht kombinierbar, vorrangig bei WaZ
- * @XmlRoot("max_mietdauer")
  */
+#[XmlRoot(name: 'max_mietdauer')]
 class MaxMietdauer
 {
     public const MAX_DAUER_TAG = 'TAG';
@@ -22,17 +22,15 @@ class MaxMietdauer
     public const MAX_DAUER_JAHR = 'JAHR';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see MAX_DAUER_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $maxDauer = '';
 
-    /**
-     * @Inline
-     * @Type("string")
-     */
+    #[Inline]
+    #[Type('string')]
     protected ?string $value = null;
 
     public function getMaxDauer(): ?string

@@ -12,21 +12,17 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Heizkostennetto
  * Die Heizkosten einer Einheit als Nettowert. Die Umsatzsteuer optional im Attribut
- * @XmlRoot("heizkostennetto")
  */
+#[XmlRoot(name: 'heizkostennetto')]
 class Heizkostennetto
 {
-    /**
-     * @Type("float")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('float')]
+    #[XmlAttribute]
     protected ?float $heizkostenust = null;
 
-    /**
-     * @Inline
-     * @Type("float")
-     */
+    #[Inline]
+    #[Type('float')]
     protected ?float $value = null;
 
     public function getHeizkostenust(): ?float

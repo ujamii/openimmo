@@ -12,21 +12,17 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Provisionnetto
  * Wenn unterschiedliche Provisionen anfallen, dann hier Netto und UmSt. einzeln
- * @XmlRoot("provisionnetto")
  */
+#[XmlRoot(name: 'provisionnetto')]
 class Provisionnetto
 {
-    /**
-     * @Type("float")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('float')]
+    #[XmlAttribute]
     protected ?float $provisionust = null;
 
-    /**
-     * @Inline
-     * @Type("float")
-     */
+    #[Inline]
+    #[Type('float')]
     protected ?float $value = null;
 
     public function getProvisionust(): ?float

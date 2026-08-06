@@ -91,9 +91,8 @@ class ApiGenerator
             ->addUse(XmlRoot::class, 'XmlRoot')
             ->addUse(Type::class, 'Type');
         $class = $namespace->addClass($className);
-        $class
-            ->addComment('Class ' . $className . PHP_EOL . $element->getDoc())
-            ->addComment('@XmlRoot("' . $element->getName() . '")');
+        $class->addComment('Class ' . $className . PHP_EOL . $element->getDoc());
+        $class->addAttribute(XmlRoot::class, ['name' => $element->getName()]);
 
         /* @var $attributeFromXsd Attribute */
         foreach ($element->getType()->getAttributes() as $attributeFromXsd) {
@@ -150,9 +149,9 @@ class ApiGenerator
         $propertyType = TypeUtil::getValidPhpType($xsdType);
         $classProperty->setType($propertyType)
                       ->setNullable(true)
-                      ->setValue(null)
-                      ->addComment('@Inline')
-                      ->addComment('@Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")');
+                      ->setValue(null);
+        $classProperty->addAttribute(Inline::class);
+        $classProperty->addAttribute(Type::class, [TypeUtil::getTypeForSerializer($xsdType)]);
         $namespace
             ->addUse(Type::class)
             ->addUse(Inline::class);
@@ -198,14 +197,14 @@ class ApiGenerator
 
         // take min/max into account, as this may be an array instead
         if ($property->getMax() === -1) {
-            $classProperty->addComment('@XmlList(inline = true, entry = "' . $property->getName() . '")');
+            $classProperty->addAttribute(XmlList::class, ['entry' => $property->getName(), 'inline' => true]);
             $namespace->addUse(XmlList::class);
         }
 
         $phpType        = TypeUtil::getValidPhpType($xsdType);
         $serializerType = TypeUtil::getTypeForSerializer($xsdType);
 
-        $classProperty->addComment('@Type("' . $serializerType . '")');
+        $classProperty->addAttribute(Type::class, [$serializerType]);
         $namespace->addUse(Type::class);
 
         $isArray  = 'array' === $phpType;
@@ -222,9 +221,8 @@ class ApiGenerator
         if ($nullable) {
             $classProperty->setValue(null);
         } else {
-            $classProperty
-                ->setValue(TypeUtil::getDefaultValueForType($phpType, $nullable))
-                ->addComment('@SkipWhenEmpty');
+            $classProperty->setValue(TypeUtil::getDefaultValueForType($phpType, $nullable));
+            $classProperty->addAttribute(SkipWhenEmpty::class);
             $namespace->addUse(SkipWhenEmpty::class);
         }
 
@@ -272,16 +270,16 @@ class ApiGenerator
                                ->setVisibility(Visibility::Protected);
         $xsdType       = TypeUtil::extractTypeForPhp($attribute->getType());
         $phpType       = TypeUtil::getValidPhpType($xsdType);
-        $classProperty->addComment('@Type("' . TypeUtil::getTypeForSerializer($xsdType) . '")');
+        $classProperty->addAttribute(Type::class, [TypeUtil::getTypeForSerializer($xsdType)]);
         $namespace->addUse(Type::class);
         $nullable = true;
 
-        $classProperty->setType($phpType)
-                      ->addComment('@XmlAttribute');
+        $classProperty->setType($phpType);
+        $classProperty->addAttribute(XmlAttribute::class);
 
         // as the openimmo guys like to switch randomly between lowercase and uppercase, serialized names may differ from property names
         if (strtolower($attribute->getName()) !== $attribute->getName()) {
-            $classProperty->addComment('@SerializedName("' . $attribute->getName() . '")');
+            $classProperty->addAttribute(SerializedName::class, ['name' => $attribute->getName()]);
             $namespace->addUse(SerializedName::class);
         }
 

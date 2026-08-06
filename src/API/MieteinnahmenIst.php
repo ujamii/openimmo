@@ -12,8 +12,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class MieteinnahmenIst
  * Mieteinnahmen pro Periode, Momentan-/Isteinnahmen (Ohne Periode = JAHR)
- * @XmlRoot("mieteinnahmen_ist")
  */
+#[XmlRoot(name: 'mieteinnahmen_ist')]
 class MieteinnahmenIst
 {
     public const PERIODE_TAG = 'TAG';
@@ -22,17 +22,15 @@ class MieteinnahmenIst
     public const PERIODE_JAHR = 'JAHR';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see PERIODE_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $periode = '';
 
-    /**
-     * @Inline
-     * @Type("float")
-     */
+    #[Inline]
+    #[Type('float')]
     protected ?float $value = null;
 
     public function getPeriode(): ?string

@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class BueroPraxen
  * Objektart / Typ f. Büro/Praxen
- * @XmlRoot("buero_praxen")
  */
+#[XmlRoot(name: 'buero_praxen')]
 class BueroPraxen
 {
     public const BUERO_TYP_BUEROFLAECHE = 'BUEROFLAECHE';
@@ -27,11 +27,11 @@ class BueroPraxen
     public const BUERO_TYP_SHARED_OFFICE = 'SHARED_OFFICE';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see BUERO_TYP_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $bueroTyp = '';
 
     public function getBueroTyp(): ?string

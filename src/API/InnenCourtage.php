@@ -12,21 +12,17 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class InnenCourtage
  * Maklercourtage, bei Vermittlungs- bzw. Nachweisgeschäften als Betrag in ? / % / MM, daher Textfeld
- * @XmlRoot("innen_courtage")
  */
+#[XmlRoot(name: 'innen_courtage')]
 class InnenCourtage
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
     protected ?bool $mitMwst = null;
 
-    /**
-     * @Inline
-     * @Type("string")
-     */
+    #[Inline]
+    #[Type('string')]
     protected ?string $value = null;
 
     public function getMitMwst(): ?bool

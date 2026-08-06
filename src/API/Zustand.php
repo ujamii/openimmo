@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Zustand
  * Zustand des Objektes, Optionen nicht kombinierbar
- * @XmlRoot("zustand")
  */
+#[XmlRoot(name: 'zustand')]
 class Zustand
 {
     public const ZUSTAND_ART_ERSTBEZUG = 'ERSTBEZUG';
@@ -33,11 +33,11 @@ class Zustand
     public const ZUSTAND_ART_PROJEKTIERT = 'PROJEKTIERT';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see ZUSTAND_ART_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $zustandArt = '';
 
     public function getZustandArt(): ?string

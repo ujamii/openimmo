@@ -11,50 +11,39 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Infrastruktur
- *
- * @XmlRoot("infrastruktur")
  */
+#[XmlRoot(name: 'infrastruktur')]
 class Infrastruktur
 {
-    /** @Type("bool") */
+    #[Type('bool')]
     protected ?bool $zulieferung = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Ausblick") */
+    #[Type('Ujamii\OpenImmo\API\Ausblick')]
     protected ?Ausblick $ausblick = null;
 
-    /**
-     * @XmlList(inline = true, entry = "distanzen")
-     * @Type("array<Ujamii\OpenImmo\API\Distanzen>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'distanzen', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\Distanzen>')]
+    #[SkipWhenEmpty]
     protected array $distanzen = [];
 
-    /**
-     * @XmlList(inline = true, entry = "distanzen_sport")
-     * @Type("array<Ujamii\OpenImmo\API\DistanzenSport>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'distanzen_sport', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\DistanzenSport>')]
+    #[SkipWhenEmpty]
     protected array $distanzenSport = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_simplefield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedSimplefield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedSimplefield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_anyfield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedAnyfield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedAnyfield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_extend', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedExtend>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedExtend = [];
 
     public function getZulieferung(): ?bool

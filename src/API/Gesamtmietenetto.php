@@ -12,21 +12,17 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Gesamtmietenetto
  * Summe alle Mietzins Zahlungen, UmSt. im Attribut.
- * @XmlRoot("gesamtmietenetto")
  */
+#[XmlRoot(name: 'gesamtmietenetto')]
 class Gesamtmietenetto
 {
-    /**
-     * @Type("float")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('float')]
+    #[XmlAttribute]
     protected ?float $gesamtmieteust = null;
 
-    /**
-     * @Inline
-     * @Type("float")
-     */
+    #[Inline]
+    #[Type('float')]
     protected ?float $value = null;
 
     public function getGesamtmieteust(): ?float

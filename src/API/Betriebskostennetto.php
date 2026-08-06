@@ -12,21 +12,17 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Betriebskostennetto
  * Betriebskosten eines Objektes bei Vermietun, UmSt. im Attribut
- * @XmlRoot("betriebskostennetto")
  */
+#[XmlRoot(name: 'betriebskostennetto')]
 class Betriebskostennetto
 {
-    /**
-     * @Type("float")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('float')]
+    #[XmlAttribute]
     protected ?float $betriebskostenust = null;
 
-    /**
-     * @Inline
-     * @Type("float")
-     */
+    #[Inline]
+    #[Type('float')]
     protected ?float $value = null;
 
     public function getBetriebskostenust(): ?float

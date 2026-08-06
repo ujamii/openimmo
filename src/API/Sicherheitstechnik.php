@@ -12,32 +12,26 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Sicherheitstechnik
  * Welche Sicherheitstechnik ist geboten, Optionen kombinierbar
- * @XmlRoot("sicherheitstechnik")
  */
+#[XmlRoot(name: 'sicherheitstechnik')]
 class Sicherheitstechnik
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("ALARMANLAGE")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'ALARMANLAGE')]
     protected ?bool $alarmanlage = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("KAMERA")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'KAMERA')]
     protected ?bool $kamera = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("POLIZEIRUF")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'POLIZEIRUF')]
     protected ?bool $polizeiruf = null;
 
     public function getAlarmanlage(): ?bool

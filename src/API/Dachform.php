@@ -11,65 +11,50 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Dachform
- *
- * @XmlRoot("dachform")
  */
+#[XmlRoot(name: 'dachform')]
 class Dachform
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("KRUEPPELWALMDACH")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'KRUEPPELWALMDACH')]
     protected ?bool $krueppelwalmdach = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("MANSARDDACH")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'MANSARDDACH')]
     protected ?bool $mansarddach = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("PULTDACH")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'PULTDACH')]
     protected ?bool $pultdach = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("SATTELDACH")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'SATTELDACH')]
     protected ?bool $satteldach = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("WALMDACH")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'WALMDACH')]
     protected ?bool $walmdach = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("FLACHDACH")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'FLACHDACH')]
     protected ?bool $flachdach = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("PYRAMIDENDACH")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'PYRAMIDENDACH')]
     protected ?bool $pyramidendach = null;
 
     public function getKrueppelwalmdach(): ?bool

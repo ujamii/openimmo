@@ -11,22 +11,18 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Geokoordinaten
  * Geokoordinaten der Immobilie, Pflichtfeld, alternativ mit Ort, PLZ
- * @XmlRoot("geokoordinaten")
  */
+#[XmlRoot(name: 'geokoordinaten')]
 class Geokoordinaten
 {
-    /**
-     * @Type("float")
-     * @XmlAttribute
-     * required
-     */
+    /** required */
+    #[Type('float')]
+    #[XmlAttribute]
     protected float $breitengrad = 0.0;
 
-    /**
-     * @Type("float")
-     * @XmlAttribute
-     * required
-     */
+    /** required */
+    #[Type('float')]
+    #[XmlAttribute]
     protected float $laengengrad = 0.0;
 
     public function getBreitengrad(): float

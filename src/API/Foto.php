@@ -13,28 +13,26 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Class Foto
  * Foto bei der Kontaktperson. Datentyp ähnlich "Anhang"
  * foto from the kontakt person of the sender
- * @XmlRoot("foto")
  */
+#[XmlRoot(name: 'foto')]
 class Foto
 {
     public const LOCATION_EXTERN = 'EXTERN';
     public const LOCATION_REMOTE = 'REMOTE';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * required
      * @see LOCATION_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $location = '';
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $format = '';
 
-    /** @Type("Ujamii\OpenImmo\API\Daten") */
+    #[Type('Ujamii\OpenImmo\API\Daten')]
     protected ?Daten $daten = null;
 
     public function getLocation(): string

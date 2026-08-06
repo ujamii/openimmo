@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class HallenLagerProd
  * Objektart / Typ f. Hallen/Lager/Produktion
- * @XmlRoot("hallen_lager_prod")
  */
+#[XmlRoot(name: 'hallen_lager_prod')]
 class HallenLagerProd
 {
     public const HALLEN_TYP_HALLE = 'HALLE';
@@ -29,11 +29,11 @@ class HallenLagerProd
     public const HALLEN_TYP_KUEHLHAUS = 'KUEHLHAUS';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see HALLEN_TYP_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $hallenTyp = '';
 
     public function getHallenTyp(): ?string

@@ -12,21 +12,17 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Sonstigemietenetto
  * Ergänzenden Mietkosten, UmSt. im Attribut.
- * @XmlRoot("sonstigemietenetto")
  */
+#[XmlRoot(name: 'sonstigemietenetto')]
 class Sonstigemietenetto
 {
-    /**
-     * @Type("float")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('float')]
+    #[XmlAttribute]
     protected ?float $sonstigemieteust = null;
 
-    /**
-     * @Inline
-     * @Type("float")
-     */
+    #[Inline]
+    #[Type('float')]
     protected ?float $value = null;
 
     public function getSonstigemieteust(): ?float

@@ -12,106 +12,78 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Objektart
  * Objektarten
- * @XmlRoot("objektart")
  */
+#[XmlRoot(name: 'objektart')]
 class Objektart
 {
-    /**
-     * @XmlList(inline = true, entry = "zimmer")
-     * @Type("array<Ujamii\OpenImmo\API\Zimmer>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'zimmer', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\Zimmer>')]
+    #[SkipWhenEmpty]
     protected array $zimmer = [];
 
-    /**
-     * @XmlList(inline = true, entry = "wohnung")
-     * @Type("array<Ujamii\OpenImmo\API\Wohnung>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'wohnung', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\Wohnung>')]
+    #[SkipWhenEmpty]
     protected array $wohnung = [];
 
-    /**
-     * @XmlList(inline = true, entry = "haus")
-     * @Type("array<Ujamii\OpenImmo\API\Haus>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'haus', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\Haus>')]
+    #[SkipWhenEmpty]
     protected array $haus = [];
 
-    /**
-     * @XmlList(inline = true, entry = "grundstueck")
-     * @Type("array<Ujamii\OpenImmo\API\Grundstueck>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'grundstueck', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\Grundstueck>')]
+    #[SkipWhenEmpty]
     protected array $grundstueck = [];
 
-    /**
-     * @XmlList(inline = true, entry = "buero_praxen")
-     * @Type("array<Ujamii\OpenImmo\API\BueroPraxen>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'buero_praxen', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\BueroPraxen>')]
+    #[SkipWhenEmpty]
     protected array $bueroPraxen = [];
 
-    /**
-     * @XmlList(inline = true, entry = "einzelhandel")
-     * @Type("array<Ujamii\OpenImmo\API\Einzelhandel>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'einzelhandel', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\Einzelhandel>')]
+    #[SkipWhenEmpty]
     protected array $einzelhandel = [];
 
-    /**
-     * @XmlList(inline = true, entry = "gastgewerbe")
-     * @Type("array<Ujamii\OpenImmo\API\Gastgewerbe>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'gastgewerbe', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\Gastgewerbe>')]
+    #[SkipWhenEmpty]
     protected array $gastgewerbe = [];
 
-    /**
-     * @XmlList(inline = true, entry = "hallen_lager_prod")
-     * @Type("array<Ujamii\OpenImmo\API\HallenLagerProd>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'hallen_lager_prod', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\HallenLagerProd>')]
+    #[SkipWhenEmpty]
     protected array $hallenLagerProd = [];
 
-    /**
-     * @XmlList(inline = true, entry = "land_und_forstwirtschaft")
-     * @Type("array<Ujamii\OpenImmo\API\LandUndForstwirtschaft>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'land_und_forstwirtschaft', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\LandUndForstwirtschaft>')]
+    #[SkipWhenEmpty]
     protected array $landUndForstwirtschaft = [];
 
-    /**
-     * @XmlList(inline = true, entry = "parken")
-     * @Type("array<Ujamii\OpenImmo\API\Parken>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'parken', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\Parken>')]
+    #[SkipWhenEmpty]
     protected array $parken = [];
 
-    /**
-     * @XmlList(inline = true, entry = "sonstige")
-     * @Type("array<Ujamii\OpenImmo\API\Sonstige>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'sonstige', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\Sonstige>')]
+    #[SkipWhenEmpty]
     protected array $sonstige = [];
 
-    /**
-     * @XmlList(inline = true, entry = "freizeitimmobilie_gewerblich")
-     * @Type("array<Ujamii\OpenImmo\API\FreizeitimmobilieGewerblich>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'freizeitimmobilie_gewerblich', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\FreizeitimmobilieGewerblich>')]
+    #[SkipWhenEmpty]
     protected array $freizeitimmobilieGewerblich = [];
 
-    /**
-     * @XmlList(inline = true, entry = "zinshaus_renditeobjekt")
-     * @Type("array<Ujamii\OpenImmo\API\ZinshausRenditeobjekt>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'zinshaus_renditeobjekt', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\ZinshausRenditeobjekt>')]
+    #[SkipWhenEmpty]
     protected array $zinshausRenditeobjekt = [];
 
-    /**
-     * @XmlList(inline = true, entry = "objektart_zusatz")
-     * @Type("array<string>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'objektart_zusatz', inline: true)]
+    #[Type('array<string>')]
+    #[SkipWhenEmpty]
     protected array $objektartZusatz = [];
 
     /**

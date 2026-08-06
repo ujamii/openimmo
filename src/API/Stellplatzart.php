@@ -12,56 +12,44 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Stellplatzart
  * Welche Stellplatzarten sind vorhanden, Optionen kombinierbar, als einfache Alternative zu den stp...Elementen
- * @XmlRoot("stellplatzart")
  */
+#[XmlRoot(name: 'stellplatzart')]
 class Stellplatzart
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("GARAGE")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'GARAGE')]
     protected ?bool $garage = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("TIEFGARAGE")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'TIEFGARAGE')]
     protected ?bool $tiefgarage = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("CARPORT")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'CARPORT')]
     protected ?bool $carport = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("FREIPLATZ")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'FREIPLATZ')]
     protected ?bool $freiplatz = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("PARKHAUS")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'PARKHAUS')]
     protected ?bool $parkhaus = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("DUPLEX")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'DUPLEX')]
     protected ?bool $duplex = null;
 
     public function getGarage(): ?bool

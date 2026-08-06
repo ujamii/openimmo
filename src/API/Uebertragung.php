@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Uebertragung
  * Übertragungsangaben
- * @XmlRoot("uebertragung")
  */
+#[XmlRoot(name: 'uebertragung')]
 class Uebertragung
 {
     public const ART_ONLINE = 'ONLINE';
@@ -24,69 +24,57 @@ class Uebertragung
     public const MODUS_DELETE = 'DELETE';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * required
      * @see ART_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $art = '';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * required
      * @see UMFANG_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $umfang = '';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see MODUS_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $modus = '';
 
-    /**
-     * @Type("string")
-     * @XmlAttribute
-     * required
-     */
+    /** required */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $version = '';
 
-    /**
-     * @Type("string")
-     * @XmlAttribute
-     * required
-     */
+    /** required */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $sendersoftware = '';
 
-    /**
-     * @Type("string")
-     * @XmlAttribute
-     * required
-     */
+    /** required */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $senderversion = '';
 
-    /**
-     * @Type("string")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('string')]
+    #[XmlAttribute]
     protected ?string $technEmail = null;
 
-    /**
-     * @Type("string")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('string')]
+    #[XmlAttribute]
     protected ?string $regiId = null;
 
-    /**
-     * @Type("DateTime<'Y-m-d\TH:i:s', null, ['Y-m-d\TH:i:sP', 'Y-m-d\TH:i:s']>")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('DateTime<\'Y-m-d\TH:i:s\', null, [\'Y-m-d\TH:i:sP\', \'Y-m-d\TH:i:s\']>')]
+    #[XmlAttribute]
     protected ?\DateTime $timestamp = null;
 
     public function getArt(): string

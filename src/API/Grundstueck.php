@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Grundstueck
  * Objektart / Typ f. Grundstücke
- * @XmlRoot("grundstueck")
  */
+#[XmlRoot(name: 'grundstueck')]
 class Grundstueck
 {
     public const GRUNDST_TYP_WOHNEN = 'WOHNEN';
@@ -26,11 +26,11 @@ class Grundstueck
     public const GRUNDST_TYP_SEELIEGENSCHAFT = 'SEELIEGENSCHAFT';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see GRUNDST_TYP_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $grundstTyp = '';
 
     public function getGrundstTyp(): ?string

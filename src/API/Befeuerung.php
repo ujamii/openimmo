@@ -12,120 +12,92 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Befeuerung
  * Welche Befeuerungsarten sind vorhanden, Optionen kombinierbar
- * @XmlRoot("befeuerung")
  */
+#[XmlRoot(name: 'befeuerung')]
 class Befeuerung
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("OEL")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'OEL')]
     protected ?bool $oel = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("GAS")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'GAS')]
     protected ?bool $gas = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("ELEKTRO")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'ELEKTRO')]
     protected ?bool $elektro = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("ALTERNATIV")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'ALTERNATIV')]
     protected ?bool $alternativ = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("SOLAR")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'SOLAR')]
     protected ?bool $solar = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("ERDWAERME")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'ERDWAERME')]
     protected ?bool $erdwaerme = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("LUFTWP")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'LUFTWP')]
     protected ?bool $luftwp = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("FERN")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'FERN')]
     protected ?bool $fern = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("BLOCK")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'BLOCK')]
     protected ?bool $block = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("WASSER-ELEKTRO")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'WASSER-ELEKTRO')]
     protected ?bool $wasserElektro = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("PELLET")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'PELLET')]
     protected ?bool $pellet = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("KOHLE")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'KOHLE')]
     protected ?bool $kohle = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("HOLZ")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'HOLZ')]
     protected ?bool $holz = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("FLUESSIGGAS")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'FLUESSIGGAS')]
     protected ?bool $fluessiggas = null;
 
     public function getOel(): ?bool

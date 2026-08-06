@@ -10,14 +10,14 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Daten
  * Anhangdaten
- * @XmlRoot("daten")
  */
+#[XmlRoot(name: 'daten')]
 class Daten
 {
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $pfad = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $anhanginhalt = null;
 
     public function getPfad(): ?string

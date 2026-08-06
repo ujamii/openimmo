@@ -12,156 +12,127 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class WeitereAdresse
- *
- * @XmlRoot("weitere_adresse")
  */
+#[XmlRoot(name: 'weitere_adresse')]
 class WeitereAdresse
 {
-    /**
-     * @Type("string")
-     * @XmlAttribute
-     * required
-     */
+    /** required */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $adressart = '';
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $vorname = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $name = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $titel = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $anrede = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $anredeBrief = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $firma = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $zusatzfeld = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $strasse = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $hausnummer = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $plz = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $ort = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $postfach = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $postfPlz = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $postfOrt = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Land") */
+    #[Type('Ujamii\OpenImmo\API\Land')]
     protected ?Land $land = null;
 
-    /**
-     * @Type("string")
-     * Minimum length: 1
-     */
+    /** Minimum length: 1 */
+    #[Type('string')]
     protected ?string $emailZentrale = null;
 
-    /**
-     * @Type("string")
-     * Minimum length: 1
-     */
+    /** Minimum length: 1 */
+    #[Type('string')]
     protected ?string $emailDirekt = null;
 
-    /**
-     * @Type("string")
-     * Minimum length: 1
-     */
+    /** Minimum length: 1 */
+    #[Type('string')]
     protected ?string $emailPrivat = null;
 
-    /**
-     * @XmlList(inline = true, entry = "email_sonstige")
-     * @Type("array<Ujamii\OpenImmo\API\EmailSonstige>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'email_sonstige', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\EmailSonstige>')]
+    #[SkipWhenEmpty]
     protected array $emailSonstige = [];
 
-    /**
-     * @Type("string")
-     * Minimum length: 1
-     */
+    /** Minimum length: 1 */
+    #[Type('string')]
     protected ?string $telDurchw = null;
 
-    /**
-     * @Type("string")
-     * Minimum length: 1
-     */
+    /** Minimum length: 1 */
+    #[Type('string')]
     protected ?string $telZentrale = null;
 
-    /**
-     * @Type("string")
-     * Minimum length: 1
-     */
+    /** Minimum length: 1 */
+    #[Type('string')]
     protected ?string $telHandy = null;
 
-    /**
-     * @Type("string")
-     * Minimum length: 1
-     */
+    /** Minimum length: 1 */
+    #[Type('string')]
     protected ?string $telFax = null;
 
-    /**
-     * @Type("string")
-     * Minimum length: 1
-     */
+    /** Minimum length: 1 */
+    #[Type('string')]
     protected ?string $telPrivat = null;
 
-    /**
-     * @XmlList(inline = true, entry = "tel_sonstige")
-     * @Type("array<Ujamii\OpenImmo\API\TelSonstige>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'tel_sonstige', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\TelSonstige>')]
+    #[SkipWhenEmpty]
     protected array $telSonstige = [];
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $url = null;
 
-    /** @Type("bool") */
+    #[Type('bool')]
     protected ?bool $adressfreigabe = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $personennummer = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $freitextfeld = null;
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_simplefield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedSimplefield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedSimplefield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_anyfield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedAnyfield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedAnyfield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_extend', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedExtend>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedExtend = [];
 
     public function getAdressart(): string

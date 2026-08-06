@@ -11,9 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class TelSonstige
- *
- * @XmlRoot("tel_sonstige")
  */
+#[XmlRoot(name: 'tel_sonstige')]
 class TelSonstige
 {
     public const TELEFONART_TEL_ZENTRALE = 'TEL_ZENTRALE';
@@ -24,24 +23,20 @@ class TelSonstige
     public const TELEFONART_TEL_SONSTIGE = 'TEL_SONSTIGE';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see TELEFONART_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $telefonart = '';
 
-    /**
-     * @Type("string")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('string')]
+    #[XmlAttribute]
     protected ?string $bemerkung = null;
 
-    /**
-     * @Inline
-     * @Type("string")
-     */
+    #[Inline]
+    #[Type('string')]
     protected ?string $value = null;
 
     public function getTelefonart(): ?string

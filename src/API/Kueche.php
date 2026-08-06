@@ -12,32 +12,26 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Kueche
  * Welche Eigenschaften besitzt die Küche, Optionen kombinierbar
- * @XmlRoot("kueche")
  */
+#[XmlRoot(name: 'kueche')]
 class Kueche
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("EBK")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'EBK')]
     protected ?bool $ebk = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("OFFEN")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'OFFEN')]
     protected ?bool $offen = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("PANTRY")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'PANTRY')]
     protected ?bool $pantry = null;
 
     public function getEbk(): ?bool

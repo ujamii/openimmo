@@ -12,40 +12,32 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class LageImBau
  * Angabe über die Lage der Immobilie im Gesamtgebäude, Optionen kombinierbar
- * @XmlRoot("lage_im_bau")
  */
+#[XmlRoot(name: 'lage_im_bau')]
 class LageImBau
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("LINKS")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'LINKS')]
     protected ?bool $links = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("RECHTS")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'RECHTS')]
     protected ?bool $rechts = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("VORNE")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'VORNE')]
     protected ?bool $vorne = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("HINTEN")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'HINTEN')]
     protected ?bool $hinten = null;
 
     public function getLinks(): ?bool

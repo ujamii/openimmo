@@ -12,21 +12,17 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class AussenCourtage
  * Courtage, die der Kunde zu zahlen hat, als Betrag in ? / % / MM, daher Textfeld
- * @XmlRoot("aussen_courtage")
  */
+#[XmlRoot(name: 'aussen_courtage')]
 class AussenCourtage
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
     protected ?bool $mitMwst = null;
 
-    /**
-     * @Inline
-     * @Type("string")
-     */
+    #[Inline]
+    #[Type('string')]
     protected ?string $value = null;
 
     public function getMitMwst(): ?bool

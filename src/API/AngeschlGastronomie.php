@@ -12,24 +12,20 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class AngeschlGastronomie
  * Welcher Art ist die angeschlossene Gastronomie, Optionen kombinierbar
- * @XmlRoot("angeschl_gastronomie")
  */
+#[XmlRoot(name: 'angeschl_gastronomie')]
 class AngeschlGastronomie
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("HOTELRESTAURANT")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'HOTELRESTAURANT')]
     protected ?bool $hotelrestaurant = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("BAR")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'BAR')]
     protected ?bool $bar = null;
 
     public function getHotelrestaurant(): ?bool

@@ -11,39 +11,32 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Objektkategorie
- *
- * @XmlRoot("objektkategorie")
  */
+#[XmlRoot(name: 'objektkategorie')]
 class Objektkategorie
 {
-    /** @Type("Ujamii\OpenImmo\API\Nutzungsart") */
+    #[Type('Ujamii\OpenImmo\API\Nutzungsart')]
     protected ?Nutzungsart $nutzungsart = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Vermarktungsart") */
+    #[Type('Ujamii\OpenImmo\API\Vermarktungsart')]
     protected ?Vermarktungsart $vermarktungsart = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Objektart") */
+    #[Type('Ujamii\OpenImmo\API\Objektart')]
     protected ?Objektart $objektart = null;
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_simplefield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedSimplefield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedSimplefield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_anyfield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedAnyfield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedAnyfield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_extend', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedExtend>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedExtend = [];
 
     public function getNutzungsart(): ?Nutzungsart

@@ -12,8 +12,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Anhang
  * Element für Anhänge
- * @XmlRoot("anhang")
  */
+#[XmlRoot(name: 'anhang')]
 class Anhang
 {
     public const LOCATION_INTERN = 'INTERN';
@@ -36,34 +36,32 @@ class Anhang
     public const GRUPPE_ANBOBJURL = 'ANBOBJURL';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * required
      * @see LOCATION_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $location = '';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see GRUPPE_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $gruppe = '';
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $anhangtitel = null;
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $format = '';
 
-    /** @Type("Ujamii\OpenImmo\API\Check") */
+    #[Type('Ujamii\OpenImmo\API\Check')]
     protected ?Check $check = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Daten") */
+    #[Type('Ujamii\OpenImmo\API\Daten')]
     protected ?Daten $daten = null;
 
     public function getLocation(): string

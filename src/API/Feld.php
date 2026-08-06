@@ -11,35 +11,26 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Feld
- *
- * @XmlRoot("feld")
  */
+#[XmlRoot(name: 'feld')]
 class Feld
 {
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $name = '';
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $wert = '';
 
-    /**
-     * @XmlList(inline = true, entry = "typ")
-     * @Type("array<string>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'typ', inline: true)]
+    #[Type('array<string>')]
+    #[SkipWhenEmpty]
     protected array $typ = [];
 
-    /**
-     * @XmlList(inline = true, entry = "modus")
-     * @Type("array<string>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'modus', inline: true)]
+    #[Type('array<string>')]
+    #[SkipWhenEmpty]
     protected array $modus = [];
 
     public function getName(): string

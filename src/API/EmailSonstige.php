@@ -11,9 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class EmailSonstige
- *
- * @XmlRoot("email_sonstige")
  */
+#[XmlRoot(name: 'email_sonstige')]
 class EmailSonstige
 {
     public const EMAILART_EM_ZENTRALE = 'EM_ZENTRALE';
@@ -22,24 +21,20 @@ class EmailSonstige
     public const EMAILART_EM_SONSTIGE = 'EM_SONSTIGE';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see EMAILART_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $emailart = '';
 
-    /**
-     * @Type("string")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('string')]
+    #[XmlAttribute]
     protected ?string $bemerkung = null;
 
-    /**
-     * @Inline
-     * @Type("string")
-     */
+    #[Inline]
+    #[Type('string')]
     protected ?string $value = null;
 
     public function getEmailart(): ?string

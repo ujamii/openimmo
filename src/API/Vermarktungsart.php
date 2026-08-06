@@ -12,40 +12,32 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Vermarktungsart
  * Vermarktungsart, Optionen kombinierbar, Kauf + Miete
- * @XmlRoot("vermarktungsart")
  */
+#[XmlRoot(name: 'vermarktungsart')]
 class Vermarktungsart
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("KAUF")
-     * required
-     */
+    /** required */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'KAUF')]
     protected bool $kauf = false;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("MIETE_PACHT")
-     * required
-     */
+    /** required */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'MIETE_PACHT')]
     protected bool $mietePacht = false;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("ERBPACHT")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'ERBPACHT')]
     protected ?bool $erbpacht = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("LEASING")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'LEASING')]
     protected ?bool $leasing = null;
 
     public function getKauf(): bool

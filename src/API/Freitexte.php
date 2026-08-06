@@ -11,51 +11,44 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Freitexte
- *
- * @XmlRoot("freitexte")
  */
+#[XmlRoot(name: 'freitexte')]
 class Freitexte
 {
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $objekttitel = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $dreizeiler = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $lage = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $ausstattBeschr = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $objektbeschreibung = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $sonstigeAngaben = null;
 
-    /** @Type("Ujamii\OpenImmo\API\ObjektText") */
+    #[Type('Ujamii\OpenImmo\API\ObjektText')]
     protected ?ObjektText $objektText = null;
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_simplefield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedSimplefield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedSimplefield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_anyfield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedAnyfield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedAnyfield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_extend', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedExtend>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedExtend = [];
 
     public function getObjekttitel(): ?string

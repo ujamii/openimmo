@@ -11,16 +11,13 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class UserDefinedExtend
- *
- * @XmlRoot("user_defined_extend")
  */
+#[XmlRoot(name: 'user_defined_extend')]
 class UserDefinedExtend
 {
-    /**
-     * @XmlList(inline = true, entry = "feld")
-     * @Type("array<Ujamii\OpenImmo\API\Feld>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'feld', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\Feld>')]
+    #[SkipWhenEmpty]
     protected array $feld = [];
 
     /**

@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class PreisZeiteinheit
  * Zeiteinheit für die der Preis gilt, vorrangig bei Ferienobjekten
- * @XmlRoot("preis_zeiteinheit")
  */
+#[XmlRoot(name: 'preis_zeiteinheit')]
 class PreisZeiteinheit
 {
     public const ZEITEINHEIT_TAG = 'TAG';
@@ -21,11 +21,11 @@ class PreisZeiteinheit
     public const ZEITEINHEIT_JAHR = 'JAHR';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see ZEITEINHEIT_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $zeiteinheit = '';
 
     public function getZeiteinheit(): ?string

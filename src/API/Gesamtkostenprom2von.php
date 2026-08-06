@@ -12,21 +12,17 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Gesamtkostenprom2von
  * Gesamtkosten bei Gewerbeobjekten Von - Bis.
- * @XmlRoot("gesamtkostenprom2von")
  */
+#[XmlRoot(name: 'gesamtkostenprom2von')]
 class Gesamtkostenprom2von
 {
-    /**
-     * @Type("float")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('float')]
+    #[XmlAttribute]
     protected ?float $gesamtkostenprom2bis = null;
 
-    /**
-     * @Inline
-     * @Type("float")
-     */
+    #[Inline]
+    #[Type('float')]
     protected ?float $value = null;
 
     public function getGesamtkostenprom2bis(): ?float

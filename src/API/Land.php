@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Land
  * Land
- * @XmlRoot("land")
  */
+#[XmlRoot(name: 'land')]
 class Land
 {
     public const ISO_LAND_AFG = 'AFG';
@@ -249,11 +249,11 @@ class Land
     public const ISO_LAND_ZWE = 'ZWE';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see ISO_LAND_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $isoLand = '';
 
     public function getIsoLand(): ?string

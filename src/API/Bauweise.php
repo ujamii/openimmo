@@ -11,33 +11,26 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Bauweise
- *
- * @XmlRoot("bauweise")
  */
+#[XmlRoot(name: 'bauweise')]
 class Bauweise
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("MASSIV")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'MASSIV')]
     protected ?bool $massiv = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("FERTIGTEILE")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'FERTIGTEILE')]
     protected ?bool $fertigteile = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("HOLZ")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'HOLZ')]
     protected ?bool $holz = null;
 
     public function getMassiv(): ?bool

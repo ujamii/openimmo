@@ -12,21 +12,17 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Nettomieteprom2von
  * Angaben bei Gewerbe Miete, UmSt. im Attribut.
- * @XmlRoot("nettomieteprom2von")
  */
+#[XmlRoot(name: 'nettomieteprom2von')]
 class Nettomieteprom2von
 {
-    /**
-     * @Type("float")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('float')]
+    #[XmlAttribute]
     protected ?float $nettomieteprom2bis = null;
 
-    /**
-     * @Inline
-     * @Type("float")
-     */
+    #[Inline]
+    #[Type('float')]
     protected ?float $value = null;
 
     public function getNettomieteprom2bis(): ?float

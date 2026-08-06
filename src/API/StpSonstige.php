@@ -10,9 +10,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class StpSonstige
- *
- * @XmlRoot("stp_sonstige")
  */
+#[XmlRoot(name: 'stp_sonstige')]
 class StpSonstige
 {
     public const PLATZART_FREIPLATZ = 'FREIPLATZ';
@@ -24,18 +23,16 @@ class StpSonstige
     public const PLATZART_SONSTIGES = 'SONSTIGES';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see PLATZART_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $platzart = '';
 
-    /**
-     * @Type("string")
-     * @XmlAttribute
-     * optional
-     */
+    /** optional */
+    #[Type('string')]
+    #[XmlAttribute]
     protected ?string $bemerkung = null;
 
     public function getPlatzart(): ?string

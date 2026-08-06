@@ -12,72 +12,56 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class AusrichtBalkonTerrasse
  * Ausrichtung der Balkone bzw. der Terrassen, Optionen kombinierbar
- * @XmlRoot("ausricht_balkon_terrasse")
  */
+#[XmlRoot(name: 'ausricht_balkon_terrasse')]
 class AusrichtBalkonTerrasse
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("NORD")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'NORD')]
     protected ?bool $nord = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("OST")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'OST')]
     protected ?bool $ost = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("SUED")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'SUED')]
     protected ?bool $sued = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("WEST")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'WEST')]
     protected ?bool $west = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("NORDOST")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'NORDOST')]
     protected ?bool $nordost = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("NORDWEST")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'NORDWEST')]
     protected ?bool $nordwest = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("SUEDOST")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'SUEDOST')]
     protected ?bool $suedost = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("SUEDWEST")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'SUEDWEST')]
     protected ?bool $suedwest = null;
 
     public function getNord(): ?bool

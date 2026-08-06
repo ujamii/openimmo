@@ -13,32 +13,26 @@ use JMS\Serializer\Annotation\XmlRoot;
  * Class Openimmo
  * Dokument Element
  * Root Element
- * @XmlRoot("openimmo")
  */
+#[XmlRoot(name: 'openimmo')]
 class Openimmo
 {
-    /** @Type("Ujamii\OpenImmo\API\Uebertragung") */
+    #[Type('Ujamii\OpenImmo\API\Uebertragung')]
     protected ?Uebertragung $uebertragung = null;
 
-    /**
-     * @XmlList(inline = true, entry = "anbieter")
-     * @Type("array<Ujamii\OpenImmo\API\Anbieter>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'anbieter', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\Anbieter>')]
+    #[SkipWhenEmpty]
     protected array $anbieter = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_simplefield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedSimplefield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedSimplefield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_anyfield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedAnyfield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedAnyfield = [];
 
     public function getUebertragung(): ?Uebertragung

@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class LandUndForstwirtschaft
  * Objektart / Typ f. Land-/Forstwirtschaft
- * @XmlRoot("land_und_forstwirtschaft")
  */
+#[XmlRoot(name: 'land_und_forstwirtschaft')]
 class LandUndForstwirtschaft
 {
     public const LAND_TYP_LANDWIRTSCHAFTLICHE_BETRIEBE = 'LANDWIRTSCHAFTLICHE_BETRIEBE';
@@ -31,11 +31,11 @@ class LandUndForstwirtschaft
     public const LAND_TYP_JAGDREVIER = 'JAGDREVIER';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see LAND_TYP_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $landTyp = '';
 
     public function getLandTyp(): ?string

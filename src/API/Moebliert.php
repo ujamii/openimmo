@@ -11,19 +11,19 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Moebliert
  * Wie ist die Möblierung: Voll, Teil oder keine Aussage
- * @XmlRoot("moebliert")
  */
+#[XmlRoot(name: 'moebliert')]
 class Moebliert
 {
     public const MOEB_VOLL = 'VOLL';
     public const MOEB_TEIL = 'TEIL';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see MOEB_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $moeb = '';
 
     public function getMoeb(): ?string

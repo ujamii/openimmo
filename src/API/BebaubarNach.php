@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class BebaubarNach
  * Bebaubar nach Bebauungsrichtlinien, Optionen nicht kombinierbar
- * @XmlRoot("bebaubar_nach")
  */
+#[XmlRoot(name: 'bebaubar_nach')]
 class BebaubarNach
 {
     public const BEBAUBAR_ATTR_34_NACHBARSCHAFT = '34_NACHBARSCHAFT';
@@ -24,11 +24,11 @@ class BebaubarNach
     public const BEBAUBAR_ATTR_BAULAND_OHNE_B_PLAN = 'BAULAND_OHNE_B_PLAN';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see BEBAUBAR_ATTR_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $bebaubarAttr = '';
 
     public function getBebaubarAttr(): ?string

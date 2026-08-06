@@ -11,78 +11,67 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class VerwaltungTechn
- *
- * @XmlRoot("verwaltung_techn")
  */
+#[XmlRoot(name: 'verwaltung_techn')]
 class VerwaltungTechn
 {
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $objektnrIntern = null;
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $objektnrExtern = '';
 
-    /** @Type("Ujamii\OpenImmo\API\Aktion") */
+    #[Type('Ujamii\OpenImmo\API\Aktion')]
     protected ?Aktion $aktion = null;
 
-    /** @Type("DateTime<'Y-m-d'>") */
+    #[Type('DateTime<\'Y-m-d\'>')]
     protected ?\DateTime $aktivVon = null;
 
-    /** @Type("DateTime<'Y-m-d'>") */
+    #[Type('DateTime<\'Y-m-d\'>')]
     protected ?\DateTime $aktivBis = null;
 
-    /**
-     * @Type("string")
-     * @SkipWhenEmpty
-     */
+    #[Type('string')]
+    #[SkipWhenEmpty]
     protected string $openimmoObid = '';
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $kennungUrsprung = null;
 
-    /** @Type("DateTime<'Y-m-d'>") */
+    #[Type('DateTime<\'Y-m-d\'>')]
     protected ?\DateTime $standVom = null;
 
-    /** @Type("bool") */
+    #[Type('bool')]
     protected ?bool $weitergabeGenerell = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $weitergabePositiv = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $weitergabeNegativ = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $gruppenKennung = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Master") */
+    #[Type('Ujamii\OpenImmo\API\Master')]
     protected ?Master $master = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $sprache = null;
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_simplefield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedSimplefield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedSimplefield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_anyfield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedAnyfield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedAnyfield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_extend', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedExtend>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedExtend = [];
 
     public function getObjektnrIntern(): ?string

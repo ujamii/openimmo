@@ -12,48 +12,38 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Heizungsart
  * Welche Heizungsarten sind vorhanden, Optionen kombinierbar
- * @XmlRoot("heizungsart")
  */
+#[XmlRoot(name: 'heizungsart')]
 class Heizungsart
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("OFEN")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'OFEN')]
     protected ?bool $ofen = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("ETAGE")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'ETAGE')]
     protected ?bool $etage = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("ZENTRAL")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'ZENTRAL')]
     protected ?bool $zentral = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("FERN")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'FERN')]
     protected ?bool $fern = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("FUSSBODEN")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'FUSSBODEN')]
     protected ?bool $fussboden = null;
 
     public function getOfen(): ?bool

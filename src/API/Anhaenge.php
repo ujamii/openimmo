@@ -11,37 +11,28 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Anhaenge
- *
- * @XmlRoot("anhaenge")
  */
+#[XmlRoot(name: 'anhaenge')]
 class Anhaenge
 {
-    /**
-     * @XmlList(inline = true, entry = "anhang")
-     * @Type("array<Ujamii\OpenImmo\API\Anhang>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'anhang', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\Anhang>')]
+    #[SkipWhenEmpty]
     protected array $anhang = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_simplefield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedSimplefield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedSimplefield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_anyfield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedAnyfield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedAnyfield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_extend', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedExtend>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedExtend = [];
 
     /**

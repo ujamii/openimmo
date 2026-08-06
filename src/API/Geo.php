@@ -11,101 +11,94 @@ use JMS\Serializer\Annotation\XmlRoot;
 
 /**
  * Class Geo
- *
- * @XmlRoot("geo")
  */
+#[XmlRoot(name: 'geo')]
 class Geo
 {
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $plz = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $ort = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Geokoordinaten") */
+    #[Type('Ujamii\OpenImmo\API\Geokoordinaten')]
     protected ?Geokoordinaten $geokoordinaten = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $strasse = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $hausnummer = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $bundesland = null;
 
-    /** @Type("Ujamii\OpenImmo\API\Land") */
+    #[Type('Ujamii\OpenImmo\API\Land')]
     protected ?Land $land = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $gemeindecode = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $flur = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $flurstueck = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $gemarkung = null;
 
     /**
-     * @Type("int")
      * Minimum value (inclusive): -2147483648
      * Maximum value (inclusive): 2147483647
      */
+    #[Type('int')]
     protected ?int $etage = null;
 
     /**
-     * @Type("int")
      * Minimum value (inclusive): -2147483648
      * Maximum value (inclusive): 2147483647
      */
+    #[Type('int')]
     protected ?int $anzahlEtagen = null;
 
-    /** @Type("Ujamii\OpenImmo\API\LageImBau") */
+    #[Type('Ujamii\OpenImmo\API\LageImBau')]
     protected ?LageImBau $lageImBau = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $wohnungsnr = null;
 
-    /** @Type("Ujamii\OpenImmo\API\LageGebiet") */
+    #[Type('Ujamii\OpenImmo\API\LageGebiet')]
     protected ?LageGebiet $lageGebiet = null;
 
-    /** @Type("string") */
+    #[Type('string')]
     protected ?string $regionalerZusatz = null;
 
-    /** @Type("bool") */
+    #[Type('bool')]
     protected ?bool $kartenMakro = null;
 
-    /** @Type("bool") */
+    #[Type('bool')]
     protected ?bool $kartenMikro = null;
 
-    /** @Type("bool") */
+    #[Type('bool')]
     protected ?bool $virtuelletour = null;
 
-    /** @Type("bool") */
+    #[Type('bool')]
     protected ?bool $luftbildern = null;
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_simplefield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedSimplefield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_simplefield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedSimplefield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedSimplefield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_anyfield")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedAnyfield>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_anyfield', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedAnyfield>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedAnyfield = [];
 
-    /**
-     * @XmlList(inline = true, entry = "user_defined_extend")
-     * @Type("array<Ujamii\OpenImmo\API\UserDefinedExtend>")
-     * @SkipWhenEmpty
-     */
+    #[XmlList(entry: 'user_defined_extend', inline: true)]
+    #[Type('array<Ujamii\OpenImmo\API\UserDefinedExtend>')]
+    #[SkipWhenEmpty]
     protected array $userDefinedExtend = [];
 
     public function getPlz(): ?string

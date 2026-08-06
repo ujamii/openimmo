@@ -11,8 +11,8 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Gastgewerbe
  * Objektart / Typ f. Gastgewerbe
- * @XmlRoot("gastgewerbe")
  */
+#[XmlRoot(name: 'gastgewerbe')]
 class Gastgewerbe
 {
     public const GASTGEW_TYP_GASTRONOMIE = 'GASTRONOMIE';
@@ -28,11 +28,11 @@ class Gastgewerbe
     public const GASTGEW_TYP_EINRAUMLOKAL = 'EINRAUMLOKAL';
 
     /**
-     * @Type("string")
-     * @XmlAttribute
      * optional
      * @see GASTGEW_TYP_* constants
      */
+    #[Type('string')]
+    #[XmlAttribute]
     protected string $gastgewTyp = '';
 
     public function getGastgewTyp(): ?string

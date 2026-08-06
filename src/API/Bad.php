@@ -12,48 +12,38 @@ use JMS\Serializer\Annotation\XmlRoot;
 /**
  * Class Bad
  * Welche Eigenschaft besitzt das Bad, Optionen kombinierbar
- * @XmlRoot("bad")
  */
+#[XmlRoot(name: 'bad')]
 class Bad
 {
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("DUSCHE")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'DUSCHE')]
     protected ?bool $dusche = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("WANNE")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'WANNE')]
     protected ?bool $wanne = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("FENSTER")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'FENSTER')]
     protected ?bool $fenster = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("BIDET")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'BIDET')]
     protected ?bool $bidet = null;
 
-    /**
-     * @Type("bool")
-     * @XmlAttribute
-     * @SerializedName("PISSOIR")
-     * optional
-     */
+    /** optional */
+    #[Type('bool')]
+    #[XmlAttribute]
+    #[SerializedName(name: 'PISSOIR')]
     protected ?bool $pissoir = null;
 
     public function getDusche(): ?bool
