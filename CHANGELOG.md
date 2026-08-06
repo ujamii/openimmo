@@ -1,3 +1,97 @@
+## 2.2.0 (August 06, 2026)
+  - set min php version in readme to 8.2
+  - Merge pull request #135 from ujamii/dependabot/github_actions/dot-github/workflows/shivammathur/setup-php-2.37.1
+  - Merge pull request #136 from ujamii/dependabot/github_actions/codecov/codecov-action-7.0.0
+  - Merge pull request #137 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.37.2
+  - Bump shivammathur/setup-php from 2.36.0 to 2.37.2
+  - Bump codecov/codecov-action from 5.5.2 to 7.0.0
+  - Bump shivammathur/setup-php from 2.36.0 to 2.37.1 in /.github/workflows
+  - use strict types
+  - raise min php version to 8.2
+  - fix infection config
+  - activate parallel cs fixing
+  - add php 8.5 to pipeline
+  - upgrade to phpunit 11 as minimum
+  - Merge pull request #129 from ujamii/dependabot/github_actions/actions/cache-5
+  - Merge pull request #128 from ujamii/dependabot/github_actions/codecov/codecov-action-5.5.2
+  - Bump actions/cache from 4 to 5
+  - Bump codecov/codecov-action from 5.5.1 to 5.5.2
+  - Merge pull request #126 from ujamii/dependabot/github_actions/actions/checkout-6
+  - Merge pull request #127 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.36.0
+  - Bump shivammathur/setup-php from 2.35.5 to 2.36.0
+  - Bump actions/checkout from 5 to 6
+  - Merge pull request #121 from ujamii/dependabot/github_actions/actions/checkout-5
+  - Merge pull request #124 from ujamii/dependabot/github_actions/codecov/codecov-action-5.5.1
+  - Merge pull request #125 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.35.5
+  - fix typo
+  - Bump actions/checkout from 4 to 5
+  - Bump codecov/codecov-action from 5.4.2 to 5.5.1
+  - Bump shivammathur/setup-php from 2.33.0 to 2.35.5
+  - remove deprecated infection flag
+  - solve phpstan warnings for array properties
+  - solve deprecation warnings
+  - Update README.md
+  - fix typos
+  - Merge pull request #114 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.33.0
+  - Bump shivammathur/setup-php from 2.32.0 to 2.33.0
+  - Merge pull request #113 from ujamii/dependabot/github_actions/codecov/codecov-action-5.4.2
+  - Bump codecov/codecov-action from 5.4.0 to 5.4.2
+  - Update php versions
+  - Merge pull request #112 from ujamii/dependabot/github_actions/codecov/codecov-action-5.4.0
+  - Bump codecov/codecov-action from 5.3.1 to 5.4.0
+  - add laravel package link
+  - Merge pull request #111 from ujamii/dependabot/github_actions/codecov/codecov-action-5.3.1
+  - Bump codecov/codecov-action from 5.2.0 to 5.3.1
+  - Merge pull request #109 from ujamii/dependabot/github_actions/codecov/codecov-action-5.2.0
+  - Bump codecov/codecov-action from 5.1.2 to 5.2.0
+  - Merge pull request #108 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.32.0
+  - Merge pull request #107 from ujamii/dependabot/github_actions/codecov/codecov-action-5.1.2
+  - Bump shivammathur/setup-php from 2.31.1 to 2.32.0
+  - Bump codecov/codecov-action from 5.1.1 to 5.1.2
+  - Merge pull request #106 from ujamii/dependabot/github_actions/codecov/codecov-action-5.1.1
+  - Bump codecov/codecov-action from 5.0.7 to 5.1.1
+  - Merge pull request #105 from ujamii/dependabot/github_actions/codecov/codecov-action-5.0.7
+  - Merge pull request #104 from ujamii/dependabot/composer/phpstan/phpstan-tw-1.0or-tw-2.0
+  - Bump codecov/codecov-action from 4.5.0 to 5.0.7
+  - Update phpstan/phpstan requirement from ^1.0 to ^1.0 || ^2.0
+  - Merge pull request #97 from ujamii/dependabot/github_actions/codecov/codecov-action-4.5.0
+  - Merge pull request #99 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.31.1
+  - Bump shivammathur/setup-php from 2.30.4 to 2.31.1
+  - Bump codecov/codecov-action from 4.4.1 to 4.5.0
+  - Merge pull request #95 from ujamii/dependabot/github_actions/codecov/codecov-action-4.4.1
+  - Merge pull request #94 from ujamii/dependabot/github_actions/codecov/codecov-action-4.4.0
+  - Bump codecov/codecov-action from 4.3.1 to 4.4.0
+  - Merge pull request #93 from ujamii/dependabot/github_actions/codecov/codecov-action-4.3.1
+  - Bump codecov/codecov-action from 4.3.0 to 4.3.1
+  - Merge pull request #92 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.30.4
+  - Bump shivammathur/setup-php from 2.30.3 to 2.30.4
+  - Merge pull request #91 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.30.3
+  - Bump shivammathur/setup-php from 2.30.2 to 2.30.3
+  - Merge pull request #88 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.30.2
+  - Merge pull request #90 from ujamii/dependabot/github_actions/codecov/codecov-action-4.3.0
+  - Bump shivammathur/setup-php from 2.30.0 to 2.30.2
+  - Bump codecov/codecov-action from 4.1.1 to 4.3.0
+  - [CLEANUP] executed most recent rector rules
+  - Merge pull request #87 from ujamii/dependabot/github_actions/codecov/codecov-action-4.1.1
+  - Bump codecov/codecov-action from 4.1.0 to 4.1.1
+  - [DOC] adjusted some texts after email from OpenImmo e.V.
+  - Create FUNDING.yml
+  - Merge pull request #76 from ujamii/dependabot/github_actions/actions/cache-4
+  - Merge pull request #82 from ujamii/dependabot/github_actions/codecov/codecov-action-4.1.0
+  - Merge pull request #84 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.30.0
+  - Bump actions/cache from 3 to 4
+  - Bump codecov/codecov-action from 3.1.4 to 4.1.0
+  - Bump shivammathur/setup-php from 2.29.0 to 2.30.0
+  - Merge pull request #85 from ujamii/bugfix/xsd-parser-sequence
+  - removed platform setting
+  - [BUGFIX] possible fix for new version of xsd parser
+  - Merge pull request #75 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.29.0
+  - Bump shivammathur/setup-php from 2.28.0 to 2.29.0
+  - Merge pull request #74 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.28.0
+  - Merge pull request #72 from ujamii/dependabot/composer/symfony/serializer-tw-5.3or-tw-6.0
+  - Bump shivammathur/setup-php from 2.27.1 to 2.28.0
+  - Update symfony/serializer requirement from ^5.3 to ^5.3 || ^6.0
+
 ## 2.1.0 (November 15, 2023)
   - [CLEANUP] get rid of patched library by using the 0.4.0 feature of ComplexType::isMixed instead
 
