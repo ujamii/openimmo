@@ -14,23 +14,23 @@ If you need support for PHP <= 8.1, see version 1.x of this package. Version 2 i
 
 There is an official library available at http://www.openimmo.de/go.php/p/22/support20.htm which costs 95 EUR excl. VAT and is 
 "compatible with PHP5 and tested with PHP 8.1" (end quote).
-To completely convince you, you will only be allowed to see the code **after** you have paid and they have a no-refund policy. 
+To completely convince you, you will only be allowed to see the code **after** you have paid, and they have a no-refund policy. 
 
 **Important notes**
 
-1. I don't want to include **real world xml examples** into this distribution package due to possible license and privacy issues. Thus, some tests are automatically
-skipped, if the xml files are not found in the examples directory!
+1. I don't want to include **real world XML examples** in this distribution package due to possible license and privacy issues. Thus, some tests are automatically
+skipped if the XML files are not found in the "examples" directory!
 The "Open" in OpenImmo has nothing to do with Open Source (I have been told via email).
 
 1. From a software architecture point of view, using the **German names** for everything in the codebase feels bad for every developer, I know. I feel the same. 
 And I still use the German labels in the codebase nevertheless. Simple reason: I value maintainability and readability more than sticking to the rules no matter what.
 So to be consistent in names for properties, classes and with xml/xsd properties and to make it easy to actually know what you're talking about when debugging this project,
-I decided to take the burden of using German names but I think it is worth it.
+I decided to take the burden of using German names, but I think it is worth it.
 
-1. Also, dealing with this kind of data is probably done in more complex and big projects than in small and very agile ones, I suppose. Hence I actively chose not to
+1. Also, dealing with this kind of data is probably done in more complex and big projects than in small and very agile ones, I suppose. Hence, I actively chose not to
 be **cutting edge** with all the fancy features new PHP versions provide. I will maintain the currently supported [PHP versions](https://www.php.net/supported-versions.php)
-because I assume those type of projects have some more compatibility constraints to match and I don't want to bring another tight requirement in with this library.
-I you deeply want to have all the modern things in here, feel free to fork and open a PR, so everyone can benefit from it. You're very welcome!
+because I assume those types of projects have some more compatibility constraints to match, and I don't want to bring another tight requirement in with this library.
+I know you deeply want to have all the modern things in here, feel free to fork and open a PR, so everyone can benefit from it. You're very welcome!
 
 ## TODOs
 
@@ -44,7 +44,7 @@ composer req ujamii/openimmo
 
 ## Integrations
 
-If you like to use this API as base for an integration into a CMS or Framework, feel free to contact me, I will link it here.
+If you like to use this API as a base for an integration into a CMS or Framework, feel free to contact me. I will link it here.
 
 - Integration into TYPO3 CMS, [extension "openimmo"](https://github.com/ujamii/openimmo-typo3)
 - NEOS CMS, [package "Ujamii.OpenImmoNeos"](https://github.com/ujamii/openimmo-neos)
@@ -73,7 +73,7 @@ will produce
 <nutzungsart WOHNEN="true" GEWERBE="false" ANLAGE="false" WAZ="false" />
 ```
 
-Nested elements are created just as easy. Classes, properties, constants and parameters are named as corresponding items in the xsd file.
+Nested elements are created just as easily. Classes, properties, constants and parameters are named as corresponding items in the xsd file.
 They are just converted to camelCase to comply with PHP standards.
 
 ```php
@@ -105,7 +105,7 @@ will generate
 
 ### Reading OpenImmo XML
 
-Reading data from xml into a easy-to-use object structure is also pretty straightforward. This example will generate a list of
+Reading data from XML into an easy-to-use object structure is also pretty straightforward. This example will generate a list of
 objects (addresses).
 
 ```php
@@ -164,16 +164,16 @@ $jsonContent = $this->serializer->serialize($openImmoObject, JsonEncoder::FORMAT
 
 ### Possible issues
 
-#### DateTime format not working
+#### DateTime format is not working
 
-Some tools may generate DateTime values in the xml, which cause errors like
+Some tools may generate DateTime values in the XML, which cause errors like
 
 ```
 Fatal error: Uncaught JMS\Serializer\Exception\RuntimeException: Invalid datetime "2020-08-07T11:56:39.1242974+02:00", expected one of the format "Y-m-d\TH:i:sP", "Y-m-d\TH:i:s".
 ```
 
 This can be caused by a different precision for the microsecond part (1242974) of this value. As the default PHP precision may be lower
-that the one of the tool, which the xml was generated with. If this problem occurs with the data you use, you can add a handler, included
+than the one of the tool, which the XML was generated with. If this problem occurs with the data you use, you can add a handler, included
 in this package, to the serializer like this:
 
 ```php
