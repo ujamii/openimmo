@@ -1,8 +1,11 @@
+## 2.3.0 (August 06, 2026)
+  - switch from annotations to attributes
+  - fix some typos in the readme
+  - Bump actions/cache from 5 to 6
+  - Bump actions/checkout from 6 to 7
+
 ## 2.2.0 (August 06, 2026)
   - set min php version in readme to 8.2
-  - Merge pull request #135 from ujamii/dependabot/github_actions/dot-github/workflows/shivammathur/setup-php-2.37.1
-  - Merge pull request #136 from ujamii/dependabot/github_actions/codecov/codecov-action-7.0.0
-  - Merge pull request #137 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.37.2
   - Bump shivammathur/setup-php from 2.36.0 to 2.37.2
   - Bump codecov/codecov-action from 5.5.2 to 7.0.0
   - Bump shivammathur/setup-php from 2.36.0 to 2.37.1 in /.github/workflows
@@ -12,17 +15,10 @@
   - activate parallel cs fixing
   - add php 8.5 to pipeline
   - upgrade to phpunit 11 as minimum
-  - Merge pull request #129 from ujamii/dependabot/github_actions/actions/cache-5
-  - Merge pull request #128 from ujamii/dependabot/github_actions/codecov/codecov-action-5.5.2
   - Bump actions/cache from 4 to 5
   - Bump codecov/codecov-action from 5.5.1 to 5.5.2
-  - Merge pull request #126 from ujamii/dependabot/github_actions/actions/checkout-6
-  - Merge pull request #127 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.36.0
   - Bump shivammathur/setup-php from 2.35.5 to 2.36.0
   - Bump actions/checkout from 5 to 6
-  - Merge pull request #121 from ujamii/dependabot/github_actions/actions/checkout-5
-  - Merge pull request #124 from ujamii/dependabot/github_actions/codecov/codecov-action-5.5.1
-  - Merge pull request #125 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.35.5
   - fix typo
   - Bump actions/checkout from 4 to 5
   - Bump codecov/codecov-action from 5.4.2 to 5.5.1
@@ -32,63 +28,36 @@
   - solve deprecation warnings
   - Update README.md
   - fix typos
-  - Merge pull request #114 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.33.0
   - Bump shivammathur/setup-php from 2.32.0 to 2.33.0
-  - Merge pull request #113 from ujamii/dependabot/github_actions/codecov/codecov-action-5.4.2
   - Bump codecov/codecov-action from 5.4.0 to 5.4.2
   - Update php versions
-  - Merge pull request #112 from ujamii/dependabot/github_actions/codecov/codecov-action-5.4.0
   - Bump codecov/codecov-action from 5.3.1 to 5.4.0
   - add laravel package link
-  - Merge pull request #111 from ujamii/dependabot/github_actions/codecov/codecov-action-5.3.1
   - Bump codecov/codecov-action from 5.2.0 to 5.3.1
-  - Merge pull request #109 from ujamii/dependabot/github_actions/codecov/codecov-action-5.2.0
   - Bump codecov/codecov-action from 5.1.2 to 5.2.0
-  - Merge pull request #108 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.32.0
-  - Merge pull request #107 from ujamii/dependabot/github_actions/codecov/codecov-action-5.1.2
   - Bump shivammathur/setup-php from 2.31.1 to 2.32.0
   - Bump codecov/codecov-action from 5.1.1 to 5.1.2
-  - Merge pull request #106 from ujamii/dependabot/github_actions/codecov/codecov-action-5.1.1
   - Bump codecov/codecov-action from 5.0.7 to 5.1.1
-  - Merge pull request #105 from ujamii/dependabot/github_actions/codecov/codecov-action-5.0.7
-  - Merge pull request #104 from ujamii/dependabot/composer/phpstan/phpstan-tw-1.0or-tw-2.0
   - Bump codecov/codecov-action from 4.5.0 to 5.0.7
   - Update phpstan/phpstan requirement from ^1.0 to ^1.0 || ^2.0
-  - Merge pull request #97 from ujamii/dependabot/github_actions/codecov/codecov-action-4.5.0
-  - Merge pull request #99 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.31.1
   - Bump shivammathur/setup-php from 2.30.4 to 2.31.1
   - Bump codecov/codecov-action from 4.4.1 to 4.5.0
-  - Merge pull request #95 from ujamii/dependabot/github_actions/codecov/codecov-action-4.4.1
-  - Merge pull request #94 from ujamii/dependabot/github_actions/codecov/codecov-action-4.4.0
   - Bump codecov/codecov-action from 4.3.1 to 4.4.0
-  - Merge pull request #93 from ujamii/dependabot/github_actions/codecov/codecov-action-4.3.1
   - Bump codecov/codecov-action from 4.3.0 to 4.3.1
-  - Merge pull request #92 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.30.4
   - Bump shivammathur/setup-php from 2.30.3 to 2.30.4
-  - Merge pull request #91 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.30.3
   - Bump shivammathur/setup-php from 2.30.2 to 2.30.3
-  - Merge pull request #88 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.30.2
-  - Merge pull request #90 from ujamii/dependabot/github_actions/codecov/codecov-action-4.3.0
   - Bump shivammathur/setup-php from 2.30.0 to 2.30.2
   - Bump codecov/codecov-action from 4.1.1 to 4.3.0
   - [CLEANUP] executed most recent rector rules
-  - Merge pull request #87 from ujamii/dependabot/github_actions/codecov/codecov-action-4.1.1
   - Bump codecov/codecov-action from 4.1.0 to 4.1.1
   - [DOC] adjusted some texts after email from OpenImmo e.V.
   - Create FUNDING.yml
-  - Merge pull request #76 from ujamii/dependabot/github_actions/actions/cache-4
-  - Merge pull request #82 from ujamii/dependabot/github_actions/codecov/codecov-action-4.1.0
-  - Merge pull request #84 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.30.0
   - Bump actions/cache from 3 to 4
   - Bump codecov/codecov-action from 3.1.4 to 4.1.0
   - Bump shivammathur/setup-php from 2.29.0 to 2.30.0
-  - Merge pull request #85 from ujamii/bugfix/xsd-parser-sequence
   - removed platform setting
   - [BUGFIX] possible fix for new version of xsd parser
-  - Merge pull request #75 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.29.0
   - Bump shivammathur/setup-php from 2.28.0 to 2.29.0
-  - Merge pull request #74 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.28.0
-  - Merge pull request #72 from ujamii/dependabot/composer/symfony/serializer-tw-5.3or-tw-6.0
   - Bump shivammathur/setup-php from 2.27.1 to 2.28.0
   - Update symfony/serializer requirement from ^5.3 to ^5.3 || ^6.0
 
@@ -96,7 +65,6 @@
   - [CLEANUP] get rid of patched library by using the 0.4.0 feature of ComplexType::isMixed instead
 
 ## 2.0.0 (November 09, 2023)
-  - Merge pull request #71 from ujamii/task/drop-old-php
   - code style fixes 
   - fixed log path of infection logs 
   - raised memory limit for phpstan
@@ -111,26 +79,17 @@
   - updated tests to match new php generation
   - fixed changed ChoiceType handling in xsd parser
   - some general cleanup
-  - Merge pull request #62 from ujamii/dependabot/github_actions/codecov/codecov-action-3.1.1
   - Bump codecov/codecov-action from 3.1.0 to 3.1.1
-  - Merge pull request #55 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.19.1
   - Bump shivammathur/setup-php from 2.19.0 to 2.19.1
-  - Merge pull request #54 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.19.0
   - Bump shivammathur/setup-php from 2.18.1 to 2.19.0
-  - Merge pull request #53 from ujamii/dependabot/github_actions/codecov/codecov-action-3.1.0
   - Bump codecov/codecov-action from 3.0.0 to 3.1.0
-  - Merge pull request #51 from ujamii/dependabot/github_actions/codecov/codecov-action-3.0.0
-  - Merge pull request #52 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.18.1
   - Bump shivammathur/setup-php from 2.18.0 to 2.18.1
   - Bump codecov/codecov-action from 2.1.0 to 3.0.0
-  - Merge pull request #48 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.18.0
-  - Merge pull request #47 from ujamii/dependabot/github_actions/actions/cache-3
   - Bump shivammathur/setup-php from 2.17.1 to 2.18.0
   - Bump actions/cache from 2.1.7 to 3
   - [DOC] updated VERSION and Changelog
 
 ## 1.0.0 (March 14, 2022)
-  - Merge pull request #46 from ujamii/feature/nette-code-generator
   - [DOC] raised min php version to 7.4 
   - [TASK] lowered required MSI
   - [TASK] added some more checks for the default constructor values
@@ -139,34 +98,19 @@
   - [BUGFIX] use lower MSI for 7.4 compat
   - [BUGFIX] use correct nette class for visibility constants
   - [WIP][FEATURE] switch from gossi/php-code-generator to nette/php-generator as the package does not seem to be developed anymore
-  - Merge pull request #44 from ujamii/dependabot/github_actions/actions/checkout-3
   - Bump actions/checkout from 2.4.0 to 3
-  - Merge pull request #43 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.17.1
-  - Merge pull request #45 from ujamii/task/drop-php-73
   - [TASK] drop PHP 7.3 support, closes #25
   - Bump shivammathur/setup-php from 2.16.0 to 2.17.1
-  - Merge pull request #40 from andypost/24-php81
-  - Merge pull request #38 from ujamii/dependabot/github_actions/actions/cache-2.1.7
-  - Merge pull request #39 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.16.0
   - Add PHP 8.1 to CI
   - Bump shivammathur/setup-php from 2.15.0 to 2.16.0
   - Bump actions/cache from 2.1.6 to 2.1.7
-  - Merge pull request #37 from ujamii/dependabot/github_actions/actions/checkout-2.4.0
   - Bump actions/checkout from 2.3.4 to 2.4.0
-  - Merge pull request #34 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.15.0
   - Bump shivammathur/setup-php from 2.14.0 to 2.15.0
-  - Merge pull request #33 from ujamii/dependabot/github_actions/codecov/codecov-action-2.1.0
   - Bump codecov/codecov-action from 2.0.3 to 2.1.0
-  - Merge pull request #32 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.14.0
   - Bump shivammathur/setup-php from 2.13.0 to 2.14.0
-  - Merge pull request #30 from ujamii/dependabot/github_actions/codecov/codecov-action-2.0.3
   - Bump codecov/codecov-action from 2.0.2 to 2.0.3
-  - Merge pull request #29 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.13.0
   - Bump shivammathur/setup-php from 2.12.0 to 2.13.0
-  - Merge pull request #26 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.12.0
-  - Merge pull request #28 from ujamii/dependabot/github_actions/codecov/codecov-action-2.0.2
   - Bump codecov/codecov-action from 2.0.1 to 2.0.2
-  - Merge pull request #27 from ujamii/dependabot/github_actions/codecov/codecov-action-2.0.1
   - Bump codecov/codecov-action from 1.5.2 to 2.0.1
   - Bump shivammathur/setup-php from 2.11.0 to 2.12.0
 
@@ -183,28 +127,19 @@
   - [CLEANUP] removed unused import
   - [CI] fixed build pipeline
   - [CLEANUP] removed old rules
-  - Merge pull request #23 from ujamii/dependabot/github_actions/codecov/codecov-action-1.5.2
   - Bump codecov/codecov-action from 1.5.0 to 1.5.2
 
 ## 0.9.2 (May 28, 2021)
-  - Merge pull request #18 from ujamii/dependabot/github_actions/actions/checkout-2.3.4
-  - Merge pull request #17 from ujamii/dependabot/github_actions/codecov/codecov-action-1.5.0
-  - Merge pull request #15 from ujamii/dependabot/github_actions/shivammathur/setup-php-2.11.0
-  - Merge pull request #21 from ujamii/dependabot/composer/friendsofphp/php-cs-fixer-tw-2.18or-tw-3.0
-  - Merge pull request #22 from ujamii/dependabot/github_actions/actions/cache-2.1.6
   - Bump actions/cache from 2.1.4 to 2.1.6
   - Update friendsofphp/php-cs-fixer requirement from ^2.18 to ^2.18 || ^3.0
-  - Merge pull request #19 from ujamii/dependabot/composer/rector/rector-tw-0.9.31or-tw-0.11.0
   - Update rector/rector requirement from ^0.9.31 to ^0.9.31 || ^0.11.0
   - Bump actions/checkout from 2 to 2.3.4
   - Bump codecov/codecov-action from 1 to 1.5.0
   - Bump shivammathur/setup-php from 2 to 2.11.0
-  - Merge pull request #13 from ujamii/dependabot/github_actions/actions/cache-v2.1.4
   - Bump actions/cache from v2 to v2.1.4
   - Update dependabot.yml
   - added dependabot config
   - [DOC] added PHP8 to composer description
-  - Merge pull request #12 from ujamii/feature/rector
   - [TEST] also run rector on tests directory
   - [TEST] added rector to the project
 
@@ -212,7 +147,6 @@
   - [TEST] lowered the msi score as the infection job randomly finds new mutants although no code change has been made
 
 ## 0.9.0 (February 25, 2021)
-  - Merge pull request #11 from ujamii/feature/php8
   - [TEST] added a comment to a bool assertion
   - [TEST] added class use assertions
   - [TEST] fixed class namespace
@@ -223,7 +157,6 @@
   - [TASK] test ci build with php 8.0
 
 ## 0.8.1 (February 23, 2021)
-  - Merge pull request #10 from ujamii/task/build-structure
   - [TEST] kill one more mutant
   - [TEST] kill two more mutants
   - [TEST] kill one more mutant with another test
@@ -237,7 +170,6 @@
   - [TASK] reorganized build files to meet standards
 
 ## 0.8.0 (February 21, 2021)
-  - Merge pull request #9 from ujamii/feature/coverage-badge
   - [DOC] added coverage badge
   - [TEST] added coverage upload to github actions
   - [TEST] fixed version constraint for php 7.3
@@ -256,12 +188,10 @@
   - [TEST] replaced generated single test files with one test to rule them all
   - [TEST] limited infection results to covered code
   - [BUGFIX] removed unreachable code as ComplexTypeMixed can not have properties, only attributes in xsd schema
-  - Merge pull request #8 from ujamii/refactoring-typeutil
   - [TEST] added test, so TypeUtil has 100% coverage now
   - [TEST] refactored the property config helper
   - [TEST] added test case with datetime
   - [TASK] moved some type related code to the typeutil to simplify the generator class
-  - Merge pull request #7 from ujamii/feature/matrix-test
   - [TEST] divided ci build into 2 jobs
   - [TEST] some config changes in github actions
   - [TEST] lowered min version of infection to run on php 7.3
@@ -339,7 +269,6 @@
 
 ## 0.3.1 (September 04, 2019)
   - [TASK] updated composer packages and re-generated api classes
-  - Merge pull request #2 from qbus-agentur/fix-api-regeneration
   - composer.json: Include pull request #64 of gossi/php-code-generator to fix api (re)generation
 
 ## 0.3.0 (July 19, 2019)
