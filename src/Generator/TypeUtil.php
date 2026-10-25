@@ -58,7 +58,7 @@ class TypeUtil
         }
 
         if ($isPlural) {
-            $type = 'array<' . $type . '>';
+            return 'array<' . $type . '>';
         }
 
         return $type;
@@ -172,7 +172,7 @@ class TypeUtil
     {
         $camel = str_replace($separators, '', ucwords($input, implode('', $separators)));
         if ($lcFirst) {
-            $camel = lcfirst($camel);
+            return lcfirst($camel);
         }
 
         return $camel;

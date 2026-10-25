@@ -79,7 +79,7 @@ class ApiClassTest extends TestCase
         }
 
         if ($isPlural) {
-            $value = [$value];
+            return [$value];
         }
         return $value;
     }
