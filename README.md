@@ -10,7 +10,7 @@ OpenImmo and the OpenImmo logo are registered trademarks of the [OpenImmo e.V.](
 Neither is this package an official distribution nor am I associated with this organisation!
 
 This library just wraps the OpenImmo XML format with some PHP8 classes.
-If you need support for PHP <= 8.1, see version 1.x of this package. Version 2 is for PHP >=8.2 only.
+If you need support for PHP <= 8.1, see version 1.x of this package. Version 2 is for PHP >=8.2 only, Version 3 is PHP >=8.5
 
 There is an official library available at http://www.openimmo.de/go.php/p/22/support20.htm which costs 95 EUR excl. VAT and is 
 "compatible with PHP5 and tested with PHP 8.1" (end quote).
