@@ -21,7 +21,7 @@
     "require-dev": {
         "ext-json": "*",
         "goetas-webservices/xsd-reader": "^0.4",
-        "phpunit/phpunit": "^11.0",
+        "phpunit/phpunit": "^11.0 || ^13.0",
         "phpstan/phpstan": "^1.0 || ^2.0",
         "infection/infection": ">=0.16",
         "friendsofphp/php-cs-fixer": "^3.0",
